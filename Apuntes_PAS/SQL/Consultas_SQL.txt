@@ -1,0 +1,6 @@
+INSTRUCCIONES SQL
+=================
+------
+BORRAR
+------
+delete from test_yperson01 where nombre='pers'

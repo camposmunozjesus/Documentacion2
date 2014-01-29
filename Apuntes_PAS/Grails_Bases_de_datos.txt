@@ -1,0 +1,171 @@
+BASES DE DATOS EN GRAILS
+========================
+-------------------------
+CONECTAR LA BASE DE DATOS
+-------------------------
+Tenemos los siguientes datos de conexión:
+Oracle SQL developer
+host: aaaa.bbb.ccc
+puerto: 1521
+usuario: user
+password: pass
+servicio: rh (La base de datos)
+
+1) Descargar el driver e incluirlo en la carpeta "/lib" que hay dentro del proyecto:
+
+2) En la clase conf/DataSource.groovy
+	dataSource {
+		pooled = true
+	//    driverClassName = "org.h2.Driver"
+	//    username = "sa"
+	//    password = ""
+		dialect="org.hibernate.dialect.OracleDialect" 
+		driverClassName = "oracle.jdbc.OracleDriver"
+		username = "user"
+		password = "pass"
+		...
+	// environment specific settings
+	environments {
+		development {
+			dataSource {
+				//dbCreate = "update" // one of 'create', 'create-drop', 'update', 'validate', ''
+	//            url = "jdbc:h2:mem:devDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE"
+				url = "jdbc:oracle:thin:@aaaa.bbb.ccc:1521:rh"
+		...
+		
+Ahora ya se conecta correctamente a la base de datos.
+
+-----------------------------
+RECUPERAR DE LA BASE DE DATOS
+-----------------------------
+Vamos a hacer que el nombre de la clase del controlador sea "TestBasico", por ejemplo, y ataque a una tabla llamada de otra manera, "TEST_YPERSON01".
+
+package sqlconn01
+
+class TestBasicoController {
+
+    def index = {
+		redirect (action : CargaDatos)
+//		render "eeeeeeeeeeee"
+	}
+	
+	def CargaDatos = {
+		println "\n wwwwwwwwwwww"
+				
+		
+		def allData = TestBasico.list();
+		for (var in allData) {
+			println var.nombrePersona
+			println var.apellidoUno
+			println "---"
+
+		}
+		
+		//Ejemplo de recuperar los datos de una persona en conceto:
+		def persona = TestBasico.findByNombrePersona("Sergi")
+		
+		def proyecto1 = "pr"
+		[proyecto : proyecto1]
+	}
+}
+
+package sqlconn01
+
+class TestBasico {
+
+	String nombrePersona
+	String apellidoUno
+	
+//	def apellidoUno
+//	def apellidoDos
+	
+	static mapping = {
+		
+		table 'TEST_YPERSON01'
+		id name:'nombrePersona'
+		id generator:'assigned'
+		version false
+		
+		nombrePersona column: 'NOMBRE'
+		apellidoUno column: 'PRIAPE'
+		
+	}
+	
+    static constraints = {
+    }
+} 
+
+
+Datos de ayuda:
+Interesante ver:
+Mapping de los objetos del dominio:
+http://grails.org/doc/2.2.1/ref/Database%20Mapping/table.html
+
+Uso del findBy de Grails:
+http://grails.org/doc/2.1.0/ref/Domain%20Classes/findBy.html
+
+Mail:
+Te envío un ejemplo de código nuestro:
+
+package rlg
+
+import java.util.ArrayList;
+import java.util.Date;
+
+class CodiConciliacio {
+	
+	String codi
+	String descripcio	
+	
+	static mapping = {
+		table 'ZCONCIL01'
+		id name:'codi'
+		id generator:'assigned'
+		version false
+		
+		codi column: 'CODIGO'
+		descripcio column: 'DESCRI'		
+		
+		sort codi: "asc"
+	}
+	
+	static constraints = {
+		codi(size:1..3, blank:false)
+		descripcio(size:0..100, blank:false)	
+		
+	}
+}
+
+Aquí ponemos el mapping, que verás el nombre de la tabla, qué campo es el id, id generator significa que el id no es autoincremental, sino que en caso de crear una ocurrencia es el usuario que lo pone a mano, y después el mapeo de los campos de la bbdd.
+
+dataSource {
+    pooled = true
+//    driverClassName = "org.h2.Driver"
+//    username = "sa"
+//    password = ""
+	dialect="org.hibernate.dialect.OracleDialect" 
+	driverClassName = "oracle.jdbc.OracleDriver"
+	
+	username = "u"
+	password = "p"
+}
+hibernate {
+    cache.use_second_level_cache = true
+    cache.use_query_cache = false
+    cache.region.factory_class = 'net.sf.ehcache.hibernate.EhCacheRegionFactory' // Hibernate 3
+//    cache.region.factory_class = 'org.hibernate.cache.ehcache.EhCacheRegionFactory' // Hibernate 4
+}
+
+// environment specific settings
+environments {
+    development {
+        dataSource {
+            //dbCreate = "update" // one of 'create', 'create-drop', 'update', 'validate', ''
+//            url = "jdbc:h2:mem:devDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE"
+			url = "jdbc:oracle:thin:@host:puerto:servicio_o_tabla"
+        }
+    }
+    test {
+        dataSource {
+//            dbCreate = "update"
+//            url = "jdbc:h2:mem:testDb;MVCC=..................

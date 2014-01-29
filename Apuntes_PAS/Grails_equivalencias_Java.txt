@@ -1,0 +1,51 @@
+EQUIVALENCIAS GROOVY-GRAILS Y JAVA
+==================================
+Si queremos declarar el método index por defecto de Grails al estilo Java:
+	public int index(){
+		render "mensaje de prueba tradicional"
+		println ("\n mensaje por consola tradicional")
+		return 0
+	} 
+- NO puede ser void, debe retornar algo.
+- Debe llevar el return 0, si no dará un NullPointerException.
+- Si desde index llamamos a otro método, por ejemplo redirection (action:metodoA), puede declararse como 
+	def metodoA = {}
+  y TAMBIÉN como:
+	def metodoA() {}
+- Si una clase controller es de la siguiente forma:
+class LibroController {
+	def cosa1 = {
+		println "cosa 1 ----------------->"
+	}
+}
+	Cuando se llame al controller se ejecutará "cosa2" por defecto.
+	
+  Si es:
+  class LibroController {
+	def cosa1 = {
+		println "cosa 1 ----------------->"
+	}
+	println "index"
+	}
+	def cosa2 = {
+		println "cosa 2 ----------------->"
+	}
+}
+	Cuando se llame al controlador no se ejecutará nada.
+	
+  Si es:
+class LibroController {
+	def cosa1 = {
+		println "cosa 1 ----------------->"
+	}
+	
+	def index = {
+		println "index"
+	}
+	def cosa2 = {
+		println "cosa 2 ----------------->"
+	}
+}
+	Se ejecutará "index" al llamar al controlador.
+	
+- El controlador y el dominio se han de llamar igual sólo en el caso de quere utilizar scaffold.

@@ -1,0 +1,12 @@
+GROOVY
+======
+Ejemplo tipo "Hello Wrold":			http://groovy.codehaus.org/Create+Your+First+Groovy+Project
+Ejemplo de instalación de GRAILS: 	http://jckmex.net/grails-introduccion/
+
+GRAILS
+======
+Libro en pdf de grails: 			http://www.vivelalectura.com.mx/aura/1/1%29%20Manual%20Grails.pdf
+Enlace a tutoriales: 				http://www.grailsexample.net/course-outline/
+	WEB SERVICES
+Web Services en grails:				http://docs.codehaus.org/display/GROOVY/GroovyWS (donde descargar el módulo JAR y ejemplos)
+Link donde se encuentra el jar:		http://mavenhub.com/c/groovyx/net/ws/wsclient/jar

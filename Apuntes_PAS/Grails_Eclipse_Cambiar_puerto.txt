@@ -1,0 +1,23 @@
+CAMBIAR EL PUERTO DE LA APLICACIÓN - GRAILS
+===========================================
+----------------------------------
+Desde línea de comandos de Eclipse
+----------------------------------
+
+run-app -Dserver.port=8099
+
+--------------------------------------
+Utilizando un archivo de configuración
+--------------------------------------
+Ir al directorio C:\Users\.grails\
+Crear un archivo nuevo llamado settings.groovy.
+Dentro del archivo escribir:
+	grails.server.port.http=8099
+Guardar y quitarle cualquier extensión que pueda tener.
+Para quitar la extensión ir a Organizar -> Opciones de carpeta y búsqueda -> Visualizar -> Configuración avanzada -> Esconder las extensiones de los tipos de ficheros conocidos
+
+-----------------------------------------
+Desde archivo de configuración de Eclipse
+-----------------------------------------
+En el archivo /conf/BuildConfig.groovy añadir la siguiente línea:
+	run-app -Dserver.port=8099
