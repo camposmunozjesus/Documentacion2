@@ -1,0 +1,20 @@
+The Subversive project is aimed to integrate the Subversion (SVN) version control system with the Eclipse platform. Using the Subversive plug-in, 
+you can work with projects stored in Subversion repositories directly from the Eclipse workbench in a way similar to work with other Eclipse version 
+control providers, such as CVS and Git. 
+
+Subversive Features
+
+Subversive plug-in provides access to Subversion repositories from the Eclipse workbench. 
+
+Full-Scale SVN Client - Subversive is designed to be used as a full-featured SVN client, so you can update, commit, merge changes, work with SVN 
+properties, view change history and perform other operations with SVN directly from the Eclipse environment.
+
+Advanced SVN Features - Subversive includes several features that extend functionality of the standard SVN client. In particular, Subversive 
+can show the SVN repository content grouped by the logical structures of trunk, branch and tag and display changes on a visual revisions graph.
+
+Seamless Integration with Eclipse - Subversive is an official Eclipse project and an integral part of Eclipse Simultaneous releases. 
+The project follows all Eclipse guidelines and requirements to deliver a quality SVN team provider plug-in similar to CVS and Git implementations.
+
+Support of the Latest SVN Versions - Subversive evolves together with the Subversion project to provide Eclipse users with the features that 
+appeared in new versions of the SVN implementation. You can use the new SVN functionality in Eclipse by installing the Early Access version of 
+Subversive.

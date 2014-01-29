@@ -1,0 +1,26 @@
+ECLIPSE - SOLUCIÓN DE PROBLEMAS
+===============================
+----------------------------------
+PROBLEMA CON LOS CONECTORES DE SVN
+----------------------------------
+SVN Connector Issue
+Submitted by Prejith Pulikkottil on Fri, 12/06/2013 - 03:52
+
+I have installed "Subversive - SVN Team Provider 1.1.1" from Eclipse marketplace. Installation was successful. But when I connect with my SVN server, It is showing following error:
+
+SVN: '0x00400006: Validate Repository Location' operation finished with error: Selected SVN connector library is not available or cannot be loaded.
+If you selected native JavaHL connector, please check if binaries are available or install and select pure Java Subversion connector from the plug-in connectors update site.
+If connectors already installed then you can change the selected one at: Window->Preferences->Team->SVN->SVN Connector.
+Selected SVN connector library is not available or cannot be loaded.
+If you selected native JavaHL connector, please check if binaries are available or install and select pure Java Subversion connector from the plug-in connectors update site.
+If connectors already installed then you can change the selected one at: Window->Preferences->Team->SVN->SVN Connector.
+
+
+To resolve the problem you need to install and use SVNKit
+Submitted by Igor Vinnykov on Tue, 12/10/2013 - 07:13
+
+The error message explains the problem and provides information how to resolve the problem. If you use Subversive on a non-Windows platform, 
+you need to install pure-Java SVNKit connector and select it on the Window->Preferences->Team->SVN->SVN Connector dialog.
+
+You have to install SVNKit on the dialog that appears automatically after Subversive installation. Also you can install connectors using these 
+update sites: http://www.polarion.com/products/svn/subversive/download.php

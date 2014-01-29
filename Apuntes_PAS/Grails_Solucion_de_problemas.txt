@@ -1,0 +1,100 @@
+GRAILS - SOLUCIÓN DE PROBLEMAS
+==============================
+Entre paréntesis se indica la temática del problema.
+-----------
+Problema 1: (GENERAL) Se identifica con una exclamación de color rojo al lado del nombre del proyecto.
+-----------
+Description	Resource	Path	Location	Type
+Groovy: compiler mismatch Project level is: 2.1 Workspace level is 2.0
+Groovy compiler level expected by the project does not match workspace compiler level. 
+Go to Project properties -> Groovy compiler to set the Groovy compiler level for this project	test		test	Groovy compiler mismatch problem
+
+Solución 1:
+-----------
+Ir al proyecto, botón derecho y Propiedades e ir al apartado de "Groovy Compiler". Dentro de la parte de la derecha selecciona "2.0" en donde dice "Groovy compiler level for project test:".
+
+
+-----------
+Problema 2: (GENERAL) NO hace caso al cambiar de puerto en el archivo BuildConfig.groovy.
+-----------
+Si ponemos en el archivo BuildConfig.groovy la siguiente línea:
+grails.server.port.http=9090
+y NO funciona, es decir, que sigue dándonos la dirección con el puerto por defecto
+
+Solución 2:
+-----------
+hay que AÑADIR ADEMÁS (hay que mantener esta línea en el archivo
+BuildCinfig.groovy) en los argumentos de la VM (Botón derecho->Run as...->Run configuration->Seleccionar proyecto->Arguments->Program arguments):
+-Dserver.port=8099
+
+
+-----------
+Problema 3: (WEB SERVICES) Problemas con los plugins necesarios para utilizar web services en grails.
+-----------
+Lo normal es ir a "plugins", botón derecho "Open Grails Plugin Manager" y escribir "cxf" y descargarse este jar. Si dice que no se puede utilizar el
+Plugin Manager porque sólo funciona hasta una determinada versión de Grails, hay que ir a "conf"->"BuildConfig.groovy" y dentro de "plugins {}" añadir
+compile ":cxf-client:1.6.0", mostrándose un ejemplo:
+    plugins {
+        // plugins for the build system only
+        build ":tomcat:7.0.47"
+
+        // plugins for the compile step
+        compile ":scaffolding:2.0.1"
+        compile ':cache:1.1.1'
+		compile ":cxf-client:1.6.0"
+		
+
+        // plugins needed at runtime but not for compilation
+        runtime ":hibernate:3.6.10.6" // or ":hibernate4:4.1.11.6"
+        runtime ":database-migration:1.3.8"
+        runtime ":jquery:1.10.2.2"
+        runtime ":resources:1.2.1"
+        // Uncomment these (or add new ones) to enable additional resources capabilities
+        //runtime ":zipped-resources:1.0.1"
+        //runtime ":cached-resources:1.1"
+        //runtime ":yui-minify-resources:0.1.5"
+    }
+Como hace falta el "groovyx.net.ws.WSClient", lo que hice en su momento fue copiar el jar que lo contiene a la carpeta "lib". Ésto no funcionó, y 
+añadí al path dicho jar (proyecto->botón derecho->propiedades->Java Build Path->Libraries->Add JARs...). Ahora permitía hacer el 
+"import groovyx.net.ws.WSClient" pero al darle a "Run as ..." fallaba, decía: "unable to import groovyx.net.ws.WSClient", aunque dejaba hacer el 
+import sin fallos, pero en el momento de compilar los daba.
+
+Solución 3:
+-----------
+Ir a plugins manager, e importar cxf en su versión 1.6 y también ws-client. (Habilitando previamente los repositorios maven, descomentando
+mavenCentral y mavenLocal en BuilConfig.groovy). Puede ser necesario añadir (compile ":cxf-client:1.6.0") donde toque en BuildConfig.groovy.
+Si no funciona el plugin manager añadir en BuildConfig.groovy (compile ":cxf-client:1.6.0") y añadir a la carpeta "lib" y posteriormente al path
+groovyws-0.5.2.jar y las que hagan falta.
+
+
+-----------
+Problema 4: (JAVA BUILD PATH) Problemas con el build path (se consulta este dato en markers). Aparece un signo de exclamación. Aparace después de eliminar export del proyecto SIGRIS.
+-----------
+Para intentar solucionarlo se elimina el proyecto del Eclipse, también del workspace y se vuelve a descargar. Aún así NO FUNCIONA.
+Al volverlo a importar, una de las cosas que se obtiene en una ventana de Eclipse (ya no en consola):
+Command terminated with an exception: java.lang.Exception: Command: C:\Program Files (x86)\Java\jdk1.7.0_45\bin\javaw.exe (29/01/2014 13.12.41)
+---- System.out ----
+| Loading Grails 2.1.1
+| Configuring classpath
+| Error Error executing script Compile: Cannot find plugin descriptor in plugin directory 'C:\Users\Jesus Campos\.grails\2.1.1\projects\SIG\plugins\export-1.5'. (Use --stacktrace to see the full trace)
+---- System.err ----
+ (see details for partial output)
+Command: C:\Program Files (x86)\Java\jdk1.7.0_45\bin\javaw.exe (29/01/2014 13.12.41)
+---- System.out ----
+| Loading Grails 2.1.1
+| Configuring classpath
+| Error Error executing script Compile: Cannot find plugin descriptor in plugin directory 'C:\Users\Jesus Campos\.grails\2.1.1\projects\SIG\plugins\export-1.5'. (Use --stacktrace to see the full trace)
+---- System.err ----
+
+------System.out:-----------
+ | Loading Grails 2.1.1
+| Configuring classpath
+| Error Error executing script Compile: Cannot find plugin descriptor in plugin directory 'C:\Users\Jesus Campos\.grails\2.1.1\projects\SIG\plugins\export-1.5'. (Use --stacktrace to see the full trace)
+------System.err:-----------
+
+Solución 4:
+-----------
+Ir a la carpeta:
+C:\Users\Jesus Campos\.grails\2.1.1\projects
+y elimnar la carpeta del proyecto, en este caso SIG.
+Volver a importar el proyecto y todo solucionado.

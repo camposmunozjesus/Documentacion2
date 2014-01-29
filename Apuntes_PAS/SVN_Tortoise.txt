@@ -1,0 +1,36 @@
+SNV TORTOISE
+==============
+-------------------------------------------------------------
+PARA IMPORTAR DESDE svn://corbatera.upc.edu/opt/svn/Proyectos (Usado en el trabajo)
+-------------------------------------------------------------
+Crear una carpeta -> Proyectos\APLICACIONES\SIGRIS
+Encima de ella (SIGRIS) -> Botón derecho -> "Repo-browser"
+En la URL introducir "svn://corbatera.upc.edu/opt/svn/Proyectos" -> "OK"
+Entonces se abrirá una ventana.
+Ir a "Proyectos" -> "APLICACIONES" -> "SIGRIS" y "OK"
+Y luego SVN Checkout sobre la carpeta SIGRIS. 
+
+A partir de aquí en la carpeta aparecerán los símbolos de "SVN Update", "SVN Commit" ,etc.
+
+Lo siguiente mejor no usarlo:
+-------------------------------
+Para importar desde Google Code
+-------------------------------
+https://pruebas-grails.googlecode.com/svn/trunk/
+
+Botón derecho sobre la carpeta -> Import
+- para descargar lo que hay en el repositorio de Google Code -> CHECKOUT
+- para subir lo que hay en el PC a Google Code la primera vez -> IMPORT
+
+A partir de aquí Checkout para descargar Import para subir.
+
+----------------------------------------------------------------
+PARA SUBIR UN PROYECTO DEL PC A UNA CARPETA VACÍA DE GOOGLE CODE
+----------------------------------------------------------------
+Botón derecho sobre la carpeta -> Import
+https://pruebas-grails.googlecode.com/svn/brnaches/
+
+El proyecto se subirá como:
+svn
+|---branches
+          |--- Dentro de aquí estará el interior de la carpeta donde estaba el proyecto

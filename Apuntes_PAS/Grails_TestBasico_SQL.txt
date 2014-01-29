@@ -1,0 +1,162 @@
+package sqlconn01
+
+import org.apache.commons.logging.LogFactory
+
+class TestBasicoController {
+
+    def index = {
+//		redirect (action : CargaDatos)
+//		redirect (action : EscribeDatos)
+//		redirect (action : UpdateDatos)
+//		redirect (action : BorraDatos)
+//		redirect (action : IsDirtyTest)
+		redirect (action : metodoA)
+	}
+	
+//	def CargaDatos = {
+//		println "\n wwwwwwwwwwww"
+//				
+//		
+//		def allData = TestBasico.list();
+//		for (var in allData) {
+//			println var.nombrePersona
+//			println var.apellidoUno
+////			println var.correo
+//			
+//
+//		}
+//		
+//		//Ejemplo de recuperar los datos de una persona en conceto:
+//		def persona = TestBasico.findByNombrePersona("SERGI")
+//		println " Datos la persona especifica\n"
+//		println persona.nombrePersona
+//		println persona.apellidoUno
+//		
+//		def proyecto1 = "pr"
+//		[proyecto : persona.getNombrePersona()]
+//	}
+//	
+//	def EscribeDatos = {
+//		def persona = new TestBasico (		personNumber : 12346 , 
+//		nombrePersona : "person" , 
+//		apellidoUno : "prueba11",
+//		apellidoDos : "prueba12",
+//		numero: "63882335",
+//		tipdoc : "N",
+//		puesto : "lab",
+//		puestd : "tmp",
+//		unidad : "vcg",
+//		usuari : "upc",
+//		correo : "eneucfdc@upc.edu")
+//		
+////		def persona = new TestBasico (		personNumber : 3456 ,
+////		nombrePersona : "pers" ,
+////		apellidoUno : "prueb11",
+////		apellidoDos : "prueb12",
+////		numero: "6385",
+////		tipdoc : "5",
+////		puesto : "lab2",
+////		puestd : "tmp2",
+////		unidad : "vcg2",
+////		usuari : "up2c",
+////		correo : "2@upc.edu")
+//		
+//		persona.save()
+//		
+//		persona.save(flush: true)
+//		
+//		if (!persona.save()) {
+//			persona.errors.each {
+//				println it
+//			}
+//		}
+//		println "creando datos"
+//	}
+//
+//	def BorraDatos = {
+//		//NO fallan pero se quedan colgados
+////		def book = TestBasico.get("person")
+////		println book.nombrePersona
+////				book.delete(flush: true)
+//		
+////		TestBasico.executeUpdate("delete from TestBasico p " +
+////			"where p.nombrePersona=:name",
+////			[name: 'person'])
+//		
+//		def persona = TestBasico.findByNombrePersona("person")
+//		
+//		println persona.apellidoUno 
+//		println persona.apellidoDos
+//		
+//		if (persona) {
+//			
+//			println "persona encontrada"
+//			
+//			try {
+//				println "TRY"
+//				persona.delete(flush: true)
+//				println "Persona  esborrada"
+////				flash.message = "Persona  esborrada"
+//				
+//			}
+//			catch (org.springframework.dao.DataIntegrityViolationException e) {
+//				println "Persona  esborrada"
+//			}
+//		}
+//				
+//	}
+//	
+//	
+//	
+//	
+//	
+//	
+//	def UpdateDatos = {
+//		TestBasico.executeUpdate("update TestBasico p set p.tipdoc=:newdoc " +
+//			"where p.nombrePersona=:name",
+//			[newdoc : 'p' , name: 'person'])
+//	}
+//	
+//	
+//	
+//	
+//	
+//	
+//	
+//	def IsDirtyTest = {
+//		//Recuperamos una persona:
+//		def persona = TestBasico.findByNombrePersona("person")
+//		
+//		if (persona.isDirty()) {
+//			// can also check if one field has changed
+//			if (persona.isDirty('tipdoc')) {
+//				println "Modificado 1"
+//			}else{
+//				println "NO Modificado 1"
+//			}
+//		}
+//		
+//		persona.apellidoDos = "ertvbn"
+//		if (persona.isDirty()) {
+//			println "Modificado 2 "
+//			TestBasico.executeUpdate("update TestBasico p set p.apellidoDos=:newdoc " +
+//				"where p.nombrePersona=:name", [newdoc : persona.apellidoDos , name: 'person'])
+//		}else{
+//			println "NO Modificado 2"
+//		}
+//		
+//		println "xAx"
+//		flush:true
+////		redirect (action : CargaDatos)
+//	}
+	
+	
+	private static final log = LogFactory.getLog(TestBasicoController.class)
+	
+	def MetodoA = {
+		String nombre = "Jesus"
+		
+		
+	}
+	
+}
