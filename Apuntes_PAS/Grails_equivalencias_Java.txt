@@ -55,15 +55,39 @@ class LibroController {
 -------------------------------------------------------------------------------------
 INSTRUCCIONES PARA CONSULTAR TAMAÑO DE VECTORES, LISTS, ETC .../MOSTRAR SUS ELEMENTOS
 -------------------------------------------------------------------------------------
+Consulta
 1)Consulta a tabla que devuelve varios elementos:
 	def segape
 	segape = Lloc.findAllByNomAndPrimerCognomAndSegonCognom("MARIA DEL CARMEN","TORRENT","SERRA")
  ->	println segape.size	
+ 
 2)Mismo caso que antes, pero declarando la variable que contendrá los datos como vector:
 	def segape = []
 	segape = Lloc.findAllByNomAndPrimerCognomAndSegonCognom("MARIA DEL CARMEN","TORRENT","SERRA")
 	println segape.size
-  
-  En ambos casos para imprimir sus elementos:
+	
+	
+Obtener/Imprimir datos:
+1)En ambos casos para imprimir sus elementos:
 	println "segape: " + segape.descripcioLlarga		//Se imprime por pantalla todo el vector: [PROFESSOR TITULAR D'UNIVERSITAT, PROF. ASSOCIAT LABORAL]
 	println "segape: " + segape[0].descripcioLlarga		//Se imprime sólo un elemento del vector, el indicado.
+	
+2)Listar o recorrer todo el vector:
+  Suponiendo que la instrucción: def llocTreball = Lloc.findAllByNom("MARIANO")
+  Devuelve: [PROFESSOR TITULAR D'UNIVERSITAT, PROF. ASSOCIAT LABORAL, PROF. ASSOCIAT LABORAL]
+  Es decir, el segundo y tercer elementos son iguales, si se utiliza:
+	for (var in llocTreball) {
+		println var.primerCognom
+		println var.descripcioLlarga
+	}
+  Se realizarán tres iteraciones y tres impresiones, porque suponemos que el primer apellido es diferente en cada caso.
+  
+  Pero si se hace:
+	for (var in llocTreball) {
+		println var.descripcioLlarga
+	}
+  Se realizarán las tres iteraciones, pero al estar ordenados de manera que dos elementos repetidos van uno detrás de otr, sólo habrán dos 
+  impresiones en pantalla, el elemento repetido NO se lista dos veces (o más).
+  
+  En el caso de que se hubieran devuelto de la siguiente manera: [PROF. ASSOCIAT LABORAL, PROFESSOR TITULAR D'UNIVERSITAT, PROF. ASSOCIAT LABORAL]
+  Se obtendrían tres impresiones.
