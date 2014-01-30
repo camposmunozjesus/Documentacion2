@@ -1,0 +1,80 @@
+WEB SERVICES EN GRAILS
+======================
+------
+TEORÍA
+------
+WSClient cada vez que llama debe conseguir el cliente, en cambio, el cliente de la librería CXF se descarga los métodos del server, por lo que es 
+mucho más rápido.
+Una de las diferencias es que el cliente de CXF debe configurarse/añadirse en el archivo Config.groovy m ás o menos como:
+cxf{
+	//datos de conexión
+}
+
+
+
+--------
+EJEMPLOS
+--------
+Ejemplo1: WSClient compactado
+*****************************
+class WebserviceController {
+
+	WebService webService
+	
+    def index() {		
+		
+		def ip = params.ipe ?: "127.0.0.1"
+					
+		def wsdlURL = "http://www.imn.ac.cr/MeteorologicoWS/MeteorologicoWS.asmx?WSDL" 
+		def proxy = webService.getClient(wsdlURL)
+		def result
+		
+		try
+		{
+			result = proxy.Fecha()
+		}
+		catch(Exception e)
+		{
+			System.out.println(e.toString())
+		}
+		[ip:ip,result:result]
+		
+	}
+}
+
+donde WebService es:
+package org.grails.plugins.wsclient.service
+
+import groovyx.net.ws.WSClient
+import groovyx.net.ws.cxf.SoapVersion
+
+/**
+ * A Webservice client using the cxf-framework dynamic client factory.
+ * @author Mihai CAZACU (cazacugmihai [at] gmail [dot] com)
+ */
+class WebService {
+
+    boolean transactional = false
+
+    /**
+     * @param wsdlLocation The url of the wsdl-file
+     */
+    def getClient(String wsdlLocation) {
+        def proxy = new WSClient(wsdlLocation, this.class.classLoader)
+        proxy.initialize()
+        proxy
+    }
+
+    /**
+     * @param wsdlLocation The url of the wsdl-file
+     * @param soapVersion The preferred SOAP version
+     */
+    def getClient(String wsdlLocation, SoapVersion soapVersion) {
+        def proxy = new WSClient(wsdlLocation, this.class.classLoader, soapVersion)
+        proxy.initialize()
+        proxy
+    }
+
+}
+
+
