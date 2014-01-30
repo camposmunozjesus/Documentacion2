@@ -1,0 +1,33 @@
+CÓDIGO DESCARTADO
+=================
+Código que se ha utilizado para hacer pruebas, pero que se debe eliminar para dejarlo limpio.
+
+-------------
+CONSULTAS SQL
+-------------
+Encontrar con findBy:
+//		def segape
+//		segape = Lloc.findAllByNomAndPrimerCognomAndSegonCognom("MARIA DEL CARMEN","TORRENT","SERRA")
+//		println "segape: " + segape.descripcioLlarga
+//		println "segape: [0]" + segape[0].descripcioLlarga
+//		println segape.size
+		
+//		def segape2 = []
+//		segape2 = Lloc.findAllByNomAndPrimerCognomAndSegonCognom("MARIA DEL CARMEN","TORRENT","SERRA")
+//		println "segape:2 " + segape2.descripcioLlarga
+//		println "segape:2 [0]" + segape2[0].descripcioLlarga
+//		println segape2.size
+		
+//		def p = Persona.findByNom("MARIANO")
+//		println "pers: "+p.nom
+
+		def persones = Lloc.findAllByPrimerCognom("GARCIA")
+		def personesSorted = persones.sort{it.nom}
+//		def ite=0
+//		
+//		for (var in persones) {
+//			println var.nom
+//			ite++
+//		}
+//		
+//		println ite

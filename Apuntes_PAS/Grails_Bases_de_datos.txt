@@ -169,3 +169,216 @@ environments {
         dataSource {
 //            dbCreate = "update"
 //            url = "jdbc:h2:mem:testDb;MVCC=..................
+
+
+
+-----------------
+CLASES DE EJEMPLO
+-----------------
+CLASE PERSONA
+*************
+class Persona {
+
+    int pernr
+	String sexe
+	String cognom1
+	String cognom2
+	String nom
+	String identificacio
+	String tipusDocument
+	Date naixement
+	String codiPostal
+	String poblacio
+	String provincia
+	String pais
+	String usuari
+	String correu	
+	Double horesSemanals	
+	
+	static mapping = {
+		table 'SIG_YPERSON01'
+		id name:'pernr'
+		id generator:'assigned'
+		version false
+	
+		pernr column: 'pernr'
+		sexe column: 'sexo'
+		cognom1 column: 'priape'
+		cognom2 column: 'segape'
+		nom column: 'nombre'
+		...
+		
+		sort cognom1: "asc"	
+	
+	}
+	
+    static constraints = {
+    }
+	
+	Lloc getLlocVigent()
+	{
+		def llocsInstance
+		
+		// Obtenir el lloc vigent de la persona que no és Carrec academic.
+		def query =
+		{
+			and
+			{
+				eq("idOcupant", this.pernr)				
+				eq("vigent", "S")
+			}
+		}
+		
+		try
+		{
+			llocsInstance = Lloc.createCriteria().list(query)
+		}
+		catch(Exception e)
+		{
+			log.error(e.toString())
+		}
+		if(llocsInstance[0])
+			return llocsInstance[0]
+		else
+			return null
+	}
+	
+}
+
+
+CLASE LLOC:
+***********
+import sig.Persona;
+
+class Lloc {
+
+	String codi
+	Date dataInici
+	Date dataFi
+	String vigent
+	String descripcioCurta
+	String descripcioLlarga
+	String unitat
+	Integer idOcupant
+	Long funcio
+	String funcioSpa
+	String edifici	
+	String tipusJornada
+	Double horesSetmanals
+	String ambit
+	String familia
+	String campus
+	String espai
+	String laboratori
+	Integer horesAnuals
+	String primerCognom
+	String segonCognom
+	String nom	
+
+	static mapping = {
+		table 'SIG_ZPUESTR01'
+		id name:'codi'
+		id generator:'assigned'
+		version false
+			
+		codi column: 'codigo'		
+		dataInici column: 'fecini'
+		dataFi column: 'fecfin' 
+		vigent column: 'vigent'
+		descripcioCurta column: 'desabr'
+		descripcioLlarga column: 'descri'
+		unitat column: 'uniorg'		
+		idOcupant column: 'pernr'		
+		funcio column: 'funcio'
+		funcioSpa column: 'funspa'
+		edifici column: 'edific'		
+		tipusJornada column: 'tipjor'
+		horesSetmanals column: 'horsem'
+		ambit column: 'ambito'
+		familia column: 'famili'
+		campus column: 'campus'
+		espai column: 'espaci'
+		laboratori column: 'labora'
+		horesAnuals column: 'joranu'
+		primerCognom column: 'priape'
+		segonCognom column: 'segape'
+		nom column: 'nombre'		
+    }
+	
+	static constraints = {
+		codi(blank:false, nullable: false,size:1..8)
+		dataInici(blank:false, nullable: false)
+		dataFi(blank:false, nullable: false)
+		vigent(blank:false, nullable: false,size:1..1)
+		descripcioCurta(blank:false, nullable: false,size:1..12)
+		descripcioLlarga(blank:true, nullable: true,size:0..40)
+		unitat(blank:true, nullable: true,size:0..8)
+		idOcupant(blank:true, nullable: true,size:0..8)
+		funcio(blank:true, nullable: true,size:0..8)
+		funcioSpa(blank:true, nullable: true,size:0..8)
+		edifici(blank:true, nullable: true,size:0..8)
+		tipusJornada(blank:true, nullable: true,size:0..8)
+		horesSetmanals(blank:true, nullable: true)
+		ambit(blank:true, nullable: true,size:0..20)
+		familia(blank:true, nullable: true,size:0..20)
+		campus(blank:true, nullable: true,size:0..8)
+		espai(blank:true, nullable: true,size:0..8)
+		laboratori(blank:true, nullable: true,size:0..8)
+		horesAnuals(blank:true, nullable: true)
+		primerCognom(blank:true, nullable: true,size:0..40)
+		segonCognom(blank:true, nullable: true,size:0..40)
+		nom(blank:true, nullable: true,size:0..40)
+	}
+	
+	boolean isGestor(def user)
+	{
+		def persona
+		def llocsGestionats
+		 
+		try
+		{
+			persona = Persona.findByUsuari(user)
+			llocsGestionats = UsuariGestor.findAllByPernr(persona.pernr)
+			
+			for(int i=0; i < llocsGestionats.size();i++)
+			{
+				if(UsuariGestor.isSuperGestor(persona.pernr) || llocsGestionats[i].codiLloc == this.codi)
+					return true
+			}
+			
+		}
+		catch(Exception e)
+		{
+			log.error(e.toString())
+		}
+			
+		return false
+		
+	}
+}
+
+
+
+-------------------------------------------------
+ORDENAR UN VECTOR RECUPERADO DE UNA BASE DE DATOS
+-------------------------------------------------
+Utiliza la clse lloc.
+Utilizando "sort" después de haber realizado la consulta:
+	def persones = Lloc.findAllByPrimerCognom("GARCIA")
+	def personesSorted = persones.sort{it.nom}	//nom es una propiedad del objeto del dominio.
+
+Para ordenarlo a la inversa:
+	def persones = Lloc.findAllByPrimerCognom("GARCIA")
+	def personesSorted = persones.sort{it.nom}.inverse()???????????????????????????????????????????????????????????????????????????????
+	
+
+	
+------------------------------------------
+RECUPERAR DATOS UTILIZANDO MÁS DE UN CAMPO
+------------------------------------------
+Utiliza la clse lloc.
+Utilizando la cláusula findAllBy...
+	def segape = Lloc.findAllByNomAndPrimerCognomAndSegonCognom("MARIA DEL CARMEN","TORRENT","SERRA")
+	def segape = Lloc.findAllByPrimerCognomAndSegonCognomAndNom("TORRENT","SERRA","MARIA DEL CARMEN")
+	def segape = Lloc.findAllByNomAndPrimerCognom("MARIA DEL CARMEN","TORRENT")
+	
