@@ -49,3 +49,21 @@ class LibroController {
 	Se ejecutará "index" al llamar al controlador.
 	
 - El controlador y el dominio se han de llamar igual sólo en el caso de quere utilizar scaffold.
+
+
+
+-------------------------------------------------------------------------------------
+INSTRUCCIONES PARA CONSULTAR TAMAÑO DE VECTORES, LISTS, ETC .../MOSTRAR SUS ELEMENTOS
+-------------------------------------------------------------------------------------
+1)Consulta a tabla que devuelve varios elementos:
+	def segape
+	segape = Lloc.findAllByNomAndPrimerCognomAndSegonCognom("MARIA DEL CARMEN","TORRENT","SERRA")
+ ->	println segape.size	
+2)Mismo caso que antes, pero declarando la variable que contendrá los datos como vector:
+	def segape = []
+	segape = Lloc.findAllByNomAndPrimerCognomAndSegonCognom("MARIA DEL CARMEN","TORRENT","SERRA")
+	println segape.size
+  
+  En ambos casos para imprimir sus elementos:
+	println "segape: " + segape.descripcioLlarga		//Se imprime por pantalla todo el vector: [PROFESSOR TITULAR D'UNIVERSITAT, PROF. ASSOCIAT LABORAL]
+	println "segape: " + segape[0].descripcioLlarga		//Se imprime sólo un elemento del vector, el indicado.
