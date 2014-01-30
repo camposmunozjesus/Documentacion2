@@ -4,3 +4,9 @@ INSTRUCCIONES SQL
 BORRAR
 ------
 delete from test_yperson01 where nombre='pers'
+
+
+----------------------------------
+SELECCIONAR CON NOMBRE Y APELLIDOS
+----------------------------------
+select * from CS.SIG_ZPUESTR01 where (priape='SANCHEZ' and segape='BURRUEZO' and nombre='MARIA ISABEL')
