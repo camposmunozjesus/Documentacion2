@@ -1,5 +1,16 @@
 CÓMO INCLUIR ELEMENTOS EN PÁINAS GSP
 ====================================
+------
+TEORÍA
+------
+Parámetros
+**********
+Cuando se pasan unos parámetros de un formulario a un método, iframeList por ejemplo, si éste método ejecuta otro iframe, los parámetros originales no
+se mantienen. Para mantenerlos hay que hacer lo siguiente:
+	<g:hiddenField name="idFuncio" id="idFuncio" value="${params?.idFuncio}" />
+
+	
+	
 ---------
 COMBO BOX
 ---------
@@ -22,3 +33,4 @@ Datos:
 		  noSelection="['':'-Choose your age-']"/>				
 		</g:form>
 	</div>
+	
