@@ -1,0 +1,24 @@
+CÓMO INCLUIR ELEMENTOS EN PÁINAS GSP
+====================================
+---------
+COMBO BOX
+---------
+Datos:
+* funcioAmbitList es una lista que se le pasa desde el método iframeList del controlador (que es donde se encuentra incrustado este iframe. Cuando se
+  apriete el botón submit "Nou lloc de treball" se ejecutará exclusivamente el método "iframeCreate" del controlador.
+* Cada elemento de la lista tiene dos campos: "descripcio" y "codi".
+* Parámetros:
+	- from: lista a mostrar.
+	- key: es el valor que se envía al hacer el submit.
+	- value: es el valor que se recupera en el controller como params.filtreAmbit.
+*Código:
+	<div class="bigPadding">
+		<g:form action="iframeCreate">
+			<span class="enllac"> 
+				<g:actionSubmit class="create" action="iframeCreate" value="Nou lloc de treball" params="${params}" />
+			</span>
+			<label for="filtreAmbit">Disciplina</label>
+			<g:select class="dropdownMediumWidth" name="filtreAmbit" from="${funcioAmbitList?.descripcio}" keys="${funcioAmbitList?.codi}"  value="${params?.filtreAmbit}" 
+		  noSelection="['':'-Choose your age-']"/>				
+		</g:form>
+	</div>
