@@ -5,7 +5,7 @@ TEORÍA
 ------
 WSClient cada vez que llama debe conseguir el cliente, en cambio, el cliente de la librería CXF se descarga los métodos del server, por lo que es 
 mucho más rápido.
-Una de las diferencias es que el cliente de CXF debe configurarse/añadirse en el archivo Config.groovy m ás o menos como:
+Una de las diferencias es que el cliente de CXF debe configurarse/añadirse en el archivo Config.groovy más o menos como:
 cxf{
 	//datos de conexión
 }
