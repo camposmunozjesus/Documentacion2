@@ -1,0 +1,3 @@
+TestingAdminController_v1.txt: (2014-01-31) Código que muestra correctamente los iframes y permite añadir y eliminar
+
+Grails_TestBasico_SQL.txt: 		(xxx-xx-xx) Formas correctas de consultas SQL con grails, sobretodo delete y save.
