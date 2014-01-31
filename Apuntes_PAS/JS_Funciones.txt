@@ -9,3 +9,76 @@ FUNCIÓN QUE SE ACTIVA CUANDO SE HACE CLICK EN CUALQUIER ELEMENTO
 	}	
 *Decripción:
 	En el formulario hay un campo <g:hiddenField name="idRisc" value="" />
+	
+	Además hay que incluir: (Versión para números, si el id es un string NO funcionará)
+	<tr style="display:none">
+		<td>
+			<script type="text/javascript">									
+				$('#tableList tbody').on('click', '#tr'+${i}+' td input', { id:'${riscInstance?.codi}' }, accioClick);
+			</script>							
+		</td>
+	</tr>
+		Ahora se cabian las comas simples por dobles y funcionará para Strings:
+		<tr style="display:none">
+			<td>
+				<script type="text/javascript">									
+					$('#tableList tbody').on('click', '#tr'+${i}+' td input', { id:"${riscInstance?.codi}" }, accioClick);
+				</script>							
+			</td>
+		</tr>
+	La variable de la fila riscInstance?.codi es el valor que se capturará en event.data.id.
+	Dentro de un formulario con una tabla:
+	<div class="list" style="overflow-y:hidden; overflow-x:auto;">
+	<g:form>
+		<g:hiddenField name="idFuncio" id="idFuncio" value="${params?.idFuncio}" />
+		<g:hiddenField name="idRisc" value="" />							
+		<table id="tableList">
+			<thead>
+				<tr>
+					<g:sortableColumn property="disciplina" title="Disciplina" params="${params}"/>
+					<g:sortableColumn property="grup" title="Grup de risc" params="${params}"/>
+					<g:sortableColumn property="codi" title="Codi" params="${params}"/>
+					<g:sortableColumn property="descripcio" title="Risc" params="${params}"/>
+					<th class="sortable text">Accions</th>
+				</tr>
+			</thead>
+			<tbody>
+			<g:if test="${!riscInstanceList}">
+				<tr style="display:none"><th></th></tr>
+			</g:if>					
+			<g:each in="${riscInstanceList}" status="i" var="riscInstance">
+				<tr id="tr${i}" class="${(i % 2) == 0 ? 'odd' : 'even'}">
+					<td class="padding width08p">
+						${literalsDisciplinaRisc[i]}
+					</td>
+					<td class="padding width15p">
+						${literalsGrupRisc[i]}
+					</td>
+					<td class="padding width05p">								
+						<g:formatNumber number="${riscInstance?.codi}" format="#00000000" />
+					</td>
+					<td class="padding">
+						${riscInstance?.descripcio}
+					</td>
+					<td class="buttonCell" style="width: 250px;">
+						<span class="buttons buttonsTableIE"> 
+							<g:actionSubmit class="veure" action="iframeFactorsRisc" value="Factors de risc" alt="Veure factors de risc del risc de la fila ${i}" />
+						</span>	
+						&nbsp;																													
+						<span class="buttons buttonsTableIE"> 
+							<g:actionSubmit class="delete" action="iframeDelete" value="Esborrar" onclick="return confirm('Està segur?');" alt="Esborrar risc de la fila ${i}" />
+						</span>																															
+					</td>																					
+				</tr>
+				<tr style="display:none">
+					<td>
+						<script type="text/javascript">									
+							$('#tableList tbody').on('click', '#tr'+${i}+' td input', { id:'${riscInstance?.codi}' }, accioClick);
+						</script>							
+					</td>
+				</tr>						
+			</g:each>
+			</tbody>
+		</table>
+	</g:form>
+</div>

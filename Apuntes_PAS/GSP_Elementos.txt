@@ -33,4 +33,6 @@ Datos:
 		  noSelection="['':'-Choose your age-']"/>				
 		</g:form>
 	</div>
+*Más ejemplos:
+	 <g:select class="width200px" name="filtreFuncio" from="${funcioList?.descripcioCurta}"  keys="${funcioList?.codi}"  value="${params?.filtreFuncio}"/>							   
 	
