@@ -1,0 +1,11 @@
+JAVASCRIPT - FUNCIONES DE UTILIDAD
+==================================
+----------------------------------------------------------------
+FUNCIÓN QUE SE ACTIVA CUANDO SE HACE CLICK EN CUALQUIER ELEMENTO
+----------------------------------------------------------------
+*Código:
+	function accioClick(event) {     	      	     
+		$('#idRisc').val(event.data.id);
+	}	
+*Decripción:
+	En el formulario hay un campo <g:hiddenField name="idRisc" value="" />
