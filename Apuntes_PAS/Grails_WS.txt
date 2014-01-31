@@ -17,6 +17,9 @@ EJEMPLOS
 --------
 Ejemplo1: WSClient compactado
 *****************************
+package test
+import org.grails.plugins.wsclient.service.WebService
+
 class WebserviceController {
 
 	WebService webService
