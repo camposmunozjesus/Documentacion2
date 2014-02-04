@@ -1,0 +1,522 @@
+Funcionamiento IFRAME
+=====================
+----------
+PÁGINA GSP
+----------
+<html>
+<head>
+	<!-- <meta name="layout" content="mainAdministrador" /> -->
+
+	<title>Llocs de treball</title>
+	
+	<script type="text/javascript" src="${resource(dir:'js',file:'crossbrowser.js')}"></script>	//ESTO NO IMPORTA
+	<script type="text/javascript">
+    
+    	function loadIframes(id)
+		{    		
+    		alert("loadIframes"+id)	
+			document.getElementById('iframe').src = "iframeList/?idLloc="+id;
+		} 
+
+    	function accioClick(event) {    //ESTO NO SE EJECUTA    	
+        	$('#idLloc').val(event.data.idLloc);
+ 	    }	
+    
+   	 </script>	
+</head>
+
+<body>
+	<div class="nav">
+		<div class="leftNav">
+			<span class="menuButton">
+				<a class="home" href="${createLink(uri: '/llocsRiscAdmin')}">
+					Inici
+				</a>
+			</span>	
+			<sec:access expression="hasRole('ROLE_USER')">
+				<span class="menuButton">
+					<a class="jump_user" href="${createLink(uri: '/')}">
+						Racó personal
+					</a>
+				</span>	
+			</sec:access>	
+			<sec:access expression="hasRole('ROLE_GESTOR')">
+				<span class="menuButton">
+					<a class="jump_gestor" href="${createLink(uri: '/llocsRiscGestio')}">
+						Gestió
+					</a>
+				</span>	
+			</sec:access>	
+		</div>
+		<div class="menuButton logout floatRight"> 
+			<g:if test="${session.user!=null}">
+				<span class="login"> 
+					${session.user}
+				</span>
+			</g:if> 
+			<g:link class="exit" controller="logout">Desconnecta</g:link>
+		</div>
+	</div>
+	<div class="body">
+	
+		<h2>Personal</h2>
+		${params}  --- ${llocTotal}
+		<div class="list" style="overflow-y:hidden; overflow-x:auto;">
+		<g:form>
+			<g:hiddenField name="idLloc" id="idLloc" value="" />	
+			<table id="tableList">
+				<thead>
+					<tr>							
+						<g:sortableColumn property="nom" title="Nom de la persona" params="${params}" style="min-width:38px"/>
+						<g:sortableColumn property="usuari" title="Compte d'usuari" params="${params}" style="min-width:38px"/>
+						<g:sortableColumn property="naixement" title="Data de naixement" params="${params}" style="min-width:38px"/>
+						<th class="sortable text">Accions</th>								
+					</tr>
+				</thead>
+				<tbody>
+					<g:if test="${!personasList}">
+						<tr style="display:none"><th></th></tr>
+					</g:if>					
+					<g:each in="${personasList}" status="i" var="personaInstance">											
+						<tr id="tr${i}" class="${(i % 2) == 0 ? 'odd' : 'even'} hand" onclick="javascript:loadIframes('${personaInstance.nom}')">
+							<td class="padding width35p">
+								<g:if test="${i==0}">
+								 <%-- Carreguem el primer --%>
+							 	 <script type="text/javascript">
+									$(function() {
+										loadIframes('${personaInstance.nom}');
+									}); 
+								 </script>
+								</g:if>
+								${personaInstance.nom} ${personaInstance.cognom1} ${personaInstance.cognom2}
+							</td>
+							<td class="padding width35p">
+								${personaInstance.usuari}
+							</td>
+							<td class="padding width35p">
+								${personaInstance.naixement}
+							</td>
+							<td class="buttonCell" style="width: 85px;" nowrap>
+								<span class="buttons buttonsTableIE"> 
+									<g:actionSubmit class="edit" action="edit" value="Editar" alt="Editar lloc de treball de la fila ${i}" />
+								</span>																																																						
+							</td>
+						</tr>
+						<tr style="display:none"> 	//ESTO NO IMPORTA - INI
+							<td>
+								<script type="text/javascript">																												
+									$('#tableList tbody').on('click', '#tr'+${i}+' td input', { idLloc:'${personaInstance?.nom}'} ,accioClick);
+								</script>							
+							</td>
+						</tr>						//ESTO NO IMPORTA - FIN
+					</g:each>
+				</tbody>
+			</table>
+		</g:form>
+		</div>
+		<div class="paginateButtons">
+			<g:paginate total="${llocTotal}" params="${params}" next="Següent" prev="Anterior" />
+		</div>
+		
+		<div id="iframeList">
+			<iframe id="iframe" name="iframe" title="Detall riscos" src="" height="600px" width="100%" frameborder="0" scrolling="no"></iframe>
+		</div>
+	</div>
+</body>
+</html>
+
+---------------
+OTRA PÁGINA GSP
+---------------
+
+<html>
+<head>
+	<!-- <meta name="layout" content="mainAdministrador" /> -->
+
+	<title>Llocs de treball</title>
+	
+	<script type="text/javascript" src="${resource(dir:'js',file:'crossbrowser.js')}"></script>	
+	<script type="text/javascript">
+    
+    	function loadIframes(nom, cognom1, cognom2)
+		{    		
+
+        			
+			document.getElementById('iframe').src = "iframeTest/?idNom="+nom+"&idCognom1="+cognom1+"&idCognom2="+cognom2;
+		} 
+
+    	function accioClick(event) {        	
+        	$('#idLloc').val(event.data.idLloc);
+ 	    }	
+    
+   	 </script>	
+</head>
+
+<body>
+	<div class="nav">
+		<div class="leftNav">
+			<span class="menuButton">
+				<a class="home" href="${createLink(uri: '/llocsRiscAdmin')}">
+					Inici
+				</a>
+			</span>	
+			<sec:access expression="hasRole('ROLE_USER')">
+				<span class="menuButton">
+					<a class="jump_user" href="${createLink(uri: '/')}">
+						Racó personal
+					</a>
+				</span>	
+			</sec:access>	
+			<sec:access expression="hasRole('ROLE_GESTOR')">
+				<span class="menuButton">
+					<a class="jump_gestor" href="${createLink(uri: '/llocsRiscGestio')}">
+						Gestió
+					</a>
+				</span>	
+			</sec:access>	
+		</div>
+		<div class="menuButton logout floatRight"> 
+			<g:if test="${session.user!=null}">
+				<span class="login"> 
+					${session.user}
+				</span>
+			</g:if> 
+			<g:link class="exit" controller="logout">Desconnecta</g:link>
+		</div>
+	</div>
+	<div class="body">
+	
+		<h2>Personal</h2>
+		${params}  --- ${llocTotal}
+		<div class="list" style="overflow-y:hidden; overflow-x:auto;">
+		<g:form>
+			<g:hiddenField name="idNom" id="idNom" value="" />	
+			<g:hiddenField name="idCognom1" id="idCognom1" value="" />
+			<g:hiddenField name="idCognom2" id="idCognom2" value="" />
+			<table id="tableList">
+				<thead>
+					<tr>							
+						<g:sortableColumn property="nom" title="Nom de la persona" params="${params}" style="min-width:38px"/>
+						<g:sortableColumn property="usuari" title="Compte d'usuari" params="${params}" style="min-width:38px"/>
+						<g:sortableColumn property="naixement" title="Data de naixement" params="${params}" style="min-width:38px"/>
+						<th class="sortable text">Accions</th>								
+					</tr>
+				</thead>
+				<tbody>
+					<g:if test="${!personasList}">
+						<tr style="display:none"><th></th></tr>
+					</g:if>					
+					<g:each in="${personasList}" status="i" var="personaInstance">											
+						<tr id="tr${i}" class="${(i % 2) == 0 ? 'odd' : 'even'} hand" onclick="javascript:loadIframes('${personaInstance.nom}','${personaInstance.cognom1}','${personaInstance.cognom2}')">
+							<td class="padding width35p">
+								<g:if test="${i==0}">
+								 <%-- Carreguem el primer --%>
+							 	 <script type="text/javascript">
+									$(function() {
+										loadIframes('${personaInstance.nom}');
+									}); 
+								 </script>
+								</g:if>
+								${personaInstance.nom} ${personaInstance.cognom1} ${personaInstance.cognom2}
+							</td>
+							<td class="padding width35p">
+								${personaInstance.usuari}
+							</td>
+							<td class="padding width35p">
+								${personaInstance.naixement}
+							</td>
+							<td class="buttonCell" style="width: 85px;" nowrap>
+								<span class="buttons buttonsTableIE"> 
+									<g:actionSubmit class="edit" action="edit" value="Editar" alt="Editar lloc de treball de la fila ${i}" />
+								</span>																																																						
+							</td>
+						</tr>
+						<tr style="display:none">
+							<td>
+								<script type="text/javascript">																												
+									$('#tableList tbody').on('click', '#tr'+${i}+' td input', { idLloc:'${personaInstance?.nom}'} ,accioClick);
+								</script>							
+							</td>
+						</tr>
+					</g:each>
+				</tbody>
+			</table>
+		</g:form>
+		</div>
+		<div class="paginateButtons">
+			<g:paginate total="${llocTotal}" params="${params}" next="Següent" prev="Anterior" />
+		</div>
+		
+		<div id="iframeTest">
+			<iframe id="iframe" name="iframe" title="Detall riscos" src="" height="600px" width="100%" frameborder="0" scrolling="no"></iframe>
+		</div>
+	</div>
+</body>
+</html>
+
+
+--------------
+CÓDIGO GROOVY
+-------------
+package sig.admin
+
+import org.hibernate.transform.ToListResultTransformer;
+import org.springframework.dao.DataIntegrityViolationException;
+
+import grails.plugins.springsecurity.Secured;
+import sig.Persona;
+import utils.BaseControler;
+
+@Secured(['ROLE_ADMIN'])
+
+class TestingAdminController extends BaseControler{
+	
+	static allowedMethods = [save: "POST"]
+	
+    def index() {
+		println "[index]"
+		redirect(action: "list", params: params)
+	}
+	
+	def list()
+	{
+		println "[list]"
+		this.populateUserName()
+		this.paramsMaxSet(5, 10)
+		
+//		def query = {
+//			and {
+////				eq("nombre", "nom2")
+//				between("pernr", 15, 60)
+//			}
+////			maxResults(2)
+//			if(params.sort!=null){
+//				order(params.sort, params.order)
+//			}
+//			//order("dni", "desc")
+//		}
+//		
+//		def personasList = (Persona[]) Persona.createCriteria().list(query)	
+//		
+////		def personasListView = (Persona[]) Persona.createCriteria().list(query, max: params.max, offset: params.offset)	
+//		
+//		println "TOTAL ELEMS CONSULTA: "+personasList.length 
+//		
+//		println "PAGINACIÓN OFFSET: "+params.offset
+//		
+//		def llocTotal= personasList.length
+		
+		
+		def query = {
+			and {
+//				eq("nombre", "nom2")
+				between("pernr", 15, 60)
+			}
+//			maxResults(2)
+//			if(params.sort!=null){
+//				order(params.sort, params.order)
+//			}
+			//order("dni", "desc")
+		}
+		
+		
+		def resultList = Persona.createCriteria().list(params,query)
+		def results = resultList.getTotalCount()
+		
+//		for (var in personasList) {
+//			println "[]::El nombre de la persona es: "+var.nom
+//			println "[]::usuari de la persona es: "+var.usuari
+//			println "[]::naixement de la persona es: "+var.naixement
+//			println "[]::identificacio de la persona es: "+var.identificacio
+//			println "[]::pernr de la persona es: "+var.pernr
+//		}
+		
+		
+
+		[personasList:resultList , llocTotal:results]
+	}
+	
+	def iframeTest() {
+		render params.idNom + " "+params.idCognom1+ " "+params.idCognom2
+		println "[iframeTest]"
+//		println "[iframeList]::"+params.idNom +" "+params.idGognom1 +" "+params.idGognom2
+	}
+	
+	def save(){
+		
+	}
+}
+Cargará automáticamente la página GSP llamada iframTest que se encuentra en la carpeta TestingAdmin.
+
+
+******************************************************************************************************************************************************
+															CÓDIGO EN FUNCIONAMIENTO
+******************************************************************************************************************************************************
+------
+GROOVY
+------
+package sig.admin
+
+import org.hibernate.transform.ToListResultTransformer;
+import org.springframework.dao.DataIntegrityViolationException;
+
+import grails.plugins.springsecurity.Secured;
+import sig.Persona;
+import utils.BaseControler;
+
+@Secured(['ROLE_ADMIN'])
+
+class TestingAdminController extends BaseControler{
+	
+	static allowedMethods = [save: "POST"]
+	
+    def index() {
+		println "[index]"
+		redirect(action: "list", params: params)
+	}
+	
+	def list()
+	{
+		println "[list]"
+		this.populateUserName()
+		this.paramsMaxSet(5, 10)
+		
+//		def query = {
+//			and {
+////				eq("nombre", "nom2")
+//				between("pernr", 15, 60)
+//			}
+////			maxResults(2)
+//			if(params.sort!=null){
+//				order(params.sort, params.order)
+//			}
+//			//order("dni", "desc")
+//		}
+//		
+//		def personasList = (Persona[]) Persona.createCriteria().list(query)	
+//		
+////		def personasListView = (Persona[]) Persona.createCriteria().list(query, max: params.max, offset: params.offset)	
+//		
+//		println "TOTAL ELEMS CONSULTA: "+personasList.length 
+//		
+//		println "PAGINACIÓN OFFSET: "+params.offset
+//		
+//		def llocTotal= personasList.length
+		
+		
+		def query = {
+			and {
+//				eq("nombre", "nom2")
+				between("pernr", 15, 60)
+			}
+//			maxResults(2)
+//			if(params.sort!=null){
+//				order(params.sort, params.order)
+//			}
+			//order("dni", "desc")
+		}
+		
+		
+		def resultList = Persona.createCriteria().list(params,query)
+		def results = resultList.getTotalCount()
+		
+//		for (var in personasList) {
+//			println "[]::El nombre de la persona es: "+var.nom
+//			println "[]::usuari de la persona es: "+var.usuari
+//			println "[]::naixement de la persona es: "+var.naixement
+//			println "[]::identificacio de la persona es: "+var.identificacio
+//			println "[]::pernr de la persona es: "+var.pernr
+//		}
+		
+		
+
+		[personasList:resultList , llocTotal:results]
+	}
+	
+	def iframeTest() {
+		println "[iframeTest]-"+params.idLloc
+//		render params.idLloc
+		println "[iframeTest]"
+//		println "[iframeList]::"+params.idNom +" "+params.idGognom1 +" "+params.idGognom2
+		
+		[user:params]
+	}
+	
+	def save(){
+		
+	}
+}
+---
+GSP
+---
+<html>
+<head>
+	<!-- <meta name="layout" content="mainAdministrador" /> -->
+
+	<title>Llocs de treball</title>
+	
+	<script type="text/javascript" src="${resource(dir:'js',file:'crossbrowser.js')}"></script>	
+	<script type="text/javascript">
+    
+    	function loadIframes(id)
+		{    		
+    		alert("loadIframes"+id)	
+			document.getElementById('iframe').src = "iframeTest/?idLloc="+id;
+		} 
+
+    	function accioClick(event) {    //ESTO NO SE EJECUTA    	
+        	$('#idLloc').val(event.data.idLloc);
+ 	    }	
+    
+   	 </script>	
+</head>
+
+<body>
+	<div class="nav">
+		<div class="leftNav">
+			<span class="menuButton">
+				<a class="home" href="${createLink(uri: '/llocsRiscAdmin')}">
+					Inici
+				</a>
+			</span>	
+			<sec:access expression="hasRole('ROLE_USER')">
+				<span class="menuButton">
+					<a class="jump_user" href="${createLink(uri: '/')}">
+						Racó personal
+					</a>
+				</span>	
+			</sec:access>	
+			<sec:access expression="hasRole('ROLE_GESTOR')">
+				<span class="menuButton">
+					<a class="jump_gestor" href="${createLink(uri: '/llocsRiscGestio')}">
+						Gestió
+					</a>
+				</span>	
+			</sec:access>	
+		</div>
+		<div class="menuButton logout floatRight"> 
+			<g:if test="${session.user!=null}">
+				<span class="login"> 
+					${session.user}
+				</span>
+			</g:if> 
+			<g:link class="exit" controller="logout">Desconnecta</g:link>
+		</div>
+	</div>
+	<div class="body">
+	
+		<h2>Personal</h2>
+		${params}  --- ${llocTotal}
+		<div class="list" style="overflow-y:hidden; overflow-x:auto;">
+		<g:form>
+			<g:hiddenField name="idLloc" id="idLloc" value="" />	
+			<table id="tableList">
+				<thead>
+					<tr>							
+						<g:sortableColumn property="nom" title="Nom de la persona" params="${params}" style="min-width:38px"/>
+						<g:sortableColumn property="usuari" title="Compte d'usuari" params="${params}" style="min-width:38px"/>
+						<g:sortableColumn property="naixement" title="Data de naixement" params="${params}" style="min-width:38px"/>
+						<th class="sortable text">Accions</th>								
+					</tr>
+				</thead>
+				<tbody>
