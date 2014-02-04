@@ -11,6 +11,382 @@ cxf{
 }
 
 
+---------------------------------------
+CLIENTE PARA WEB SERVICE CON CXF PLUGIN
+---------------------------------------
+En la página https://github.com/Grails-Plugin-Consortium/grails-cxf-client#Introduction se puede encontrar un repositorio git con un proyecto 
+descargable y con instrucciones útiles sobre cómo realizar un cliente con la librería CXF.
+En https://github.com/Grails-Plugin-Consortium/grails-cxf#Introduction está descrito cómo realizar el servicio.
+Aparte de estas dos páginas no hay mucha más información sobre este plugin.
+
+Pasos a seguir para conseguir realizar un cliente:
+1) Crear un proyecto Grails.
+2) Agregar en el archivo BuildConfig.groovy los plugins necesarios: (antes se hacía con el plugin manager, ahora desde Grails 2.3 no es posible)
+	plugins {
+		...
+        //plugins for the compile step
+        ...
+		compile ":jasper:1.6.1"
+		compile ":cxf:1.1.1"
+		compile ":cxf-client:1.6.0"
+       ...
+    }
+3) "Run as ..." y se obtiene la TRAZA 1 aproximadamente.
+4) Modificar el archivo Config.groovy: (añadir el web service sin el clientinterface)
+	cxf {
+		client {
+			//Another example real service to use against wsd2java script
+			colomaClient {
+				wsdl = "http://195.235.66.115:10001/WSApp/WSApp/AppColoma.asmx?WSDL"
+				//clientInterface = net.gramene.appcoloma.Service1Soap
+				serviceEndpointAddress = "http://195.235.66.115:10001/WSApp/WSApp/AppColoma.asmx"
+			}
+			
+			//Another example real service to use against wsd2java script
+			tiempoClient {
+				wsdl = "http://www.imn.ac.cr/MeteorologicoWS/MeteorologicoWS.asmx?WSDL"
+				//clientInterface = org.tempuri.WSMeteorologicoSoap
+				serviceEndpointAddress = "http://www.imn.ac.cr/MeteorologicoWS/MeteorologicoWS.asmx"
+			}
+		}
+	}
+5) En "Command Grails History" ejecutar "wdsl2java" con el nombre del proyecto seleccionado. Se obtiene la TRAZA 2.
+6) Añadir el clientinterface en el archivo Config.groovy. Descomentar las líneas del clientinterface y el archivo Config.groovy quedará de la siguiente manera.
+	cxf {
+		client {
+			//Another example real service to use against wsd2java script
+			colomaClient {
+				wsdl = "http://195.235.66.115:10001/WSApp/WSApp/AppColoma.asmx?WSDL"
+				clientInterface = net.gramene.appcoloma.Service1Soap
+				serviceEndpointAddress = "http://195.235.66.115:10001/WSApp/WSApp/AppColoma.asmx"
+			}
+			
+			//Another example real service to use against wsd2java script
+			tiempoClient {
+				wsdl = "http://www.imn.ac.cr/MeteorologicoWS/MeteorologicoWS.asmx?WSDL"
+				clientInterface = org.tempuri.WSMeteorologicoSoap
+				serviceEndpointAddress = "http://www.imn.ac.cr/MeteorologicoWS/MeteorologicoWS.asmx"
+			}
+		}
+	}
+   Para saber más de dónde se obtiene el cliente interface, leer >CÓMO OBTENER CLIENTINTERFACE<.
+7) Si todo ha ido bien, con "Run as ..." no debería dar ningún problema.
+   Posibles fallos en este punto:
+		|Loading Grails 2.3.4
+		|Configuring classpath
+		.
+		|Environment set to development
+		.................................
+		|Packaging Grails application
+		...................................................
+		|Running Grails application
+		Web service client stockQuoteClient cannot be created before setting the clientInterface=[:] and serviceEndpointAddress=http://www.webservicex.net/stockquote.asmx properties
+		Error |
+		2014-02-04 15:15:59,014 [localhost-startStop-1] ERROR CxfClientGrailsPlugin  - Web service client stockQuoteClient cannot be created before setting the clientInterface=[:] and serviceEndpointAddress=http://www.webservicex.net/stockquote.asmx properties
+		Error |
+		2014-02-04 15:16:07,859 [localhost-startStop-1] ERROR context.GrailsContextLoader  - Error initializing the application: Error creating bean with name 'stockQuoteClient': Initialization of bean failed; nested exception is org.springframework.beans.TypeMismatchException: Failed to convert property value of type 'java.lang.String' to required type 'java.lang.Class' for property 'clientInterface'; nested exception is java.lang.IllegalArgumentException: Could not load class []!
+		Message: Error creating bean with name 'stockQuoteClient': Initialization of bean failed; nested exception is org.springframework.beans.TypeMismatchException: Failed to convert property value of type 'java.lang.String' to required type 'java.lang.Class' for property 'clientInterface'; nested exception is java.lang.IllegalArgumentException: Could not load class []!
+			Line | Method
+		->>  262 | run       in java.util.concurrent.FutureTask
+		- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+		|   1145 | runWorker in java.util.concurrent.ThreadPoolExecutor
+		|    615 | run . . . in java.util.concurrent.ThreadPoolExecutor$Worker
+		^    744 | run       in java.lang.Thread
+		Caused by TypeMismatchException: Failed to convert property value of type 'java.lang.String' to required type 'java.lang.Class' for property 'clientInterface'; nested exception is java.lang.IllegalArgumentException: Could not load class []!
+		->>  262 | run       in java.util.concurrent.FutureTask
+		- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+		|   1145 | runWorker in java.util.concurrent.ThreadPoolExecutor
+		|    615 | run . . . in java.util.concurrent.ThreadPoolExecutor$Worker
+		^    744 | run       in java.lang.Thread
+		Caused by IllegalArgumentException: Could not load class []!
+		->>  262 | run       in java.util.concurrent.FutureTask
+		- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+		|   1145 | runWorker in java.util.concurrent.ThreadPoolExecutor
+		|    615 | run . . . in java.util.concurrent.ThreadPoolExecutor$Worker
+		^    744 | run       in java.lang.Thread
+		Error |
+		Forked Grails VM exited with error
+   El problema es debido entonces a que el clientinterface está mal configurado. Para saber más de dónde se obtiene el cliente interface, leer 
+   >CÓMO OBTENER CLIENTINTERFACE<.
+
+
+
+CÓDIGO GROOVY DEL CLIENTE
+*************************
+ Primera forma
+ *************
+	package webserviceclientsoapcxf
+
+	import net.gramene.appcoloma.BeanRespostaTipus1
+	import net.gramene.appcoloma.CodiEstat
+	import net.gramene.appcoloma.Service1Soap
+
+	import org.tempuri.Hora
+	import org.tempuri.WSMeteorologicoSoap
+
+
+	class PruebaController {
+
+		Service1Soap colomaClient //este nombre debe coincidir con el del apartado/nodo cxf - client
+		//del archivo Config.groovy. NO puede ser un nombre de variable cualquiera.
+		WSMeteorologicoSoap tiempoClient
+
+		def index() {		}
+
+		def colomaCxfGetIdiomes (){
+			CodiEstat ce
+
+			try{
+				BeanRespostaTipus1 b1 = (BeanRespostaTipus1) colomaClient.idiomesFitxa()
+				ce = b1.getCodiEstat()
+				println ce.getIntCodiEstat()
+				println ce.getIntTotalResultats()
+				println ce.getStrDescripcioEstat()
+
+
+				println "[try ws]"
+
+			}catch(Exception e){
+				String service = e.message
+				println "[>>> ws]"
+				println service
+				println "[<<< ws]"
+			}
+
+			[ce:ce]
+		}
+
+		def meteoCxfFecha (){
+			String fecha
+			try{
+				fecha = tiempoClient.fecha()
+				println fecha
+			}
+			catch(Exception e){
+				String service = e.message
+				println "[>>> ws]"
+				println service
+				println "[<<< ws]"
+			}
+
+			[fecha:fecha]
+		}
+		
+		def meteoCxfHora (){
+			String hora
+			try{
+				hora = tiempoClient.hora()
+				println hora
+			}
+			catch(Exception e){
+				String service = e.message
+				println "[>>> ws]"
+				println service
+				println "[<<< ws]"
+			}
+	
+			[hora:hora]
+		}
+
+	}
+	
+ Segunda forma
+ *************
+	package webserviceclientsoapcxf
+
+	import net.gramene.appcoloma.BeanRespostaTipus1
+	import net.gramene.appcoloma.CodiEstat
+	import net.gramene.appcoloma.Service1Soap
+
+	import org.tempuri.Hora
+	import org.tempuri.WSMeteorologico
+	import org.tempuri.WSMeteorologicoSoap
+
+
+	class PruebaController {
+
+		Service1Soap colomaClient //este nombre debe coincidir con el del apartado/nodo cxf - client
+		//del archivo Config.groovy. NO puede ser un nombre de variable cualquiera.
+	//	WSMeteorologicoSoap tiempoClient
+
+		def index() {}
+
+		def colomaCxfGetIdiomes (){
+			CodiEstat ce
+
+			try{
+				BeanRespostaTipus1 b1 = (BeanRespostaTipus1) colomaClient.idiomesFitxa()
+				ce = b1.getCodiEstat()
+				println ce.getIntCodiEstat()
+				println ce.getIntTotalResultats()
+				println ce.getStrDescripcioEstat()
+
+
+				println "[try ws]"
+
+			}catch(Exception e){
+				String service = e.message
+				println "[>>> ws]"
+				println service
+				println "[<<< ws]"
+			}
+
+			[ce:ce]
+		}
+
+		def meteoCxfFecha (){
+			String fecha
+			try{
+				fecha = tiempoClient.fecha()
+				println fecha
+			}
+			catch(Exception e){
+				String service = e.message
+				println "[>>> ws]"
+				println service
+				println "[<<< ws]"
+			}
+
+			[fecha:fecha]
+		}
+		
+		def meteoCxfHora (){
+			WSMeteorologico h =new WSMeteorologico();
+			WSMeteorologicoSoap s = h.getWSMeteorologicoSoap()
+			String hora = s.hora()+" la real!!!"
+						println "---"+hora
+					[hora:hora]
+			
+
+		}
+
+	}
+ 
+ 
+CÓMO OBTENER CLIENTINTERFACE
+****************************
+Cuando se ejecuta el comando "wsdl2java" se genera un package en la carpeta "src/java". Aquí residen las class descargadas del servicio. En dicho
+package se habrá creado una clase java cuyo nombre estará acabado en "Soap.java".
+Tomando como ejemplo el escenario que tenemos después de ejecutar el comando "wsdl2java" en relación al cliente "tiempoClient":
+/WebServiceClientSoapCxf
+		|
+		|---/src/java/
+				|
+				|---org.tempuri(package)
+						|---Efemerides.java
+						|---EfemeridesResponse.java
+						|---EstadoActualPorCiudad.java
+						|---EstadoActualPorCiudadResponse.java
+						|---EstadoActualRegional.java
+						|---EstadoActualRegionalResponse.java
+						|---Fecha.java
+						|---FechaResponse.java
+						|---Hora.java
+						|---HoraResponse.java
+						|---ObjectFactory.java
+						|---package-info.java
+						|---PronosticoExtendidoCiudad.java
+						|---PronosticoExtendidoCiudadResponse.java
+						|---PronosticoExtendidoCiudadxID.java
+						|---PronosticoExtendidoCiudadxIDResponse.java
+						|---PronosticoExtendidoRegion.java
+						|---PronosticoExtendidoRegionResponse.java
+						|---PronosticoExtendidoRegionxID.java
+						|---PronosticoExtendidoRegionxIDResponse.java
+						|---PronosticoPorCiudad.java
+						|---PronosticoPorCiudadResponse.java
+						|---PronosticoPorCiudadxID.java
+						|---PronosticoPorCiudadxIDResponse.java
+						|---PronosticoRegional.java
+						|---PronosticoRegionalResponse.java
+						|---PronosticoRegionalxID.java
+						|---PronosticoRegionalxIDResponse.java
+						|---WSMeteorologico.java
+						|---WSMeteorologicoHttpGet.java
+						|---WSMeteorologicoHttpPost.java
+						|---WSMeteorologicoSoap.java
+						
+Se puede observar como hay una única calse que tenga como última parte del camel case "Soap.java", y ésta es "WSMeteorologicoSoap.java". Por lo que
+será la clase que se indicará en el cliente interface de manera completamente cualificada. -> or.tempuri.WSMeteorologicoSoap.
+
+
+TRAZA 1
+*******
+Loading Grails 2.3.4
+|Configuring classpath
+.
+|Environment set to development
+......
+|Installing zip scaffolding-2.0.1.zip...
+...
+|Installed plugin scaffolding-2.0.1
+.............
+|Installing zip cache-1.1.1.zip...
+...
+|Installed plugin cache-1.1.1
+.............
+|Installing zip webxml-1.4.1.zip...
+...
+|Installed plugin webxml-1.4.1
+.............
+|Installing zip hibernate-3.6.10.6.zip...
+...
+|Installed plugin hibernate-3.6.10.6
+.............
+|Installing zip database-migration-1.3.8.zip...
+...
+|Installed plugin database-migration-1.3.8
+..............
+|Installing zip jquery-1.10.2.2.zip...
+...
+|Installed plugin jquery-1.10.2.2
+.............
+|Installing zip resources-1.2.1.zip...
+...
+|Installed plugin resources-1.2.1
+.............
+|Installing zip tomcat-7.0.47.zip...
+...
+|Installed plugin tomcat-7.0.47
+..................
+|Compiling 10 source files
+..
+|Compiling 142 source files
+.......
+|Compiling 8 source files
+.
+
+
+VENTAJAS
+********
+En el caso del web service del concurso Android en el que se devuleven estructuras propias, como es un objeto creado por el usuario que contiene otros
+dos objetos de otras clases creadas por el usuario creador del servicio web, lo que sucede es que nos permite accedeer a estas clase (BeanRespostaTipus1,
+etc ...) de manera más fácil, debido a que se las descarga y las crea en el package por nosotros.
+
+
+TRAZA 2
+*******
+Loading Grails 2.3.4
+|Configuring classpath
+.
+|Environment set to development
+..................
+|Starting wsdl2java
+|Generating java stubs from http://195.235.66.115:10001/WSApp/WSApp/AppColoma.asmx?WSDL
+     [java] Loading FrontEnd jaxws ...
+     [java] Loading DataBinding jaxb ...
+     [java] wsdl2java -verbose -d src/java http://195.235.66.115:10001/WSApp/WSApp/AppColoma.asmx?WSDL
+     [java] wsdl2java - Apache CXF 2.6.2
+.
+|Generating java stubs from http://www.imn.ac.cr/MeteorologicoWS/MeteorologicoWS.asmx?WSDL
+     [java] Loading FrontEnd jaxws ...
+     [java] Loading DataBinding jaxb ...
+     [java] wsdl2java -verbose -d src/java http://www.imn.ac.cr/MeteorologicoWS/MeteorologicoWS.asmx?WSDL
+     [java] wsdl2java - Apache CXF 2.6.2
+.
+|Completed wsdl2java
+
+
 
 --------
 EJEMPLOS
