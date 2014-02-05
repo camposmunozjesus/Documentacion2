@@ -24,6 +24,8 @@ Botón derecho sobre la carpeta -> Import
 
 A partir de aquí Checkout para descargar Import para subir.
 
+
+
 ----------------------------------------------------------------
 PARA SUBIR UN PROYECTO DEL PC A UNA CARPETA VACÍA DE GOOGLE CODE
 ----------------------------------------------------------------
@@ -34,3 +36,26 @@ El proyecto se subirá como:
 svn
 |---branches
           |--- Dentro de aquí estará el interior de la carpeta donde estaba el proyecto
+		  
+		  
+		  
+-------------------------------------------
+QUITAR UN PROYECTO DEL CONTROL DE VERSIONES
+-------------------------------------------
+Botón derecho sobre la carpeta del proyecto -> TortoiseSVN -> Export y entonces elegimos la misma carpeta. Entonces pregunta´ra si queremos eliminarlo
+del control de versioness y decimos que SÍ.
+
+
+----------------------------
+CREAR CARPETA EN GOOGLE CODE
+----------------------------
+Botón derecho sobre cualquier carpeta -> TortoiseSVN -> Repo-browser y entonces una vez se abra el navegador introducimos la dirección deseada del
+repositorio y tenemos acceso a sus carpetas y dentro de cada una de ellas podemos hacer botón derecho y crear directorios (folders).
+
+
+
+----------------------------------
+NO SINCRONIZAR UNA CARPETA INTERNA
+----------------------------------
+Se hace primero el import del proyecto, luego se eliminan las carpetas que no se quieren sincronizar del repositorio web, y posteriormente se
+realiza el checkout.

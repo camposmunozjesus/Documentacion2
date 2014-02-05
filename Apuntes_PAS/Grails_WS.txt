@@ -270,7 +270,7 @@ Tomando como ejemplo el escenario que tenemos después de ejecutar el comando "w
 						
 Se puede observar como hay una interface (no una clase) dentro de todo lo que ha descargado. Generalmente suele llamarse en la última parte de su 
 nombre "...Soap.java". En este caso es "WSMeteorologicoSoap.java". Por lo que será la clase que se indicará en el cliente interface de manera 
-completamente cualificada. -> or.tempuri.WSMeteorologicoSoap.
+completamente cualificada. -> org.tempuri.WSMeteorologicoSoap.
 
 
 VENTAJAS
