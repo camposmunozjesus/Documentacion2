@@ -11,6 +11,14 @@ cxf{
 }
 
 
+
+--------------------------------------------
+CLIENTE PARA WEB SERVICE CON WSCLIENT PLUGIN
+--------------------------------------------
+Es necesario importar los jars 
+
+
+
 ---------------------------------------
 CLIENTE PARA WEB SERVICE CON CXF PLUGIN
 ---------------------------------------
@@ -135,15 +143,12 @@ CÓDIGO GROOVY DEL CLIENTE
 
 		def colomaCxfGetIdiomes (){
 			CodiEstat ce
-
 			try{
 				BeanRespostaTipus1 b1 = (BeanRespostaTipus1) colomaClient.idiomesFitxa()
 				ce = b1.getCodiEstat()
 				println ce.getIntCodiEstat()
 				println ce.getIntTotalResultats()
 				println ce.getStrDescripcioEstat()
-
-
 				println "[try ws]"
 
 			}catch(Exception e){
@@ -152,7 +157,6 @@ CÓDIGO GROOVY DEL CLIENTE
 				println service
 				println "[<<< ws]"
 			}
-
 			[ce:ce]
 		}
 
@@ -168,7 +172,6 @@ CÓDIGO GROOVY DEL CLIENTE
 				println service
 				println "[<<< ws]"
 			}
-
 			[fecha:fecha]
 		}
 		
@@ -184,14 +187,15 @@ CÓDIGO GROOVY DEL CLIENTE
 				println service
 				println "[<<< ws]"
 			}
-	
 			[hora:hora]
 		}
 
 	}
 	
- Segunda forma
+ Segunda forma: 
  *************
+ Sólo se muestra la diferencia con el método "meteoCxfHora". La forma anterior puede provocar mensajes de error por intentar utilizar un null object.
+ 
 	package webserviceclientsoapcxf
 
 	import net.gramene.appcoloma.BeanRespostaTipus1
@@ -207,59 +211,17 @@ CÓDIGO GROOVY DEL CLIENTE
 
 		Service1Soap colomaClient //este nombre debe coincidir con el del apartado/nodo cxf - client
 		//del archivo Config.groovy. NO puede ser un nombre de variable cualquiera.
-	//	WSMeteorologicoSoap tiempoClient
+		WSMeteorologicoSoap tiempoClient
 
 		def index() {}
 
-		def colomaCxfGetIdiomes (){
-			CodiEstat ce
-
-			try{
-				BeanRespostaTipus1 b1 = (BeanRespostaTipus1) colomaClient.idiomesFitxa()
-				ce = b1.getCodiEstat()
-				println ce.getIntCodiEstat()
-				println ce.getIntTotalResultats()
-				println ce.getStrDescripcioEstat()
-
-
-				println "[try ws]"
-
-			}catch(Exception e){
-				String service = e.message
-				println "[>>> ws]"
-				println service
-				println "[<<< ws]"
-			}
-
-			[ce:ce]
-		}
-
-		def meteoCxfFecha (){
-			String fecha
-			try{
-				fecha = tiempoClient.fecha()
-				println fecha
-			}
-			catch(Exception e){
-				String service = e.message
-				println "[>>> ws]"
-				println service
-				println "[<<< ws]"
-			}
-
-			[fecha:fecha]
-		}
-		
 		def meteoCxfHora (){
 			WSMeteorologico h =new WSMeteorologico();
 			WSMeteorologicoSoap s = h.getWSMeteorologicoSoap()
-			String hora = s.hora()+" la real!!!"
-						println "---"+hora
-					[hora:hora]
-			
-
+			String hora = s.hora()
+			println "Hora: "+hora
+			[hora:hora]
 		}
-
 	}
  
  
@@ -306,8 +268,16 @@ Tomando como ejemplo el escenario que tenemos después de ejecutar el comando "w
 						|---WSMeteorologicoHttpPost.java
 						|---WSMeteorologicoSoap.java
 						
-Se puede observar como hay una única calse que tenga como última parte del camel case "Soap.java", y ésta es "WSMeteorologicoSoap.java". Por lo que
-será la clase que se indicará en el cliente interface de manera completamente cualificada. -> or.tempuri.WSMeteorologicoSoap.
+Se puede observar como hay una interface (no una clase) dentro de todo lo que ha descargado. Generalmente suele llamarse en la última parte de su 
+nombre "...Soap.java". En este caso es "WSMeteorologicoSoap.java". Por lo que será la clase que se indicará en el cliente interface de manera 
+completamente cualificada. -> or.tempuri.WSMeteorologicoSoap.
+
+
+VENTAJAS
+********
+En el caso del web service http://195.235.66.115:10001/WSApp/WSApp/AppColoma.asmx?WSDL en el que se devuleven estructuras propias, como es un objeto 
+creado por el usuario que contiene otros dos objetos de otras clases creadas por el usuario creador del servicio web, lo que sucede es que nos permite
+accedeer a estas clase (BeanRespostaTipus1, etc ...) de manera más fácil, debido a que se las descarga y las crea en el package por nosotros.
 
 
 TRAZA 1
@@ -355,13 +325,6 @@ Loading Grails 2.3.4
 .......
 |Compiling 8 source files
 .
-
-
-VENTAJAS
-********
-En el caso del web service del concurso Android en el que se devuleven estructuras propias, como es un objeto creado por el usuario que contiene otros
-dos objetos de otras clases creadas por el usuario creador del servicio web, lo que sucede es que nos permite accedeer a estas clase (BeanRespostaTipus1,
-etc ...) de manera más fácil, debido a que se las descarga y las crea en el package por nosotros.
 
 
 TRAZA 2
