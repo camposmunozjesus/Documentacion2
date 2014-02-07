@@ -1,3 +1,8 @@
 TestingAdminController_v1.txt: (2014-01-31) Código que muestra correctamente los iframes y permite añadir y eliminar
 
-Grails_TestBasico_SQL.txt: 		(xxx-xx-xx) Formas correctas de consultas SQL con grails, sobretodo delete y save.
+Grails_TestBasico_SQL.txt: 		(xxxx-xx-xx) Formas correctas de consultas SQL con grails, sobretodo delete y save.
+Grails_WebServiceController_v1:	(2014-02-07) Está correcta la parte de conseguir la hora y de consguir las traducciones de los días de la semana y 
+								meses del año. Hay que limpiar el código.
+
+Carpeta "webServices":	(2014-02-07) El código GSP en su interior puede funcionar correctamente con:
+						- Grails_WebServiceController_v1
