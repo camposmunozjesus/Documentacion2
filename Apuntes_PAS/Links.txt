@@ -3,14 +3,24 @@ GROOVY
 Ejemplo tipo "Hello Wrold":			http://groovy.codehaus.org/Create+Your+First+Groovy+Project
 Ejemplo de instalación de GRAILS: 	http://jckmex.net/grails-introduccion/
 
+
 GRAILS
 ======
 Libro en pdf de grails: 			http://www.vivelalectura.com.mx/aura/1/1%29%20Manual%20Grails.pdf
+									https://docs.google.com/document/d/11UfUcjhh7xn0-3spB7ePGkfHDWduCR7y2r-w2bHTD3M/edit?pli=1
 Enlace a tutoriales: 				http://www.grailsexample.net/course-outline/
 	WEB SERVICES
-Web Services en grails:				http://docs.codehaus.org/display/GROOVY/GroovyWS (donde descargar el módulo JAR y ejemplos)
-Link donde se encuentra el jar:		http://mavenhub.com/c/groovyx/net/ws/wsclient/jar
-Web services con CXF:				http://stackoverflow.com/questions/11126499/grails-cxf-web-service-including-all-methods-in-wsdl
-Web Services en castellano:			http://una-programadora-mas-en-el-mundo.blogspot.com.es/2011/09/grails-servicios-web-con-cxf.html
-Ejeplo CXF:							https://github.com/Grails-Plugin-Consortium/grails-cxf-client/blob/master/grails-app/conf/Config.groovy
-									http://stackoverflow.com/questions/18481433/grails-wsdl2java-script-in-cxf-client-plugin-does-not-generate-any-java-classes
+	-Web Services en grails:			http://docs.codehaus.org/display/GROOVY/GroovyWS (donde descargar el módulo JAR y ejemplos)
+	-Link donde se encuentra el jar:	http://mavenhub.com/c/groovyx/net/ws/wsclient/jar
+	-Web services con CXF:				http://stackoverflow.com/questions/11126499/grails-cxf-web-service-including-all-methods-in-wsdl
+	-Web Services en castellano:		http://una-programadora-mas-en-el-mundo.blogspot.com.es/2011/09/grails-servicios-web-con-cxf.html
+	-Ejeplo CXF:						https://github.com/Grails-Plugin-Consortium/grails-cxf-client/blob/master/grails-app/conf/Config.groovy
+										http://stackoverflow.com/questions/18481433/grails-wsdl2java-script-in-cxf-client-plugin-does-not-generate-any-java-classes
+
+									
+WEB SERVICE QUE SE PUEDEN UTILIZAR
+==================================
+Meteorológico:						http://www.imn.ac.cr/MeteorologicoWS/MeteorologicoWS.asmx
+Días de la semana y meses:			http://webservices.daehosting.com/services/datesservice.wso?op=DayName
+Futlbol Ucrania:					http://footballpool.dataaccess.eu/en/About/Web-Services-137 http://footballpool.dataaccess.eu/data/info.wso http://footballpool.dataaccess.eu/data/info.wso?wsdl
+Geo localización IP: (tipo REST)	http://www.restfulwebservices.net/wcf/GeoIPService.svc

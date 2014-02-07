@@ -453,6 +453,129 @@ GSP
 <head>
 	<!-- <meta name="layout" content="mainAdministrador" /> -->
 
+	<title>Funcions</title>
+	
+	<script type="text/javascript" src="${resource(dir:'js',file:'crossbrowser.js')}"></script>	
+	<script type="text/javascript">
+    
+    	function loadIframes(nom, cog1, cog2)
+		{    		
+    		//alert(nom+" "+ cog1+" "+ cog2)
+			document.getElementById('iframe').src = "iframeList/?idNom="+nom+"&idCognom1="+cog1+"&idCognom2="+cog2;
+		}   
+   	 </script>	
+</head>
+
+<body>
+	<div class="nav">
+		<div class="leftNav">
+			<span class="menuButton">
+				<a class="home" href="${createLink(uri: '/llocsRiscAdmin')}">
+					Inici
+				</a>
+			</span>	
+			<sec:access expression="hasRole('ROLE_USER')">
+				<span class="menuButton">
+					<a class="jump_user" href="${createLink(uri: '/')}">
+						Racó personal
+					</a>
+				</span>	
+			</sec:access>	
+			<sec:access expression="hasRole('ROLE_GESTOR')">
+				<span class="menuButton">
+					<a class="jump_gestor" href="${createLink(uri: '/llocsRiscGestio')}">
+						Gestió
+					</a>
+				</span>	
+			</sec:access>	
+		</div>
+		<div class="menuButton logout floatRight"> 
+			<g:if test="${session.user!=null}">
+				<span class="login"> 
+					${session.user}
+				</span>
+			</g:if> 
+			<g:link class="exit" controller="logout">Desconnecta</g:link>
+		</div>
+	</div>
+	<div class="body">
+	
+		<h2>Persones</h2>
+        <g:if test="${flash.message}">
+        	<div class="message">Última connexió: ${flash.message}</div>
+        </g:if>
+		<div class="dialog">
+<!-- aqui va el buscador -->
+		<br/>			
+		<div class="list" style="overflow-y:hidden; overflow-x:auto;">
+			<g:form>
+				<g:hiddenField name="idNom" value="" />
+				<g:hiddenField name="idCognom1" value="" />
+				<g:hiddenField name="idCognom2" value="" />
+				<table id="tableList">
+					<thead>
+						<tr>
+							<g:sortableColumn property="nom" title="Nom" params="${params}" style="min-width:38px"/>
+							<g:sortableColumn property="usuari" title="Compte d'usuari" params="${params}" style="min-width:44px"/>
+							<g:sortableColumn property="naixement" title="Data de naixement" params="${params}" style="min-width:44px"/>							
+						</tr>
+					</thead>
+					<tbody>
+						<g:if test="${!personasList}">
+							<tr style="display:none"><th></th></tr>
+						</g:if>					
+						<g:each in="${personasList}" status="i" var="persona">
+							<g:if test="${i==0}">
+								 <%-- Carreguem el primer --%>
+							 	 <script type="text/javascript">
+									$(function() {
+										loadIframes('${persona.nom}','${persona.cognom1}','${persona.cognom2}');
+									}); 
+								 </script>
+							</g:if>
+						
+							<tr class="${(i % 2) == 0 ? 'odd' : 'even'} hand" onclick="javascript:loadIframes('${persona.nom}','${persona.cognom1}','${persona.cognom2}')">
+								<td>									
+									${persona.nom} ${persona.cognom1} ${persona.cognom2}
+								</td>
+								<td>									
+									${persona.usuari}
+								</td>
+								<td>
+									${persona.naixement}
+								</td>								
+							</tr>
+							<tr style="display:none">
+								<td>
+									<script type="text/javascript">									
+										$('#tableList tbody').on('click', '#tr'+${i}+' td input', { idFuncio:'${persona?.nom}', filtreCodi:${params?.filtreCodi?:''}, filtreNom:${params?.filtreNom?:''}, filtreAmbit:${params?.filtreAmbit?:''});
+									</script>							
+								</td>
+							</tr>						
+						</g:each>
+					</tbody>
+				</table>
+			</g:form>
+		</div>		
+		<div class="paginateButtons">
+			<g:paginate total="${funcioTotal}" params="${params}" next="Següent" prev="Anterior" />
+		</div>
+		<br/>
+
+		<div id="iframeList">
+			<iframe id="iframe" name="iframe" title="Detall lloc de treball" src="" height="600px" width="100%" frameborder="0" scrolling="no"></iframe>
+		</div>
+
+	</div>
+	</div>
+</body>
+</html>
+
+--------------->Lo siguiente estaba pero no es correcto seguramente.
+<html>
+<head>
+	<!-- <meta name="layout" content="mainAdministrador" /> -->
+
 	<title>Llocs de treball</title>
 	
 	<script type="text/javascript" src="${resource(dir:'js',file:'crossbrowser.js')}"></script>	
@@ -520,3 +643,266 @@ GSP
 					</tr>
 				</thead>
 				<tbody>
+
+				
+				
+******************************************************************************************************************************************************
+CÓDIGO EN FUNCIONAMIENTO: IFRAME ACTIVADO MEDIANTE UN BOTÓN DE SUBMIT Y QUE CAPTURA EL VALOR DE DOS COMBOS
+******************************************************************************************************************************************************
+-------------
+CÓDIGO GROOVY
+-------------
+package sig.admin
+
+import net.restfulwebservices.servicecontracts._2008._01.GeoIPService;
+import net.restfulwebservices.servicecontracts._2008._01.IGeoIPService;
+
+import org.tempuri.WSMeteorologico
+import org.tempuri.WSMeteorologicoSoap
+
+import com.daehosting.webservices.dateservice.ArrayOfString
+import com.daehosting.webservices.dateservice.DatesService;
+import com.daehosting.webservices.dateservice.DatesServiceSoapType;
+
+import eu.dataaccess.footballpool.Info
+import eu.dataaccess.footballpool.InfoSoapType;
+
+class WebServicesController {
+
+    def index() {
+	}
+		
+	def dataLang(){
+		println "dataLangController"
+		DatesService data = new DatesService()
+		DatesServiceSoapType serveiData = data.getDatesServiceSoap()
+		
+		def res
+		ArrayOfString lang
+		
+		def diasSemana = []
+		diasSemana<<"Dilluns"
+		diasSemana<<"Dimarts"
+		diasSemana<<"Dimecres"
+		diasSemana<<"Dijous"
+		diasSemana<<"Divendres"
+		diasSemana<<"Dissabte"
+		diasSemana<<"Diumenge"
+		
+		try{
+			res = serveiData.mainLanguages()
+			lang = (ArrayOfString) serveiData.mainLanguages()
+			
+		}catch(Exception e){
+			log.error(e.toString())
+			redirect (action: "error" , params: [res:"Error a l'executar el servei dataLangController."])
+			return
+			
+		}
+		[ idiomasList: lang.string, diasList:diasSemana]
+	}
+		
+	def list(){
+		println "[WebServiceController]::[list]"
+		println "resultado: " + params.res
+		println "resultado: " + params.tipo
+		
+		//flash.message = params.res
+		[resultado:params.res , tipo:params.tipo]
+	}
+	
+	def error(){
+		println "[WebServiceController]::[error]"
+		flash.message = params.res
+	}
+	
+	
+	def iframeDetall(){
+		//Obtener el id del lenguaje.
+		//Consultar el webservice y obtener la traducción al otro lenguaje.
+		
+		println "iframeDetall"
+		println "idi:"+params.idIdioma
+		println "di:"+params.idDia
+		
+		
+		DatesService data = new DatesService()
+		DatesServiceSoapType serveiData = data.getDatesServiceSoap()
+		
+		def res
+		ArrayOfString lang
+		
+		try{
+			res = serveiData.mainLanguages()
+			lang = (ArrayOfString) serveiData.mainLanguages()
+			
+		}catch(Exception e){
+			log.error(e.toString())
+			redirect (action: "error" , params: [res:"Error a l'executar el servei dataLangController."])
+			return
+			
+		}
+		[ idiomasList: lang.string, diasList:diasSemana]
+	}
+
+}
+
+
+---
+GSP
+---
+***GSP de dataLang.gsp, que es la página que contiene el iframe:
+<html>
+<head>
+	<!-- <meta name="layout" content="mainAdministrador" /> -->
+
+	<title>Funcions</title>
+	
+	<script type="text/javascript" src="${resource(dir:'js',file:'crossbrowser.js')}"></script>	
+	<script type="text/javascript">
+		function loadIframes(nom, cog1, cog2)
+		{    		
+			//alert(nom+" "+ cog1+" "+ cog2)
+			document.getElementById('iframe').src = "iframeDatalanguage/?idNom="+nom+"&idCognom1="+cog1+"&idCognom2="+cog2;
+		} 
+	
+		function loadIframes2()
+		{    		
+			var idioma =document.getElementById('filtreIdioma').value;
+			var dia =document.getElementById('filtreDia').value;
+			document.getElementById('iframe').src = "iframeDetall/?idIdioma="+idioma+"&idDia="+dia;
+			//alert(idioma+dia);
+		}   
+	
+		function aviso(){
+			alert("eeeeeeeeeeeee");
+		}
+   	 </script>	
+</head>
+
+<body>
+	<div class="nav">
+		<div class="leftNav">
+			<span class="menuButton">
+				<a class="home" href="${createLink(uri: '/llocsRiscAdmin')}">
+					Inici
+				</a>
+			</span>	
+			<sec:access expression="hasRole('ROLE_USER')">
+				<span class="menuButton">
+					<a class="jump_user" href="${createLink(uri: '/')}">
+						Racó personal
+					</a>
+				</span>	
+			</sec:access>	
+			<sec:access expression="hasRole('ROLE_GESTOR')">
+				<span class="menuButton">
+					<a class="jump_gestor" href="${createLink(uri: '/llocsRiscGestio')}">
+						Gestió
+					</a>
+				</span>	
+			</sec:access>	
+		</div>
+		<div class="menuButton logout floatRight"> 
+			<g:if test="${session.user!=null}">
+				<span class="login"> 
+					${session.user}
+				</span>
+			</g:if> 
+			<g:link class="exit" controller="logout">Desconnecta</g:link>
+		</div>
+	</div>
+	<div class="body">
+	
+		<h2>RESULATADOS DEL WS</h2>
+        <g:if test="${params.hora}">
+        	<div class="message">Data actual: ${params.fecha}
+        	<br><br><br>
+        	Hora: ${params.hora}</div>
+        </g:if>
+        
+        <g:if test="${params.prueba}">
+        	<div class="message">Resultado: ${params.prueba}</div>
+        	
+        </g:if>
+		<div class="dialog">
+
+		<!-- aqui va el buscador -->
+		<br/>			
+		<div class="list" style="overflow-y:hidden; overflow-x:auto;">
+		
+		<g:form>
+			<g:hiddenField name="idIdioma" value="" />
+			<g:hiddenField name="idDia" value="" />
+			<fieldset class="border" style="margin-top:10px">
+			<legend align="left" style="margin-left:15px">Nou lloc de feina</legend>
+				<table class="noborder">
+					<tbody>							
+						<tr class="prop noBackground">
+							<td valign="top" align="center" class="name">
+							    <g:select class="width200px" name="filtreIdioma" from="${idiomasList}"  keys="${idiomasList}"  value=""/>							   
+							</td>
+							<td valign="top" align="center" class="name">
+							    <g:select class="width200px" name="filtreDia" from="${diasList}"  keys="${1..7}"  value=""/>							   
+							</td>
+						</tr>							
+	 				</tbody>
+				</table>
+			</fieldset>			
+
+		</g:form>
+		
+		<div class="buttons">
+			<span class="button">
+				<g:submitButton name="update" class="update" value="Aceptar" onclick="loadIframes2()"/>
+			</span> 
+		</div>
+		</div>	
+	</div>
+	
+	<div id="iframeDetall">
+		<iframe id="iframe" name="iframe" title="Detall risc" src="" height="800px" width="100%" frameborder="0" scrolling="no"></iframe>
+	</div>
+		
+	</div>
+</body>
+</html>
+
+***Código del iframe
+<html>
+<head>
+	<!-- <meta name="layout" content="void" />  -->
+	
+	<title>Funcions</title>
+	
+	<script type="text/javascript" src="${resource(dir:'js',file:'crossbrowser.js')}"></script>	
+	 
+</head>
+	  	
+<body>
+
+	<div class="bodyIframe">
+	
+		<h2>RESULATADOS DEL WS</h2>
+        <g:if test="${params.hora}">
+        	<div class="message">Data actual: ${params.fecha}
+        	<br><br><br>
+        	Hora: ${params.hora}</div>
+        </g:if>
+        
+        <g:if test="${params.prueba}">
+        	<div class="message">Resultado: ${params.prueba}</div>
+        	
+        </g:if>
+		<div class="dialog">
+
+		<!-- aqui va el buscador -->
+		<br/>			
+		<div class="list" style="overflow-y:hidden; overflow-x:auto;">
+		wwwwwwwwwwww
+		</div>	
+	</div>
+	</div>
+</body>
+</html>
+
