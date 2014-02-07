@@ -98,3 +98,66 @@ Ir a la carpeta:
 C:\Users\Jesus Campos\.grails\2.1.1\projects
 y elimnar la carpeta del proyecto, en este caso SIG.
 Volver a importar el proyecto y todo solucionado.
+
+
+-----------
+Problema 5: (WEB SERVICES) Problemas al ejecutar un web service a veces sí otras no. Sólo en proyecto SIG.
+-----------
+Visualización de algunos de los mensajes siguientes. Aunque es probable que si antes se ha ejecutados un web service que funcionara correctamente
+este fallo no lo obtndremos.
+--->traza 1:
+Error 500: Executing action [dataLang] of controller [sig.admin.WebServicesController] caused exception: Runtime error executing action
+Servlet: grails
+URI: /SIG/grails/webServices/dataLang.dispatch
+Exception Message: com.sun.proxy.$Proxy49 cannot be cast to javax.jws.WebResult
+Caused by: com.sun.proxy.$Proxy49 cannot be cast to javax.jws.WebResult
+Class: WebServicesController
+At Line: [72]
+Code Snippet: 
+Stack Trace
+
+				
+					java.lang.ClassCastException: com.sun.proxy.$Proxy49 cannot be cast to javax.jws.WebResult
+
+
+				
+						at org.apache.cxf.jaxws.support.JaxWsServiceConfiguration.getWebResult(JaxWsServiceConfiguration.java:536)
+
+
+				
+						at org.apache.cxf.jaxws.support.JaxWsServiceConfiguration.isHeader(JaxWsServiceConfiguration.java:780)
+
+
+				
+						at org.apache.cxf.service.factory.ReflectionServiceFactoryBean.isHeader(ReflectionServiceFactoryBean.java:2132)
+						
+--->traza 2:
+Error 500: Executing action [fechaHora] of controller [sig.admin.WebServicesController] caused exception: Runtime error executing action
+Servlet: grails
+URI: /SIG/grails/webServices/fechaHora.dispatch
+Exception Message: com.sun.proxy.$Proxy58 cannot be cast to javax.jws.WebResult
+Caused by: com.sun.proxy.$Proxy58 cannot be cast to javax.jws.WebResult
+Class: WebServicesController
+At Line: [104]
+Code Snippet:
+Stack Trace
+
+				
+					java.lang.ClassCastException: com.sun.proxy.$Proxy58 cannot be cast to javax.jws.WebResult
+
+
+				
+						at org.apache.cxf.jaxws.support.JaxWsServiceConfiguration.getWebResult(JaxWsServiceConfiguration.java:536)
+
+
+				
+						at org.apache.cxf.jaxws.support.JaxWsServiceConfiguration.isHeader(JaxWsServiceConfiguration.java:780)
+
+
+				
+						at org.apache.cxf.service.factory.ReflectionServiceFactoryBean.isHeader(ReflectionServiceFactoryBean.java:2132)
+
+Solución 5:
+-----------
+Extender la clase del controlador y en la que se encuentra en web service de BaseControler. Ejemplo:
+class TestingAdminController extends BaseControler{...}

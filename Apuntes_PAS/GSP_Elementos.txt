@@ -11,9 +11,10 @@ se mantienen. Para mantenerlos hay que hacer lo siguiente:
 
 	
 	
----------
-COMBO BOX
----------
+--------------------
+COMBO BOX - G:SELECT
+--------------------
+http://grails.org/doc/2.3.4/ref/Tags/select.html
 Datos:
 * funcioAmbitList es una lista que se le pasa desde el método iframeList del controlador (que es donde se encuentra incrustado este iframe. Cuando se
   apriete el botón submit "Nou lloc de treball" se ejecutará exclusivamente el método "iframeCreate" del controlador.
@@ -35,7 +36,25 @@ Datos:
 	</div>
 *Más ejemplos:
 	 <g:select class="width200px" name="filtreFuncio" from="${funcioList?.descripcioCurta}"  keys="${funcioList?.codi}"  value="${params?.filtreFuncio}"/>							   
-	
+
+	* Select que recibe los días de la semana y cuando se hace submit devuelve un número:
+		-Código Grails/Groovy:
+			Crear el array con los días de la semana:
+				def diasSemana = []
+				diasSemana<<"Dilluns"
+				diasSemana<<"Dimarts"
+				diasSemana<<"Dimecres"
+				diasSemana<<"Dijous"
+				diasSemana<<"Divendres"
+				diasSemana<<"Dissabte"
+				diasSemana<<"Diumenge"
+			Enviar los días de la semana a la página GSP.
+				[diasList:diasSemana]
+		-Código GSP:
+			<g:select class="width200px" name="filtreDia" from="${diasList}"  keys="${1..7}"  value="${}"/>			
+		-El valor a recoger en el código Groovy será params.filtreDia. Este select estará dentro de un g:form lo más seguro, con action="ifuncion",
+		 y cuando se haga submit dentro de dicha función/método se podrán recoger sus datos.
+				
 	
 	
 ---------
