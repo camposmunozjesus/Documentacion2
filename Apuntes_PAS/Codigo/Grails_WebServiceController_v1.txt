@@ -1,0 +1,203 @@
+package sig.admin
+
+import grails.plugins.springsecurity.Secured
+
+import javax.xml.bind.JAXBElement;
+
+import net.restfulwebservices.datacontracts._2008._01.GeoLocation;
+import net.restfulwebservices.servicecontracts._2008._01.GeoIPService;
+import net.restfulwebservices.servicecontracts._2008._01.IGeoIPService;
+
+import org.tempuri.WSMeteorologico
+import org.tempuri.WSMeteorologicoSoap
+
+import utils.BaseControler;
+
+import com.daehosting.webservices.dateservice.ArrayOfString
+import com.daehosting.webservices.dateservice.DatesService;
+import com.daehosting.webservices.dateservice.DatesServiceSoapType;
+
+import eu.dataaccess.footballpool.Info
+import eu.dataaccess.footballpool.InfoSoapType;
+
+
+@Secured(['ROLE_ADMIN'])
+
+class WebServicesController extends BaseControler{
+
+	DatesService data = new DatesService()
+	DatesServiceSoapType serveiData = data.getDatesServiceSoap()
+	
+	def diesSemana = ["Dilluns", "Dimarts", "Dimecres", "Dijous", "Divendres", "Dissabte", "Diumenge", "Tots"]
+	def mesosAny = ["Gener", "Febrer", "Març", "Abril", "Maig", "Juny", "Juliol", "Agost", "Setembre", "Octubre", "Novembre", "Desembre","Tots"]
+
+	    def index() {
+	}
+	
+	def football(){
+		println "footballController"
+		Info info = new Info()
+		InfoSoapType serveiFootball = info.getInfoSoap()
+		def res
+		ArrayOfString lang
+		
+		try{
+		}catch(Exception e){
+			log.error(e.toString())
+			redirect (action: "error" , params: [res:"Error a l'executar el servei web per obtenir l'hora."])
+			return
+			
+		}
+//		redirect (action: "list" , params: lang.size)
+	}
+		
+	def dataLang(){
+		println "dataLangController"
+//		DatesService data = new DatesService()
+//		DatesServiceSoapType serveiData = data.getDatesServiceSoap()
+		index()
+		def idiomas
+		ArrayOfString mainIdiomas
+		ArrayOfString subIdiomas
+		
+		
+		try{
+			idiomas = serveiData.mainLanguages()
+			mainIdiomas = (ArrayOfString) serveiData.mainLanguages()
+			subIdiomas  = (ArrayOfString) serveiData.subLanguages()
+			
+		}catch(Exception e){
+			log.error(e.toString())
+			redirect (action: "error" , params: [res:"Error a l'executar el servei dataLangController."])
+			return
+			
+		}
+		
+		def idiomasList = []
+//		def subIdiomasList = []
+		
+		for(idioma in mainIdiomas.string){
+			idiomasList<<idioma.substring(5, idioma.length())
+		}
+		
+//		for(idioma in subIdiomas.string){
+//			subIdiomasList<<idioma.substring(8, idioma.length())
+//		}
+		
+		[ idiomasList:idiomasList, diesList:diesSemana, mesosList:mesosAny]
+	}
+	
+	
+	def fechaHora(){
+		WSMeteorologico meteo =new WSMeteorologico();
+		WSMeteorologicoSoap serveiMeteo = meteo.getWSMeteorologicoSoap()
+		def hora
+		def fecha
+		
+		try{
+			hora = serveiMeteo.hora()
+		}catch(Exception e){
+			log.error(e.toString())
+			redirect (action: "error" , params: [res:"Error a l'executar el servei web per obtenir l'hora."])
+			return 
+			
+		}
+		
+		try{
+			fecha = serveiMeteo.fecha()
+			println "fecha: "+fecha
+		}catch(Exception e){
+			log.error(e.toString())
+			redirect (action: "error" , params: [res:"Error a l'executar el servei web per obtenir l'hora."])
+			return
+			
+		}
+		
+		redirect (action: "list" , params: [hora:hora , fecha:fecha , tipo:"WebService sin parametros"])
+	}
+	
+	def list(){
+		println "[WebServiceController]::[list]"
+		println "resultado: " + params.res
+		println "resultado: " + params.tipo
+		
+		//flash.message = params.res
+		[resultado:params.res , tipo:params.tipo]
+	}
+	
+	def error(){
+		println "[WebServiceController]::[error]"
+		flash.message = params.res
+	}
+	
+	
+	def iframeDetall(){
+		println "iframeDetall"
+		
+		println "Idioma:"+params.idIdioma
+		println "SubIdioma:"+params.idSubidioma
+		println "dia:"+params.idDia
+		println "mes:"+params.idMes
+		
+		//En el caso de estar en el ws de los días de la semana.
+		def idIdioma = params.idIdioma?"LANG_"+params.idIdioma:''
+		def idSubIdioma = params.idIdioma?"SUBLANG_"+params.idIdioma:''
+		def idDia = params.idDia?:''
+		def idMes = params.idMes?:''
+		
+//		DatesService data = new DatesService()
+//		DatesServiceSoapType serveiData = data.getDatesServiceSoap()
+		
+		def dia, mes
+		def llistaMesos, llistaDies
+		int intIdioma
+		//Obtener el id del lenguaje.
+		intIdioma = serveiData.languageId(idIdioma, "")
+		
+		//Referente al día de la semana.
+		if(idDia.equals("8")){
+//			println "TODOS LOS DIAS DE LA SEMANA"
+			llistaDies = serveiData.dayNames(intIdioma, false).string
+//			println llistaDies
+			
+		}else if(!idDia.equals("")){
+			try{
+				//Obtener el id del lenguaje.
+//				intIdioma = serveiData.languageId(idIdioma, "")
+				//Consultar el webservice y obtener la traducción al otro lenguaje.
+				dia  =serveiData.dayName(intIdioma, Integer.valueOf(idDia), false)
+			}catch(Exception e){
+				log.error(e.toString())
+				redirect (action: "error" , params: [res:"Error a l'executar el servei dataLangController."])
+				return
+			}
+		}else{
+			println "no se ha escogido ningún día del anyo"
+		}
+		
+		//Referente al mes del anyo.
+		if(idMes.equals("13")){
+			println "TODOS LOS meses DEl anyo "
+			llistaMesos = serveiData.monthNames(intIdioma, false, false).string
+			
+		}else if(!idMes.equals("")){
+			try{
+				//Obtener el id del lenguaje.
+//				intIdioma = serveiData.languageId(idIdioma, "")
+				//Consultar el webservice y obtener la traducción al otro lenguaje.
+				mes  =serveiData.monthName(intIdioma, Integer.valueOf(idMes), false)
+			}catch(Exception e){
+				log.error(e.toString())
+				redirect (action: "error" , params: [res:"Error a l'executar el servei dataLangController."])
+				return
+			}
+		}else{
+			println "no se ha escogido ningún mes del anyo"
+		}
+		
+		idIdioma=idIdioma.substring(5, idIdioma.length())
+		
+		[idioma:idIdioma , dia:dia , mes:mes, llistaDies:llistaDies , llistaDiesCat:diesSemana ,llistaMesos:llistaMesos, llistaMesosCat:mesosAny]
+	}
+
+}
