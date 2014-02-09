@@ -1,0 +1,108 @@
+Instalación de Eclipse en Debian:
+- Descargar Eclipse, la versión que corresponda, ya que si se descarga la de 32 bits y Debian es de 64 bits NO funcionará.
+- Instalar el gcc, g++ y gdb desde el Synaptics.
+- Instalar CDT: Window->Install->New Software y poner los de la página siguiente ... (http://www.eclipse.org/cdt/downloads.php)
+	En el caso de Eclipse Kepler añadir el repositorio:  http://download.eclipse.org/tools/cdt/releases/kepler
+
+A partir de aquí un proyecto en C compila, pero en C++ NO.
+Se instala con el Synaptics:
+- eclipse-cdt
+- eclipse-cdt-jni
+- libstdc++5
+- libdb++-dev
+- libdb5.1++-dev
+- libstdc++6
+y las dependencias que hagan falta.
+Lo que hace esto, entre otras cosas, es instalar el Eclipse por defecto de Debian (eclipse-cdt, eclipse-cdt-jni).
+
+Ahora el problema está en que al hacer "Run As -> Local C/C++ Application" sobre el nombre del proyecto se obtiene el mensaje de:
+LAUNCH FAILED. BINARY NOT FOUND.
+Este problema se soluciona haciendo un "Build" antes de un "Run As". Se debe contruir un fichero objeto antes de compilar.
+La secuencia completa para la correcta ejecución sería: "Project -> Build Project -> Run As Local C/C++ Application".
+La solución se ha encontrado en LINK1:
+http://stackoverflow.com/questions/4971926/launch-failed-binary-not-found-cdt-on-eclipse-helios
+
+Entonces ya compila y se puede ejecutar el programa, pero continúan saliendo aviso del compilador en la pantalla.
+Aviso de error del "scope de std". Se soluciona instalando desde el Synaptics el paquete "build-essentials".
+
+Aún restará un aviso por solucionar: UNRESOLVED INCLUSION <IOSTREAM>
+Para ello nos vamos a la terminal y ejecutamos:
+>sudo find / -name iostream
+Esto lo que hace es buscar dónde se encuentra el fichero iostream (librería que nos hace falta).
+El resultado será (al menos en este caso):
+"/usr/include/c++/4.7/iostream"
+Aquí es donde se encuentra el fichero (en "/usr/include/c++/4.7/" y no en "/usr/include/c++/4.7/iostream"). Por lo tanto el path a incluir en el el Eclipse será "/usr/include/c++/4.7/".
+¿Cómo incluirlo?
+"Proyecto -> Propiedades -> C/C++ Build -> Settings" pestaña "Tools settings" y dentro de  "GCC C++ Compiler -> Includes" hay que incluir el path "/usr/include/c++/4.7/"
+
+El aviso del "SCOPE" y del "UNRESOLVED INCLUSION" se han solucionado con:
+LINK2: http://stackoverflow.com/questions/12335420/unresolved-iostream-in-eclipse-ubuntu
+LINK3: http://stackoverflow.com/questions/10373788/c-unresolved-inclusion-iostream
+
+Ahora ya no hay avisos ni problemas. Probablemente el paso de instalar con el Synaptics los paquetes "eclipse-cdt" y "eclipse-cdt-jni" podrían haberse obviado.
+
+
+
+CONTENIDO  DE  LOS  LINKS
+=========================
+Se describe la parte más interesante de los links utilizados para solucionar los diferentes problemas.
+
+LINK1
+-----
+Pregunta:
+Hey, I'm using Eclipse Helios on Ubuntu 10.04, and I'm trying to install CDT plugin on it. I download it from here http://www.eclipse.org/downloads/download.php?file=/tools/cdt/releases/helios/dist/cdt-master-7.0.1.zip and then I go to Install New Software and select the zip file (I don't extract it, just select the zip file). And its ok, it installs, everything works fine, it shows optional features, bla bla bla.
+
+And then I create a new HelloWorld project. And when I try to run it, it shows an error and says:
+
+Launch failed. Binary not found.
+
+Can anyone explain me how to fix it?
+
+Thanks.
+
+Respuesta: SEÑALADA CON TICK VERDE
+You must build an object file before you can compile it. So if you don't “BUILD” your file, then it will not be able to link and load that object file, and hence it does not have the required binary numbers to execute.
+
+So basically right click on the Project -> Build Project -> Run As Local C/C++ Application should do the trick
+
+
+
+LINK2
+-----
+Pregunta:
+Muestra el error "Unresolved <iostream> in Eclipse, Ubuntu" y enseña una serie de capturas y describe las características de sus sistema.
+
+Respuesta:
+The reason is that Eclipse simply cannot import a proper header. C++ iostream header in Ubuntu can be found:
+
+    $: sudo find / -name iostream
+
+    /home/beniamin/QtSDK/Madde/toolchains/arm-2009q3-67-arm-none-linux-gnueabi-x86_64-unknown-linux-gnu/arm-2009q3-67/arm-none-linux-gnueabi/include/c++/4.4.1/iostream
+
+    /home/beniamin/QtSDK/Madde/sysroots/harmattan_sysroot_10.2011.34-1_slim/usr/include/c++/4.4/iostream
+
+    /usr/share/gccxml-0.9/GCC/2.95/iostream
+
+    **/usr/include/c++/4.6/iostream** QUIERE REMARCAR QUE ES EL IMPORTANTE!!!
+
+    /usr/include/boost/tr1/tr1/iostream
+
+So basically, I suppose the one you are looking for is /usr/include/c++/4.6/iostream, so you should in some place include this directory.
+
+Edit: You should also have installed g++, or simply install build-essential package, which is obligatory for building debian packages. Nevertheless, g++ should have been included in your Ubuntu installation anyway.
+
+Y en la respuesta se muestra un añadido:
+Yep! I was lacking the build-essential installation. Odd that the default installation of Ubuntu 12.04 did not include this, but regardless, sudo apt-get install build-essential fixed this. Thanks! 
+            ====================================
+
+---> Se realizaron las dos cosas instalar el paquete e incluir el path en Eclipse.
+
+
+
+LINK3
+-----
+Se utiliza como complemento al link anterior, ya que muestra gráficamente cómo situar el path de manera correcta en Eclipse.
+
+
+
+

@@ -1,0 +1,17 @@
+El documento describe cómo instalar Eclipse para que pueda ser compatible con el desarrollo de aplicaciones para terminales Android bajo SO Linux.
+
+Descargar la versión Eclipse Classic de la página de Eclipse (Eclipse.org).
+Descomprimirlo en una carpeta.
+
+Descargar el SDK de Android de la página Android Developer.
+Descomprimirlo en una carpeta.
+Una vez se ha descomprimido, ejecutar en un terminal:
+./android update sdk/Descargas/android-sdk-linux/tools
+estando dentro del direcorio "android-sdk-linux/tools". En este caso se ha descomprimido el SDK en la carpeta /Descargas y el nombre de la carpeta es 
+"android-sdk-linux/" 
+Entonces aquí se selecciona lo que se desee descargar, generalmente la versión 2.1, 2.2 y 2.3.3.
+
+Arrancar Eclipse, seleccionar el SDK de la carpeta /Descargas/android-sdk-linux/tools y añadir el Install new software la dirección del ADT.
+
+
+

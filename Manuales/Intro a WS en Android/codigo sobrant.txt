@@ -1,0 +1,131 @@
+/* Simulació!!! */
+	public String getIdiomesFake(){
+		
+		Log.i("Idiomes", "getIdiomesFAKE");
+		String res=null;
+		XmlPullParser prs=null;
+		
+		SoapObject rpc;
+		rpc=new SoapObject(namespace , "idiomesFitxaFake");
+
+		
+		SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
+		envelope.bodyOut=rpc;
+		
+		envelope.dotNet=true;
+		envelope.encodingStyle=SoapSerializationEnvelope.XSD;
+		
+		HttpTransportSE androidHttpTransport=null;
+		try {
+
+			androidHttpTransport = new HttpTransportSE(conexion);
+			androidHttpTransport.debug=true;
+			
+			//SoapACtion
+			androidHttpTransport.call(namespace+"idiomesFitxaFake", envelope);
+			
+
+			res=androidHttpTransport.responseDump;
+			Log.i("Idiomes", res);
+			
+		
+
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println(e.getMessage());
+			res=e.getMessage();
+		}
+		
+		return res;
+		
+	}
+	
+	/* Aconseguir els diferents tipus d'agenda disponibles de la base de dades SQL Server. */
+	public String getTipusAgenda(int idioma){
+		Log.i("TipusAgenda", "getTipusAgenda");
+		String res=null;
+		XmlPullParser prs=null;
+		
+		SoapObject rpc;
+		rpc=new SoapObject(namespace , "tipusAgenda");
+
+		rpc.addProperty("idioma", idioma);
+		Log.i("TipusAgenda", "Idioma: "+ String.valueOf(idioma));
+		
+		SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
+		envelope.bodyOut=rpc;
+		
+		envelope.dotNet=true;
+		envelope.encodingStyle=SoapSerializationEnvelope.XSD;
+		
+		HttpTransportSE androidHttpTransport=null;
+		try {
+
+			androidHttpTransport = new HttpTransportSE(conexion);
+			androidHttpTransport.debug=true;
+			
+			//SoapACtion
+			androidHttpTransport.call(namespace+"tipusAgenda", envelope);
+			
+
+			res=androidHttpTransport.responseDump;
+			Log.i("TipusAgenda", res);
+			
+		
+
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println(e.getMessage());
+			res=e.getMessage();
+		}
+		
+		return res;
+		
+	}
+	
+	
+	/* Aconseguir les categories disponibles per un cert tipus d'agenda de la base de dades SQL Server. */
+	public String getCategoriesAgenda(int idioma, int tipusAgenda){
+		Log.i("CategoriaAgenda", "getCategoriesAgenda");
+		String res=null;
+		XmlPullParser prs=null;
+		
+		SoapObject rpc;
+		rpc=new SoapObject(namespace , "categoriaAgenda");
+
+		rpc.addProperty("idioma", idioma);
+		Log.i("CategoriaAgenda", "Idioma: "+ String.valueOf(idioma));
+
+		rpc.addProperty("idTipusAgenda", tipusAgenda);
+		Log.i("CategoriaAgenda", "idTipusAgenda: "+ String.valueOf(tipusAgenda));
+		
+		SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
+		envelope.bodyOut=rpc;
+		
+		envelope.dotNet=true;
+		envelope.encodingStyle=SoapSerializationEnvelope.XSD;
+		
+		HttpTransportSE androidHttpTransport=null;
+		try {
+
+			androidHttpTransport = new HttpTransportSE(conexion);
+			androidHttpTransport.debug=true;
+			
+			//SoapACtion
+			androidHttpTransport.call(namespace+"categoriaAgenda", envelope);
+			
+
+			res=androidHttpTransport.responseDump;
+			Log.i("CategoriaAgenda", res);
+			
+		
+
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println(e.getMessage());
+			res=e.getMessage();
+		}
+		
+		return res;
+		
+	}
