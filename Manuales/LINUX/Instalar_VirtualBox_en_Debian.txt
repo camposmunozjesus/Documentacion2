@@ -1,0 +1,17 @@
+Para instalar VirtualBox en Deian Wheezy:
+Añadir en el fichero la siguiente línea:
+deb http://download.virtualbox.org/virtualbox/debian wheezy contrib
+
+(Segurramente habrá que hacer 
+root@debian:/home/jesus# sudo apt-get update 
+para que el siguiente paso no falle).
+
+root@debian:/home/jesus# wget -q http://download.virtualbox.org/virtualbox/debian/oracle_vbox.asc -O- | sudo apt-key add -
+
+root@debian:/home/jesus# sudo apt-get update
+
+root@debian:/home/jesus# sudo apt-get install virtualbox-4.2
+
+Ejecutar el programa:
+root@debian:/home/jesus# VirtualBox 
+

@@ -1,0 +1,21 @@
+AGREGAR/INSTALAR UN SERVIDOR APACHE TOMCAT EN ECLIPSE
+=====================================================
+Al hacer "New" -> "Dynamic "Web Project" aparecerá los datos del proyecto a crear.
+
+En el apartado "Target runtime" no aparecerá ninguno.
+
+Hacer click en "New Runtime ...", seleccionar un servidor (por ejemplo: Apache -> Apache Tomcat v7.0) y dar a "Next".
+
+En "Browse" seleccionar el directorio donde se quiere instalar el servidor y hcaer click en "Download and Install ...".
+
+Después de esto cerrar "Dynamic "Web Project" y en la siguiente vez ya aparecerá el servidor.
+
+Para las siguientes ocasione, probablementa haya que hacer el mismo proceso pero en lugar de hacer "download and Install ..." habrá que seleccionar la 
+carpeta donde se ha descargado el servidor o bien directamente en "Targets" selecionar els ervidor si es que está disponible.
+
+Otra forma de agregar un servidor es:
+"Window" -> "Preferences" -> "Server" -> "Runtime Environment" y "Add ...".
+
+SERVLETS
+========
+En cuanto a la versión de servlets a escoger, hay que selecionar la 2.5.

@@ -1,0 +1,35 @@
+HEROKU - SUBIR UNA APLICACIÓN GRAILS A HEROKU
+=============================================
+-------
+WINDOWS
+-------
+Suponiendo que el código de la aplicación se encuentra dentro de una carpeta llamada "Prueba" que está dentro de la carpeta "git"
+(que sería el workspace):
+C:\Unidad donde se instaló git
+|
+|---- git\
+	   |
+	   |---- Prueba\
+				|
+				|--- grails-app\
+				|--- src\
+				|--- web-app\
+				
+Entrar en "git bash"
+cd git/
+cd Prueba/
+git init
+git add .
+git commit -m "my first commit"
+heroku create
+heroku git:remote -a blooming-fjord-5813 -r jesusapps
+git push jesusapps master
+
+-----
+NOTAS
+-----
+En la instrucción: heroku git:remote -a blooming-fjord-5813 -r jesusapps
+	-a blooming-fjord-5813: es el lugar donde subir la aplicación, que se nos informa en heroku create.
+
+Para cambiar de unidad:
+cd e:
