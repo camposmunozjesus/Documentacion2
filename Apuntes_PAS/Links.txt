@@ -24,3 +24,14 @@ Meteorológico:						http://www.imn.ac.cr/MeteorologicoWS/MeteorologicoWS.asmx
 Días de la semana y meses:			http://webservices.daehosting.com/services/datesservice.wso?op=DayName
 Futlbol Ucrania:					http://footballpool.dataaccess.eu/en/About/Web-Services-137 http://footballpool.dataaccess.eu/data/info.wso http://footballpool.dataaccess.eu/data/info.wso?wsdl
 Geo localización IP: (tipo REST)	http://www.restfulwebservices.net/wcf/GeoIPService.svc
+
+
+JAVA
+====
+------------------------
+FECHAS - PARSEO/FORMATEO
+------------------------
+Cómo parsear una fecha:				http://chuwiki.chuidiang.org/index.php?title=SimpleDateFormat
+									http://ilusodemonio.blogspot.com.es/2012/06/hace-poco-tuve-un-problema-para-pasar.html
+									http://surpatterns.com/sitio/tutoriales-programacion-surpatterns/java-manejo-y-formateo-de-fechas-con-dateformat-y-simpledateformat/
+									http://docs.oracle.com/javase/tutorial/datetime/
