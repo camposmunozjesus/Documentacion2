@@ -10,7 +10,7 @@ se mantienen. Para mantenerlos hay que hacer lo siguiente:
 	<g:hiddenField name="idFuncio" id="idFuncio" value="${params?.idFuncio}" />
 
 	
-	
+******************************************************************************************************************************************************
 --------------------
 COMBO BOX - G:SELECT
 --------------------
@@ -56,7 +56,7 @@ Datos:
 		 y cuando se haga submit dentro de dicha función/método se podrán recoger sus datos.
 				
 	
-	
+******************************************************************************************************************************************************	
 ---------
 TEXTFIELD
 ---------
@@ -65,6 +65,9 @@ TEXTFIELD
 
 *Código GSP:
 	<g:textField name="filtreCodi" maxLength="10" value="${params?.filtreCodi}" class="cercaNom width100px" />
+	
+	
+******************************************************************************************************************************************************
 ----------
 PAGINACIÓN
 ----------
@@ -89,3 +92,47 @@ Barra que se incluye al final de la tabla y permite paginar. Si queremos paginar
 	
 	Donde "funcioTotal" es el total de elemento de la consulta, que se podría lograr con: (código groovy) def funcioTotal =  Lloc.countByNomAndPrimerCognomAndSegonCognom( params.idNom,params.idCognom1,params.idCognom2 )
 
+	
+	
+******************************************************************************************************************************************************
+-------------------------------
+CENTRAR COMBOBOX EN UN RECUADRO
+-------------------------------
+Usar dentro del select: style="margin-left:95px;"
+
+Caso de uso de un elemento con tres combos espaciados y uno oculto (el de subidiomas porque la variable siempre es nula):
+<g:form>
+	<g:hiddenField name="idIdioma" value="" />
+	<g:hiddenField name="idSubIdioma" value="" />
+	<g:hiddenField name="idDia" value="" />
+	<g:hiddenField name="idMes" value="" />
+	<div style="clear:both;"></div>	
+		<fieldset class="border" style="margin-top:2px">
+		<legend align="left" style="margin-left:15px">Paràmetres de la cerca</legend>	
+			<div style="clear:both;"></div>	
+				<g:if test="${idiomasList}">
+					<div class="floatLeft marginSmallRight">
+						<label for="filtreIdioma">Idioma</label>
+						<g:select class="width200px" name="filtreIdioma" from="${idiomasList}"  keys="${idiomasList}"  value="" />							   
+					</div>		
+				</g:if>
+				<g:if test="${subIdiomasList}">
+					<div class="floatLeft marginSmallRight">
+						<label for="filtreIdioma">Dialecte</label>
+						<g:select class="width200px" name="filtreSubIdioma" from="${subIdiomasList}"  keys="${subIdiomasList}"  value="" noSelection="['':'-Tria un subtipus-']"/>								   
+					</div>
+				</g:if>			
+				<g:if test="${diesList}">
+					<div class="floatLeft marginSmallRight">
+						<label for="filtreIdioma"></label>
+						<g:select style="margin-left:95px;" class="width200px" name="filtreDia" from="${diesList}"  keys="${1..8}"  value="" noSelection="['':'-Tria un dia de la setmana-']"/>														   
+					</div>
+				</g:if>
+				<g:if test="${mesosList}">
+					<div class="floatLeft marginSmallRight">
+						<label for="filtreIdioma"></label>
+						<g:select style="margin-left:145px;" class="width200px" name="filtreMes" from="${mesosList}"  keys="${1..13}"  value="" noSelection="['':'-Tria un mes de l\'any-']"/>				
+					</div>
+				</g:if>	
+	</fieldset>		
+</g:form>

@@ -14,6 +14,7 @@ Solución 1:
 Ir al proyecto, botón derecho y Propiedades e ir al apartado de "Groovy Compiler". Dentro de la parte de la derecha selecciona "2.0" en donde dice "Groovy compiler level for project test:".
 
 
+******************************************************************************************************************************************************
 -----------
 Problema 2: (GENERAL) NO hace caso al cambiar de puerto en el archivo BuildConfig.groovy.
 -----------
@@ -28,6 +29,7 @@ BuildCinfig.groovy) en los argumentos de la VM (Botón derecho->Run as...->Run c
 -Dserver.port=8099
 
 
+******************************************************************************************************************************************************
 -----------
 Problema 3: (WEB SERVICES) Problemas con los plugins necesarios para utilizar web services en grails.
 -----------
@@ -67,6 +69,7 @@ Si no funciona el plugin manager añadir en BuildConfig.groovy (compile ":cxf-cl
 groovyws-0.5.2.jar y las que hagan falta.
 
 
+******************************************************************************************************************************************************
 -----------
 Problema 4: (JAVA BUILD PATH) Problemas con el build path (se consulta este dato en markers). Aparece un signo de exclamación. Aparace después de eliminar export del proyecto SIGRIS.
 -----------
@@ -100,6 +103,7 @@ y elimnar la carpeta del proyecto, en este caso SIG.
 Volver a importar el proyecto y todo solucionado.
 
 
+******************************************************************************************************************************************************
 -----------
 Problema 5: (WEB SERVICES) Problemas al ejecutar un web service a veces sí otras no. Sólo en proyecto SIG.
 -----------
@@ -161,3 +165,138 @@ Solución 5:
 -----------
 Extender la clase del controlador y en la que se encuentra en web service de BaseControler. Ejemplo:
 class TestingAdminController extends BaseControler{...}
+
+
+******************************************************************************************************************************************************
+-----------
+Problema 6: (IMPORTAR PROYECTO) Después de cargar un proyecto hay muchos errores, archivos o packages que no están, muchas aspas en definitiva en varios archivos.
+-----------
+Se ha cargado un proyecto desde "Genral" -> "Proyectos existentes en el workspace".
+Esto no descarga los archivos de maven.
+
+Solución 6:
+-----------
+Importar el proyecto como "Grails project".
+
+
+******************************************************************************************************************************************************
+-----------
+Problema 7: (ERROR EJECUCIÓN PROYECTO) Después de descargar e importar el proyecto RLG da el siguiente error relacionado principalmente con el TransactionManager de spring.framework.
+-----------
+Traza del error:
+| Error 2014-02-11 11:25:34,640 [localhost-startStop-1] ERROR context.GrailsContextLoader  - Error executing bootstraps: Error creating bean with name 'transactionManagerPostProcessor': Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManager': Cannot resolve reference to bean 'sessionFactory' while setting bean property 'sessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Cannot resolve reference to bean 'lobHandlerDetector' while setting bean property 'lobHandler'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'lobHandlerDetector': Invocation of init method failed; nested exception is org.springframework.jdbc.support.MetaDataAccessException: Error while extracting DatabaseMetaData; nested exception is org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (IO Error: The Network Adapter could not establish the connection)
+Message: Error creating bean with name 'transactionManagerPostProcessor': Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionManager': Cannot resolve reference to bean 'sessionFactory' while setting bean property 'sessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Cannot resolve reference to bean 'lobHandlerDetector' while setting bean property 'lobHandler'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'lobHandlerDetector': Invocation of init method failed; nested exception is org.springframework.jdbc.support.MetaDataAccessException: Error while extracting DatabaseMetaData; nested exception is org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (IO Error: The Network Adapter could not establish the connection)
+    Line | Method
+->>  262 | run       in java.util.concurrent.FutureTask
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+|   1145 | runWorker in java.util.concurrent.ThreadPoolExecutor
+|    615 | run . . . in java.util.concurrent.ThreadPoolExecutor$Worker
+^    744 | run       in java.lang.Thread
+Caused by BeanCreationException: Error creating bean with name 'transactionManager': Cannot resolve reference to bean 'sessionFactory' while setting bean property 'sessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sessionFactory': Cannot resolve reference to bean 'lobHandlerDetector' while setting bean property 'lobHandler'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'lobHandlerDetector': Invocation of init method failed; nested exception is org.springframework.jdbc.support.MetaDataAccessException: Error while extracting DatabaseMetaData; nested exception is org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (IO Error: The Network Adapter could not establish the connection)
+->>  262 | run       in java.util.concurrent.FutureTask
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+|   1145 | runWorker in java.util.concurrent.ThreadPoolExecutor
+|    615 | run . . . in java.util.concurrent.ThreadPoolExecutor$Worker
+^    744 | run       in java.lang.Thread
+Caused by BeanCreationException: Error creating bean with name 'sessionFactory': Cannot resolve reference to bean 'lobHandlerDetector' while setting bean property 'lobHandler'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'lobHandlerDetector': Invocation of init method failed; nested exception is org.springframework.jdbc.support.MetaDataAccessException: Error while extracting DatabaseMetaData; nested exception is org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (IO Error: The Network Adapter could not establish the connection)
+->>  262 | run       in java.util.concurrent.FutureTask
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+|   1145 | runWorker in java.util.concurrent.ThreadPoolExecutor
+|    615 | run . . . in java.util.concurrent.ThreadPoolExecutor$Worker
+^    744 | run       in java.lang.Thread
+Caused by BeanCreationException: Error creating bean with name 'lobHandlerDetector': Invocation of init method failed; nested exception is org.springframework.jdbc.support.MetaDataAccessException: Error while extracting DatabaseMetaData; nested exception is org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (IO Error: The Network Adapter could not establish the connection)
+->>  262 | run       in java.util.concurrent.FutureTask
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+|   1145 | runWorker in java.util.concurrent.ThreadPoolExecutor
+|    615 | run . . . in java.util.concurrent.ThreadPoolExecutor$Worker
+^    744 | run       in java.lang.Thread
+Caused by MetaDataAccessException: Error while extracting DatabaseMetaData; nested exception is org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (IO Error: The Network Adapter could not establish the connection)
+->>  262 | run       in java.util.concurrent.FutureTask
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+|   1145 | runWorker in java.util.concurrent.ThreadPoolExecutor
+|    615 | run . . . in java.util.concurrent.ThreadPoolExecutor$Worker
+^    744 | run       in java.lang.Thread
+Caused by SQLNestedException: Cannot create PoolableConnectionFactory (IO Error: The Network Adapter could not establish the connection)
+->> 1549 | createPoolableConnectionFactory in org.apache.commons.dbcp.BasicDataSource
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+|   1388 | createDataSource in     ''
+|   1044 | getConnection in     ''
+|    262 | run       in java.util.concurrent.FutureTask
+|   1145 | runWorker in java.util.concurrent.ThreadPoolExecutor
+|    615 | run       in java.util.concurrent.ThreadPoolExecutor$Worker
+^    744 | run . . . in java.lang.Thread
+Caused by SQLRecoverableException: IO Error: The Network Adapter could not establish the connection
+->>  458 | logon     in oracle.jdbc.driver.T4CConnection
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+|    546 | <init>    in oracle.jdbc.driver.PhysicalConnection
+|    236 | <init> .  in oracle.jdbc.driver.T4CConnection
+|     32 | getConnection in oracle.jdbc.driver.T4CDriverExtension
+|    521 | connect . in oracle.jdbc.driver.OracleDriver
+|     38 | createConnection in org.apache.commons.dbcp.DriverConnectionFactory
+|    582 | makeObject in org.apache.commons.dbcp.PoolableConnectionFactory
+|   1556 | validateConnectionFactory in org.apache.commons.dbcp.BasicDataSource
+|   1545 | createPoolableConnectionFactory in     ''
+|   1388 | createDataSource in     ''
+|   1044 | getConnection in     ''
+|    262 | run       in java.util.concurrent.FutureTask
+|   1145 | runWorker in java.util.concurrent.ThreadPoolExecutor
+|    615 | run       in java.util.concurrent.ThreadPoolExecutor$Worker
+^    744 | run . . . in java.lang.Thread
+Caused by NetException: The Network Adapter could not establish the connection
+->>  392 | execute   in oracle.net.nt.ConnStrategy
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+|    434 | resolveAndExecute in oracle.net.resolver.AddrResolution
+|    687 | establishConnection in oracle.net.ns.NSProtocol
+|    247 | connect   in     ''
+|   1102 | connect . in oracle.jdbc.driver.T4CConnection
+|    320 | logon     in     ''
+|    546 | <init> .  in oracle.jdbc.driver.PhysicalConnection
+|    236 | <init>    in oracle.jdbc.driver.T4CConnection
+|     32 | getConnection in oracle.jdbc.driver.T4CDriverExtension
+|    521 | connect   in oracle.jdbc.driver.OracleDriver
+|     38 | createConnection in org.apache.commons.dbcp.DriverConnectionFactory
+|    582 | makeObject in org.apache.commons.dbcp.PoolableConnectionFactory
+|   1556 | validateConnectionFactory in org.apache.commons.dbcp.BasicDataSource
+|   1545 | createPoolableConnectionFactory in     ''
+|   1388 | createDataSource in     ''
+|   1044 | getConnection in     ''
+|    262 | run . . . in java.util.concurrent.FutureTask
+|   1145 | runWorker in java.util.concurrent.ThreadPoolExecutor
+|    615 | run . . . in java.util.concurrent.ThreadPoolExecutor$Worker
+^    744 | run       in java.lang.Thread
+Caused by ConnectException: Connection timed out: connect
+->>   85 | socketConnect in java.net.DualStackPlainSocketImpl
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+|    339 | doConnect in java.net.AbstractPlainSocketImpl
+|    200 | connectToAddress in     ''
+|    182 | connect   in     ''
+|    172 | connect . in java.net.PlainSocketImpl
+|    392 | connect   in java.net.SocksSocketImpl
+|    579 | connect . in java.net.Socket
+|    150 | connect   in oracle.net.nt.TcpNTAdapter
+|    133 | connect . in oracle.net.nt.ConnOption
+|    370 | execute   in oracle.net.nt.ConnStrategy
+|    434 | resolveAndExecute in oracle.net.resolver.AddrResolution
+|    687 | establishConnection in oracle.net.ns.NSProtocol
+|    247 | connect . in     ''
+|   1102 | connect   in oracle.jdbc.driver.T4CConnection
+|    320 | logon . . in     ''
+|    546 | <init>    in oracle.jdbc.driver.PhysicalConnection
+|    236 | <init> .  in oracle.jdbc.driver.T4CConnection
+|     32 | getConnection in oracle.jdbc.driver.T4CDriverExtension
+|    521 | connect . in oracle.jdbc.driver.OracleDriver
+|     38 | createConnection in org.apache.commons.dbcp.DriverConnectionFactory
+|    582 | makeObject in org.apache.commons.dbcp.PoolableConnectionFactory
+|   1556 | validateConnectionFactory in org.apache.commons.dbcp.BasicDataSource
+|   1545 | createPoolableConnectionFactory in     ''
+|   1388 | createDataSource in     ''
+|   1044 | getConnection in     ''
+|    262 | run       in java.util.concurrent.FutureTask
+|   1145 | runWorker in java.util.concurrent.ThreadPoolExecutor
+|    615 | run       in java.util.concurrent.ThreadPoolExecutor$Worker
+^    744 | run . . . in java.lang.Thread
+
+
+Solución 7:
+-----------
+No hay permisos del PC para conectarse a la base de datos que ataca el RLG.
