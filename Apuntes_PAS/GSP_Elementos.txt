@@ -136,3 +136,27 @@ Caso de uso de un elemento con tres combos espaciados y uno oculto (el de subidi
 				</g:if>	
 	</fieldset>		
 </g:form>
+
+
+******************************************************************************************************************************************************
+----------------------------------------
+COLUMNA REORDENABLE - G:SOERTABLE COLUNM
+----------------------------------------
+Se dirigirá al método/closure que lo llamó, aunque esté dentro de un formulario y en él esté especificado en el campo action otro nombre.
+En dicha closure se pueden recuperar los siguientes datos:
+params.sort que vale el property de la columna pulsada.
+params.order que puede valer 'asc' o 'desc'. (o es des ?).
+
+<g:form name="myForm" action="cargarUsuario">
+  <g:hiddenField name="idForm" id="idForm" property="idForm" value="" />
+  <g:hiddenField name="idFormDelete" id="idFormDelete" property="idFormDelete" value="false" />
+	<table border="2">
+		<thead>
+			<tr>	
+				<g:sortableColumn property="personNumber" title="NÚMERO DE EMPLEADO" params="${params}" style="min-width:38px"/>
+			</tr>
+		</thead>
+		<tbody>
+		</tbody>
+	</table>
+</g:form>
