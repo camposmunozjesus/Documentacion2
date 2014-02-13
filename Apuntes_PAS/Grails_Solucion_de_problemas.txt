@@ -300,3 +300,18 @@ Caused by ConnectException: Connection timed out: connect
 Solución 7:
 -----------
 No hay permisos del PC para conectarse a la base de datos que ataca el RLG.
+
+
+******************************************************************************************************************************************************
+-----------
+Problema 8: (IMPORTAR PROYECTO) Después de cargar un mensaje con errores en forma de msgbox.
+-----------
+Dice que no puede borrar el plugin que se encuentra ubicado en:
+C:\Users\Jesus Campos\.grails\2.1.1\projects\SIG\plugins
+
+Solución 8:
+-----------
+Borrar proyecto únicamente de GGTS.
+Cerrar GGTS.
+Eliminar manualmente la carpeta (pegar la dirección en el explorador).
+
