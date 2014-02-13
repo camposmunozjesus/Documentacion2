@@ -51,7 +51,7 @@ class LibroController {
 - El controlador y el dominio se han de llamar igual sólo en el caso de quere utilizar scaffold.
 
 
-
+******************************************************************************************************************************************************
 -------------------------------------------------------------------------------------
 INSTRUCCIONES PARA CONSULTAR TAMAÑO DE VECTORES, LISTS, ETC .../MOSTRAR SUS ELEMENTOS
 -------------------------------------------------------------------------------------
@@ -91,3 +91,18 @@ Obtener/Imprimir datos:
   
   En el caso de que se hubieran devuelto de la siguiente manera: [PROF. ASSOCIAT LABORAL, PROFESSOR TITULAR D'UNIVERSITAT, PROF. ASSOCIAT LABORAL]
   Se obtendrían tres impresiones.
+  
+  
+******************************************************************************************************************************************************
+--------
+UNIQUE()
+--------
+Sirve para eliminar elementos redundantes en una list. Se puede usar en código Groovy ó GSP.
+Ejemplo:
+	def mesosAny = ["Gener", "Gener", "Febrer", "Març", "Abril", "Maig", "Juny", "Juliol", "Agost", "Setembre", "Octubre", "Novembre", "Desembre","Tots"]
+	
+	println mesosAny -> Imprimirá los meses repetidos.
+	
+	mesosAny.unique()
+	
+	println mesosAny -> Ya NO imprime los meses repetidos.
