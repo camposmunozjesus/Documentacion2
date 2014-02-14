@@ -1,5 +1,21 @@
 Funcionamiento IFRAME
 =====================
+Para que unniframe funcione:
+- Debe existir la página GSP con el mismo nombre que el id del div del iframe.
+- Debe existir una closure en el controller cuyo nombre coincida con el id del div del iframe, en este caso "iframeList".
+	<div id="iframeList">
+		<iframe id="iframe" name="iframe" title="Detall riscos" src="" height="600px" width="100%" frameborder="0" scrolling="no"></iframe>
+	</div>
+- Se activa o cambia de estado cuando se asigna valor a su propiedad "src". Por ejemplo con una función JS. Y sólo se recarga esta parte de la página.
+	<script type="text/javascript">
+		function loadIframes(id)
+		{    		
+			document.getElementById('iframe').src = "iframeList/?idLloc="+id;
+		} 
+	</script>
+- Para activar el iframe con la pulsación de una fila es necesario:
+	<tr id="tr${i}" class="${(i % 2) == 0 ? 'odd' : 'even'} hand" onclick="javascript:loadIframes('${llocInstance.codi}')">
+	
 ----------
 PÁGINA GSP
 ----------
