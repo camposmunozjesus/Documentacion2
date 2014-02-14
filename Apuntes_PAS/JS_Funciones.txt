@@ -1,8 +1,10 @@
 JAVASCRIPT - FUNCIONES DE UTILIDAD
 ==================================
-----------------------------------------------------------------
-FUNCIÓN QUE SE ACTIVA CUANDO SE HACE CLICK EN CUALQUIER ELEMENTO
-----------------------------------------------------------------
+------------------------------------------------------------------------------------
+FUNCIÓN QUE SE ACTIVA CUANDO SE HACE CLICK EN LOS BOTONES DE BORRAR, EDITAR, ETC ...
+------------------------------------------------------------------------------------
+Captura un evento sucedido en la tabla.
+Esto es lo que actúa cuando se pulsa el botón de borrar, editar, etc!!!!
 *Código:
 	function accioClick(event) {     	      	     
 		$('#idRisc').val(event.data.id);
@@ -82,3 +84,40 @@ FUNCIÓN QUE SE ACTIVA CUANDO SE HACE CLICK EN CUALQUIER ELEMENTO
 		</table>
 	</g:form>
 </div>
+
+
+---------------------------------------------------
+FUNCIÓN QUE SE ACTIVA AL HACER CLICK EN UNA COLUMNA
+---------------------------------------------------
+Puede que el anterior no funcione
+<tr id="tr${i}" class="${(i % 2) == 0 ? 'odd' : 'even'} hand" onclick="javascript:loadIframes('${llocInstance.codi}')">
+	<td class="padding width25p">
+		<g:if test="${i==0}">
+		 <%-- Carreguem el primer --%>
+		 <script type="text/javascript">
+			$(function() {
+				loadIframes('${llocInstance.codi}');
+			}); 
+		 </script>
+		</g:if>
+		${llocInstance.codi} ${llocInstance.descripcioLlarga}
+	</td>
+	<td class="padding width25p">
+		${llocInstance.primerCognom} ${llocInstance.segonCognom} ${llocInstance.nom}
+	</td>
+	<td class="padding width25p">
+		${literalsFuncio[i]}
+	</td>
+	<td class="padding width15p">
+		${literalsTAmbit[i]}
+	</td>
+	<td class="buttonCell" style="width: 110px;" nowrap>
+		<span class="buttons buttonsTableIE"> 
+			<g:actionSubmit class="edit" action="edit" value="Editar" alt="Editar lloc de treball de la fila ${i}" />
+		</span>																																																						
+	</td>
+</tr>
+			
+o bien:
+<tr id="tr${i}" class="${(i % 2) == 0 ? 'odd' : 'even'} hand" onclick="javascript:loadIframes('${personaInstance.nom}','${personaInstance.cognom1}','${personaInstance.cognom2}')">
+para pasar más de un parámetro.			
