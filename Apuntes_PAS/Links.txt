@@ -17,13 +17,15 @@ Enlace a tutoriales: 				http://www.grailsexample.net/course-outline/
 	-Ejeplo CXF:						https://github.com/Grails-Plugin-Consortium/grails-cxf-client/blob/master/grails-app/conf/Config.groovy
 										http://stackoverflow.com/questions/18481433/grails-wsdl2java-script-in-cxf-client-plugin-does-not-generate-any-java-classes
 
+Apache POI:		Referencias			http://grails.org/plugins/tag/poi
+				Ejemplos			http://grails.org/plugin/excel-import
+
 									
 WEB SERVICE QUE SE PUEDEN UTILIZAR
 ==================================
 Meteorológico:						http://www.imn.ac.cr/MeteorologicoWS/MeteorologicoWS.asmx
 Días de la semana y meses:			http://webservices.daehosting.com/services/datesservice.wso?op=DayName
 Futlbol Ucrania:					http://footballpool.dataaccess.eu/en/About/Web-Services-137 http://footballpool.dataaccess.eu/data/info.wso http://footballpool.dataaccess.eu/data/info.wso?wsdl
-<<<<<<< .mine
 Geo localización IP: (tipo REST)	http://www.restfulwebservices.net/wcf/GeoIPService.svc
 
 
@@ -43,4 +45,10 @@ FECHAS - PARSEO/FORMATEO
 Cómo parsear una fecha:				http://chuwiki.chuidiang.org/index.php?title=SimpleDateFormat
 									http://ilusodemonio.blogspot.com.es/2012/06/hace-poco-tuve-un-problema-para-pasar.html
 									http://surpatterns.com/sitio/tutoriales-programacion-surpatterns/java-manejo-y-formateo-de-fechas-con-dateformat-y-simpledateformat/
-									http://docs.oracle.com/javase/tutorial/datetime/>>>>>>> .r31
+									http://docs.oracle.com/javase/tutorial/datetime/
+				
+				
+LIBRERÍAS
+=========
+joda-time-1.5.jar					http://www.java2s.com/Code/Jar/j/Downloadjodatime15jar.htm
+									http://docs.oracle.com/javase/tutorial/datetime/
