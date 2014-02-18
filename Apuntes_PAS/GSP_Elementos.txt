@@ -54,8 +54,13 @@ Datos:
 			<g:select class="width200px" name="filtreDia" from="${diasList}"  keys="${1..7}"  value="${}"/>			
 		-El valor a recoger en el código Groovy será params.filtreDia. Este select estará dentro de un g:form lo más seguro, con action="ifuncion",
 		 y cuando se haga submit dentro de dicha función/método se podrán recoger sus datos.
-				
-	
+		
+Elemento por defecto		
+********************
+Si el combo muestra  una descripción, por ejemplo "Técni de taller" y devuelve el valor "73", si tenemos una estructura de datos que tiene un campo
+llamado "descripcion" y que vale "Tecn. taller" y otro con nombre "codigo" que vale "73", en el valor por defecto indicaremos "codigo" ya que es el
+que se corresponde con el valor "oculto" por así decirlo de lo que queremos mostrar.
+Hemos supuesto que los valores a mostrar se han obtenido de otra tabla en la que los nombre son ligeramente diferente pero con igual codificación.
 ******************************************************************************************************************************************************	
 ---------
 TEXTFIELD

@@ -315,3 +315,21 @@ Borrar proyecto únicamente de GGTS.
 Cerrar GGTS.
 Eliminar manualmente la carpeta (pegar la dirección en el explorador).
 
+
+******************************************************************************************************************************************************
+-----------
+Problema 9: (APACHE POI) Error al importar la librería Apache POI.
+-----------
+Muestra el siguiente mensaje:
+... excelimport\ExcelImportService.groovy: 4: unable to resolve class org.joda.time.LocalDate  @ line 4, column 1.    import org.joda.time.LocalDate
+Y cuando comentamos el import aparece éste otro:
+Cannot find plugin descriptor for path 'C:\grails\ApachePoi\target\work\plugins\excel-import-1.0.0'.
+
+Solución 9:
+-----------
+Es necesario importar el jar que le hace falta, joda-time-1.5.jar. Según se indica en http://grails.1312388.n4.nabble.com/Grails-excel-import-error-td3000158.html
+Hacer clean, bajarse la librería joda-time-1.5.jar de http://www.java2s.com/Code/Jar/j/Downloadjodatime15jar.htm e incluirla en la carpeta lib.
+Posteriormente hay que bajarse el jar del POI apache, descomprimirlo y añadir manualmente los jar's que vienen en el ZIP, y hacer doble click e
+import donde sea necesario.
+
+
