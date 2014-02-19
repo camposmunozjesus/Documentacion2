@@ -19,6 +19,7 @@ Enlace a tutoriales: 				http://www.grailsexample.net/course-outline/
 
 Apache POI:		Referencias			http://grails.org/plugins/tag/poi
 				Ejemplos			http://grails.org/plugin/excel-import
+									https://github.com/jbarmash/grails-excel-import
 
 									
 WEB SERVICE QUE SE PUEDEN UTILIZAR
