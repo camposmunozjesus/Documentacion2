@@ -35,6 +35,8 @@ servicio: rh (La base de datos)
 		
 Ahora ya se conecta correctamente a la base de datos.
 
+
+******************************************************************************************************************************************************
 -----------------------------
 RECUPERAR DE LA BASE DE DATOS
 -----------------------------
@@ -358,7 +360,7 @@ class Lloc {
 }
 
 
-
+******************************************************************************************************************************************************
 -------------------------------------------------
 ORDENAR UN VECTOR RECUPERADO DE UNA BASE DE DATOS
 -------------------------------------------------
@@ -372,7 +374,7 @@ Para ordenarlo a la inversa:
 	def personesSorted = persones.sort{it.nom}.inverse()???????????????????????????????????????????????????????????????????????????????
 	
 
-	
+******************************************************************************************************************************************************
 ------------------------------------------
 RECUPERAR DATOS UTILIZANDO MÁS DE UN CAMPO
 ------------------------------------------
@@ -382,3 +384,75 @@ Utilizando la cláusula findAllBy...
 	def segape = Lloc.findAllByPrimerCognomAndSegonCognomAndNom("TORRENT","SERRA","MARIA DEL CARMEN")
 	def segape = Lloc.findAllByNomAndPrimerCognom("MARIA DEL CARMEN","TORRENT")
 	
+	
+******************************************************************************************************************************************************
+---------------------------------------------------------------------
+BUSCAR LOS QUE TENGAN UN DETERMINADO CAMPO Y ELIMINAR AL MISMO TIEMPO
+---------------------------------------------------------------------
+Ejemplo: queremos obtener los diferentes perfiles de trabajador de un edificio. El cargo "Administrativo" puede aparecer varias veces, por lo que
+deberemos quedarnos sólo una vez con él.
+
+Hay que realizar una consulta discriminando por edificios, y a su vez encontrar una única vez cada puesto (se consigue con la claúsula projections).
+
+	def resultList = Lloc.createCriteria()list{
+		and
+		{
+			if(filtreEdifici)
+			{
+				eq("edifici",filtreEdifici)
+			}
+			
+			ne("codi","99999999")
+		}
+		projections {
+			distinct "descripcioLlarga"
+		}
+	}
+	println resultList.size //sirve para saber el tamaño del vector
+	
+2da forma
+*********
+Busca todos los que están en el edificio B3 y luego, con unique, se queda con puestos de trabajo únicos, es decir, nunca tendremos dos administrativos, 
+dos técnicos, etc ...
+	//Se buscan las funciones, código y ámbito en la tabla SIG_ZFUNCIO01
+	def query =
+	{
+		and
+		{
+			eq("edifici","NDB3")
+		}
+			
+	}
+	
+	def resultList = Lloc.createCriteria().list(query)
+	def result =  resultList.size()
+	println resultList.unique{it.funcio}.funcio
+	println resultList.unique{it.funcio}.size()
+	//println resultList.unique{it.funcio}.descripcioLlarga
+	resultList.remove(0)	//Eliminamos el primer elemento pq es null, en este caso.
+
+Impresión por pantalla:	
+393
+[null, 73, 72]
+3
+
+Vemos como de 393 elementos (cuyos únicos 3 valores eran null, 72 y 73) nos quedamos con tres.
+
+Ahora en otra tabla vamos a seleccionar con el código del puesto el nombre del puesto, usaremos un foreach porque desconocemos los valores numéricos:
+	def query2 =
+	{
+		or
+		{
+//				for(int i=72; i<74; i++){
+//					eq("codi",i.toLong())
+//				}
+//				eq("codi",72.toLong())
+//				eq("codi",73.toLong())
+			for(val in resultList.unique{it.funcio}.funcio){
+				eq("codi",val.toLong())
+			}
+
+		}
+			
+	}
+	def resultList2 = Funcio.createCriteria().list(query2)
