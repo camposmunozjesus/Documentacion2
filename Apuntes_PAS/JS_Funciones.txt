@@ -86,6 +86,7 @@ Esto es lo que actúa cuando se pulsa el botón de borrar, editar, etc!!!!
 </div>
 
 
+******************************************************************************************************************************************************
 ---------------------------------------------------
 FUNCIÓN QUE SE ACTIVA AL HACER CLICK EN UNA COLUMNA
 ---------------------------------------------------
@@ -120,4 +121,25 @@ Puede que el anterior no funcione
 			
 o bien:
 <tr id="tr${i}" class="${(i % 2) == 0 ? 'odd' : 'even'} hand" onclick="javascript:loadIframes('${personaInstance.nom}','${personaInstance.cognom1}','${personaInstance.cognom2}')">
-para pasar más de un parámetro.			
+para pasar más de un parámetro.	
+
+
+******************************************************************************************************************************************************
+----------------------------------------------------
+BOTÓN DE SUBMIT QUE ACTIVA FORMULARIO POR JAVASCRIPT
+----------------------------------------------------
+El formulario debe tener como id y como name "fm".
+	function accioExcel() {
+		alert("ExcEl");
+		var s = document.getElementById('fm').name;
+		//var s2 = document.getElementById('fm').name;
+		alert(s);
+		document.getElementById('fm').submit();
+		//$("#formulario input[name=action]").val("crearExcelB");
+	}
+
+	<div class="floatLeft" style="margin-top:5px">
+		<span class="buttons">
+			<g:actionSubmit class="excel" action="crearExcelButton" value="Crear Excel Button" />
+		</span>
+	</div>			

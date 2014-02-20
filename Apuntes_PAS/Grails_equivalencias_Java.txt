@@ -106,3 +106,18 @@ Ejemplo:
 	mesosAny.unique()
 	
 	println mesosAny -> Ya NO imprime los meses repetidos.
+	
+	
+******************************************************************************************************************************************************
+-------------------------------------
+PASAR PARÁMETROS A FUNCIONES/CLOSURES
+-------------------------------------
+Se define la cabecera como:
+	def generarExcel(def r, def resultList){
+		println "generando excel"
+		println "--"+r
+		println "--"+resultList.nom
+		println "***********************"
+	}
+Y en la llamada se usa:
+	generarExcel(var1, var2)

@@ -24,3 +24,12 @@ you need to install pure-Java SVNKit connector and select it on the Window->Pref
 
 You have to install SVNKit on the dialog that appears automatically after Subversive installation. Also you can install connectors using these 
 update sites: http://www.polarion.com/products/svn/subversive/download.php
+
+CONSEGUIR CONECTORES
+********************
+Una vez instalado el subversive se hace una descarga del proyecto pero no es exitosa. Esto es debido a que los conectores que se han descargado no son
+los adecuados para la versión con la que se trabaja. Para ello hay que ir a "Help"->"Install new software" y en la barra de direcciones poner o buscar
+la siguiente URL:
+http://download.springsource.com/release/TOOLS/third-party/subversive
+
+Entonces se descargan todos y se resuelve el problema.
