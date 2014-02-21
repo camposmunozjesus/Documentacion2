@@ -1,0 +1,9 @@
+COMANDOS ÚTILES EN GRAILS
+=========================
+------------
+CREAR UN WAR
+------------
+Hay que ir a la línea de comandos y escribir:
+test war
+y lo crea e la carpeta "target".
+	
