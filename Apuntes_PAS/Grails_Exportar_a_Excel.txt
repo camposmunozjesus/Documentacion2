@@ -1,0 +1,101 @@
+Usando la libreria export 1.5 de de.andreasschmitt.export.builder.
+
+se define el servicio fuera de las closures:
+def exportService
+
+y la closure podría ser:
+
+	def generarExcel(def cabecera, def datos){
+		println "generando excel"
+		def format = "excel"
+		
+		//Definim formatters per als camps de tipus de permís, estat del permis i les dates
+		
+		//Estat -> descripció
+		def formatCodi = {domain, value ->
+			switch (value) {
+			 case '70000087': return 'Pendent'
+					   break;
+			 case '70012680': return 'Acceptat'
+					   break;
+			 case '2': return 'Denegat'
+					   break;
+			 case '3': return 'ViP Responsable'
+					   break;
+			 case '4': return 'ViP Provisional'
+					   break;
+			}
+		}
+		
+		//Estat -> descripció
+		def formatAmbit = {domain, value ->
+			switch (value) {
+			 case 'TIC': return 'Tecnologies Infi.'
+					   break;
+
+			}
+		}
+		
+		//Estat -> descripció
+		def formatCognom = {domain, value ->
+			switch (value) {
+			 case 'CAMPOS': return 'CAPTURED'
+					   break;
+
+			}
+		}
+		
+//		//Data en format dd/mm/yyyy
+//		def formatData = {domain, value ->
+//			return value.format('dd/MM/yyyy')
+//		}
+			
+		List fields = []
+		List width = []
+		Map labels = [:]
+		Map parameters = [:]
+//		Map formatters = [estado:formatEstado,dataInici:formatData,dataFi:formatData,dataPeticio:formatData,dataEstat:formatData]
+//		Map formatters = [codi:formatCodi, ambit:formatAmbit]	//En el formatter se especifica el nombre de la columna utilizado en fields.add
+//		Map formatters = [primerCognom:formatCognom]
+		Map formatters = [:]
+		
+		// Mapejem les columnes de dades
+		fields.add("codi")
+		labels.put("codi", "Codi")
+		width.add(0.2)
+
+		fields.add("primerCognom")	//Se indica el campo que se quiere insertar en la celda. Debe coincidir con 
+		labels.put("nom", "Nom")
+		width.add(0.2)
+
+		fields.add("funcio")
+		labels.put("funcio", "Funcio")
+		width.add(0.2)
+
+		fields.add("ambit")
+		labels.put("ambit", "Ambit")
+		width.add(0.2)
+		
+//		fields.add("dataInici")
+//		labels.put("dataInici", "Data inici")
+//		width.add(0.2)
+//		
+//		fields.add("dataFi")
+//		labels.put("dataFi", "Data fi")
+//		width.add(0.2)
+//		
+//		fields.add("dataPeticio")
+//		labels.put("dataPeticio", "Data petició")
+//		width.add(0.2)
+//				
+//		fields.add("dataEstat")
+//		labels.put("dataEstat", "Últim estat")
+//		width.add(0.2)
+		
+		parameters.put("column.widths", width)
+		
+		
+		response.contentType = grailsApplication.config.grails.mime.types[format]
+		response.setHeader("Content-disposition", "attachment; filename=dades.xls")
+		exportService.export(format, response.outputStream,rrr,fields,labels,formatters,parameters)
+		
