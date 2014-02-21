@@ -34,7 +34,7 @@ JAVA
 ====
 TIEMPO-HORAS-PARSEO
 *******************
-Como parsear la hora únicamente:	http://nachxs.wordpress.com/2010/12/30/tip-convertir-fecha-y-hora-de-string-a-java-sql-datetime/=======
+Como parsear la hora únicamente:	http://nachxs.wordpress.com/2010/12/30/tip-convertir-fecha-y-hora-de-string-a-java-sql-datetime/
 Geo localización IP: (tipo REST)	http://www.restfulwebservices.net/wcf/GeoIPService.svc
 
 
@@ -54,3 +54,11 @@ LIBRERÍAS
 =========
 joda-time-1.5.jar					http://www.java2s.com/Code/Jar/j/Downloadjodatime15jar.htm
 									http://docs.oracle.com/javase/tutorial/datetime/
+									
+									
+WECEEM
+======
+Página oficial:						http://www.weceem.org/weceem/Documentation/User-Guide
+									http://www.weceem.org/weceem/old-docs/Tutorials/creating-a-new-site
+Más documentación					http://jcatalog.github.io/weceem-plugin/guide/3.GeneralBehaviourAndConcepts.html
+
