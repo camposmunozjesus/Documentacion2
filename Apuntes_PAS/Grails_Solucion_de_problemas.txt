@@ -316,6 +316,21 @@ Cerrar GGTS.
 Eliminar manualmente la carpeta (pegar la dirección en el explorador).
 
 
+-------------
+Problema 8.2: (IMPORTAR PROYECTO) Error al importar el proyecto BDP (repositorio RAC/BI). 
+-------------
+'Import Grails Project' has encountered a problem.
+Invalid project description.
+En los detalles del error:
+Invalid project description.
+OK
+D:\GrailsWorkspace\Proyectos\APLICACIONES\BI overlaps the location of another project: 'BI'
+
+Solución 8.2:
+-------------
+Importar proyecto como "General -> Proyecto existente en el workspace" en lugar de importarlo como "Grails -> Proyecto Grails".
+
+
 ******************************************************************************************************************************************************
 -----------
 Problema 9: (APACHE POI) Error al importar la librería Apache POI.
