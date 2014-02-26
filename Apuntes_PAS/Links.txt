@@ -62,3 +62,8 @@ Página oficial:						http://www.weceem.org/weceem/Documentation/User-Guide
 									http://www.weceem.org/weceem/old-docs/Tutorials/creating-a-new-site
 Más documentación					http://jcatalog.github.io/weceem-plugin/guide/3.GeneralBehaviourAndConcepts.html
 
+
+LIBROS
+======
+Groovy:								http://it-ebooks.info/book/2715/
+

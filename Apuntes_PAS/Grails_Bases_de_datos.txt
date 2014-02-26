@@ -35,6 +35,8 @@ servicio: rh (La base de datos)
 		
 Ahora ya se conecta correctamente a la base de datos.
 
+Probablemente habría que eliminar "mem" para que mantuviera los cambios en la base de datos.
+
 
 ******************************************************************************************************************************************************
 -----------------------------
@@ -139,6 +141,7 @@ class CodiConciliacio {
 }
 
 Aquí ponemos el mapping, que verás el nombre de la tabla, qué campo es el id, id generator significa que el id no es autoincremental, sino que en caso de crear una ocurrencia es el usuario que lo pone a mano, y después el mapeo de los campos de la bbdd.
+***FIN DEL MAIL
 
 dataSource {
     pooled = true
@@ -360,7 +363,23 @@ class Lloc {
 }
 
 
-******************************************************************************************************************************************************
+CLASE ALUMNO:
+*************
+class Alumno {
+
+	String nombre
+	String apellidoUno
+	String apellidoDos
+	Integer edad
+	
+	static belongsTo = [clase: Clase]
+	
+    static constraints = {
+    }
+}
+
+
+<ORDENACIÓN>*******************************************************************************************************************************************
 -------------------------------------------------
 ORDENAR UN VECTOR RECUPERADO DE UNA BASE DE DATOS
 -------------------------------------------------
@@ -373,6 +392,32 @@ Para ordenarlo a la inversa:
 	def persones = Lloc.findAllByPrimerCognom("GARCIA")
 	def personesSorted = persones.sort{it.nom}.inverse()???????????????????????????????????????????????????????????????????????????????
 	
+
+-------------------------
+RECUPERAR DATOS Y ORDENAR
+-------------------------
+Utiliza la calse Alumno.
+Código de ejemeplo:
+	def alumnos = []
+	
+	def query =
+	{
+		and
+		{
+
+		}
+	}
+	
+	alumnos = Alumno.createCriteria().list(query)
+	alumnos = alumnos.sort{ a,b ->
+		a.apellidoUno <=> b.apellidoUno ?: a.edad <=> b.edad
+		//?: a.apellidoDos <=> b.apellidoDos  ?: a.nombre <=> b.nombre
+	}
+	
+Suponiendo que la clase Alumno forma parte del dominio, y que tiene los campos edad, nombre, ...
+Esta ejecución ordena los elementos obtenidos por el campo apellidoUno, y en el caso de coincidir dos elementos con apellidoUno, el segundo criterio de 
+ordenación será el campo edad.
+
 
 ******************************************************************************************************************************************************
 ------------------------------------------
@@ -456,3 +501,6 @@ Ahora en otra tabla vamos a seleccionar con el código del puesto el nombre del 
 			
 	}
 	def resultList2 = Funcio.createCriteria().list(query2)
+	
+	
+******************************************************************************************************************************************************

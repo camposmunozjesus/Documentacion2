@@ -1,0 +1,16 @@
+APACHE TOMCAT - SOLUCIÓN DE PROBLEMAS
+=====================================
+-----------------------------------------------
+LA APLICACIÓN ES MUY GRANDE Y NO SE PUEDE SUBIR
+-----------------------------------------------
+Mensaje: Falló Carga de Despliegue, Excepción: org.apache.tomcat.util.http.fileupload.FileUploadBase$SizeLimitExceededException: the request was rejected
+because its size (52983276) exceeds the configured maximum (52428800).
+Hay que ir al fichero ubicado en \webapps\manager\WEB-INF\web.xml y modificar:
+    <multipart-config>
+      <!-- 52MB max -->
+      <max-file-size>52428800</max-file-size>
+      <max-request-size>52428800</max-request-size>
+      <file-size-threshold>0</file-size-threshold>
+    </multipart-config>
+
+	

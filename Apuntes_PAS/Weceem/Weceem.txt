@@ -1,0 +1,7 @@
+WECEEM
+======
+---------------------------
+AÑADIR ELEMENTO DE BÚSQUEDA 
+---------------------------
+<wcm:search types="org.weceem.html.WcmHTMLContent,
+     org.weceem.blog.WcmBlogEntry,org.weceem.content.WcmComment"/>
