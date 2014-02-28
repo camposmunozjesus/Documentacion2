@@ -12,5 +12,63 @@ Hay que ir al fichero ubicado en \webapps\manager\WEB-INF\web.xml y modificar:
       <max-request-size>52428800</max-request-size>
       <file-size-threshold>0</file-size-threshold>
     </multipart-config>
+	
+	
+******************************************************************************************************************************************************
+---------------------------------------------
+SUBIR APLICACIÓN GRAILS (WAR) A APACHE TOMCAT
+---------------------------------------------
+Si no hay ninguna conexión con bases de datos, es decir, el archivo DataSource.groovy está vacío, no habrá problema, la aplicación funcionará correctamente.
+
+En el caso de que se use la base de datos por defecto, FALLARÁ!!!.
+
+Si queremos usar una base de datos, por ejemplo PorstgreSQL, debemos copiar el conector (archivo jar) en la carpeta /lib del directorio donde está
+instalado el servidor Apache Tomcat. (postgresql-9.0-801.jdbc4.jar)
+
+Entonces ya se puede desplegar correctamente el WAR de la aplicación Grails.
+
+Y así ya no se obtiene el error de "No se pudo arrancar la aplicación en trayectoria de contexto apache tomcat".
+
+Para entrar en la direción, si el archivo WAR se llama "prueba-0.1.war", la trayectoria será "/prueba-0.1", pero se debera añadir el nombre del controlador
+para acceder manualmente a donde se desee.
+
+	
+******************************************************************************************************************************************************
+------------------------------------
+INSTALAR WECEEM (AÚN NO SOLUCIONADO)
+------------------------------------
+Se utiliza con una base de datos de PostgreSQL: usuario propietario de la base de datos "weceem" es "jesus.
+
+Modificar el tamaño de la aplicación en el fichero \webapps\manager\WEB-INF\web.xml.
+
+Archivo de configuración llamado "weceem.properties" que se ubica en "D:\wec".
+	 # Control whether or not connection pooling is enabled
+	dataSource.pooled=true
+	# Set the JDBC driver class name - class must be on classpath
+	dataSource.driverClassName=org.postgresql.Driver
+	# The user name for the SQL database
+	dataSource.username=jesus
+	# The password for the SQL database
+	dataSource.password=jesus
+	# The database update mode. Leave as "update"
+	dataSource.dbCreate=update
+	# The JDBC URL of your database
+	dataSource.url=jdbc:postgresql://localhost:5432/weceem
+
+
+	# The path to use for storing search index files - MUST be writable
+	searchable.index.path=d:/wec
+
+En catalina.bat se añade o modifica:
+set JAVA_OPTS=%JAVA_OPTS% %LOGGING_CONFIG% -Dweceem.config.location=file:///D:/wec/weceem.properties -Xms518m -Xmx1024m 
+
+El jar que contiene los conectores de las bases de datos se guarda en el directorio "/lib" de apache, y cuando se ha creado el contexto (carpetas
+creadas a apartir del WAR) se incluye el jar dentro de D:\apache-tomcat-8.0.3\webapps\weceem-1.2-M1\WEB-INF\lib).
+
+Webs de ayuda:
+Indicar dónde encontrar el arhivo de configuración de weceem: http://forums.jcatalog.com/forums/posts/list/96.page
+Cómo establecer correctamente los conectores SQL: http://stackoverflow.com/questions/9793637/unable-to-set-java-opts-variable-dweceem-config-location-for-weceem-grails-cms
+
+
 
 	

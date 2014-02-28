@@ -348,3 +348,29 @@ Posteriormente hay que bajarse el jar del POI apache, descomprimirlo y añadir m
 import donde sea necesario.
 
 
+******************************************************************************************************************************************************
+------------
+Problema 10: (POSTGRESQL) ERROR: relation “TABLE_NAME” does not exist
+------------
+
+Solución 10:
+------------
+Hay que incluir el nombre del esquema de donde se encuentra la tabla.
+Hay que añadir en el mapping de la clase del dominio:
+class Persona {
+
+	String nombre
+	Integer edad
+	Integer id
+	
+    static mapping = {
+		table 'taula', schema: "test"<-----
+		id name:'id'
+		id generator:'assigned'
+		version false
+		
+		nombre column: 'nom'
+		edad column: 'edat'
+    }
+}
+

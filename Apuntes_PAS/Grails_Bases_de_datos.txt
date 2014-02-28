@@ -38,6 +38,76 @@ Ahora ya se conecta correctamente a la base de datos.
 Probablemente habría que eliminar "mem" para que mantuviera los cambios en la base de datos.
 
 
+*************************
+------------------------------------
+CONECTAR LA BASE DE DATOS POSTGRESQL
+------------------------------------
+Incluir en el BuildConfig.groovy:
+    dependencies {
+        // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes e.g.
+        // runtime 'mysql:mysql-connector-java:5.1.24'
+		runtime 'postgresql:postgresql:9.0-801.jdbc4'
+    }
+	
+Archivo Config.groovy:
+dataSource {
+	pooled = true
+	driverClassName = "org.postgresql.Driver"
+}
+hibernate {
+cache.use_second_level_cache=true
+cache.use_query_cache=false //cache.use_query_cache=true
+cache.provider_class = 'net.sf.ehcache.hibernate.EhCacheProvider'
+}
+
+environments {
+development {
+	dataSource {
+		dbCreate = "update" // one of 'create', 'create-drop','update'
+		url = "jdbc:postgresql:Pruebas" // o bien url = "jdbc:postgresql://localhost:5432/Pruebas"
+					username = "jesus"
+					password = "jesus"
+	}
+}
+test {
+		dataSource {
+		dbCreate = "update"
+		url = "jdbc:postgresql:Pruebas"
+					username = "jesus"
+					password = "jesus"
+	}
+}
+production {
+	dataSource {
+		dbCreate = "update"
+		url = "jdbc:postgresql:Pruebas"
+					username = "jesus"
+					password = "jesus"
+	}
+}
+}
+
+Teniendo en cuenta que en PostgreSQL se ha creado un usuario llamado "jesus" con contraseña "jesus". PgAdmin -> Roles de entrada -> Nuevo rol de entrada.
+Al desplegar "Bases de datos" aparece un icono amarillo de bases de datos llamado "Pruebas", dentro del esquema "test"  y en el apartado de tablas una
+tabla llamada "taula".
+
+Si no se indica el esquema se irá al esquema "public".
+Hay que dar permisos/poner como propietario al usuario en la BD, el esquema y la tabla.
+Pueden haber problemas en el momento de leer la tabla, como indicar que el atributo es un String (suele ser un character varying (numero)).
+
+Para que reconozca el esquema, en static maapping hay que indicar: (con comillas dobles!!!)
+    static mapping = {
+		table name: "taula", schema: "test"
+		...
+    }
+	
+Como solucionar el problema de utilizar PostgrSQL (no encuentra la tabla): http://stackoverflow.com/questions/2034099/psqlexception-error-relation-table-name-does-not-exist
+Como incluir el esquema de bases de datos: http://grails.org/doc/2.1.0/ref/Database%20Mapping/table.html
+
+Para poder desplegar la aplicación (archivo WAR) en un Apache Tomcat hay que copiar el archivo jar que contiene los conectores de PostgreSQL, en este
+caso postgresql-9.0-801.jdbc4.jar. Se evita el error "No se pudo arrancar la aplicación en trayectoria de contexto apache tomcat".
+
+
 ******************************************************************************************************************************************************
 -----------------------------
 RECUPERAR DE LA BASE DE DATOS
