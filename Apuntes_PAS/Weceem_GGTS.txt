@@ -1,0 +1,357 @@
+WECEEM - NOTAS SOBRE INSTALACIÓN Y USO CON GGTS
+===============================================
+-----------------------
+PASOS DE LA INSTALACIÓN
+-----------------------
+PASO 1
+******
+Descargar el código fuente.
+Descomprimirlo e importarlo al workspace como proyecto Grails.
+Borrar las dos clases problemáticas que se encuentran en sr/java/com/jcatalog/wiki/block.
+
+PASO 2: Configuración de BuildConfig.groovy
+*******************************************
+Trabajaremos con una base de datos PostgreSQL. Por lo tanto hay que añadir los plugins para los drivers SQL de PostgreSQL.
+Añadir en el apartado de "dependencies":
+	runtime 'postgresql:postgresql:9.0-801.jdbc4'
+
+Según algunos foros la versión de Hibernate para evitar fallos debe ser:
+Obtenido de: 
+	
+PASO 3: Configuración de DataSource.groovy
+==========================================
+La base de datos es la siguiente:
+Nombre de la base de datos: Pruebas
+Puerto: 5432
+Usuario: jesus
+Pass: EfTGIh
+
+Por lo que el archivo DataSource.groovy tendrá el siguiente aspecto:
+	dataSource {
+		maxActive = 1
+		driverClassName = "org.postgresql.Driver"
+		}
+		hibernate {
+		cache.use_second_level_cache=true
+		cache.use_query_cache=false
+		cache.provider_class = 'net.sf.ehcache.hibernate.EhCacheProvider'
+		}
+		
+		environments {
+		development {
+			dataSource {
+				dbCreate = "create-drop" // one of 'create', 'create-drop','update'
+				url = "jdbc:postgresql://localhost:5432/Pruebas"
+							username = "jesus"
+							password = "EfTGIh"
+			}
+		}
+		test {
+				dataSource {
+				dbCreate = "create-drop"
+				url = "jdbc:postgresql://localhost:5432/Pruebas"
+							username = "jesus"
+							password = "EfTGIh"
+			}
+		}
+		production {
+			dataSource {
+				dbCreate = "create-drop"
+				url = "jdbc:postgresql://localhost:5432/Pruebas"
+							username = "jesus"
+							password = "EfTGIh"
+			}
+		}
+	}
+La primera vez se ha usado create-drop en dbCreate. A parti de ahí se puede usar update.
+
+Tras la primera ejecución se puede comprobar como ha creado las tablas en el esuqema public de la base de datos.
+
+
+PASO 4: Comando de ejecución
+============================
+No se puede utilizar "Run as ..." -> "Grails command (run-app)" ya que se obtiene un mensaje de error como el descrito en (ERRORES EJECUTANDO RUN AS ...).
+
+Se debe ejecutar el comando: run-app --verbose --stacktrace
+Indicando el nombre del proyecto
+
+Información obtenida de: http://stackoverflow.com/questions/15711743/unable-to-run-grails-project-using-spring-security-core-in-ggts-on-windows-7
+
+
+PASO 3: Configuración de Config.groovy
+======================================
+En algunos foros se comenta que los tipos mime deben estar desactivados.
+
+
+
+-----------------------------------------------------------------
+TRAZA DE LA EJECUCIÓN DEL COMANDO: run-app --verbose --stacktrace
+-----------------------------------------------------------------
+Es el comando que hace funcinar la aplicación, ya que un botón derecho sobre el proyecto y un "Run as ..." -> "Grails command (run-app)".
+Base Directory: C:\grails\weceem-app-master
+|Loading Grails 2.3.4
+|Configuring classpath
+.
+|Environment set to development
+.................................
+|Packaging Grails application
+.....................................................................................2014-03-03 13:40:25,572 [main] INFO  webxml.WebxmlGrailsPlugin  - Loading default config file: class DefaultWebXmlConfig
+2014-03-03 13:40:25,620 [main] WARN  webxml.WebxmlGrailsPlugin  - Did not find application config file: WebXmlConfig
+2014-03-03 13:40:26,613 [main] INFO  webxml.WebxmlGrailsPlugin  - Loading default config file: class DefaultWebXmlConfig
+2014-03-03 13:40:26,617 [main] WARN  webxml.WebxmlGrailsPlugin  - Did not find application config file: WebXmlConfig
+|Running Grails application
+2014-03-03 13:40:28,260 [main] INFO  http11.Http11Protocol  - Initializing ProtocolHandler ["http-bio-8080"]
+2014-03-03 13:40:28,281 [main] INFO  core.StandardService  - Starting service Tomcat
+2014-03-03 13:40:28,281 [main] INFO  core.StandardEngine  - Starting Servlet Engine: Apache Tomcat/7.0.47
+2014-03-03 13:40:28,391 [localhost-startStop-1] INFO  startup.ContextConfig  - No global web.xml found
+2014-03-03 13:40:28,493 [localhost-startStop-1] INFO  [localhost].[/weceem]  - Initializing Spring root WebApplicationContext
+2014-03-03 13:40:31,740 [localhost-startStop-1] WARN  util.GrailsUtil  - [DEPRECATED] Method ConfigurationHolder.getConfig() is deprecated and will be removed in a future version of Grails.
+2014-03-03 13:40:35,705 [localhost-startStop-1] WARN  util.GrailsUtil  - [DEPRECATED] Method ConfigurationHolder.getConfig() is deprecated and will be removed in a future version of Grails.
+2014-03-03 13:40:35,774 [localhost-startStop-1] WARN  util.GrailsUtil  - [DEPRECATED] Method ConfigurationHolder.getConfig() is deprecated and will be removed in a future version of Grails.
+2014-03-03 13:40:35,826 [localhost-startStop-1] INFO  hibernate3.HibernatePluginSupport  - Set db generation strategy to 'create-drop' for datasource DEFAULT
+Loading Weceem config from file:./weceem.properties
+Loaded weceem properties: [searchable:[index:[path:/Websites/cms/search-indexes]]]
+Setting searchable index path to: /Websites/cms/search-indexes
+Weceem: Initializing ehcache with default weceem ehcache.xml from plugin resource: class path resource [weceem-default-ehcache.xml]
+2014-03-03 13:40:36,740 [localhost-startStop-1] WARN  util.GrailsUtil  - [DEPRECATED] Method ConfigurationHolder.getConfig() is deprecated and will be removed in a future version of Grails.
+
+Configuring Spring Security Core ...
+... finished configuring Spring Security Core
+
+2014-03-03 13:40:37,866 [localhost-startStop-1] INFO  cache.CacheBeanPostProcessor  - postProcessBeanDefinitionRegistry start
+2014-03-03 13:40:37,866 [localhost-startStop-1] INFO  cache.CacheBeanPostProcessor  - postProcessBeanFactory
+2014-03-03 13:40:40,386 [localhost-startStop-1] WARN  util.GrailsUtil  - [DEPRECATED] Method ConfigurationHolder.getConfig() is deprecated and will be removed in a future version of Grails.
+2014-03-03 13:40:40,391 [localhost-startStop-1] WARN  util.GrailsUtil  - [DEPRECATED] Method ConfigurationHolder.getConfig() is deprecated and will be removed in a future version of Grails.
+2014-03-03 13:40:40,413 [localhost-startStop-1] WARN  util.GrailsUtil  - [DEPRECATED] Method ConfigurationHolder.getConfig() is deprecated and will be removed in a future version of Grails.
+2014-03-03 13:40:40,622 [localhost-startStop-1] WARN  util.GrailsUtil  - [DEPRECATED] Method ConfigurationHolder.getConfig() is deprecated and will be removed in a future version of Grails.
+2014-03-03 13:40:42,458 [localhost-startStop-1] WARN  config.ConfigurationFactory  - No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/C:/Users/Jesus%20Campos/.m2/repository/net/sf/ehcache/ehcache-core/2.4.6/ehcache-core-2.4.6.jar!/ehcache-failsafe.xml
+2014-03-03 13:40:42,640 [localhost-startStop-1] WARN  hibernate.AbstractEhcacheRegionFactory  - Couldn't find a specific ehcache configuration for cache named [org.weceem.content.WcmContent]; using defaults.
+2014-03-03 13:40:44,707 [localhost-startStop-1] WARN  hibernate.AbstractEhcacheRegionFactory  - Couldn't find a specific ehcache configuration for cache named [org.weceem.content.WcmSpace]; using defaults.
+2014-03-03 13:40:45,216 [localhost-startStop-1] WARN  hibernate.AbstractEhcacheRegionFactory  - Couldn't find a specific ehcache configuration for cache named [org.weceem.content.WcmRelatedContent]; using defaults.
+2014-03-03 13:40:45,628 [localhost-startStop-1] WARN  hibernate.AbstractEhcacheRegionFactory  - Couldn't find a specific ehcache configuration for cache named [org.grails.taggable.Tag]; using defaults.
+2014-03-03 13:40:46,141 [localhost-startStop-1] WARN  hibernate.AbstractEhcacheRegionFactory  - Couldn't find a specific ehcache configuration for cache named [org.weceem.content.WcmStatus]; using defaults.
+2014-03-03 13:40:46,798 [localhost-startStop-1] WARN  hibernate.AbstractEhcacheRegionFactory  - Couldn't find a specific ehcache configuration for cache named [org.grails.taggable.TagLink]; using defaults.
+2014-03-03 13:40:46,994 [localhost-startStop-1] WARN  hibernate.AbstractEhcacheRegionFactory  - Couldn't find a specific ehcache configuration for cache named [org.weceem.auth.CMSRole]; using defaults.
+2014-03-03 13:40:51,394 [localhost-startStop-1] WARN  util.GrailsUtil  - [DEPRECATED] Method ApplicationHolder.getApplication() is deprecated and will be removed in a future version of Grails.
+2014-03-03 13:40:51,473 [localhost-startStop-1] INFO  impl.StdSchedulerFactory  - Using default implementation for ThreadExecutor
+2014-03-03 13:40:51,496 [localhost-startStop-1] INFO  core.SchedulerSignalerImpl  - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2014-03-03 13:40:51,496 [localhost-startStop-1] INFO  core.QuartzScheduler  - Quartz Scheduler v.2.1.5 created.
+2014-03-03 13:40:51,497 [localhost-startStop-1] INFO  simpl.RAMJobStore  - RAMJobStore initialized.
+2014-03-03 13:40:51,498 [localhost-startStop-1] INFO  core.QuartzScheduler  - Scheduler meta-data: Quartz Scheduler (v2.1.5) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2014-03-03 13:40:51,498 [localhost-startStop-1] INFO  impl.StdSchedulerFactory  - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2014-03-03 13:40:51,498 [localhost-startStop-1] INFO  impl.StdSchedulerFactory  - Quartz scheduler version: 2.1.5
+2014-03-03 13:40:51,499 [localhost-startStop-1] INFO  core.QuartzScheduler  - JobFactory set to: grails.plugins.quartz.GrailsJobFactory@d983d3
+2014-03-03 13:40:51,602 [localhost-startStop-1] WARN  util.GrailsUtil  - [DEPRECATED] Method ApplicationHolder.getApplication() is deprecated and will be removed in a future version of Grails.
+2014-03-03 13:40:51,854 [localhost-startStop-1] WARN  util.GrailsUtil  - [DEPRECATED] Method ConfigurationHolder.getConfig() is deprecated and will be removed in a future version of Grails.
+2014-03-03 13:40:51,892 [localhost-startStop-1] WARN  util.GrailsUtil  - [DEPRECATED] Method ConfigurationHolder.getConfig() is deprecated and will be removed in a future version of Grails.
+2014-03-03 13:40:53,012 [localhost-startStop-1] INFO  scaffolding.AbstractGrailsTemplateGenerator  - Scaffolding template generator set to use resource loader [org.codehaus.groovy.grails.commons.spring.GrailsWebApplicationContext@51f288: startup date [Mon Mar 03 13:40:37 CET 2014]; parent: Root WebApplicationContext]
+2014-03-03 13:40:53,758 [localhost-startStop-1] INFO  services.WcmCacheService  - Caches configured: [weceem.eternalCache, weceem.gspCache, weceem.contentCache, weceem.dataFeeds, weceem.contentTreeFingerprintCache, weceem.contentFingerprintCache, weceem.uriToContentCache]
+2014-03-03 13:40:56,262 [localhost-startStop-1] INFO  config.EnvironmentSearchableCompassConfigurator  - Setting Compass connection to [C:\Websites\cms\search-indexes]
+2014-03-03 13:40:58,485 [localhost-startStop-1] INFO  config.CompassConfiguration  - Mapping InputStream [org/weceem/files/WcmContentDirectory.cpm.xml]
+2014-03-03 13:40:58,498 [localhost-startStop-1] INFO  config.CompassConfiguration  - Mapping InputStream [org/grails/taggable/Tag.cpm.xml]
+2014-03-03 13:40:58,516 [localhost-startStop-1] INFO  config.CompassConfiguration  - Mapping InputStream [org/weceem/content/WcmTemplate.cpm.xml]
+2014-03-03 13:40:58,550 [localhost-startStop-1] INFO  config.CompassConfiguration  - Mapping InputStream [org/weceem/wiki/WcmWikiItem.cpm.xml]
+2014-03-03 13:40:58,563 [localhost-startStop-1] INFO  config.CompassConfiguration  - Mapping InputStream [org/weceem/js/WcmJavaScript.cpm.xml]
+2014-03-03 13:40:58,575 [localhost-startStop-1] INFO  config.CompassConfiguration  - Mapping InputStream [org/weceem/blog/WcmBlog.cpm.xml]
+2014-03-03 13:40:58,589 [localhost-startStop-1] INFO  config.CompassConfiguration  - Mapping InputStream [org/weceem/blog/WcmBlogEntry.cpm.xml]
+2014-03-03 13:40:58,600 [localhost-startStop-1] INFO  config.CompassConfiguration  - Mapping InputStream [org/weceem/files/WcmContentFileDB.cpm.xml]
+2014-03-03 13:40:58,623 [localhost-startStop-1] INFO  config.CompassConfiguration  - Mapping InputStream [org/weceem/content/WcmComment.cpm.xml]
+2014-03-03 13:40:58,636 [localhost-startStop-1] INFO  config.CompassConfiguration  - Mapping InputStream [org/weceem/script/WcmScript.cpm.xml]
+2014-03-03 13:40:58,644 [localhost-startStop-1] INFO  config.CompassConfiguration  - Mapping InputStream [org/weceem/content/WcmSpace.cpm.xml]
+2014-03-03 13:40:58,669 [localhost-startStop-1] INFO  config.CompassConfiguration  - Mapping InputStream [org/weceem/files/WcmContentFile.cpm.xml]
+2014-03-03 13:40:58,681 [localhost-startStop-1] INFO  config.CompassConfiguration  - Mapping InputStream [org/weceem/css/WcmStyleSheet.cpm.xml]
+2014-03-03 13:40:58,689 [localhost-startStop-1] INFO  config.CompassConfiguration  - Mapping InputStream [org/weceem/content/WcmStatus.cpm.xml]
+2014-03-03 13:40:58,701 [localhost-startStop-1] INFO  config.CompassConfiguration  - Mapping InputStream [org/weceem/script/WcmAction.cpm.xml]
+2014-03-03 13:40:58,713 [localhost-startStop-1] INFO  config.CompassConfiguration  - Mapping InputStream [org/weceem/content/WcmContent.cpm.xml]
+2014-03-03 13:40:58,727 [localhost-startStop-1] INFO  config.CompassConfiguration  - Mapping InputStream [org/weceem/html/WcmHTMLContent.cpm.xml]
+2014-03-03 13:40:58,739 [localhost-startStop-1] INFO  config.CompassConfiguration  - Mapping InputStream [org/weceem/content/WcmExternalLink.cpm.xml]
+2014-03-03 13:40:58,751 [localhost-startStop-1] INFO  config.CompassConfiguration  - Mapping InputStream [org/weceem/content/WcmWidget.cpm.xml]
+2014-03-03 13:40:58,800 [localhost-startStop-1] INFO  config.CompassConfiguration  - Mapping InputStream [org/weceem/content/WcmFolder.cpm.xml]
+2014-03-03 13:40:58,817 [localhost-startStop-1] INFO  config.CompassConfiguration  - Mapping InputStream [org/weceem/content/WcmVirtualContent.cpm.xml]
+2014-03-03 13:40:59,916 [localhost-startStop-1] INFO  analyzer.LuceneAnalyzerManager  - Building analyzer [searchableplugin_simple]
+2014-03-03 13:41:00,003 [localhost-startStop-1] INFO  analyzer.LuceneAnalyzerManager  - Building analyzer [searchableplugin_whitespace]
+2014-03-03 13:41:00,321 [localhost-startStop-1] INFO  engine.LuceneSearchEngineFactory  - Not using highlighter - no highlighter jar included.
+2014-03-03 13:41:02,335 [localhost-startStop-1] INFO  optimizer.LuceneSearchEngineOptimizerManager  - Starting scheduled optimizer [class org.compass.core.lucene.engine.optimizer.DefaultLuceneSearchEngineOptimizer] with period [10000ms]
+2014-03-03 13:41:02,343 [localhost-startStop-1] INFO  manager.DefaultLuceneSearchEngineIndexManager  - Starting scheduled index manager with period [60000ms]
+2014-03-03 13:41:02,352 [localhost-startStop-1] INFO  manager.IndexHoldersCache  - Starting scheduled refresh cache with period [5000ms]
+2014-03-03 13:41:02,653 [localhost-startStop-1] INFO  security.WeceemSecurityPolicy  - Initializing default security policy
+2014-03-03 13:41:02,744 [localhost-startStop-1] INFO  services.WcmContentRepositoryService  - Weceem will use [\var\www\weceem.org\uploads] as the directory for static uploaded files, and the url [/uploads/] to serve them
+2014-03-03 13:41:08,237 [localhost-startStop-1] WARN  injection.Injection  - Could not inject method displayMessage(java.util.Map) in to [org.grails.plugin.platform.UiExtensionsTagLib], a method with that name and argument list already exists
+2014-03-03 13:41:08,706 [localhost-startStop-1] INFO  events.EventsImpl  - Reloading events listeners
+2014-03-03 13:41:10,292 [localhost-startStop-1] WARN  util.GrailsUtil  - [DEPRECATED] Method ConfigurationHolder.getConfig() is deprecated and will be removed in a future version of Grails.
+2014-03-03 13:41:10,427 [localhost-startStop-1] WARN  util.GrailsUtil  - [DEPRECATED] Method ConfigurationHolder.getConfig() is deprecated and will be removed in a future version of Grails.
+2014-03-03 13:41:12,054 [localhost-startStop-1] WARN  util.GrailsUtil  - [DEPRECATED] Method ConfigurationHolder.getConfig() is deprecated and will be removed in a future version of Grails.
+2014-03-03 13:41:12,149 [localhost-startStop-1] INFO  services.NavigationService  - Navigation items updated: [*:[[controller:CMSUser, action:list, order:null, id:null, isVisible:true, title:users, params:null, path:[CMSUser, list], subItems:null]], weceem.app.admin:[[controller:CMSUser, action:list, order:null, id:null, isVisible:true, title:users, params:null, path:[CMSUser, list], subItems:null]]]
+2014-03-03 13:41:12,928 [localhost-startStop-1] WARN  util.GrailsUtil  - [DEPRECATED] Method ConfigurationHolder.getConfig() is deprecated and will be removed in a future version of Grails.
+2014-03-03 13:41:12,954 [localhost-startStop-1] WARN  util.GrailsUtil  - [DEPRECATED] Method ApplicationHolder.getApplication() is deprecated and will be removed in a future version of Grails.
+2014-03-03 13:41:12,975 [localhost-startStop-1] WARN  util.GrailsUtil  - [DEPRECATED] Method ApplicationHolder.getApplication() is deprecated and will be removed in a future version of Grails.
+2014-03-03 13:41:17,692 [localhost-startStop-1] INFO  databasemigration.MigrationRunner  - updateOnStart disabled for dataSource; not running migrations
+2014-03-03 13:41:17,770 [localhost-startStop-1] INFO  weceem.WeceemGrailsPlugin  - Weceem plugin running with data source <org.springframework.jdbc.datasource.TransactionAwareDataSourceProxy@1db78e0 reobtainTransactionalConnections=false targetDataSource=org.springframework.jdbc.datasource.LazyConnectionDataSourceProxy@3f832b>
+2014-03-03 13:41:17,770 [localhost-startStop-1] INFO  weceem.WeceemGrailsPlugin  - Weceem plugin running with grails configuration [grails:[mime:[file:[extensions:false], use:[accept:[header:false]], types:[html:[text/html, application/xhtml+xml], xml:[text/xml, application/xml], text:text/plain, js:text/javascript, rss:application/rss+xml, atom:application/atom+xml, css:text/css, csv:text/csv, all:*/*, json:[application/json, text/json], form:application/x-www-form-urlencoded, multipartForm:multipart/form-data]], views:[default:[codec:none], gsp:[encoding:UTF-8], enable:[jsessionid:[:]]], converters:[encoding:UTF-8, json:[date:javascript]], enable:[native2ascii:true], validateable:[packages:[org.weceem], classes:[:]], plugins:[springsecurity:[active:true, password:[algorithm:SHA-512, encodeHashAsBase64:false], dao:[reflectionSaltSourceProperty:username], adh:[errorPage:null], cacheUsers:false, userLookup:[userDomainClassName:org.weceem.auth.CMSUser, userNamePropertyName:username, passwordPropertyName:passwd, enabledPropertyName:enabled, authoritiesPropertyName:authorities], authority:[className:org.weceem.auth.CMSRole, nameField:authority], securityConfigType:InterceptUrlMap, interceptUrlMap:[/admin/users/**:[ROLE_ADMIN, IS_AUTHENTICATED_REMEMBERED], /admin/**:[IS_AUTHENTICATED_REMEMBERED], /ck/**:[IS_AUTHENTICATED_REMEMBERED], /*:[IS_AUTHENTICATED_ANONYMOUSLY], /login/**:[IS_AUTHENTICATED_ANONYMOUSLY], /logout/**:[IS_AUTHENTICATED_ANONYMOUSLY]], ajaxHeader:X-Requested-With, useBasicAuth:false, useSwitchUserFilter:false]], config:[defaults:[locations:[:]], locations:[file:./weceem.properties]], gorm:[default:[constraints:[:], mapping:[:]]], taggable:[preserve:[case:[:]], tag:[table:[:], autoImport:[:]], tagLink:[table:[:], autoImport:[:]]], logging:[jul:[usebridge:[:]]], databinding:[autoGrowCollectionLimit:[:], trimStrings:[:], convertEmptyStringsToNull:[:], dateFormats:[:], enableSpringEventAdapter:[:]], plugin:[platform:[initialized:true], databasemigration:[changelogLocation:[:], databaseChangeLogTableName:[:], databaseChangeLogLockTableName:[:], forceAutoMigrate:[:], autoMigrateScripts:[:], updateOnStart:[:]]], spring:[disable:[aspectj:[autoweaving:[:]]], bean:[packages:[:]]], disableCommonsMultipart:[:], controllers:[defaultScope:[:]], mail:[jndiName:[:], host:[:], encoding:[:], port:[:], username:[:], password:[:], protocol:[:], props:[:]], serverURL:[:], web:[url:[converter:[:]], linkGenerator:[useCache:[:]], xhr:[identifier:[:]]], gsp:[view:[dir:[:]]], cache:[enabled:[:], proxyTargetClass:[:], aopOrder:[:], keyGenerator:[:]]], navigation:[weceem.app.admin:[controller:CMSUser, action:list, title:users, order:null]], weceem:[profile:[url:[controller:userProfile, action:edit]], logout:[url:[controller:logout]], content:[prefix:], admin:[prefix:admin], tools:[prefix:cms/tools], space:[templates:[default:classpath:/org/weceem/resources/default-space-template.zip, basic:classpath:/org/weceem/resources/basic-space-template.zip]], springsecurity:[details:[mapper:Config$_run_closure2@994d8b]], upload:[dir:file:/var/www/weceem.org/uploads/], security:[policy:[path:[:]]], archived:[status:[:]], umoderated:[status:[:]]], log4j:Config$_run_closure4_closure9_closure12@b20f25, dataSource:[maxActive:1, driverClassName:org.postgresql.Driver, dbCreate:create-drop, url:jdbc:postgresql://localhost:5432/Pruebas, username:jesus, password:jesus, jndiName:[:], readOnly:[:], pooled:[:], passwordEncryptionCodec:[:], properties:[:], configClass:[:], loggingSql:[:], logSql:[:], formatSql:[:], dialect:[:]], hibernate:[cache:[use_second_level_cache:true, use_query_cache:false, useCacheProvider:[:], region:[factory_class:net.sf.ehcache.hibernate.EhCacheRegionFactory], provider_configuration_file_resource_path:[:]], naming_strategy:[:], config:[location:[:]], flush:[mode:[:]]], plugin:[platformCore:[organization:[name:My Corp (set plugin.platformCore.organization.name)], site:[name:Our App (set plugin.platformCore.site.name), url:null], show:[startup:[info:true]], navigation:[disabled:false], events:[disabled:false, poolSize:10, catchFlushExceptions:true, gorm:[disabled:false]], security:[disabled:false], ui:[disabled:false], config:[disabled:[:]]], weceem:[:], quartz:[:], feeds:[:], jqueryUi:[:], jquery:[:], searchable:[:], cache:[:], databaseMigration:[:], blueprint:[:], taggable:[:], cacheHeaders:[:], beanFields:[:], ckeditor:[:], springSecurityCore:[:], navigation:[:], mail:[:]], out:[:], searchable:[out:[:], compassConnection:C:\Websites\cms\search-indexes, compassSettings:[:], defaultExcludedProperties:[password], defaultFormats:[:], defaultMethodOptions:[search:[reload:false, escape:false, offset:0, max:10, defaultOperator:and], suggestQuery:[userFriendly:true]], mirrorChanges:false, bulkIndexOnStartup:false, releaseLocksOnStartup:true, fetchCount:[:], domain:[:]], quartz:[autoStartup:true, jdbcStore:false, waitForJobsToCompleteOnShutdown:true, exposeSchedulerInRepository:false, props:[scheduler:[skipUpdateCheck:true]], _properties:[org.quartz.scheduler.skipUpdateCheck:true]], beans:[:], ckeditor:[connectors:[prefix:[:]], upload:[baseurl:[:]]], jquery:[defaultPlugins:[:]]]
+2014-03-03 13:41:17,846 [localhost-startStop-1] INFO  services.WcmContentRepositoryService  - Weceem will use [\var\www\weceem.org\uploads] as the directory for static uploaded files, and the url [/uploads/] to serve them
+2014-03-03 13:41:20,217 [localhost-startStop-1] INFO  services.WcmContentRepositoryService  - Importing space template [classpath:/org/weceem/resources/default-space-template.zip] into space [Default]
+2014-03-03 13:41:20,423 [localhost-startStop-1] INFO  services.WcmContentRepositoryService  - Deleting content from space [org.weceem.content.WcmSpace : 7]
+2014-03-03 13:41:20,444 [localhost-startStop-1] INFO  services.WcmContentRepositoryService  - Finished deleting content from space [org.weceem.content.WcmSpace : 7]
+    [unzip] Expanding: C:\Users\JESUSC~1\AppData\Local\Temp\weceem-space-import4231336031744084041.tmp into C:\Users\JESUSC~1\AppData\Local\Temp\unzip-import-7273223163668336352.tmp
+     [copy] Copying 20 files to C:\var\www\weceem.org\uploads\_ROOT
+2014-03-03 13:41:41,320 [localhost-startStop-1] INFO  compass.CompassGpsUtils  - Starting Searchable Plugin bulk index
+2014-03-03 13:41:41,332 [localhost-startStop-1] INFO  analyzer.LuceneAnalyzerManager  - Building analyzer [searchableplugin_simple]
+2014-03-03 13:41:41,332 [localhost-startStop-1] INFO  analyzer.LuceneAnalyzerManager  - Building analyzer [searchableplugin_whitespace]
+2014-03-03 13:41:41,336 [localhost-startStop-1] INFO  engine.LuceneSearchEngineFactory  - Not using highlighter - no highlighter jar included.
+2014-03-03 13:41:43,962 [localhost-startStop-1] INFO  impl.DefaultCompass  - Closing Compass [default]
+2014-03-03 13:41:43,962 [localhost-startStop-1] INFO  impl.DefaultCompass  - Closed Compass [default]
+2014-03-03 13:41:43,962 [localhost-startStop-1] INFO  optimizer.LuceneSearchEngineOptimizerManager  - Starting scheduled optimizer [class org.compass.core.lucene.engine.optimizer.DefaultLuceneSearchEngineOptimizer] with period [10000ms]
+2014-03-03 13:41:43,962 [localhost-startStop-1] INFO  manager.DefaultLuceneSearchEngineIndexManager  - Starting scheduled index manager with period [60000ms]
+2014-03-03 13:41:43,962 [localhost-startStop-1] INFO  manager.IndexHoldersCache  - Starting scheduled refresh cache with period [5000ms]
+2014-03-03 13:41:43,965 [localhost-startStop-1] INFO  compass.CompassGpsUtils  - Finished Searchable Plugin bulk index, 2 secs, 642 ms
+2014-03-03 13:41:43,965 [localhost-startStop-1] INFO  services.WcmContentRepositoryService  - Successfully imported space template [classpath:/org/weceem/resources/default-space-template.zip] into space [Default]
+2014-03-03 13:41:44,852 [localhost-startStop-1] WARN  util.GrailsUtil  - [DEPRECATED] Method ConfigurationHolder.getConfig() is deprecated and will be removed in a future version of Grails.
+2014-03-03 13:41:44,852 [localhost-startStop-1] INFO  CacheHeadersGrailsPlugin  - Caching enabled in Config: true
+2014-03-03 13:41:44,864 [localhost-startStop-1] INFO  ScaffoldingGrailsPlugin  - configuring scaffolding...
+2014-03-03 13:41:44,897 [localhost-startStop-1] INFO  ScaffoldingGrailsPlugin  - done configuring scaffolding.
+2014-03-03 13:41:45,447 [localhost-startStop-1] INFO  context.GrailsConfigUtils  - [GrailsContextLoader] Grails application loaded.
+2014-03-03 13:41:45,475 [localhost-startStop-1] WARN  util.GrailsUtil  - [DEPRECATED] Method ConfigurationHolder.getConfig() is deprecated and will be removed in a future version of Grails.
+2014-03-03 13:41:45,483 [localhost-startStop-1] INFO  core.QuartzScheduler  - Scheduler quartzScheduler_$_NON_CLUSTERED started.
+======================================================================
+                      Application: weceem 1.2-M1                      
+                      --------------------------                      
+  Environment: DEVELOPMENT
+  Database configuration: 
+    Hibernate DDL mode: create-drop
+    URL: jdbc:postgresql://localhost:5432/Pruebas
+    Driver: org.postgresql.Driver
+    User: jesus
+======================================================================
+2014-03-03 13:41:45,597 [localhost-startStop-1] INFO  navigation.NavigationImpl  - Reloading navigation structure
+2014-03-03 13:41:45,872 [localhost-startStop-1] WARN  util.GrailsUtil  - [DEPRECATED] Method ApplicationHolder.getApplication() is deprecated and will be removed in a future version of Grails.
+Bootstrapping Weceem - there are 1 spaces
+2014-03-03 13:41:46,222 [localhost-startStop-1] INFO  compass.CompassGpsUtils  - Starting Searchable Plugin bulk index
+2014-03-03 13:41:46,223 [localhost-startStop-1] INFO  analyzer.LuceneAnalyzerManager  - Building analyzer [searchableplugin_simple]
+2014-03-03 13:41:46,223 [localhost-startStop-1] INFO  analyzer.LuceneAnalyzerManager  - Building analyzer [searchableplugin_whitespace]
+2014-03-03 13:41:46,226 [localhost-startStop-1] INFO  engine.LuceneSearchEngineFactory  - Not using highlighter - no highlighter jar included.
+2014-03-03 13:41:51,059 [localhost-startStop-1] INFO  impl.DefaultCompass  - Closing Compass [default]
+2014-03-03 13:41:51,059 [localhost-startStop-1] INFO  impl.DefaultCompass  - Closed Compass [default]
+2014-03-03 13:41:51,059 [localhost-startStop-1] INFO  optimizer.LuceneSearchEngineOptimizerManager  - Starting scheduled optimizer [class org.compass.core.lucene.engine.optimizer.DefaultLuceneSearchEngineOptimizer] with period [10000ms]
+2014-03-03 13:41:51,059 [localhost-startStop-1] INFO  manager.DefaultLuceneSearchEngineIndexManager  - Starting scheduled index manager with period [60000ms]
+2014-03-03 13:41:51,059 [localhost-startStop-1] INFO  manager.IndexHoldersCache  - Starting scheduled refresh cache with period [5000ms]
+2014-03-03 13:41:51,059 [localhost-startStop-1] INFO  compass.CompassGpsUtils  - Finished Searchable Plugin bulk index, 4 secs, 837 ms
+Starting mirror service
+2014-03-03 13:41:51,707 [localhost-startStop-1] INFO  [localhost].[/weceem]  - Initializing Spring FrameworkServlet 'grails'
+2014-03-03 13:41:52,547 [main] INFO  http11.Http11Protocol  - Starting ProtocolHandler ["http-bio-8080"]
+|Server running. Browse to http://localhost:8080/weceem
+
+
+
+-----------------------------
+ERRORES EJECUTANDO RUN AS ...
+-----------------------------
+|Loading Grails 2.3.4
+|Configuring classpath
+.
+|Environment set to development
+.................................
+|Packaging Grails application
+.....................................................................................2014-03-03 14:24:45,326 [main] INFO  webxml.WebxmlGrailsPlugin  - Loading default config file: class DefaultWebXmlConfig
+2014-03-03 14:24:45,342 [main] WARN  webxml.WebxmlGrailsPlugin  - Did not find application config file: WebXmlConfig
+2014-03-03 14:24:46,341 [main] INFO  webxml.WebxmlGrailsPlugin  - Loading default config file: class DefaultWebXmlConfig
+2014-03-03 14:24:46,341 [main] WARN  webxml.WebxmlGrailsPlugin  - Did not find application config file: WebXmlConfig
+|Running Grails application
+2014-03-03 14:24:47,566 [main] INFO  http11.Http11Protocol  - Initializing ProtocolHandler ["http-bio-8080"]
+2014-03-03 14:24:47,567 [main] INFO  core.StandardService  - Starting service Tomcat
+2014-03-03 14:24:47,567 [main] INFO  core.StandardEngine  - Starting Servlet Engine: Apache Tomcat/7.0.47
+2014-03-03 14:24:47,691 [localhost-startStop-1] INFO  startup.ContextConfig  - No global web.xml found
+2014-03-03 14:24:47,785 [localhost-startStop-1] INFO  [localhost].[/weceem]  - Initializing Spring root WebApplicationContext
+2014-03-03 14:24:50,312 [localhost-startStop-1] WARN  util.GrailsUtil  - [DEPRECATED] Method ConfigurationHolder.getConfig() is deprecated and will be removed in a future version of Grails.
+Loading Weceem config from file:./weceem.properties
+Loaded weceem properties: [searchable:[index:[path:/Websites/cms/search-indexes]]]
+Setting searchable index path to: /Websites/cms/search-indexes
+Weceem: Initializing ehcache with default weceem ehcache.xml from plugin resource: class path resource [weceem-default-ehcache.xml]
+2014-03-03 14:24:54,871 [localhost-startStop-1] WARN  util.GrailsUtil  - [DEPRECATED] Method ConfigurationHolder.getConfig() is deprecated and will be removed in a future version of Grails.
+
+Configuring Spring Security Core ...
+... finished configuring Spring Security Core
+
+2014-03-03 14:24:56,244 [localhost-startStop-1] INFO  cache.CacheBeanPostProcessor  - postProcessBeanDefinitionRegistry start
+2014-03-03 14:24:56,244 [localhost-startStop-1] INFO  cache.CacheBeanPostProcessor  - postProcessBeanFactory
+2014-03-03 14:24:57,461 [localhost-startStop-1] WARN  util.GrailsUtil  - [DEPRECATED] Method ApplicationHolder.getApplication() is deprecated and will be removed in a future version of Grails.
+2014-03-03 14:24:57,540 [localhost-startStop-1] INFO  impl.StdSchedulerFactory  - Using default implementation for ThreadExecutor
+2014-03-03 14:24:57,571 [localhost-startStop-1] INFO  core.SchedulerSignalerImpl  - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2014-03-03 14:24:57,571 [localhost-startStop-1] INFO  core.QuartzScheduler  - Quartz Scheduler v.2.1.5 created.
+2014-03-03 14:24:57,571 [localhost-startStop-1] INFO  simpl.RAMJobStore  - RAMJobStore initialized.
+2014-03-03 14:24:57,571 [localhost-startStop-1] INFO  core.QuartzScheduler  - Scheduler meta-data: Quartz Scheduler (v2.1.5) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2014-03-03 14:24:57,571 [localhost-startStop-1] INFO  impl.StdSchedulerFactory  - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2014-03-03 14:24:57,571 [localhost-startStop-1] INFO  impl.StdSchedulerFactory  - Quartz scheduler version: 2.1.5
+2014-03-03 14:24:57,571 [localhost-startStop-1] INFO  core.QuartzScheduler  - JobFactory set to: grails.plugins.quartz.GrailsJobFactory@1ad0f2f
+2014-03-03 14:24:57,681 [localhost-startStop-1] WARN  util.GrailsUtil  - [DEPRECATED] Method ApplicationHolder.getApplication() is deprecated and will be removed in a future version of Grails.
+2014-03-03 14:24:57,821 [localhost-startStop-1] WARN  util.GrailsUtil  - [DEPRECATED] Method ConfigurationHolder.getConfig() is deprecated and will be removed in a future version of Grails.
+2014-03-03 14:24:57,868 [localhost-startStop-1] WARN  util.GrailsUtil  - [DEPRECATED] Method ConfigurationHolder.getConfig() is deprecated and will be removed in a future version of Grails.
+2014-03-03 14:24:59,475 [localhost-startStop-1] INFO  scaffolding.AbstractGrailsTemplateGenerator  - Scaffolding template generator set to use resource loader [org.codehaus.groovy.grails.commons.spring.GrailsWebApplicationContext@138864f: startup date [Mon Mar 03 14:24:55 CET 2014]; parent: Root WebApplicationContext]
+2014-03-03 14:25:00,380 [localhost-startStop-1] INFO  services.WcmCacheService  - Caches configured: [weceem.eternalCache, weceem.gspCache, weceem.contentCache, weceem.dataFeeds, weceem.contentTreeFingerprintCache, weceem.contentFingerprintCache, weceem.uriToContentCache]
+2014-03-03 14:25:00,396 [localhost-startStop-1] INFO  core.QuartzScheduler  - Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+2014-03-03 14:25:00,396 [localhost-startStop-1] INFO  core.QuartzScheduler  - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2014-03-03 14:25:00,848 [localhost-startStop-1] INFO  core.QuartzScheduler  - Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+Error |
+2014-03-03 14:25:00,848 [localhost-startStop-1] ERROR context.GrailsContextLoader  - Error initializing the application: Error creating bean with name 'instanceControllerTagLibraryApi': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire method: public void org.codehaus.groovy.grails.plugins.web.api.ControllerTagLibraryApi.setTagLibraryLookup(org.codehaus.groovy.grails.web.pages.TagLibraryLookup); nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'gspTagLibraryLookup': Invocation of init method failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.weceem.tags.WidgetTagLib': Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'weceemWcmContentRepositoryService': Cannot create inner bean '(inner bean)' while setting bean property 'target'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name '(inner bean)': Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'weceemWcmContentDependencyService': Cannot resolve reference to bean 'transactionManager' while setting bean property 'transactionManager'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'transactionManager' is defined
+Message: Error creating bean with name 'instanceControllerTagLibraryApi': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire method: public void org.codehaus.groovy.grails.plugins.web.api.ControllerTagLibraryApi.setTagLibraryLookup(org.codehaus.groovy.grails.web.pages.TagLibraryLookup); nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'gspTagLibraryLookup': Invocation of init method failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.weceem.tags.WidgetTagLib': Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'weceemWcmContentRepositoryService': Cannot create inner bean '(inner bean)' while setting bean property 'target'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name '(inner bean)': Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'weceemWcmContentDependencyService': Cannot resolve reference to bean 'transactionManager' while setting bean property 'transactionManager'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'transactionManager' is defined
+    Line | Method
+->>  262 | run       in java.util.concurrent.FutureTask
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+|   1145 | runWorker in java.util.concurrent.ThreadPoolExecutor
+|    615 | run . . . in java.util.concurrent.ThreadPoolExecutor$Worker
+^    744 | run       in java.lang.Thread
+Caused by BeanCreationException: Could not autowire method: public void org.codehaus.groovy.grails.plugins.web.api.ControllerTagLibraryApi.setTagLibraryLookup(org.codehaus.groovy.grails.web.pages.TagLibraryLookup); nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'gspTagLibraryLookup': Invocation of init method failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.weceem.tags.WidgetTagLib': Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'weceemWcmContentRepositoryService': Cannot create inner bean '(inner bean)' while setting bean property 'target'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name '(inner bean)': Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'weceemWcmContentDependencyService': Cannot resolve reference to bean 'transactionManager' while setting bean property 'transactionManager'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'transactionManager' is defined
+->>  262 | run       in java.util.concurrent.FutureTask
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+|   1145 | runWorker in java.util.concurrent.ThreadPoolExecutor
+|    615 | run . . . in java.util.concurrent.ThreadPoolExecutor$Worker
+^    744 | run       in java.lang.Thread
+Caused by BeanCreationException: Error creating bean with name 'gspTagLibraryLookup': Invocation of init method failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.weceem.tags.WidgetTagLib': Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'weceemWcmContentRepositoryService': Cannot create inner bean '(inner bean)' while setting bean property 'target'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name '(inner bean)': Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'weceemWcmContentDependencyService': Cannot resolve reference to bean 'transactionManager' while setting bean property 'transactionManager'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'transactionManager' is defined
+->>  262 | run       in java.util.concurrent.FutureTask
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+|   1145 | runWorker in java.util.concurrent.ThreadPoolExecutor
+|    615 | run . . . in java.util.concurrent.ThreadPoolExecutor$Worker
+^    744 | run       in java.lang.Thread
+Caused by BeanCreationException: Error creating bean with name 'org.weceem.tags.WidgetTagLib': Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'weceemWcmContentRepositoryService': Cannot create inner bean '(inner bean)' while setting bean property 'target'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name '(inner bean)': Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'weceemWcmContentDependencyService': Cannot resolve reference to bean 'transactionManager' while setting bean property 'transactionManager'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'transactionManager' is defined
+->>  262 | run       in java.util.concurrent.FutureTask
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+|   1145 | runWorker in java.util.concurrent.ThreadPoolExecutor
+|    615 | run . . . in java.util.concurrent.ThreadPoolExecutor$Worker
+^    744 | run       in java.lang.Thread
+Caused by BeanCreationException: Error creating bean with name 'weceemWcmContentRepositoryService': Cannot create inner bean '(inner bean)' while setting bean property 'target'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name '(inner bean)': Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'weceemWcmContentDependencyService': Cannot resolve reference to bean 'transactionManager' while setting bean property 'transactionManager'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'transactionManager' is defined
+->>  262 | run       in java.util.concurrent.FutureTask
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+|   1145 | runWorker in java.util.concurrent.ThreadPoolExecutor
+|    615 | run . . . in java.util.concurrent.ThreadPoolExecutor$Worker
+^    744 | run       in java.lang.Thread
+Caused by BeanCreationException: Error creating bean with name '(inner bean)': Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'weceemWcmContentDependencyService': Cannot resolve reference to bean 'transactionManager' while setting bean property 'transactionManager'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'transactionManager' is defined
+->>  262 | run       in java.util.concurrent.FutureTask
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+|   1145 | runWorker in java.util.concurrent.ThreadPoolExecutor
+|    615 | run . . . in java.util.concurrent.ThreadPoolExecutor$Worker
+^    744 | run       in java.lang.Thread
+Caused by BeanCreationException: Error creating bean with name 'weceemWcmContentDependencyService': Cannot resolve reference to bean 'transactionManager' while setting bean property 'transactionManager'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'transactionManager' is defined
+->>  262 | run       in java.util.concurrent.FutureTask
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+|   1145 | runWorker in java.util.concurrent.ThreadPoolExecutor
+|    615 | run . . . in java.util.concurrent.ThreadPoolExecutor$Worker
+^    744 | run       in java.lang.Thread
+Caused by NoSuchBeanDefinitionException: No bean named 'transactionManager' is defined
+->>  262 | run       in java.util.concurrent.FutureTask
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+|   1145 | runWorker in java.util.concurrent.ThreadPoolExecutor
+|    615 | run . . . in java.util.concurrent.ThreadPoolExecutor$Worker
+^    744 | run       in java.lang.Thread

@@ -57,7 +57,7 @@ Archivo de configuración llamado "weceem.properties" que se ubica en "D:\wec".
 
 
 	# The path to use for storing search index files - MUST be writable
-	searchable.index.path=d:/wec
+	searchable.index.path=d:/wec //o bien searchable.index.path=D:/apache-tomcat-8.0.3/webapps/weceem-1.2-M1/WEB-INF/grails-app/views/register
 
 En catalina.bat se añade o modifica:
 set JAVA_OPTS=%JAVA_OPTS% %LOGGING_CONFIG% -Dweceem.config.location=file:///D:/wec/weceem.properties -Xms518m -Xmx1024m 
