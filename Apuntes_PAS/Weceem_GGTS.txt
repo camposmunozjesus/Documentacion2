@@ -67,6 +67,8 @@ La primera vez se ha usado create-drop en dbCreate. A parti de ahí se puede usa
 
 Tras la primera ejecución se puede comprobar como ha creado las tablas en el esuqema public de la base de datos.
 
+Alguna vez ha fallado usando "update", puede ser debido a que hay que eliminar "maxActive = 1" y poner "pooled = true"????????
+
 
 PASO 4: Comando de ejecución
 ============================
@@ -78,8 +80,8 @@ Indicando el nombre del proyecto
 Información obtenida de: http://stackoverflow.com/questions/15711743/unable-to-run-grails-project-using-spring-security-core-in-ggts-on-windows-7
 
 
-PASO 3: Configuración de Config.groovy
-======================================
+Configuración de Config.groovy
+==============================
 En algunos foros se comenta que los tipos mime deben estar desactivados.
 
 
