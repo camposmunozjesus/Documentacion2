@@ -1,0 +1,101 @@
+WECEEM - NOTAS SOBRE INSTALACIÓN Y USO CON APACHE TOMCAT
+========================================================
+Uso de la base de datos weceem MySQL.
+
+El archivo jar con el conector de la base de datos se debe instalar en la carpeta lib de Apache Tomcat.
+En este caso eran:
+	- mysql-connector-java-5.1.18-bin
+	- mysql-connector-java
+
+Para ejecutarlo entrar en la dirección:
+	http://localhost:8080/weceem-1.2-M1/login/auth
+	
+	
+-------------------------
+ARCHIVO WECEEM PROPERTIES
+-------------------------
+El fichero se ubica en E:\wec.
+
+	# Control whether or not connection pooling is enabled
+	dataSource.pooled=true
+	# Set the JDBC driver class name - class must be on classpath
+	dataSource.driverClassName=com.mysql.jdbc.Driver
+	# The user name for the SQL database
+	dataSource.username=jesus
+	# The password for the SQL database
+	dataSource.password=**********
+	# The database update mode. Leave as "update"
+	dataSource.dbCreate=update
+	# The JDBC URL of your database
+	dataSource.url=jdbc:mysql://localhost/weceem?useUnicode=yes&characterEncoding=UTF-8
+
+	# OR you can specify a JNDI data source with just this line, and nothing else
+	# but you must have configured the JNDI database resource in your servlet container/
+	#dataSource.jndiName=java:comp/env/jdbc/WeceemDS
+
+	# The path to use for storing search index files - MUST be writable
+	searchable.index.path=e:/wec
+	
+	
+------------------------------
+MODIFICACIONES EN CATALINA.BAT
+------------------------------
+	set JAVA_OPTS=%JAVA_OPTS% %LOGGING_CONFIG% -Dweceem.config.location=file:///E:/wec/weceem.properties -Xmx1024m -XX:MaxPermSize=512m
+
+	if not "%LOGGING_MANAGER%" == "" goto noJuliManager
+	set LOGGING_MANAGER=-Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+	:noJuliManager
+	set JAVA_OPTS=%JAVA_OPTS% %LOGGING_MANAGER% -Dweceem.config.location=file:///E:/wec/weceem.properties -Xmx1024m -XX:MaxPermSize=512m
+	
+	
+-----------------------------
+TRAZA DEL DESPLIEGUE CORRECTO
+-----------------------------
+03-Mar-2014 20:40:50.571 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployWAR Despliegue del archivo E:\tomcat\webapps\weceem-1.2-M1.
+war de la aplicaci¾n web
+Loading Weceem config from file:///E:/wec/weceem.properties
+Loaded weceem properties: [dataSource:[password:jesus, url:jdbc:mysql://localhost/weceem?useUnicode=yes&characterEncoding=UTF-8, driverClassName:com.mysql.jdb
+c.Driver, pooled:true, dbCreate:update, username:jesus], searchable:[index:[path:e:/wec]]]
+Setting searchable index path to: e:/wec
+Weceem: Initializing ehcache with default weceem ehcache.xml from plugin resource: class path resource [weceem-default-ehcache.xml]
+
+Configuring Spring Security Core ...
+... finished configuring Spring Security Core
+
+======================================================================
+
+                      Application: weceem 1.2-M1
+                      --------------------------
+
+  Environment: TEST
+  Database configuration:
+    Hibernate DDL mode: [:]
+    URL: jdbc:mysql://localhost/weceem?useUnicode=yes&characterEncoding=UTF-8
+    Driver: com.mysql.jdbc.Driver
+    User: jesus
+======================================================================
+03-Mar-2014 20:41:14.545 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Despliegue del directorio E:\tomcat\webapps\docs
+de la aplicaci¾n web
+03-Mar-2014 20:41:14.693 INFO [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, a·n no
+ contenÝa TLDs. Activar historial de depuraci¾n para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se hall¾ TLDs
+. Saltarse JARs no necesarios durante la exploraci¾n puede dar lugar a una mejora de tiempo significativa en el arranque y compilaci¾n de JSP .
+03-Mar-2014 20:41:14.704 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Despliegue del directorio E:\tomcat\webapps\examp
+les de la aplicaci¾n web
+03-Mar-2014 20:41:15.004 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Despliegue del directorio E:\tomcat\webapps\host-
+manager de la aplicaci¾n web
+03-Mar-2014 20:41:15.150 INFO [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, a·n no
+ contenÝa TLDs. Activar historial de depuraci¾n para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se hall¾ TLDs
+. Saltarse JARs no necesarios durante la exploraci¾n puede dar lugar a una mejora de tiempo significativa en el arranque y compilaci¾n de JSP .
+03-Mar-2014 20:41:15.162 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Despliegue del directorio E:\tomcat\webapps\manag
+er de la aplicaci¾n web
+03-Mar-2014 20:41:15.323 INFO [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, a·n no
+ contenÝa TLDs. Activar historial de depuraci¾n para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se hall¾ TLDs
+. Saltarse JARs no necesarios durante la exploraci¾n puede dar lugar a una mejora de tiempo significativa en el arranque y compilaci¾n de JSP .
+03-Mar-2014 20:41:15.391 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Despliegue del directorio E:\tomcat\webapps\ROOT
+de la aplicaci¾n web
+03-Mar-2014 20:41:15.545 INFO [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, a·n no
+ contenÝa TLDs. Activar historial de depuraci¾n para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se hall¾ TLDs
+. Saltarse JARs no necesarios durante la exploraci¾n puede dar lugar a una mejora de tiempo significativa en el arranque y compilaci¾n de JSP .
+03-Mar-2014 20:41:15.558 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+03-Mar-2014 20:41:15.567 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-nio-8009"]
+03-Mar-2014 20:41:15.573 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in 45947 ms
