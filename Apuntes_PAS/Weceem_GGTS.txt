@@ -65,7 +65,7 @@ Por lo que el archivo DataSource.groovy tendrá el siguiente aspecto:
 	}
 La primera vez se ha usado create-drop en dbCreate. A parti de ahí se puede usar update.
 
-Tras la primera ejecución se puede comprobar como ha creado las tablas en el esuqema public de la base de datos.
+Tras la primera ejecución se puede comprobar como ha creado las tablas en el esuqema public de la base de datos. Sobre unas 10 tablas.
 
 Alguna vez ha fallado usando "update", puede ser debido a que hay que eliminar "maxActive = 1" y poner "pooled = true"????????
 
