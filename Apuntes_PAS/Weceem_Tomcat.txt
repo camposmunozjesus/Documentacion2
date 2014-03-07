@@ -1,6 +1,6 @@
 WECEEM - NOTAS SOBRE INSTALACIÓN Y USO CON APACHE TOMCAT
 ========================================================
-Uso de la base de datos weceem MySQL.
+Ordenador de casa. 8GB RAM. Uso de la base de datos weceem MySQL.
 
 El archivo jar con el conector de la base de datos se debe instalar en la carpeta lib de Apache Tomcat.
 En este caso eran:
@@ -10,6 +10,7 @@ En este caso eran:
 Para ejecutarlo entrar en la dirección:
 	http://localhost:8080/weceem-1.2-M1/login/auth
 	
+Puede ser que al subir el war no funcione correctamente, hay que darle a "ARRANCAR".
 	
 -------------------------
 ARCHIVO WECEEM PROPERTIES
@@ -99,3 +100,288 @@ de la aplicaci¾n web
 03-Mar-2014 20:41:15.558 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
 03-Mar-2014 20:41:15.567 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-nio-8009"]
 03-Mar-2014 20:41:15.573 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in 45947 ms
+
+
+******************************************************************************************************************************************************
+Ordenador del trabajo. 4 GB RAM. Con base de datos PostgreSQL.
+
+Se han copiado a la carpeta lib las siguientes librerías:
+	- La propia de PostgreSQL: postgresql-9.0-801.jdbc4.jar y postgresql-9.3-1101.jdbc3.jar.
+	- Las de Hibernate:
+			h2-1.3.173.jar
+			hibernate-commons-annotations-3.2.0.Final.jar
+			hibernate-core-3.6.10.Final.jar
+			hibernate-ehcache-3.6.10.Final.jar
+			hibernate-entitymanager-3.6.10.Final.jar
+			hibernate-jpa-2.0-api-1.0.1.Final.jar
+			hibernate-validator-4.1.0.Final.jar
+
+Subir la aplicación y posteriormente dar a "Arrancar".
+
+-------------------------
+ARCHIVO WECEEM PROPERTIES
+-------------------------
+	# Control whether or not connection pooling is enabled
+	dataSource.pooled=true
+	# Set the JDBC driver class name - class must be on classpath
+	dataSource.driverClassName=org.postgresql.Driver
+	# The user name for the SQL database
+	dataSource.username=jesus
+	# The password for the SQL database
+	dataSource.password=************
+	# The database update mode. Leave as "update"
+	dataSource.dbCreate=create-drop
+	# The JDBC URL of your database
+	dataSource.url=jdbc:postgresql://localhost:5432/weceem
+
+
+	# The path to use for storing search index files - MUST be writable
+	searchable.index.path=D:/wec
+	
+------------------------------
+MODIFICACIONES EN CATALINA.BAT
+------------------------------	
+	:noJuliConfig
+	set JAVA_OPTS=%JAVA_OPTS% %LOGGING_CONFIG% -Dweceem.config.location=file:///D:/wec/weceem.properties -Xmx700m -XX:MaxPermSize=512m
+
+	if not "%LOGGING_MANAGER%" == "" goto noJuliManager
+	set LOGGING_MANAGER=-Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+	:noJuliManager
+	set JAVA_OPTS=%JAVA_OPTS% %LOGGING_MANAGER% -Dweceem.config.location=file:///D:/wec/weceem.properties -Xmx700m -XX:MaxPermSize=512m
+	
+-----------------------------
+TRAZA DEL DESPLIEGUE CORRECTO
+-----------------------------
+2014-03-04 08:06:25,943 [http-nio-8080-exec-3] INFO  hibernate3.HibernatePluginSupport  - Set db generation strategy to 'update' for datasource DEFAUL
+T
+Loading Weceem config from file:///D:/wec/weceem.properties
+Loaded weceem properties: [dataSource:[password:jesus, url:jdbc:postgresql://localhost:5432/weceem, driverClassName:org.postgresql.Driver, pooled:true
+, dbCreate:create-drop, username:jesus], searchable:[index:[path:D:/wec]]]
+Setting searchable index path to: D:/wec
+Weceem: Initializing ehcache with default weceem ehcache.xml from plugin resource: class path resource [weceem-default-ehcache.xml]
+
+Configuring Spring Security Core ...
+... finished configuring Spring Security Core
+
+2014-03-04 08:06:28,408 [http-nio-8080-exec-3] INFO  cache.CacheBeanPostProcessor  - postProcessBeanDefinitionRegistry start
+2014-03-04 08:06:28,408 [http-nio-8080-exec-3] INFO  cache.CacheBeanPostProcessor  - postProcessBeanFactory
+04-Mar-2014 08:06:28.501 WARNING [http-nio-8080-exec-3] org.apache.tomcat.jdbc.pool.ConnectionPool.init maxActive is smaller than 1, setting maxActive
+ to: 100
+2014-03-04 08:06:31,312 [http-nio-8080-exec-3] WARN  config.ConfigurationFactory  - No configuration found. Configuring ehcache from ehcache-failsafe.
+xml  found in the classpath: jar:file:/D:/apache-tomcat-8.0.3/webapps/weceem-1.2-M1/WEB-INF/lib/ehcache-core-2.4.6.jar!/ehcache-failsafe.xml
+2014-03-04 08:06:32,403 [http-nio-8080-exec-3] WARN  hibernate.AbstractEhcacheRegionFactory  - Couldn't find a specific ehcache configuration for cach
+e named [org.weceem.content.WcmContent]; using defaults.
+2014-03-04 08:06:32,793 [http-nio-8080-exec-3] WARN  hibernate.AbstractEhcacheRegionFactory  - Couldn't find a specific ehcache configuration for cach
+e named [org.weceem.content.WcmStatus]; using defaults.
+2014-03-04 08:06:33,043 [http-nio-8080-exec-3] WARN  hibernate.AbstractEhcacheRegionFactory  - Couldn't find a specific ehcache configuration for cach
+e named [org.weceem.auth.CMSRole]; using defaults.
+2014-03-04 08:06:33,402 [http-nio-8080-exec-3] WARN  hibernate.AbstractEhcacheRegionFactory  - Couldn't find a specific ehcache configuration for cach
+e named [org.weceem.content.WcmSpace]; using defaults.
+2014-03-04 08:06:33,604 [http-nio-8080-exec-3] WARN  hibernate.AbstractEhcacheRegionFactory  - Couldn't find a specific ehcache configuration for cach
+e named [org.weceem.content.WcmRelatedContent]; using defaults.
+2014-03-04 08:06:33,636 [http-nio-8080-exec-3] WARN  hibernate.AbstractEhcacheRegionFactory  - Couldn't find a specific ehcache configuration for cach
+e named [org.grails.taggable.Tag]; using defaults.
+2014-03-04 08:06:33,948 [http-nio-8080-exec-3] WARN  hibernate.AbstractEhcacheRegionFactory  - Couldn't find a specific ehcache configuration for cach
+e named [org.grails.taggable.TagLink]; using defaults.
+2014-03-04 08:06:34,509 [http-nio-8080-exec-3] WARN  hibernate.AbstractEhcacheRegionFactory  - Couldn't find a specific ehcache configuration for cach
+e named [org.hibernate.cache.UpdateTimestampsCache]; using defaults.
+2014-03-04 08:06:34,525 [http-nio-8080-exec-3] WARN  hibernate.AbstractEhcacheRegionFactory  - Couldn't find a specific ehcache configuration for cach
+e named [org.hibernate.cache.StandardQueryCache]; using defaults.
+2014-03-04 08:06:35,539 [http-nio-8080-exec-3] INFO  impl.StdSchedulerFactory  - Using default implementation for ThreadExecutor
+2014-03-04 08:06:35,570 [http-nio-8080-exec-3] INFO  core.SchedulerSignalerImpl  - Initialized Scheduler Signaller of type: class org.quartz.core.Sche
+dulerSignalerImpl
+2014-03-04 08:06:35,570 [http-nio-8080-exec-3] INFO  core.QuartzScheduler  - Quartz Scheduler v.2.1.5 created.
+2014-03-04 08:06:35,570 [http-nio-8080-exec-3] INFO  simpl.RAMJobStore  - RAMJobStore initialized.
+2014-03-04 08:06:35,585 [http-nio-8080-exec-3] INFO  core.QuartzScheduler  - Scheduler meta-data: Quartz Scheduler (v2.1.5) 'quartzScheduler' with ins
+tanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2014-03-04 08:06:35,585 [http-nio-8080-exec-3] INFO  impl.StdSchedulerFactory  - Quartz scheduler 'quartzScheduler' initialized from an externally pro
+vided properties instance.
+2014-03-04 08:06:35,585 [http-nio-8080-exec-3] INFO  impl.StdSchedulerFactory  - Quartz scheduler version: 2.1.5
+2014-03-04 08:06:35,585 [http-nio-8080-exec-3] INFO  core.QuartzScheduler  - JobFactory set to: grails.plugins.quartz.GrailsJobFactory@1007f1e
+2014-03-04 08:06:36,521 [http-nio-8080-exec-3] INFO  scaffolding.AbstractGrailsTemplateGenerator  - Scaffolding template generator set to use resource
+ loader [org.codehaus.groovy.grails.commons.spring.GrailsWebApplicationContext@16ab2ae: startup date [Tue Mar 04 08:06:27 CET 2014]; parent: Root WebA
+pplicationContext]
+2014-03-04 08:06:37,629 [http-nio-8080-exec-3] INFO  services.WcmCacheService  - Caches configured: [weceem.eternalCache, weceem.gspCache, weceem.cont
+entCache, weceem.dataFeeds, weceem.contentFingerprintCache, weceem.contentTreeFingerprintCache, weceem.uriToContentCache]
+2014-03-04 08:06:37,909 [http-nio-8080-exec-3] INFO  config.EnvironmentSearchableCompassConfigurator  - Setting Compass connection to [D:\wec]
+2014-03-04 08:06:38,627 [http-nio-8080-exec-3] INFO  config.CompassConfiguration  - Mapping InputStream [org/weceem/content/WcmStatus.cpm.xml]
+2014-03-04 08:06:38,658 [http-nio-8080-exec-3] INFO  config.CompassConfiguration  - Mapping InputStream [org/weceem/content/WcmComment.cpm.xml]
+2014-03-04 08:06:38,674 [http-nio-8080-exec-3] INFO  config.CompassConfiguration  - Mapping InputStream [org/weceem/css/WcmStyleSheet.cpm.xml]
+2014-03-04 08:06:38,674 [http-nio-8080-exec-3] INFO  config.CompassConfiguration  - Mapping InputStream [org/weceem/script/WcmScript.cpm.xml]
+2014-03-04 08:06:38,689 [http-nio-8080-exec-3] INFO  config.CompassConfiguration  - Mapping InputStream [org/weceem/content/WcmVirtualContent.cpm.xml]
+
+2014-03-04 08:06:38,689 [http-nio-8080-exec-3] INFO  config.CompassConfiguration  - Mapping InputStream [org/weceem/script/WcmAction.cpm.xml]
+2014-03-04 08:06:38,705 [http-nio-8080-exec-3] INFO  config.CompassConfiguration  - Mapping InputStream [org/weceem/blog/WcmBlogEntry.cpm.xml]
+2014-03-04 08:06:38,720 [http-nio-8080-exec-3] INFO  config.CompassConfiguration  - Mapping InputStream [org/weceem/blog/WcmBlog.cpm.xml]
+2014-03-04 08:06:38,720 [http-nio-8080-exec-3] INFO  config.CompassConfiguration  - Mapping InputStream [org/weceem/content/WcmFolder.cpm.xml]
+2014-03-04 08:06:38,736 [http-nio-8080-exec-3] INFO  config.CompassConfiguration  - Mapping InputStream [org/weceem/content/WcmWidget.cpm.xml]
+2014-03-04 08:06:38,736 [http-nio-8080-exec-3] INFO  config.CompassConfiguration  - Mapping InputStream [org/weceem/content/WcmSpace.cpm.xml]
+2014-03-04 08:06:38,736 [http-nio-8080-exec-3] INFO  config.CompassConfiguration  - Mapping InputStream [org/weceem/wiki/WcmWikiItem.cpm.xml]
+2014-03-04 08:06:38,752 [http-nio-8080-exec-3] INFO  config.CompassConfiguration  - Mapping InputStream [org/weceem/files/WcmContentDirectory.cpm.xml]
+
+2014-03-04 08:06:38,752 [http-nio-8080-exec-3] INFO  config.CompassConfiguration  - Mapping InputStream [org/weceem/files/WcmContentFile.cpm.xml]
+2014-03-04 08:06:38,767 [http-nio-8080-exec-3] INFO  config.CompassConfiguration  - Mapping InputStream [org/grails/taggable/Tag.cpm.xml]
+2014-03-04 08:06:38,767 [http-nio-8080-exec-3] INFO  config.CompassConfiguration  - Mapping InputStream [org/weceem/content/WcmContent.cpm.xml]
+2014-03-04 08:06:38,783 [http-nio-8080-exec-3] INFO  config.CompassConfiguration  - Mapping InputStream [org/weceem/files/WcmContentFileDB.cpm.xml]
+2014-03-04 08:06:38,783 [http-nio-8080-exec-3] INFO  config.CompassConfiguration  - Mapping InputStream [org/weceem/content/WcmExternalLink.cpm.xml]
+2014-03-04 08:06:38,798 [http-nio-8080-exec-3] INFO  config.CompassConfiguration  - Mapping InputStream [org/weceem/js/WcmJavaScript.cpm.xml]
+2014-03-04 08:06:38,798 [http-nio-8080-exec-3] INFO  config.CompassConfiguration  - Mapping InputStream [org/weceem/content/WcmTemplate.cpm.xml]
+2014-03-04 08:06:38,814 [http-nio-8080-exec-3] INFO  config.CompassConfiguration  - Mapping InputStream [org/weceem/html/WcmHTMLContent.cpm.xml]
+2014-03-04 08:06:39,173 [http-nio-8080-exec-3] INFO  analyzer.LuceneAnalyzerManager  - Building analyzer [searchableplugin_simple]
+2014-03-04 08:06:39,188 [http-nio-8080-exec-3] INFO  analyzer.LuceneAnalyzerManager  - Building analyzer [searchableplugin_whitespace]
+2014-03-04 08:06:39,251 [http-nio-8080-exec-3] INFO  engine.LuceneSearchEngineFactory  - Not using highlighter - no highlighter jar included.
+2014-03-04 08:06:40,811 [http-nio-8080-exec-3] INFO  optimizer.LuceneSearchEngineOptimizerManager  - Starting scheduled optimizer [class org.compass.c
+ore.lucene.engine.optimizer.DefaultLuceneSearchEngineOptimizer] with period [10000ms]
+2014-03-04 08:06:40,811 [http-nio-8080-exec-3] INFO  manager.DefaultLuceneSearchEngineIndexManager  - Starting scheduled index manager with period [60
+000ms]
+2014-03-04 08:06:40,811 [http-nio-8080-exec-3] INFO  manager.IndexHoldersCache  - Starting scheduled refresh cache with period [5000ms]
+2014-03-04 08:06:40,951 [http-nio-8080-exec-3] INFO  security.WeceemSecurityPolicy  - Initializing default security policy
+2014-03-04 08:06:40,966 [http-nio-8080-exec-3] INFO  services.WcmContentRepositoryService  - Weceem will use [C:\Users\Jesus Campos\weceem-uploads\Wec
+eemFiles] as the directory for static uploaded files, and the url [/WeceemFiles/] to serve them
+2014-03-04 08:06:44,195 [http-nio-8080-exec-3] WARN  injection.Injection  - Could not inject method displayMessage(java.util.Map) in to [org.grails.pl
+ugin.platform.UiExtensionsTagLib], a method with that name and argument list already exists
+2014-03-04 08:06:44,429 [http-nio-8080-exec-3] INFO  events.EventsImpl  - Reloading events listeners
+2014-03-04 08:06:45,537 [http-nio-8080-exec-3] INFO  services.NavigationService  - Navigation items updated: [*:[[controller:CMSUser, action:list, ord
+er:null, id:null, isVisible:true, title:users, params:null, path:[CMSUser, list], subItems:null]], weceem.app.admin:[[controller:CMSUser, action:list,
+ order:null, id:null, isVisible:true, title:users, params:null, path:[CMSUser, list], subItems:null]]]
+2014-03-04 08:06:47,767 [http-nio-8080-exec-3] INFO  databasemigration.MigrationRunner  - updateOnStart disabled for dataSource; not running migration
+s
+2014-03-04 08:06:47,798 [http-nio-8080-exec-3] INFO  weceem.WeceemGrailsPlugin  - Weceem plugin running with data source <org.springframework.jdbc.dat
+asource.TransactionAwareDataSourceProxy@1e58c0e reobtainTransactionalConnections=false targetDataSource=org.springframework.jdbc.datasource.LazyConnec
+tionDataSourceProxy@f4b50d>
+2014-03-04 08:06:47,798 [http-nio-8080-exec-3] INFO  weceem.WeceemGrailsPlugin  - Weceem plugin running with grails configuration [grails:[mime:[file:
+[extensions:false], use:[accept:[header:false]], types:[html:[text/html, application/xhtml+xml], xml:[text/xml, application/xml], text:text/plain, js:
+text/javascript, rss:application/rss+xml, atom:application/atom+xml, css:text/css, csv:text/csv, all:*/*, json:[application/json, text/json], form:app
+lication/x-www-form-urlencoded, multipartForm:multipart/form-data]], views:[default:[codec:none], gsp:[encoding:UTF-8], enable:[jsessionid:[:]]], conv
+erters:[encoding:UTF-8, json:[date:javascript]], enable:[native2ascii:true], validateable:[packages:[org.weceem], classes:[:]], plugins:[springsecurit
+y:[active:true, ajaxHeader:X-Requested-With, registerLoggerListener:false, rejectIfNoRule:false, roleHierarchy:, ipRestrictions:[:], voterNames:[], pr
+oviderNames:[], useHttpSessionEventPublisher:false, useSecurityEventListener:false, cacheUsers:false, userLookup:[userDomainClassName:org.weceem.auth.
+CMSUser, usernamePropertyName:username, enabledPropertyName:enabled, passwordPropertyName:passwd, authoritiesPropertyName:authorities, accountExpiredP
+ropertyName:accountExpired, accountLockedPropertyName:accountLocked, passwordExpiredPropertyName:passwordExpired, authorityJoinClassName:PersonAuthori
+ty, userNamePropertyName:username], authority:[className:org.weceem.auth.CMSRole, nameField:authority], apf:[filterProcessesUrl:/j_spring_security_che
+ck, usernameParameter:j_username, passwordParameter:j_password, continueChainBeforeSuccessfulAuthentication:false, allowSessionCreation:true, postOnly
+:true], failureHandler:[defaultFailureUrl:/login/authfail?login_error=1, ajaxAuthFailUrl:/login/authfail?ajax=true, exceptionMappings:[:], useForward:
+false], successHandler:[defaultTargetUrl:/, alwaysUseDefault:false, targetUrlParameter:spring-security-redirect, useReferer:false, ajaxSuccessUrl:/log
+in/ajaxSuccess], requestCache:[onlyOnGet:false, createSession:true], redirectStrategy:[contextRelative:false], authenticationDetails:[authClass:class
+org.springframework.security.web.authentication.WebAuthenticationDetails], useSessionFixationPrevention:false, sessionFixationPrevention:[migrate:true
+, alwaysCreateSession:false], dao:[reflectionSaltSourceProperty:username, hideUserNotFoundExceptions:true], anon:[key:foo, userAttribute:anonymousUser
+,ROLE_ANONYMOUS], auth:[loginFormUrl:/login/auth, forceHttps:false, ajaxLoginFormUrl:/login/authAjax, useForward:false], logout:[afterLogoutUrl:/, fil
+terProcessesUrl:/j_spring_security_logout, handlerNames:[]], adh:[errorPage:null, ajaxErrorPage:/login/ajaxDenied], password:[algorithm:SHA-512, encod
+eHashAsBase64:false, bcrypt:[logrounds:10]], rememberMe:[cookieName:grails_remember_me, alwaysRemember:false, tokenValiditySeconds:1209600, parameter:
+_spring_security_remember_me, key:grailsRocks, persistent:false, persistentToken:[domainClassName:PersistentLogin, seriesLength:16, tokenLength:16], u
+seSecureCookie:false], securityConfigType:InterceptUrlMap, requestMap:[className:Requestmap, urlField:url, configAttributeField:configAttribute], cont
+rollerAnnotations:[matcher:ant, lowercase:true, staticRules:[:]], interceptUrlMap:[/admin/users/**:[ROLE_ADMIN, IS_AUTHENTICATED_REMEMBERED], /admin/*
+*:[IS_AUTHENTICATED_REMEMBERED], /ck/**:[IS_AUTHENTICATED_REMEMBERED], /*:[IS_AUTHENTICATED_ANONYMOUSLY], /login/**:[IS_AUTHENTICATED_ANONYMOUSLY], /l
+ogout/**:[IS_AUTHENTICATED_ANONYMOUSLY]], useBasicAuth:false, basic:[realmName:Grails Realm], useDigestAuth:false, digest:[realmName:Grails Realm, key
+:changeme, nonceValiditySeconds:300, passwordAlreadyEncoded:false, createAuthenticatedToken:false, useCleartextPasswords:false], useSwitchUserFilter:f
+alse, switchUser:[switchUserUrl:/j_spring_security_switch_user, exitUserUrl:/j_spring_security_exit_user, targetUrl:null, switchFailureUrl:null], filt
+erChain:[stripQueryStringFromUrls:true], portMapper:[httpPort:8080, httpsPort:8443], secureChannel:[definition:[:], useHeaderCheckChannelSecurity:fals
+e, secureHeaderName:X-Forwarded-Proto, secureHeaderValue:http, insecureHeaderName:X-Forwarded-Proto, insecureHeaderValue:https], useX509:false, x509:[
+continueFilterChainOnUnsuccessfulAuthentication:true, subjectDnRegex:CN=(.*?),, checkForPrincipalChanges:false, invalidateSessionOnPrincipalChange:tru
+e, throwExceptionWhenTokenRejected:false], atr:[anonymousClass:class org.springframework.security.authentication.AnonymousAuthenticationToken, remembe
+rMeClass:class org.springframework.security.authentication.RememberMeAuthenticationToken], providerManager:[eraseCredentialsAfterAuthentication:false]
+]], config:[defaults:[locations:[:]], locations:[file:///D:/wec/weceem.properties]], gorm:[default:[constraints:[:], mapping:[:]]], logging:[jul:[useb
+ridge:[:]]], plugin:[platform:[initialized:true], databasemigration:[databaseChangeLogTableName:[:], databaseChangeLogLockTableName:[:], updateOnStart
+:[:]]], spring:[disable:[aspectj:[autoweaving:[:]]], bean:[packages:[:]]], databinding:[autoGrowCollectionLimit:[:], trimStrings:[:], convertEmptyStri
+ngsToNull:[:], dateFormats:[:], enableSpringEventAdapter:[:]], serverURL:[:], web:[url:[converter:[:]], linkGenerator:[useCache:[:]], xhr:[identifier:
+[:]]], taggable:[tagLink:[table:[:], autoImport:[:]], tag:[table:[:], autoImport:[:]]], disableCommonsMultipart:[:], controllers:[defaultScope:[:]], m
+ail:[jndiName:[:], host:[:], encoding:[:], port:[:], username:[:], password:[:], protocol:[:], props:[:]], gsp:[view:[dir:[:]]], cache:[enabled:[:], p
+roxyTargetClass:[:], aopOrder:[:], keyGenerator:[:]]], navigation:[weceem.app.admin:[controller:CMSUser, action:list, title:users, order:null]], wecee
+m:[profile:[url:[controller:userProfile, action:edit]], logout:[url:[controller:logout]], content:[prefix:], admin:[prefix:admin], tools:[prefix:cms/t
+ools], space:[templates:[default:classpath:/org/weceem/resources/default-space-template.zip, basic:classpath:/org/weceem/resources/basic-space-templat
+e.zip]], springsecurity:[details:[mapper:Config$_run_closure2@1b687f3]], security:[policy:[path:[:]]], archived:[status:[:]], umoderated:[status:[:]],
+ upload:[dir:[:]]], log4j:Config$_run_closure4_closure11_closure14@978b67, hibernate:[cache:[use_second_level_cache:true, use_query_cache:true, region
+:[factory_class:net.sf.ehcache.hibernate.EhCacheRegionFactory], provider_class:[:]], naming_strategy:[:], config:[location:[:]], flush:[mode:[:]]], da
+taSource:[pooled:true, driverClassName:org.h2.Driver, username:sa, password:, dbCreate:update, url:jdbc:h2:prodDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOS
+E_ON_EXIT=FALSE, properties:[maxActive:-1, minEvictableIdleTimeMillis:1800000, timeBetweenEvictionRunsMillis:1800000, numTestsPerEvictionRun:3, testOn
+Borrow:true, testWhileIdle:true, testOnReturn:false, validationQuery:SELECT 1, jdbcInterceptors:ConnectionState], jndiName:[:], readOnly:[:], configCl
+ass:[:], loggingSql:[:], logSql:[:], formatSql:[:], dialect:[:]], plugin:[platformCore:[organization:[name:My Corp (set plugin.platformCore.organizati
+on.name)], site:[name:Our App (set plugin.platformCore.site.name), url:null], show:[startup:[info:true]], navigation:[disabled:false], events:[disable
+d:false, poolSize:10, catchFlushExceptions:true, gorm:[disabled:false]], security:[disabled:false], ui:[disabled:false], config:[disabled:[:]]], wecee
+m:[:], taggable:[:], ckeditor:[:], searchable:[:], blueprint:[:], databaseMigration:[:], beanFields:[:], jqueryUi:[:], navigation:[:], cache:[:], feed
+s:[:], jquery:[:], quartz:[:], springSecurityCore:[:], cacheHeaders:[:], mail:[:]], out:[:], searchable:[out:[:], compassConnection:D:\wec, compassSet
+tings:[:], defaultExcludedProperties:[password], defaultFormats:[:], defaultMethodOptions:[search:[reload:false, escape:false, offset:0, max:10, defau
+ltOperator:and], suggestQuery:[userFriendly:true]], mirrorChanges:false, bulkIndexOnStartup:false, releaseLocksOnStartup:true, fetchCount:[:], domain:
+[:]], quartz:[autoStartup:true, jdbcStore:false, waitForJobsToCompleteOnShutdown:true, exposeSchedulerInRepository:false, props:[scheduler:[skipUpdate
+Check:true]], _properties:[org.quartz.scheduler.skipUpdateCheck:true]], beans:[:], ckeditor:[connectors:[prefix:[:]], upload:[baseurl:[:]]]]
+2014-03-04 08:06:47,861 [http-nio-8080-exec-3] INFO  services.WcmContentRepositoryService  - Weceem will use [C:\Users\Jesus Campos\weceem-uploads\Wec
+eemFiles] as the directory for static uploaded files, and the url [/WeceemFiles/] to serve them
+2014-03-04 08:06:48,687 [http-nio-8080-exec-3] INFO  services.WcmContentRepositoryService  - Importing space template [classpath:/org/weceem/resources
+/default-space-template.zip] into space [Default]
+2014-03-04 08:06:48,750 [http-nio-8080-exec-3] INFO  services.WcmContentRepositoryService  - Deleting content from space [org.weceem.content.WcmSpace
+: 1]
+2014-03-04 08:06:48,750 [http-nio-8080-exec-3] INFO  services.WcmContentRepositoryService  - Finished deleting content from space [org.weceem.content.
+WcmSpace : 1]
+    [unzip] Expanding: D:\apache-tomcat-8.0.3\temp\weceem-space-import5267869076691812803.tmp into D:\apache-tomcat-8.0.3\temp\unzip-import-6637916209
+201022914.tmp
+     [copy] Copying 20 files to C:\Users\Jesus Campos\weceem-uploads\WeceemFiles\_ROOT
+2014-03-04 08:07:02,086 [http-nio-8080-exec-3] INFO  compass.CompassGpsUtils  - Starting Searchable Plugin bulk index
+2014-03-04 08:07:02,101 [http-nio-8080-exec-3] INFO  analyzer.LuceneAnalyzerManager  - Building analyzer [searchableplugin_simple]
+2014-03-04 08:07:02,101 [http-nio-8080-exec-3] INFO  analyzer.LuceneAnalyzerManager  - Building analyzer [searchableplugin_whitespace]
+2014-03-04 08:07:02,101 [http-nio-8080-exec-3] INFO  engine.LuceneSearchEngineFactory  - Not using highlighter - no highlighter jar included.
+2014-03-04 08:07:04,410 [http-nio-8080-exec-3] INFO  impl.DefaultCompass  - Closing Compass [default]
+2014-03-04 08:07:04,410 [http-nio-8080-exec-3] INFO  impl.DefaultCompass  - Closed Compass [default]
+2014-03-04 08:07:04,410 [http-nio-8080-exec-3] INFO  optimizer.LuceneSearchEngineOptimizerManager  - Starting scheduled optimizer [class org.compass.c
+ore.lucene.engine.optimizer.DefaultLuceneSearchEngineOptimizer] with period [10000ms]
+2014-03-04 08:07:04,410 [http-nio-8080-exec-3] INFO  manager.DefaultLuceneSearchEngineIndexManager  - Starting scheduled index manager with period [60
+000ms]
+2014-03-04 08:07:04,410 [http-nio-8080-exec-3] INFO  manager.IndexHoldersCache  - Starting scheduled refresh cache with period [5000ms]
+2014-03-04 08:07:04,410 [http-nio-8080-exec-3] INFO  compass.CompassGpsUtils  - Finished Searchable Plugin bulk index, 2 secs, 324 ms
+2014-03-04 08:07:04,410 [http-nio-8080-exec-3] INFO  services.WcmContentRepositoryService  - Successfully imported space template [classpath:/org/wece
+em/resources/default-space-template.zip] into space [Default]
+2014-03-04 08:07:04,612 [http-nio-8080-exec-3] INFO  CacheHeadersGrailsPlugin  - Caching enabled in Config: true
+2014-03-04 08:07:04,940 [http-nio-8080-exec-3] INFO  context.GrailsConfigUtils  - [GrailsContextLoader] Grails application loaded.
+======================================================================
+
+                      Application: weceem 1.2-M1
+                      --------------------------
+
+  Environment: PRODUCTION
+  Database configuration:
+    Hibernate DDL mode: update
+    URL: jdbc:h2:prodDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
+    Driver: org.h2.Driver
+    User: sa
+======================================================================
+2014-03-04 08:07:04,987 [http-nio-8080-exec-3] INFO  navigation.NavigationImpl  - Reloading navigation structure
+2014-03-04 08:07:05,174 [http-nio-8080-exec-3] INFO  core.QuartzScheduler  - Scheduler quartzScheduler_$_NON_CLUSTERED started.
+Bootstrapping Weceem - there are 1 spaces
+2014-03-04 08:07:05,361 [http-nio-8080-exec-3] INFO  compass.CompassGpsUtils  - Starting Searchable Plugin bulk index
+2014-03-04 08:07:05,361 [http-nio-8080-exec-3] INFO  analyzer.LuceneAnalyzerManager  - Building analyzer [searchableplugin_simple]
+2014-03-04 08:07:05,361 [http-nio-8080-exec-3] INFO  analyzer.LuceneAnalyzerManager  - Building analyzer [searchableplugin_whitespace]
+2014-03-04 08:07:05,361 [http-nio-8080-exec-3] INFO  engine.LuceneSearchEngineFactory  - Not using highlighter - no highlighter jar included.
+2014-03-04 08:07:08,543 [http-nio-8080-exec-3] INFO  impl.DefaultCompass  - Closing Compass [default]
+2014-03-04 08:07:08,543 [http-nio-8080-exec-3] INFO  impl.DefaultCompass  - Closed Compass [default]
+2014-03-04 08:07:08,543 [http-nio-8080-exec-3] INFO  optimizer.LuceneSearchEngineOptimizerManager  - Starting scheduled optimizer [class org.compass.c
+ore.lucene.engine.optimizer.DefaultLuceneSearchEngineOptimizer] with period [10000ms]
+2014-03-04 08:07:08,543 [http-nio-8080-exec-3] INFO  manager.DefaultLuceneSearchEngineIndexManager  - Starting scheduled index manager with period [60
+000ms]
+2014-03-04 08:07:08,543 [http-nio-8080-exec-3] INFO  manager.IndexHoldersCache  - Starting scheduled refresh cache with period [5000ms]
+2014-03-04 08:07:08,543 [http-nio-8080-exec-3] INFO  compass.CompassGpsUtils  - Finished Searchable Plugin bulk index, 3 secs, 182 ms
+Starting mirror service
+2014-03-04 08:08:00,189 [http-nio-8080-exec-5] INFO  services.WcmContentFingerprintService  - Finished fingerprinting run for index, 2 (of 2 calls) no
+de hashes and 0 (of 0 calls) tree hashes calculated
+2014-03-04 08:08:00,829 [http-nio-8080-exec-5] INFO  tags.WeceemTagLib  - Retrieving feed http://feeds.bbci.co.uk/news/rss.xml
+2014-03-04 08:08:02,202 [http-nio-8080-exec-7] INFO  services.WcmContentFingerprintService  - Finished fingerprinting run for libs/jquery/jquery-1.3.2
+.min.js, 1 (of 1 calls) node hashes and 0 (of 0 calls) tree hashes calculated
+2014-03-04 08:08:02,202 [http-nio-8080-exec-8] INFO  services.WcmContentFingerprintService  - Finished fingerprinting run for libs/jquery-plugins/supe
+rfish.css, 1 (of 1 calls) node hashes and 0 (of 0 calls) tree hashes calculated
+2014-03-04 08:08:02,202 [http-nio-8080-exec-1] INFO  services.WcmContentFingerprintService  - Finished fingerprinting run for libs/jquery-plugins/supe
+rfish.js, 1 (of 1 calls) node hashes and 0 (of 0 calls) tree hashes calculated
+2014-03-04 08:08:02,217 [http-nio-8080-exec-6] INFO  services.WcmContentFingerprintService  - Finished fingerprinting run for css/blueprint-screen.css
+, 1 (of 1 calls) node hashes and 0 (of 0 calls) tree hashes calculated
+2014-03-04 08:08:02,233 [http-nio-8080-exec-10] INFO  services.WcmContentFingerprintService  - Finished fingerprinting run for libs/jquery-plugins/sup
+erfish-navbar.css, 1 (of 1 calls) node hashes and 0 (of 0 calls) tree hashes calculated
+2014-03-04 08:08:02,233 [http-nio-8080-exec-9] INFO  services.WcmContentFingerprintService  - Finished fingerprinting run for css/default.css, 1 (of 1
+ calls) node hashes and 0 (of 0 calls) tree hashes calculated
+2014-03-04 08:08:02,327 [http-nio-8080-exec-2] INFO  services.WcmContentFingerprintService  - Finished fingerprinting run for Image/weceem-logo.png, 1
+ (of 1 calls) node hashes and 0 (of 0 calls) tree hashes calculated
+2014-03-04 08:08:02,327 [http-nio-8080-exec-3] INFO  services.WcmContentFingerprintService  - Finished fingerprinting run for Image/arrows-ffffff.png,
+ 1 (of 1 calls) node hashes and 0 (of 0 calls) tree hashes calculated
