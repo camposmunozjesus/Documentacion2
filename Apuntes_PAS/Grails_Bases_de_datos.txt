@@ -574,3 +574,17 @@ Ahora en otra tabla vamos a seleccionar con el código del puesto el nombre del 
 	
 	
 ******************************************************************************************************************************************************
+--------------------------------------
+RECUPERAR E IMPRIMIR DATOS CON PRINTLN
+--------------------------------------
+Si se declaran y recuperan los datos de la siguiente manera:
+	def bossesHoresList = []	//rev-20140306
+	//rev-20140306 - Aconseguim els tipus de bosses d'hores.
+	bossesHoresList = CodiBossaHores.list()
+	println "***" + bossesHoresList
+	
+	se obtiene: ***[rlg.CodiBossaHores : null, rlg.CodiBossaHores : null]
+	
+Si se utiliza para imprimir:
+	println "***" + bossesHoresList.codi
+Se imprime la lista de los códigos: ***[001, 002]
