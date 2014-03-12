@@ -448,7 +448,23 @@ class Alumno {
     }
 }
 
+<CONSULTAS BÁSICAS>************************************************************************************************************************************
+Consulta sencilla utilizando una definición para eliminar un elemento:
+	//Aconseguim la llista amb els tipus de bosses d'hores.
+	def query={
+		ne("codi","001")
+	}
+	tipusBossesHoresList = CodiBossaHores.createCriteria().list(query)
 
+Lo mismo se consigue con la siguiente query y eliminando el primer elemento del vector, que sería el que ocuparía el "001". pero aquí, si algún día
+incluímos el código "000", tendremos un error ya que eliminaremos el primer elemento que sería "000", cuando realmente deseamos eliminar el "001".
+Por este motivo es mejor usar la anterior query.
+De todas formas, la manera sería:
+	//Aconseguim la llista amb els tipus de bosses d'hores.
+	tipusBossesHoresList = CodiBossaHores.list()
+	tipusBossesHoresList.remove(0) //Com que no volem consultar les hores extres perque ja hi ha un apartat específic
+		
+		
 <ORDENACIÓN>*******************************************************************************************************************************************
 -------------------------------------------------
 ORDENAR UN VECTOR RECUPERADO DE UNA BASE DE DATOS
