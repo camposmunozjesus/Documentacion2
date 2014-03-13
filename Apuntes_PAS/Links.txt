@@ -20,6 +20,8 @@ Enlace a tutoriales: 				http://www.grailsexample.net/course-outline/
 Apache POI:		Referencias			http://grails.org/plugins/tag/poi
 				Ejemplos			http://grails.org/plugin/excel-import
 									https://github.com/jbarmash/grails-excel-import
+									
+Explicación del operador ->:		http://stackoverflow.com/questions/5591174/eachwithindex-groovy-statement
 
 									
 WEB SERVICE QUE SE PUEDEN UTILIZAR
