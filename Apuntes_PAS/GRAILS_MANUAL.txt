@@ -1,7 +1,7 @@
 GRAILS / GROOVY MANUAL DE DESARROLLO DE CÓDIGO
 ==============================================
 -------------------------------------
-PASAR DIVERSOR PARÁMETROS A UN MÉTODO
+PASAR DIVERSOS PARÁMETROS A UN MÉTODO
 -------------------------------------
 	redirect(action: "iframeList", params: [ id: params.id, filtreTipusBossaHores: params.tipusBossa])
 
