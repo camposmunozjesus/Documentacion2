@@ -121,3 +121,13 @@ Se define la cabecera como:
 	}
 Y en la llamada se usa:
 	generarExcel(var1, var2)
+	
+
+******************************************************************************************************************************************************
+-------------------------------------------------
+SYSTEM PROPERTIES/OBTENER PROPIEDADES DEL SISTEMA
+-------------------------------------------------
+Ejemplo:
+	println System.getProperty("user.home")	//Directorio home del usuario. Ej: C:\Users\Jesus Campos
+
+Se puede encontrar más información en: http://docs.oracle.com/javase/tutorial/essential/environment/sysprop.html
