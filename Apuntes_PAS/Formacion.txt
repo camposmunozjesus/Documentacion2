@@ -1,0 +1,8 @@
+PROGRAMAS UTILIZADOS
+====================
+GGTS (Eclipse con un plugin para poder programar en Grails)
+Oracle SQL Developer
+Lotus Notes
+SVN Torotise
+JAWS 15.0
+SoapUI - Programa para comprobar el correcto funcionamiento de los web services. Se usa a partir del WSDL de los web services.
