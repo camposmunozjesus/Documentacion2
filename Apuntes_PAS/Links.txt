@@ -79,3 +79,8 @@ JOOMLA
 ======
 Página en español:					http://joomla.com.es/curso-joomla.html
 Libros y guías:						http://ayuda.joomlaspanish.org/guia-de-instalacion-2-5x/444-joomla-2-5-guia-para-principiantes
+
+
+OTROS
+=====
+Electrónica:			http://electronics.stackexchange.com/questions/102393/firmware-protection-on-avr-and-pic-controllers
