@@ -23,6 +23,8 @@ Apache POI:		Referencias			http://grails.org/plugins/tag/poi
 									
 Explicación del operador ->:		http://stackoverflow.com/questions/5591174/eachwithindex-groovy-statement
 
+Closures:							http://groovy.codehaus.org/Closures+-+Informal+Guide
+
 									
 WEB SERVICE QUE SE PUEDEN UTILIZAR
 ==================================
@@ -34,14 +36,12 @@ Geo localización IP: (tipo REST)	http://www.restfulwebservices.net/wcf/GeoIPSer
 
 JAVA
 ====
+-------------------
 TIEMPO-HORAS-PARSEO
-*******************
+-------------------
 Como parsear la hora únicamente:	http://nachxs.wordpress.com/2010/12/30/tip-convertir-fecha-y-hora-de-string-a-java-sql-datetime/
 Geo localización IP: (tipo REST)	http://www.restfulwebservices.net/wcf/GeoIPService.svc
 
-
-JAVA
-====
 ------------------------
 FECHAS - PARSEO/FORMATEO
 ------------------------
