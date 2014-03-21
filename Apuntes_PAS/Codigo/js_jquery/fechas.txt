@@ -1,0 +1,52 @@
+	var dates = new Array();
+	function addDate(date) {if (jQuery.inArray(date, dates) < 0) dates.push(date);}
+	function removeDate(index) {dates.splice(index, 1);}
+
+	// Adds a date if we don't have it yet, else remove it
+	function addOrRemoveDate(date)
+	{
+	  var index = jQuery.inArray(date, dates); 
+	  if (index >= 0)
+	    removeDate(index);
+	  else 
+	    addDate(date);
+
+	  document.getElementById('data').value =dates;
+	}
+
+	// Takes a 1-digit number and inserts a zero before it
+	function padNumber(number)
+	{
+	  var ret = new String(number);
+	  if (ret.length == 1)
+	    ret = "0" + ret;
+	  return ret;
+	}	
+	
+	$(function() {
+
+		   
+
+		   $( "#data").datepicker({ 
+		    	onSelect: function(dateText, inst) { addOrRemoveDate(dateText); },
+		    	numberOfMonths: [1,2],
+		    	 showOn: "button",
+				 buttonImage: "../images/calendar.png",
+				 buttonImageOnly: true,
+				 showButtonPanel: true,
+				 closeText: "Tancar",		        
+		         beforeShowDay: function(date) {
+			       
+		            var m = date.getMonth(), d = date.getDate(), y = date.getFullYear();
+		            
+		            for (i = 0; i < dates.length; i++) {			           
+		                if($.inArray(padNumber(d) + '/' + padNumber(m + 1) + '/' + y,dates) != -1) {		                    
+		                    return [true, 'ui-state-highlight', ''];
+		                }
+		            }
+		            return [true];
+		        }
+		    });		   
+		    
+			$('.mascara').mask("9?9:99");			
+      });          

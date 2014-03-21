@@ -34,9 +34,9 @@ para acceder manualmente a donde se desee.
 
 	
 ******************************************************************************************************************************************************
-------------------------------------
-INSTALAR WECEEM (AÚN NO SOLUCIONADO)
-------------------------------------
+---------------
+INSTALAR WECEEM
+---------------
 Se utiliza con una base de datos de PostgreSQL: usuario propietario de la base de datos "weceem" es "jesus.
 
 Modificar el tamaño de la aplicación en el fichero \webapps\manager\WEB-INF\web.xml.
@@ -68,6 +68,20 @@ creadas a apartir del WAR) se incluye el jar dentro de D:\apache-tomcat-8.0.3\we
 Webs de ayuda:
 Indicar dónde encontrar el arhivo de configuración de weceem: http://forums.jcatalog.com/forums/posts/list/96.page
 Cómo establecer correctamente los conectores SQL: http://stackoverflow.com/questions/9793637/unable-to-set-java-opts-variable-dweceem-config-location-for-weceem-grails-cms
+
+Para indicar dónde encontrar el archivo mypolicy.groovy: (gestionar permisos de acceso a contenidos)
+:noJuliConfig
+set JAVA_OPTS=%JAVA_OPTS% %LOGGING_CONFIG% -Dweceem.security.policy.path="C:/wec/mypolicy.groovy" -Dweceem.config.location=file:///D:/wec/weceem.properties -Xmx700m -XX:MaxPermSize=512m
+
+if not "%LOGGING_MANAGER%" == "" goto noJuliManager
+set LOGGING_MANAGER=-Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+:noJuliManager
+set JAVA_OPTS=%JAVA_OPTS% %LOGGING_MANAGER% -Dweceem.security.policy.path="C:/wec/mypolicy.groovy" -Dweceem.config.location=file:///D:/wec/weceem.properties -Xmx700m -XX:MaxPermSize=512m
+
+Otras cosas interesantes:
+Si al crear el WAR hay una base de datos indicada diferente a la de weceem.properties utilizará las indicada en el WAR.
+A veces si el PgAdmin de PostgreSQL está siendo usado, o bien la base de datos no ha sido arrancada el mensaje más habitual será problema con el TransactionManager.
+
 
 
 

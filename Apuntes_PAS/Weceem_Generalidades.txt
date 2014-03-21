@@ -1,0 +1,108 @@
+WECEEM - NOTAS GENERALES SOBRE EL USO Y CONFIGURACIÓN
+=====================================================
+---------------------------------------------------
+HACER QUE RECONOZCA EL SCRIPT SECURITYPOLICY.GROOVY
+---------------------------------------------------
+Creamos en el directorio C:\wec el archivo mypolicy.groovy.
+Contenido del archivo:
+Ejemplo1:
+	policy = {
+
+		'ROLE_ADMIN' {
+			space '*'
+
+			admin true
+			create true
+			edit true
+			view true
+			delete true
+		}
+
+		'ROLE_USER' {
+			space '*'
+
+			admin false
+			create true
+			edit true
+			view true
+			delete false
+		}
+
+		'ROLE_GUEST' {
+			space '*'
+
+			admin false
+			create false
+			edit false
+			view true
+			delete false
+			
+		}
+	}
+En el momento de tener acceso a los Spaces, el usuario que tenga como rol ROLE_GUEST podrá accedeer al espacio de administración y podrá ver todo lo que
+hay. Pero no podrá añadir ninguna página o crear algo, no podrá borrar nada del space. No podrá eliminar ningún space ni crearlo.
+
+Ejemplo2:
+		...
+		'ROLE_GUEST' {
+			space '*'
+
+			admin false
+			create false
+			edit false
+			view true
+			delete false
+			
+			"templates" {
+				view false
+			} 
+		}
+	}
+Provoca que desaparezca la carpeta /templates de todos los Spaces a los que accede el usuario que tenga el rol ROLE_GUEST.
+
+Ejemplo3:
+Ejemplo2:
+		...
+		'ROLE_GUEST' {
+			space '*'
+
+			admin true
+			create true
+			edit true
+			view true
+			delete true
+			
+			"templates" {
+				view false		//Impide ver la carpeta /templates.
+			} 
+			
+			"css/default.css" {
+				view false		//Al desplegar la carpeta podremos ver el archivo default.css, pero al entrar para editarlo no podremos.
+			}
+
+			"widgets/header" {
+				edit false		//OK NO deja editar el archivo. En cambio el resto de widgets de la carpeta widgets SÍ que se pueden editar.
+			}
+
+			"libs" {
+				edit false		//NO OK: permite crear elementos dentro de la carpeta libs
+				delete false	//OK
+			}				
+		}
+	}
+---
+GGTS:
+Y en el momento de ejecutar la apliación le pasamos los siguiente parámetros:	
+run-app --verbose --stacktrace -Dweceem.security.policy.path="C:/wec/mypolicy.groovy" -> El archivo con nombre "policy.groovy" dio problemas.
+
+Apache Tomcat:
+Hay que indicarle en el archivo catalina.bat (alrededor de las líneas 194-200).
+:noJuliConfig
+set JAVA_OPTS=%JAVA_OPTS% %LOGGING_CONFIG% -Dweceem.security.policy.path="C:/wec/mypolicy.groovy" -Dweceem.config.location=file:///D:/wec/weceem.properties -Xmx700m -XX:MaxPermSize=512m
+
+if not "%LOGGING_MANAGER%" == "" goto noJuliManager
+set LOGGING_MANAGER=-Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+:noJuliManager
+set JAVA_OPTS=%JAVA_OPTS% %LOGGING_MANAGER% -Dweceem.security.policy.path="C:/wec/mypolicy.groovy" -Dweceem.config.location=file:///D:/wec/weceem.properties -Xmx700m -XX:MaxPermSize=512m
+
+

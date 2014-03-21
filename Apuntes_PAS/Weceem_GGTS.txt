@@ -357,3 +357,392 @@ Caused by NoSuchBeanDefinitionException: No bean named 'transactionManager' is d
 |   1145 | runWorker in java.util.concurrent.ThreadPoolExecutor
 |    615 | run . . . in java.util.concurrent.ThreadPoolExecutor$Worker
 ^    744 | run       in java.lang.Thread
+
+
+
+******************************************************************************************************************************************************
+******************************************************************************************************************************************************
+******************************************************************************************************************************************************
+UTILIZAR UN ARCHIVO PARA ADMINISTRAR EL ACCESO A CONTENIDOS(WECEEM SECURITY POLICY FILE)
+========================================================================================
+Hay que guardar en un archivo llamado "mypolicy.groovy", por ejemplo, lo siguiente:
+	policy = {
+
+		'ROLE_ADMIN' {
+			space '*'
+
+			admin true
+			create true
+			edit true
+			view true
+			delete true
+		}
+
+		'ROLE_USER' {
+			space '*'
+
+			admin false
+			create true
+			edit true
+			view true
+			delete false
+		}
+
+		'ROLE_GUEST' {
+			space '*'
+
+			admin true
+			create true
+			edit true
+			view true
+			delete true
+			
+			"templates" {
+				view false		//Impide ver la carpeta /templates.
+			} 
+			
+			"css/default.css" {
+				view false		//Al desplegar la carpeta podremos ver el archivo default.css, pero al entrar para editarlo no podremos.
+			}
+
+			"widgets/header" {
+				edit false		//OK NO deja editar el archivo. En cambio el resto de widgets de la carpeta widgets SÍ que se pueden editar.
+			}
+
+			"libs" {
+				edit false		//NO OK: permite crear elementos dentro de la carpeta libs
+				delete false	//OK
+			}				
+		}
+	}
+
+Instrucción a pasarle al editor de comandos para que reconozca el archivo:
+run-app --verbose --stacktrace -Dweceem.security.policy.path="C:/wec/mypolicy.groovy"
+
+
+
+******************************************************************************************************************************************************
+******************************************************************************************************************************************************
+******************************************************************************************************************************************************
+ARCHVOS DE CONFIGURACIÓN
+========================
+Se necesita una base de datos PostgreSQL con usuario jesus y contraseña jesus, y que tenga permisos para acceder a las bd y escribir.
+
+
+------------------
+BUILDCONFIG.GROOVY
+------------------
+grails.servlet.version = "3.0"
+grails.project.class.dir = "target/classes"
+grails.project.test.class.dir = "target/test-classes"
+grails.project.test.reports.dir	= "target/test-reports"
+
+// Remove any files that have been created locally during testing
+grails.war.resources = { stagingDir, args ->
+    delete(dir:"${stagingDir}/WeceemFiles")
+}
+
+grails.tomcat.jvmArgs = ["-Xmx1024m", "-XX:MaxPermSize=256m", '-verbose:class']
+grails.project.dependency.resolver = "maven" // or ivy
+grails.project.dependency.resolution = {
+	// inherit Grails' default dependencies
+	inherits( "global" ) {
+		// uncomment to disable ehcache
+		// excludes 'ehcache'
+	}
+	log "warn" // log level of Ivy resolver, either 'error', 'warn', 'info', 'debug' or 'verbose'
+	repositories {
+        grailsPlugins()
+        grailsHome()
+        grailsCentral()
+        mavenRepo "http://repo.grails.org/grails/core"
+
+    }
+	dependencies {
+		// specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes eg.
+        compile 'net.java.dev.textile-j:textile-j:2.2.864'
+        compile 'xstream:xstream:1.2.1'
+
+        runtime "org.apache.ant:ant:1.8.0"
+		runtime 'postgresql:postgresql:9.0-801.jdbc4'
+	}
+
+	plugins {
+        compile ':weceem:1.2-M1'
+
+        // plugins for the build system only
+        build ":tomcat:7.0.47"
+        // plugins for the compile step
+        compile ":scaffolding:2.0.1"
+        compile ':cache:1.1.1'
+
+        // plugins needed at runtime but not for compilation
+        runtime ":hibernate:3.6.10.6" // or ":hibernate4:4.1.11.2"
+        runtime ":database-migration:1.3.8"
+
+        compile ":bean-fields:1.0" // consider replacing with the fields plugin or even with the new Platform UI
+        compile ":blueprint:1.0.2"
+        compile ":cache-headers:1.1.5"
+        compile ":ckeditor:3.6.6.1.0"
+        compile ":feeds:1.6"
+
+        compile ":jquery:1.8.3"
+        compile ":jquery-ui:1.8.24"
+        compile ":navigation:1.3.2"
+        compile ":quartz:1.0-RC7"
+        compile ":searchable:0.6.6"
+        compile ":taggable:1.0.1"
+        compile ":mail:1.0.1"
+
+        compile ":weceem-spring-security:1.2-M1"
+        compile ":spring-security-core:1.2.7.3"
+}
+}
+
+
+-------------
+CONFIG.GROOVY
+-------------
+// locations to search for config files that get merged into the main config
+// config files can either be Java properties files or ConfigSlurper scripts
+
+// grails.config.locations = [ "classpath:${appName}-config.properties",
+//                             "classpath:${appName}-config.groovy",
+//                             "file:${userHome}/.grails/${appName}-config.properties",
+//                             "file:${userHome}/.grails/${appName}-config.groovy"]
+
+// if(System.properties["${appName}.config.location"]) {
+//    grails.config.locations << "file:" + System.properties["${appName}.config.location"]
+// }
+grails.mime.file.extensions = false // enables the parsing of file extensions from URLs into the request format
+grails.mime.use.accept.header = false
+grails.mime.types = [ html: ['text/html','application/xhtml+xml'],
+                      xml: ['text/xml', 'application/xml'],
+                      text: 'text/plain',
+                      js: 'text/javascript',
+                      rss: 'application/rss+xml',
+                      atom: 'application/atom+xml',
+                      css: 'text/css',
+                      csv: 'text/csv',
+                      all: '*/*',
+                      json: ['application/json','text/json'],
+                      form: 'application/x-www-form-urlencoded',
+                      multipartForm: 'multipart/form-data'
+                    ]
+// The default codec used to encode data with ${}
+grails.views.default.codec="none" // none, html, base64
+grails.views.gsp.encoding="UTF-8"
+
+// Set JSON encoded dates to JS native ie. new Date(1194127343161)
+grails {
+    converters {
+        encoding="UTF-8"
+        json {
+            date = 'javascript'
+        }
+    }
+}
+
+navigation.'weceem.app.admin' = [
+    controller:'CMSUser',
+    action: 'list',
+    title: 'users'
+]
+
+//cache.headers.enabled = false
+
+// enabled native2ascii conversion of i18n properties files
+grails.enable.native2ascii = true
+
+
+weceem.profile.url = [controller:'userProfile', action:'edit']
+weceem.logout.url = [controller:'logout']
+weceem.content.prefix = ''
+weceem.admin.prefix = 'admin'
+weceem.tools.prefix="cms/tools"
+weceem.space.templates = [
+    default: "classpath:/org/weceem/resources/default-space-template.zip", 
+    basic:"classpath:/org/weceem/resources/basic-space-template.zip"]
+
+weceem.springsecurity.details.mapper = { ->
+    [   // Stuff required by weceem spring sec
+        username: username,
+        password: passwd,
+        enabled: enabled,
+        authorities: authorities,
+        // optional stuff we add
+        email: email,
+        description: description,
+        firstName: firstName,
+        lastName: lastName,
+        id: id
+    ]
+}
+
+grails.validateable.packages=['org.weceem']
+
+// Configure Spring Security
+grails {
+    plugins {
+        springsecurity {
+            active = true
+            //registerLoggerListener = true
+
+            password.algorithm = "SHA-512"
+            dao.reflectionSaltSourceProperty = 'username'
+            //use Base64 text ( true or false )
+            password.encodeHashAsBase64 = false
+            adh.errorPage = "null"
+
+            // Turn of user caching, acegi plugin requires diskstore cache by default, which we don't want.
+            cacheUsers = false
+    
+            /** login user domain class name and fields */
+            userLookup.userDomainClassName = "org.weceem.auth.CMSUser"
+            userLookup.userNamePropertyName = "username"
+            userLookup.passwordPropertyName = "passwd"
+            userLookup.enabledPropertyName = "enabled"
+            userLookup.authoritiesPropertyName = "authorities"
+
+            /**
+            * Authority domain class authority field name
+            * authorityFieldInList
+            */
+            authority.className = "org.weceem.auth.CMSRole"
+            authority.nameField = "authority"
+
+            securityConfigType = 'InterceptUrlMap'
+            interceptUrlMap = [
+//				'/admin/users/**': ['ROLE_ADMIN', 'IS_AUTHENTICATED_REMEMBERED'],
+				 '/admin/**':       ['IS_AUTHENTICATED_REMEMBERED'],
+				 // '/admin/users/**': ['ROLE_ADMIN', 'IS_AUTHENTICATED_REMEMBERED'],
+//			   '/admin/**':       ['ROLE_ADMIN','IS_AUTHENTICATED_REMEMBERED'],
+			   '/Test/**':	['ROLE_ADMIN','IS_AUTHENTICATED_ANONYMOUSLY'],
+			   '/Tempus/**':	['ROLE_GUEST','IS_AUTHENTICATED_REMEMBERED'],
+			   '/Tempus_v2/**':	['IS_AUTHENTICATED_REMEMBERED'],
+               '/ck/**':          ['IS_AUTHENTICATED_REMEMBERED'],
+               '/*':              ['IS_AUTHENTICATED_ANONYMOUSLY'],
+               '/login/**':       ['IS_AUTHENTICATED_ANONYMOUSLY'],
+               '/logout/**':      ['IS_AUTHENTICATED_ANONYMOUSLY']
+			   
+            ]
+                
+            /** AJAX request header */
+            ajaxHeader = "X-Requested-With"
+
+            /** use basicProcessingFilter */
+            useBasicAuth = false
+            /** use switchUserProcessingFilter */
+            useSwitchUserFilter = false
+        }
+    }
+}
+
+environments {
+   development {
+
+       weceem.upload.dir = 'file:/var/www/weceem.org/uploads/'
+
+       // log4j configuration
+       log4j = {
+           root {
+               info()
+               additivity = true
+           }
+
+/*
+           debug   'org.weceem',
+                   'grails.app.controller',
+                   'grails.app.service',
+                   'grails.app.filters',
+                   'grails.app.task'
+*/
+           info    'org.weceem',
+                   'grails.app'
+
+           error   'org.codehaus.groovy.grails.web.servlet',  //  controllers
+                   'org.codehaus.groovy.grails.plugins', // plugins
+                   'org.codehaus.groovy.grails.web.pages', //  GSP
+                   'org.codehaus.groovy.grails.web.sitemesh', //  layouts
+                   'org.codehaus.groovy.grails.web.mapping.filter', // URL mapping
+                   'org.codehaus.groovy.grails.commons', // core / classloading
+                   'org.codehaus.groovy.grails.orm.hibernate', // hibernate integration
+                   'org.springframework',
+                   'org.hibernate'
+       }
+   }
+   test {
+   }
+   production {
+
+       log4j = {
+           appenders {
+               rollingFile name: 'fileLog',
+               fileName: 'application.log',
+               maxFileSize: 26214400,
+               maxBackupIndex: 10,
+               layout: pattern(conversionPattern: '%d{yyyy-MM-dd HH:mm:ss,SSS} %p %c{2} %m%n')
+           }
+           root {
+                info()
+                additivity = true
+           }
+           info 'org.weceem',
+                'grails.app'
+
+           error   'org.codehaus.groovy.grails.web.servlet',  //  controllers
+                   'org.codehaus.groovy.grails.plugins', // plugins
+                   'org.codehaus.groovy.grails.web.pages', //  GSP
+                   'org.codehaus.groovy.grails.web.sitemesh', //  layouts
+                   'org.codehaus.groovy.grails.web.mapping.filter', // URL mapping
+                   'org.codehaus.groovy.grails.commons', // core / classloading
+                   'org.codehaus.groovy.grails.orm.hibernate', // hibernate integration
+                   'org.springframework',
+                   'org.hibernate'
+
+       }
+
+   }
+}
+
+
+-----------------
+DATASOURCE.GROOVY
+-----------------
+dataSource {
+	pooled = true
+	driverClassName = "org.postgresql.Driver"
+	}
+	hibernate {
+	cache.use_second_level_cache=true
+	cache.use_query_cache=false
+	cache.provider_class = 'net.sf.ehcache.hibernate.EhCacheProvider'
+	}
+	
+	environments {
+	development {
+		dataSource {
+			dbCreate = "update" // one of 'create', 'create-drop','update'
+			url = "jdbc:postgresql://localhost:5432/Pruebas"
+						username = "jesus"
+						password = "jesus"
+		}
+	}
+	test {
+			dataSource {
+			dbCreate = "update"
+			url = "jdbc:postgresql://localhost:5432/Pruebas"
+						username = "jesus"
+						password = "jesus"
+		}
+	}
+	production {
+		dataSource {
+			dbCreate = "update"
+			url = "jdbc:postgresql://localhost:5432/Pruebas"
+						username = "jesus"
+						password = "jesus"
+		}
+	}
+}
+

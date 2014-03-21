@@ -385,3 +385,19 @@ erfish-navbar.css, 1 (of 1 calls) node hashes and 0 (of 0 calls) tree hashes cal
  (of 1 calls) node hashes and 0 (of 0 calls) tree hashes calculated
 2014-03-04 08:08:02,327 [http-nio-8080-exec-3] INFO  services.WcmContentFingerprintService  - Finished fingerprinting run for Image/arrows-ffffff.png,
  1 (of 1 calls) node hashes and 0 (of 0 calls) tree hashes calculated
+
+ 
+ 
+******************************************************************************************************************************************************
+******************************************************************************************************************************************************
+******************************************************************************************************************************************************
+UTILIZAR UN ARCHIVO PARA ADMINISTRAR EL ACCESO A CONTENIDOS(WECEEM SECURITY POLICY FILE)
+========================================================================================
+Parta indicar dónde encontrar el archivo hay que modificar en catalina.bat:
+:noJuliConfig
+set JAVA_OPTS=%JAVA_OPTS% %LOGGING_CONFIG% -Dweceem.security.policy.path="C:/wec/mypolicy.groovy" -Dweceem.config.location=file:///D:/wec/weceem.properties -Xmx700m -XX:MaxPermSize=512m
+
+if not "%LOGGING_MANAGER%" == "" goto noJuliManager
+set LOGGING_MANAGER=-Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+:noJuliManager
+set JAVA_OPTS=%JAVA_OPTS% %LOGGING_MANAGER% -Dweceem.security.policy.path="C:/wec/mypolicy.groovy" -Dweceem.config.location=file:///D:/wec/weceem.properties -Xmx700m -XX:MaxPermSize=512m
