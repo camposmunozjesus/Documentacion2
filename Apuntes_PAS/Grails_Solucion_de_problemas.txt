@@ -73,6 +73,7 @@ groovyws-0.5.2.jar y las que hagan falta.
 -----------
 Problema 4: (JAVA BUILD PATH) Problemas con el build path (se consulta este dato en markers). Aparece un signo de exclamación. Aparace después de eliminar export del proyecto SIGRIS.
 -----------
+Consultar solución PROBLEMA 12 que puede funcionar mejor que ésta.
 Para intentar solucionarlo se elimina el proyecto del Eclipse, también del workspace y se vuelve a descargar. Aún así NO FUNCIONA.
 Al volverlo a importar, una de las cosas que se obtiene en una ventana de Eclipse (ya no en consola):
 Command terminated with an exception: java.lang.Exception: Command: C:\Program Files (x86)\Java\jdk1.7.0_45\bin\javaw.exe (29/01/2014 13.12.41)
@@ -374,3 +375,35 @@ class Persona {
     }
 }
 
+
+******************************************************************************************************************************************************
+------------
+Problema 11: (Spring Security Service) Error instalando plugin SpringSecurityService.
+------------
+Error |
+Resolve error obtaining dependencies: The following artifacts could not be resolved: org.springframework.security:spring-security-core:jar:3.2.0.RC1, org.springframework.security:spring-security-web:jar:3.2.0.RC1: Could not find artifact org.springframework.security:spring-security-core:jar:3.2.0.RC1 in grailsCentral (http://repo.grails.org/grails/plugins) (Use --stacktrace to see the full trace)
+Error |
+Resolve error obtaining dependencies: The following artifacts could not be resolved: org.springframework.security:spring-security-core:jar:3.2.0.RC1, org.springframework.security:spring-security-web:jar:3.2.0.RC1: Could not find artifact org.springframework.security:spring-security-core:jar:3.2.0.RC1 in grailsCentral (http://repo.grails.org/grails/plugins) (Use --stacktrace to see the full trace)
+Error |
+Resolve error obtaining dependencies: The following artifacts could not be resolved: org.springframework.security:spring-security-core:jar:3.2.0.RC1, org.springframework.security:spring-security-web:jar:3.2.0.RC1: Could not find artifact org.springframework.security:spring-security-core:jar:3.2.0.RC1 in grailsCentral (http://repo.grails.org/grails/plugins) (Use --stacktrace to see the full trace)
+Error |
+The following artifacts could not be resolved: org.springframework.security:spring-security-core:jar:3.2.0.RC1, org.springframework.security:spring-security-web:jar:3.2.0.RC1: Could not find artifact org.springframework.security:spring-security-core:jar:3.2.0.RC1 in grailsCentral (http://repo.grails.org/grails/plugins)
+|Run 'grails dependency-report' for further information.
+
+Solución 11:
+------------
+Añadir el repositorio en el BuildConfig.groovy: mavenRepo 'http://repo.spring.io/milestone'
+http://stackoverflow.com/questions/19196442/dependencies-issue-with-spring-security-core-plugin
+
+
+******************************************************************************************************************************************************
+------------
+Problema 12: (JAVA BUILD PATH) The project cannot be built until the build path errors are resolved
+------------
+Aparece una aspa de color rojo en el proyecto.
+Puede ser debido a que dependía de otro proyecto que se ha borrado o de un plugin que falta.
+A veces se intenta solucionar con la metodología del PROBLEMA 4. Este método puede ser mejor.
+
+Solución 12:
+------------
+Hacer un refresh del proyecto y en propiedades del proyecto -> java build path -> source elimina el elemento que aparezca con una aspa.

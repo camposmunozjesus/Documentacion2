@@ -1,0 +1,13 @@
+WECEEM - SOLUCIÓNDE PROBLEMAS
+=============================
+Entre paréntesis se indica la temática del problema.
+-----------
+Problema 1: (GENERAL) Problema con nullpointer en WcmContentController. Cannot get property 'WcmFolder' on null object.
+-----------
+Grails runtime exception.
+Problemas en este archivo sobre las líneas 78-79. Los mensajes que viene antes son problemas con dispatchers.
+Luego también aparecen problemas conehcache.
+
+Solución 1:
+-----------
+Descomprimir de nuevo el weceem-app-master en otro lugar, con GGTS en otro workspace arrancar la aplicación y se soluciona el problema.

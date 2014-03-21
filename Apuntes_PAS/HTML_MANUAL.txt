@@ -1,0 +1,24 @@
+HTML - MANUAL
+=============
+--------------------------------------------------
+FORZAR EL NAVEGADOR A UNA DETERMINADA VERSIÓN (IE)
+--------------------------------------------------
+El tag:
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+sirve para que IExplorer funcione con la versión más nueva de la que disponga.
+Pueden haber otras combinaciones:
+    "IE=edge"
+    "IE=10"
+    "IE=EmulateIE10"
+    "IE=9"
+    "IE=EmulateIE9
+    "IE=8"
+    "IE=EmulateIE8"
+    "IE=7"
+    "IE=EmulateIE7"
+    "IE=5"
+	
+Fuentes:
+Stackoverflow: 	http://stackoverflow.com/questions/6771258/whats-the-difference-if-meta-http-equiv-x-ua-compatible-content-ie-edge-e
+				http://stackoverflow.com/questions/6156639/x-ua-compatible-is-set-to-ie-edge-but-it-still-doesnt-stop-compatibility-mode
+				http://stackoverflow.com/questions/17467245/misunderstand-of-meta-http-equiv-x-ua-compatible-content-ie-edge
