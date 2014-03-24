@@ -1,0 +1,28 @@
+<html>
+	<head>
+	
+		 <!-- <link href="css/ui-lightness/jquery-ui-1.10.4.custom.css" rel="stylesheet"> -->
+		<link href="http://code.jquery.com/ui/1.9.1/themes/base/jquery-ui.css" rel="stylesheet">
+	 
+		<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+		<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+		
+		<script>
+			var dates = new Array();
+			
+			function addDate(date) {if (jQuery.inArray(date, dates) < 0) dates.push(date);}
+			
+			addDate("20120808", "08/08/2012");
+			addDate("20120202", "02/02/2018");
+			
+			//addDate("08/08/2012");
+			//addDate("02/02/2018");
+			
+			dates.sort();
+			alert(dates[0][0]);
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

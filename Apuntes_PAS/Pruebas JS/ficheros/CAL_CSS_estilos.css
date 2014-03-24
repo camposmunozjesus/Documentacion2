@@ -1,0 +1,95 @@
+/* FONT SIZE 1em=10px */
+* {margin:0; padding:0;}
+html {font-size:125%;}
+body {font-family:sans-serif; font-size:.5em;}
+
+/* CLEARFIX */
+.cf:after, div:after, section:after, nav:after, header:after, footer:after {content: ""; display: block; clear: both; height: 0; visibility: hidden;}
+.cf, div, section, nav, header, footer {display:block; height:auto; min-height: 0;}
+	* html .cf,
+	* html section,
+	* html nav,
+	* html header,
+	* html footer,
+	* html div {height: 1%;}
+
+/* DEFAULTING ELEMENTS */
+ul, ol, li {list-style:none;}
+h1, h2, h3, h4, h5, h6 {font-size:1em; font-weight:normal;}
+fieldset, img, acronym, abbr {border:0;}
+img {display: block;}
+input, select, textarea {font-size:1em; font-family:sans-serif; vertical-align:middle;}
+table {border-spacing:0;}
+
+/* HIDDEN, NONE, MOBILE */
+.indented {display:block; left:-999em; line-height:0; position:absolute; text-indent:-999em; top:-999em;}
+.hidden, .mobile {display:none;}
+
+
+/* LINKS */
+a {color:#3566A5;}
+a:hover {color:#cc3d00; text-decoration:none;}
+
+
+body {background-color:#d2d2d2; font-family:verdana,dejavu sans,arial,sans-serif;}
+#main {background-color:#fff; border-radius:2px; margin:1em auto; padding:1em; width:52em;}
+
+#main-header h1 {font-family:calibri,arial,sans-serif; font-size:2em; margin-bottom:.5em;}
+#main-header p {font-size:1.1em; margin-bottom:1em;}
+
+#main-footer {text-align:center;}
+#main-footer .inside-main-footer {border-top:1px solid #bcbcbc; margin-top:2em; padding:2em 0 2em 0;}
+#main-footer p {font-size:1.1em;}
+
+
+/* EXAMPLES */
+.example {margin-bottom:2em;}
+.example header {margin-bottom:.8em;}
+.example .title {font-family:calibri,arial,sans-serif; font-size:1.8em;}
+.example p {font-size:1.2em; margin-bottom:.8333em;}
+.example pre {font-size:1em; margin-bottom:1em;}
+.example pre code {font-size:1.4em;}
+.example .calendar-box {margin-bottom:2em;}
+.example .cf label {float:left;}
+.example .focus-calendar {float:left;}
+
+/* TABLA */
+
+.calendar-box {background:#fff; border:1px solid #bcbcbc; margin:0 auto; padding:.4em .4em 2.8em .4em; position:relative; width:32em;}
+
+.calendar-box .calendar-title {font-size:1.6em; padding:.375em 0 .625em 0; text-align:center;}
+.calendar-box .calendar-nav li {position:absolute;}
+.calendar-box .calendar-nav-months li {top:.4em;}
+.calendar-box .calendar-nav-months li.calendar-nav-previous {left:5.4em;}
+.calendar-box .calendar-nav-months li.calendar-nav-next {right:5.4em;}
+.calendar-box .calendar-nav-months li a,
+.calendar-box .calendar-nav-months li a img {display:block; height:3.2em; width:3.2em;}
+.calendar-box .calendar-nav-years li {bottom:.4em;}
+.calendar-box .calendar-nav-years li.calendar-nav-previous {left:.4em;}
+.calendar-box .calendar-nav-years li.calendar-nav-next {right:.4em;}
+.calendar-box .calendar-nav-years li a {color:#3566A5; font-size:1.4em;}
+.calendar-box .calendar-nav-years li a:hover,
+.calendar-box .calendar-nav-years li a:hover span {color:#cc3d00; text-decoration:none;}
+
+.calendar-box table {border:1px solid #c4c4c4; border-bottom:0; border-right:0; width:32em;}
+
+.calendar-box table th,
+.calendar-box table td {border:1px solid #c4c4c4; border-top:0; border-left:0; text-align:center;}
+
+.calendar-box table td a,
+.calendar-box table td span,
+.calendar-box table td strong {display:block;}
+.calendar-box table thead th {background-color:#dbdbdb;}
+.calendar-box table thead th,
+.calendar-box table td a,
+.calendar-box table td span {font-size:1.2em; padding:.5em 0;}
+.calendar-box table td span {color:#c4c4c4;}
+.calendar-box table td.day-today strong {border:1px solid #333;}
+.calendar-box table td.day-today strong a,
+.calendar-box table td.day-today strong span {padding:.4166em 0;}
+.calendar-box table td a {color:#3566A5; text-decoration:none;}
+.calendar-box table td a:hover {background-color:#3566A5; color:#fff;}
+.calendar-box table td.day-selected a {background-color:#333; color:#fff;}
+
+.calendar-box .close-calendar {position:absolute; right:.2em; top:.2em;}
+.calendar-box .close-calendar a {display:block;}
