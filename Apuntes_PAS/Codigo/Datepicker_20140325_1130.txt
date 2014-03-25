@@ -1,0 +1,793 @@
+MODIFICACIONES DE DATEPICKER CCS: VERSIÓN CORRECTA
+Modificaciones: eliminar el else del beforeshowday y anyadir a la hoja de estilos el estate active
+ESTA SOLUCIÓN NO ES BUENA. HAY QUE IRSE AL BEFORESHOWDAY Y HACER QUE CUANDO EL VECTOR TIENE 0 ELEMENTOS SE DEVUELVA UNCHECKED.
+Hoja de estilos definitiva (TODO):
+html, body {
+  height: 100%;
+}    
+
+html * {
+    margin: 0;
+    /*padding: 0; SELECT NOT DISPLAYED CORRECTLY IN FIREFOX */
+}
+
+body {
+	background: #fff;
+    color: #333;
+	Font-family: Verdana, Helvetica, Arial, Sans-serif;
+    font: 0.7em verdana, arial, helvetica, sans-serif;                       /*11px*/
+    width: 99.9%;
+}
+
+.body {
+    float: left;
+    margin: 15px 15px 0px 20%;
+    width: 79%;
+}
+
+.widthMobile {
+	min-width: 550px;
+}
+
+#totalWidth {
+	/*width: 1090px;*/
+	width:100%;	
+	clear: both;   
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -35px;
+}
+
+/* GENERAL */
+
+.spinner {
+    padding: 5px;
+    position: absolute;
+    right: 0;
+}
+
+#upcLogo {
+	padding:8px;
+}
+
+a,a:link {
+	color:#333333;
+	text-decoration:none;
+}
+a:visited{
+	color:#333333;
+}
+a:hover {
+	text-decoration:underline;
+}
+
+a.noDeco:hover  {
+	text-decoration:none;
+} 
+
+.linkBlau {
+	color:#007DCC !important;
+	
+}
+
+.linkGrisFosc
+{
+	color:#333 !important;
+}
+
+.linkGris
+{
+	color:#666 !important;
+}
+
+.linkGrisClar
+{
+	color:#999 !important;
+}
+
+h1 {
+    color: #007BC0;
+    font-family: Helvetica, Arial, Verdana, Sans-serif;
+    font-weight: normal;
+    font-size: 2.45em !important; /*27px*/
+    margin: .8em 0 .3em 0;
+}
+
+/*Nota, farem servir el h2 com a H3 perquÃ© Ã©s massa gran, H2 hauria de tindre 22px*/
+
+h2 {
+    color: #007BC0;
+    font-family: Helvetica, Arial, Verdana, Sans-serif !important;
+    font-weight: normal;
+    font-size: 1.7em !important;  /*19px*/
+}
+
+h3 {
+    color: #007BC0;
+    font-family: Helvetica, Arial, Verdana, Sans-serif !important;
+    font-weight: normal;
+    font-size: 1.7em !important;     /*19px*/  
+}
+
+h4 {
+    color: #007BC0;
+    font-family: Helvetica, Arial, Verdana, Sans-serif !important;
+    font-weight: normal;
+    font-size: 1.54em !important; /*17px*/
+}
+
+ul {
+    padding-left: 15px;
+}
+
+input, select, textarea {
+    background-color: #fcfcfc;
+    border: 1px solid #ccc;
+    font: 1em verdana, arial, helvetica, sans-serif; /*11px*/
+    margin: 2px 0;
+    padding: 2px 4px;
+}
+
+
+input.reset, select.reset, textarea.reset {
+    font: 0.7em verdana, arial, helvetica, sans-serif; /*11px*/
+    background-color: transparent;
+    border: 0px;
+}
+
+select {
+   padding: 2px 2px 2px 0;
+}
+textarea {
+	width: 250px;
+	height: 150px;
+	vertical-align: top;
+}
+
+input:focus, select:focus, textarea:focus {
+    border: 1px solid #b2d1ff;
+}
+
+.bodyIframe{
+    float: left;
+    width: 99.9%;
+}
+
+/* NAVIGATION MENU */
+
+.nav {
+    background: #fff url(../images/icons/shadow.jpg) bottom repeat-x;
+    border: 1px solid #ccc;
+    border-style: solid solid solid solid;
+    margin-top: 5px;
+    padding: 7px 5px;
+    height: 15px;
+    width: 97%;
+    margin-left:1%;
+}
+
+.margin
+{
+	margin-left:10%;
+}
+
+.margin20p
+{
+	margin-left:20%;
+}
+
+.bigMargin
+{
+	margin-left:25%;
+}
+
+.centerMargin
+{
+	margin-left:40%;
+}
+
+.menuButton {
+    font-size: 1em; /*11px;*/
+    padding: 0 5px;     
+}
+
+.menuButton a {
+    color: #333;
+    padding: 4px 15px;
+}
+
+.menuButton a.ajuda {
+    background: url(../images/icons/help.png) center left no-repeat;
+    color: #333;    
+    padding: 4px 0 0 22px;      
+}
+
+.menuButton a.contacte {
+    background: url(../images/icons/help.png) center left no-repeat;
+    color: #333;    
+    padding: 4px 10px 0 22px;      
+}
+
+.menuButton a.manual {
+    background: url(../images/icons/separador.png) center left no-repeat;
+    color: #333;    
+    padding: 4px 10px;   
+}
+
+.menuButton a.exit {
+    background: url(../images/icons/porta-blava.png) center left no-repeat;
+    color: #333;
+    padding-left: 22px;    
+}
+
+.menuButton .login {
+    background: url(../images/login.png) center left no-repeat;
+    color: #333;
+    padding-left: 17px;
+    margin-right:3px;
+}
+
+.menuButton a.home {
+    background: url(../images/icons/home.png) center left no-repeat;
+    color: #333;
+    padding-left: 25px;
+}
+
+.menuButton a.jump {
+    background: url(../images/icons/go-racop.png) center left no-repeat;
+    color: #333;
+    padding-left: 25px;
+}
+
+.menuButton a.list {
+    background: url(../images/icons/database_table.png) center left no-repeat;
+    color: #333;
+    padding-left: 25px;
+}
+.menuButton a.create {
+    background: url(../images/icons/afegir.png) center left no-repeat;
+    color: #333;
+    padding-left: 25px;
+}
+
+.menuButton a.marcatgeEntrada {
+    background: url(../images/icons/rellotge-verd.png) center left no-repeat;
+    color: #333;
+    padding-left: 25px;
+}
+
+.menuButton a.marcatgeSortida {
+    background: url(../images/icons/rellotge-blau.png) center left no-repeat;
+    color: #333;
+    padding-left: 25px;
+}
+
+
+/* MESSAGES AND ERRORS */
+
+.message {
+    background: #f3f8fc url(../images/icons/information.png) 8px 50% no-repeat;
+    border: 1px solid #b2d1ff;
+    color: #006dba;
+    margin: 10px 0 5px 0;
+    padding: 5px 5px 5px 30px
+}
+
+div.errors {
+    background: #fff3f3;
+    border: 1px solid red;
+    color: #cc0000;
+    margin: 10px 0 5px 0;
+    padding: 5px 0 5px 0;
+}
+div.errors ul {
+    list-style: none;
+    padding: 0;
+}
+div.errors li {
+	background: url(../images/icons/exclamation.png) 8px 0% no-repeat;
+    line-height: 16px;
+    padding-left: 30px;
+}
+
+td.errors select {
+    border: 1px solid red;
+}
+td.errors input {
+    border: 1px solid red;
+}
+td.errors textarea {
+    border: 1px solid red;
+}
+
+/* TABLES */
+
+table.noborder {
+    border: 0px !important;
+}
+
+table {
+    border: 1px solid #ccc;
+    width: 100%
+}
+tr {
+    border: 0;
+}
+
+td, th {
+    font: 1em verdana, arial, helvetica, sans-serif; /*11px*/
+    color: #333;
+    text-align: left;
+    vertical-align: middle;
+    padding: 2px 6px;
+}
+th {
+    background: url(../images/icons/shadow.jpg) repeat-x #FFFFFF;
+    font-weight: bold;
+    line-height: 17px;
+}
+
+th a:link, th a:visited, th a:hover {
+    color: #333;
+    display: block;
+    font-size: 1em; /*11px*/
+    text-decoration: none;
+}
+
+th.asc a {
+    background-image: url(../images/icons/sorted_asc.gif);
+    background-position: right; 
+    background-repeat: no-repeat;    
+}
+th.desc a {
+    background-image: url(../images/icons/sorted_desc.gif);
+    background-position: right; 
+    background-repeat: no-repeat;    
+}
+
+.odd {
+    background: #f7f7f7;
+    vertical-align:middle;
+}
+.even {
+    background: #fff;
+    vertical-align:middle;
+}
+
+/* LIST */
+
+.list table {
+    border-collapse: collapse;
+    width:100%;
+}
+.list th, .list td {
+    border-left: 1px solid #ddd;
+}
+.hovered {
+  background: none repeat scroll 0 0 #D7EFF7; 
+}
+.hoveredGradient {
+  /*background: url("../images/standardGradient.png") repeat-x #ABD6FF;*/
+	background: url("../images/standardGradient.png") repeat-x scroll 0 0 #ABD6FF;  
+  
+}
+.activatedGradient {
+  background: url("../images/standardGradient.png") repeat-x #7DBDFA;	
+}
+
+/* PAGINATION */
+
+.paginateButtons {
+    background: #fff url(../images/icons/shadow.jpg) bottom repeat-x;
+    border: 1px solid #ccc;
+    border-top: 0;
+    color: #666;
+    font-size: 0.9em; /*10px*/
+    overflow: hidden;
+    padding: 10px 3px;
+}
+.paginateButtons a {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-color: #ccc #aaa #aaa #ccc;
+    color: #666;
+    margin: 0 3px;
+    padding: 2px 6px;
+}
+.paginateButtons span {
+    padding: 2px 3px;
+}
+
+/* DIALOG */
+
+.dialog table {
+    padding: 5px 0;
+}
+
+.prop {
+    padding: 5px;
+}
+.prop .name {
+    text-align: left;
+    vertical-align: middle;
+    width: 15%;
+    white-space: nowrap;
+}
+.prop .value {
+    text-align: left;
+    width: 85%;
+}
+
+/* ACTION BUTTONS */
+
+.buttons {
+    background: #fff url(../images/icons/shadow.jpg) bottom repeat-x;
+    border: 1px solid #ccc;
+    color: #666;
+    font-size: 0.9em; /*10px*/
+    margin-top: 5px;
+    overflow: hidden;
+    padding: 0;
+}
+
+.buttonsNew {
+    background: #fff url(../images/icons/shadow.jpg) bottom repeat-x;
+    border: 1px solid #ccc;
+    color: #666;
+    font-size: 0.9em; /*10px*/
+    margin-top: 5px;
+    overflow: hidden;
+    padding: 4px 3px 3px 3px; 
+}
+
+.noTopMargin
+{
+    margin-top: 0px;
+}
+
+.buttons input {
+    background: #fff;
+    border: 0;
+    color: #333;
+    cursor: pointer;
+    font-size: 1.1em; /*11px*/
+    margin-left: 3px;
+    overflow: visible;
+    padding: 2px 6px;
+}
+
+.buttonsNew input {
+    background: #fff;
+    border: 0;
+    color: #333;
+    cursor: pointer;
+    font-size: 1.1em; /*11px*/
+    margin-left: 3px;
+    overflow: visible;
+    padding: 2px 6px;
+}
+
+
+.buttons input:hover {
+	text-decoration:underline;
+}
+
+.buttonsNew input:hover {
+	text-decoration:underline;
+}
+
+.buttons input.delete {
+    background: transparent url(../images/icons/papelera.png) 5px 50% no-repeat;
+    padding-left: 28px;
+}
+.buttons input.edit {
+    background: transparent url(../images/icons/editar.png) 5px 50% no-repeat;
+    padding-left: 28px;
+}
+
+.buttons input.visualitza {
+    background: transparent url(../images/icons/comentari.png) 5px 50% no-repeat;
+    padding-left: 28px;
+}
+
+.buttons input.save {
+    background: transparent url(../images/icons/guardar.png) 5px 50% no-repeat;
+    padding-left: 28px;
+}
+
+.buttons input.undo {
+    background: transparent url(../images/icons/undo.png) 5px 50% no-repeat;
+    padding-left: 28px;
+}
+
+.buttonsNew input.excel {
+    background: transparent url(../images/excel.png) 5px 50% no-repeat;
+    padding-left: 28px;
+}
+
+.buttons input.transparent {
+    background: transparent 5px 50% no-repeat;
+    padding-left: 28px;
+    text-decoration:none;
+}
+
+.enllac {
+    border: 0px;
+    color: #666;
+    font-size: 0.9em; /*10px*/
+    margin-top: 5px;
+    overflow: hidden;
+    padding: 0;
+}
+
+.enllac input {
+    background: #fff;
+    border: 0;
+    color: #333;
+    cursor: pointer;
+    font-size: 1em; /*11px*/
+    margin-left: 3px;
+    overflow: visible;
+    padding: 2px 6px;
+}
+
+.enllac input:hover {
+	text-decoration:underline;
+}
+
+.enllac input.create {
+    background: url(../images/icons/afegir.png) center left no-repeat;
+    color: #333;
+    padding-left: 25px;
+}
+
+.ui-datepicker-trigger {
+	margin-left: 3px;
+	margin-bottom: -3px;
+}
+
+.ui-datepicker-today a {
+   border: 1px solid #aed0ea !important; background: #d7ebf9 url(images/ui-bg_glass_80_d7ebf9_1x400.png) 50% 50% repeat-x !important; font-weight: bold !important; color: #2779aa !important;
+}
+
+.ui-state-highlight a { 
+	border: 1px solid #2694e8 !important; background: #3baae3 url(images/ui-bg_glass_50_3baae3_1x400.png) 50% 50% repeat-x !important; font-weight: bold !important; color: #ffffff !important; 
+}
+
+.ui-state-highlight { 
+	border: 1px solid transparent !important;
+	background: transparent !important;  
+}
+
+button.ui-datepicker-current { display: none; }
+
+.ui-datepicker-unchecked a {
+   border: 1px solid #aed0ea !important; background: #d7ebf9 url(images/ui-bg_glass_80_d7ebf9_1x400.png) 50% 50% repeat-x !important; font-weight: bold !important; color: #2779aa !important;
+}
+
+.ui-state-active a { 
+	 border: 1px solid #aed0ea !important; background: #d7ebf9 url(images/ui-bg_glass_80_d7ebf9_1x400.png) 50% 50% repeat-x !important; font-weight: bold !important; color: #2779aa !important;
+}
+
+.ui-state-active { 
+	 border: 1px solid #aed0ea !important; background: #d7ebf9 url(images/ui-bg_glass_80_d7ebf9_1x400.png) 50% 50% repeat-x !important; font-weight: bold !important; color: #2779aa !important;
+  
+}
+
+
+
+
+
+************************
+************************
+************************
+
+iframeCreate.gsp: Con ordenación de días y calendario que arranca de manera m odificada:
+<%@ page import="rlg.PermisHores"%>
+<html>
+<head>
+	<!-- <meta name="layout" content="mainVoid" /> -->	
+	<title>Permisos per hores</title>	
+		
+	<script type="text/javascript" src="${resource(dir:'js',file:'jquery/jquery.maskPlugin.js')}"></script>
+		
+	<script type="text/javascript">
+
+	var dates = new Array();
+	var datesTmp = new Array();	//REV-2
+	
+	function addDate(date) {
+		if (jQuery.inArray(date, dates) < 0){ //REV-2 S'inserto a datesTmp, que després s'ordenarà i del que s'extreuran les dates a mostrar.
+			var tokens = date.split("/");
+			elem = [tokens[2]+tokens[1]+tokens[0], date];
+			datesTmp.push(elem);
+		}
+	}
+	
+	function removeDate(index) {
+		dates.splice(index, 1);
+		datesTmp.splice(index, 1);
+	}
+
+	// Adds a date if we don't have it yet, else remove it
+	function addOrRemoveDate(date)
+	{
+	  var index = jQuery.inArray(date, dates); //REV-2
+	  if (index >= 0)
+	    removeDate(index);
+	  else 
+	    addDate(date);
+
+	  datesTmp.sort();	//REV-2
+	  document.getElementById('data').value =generateArrayDates(datesTmp);
+	}
+
+	// Takes a 1-digit number and inserts a zero before it
+	function padNumber(number)
+	{
+	  var ret = new String(number);
+	  if (ret.length == 1)
+	    ret = "0" + ret;
+	  return ret;
+	}		
+
+	
+	//REV-2. Funció que genera l'array de dates a mostrar.
+	function generateArrayDates(globalarray){
+		var arr = new Array();
+		for (var i = 0; i < globalarray.length; i++) {
+			arr.push(globalarray[i][1]);
+		}
+		dates=arr;
+		return arr;
+	}
+	
+	$(function() {	
+
+
+			
+		   $( "#data").datepicker({ 
+		    	onSelect: function(dateText, inst) { 
+			    	addOrRemoveDate(dateText); 
+			    	$("#data").datepicker("refresh");	//Esto es un puntero. Se hace refresh de lo que estoy viendo. Le dices ejecuta la función datepicker y refresh es un método.
+			    	inst.show();						//Esto es el contenido.	
+			    	    					
+		        },			            
+		    	numberOfMonths: [1,2],
+		    	 showOn: "button",
+				 buttonImage: "../images/calendar.png",
+				 buttonImageOnly: true,
+				 showButtonPanel: true,
+				 closeText: "Tancar",
+				 beforeShow: function(input, inst) {	//REV-1
+			        	if(dates.length>0){
+			        		$("#data").datepicker("option", "defaultDate", dates[0]);
+			        	}else{
+				        	$("#data").datepicker("option", "defaultDate", new Date());
+				        }
+			    },
+		         beforeShowDay: function(date) {
+
+		        	//En combinación con beforeShow para que cargue el primer día senyalado.
+		        	document.getElementById('data').value =dates;	//REV-1
+		        	
+		            var m = date.getMonth(), d = date.getDate(), y = date.getFullYear();
+		            
+		            for (i = 0; i < dates.length; i++) {		           
+		                if($.inArray(padNumber(d) + '/' + padNumber(m + 1) + '/' + y,dates) != -1) {
+			                //alert("fecha encontrada"+date);		                    
+		                    return [true, 'ui-state-highlight', ''];
+		                }
+		                
+		            }
+		            return [true];
+		        }
+		    });	
+
+			$('.mascara').mask("9?9:99");			
+      });          
+	</script>
+</head>
+
+<body>
+	<div class="bodyIframe">		
+		<g:if test="${flash.message}">
+			<div class="message">
+				<p>${flash.message}</p>
+			</div>
+		</g:if>
+		<g:hasErrors bean="${permisHoresInstance}">
+			<div class="errors">
+				<g:renderErrors bean="${permisHoresInstance}" as="list" />
+			</div>
+		</g:hasErrors>
+		<g:form action="save" enctype="multipart/form-data">
+			<fieldset class="border">
+			<legend>Creació de permís</legend>
+				<table class="noborder">
+					<tbody>
+						<tr class="prop">
+							<td valign="top" class="name">
+								<label for="codiPermisHores">Tipus de permís</label>
+							</td>							
+							<td valign="top" class="value ${hasErrors(bean: permisHoresInstance, field: 'codiPermisHores', 'errors')}">
+								<g:select name="codiPermisHores" from="${codisPermis}" optionKey="codi" optionValue="descripcio" value="${params?.codiPermisHores}"/>
+							</td>
+						</tr>
+
+						<tr class="prop">
+							<td valign="top" class="name">
+								<label for="data">Data permís</label>
+							</td>
+							<td valign="top" class="value ${hasErrors(bean: permisHoresInstance, field: 'permisDataTemps', 'errors')}">								
+								<g:textField name="data" id="data" style="width:350px" readonly="readonly" title="Introduir data en format dd/MM/AAAA"/>							
+							</td>
+						</tr>
+						<tr class="prop">
+							<td valign="top" class="name">
+								<label for="duracioPermis">Hores</label>
+							</td>
+							<td valign="top" class="value ${hasErrors(bean: permisHoresInstance, field: 'permisDataTemps', 'errors')}">
+								<g:if test="${params.duracioPermis != null}">																    
+									<g:textField name="duracioPermis" class="mascara" style="width:50px" title="Introduir hora en format HH:mm" value="${params?.duracioPermis}"/>
+							    </g:if>
+								<g:else>
+									<!-- Alimentació per defecte 00:00 -->							    
+									<g:textField name="duracioPermis" class="mascara" style="width:50px" title="Introduir hora en format HH:mm" value="00:00"/>									
+								</g:else>								 
+							</td>
+						</tr>
+						<tr class="prop">
+							<td valign="top" class="name">
+								<label for="uploadFile">Fitxer</label>
+							</td>
+							<td valign="top" class="value">														
+								<input type="file" id="uploadFile" title="Escollir document justificatiu pel permís si s'escau" name="uploadFile"/>
+							</td>
+						</tr>
+						 
+						<tr class="prop">
+							<td valign="top" class="name">
+								<label for="comentari">Comentari<br/>(màxim 100 caràcters)</label>
+							</td>
+							<td valign="top" class="value ${hasErrors(bean: permisHoresInstance, field: 'comentari', 'errors')}">
+								<g:textArea name="comentari" rows="" cols="" class="width250px" style="height:45px;" value="${params?.comentari}" title="Introduir comentari associat al permís si s'escau"/>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</fieldset>
+			<div class="buttons">
+				<span class="button">
+					<g:actionSubmit name="create" class="save" action="iframeSave" value="Crear" />
+				</span> 
+				<span class="button">
+					<g:actionSubmit class="undo" action="iframeListTmp" value="Desfer" />
+				</span>
+			</div>			
+			<br/>
+			<p>			
+				<b>Avís important:</b>
+				<br/>
+				La documentació acreditativa que annexeu és exclussivament als efectes d'acreditar el permís sol·licitat. No pot contenir informació de caràcter personal de nivell de protecció alt d'acord amb la Llei orgànica 15/1999, de 13 de desembre (salut, ideologia, afiliació sindical, creences, etc).  ni pròpia ni de terceres persones. En cas que s'adjunti algun document que contingui aquest tipus de dades, el Servei de personal procedirà a la seva immediata destrucció, sens perjudici que es deixi constància a l'expedient que es reuneixen els requisits establerts a la legislació vigent mitjançant diligència.
+			</p>
+		</g:form>
+	</div>	
+	
+	<script type="text/javascript">
+	// S'activa quan petjem una tecla o sortim del focus de qualsevol TEXTAREA
+    $('textarea').on('keyup blur', function() {
+		// Inicialitzem els valors
+        var maxlength = 100;
+        var val = $(this).val();
+        // Fem TRIM del contingut sobrant als 100 caràcters
+        if (val.length > maxlength) {
+            $(this).val(val.slice(0, maxlength));
+            alert('La llargària del comentari no pot superar els 100 caràcters.')
+        }
+    });
+	</script>	
+
+</body>
+</html>
