@@ -1,0 +1,8 @@
+Historial de funciones JavaScript
+=================================
+JS_001.html: Pruebas con arrays JS.
+JS_002.html: Creación de un método de búsqueda en un array de fechas ordenadas. El array contiene arrays de dos dimensiones en cada posición. La primera
+			 pos tiene la fecha en formato YYYYDDMM que es la que se utiliza para ordenar. La segunda pos contiene la fecha que se utilizaría en un 
+			 datepicker, por ejemplo, en formato DD/MM/YYY/. Para ordenar se utiliza sort sobre el array princiapl, que ordena el array principal según 
+			 el orden del primer elemento del array.
+JS_003.html: Prueba con split.

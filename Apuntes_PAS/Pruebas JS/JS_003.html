@@ -1,0 +1,31 @@
+<html>
+	<head>
+	
+	
+		 <!-- <link href="css/ui-lightness/jquery-ui-1.10.4.custom.css" rel="stylesheet"> -->
+		<link href="http://code.jquery.com/ui/1.9.1/themes/base/jquery-ui.css" rel="stylesheet">
+	 
+		<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+		<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+		
+		<script>
+			//Pruebas con split.
+
+			function getOrderFormat(str){
+				var tokens = str.split("/");
+				return  tokens[2]+tokens[1]+tokens[0];
+				//return orderFormat
+			}
+			
+			//Si lo incluimos de la siguiente manera: addDate("20120808", "08/08/2012"); NO funcionará como un array de dos dimensiones.
+			alert(getOrderFormat("03/03/2013"));
+			alert(getOrderFormat("02/02/2018"));
+			alert(getOrderFormat("08/08/2012"));
+			
+			
+	
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

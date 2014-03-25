@@ -11,22 +11,72 @@
 		<script>
 			//Pruebas con arrays.
 			var dates = new Array();
+			var datesModif = new Array();
+	alert("[datesModif]"+datesModif)
+			//Función que busca la fecha.
+			function searchDate(globalarray, date){
+				for (var i = 0; i < globalarray.length; i++) {
+					if (globalarray[i][1] == date) {
+						return i;
+					}
+				}
+				return -1;
+			}
 			
+			//Función que genera el vextor de fechas a mostrar.
+			function generateArrayDates(globalarray){
+				var arr = new Array();
+				for (var i = 0; i < globalarray.length; i++) {
+					arr.push(globalarray[i][1]);
+				}
+				datesModif=arr;
+				return arr;
+			}
+			
+			
+			//Función que añade fecha: igual que la del TEMPUS.
 			function addDate(date) {if (jQuery.inArray(date, dates) < 0) dates.push(date);}
 		
-			addDate(["20120808", "08/08/2012"]);
-			addDate(["20180202", "02/02/2018"]);
+			//Si lo incluimos de la siguiente manera: addDate("20120808", "08/08/2012"); NO funcionará como un array de dos dimensiones.
+//			addDate(["20130303", "03/03/2013"]);
+//			addDate(["20180202", "02/02/2018"]);
+//			addDate(["20120808", "08/08/2012"]);
+			
 			
 			//addDate("08/08/2012");
 			//addDate("02/02/2018");
 			
-			//dates.sort();
+			//dates.sort();		//Cuando ordena lo hace correctamente: coge el primer elemento del arra de dos elementos y en base a él sitúa el array entero de dos elementos.
 			
-			var index = jQuery.inArray("08/08/2012", dates);
-			dates.splice(index, 1);
+			//var index = jQuery.inArray("08/08/2012", dates);	alert(index);	//Esto NO funciona, ni poniendo el segundo ni el primer elemento del array de dos elementos que hay en cada posición del array.
+			//var index2 = jQuery.inArray("08/08/2012", dates);	alert(index2);
+			//var index = jQuery.inArray(["20180202", "02/02/2018"], dates);	alert(index);	//NO funciona	//Sólo busca en el elemento 0 del array de dos elementos que hay en cada posición del array.
+			//var index2 = jQuery.inArray("20120808", dates);					alert(index2);	//NO funciona
+			//var index2 = jQuery.inArray("20180202,02/02/2018", dates);			alert(index2);	//NO funciona
+			//var index2 = jQuery.inArray(["20180202","02/02/2018"], dates);			alert(index2);	//NO funciona
+			//dates.splice(index, 1); //Elimina los dos elementos del vector, ej: ["20120808", "08/08/2012"]
+			//dates[0].splice(index, 1) //Elimina un elemento del array de dos elementos, ej: "02/02/2018"
+			//var index3 = dates[1].indexOf("20180202");	alert(index3); //OK
+			alert(dates[1]);
+			//var index3 = dates.indexOf("20180202,02/02/2018");	alert(index3); 	//NO funciona.
+			var index3 = searchDate( dates, "05/05/2015");	alert("05/05/2015 usando function searchDate: "+index3);
+			var index4 = searchDate( dates, "02/02/2018");	alert("02/02/2018 usando function searchDate: "+index4);
+			var index5 = searchDate( dates, "03/03/2013");	alert("03/03/2013 usando function searchDate: "+index5);
+			var index6 = searchDate( dates, "08/08/2012");	alert("08/08/2012 usando function searchDate: "+index6);
 			
-			alert(dates);
+			//Para ordenar s utiliza sort. La fecha a utilizar ocupa la pos 2 del array, la fecha de ordenación formato YYYYMMDD en la primera pos.
+			dates.sort();
 			
+			var index7 = searchDate( dates, "02/02/2018");	alert("02/02/2018 usando function searchDate: "+index7);
+			var index8 = searchDate( dates, "03/03/2013");	alert("03/03/2013 usando function searchDate: "+index8);
+			var index9 = searchDate( dates, "08/08/2012");	alert("08/08/2012 usando function searchDate: "+index9);
+			
+			//alert(dates);
+		datesModif=dates;
+		alert("[datesModif]"+datesModif)
+		
+			alert(generateArrayDates(dates));
+		alert("[datesModif]"+datesModif)	
 		</script>
 	</head>
 	<body>
