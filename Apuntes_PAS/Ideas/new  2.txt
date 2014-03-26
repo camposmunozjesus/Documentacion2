@@ -1,0 +1,46 @@
+JQUERY - PRUEBAS A REALIZAR
+===========================
+----------
+2014-01-23
+----------
+Conseguir un menú desplegable con JQuery. Lo bueno sería reducir la parte JS a una única función.
+
+PARTE HTML
+<div id="Menu3" title="Menú" class="dijitTitlePane">
+	<div class="dijitTitlePaneTitle">
+		<div><img class="dijitArrowNode" alt="Fletxa" src="${resource(dir:'images',file:'blank.gif')}"/></div>
+		<span class="dijitTitlePaneTextNode">Testing</span>
+	</div>
+	<div id="Outer3" class="dijitTitlePaneContentOuter">					
+		<ul id="uli4" class="iconList">
+			<li class="bullet"><g:link controller="TestingAdmin" class="linkGrisFosc">Pruebas de test</g:link></li>
+		</ul>					
+	</div>
+	
+	<div id="Outer4" class="dijitTitlePaneContentOuter">					
+		<ul id="uli5" class="iconList">
+			<li class="bullet"><g:link controller="TestingAdmin" class="linkGrisFosc">Pruebas de test</g:link></li>
+		</ul>					
+	</div>
+</div>
+
+Parte JAVASCRIPT
+<script type="text/javascript">	
+	$('#Menu0 div.dijitTitlePaneTitle').click(function() {
+		$('#Outer0').slideToggle('medium'); 
+	});	
+
+	$('#Menu1 div.dijitTitlePaneTitle').click(function() {
+		$('#Outer1').slideToggle('medium'); 
+	});	
+	$('#Menu2 div.dijitTitlePaneTitle').click(function() {
+		$('#Outer2').slideToggle('medium'); 
+	});
+	$('#Menu3 div.dijitTitlePaneTitle').click(function() {
+		$('#Outer3').slideToggle('slow'); 
+	});
+
+	$('#Menu3 div.dijitTitlePaneTitle').click(function() {
+		$('#Outer4').slideToggle('fast'); 
+	});
+</script>
