@@ -407,3 +407,30 @@ A veces se intenta solucionar con la metodología del PROBLEMA 4. Este método p
 Solución 12:
 ------------
 Hacer un refresh del proyecto y en propiedades del proyecto -> java build path -> source elimina el elemento que aparezca con una aspa.
+
+
+******************************************************************************************************************************************************
+------------
+Problema 13: (ACTUALIZAR A VERSION GRAILS 2.4) Al actualizar a la versión 2.4 de Grails y correr el proyecto se obtiene un error.
+------------
+El error que se obtine por consola al hacer run-app:
+Error occurred during initialization of VM
+agent library failed to init: instrument
+Error opening zip file or JAR manifest missing : null
+
+Solución 13:
+------------
+Se cambia en Ordenador -> Propiedades -> Configuraión avanzada del sistema -> Variables de entorno ... 
+La variable GRAILS_HOME (originlamente con valor C:\grails\grails-2.3.4) por C:\grails\grails-2.4.0.M1.
+Se reinicia el PC.
+Sigue sin funcionar. (POR LO QUE SE PUEDE INTENTAR SOLUCIONAR DESDE AQUÍ EN ADELANTE!!!)
+
+Copiar la carpeta org.springsource.springloaded de Grails 2.3.4 (C:\grails\grails-2.3.4\lib\org.springsource.springloaded) en 
+C:\grails\grails-2.4.0.M1\lib\.
+Según el JIRA Grails éste último paso es la solución, pero en otros lugares hablan de este error como solucionable indicando correctamente el path de 
+la variable GRAILS_HOME.
+
+Fuentes:
+Aquí en el primer comentario de Kris De Volder nombra la solución ('/lib/org.springsource.springloaded' into 'lib/com.springsource.springloaded'): https://issuetracker.springsource.com/browse/STS-3128
+Se deduce aquí que la carpeta necesari está en C:\Grails: https://issuetracker.springsource.com/browse/STS-3128
+Habla del GRAILS_HOME: http://stackoverflow.com/questions/11145814/grails-2-0-4-error-opening-zip-file-or-jar-manifest-missing-springloaded

@@ -50,6 +50,7 @@ Cómo parsear una fecha:	API date	http://docs.oracle.com/javase/1.5.0/docs/api/j
 									http://ilusodemonio.blogspot.com.es/2012/06/hace-poco-tuve-un-problema-para-pasar.html
 									http://surpatterns.com/sitio/tutoriales-programacion-surpatterns/java-manejo-y-formateo-de-fechas-con-dateformat-y-simpledateformat/
 									http://docs.oracle.com/javase/tutorial/datetime/
+									http://docs.oracle.com/javase/6/docs/api/java/text/SimpleDateFormat.html
 		
 -----------------
 SYSTEM PROPERTIES
