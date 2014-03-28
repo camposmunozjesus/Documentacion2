@@ -1,0 +1,8 @@
+JAVA - HORA
+===========
+--------------------------------------------------
+EXPRESAR LA FECHA ACTUAL EN UN FORMATO DETERMINADO
+--------------------------------------------------
+Puede resultar de ayuda: http://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html (son los parámetros)
+	SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yy hh:mm:ss:SSS ", new Locale("es", "ES"))
+	Sysout( sdf.format(new Date()));
