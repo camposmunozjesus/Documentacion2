@@ -1,9 +1,149 @@
 GRAILS / GROOVY MANUAL DE DESARROLLO DE CÓDIGO
 ==============================================
--------------------------------------
-PASAR DIVERSOS PARÁMETROS A UN MÉTODO
--------------------------------------
+EQUIVALENCIAS GROOVY-GRAILS Y JAVA
+==================================
+Si queremos declarar el método index por defecto de Grails al estilo Java:
+	public int index(){
+		render "mensaje de prueba tradicional"
+		println ("\n mensaje por consola tradicional")
+		return 0
+	} 
+- NO puede ser void, debe retornar algo.
+- Debe llevar el return 0, si no dará un NullPointerException.
+- Si desde index llamamos a otro método, por ejemplo redirection (action:metodoA), puede declararse como 
+	def metodoA = {}
+  y TAMBIÉN como:
+	def metodoA() {}
+- Si una clase controller es de la siguiente forma:
+class LibroController {
+	def cosa1 = {
+		println "cosa 1 ----------------->"
+	}
+}
+	Cuando se llame al controller se ejecutará "cosa2" por defecto.
+	
+  Si es:
+  class LibroController {
+	def cosa1 = {
+		println "cosa 1 ----------------->"
+	}
+	println "index"
+	}
+	def cosa2 = {
+		println "cosa 2 ----------------->"
+	}
+}
+	Cuando se llame al controlador no se ejecutará nada.
+	
+  Si es:
+class LibroController {
+	def cosa1 = {
+		println "cosa 1 ----------------->"
+	}
+	
+	def index = {
+		println "index"
+	}
+	def cosa2 = {
+		println "cosa 2 ----------------->"
+	}
+}
+	Se ejecutará "index" al llamar al controlador.
+	
+- El controlador y el dominio se han de llamar igual sólo en el caso de quere utilizar scaffold.
+
+
+******************************************************************************************************************************************************
+-------------------------------------------------------------------------------------
+INSTRUCCIONES PARA CONSULTAR TAMAÑO DE VECTORES, LISTS, ETC .../MOSTRAR SUS ELEMENTOS
+-------------------------------------------------------------------------------------
+Consulta
+1)Consulta a tabla que devuelve varios elementos:
+	def segape
+	segape = Lloc.findAllByNomAndPrimerCognomAndSegonCognom("MARIA DEL CARMEN","TORRENT","SERRA")
+ ->	println segape.size	
+ 
+2)Mismo caso que antes, pero declarando la variable que contendrá los datos como vector:
+	def segape = []
+	segape = Lloc.findAllByNomAndPrimerCognomAndSegonCognom("MARIA DEL CARMEN","TORRENT","SERRA")
+	println segape.size
+	
+	
+Obtener/Imprimir datos:
+1)En ambos casos para imprimir sus elementos:
+	println "segape: " + segape.descripcioLlarga		//Se imprime por pantalla todo el vector: [PROFESSOR TITULAR D'UNIVERSITAT, PROF. ASSOCIAT LABORAL]
+	println "segape: " + segape[0].descripcioLlarga		//Se imprime sólo un elemento del vector, el indicado.
+	
+2)Listar o recorrer todo el vector:
+  Suponiendo que la instrucción: def llocTreball = Lloc.findAllByNom("MARIANO")
+  Devuelve: [PROFESSOR TITULAR D'UNIVERSITAT, PROF. ASSOCIAT LABORAL, PROF. ASSOCIAT LABORAL]
+  Es decir, el segundo y tercer elementos son iguales, si se utiliza:
+	for (var in llocTreball) {
+		println var.primerCognom
+		println var.descripcioLlarga
+	}
+  Se realizarán tres iteraciones y tres impresiones, porque suponemos que el primer apellido es diferente en cada caso.
+  
+  Pero si se hace:
+	for (var in llocTreball) {
+		println var.descripcioLlarga
+	}
+  Se realizarán las tres iteraciones, pero al estar ordenados de manera que dos elementos repetidos van uno detrás de otr, sólo habrán dos 
+  impresiones en pantalla, el elemento repetido NO se lista dos veces (o más).
+  
+  En el caso de que se hubieran devuelto de la siguiente manera: [PROF. ASSOCIAT LABORAL, PROFESSOR TITULAR D'UNIVERSITAT, PROF. ASSOCIAT LABORAL]
+  Se obtendrían tres impresiones.
+  
+  
+******************************************************************************************************************************************************
+--------
+UNIQUE()
+--------
+Sirve para eliminar elementos redundantes en una list. Se puede usar en código Groovy ó GSP.
+Ejemplo:
+	def mesosAny = ["Gener", "Gener", "Febrer", "Març", "Abril", "Maig", "Juny", "Juliol", "Agost", "Setembre", "Octubre", "Novembre", "Desembre","Tots"]
+	
+	println mesosAny -> Imprimirá los meses repetidos.
+	
+	mesosAny.unique()
+	
+	println mesosAny -> Ya NO imprime los meses repetidos.
+	
+	
+******************************************************************************************************************************************************
+-------------------------------------------------------------------------
+PASAR PARÁMETROS A FUNCIONES/CLOSURES (SIMILAR A LLAMAR A UN MÉTODO JAVA)
+-------------------------------------------------------------------------
+Se define la cabecera como:
+	def generarExcel(def r, def resultList){
+		println "generando excel"
+		println "--"+r
+		println "--"+resultList.nom
+		println "***********************"
+	}
+Y en la llamada se usa:
+	generarExcel(var1, var2)
+
+
+Otros ejemplos:
+public int getDaysBetween(def dStart, def dEnd)
+
+******************************************************************************************************************************************************
+--------------------------------------------------------------
+PASAR DIVERSOS PARÁMETROS (PARAMS) A UN MÉTODO USANDO REDIRECT
+--------------------------------------------------------------
 	redirect(action: "iframeList", params: [ id: params.id, filtreTipusBossaHores: params.tipusBossa])
 
 O bien para pasar todos los parámetros:
 	redirect(action: "list", params: params)
+	
+	
+
+******************************************************************************************************************************************************
+-------------------------------------------------
+SYSTEM PROPERTIES/OBTENER PROPIEDADES DEL SISTEMA
+-------------------------------------------------
+Ejemplo:
+	println System.getProperty("user.home")	//Directorio home del usuario. Ej: C:\Users\Jesus Campos
+
+Se puede encontrar más información en: http://docs.oracle.com/javase/tutorial/essential/environment/sysprop.html

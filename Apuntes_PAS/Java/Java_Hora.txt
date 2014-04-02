@@ -3,6 +3,93 @@ JAVA - HORA
 --------------------------------------------------
 EXPRESAR LA FECHA ACTUAL EN UN FORMATO DETERMINADO
 --------------------------------------------------
+1era Forma
+**********
 Puede resultar de ayuda: http://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html (son los parámetros)
 	SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yy hh:mm:ss:SSS ", new Locale("es", "ES"))
 	Sysout( sdf.format(new Date()));
+
+2da  Forma
+**********
+Otra forma (usando calendario):
+SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss")
+Calendar cal = Calendar.getInstance()
+cal.set(Calendar.HOUR_OF_DAY, 00)
+cal.set(Calendar.MINUTE, 00)
+cal.set(Calendar.SECOND, 00)
+cal.set(Calendar.YEAR, 2014)
+cal.set(Calendar.MONTH, 1)	//el mes va de 0 a 11.
+cal.set(Calendar.DAY_OF_MONTH, 2)
+println "Calendario: "+ sdf.format(cal.getTime())
+
+
+---------------
+COMPARAR FECHAS
+---------------
+Permite que dada una fecha, podamos saber si hoy (u otra fecha parseable) es posterior o anterior a ella.
+
+1era Forma
+**********
+Parsear una fecha y comprobar si no la hemos superado (es decir, si hoy es anterior a dicha fecha):
+		 Date dataInici = null;
+		 Date dataFi = null;
+		 
+		 try
+		 {
+			  dataFi = sdf.parse("02/4/2014")
+			  Calendar cal = Calendar.getInstance()
+			  cal.setTime(dataFi)
+			  //Fixem hores, minuts, segons, perquè al fer
+			  //la comparació sigui l'última hora del dia
+			  cal.set(Calendar.HOUR_OF_DAY, 23)
+			  cal.set(Calendar.MINUTE, 59)
+			  cal.set(Calendar.SECOND, 59)
+			  //Tornar a alimentar l'objecte Date
+			  //dataFi = cal.getTime()
+			  println "Calendario: "+ sdf.format(cal.getTime())
+			  println "NEW DATE: "+new Date()
+			  if(cal.getTime().after(new Date()))
+			  {
+				  println "Estamos a TIEMPO!!!!"
+			  }
+			  else
+			  {
+				  println "Hemos pasado la fecha"
+			  }
+			  
+		 }
+		 catch(Exception e){}
+
+		 
+2da  Forma
+**********		 
+Lo mismo pero estableciendo directamente la fecha en el calendario:
+		 Date dataInici = null;
+		 Date dataFi = null;
+		 
+		 try
+		 {
+			 // dataFi = sdf.parse("02/4/2014")
+			  Calendar cal = Calendar.getInstance()
+			 // cal.setTime(dataFi)
+			  //Fixem hores, minuts, segons, perquè al fer la comparació sigui l'última hora del dia
+			  cal.set(Calendar.HOUR_OF_DAY, 23)
+			  cal.set(Calendar.MINUTE, 59)
+			  cal.set(Calendar.SECOND, 59)
+			  cal.set(Calendar.YEAR, 2034)
+			  cal.set(Calendar.MONTH, 11)	//el mes va de 0 a 11.
+			  cal.set(Calendar.DAY_OF_MONTH, 13)	
+			  //Tornar a alimentar l'objecte Date
+			  //dataFi = cal.getTime()
+			  println "Calendario: "+ sdf.format(cal.getTime())
+			  println "NEW DATE: "+new Date()
+			  if(cal.getTime().after(new Date()))
+			  {
+				  println "Estamos a TIEMPO!!!!"
+			  }
+			  else
+			  {
+				  println "Hemos pasado la fecha"
+			  }
+		 }
+		 catch(Exception e){}
