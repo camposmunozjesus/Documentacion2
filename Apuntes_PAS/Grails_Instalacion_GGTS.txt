@@ -1,0 +1,13 @@
+GRAILS - INSTALACIÓN ENTORNO DE DESARROLLO
+==========================================
+1) Descargar el GGTS (Groovy/Grails Tools Suite). (Google: download ggts) 
+	Descarga principal: https://spring.io/tools/ggts
+	Otras versiones: https://spring.io/tools/ggts/all
+
+2) Descargar la versión de Grails a utilizar: http://grails.org/download (Google: download grails)
+	Por ejemplo, se descarga la versión 2.3.7.
+	
+3) Crear la carpeta C:\Grails. Descomprimir el zip descargado en el apartado 2 situándolo en C:\Grails. Quedaría algo como C:\grails\grails-2.3.7.
+
+4) Modificar las variables de entorno (Botón derecho sobre Ordenador -> Propiedades -> Configuración avanzada del sistema -> Pestaña de Opciones avanzadas -> Variables de entorno ...)
+   Crear la nueva variable 
