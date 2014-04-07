@@ -1,0 +1,84 @@
+GRAILS - ENVIAR MAILS
+=====================
+--------------------------
+INSTALACIÓN DE MAIL PLUGIN
+--------------------------
+Referencia de utilización: http://grails.org/plugin/mail
+Plugins must be declared in the grails-app/conf/BuildConfig.groovy file.
+Example:
+grails.project.dependency.resolution = {
+   ...
+   plugins {
+      compile ":mail:1.0.4"
+   }
+}
+
+
+
+*****************************************************************************************************************************************************
+-------------
+CONFIGURACIÓN
+-------------
+Hay que configurar un servidor de correo desde el que enviar los mails. Para ello hay que escribir en el archivo Config.groovy
+grails {
+    views {
+		...
+    }
+	
+	mail {
+		host = "smtp.gmail.com"
+		port = 465
+		username = "campos.tenia.que.ser@gmail.com"
+		password = "contrasenya"
+		props = ["mail.smtp.auth":"true",
+				 "mail.smtp.socketFactory.port":"465",
+				 "mail.smtp.socketFactory.class":"javax.net.ssl.SSLSocketFactory",
+				 "mail.smtp.socketFactory.fallback":"false"]
+	  }
+}
+Referencia utilizada: 	http://stackoverflow.com/questions/13711791/grails-2-1-1-sending-mail
+Otras:					http://stackoverflow.com/questions/2941650/grails-mail-port-configuration
+
+
+
+*****************************************************************************************************************************************************
+-----------------
+CÓDIGO DE EJEMPLO
+-----------------
+En un controlador escribir:
+    def index() {
+		sendMail {
+			to "campos.tenia.que.ser@gmail.com" //Destinatario
+			subject "Hello Fred"				//Asunto
+			body 'How are you?'					//Mensaje
+		  }
+	}
+
+Y ya está todo.
+
+
+
+*****************************************************************************************************************************************************
+------------------------------
+CONTROL DE EXCEPCIONES/ERRORES
+------------------------------
+El siguiente código imprime el mensaje del catch en el caso de estar mal configurada el nombre de la cuenta desde la que se envía el mail.
+    def index() {
+		try{
+			sendMail {
+				to "camposteniaqueser@gmaaaail.comcom"
+				//to "campos.tenia.que.ser@gmail.com"
+				subject "Hello Fred"
+				body 'How are you?'
+			}
+		}catch(Exception e){
+			println "se produjo un error"
+		}
+	}
+	
+Si la dirección de destino es errónea NO se captura. De momento.
+En la siguiente dirección se habla del tema (http://grails.1312388.n4.nabble.com/Grails-Mail-Plugin-Get-Mail-Delivery-Status-td3565765.html) y en uno
+de los links (http://grails.1312388.n4.nabble.com/Advice-on-bounced-amp-noreply-mails-td2315429.html#a2315429) parece que hay buena información.
+Otros: 
+http://grails.1312388.n4.nabble.com/How-to-receive-emails-in-Grails-td2329500.html
+http://grails.1312388.n4.nabble.com/Advice-on-bounced-amp-noreply-mails-td2315429.html#a2315429

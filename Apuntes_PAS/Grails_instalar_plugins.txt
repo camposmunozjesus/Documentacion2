@@ -1,0 +1,14 @@
+GRAILS - INSTALACIÓN DE PLUGINS
+===============================
+-----------
+MAIL PLUGIN
+-----------
+Referencia de utilización: http://grails.org/plugin/mail
+Plugins must be declared in the grails-app/conf/BuildConfig.groovy file.
+Example:
+grails.project.dependency.resolution = {
+   ...
+   plugins {
+      compile ":mail:1.0.4"
+   }
+}
