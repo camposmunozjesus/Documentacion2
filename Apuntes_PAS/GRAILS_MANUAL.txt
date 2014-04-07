@@ -93,8 +93,14 @@ Obtener/Imprimir datos:
   
   En el caso de que se hubieran devuelto de la siguiente manera: [PROF. ASSOCIAT LABORAL, PROFESSOR TITULAR D'UNIVERSITAT, PROF. ASSOCIAT LABORAL]
   Se obtendrían tres impresiones.
+
   
-  
+Métodos heredados:  
+1)ADD: Para poder hacer un add se debe declarar la variable como:
+	def lista = []
+ 
+ 
+ 
 ******************************************************************************************************************************************************
 --------
 UNIQUE()
@@ -110,7 +116,7 @@ Ejemplo:
 	println mesosAny -> Ya NO imprime los meses repetidos.
 	
 	
-******************************************************************************************************************************************************
+<PARAMS>**********************************************************************************************************************************************
 -------------------------------------------------------------------------
 PASAR PARÁMETROS A FUNCIONES/CLOSURES (SIMILAR A LLAMAR A UN MÉTODO JAVA)
 -------------------------------------------------------------------------
@@ -128,7 +134,7 @@ Y en la llamada se usa:
 Otros ejemplos:
 public int getDaysBetween(def dStart, def dEnd)
 
-******************************************************************************************************************************************************
+
 --------------------------------------------------------------
 PASAR DIVERSOS PARÁMETROS (PARAMS) A UN MÉTODO USANDO REDIRECT
 --------------------------------------------------------------
@@ -136,6 +142,18 @@ PASAR DIVERSOS PARÁMETROS (PARAMS) A UN MÉTODO USANDO REDIRECT
 
 O bien para pasar todos los parámetros:
 	redirect(action: "list", params: params)
+	
+
+----------------------
+PARAMS SORT PÁGINA GSP
+----------------------
+Cuando se pulsa sobre el nombre de la columna de una tabla que es de tipo sortable (para ordenar por dicha columna), se devuelve al controlador en la
+variable params el parámetro sort (params.sort) junto con el order. Esto, cuando se entra en el controlador debido a la pulsación del ratón sobre la
+columna.
+
+Cuando se entra en el controlador por otras causas que no sean debidas a querer ordenar por el campo de la columna params.sort es null y se cumplirá:
+if(params.sort==null){...}
+La condición será TRUE por lo que se ejecutará el if
 	
 	
 
@@ -147,3 +165,106 @@ Ejemplo:
 	println System.getProperty("user.home")	//Directorio home del usuario. Ej: C:\Users\Jesus Campos
 
 Se puede encontrar más información en: http://docs.oracle.com/javase/tutorial/essential/environment/sysprop.html
+
+
+******************************************************************************************************************************************************
+--------------------------------
+TRADUCIR CÓDIGOS A DESCRIPCIONES
+--------------------------------
+Como traducir código a descripción de un campo del cual su descripción se encuentra en otra tabla.
+
+Leemos datos de una clase del dominio (Persona) que tiene su campo perfil como un código (números). Este código se corresponde con una descripción
+almacenada en la clase del dominio Perfil. Para poder ver la traducción en pantalla:
+
+GROOVY
+******
+Controlador:
+	//Traducció del codi del perfil a descripció
+	literalsPerfils = Perfil.getElementList(resultList.perfil, "descripcio")
+
+Donde resultList es: resultList = InscripcioCardiovascular.createCriteria().list(params,query)
+Y hay que modificar la clase del dominio Perfil añadiendo lo siguiente:
+Dominio:
+	public static String getElementProperty(String id, String property)
+	{
+		String cad
+		
+		def query =
+		{
+			and {
+				eq("codi", id)
+			}
+		}
+		
+		try
+		{
+			def instance = this.createCriteria().list(query)
+			cad = instance[0].getProperty(property).toString().trim();
+		}
+		catch(Exception e)
+		{
+			cad = "";
+		}
+		
+		return cad;
+	}
+	
+	public static ArrayList getElementList(ArrayList llista,String property)
+	{
+		ArrayList result = new ArrayList()
+		for(int i = 0; i < llista.size(); i++)
+		{
+			result.add(this.getElementProperty(llista[i].toString(),property))
+		}
+		return result;
+	}
+}
+
+
+GSP
+***
+	<g:each in="${resultList}" status="i" var="personaInstance">
+		<tr id="tr${i}" class="${(i % 2) == 0 ? 'odd' : 'even'}">															
+			<td class="padding width05p">
+				${personaInstance.nif}
+			</td>
+			<td class="padding">
+				${personaInstance.cognom1}
+			</td>
+			<td class="padding">
+				${personaInstance.cognom2}
+			</td>
+			<td class="padding">
+				${personaInstance.nom}
+			</td>
+			<td class="padding">
+				${literalsPerfils[i]}
+			</td>
+		</tr>													
+	</g:each>
+
+Lo que sucede es que en el código groovy la lista, que recoge todos los códigos de la query en orden, son traducidos también en orden.
+
+Este ejemplo ha sido sacado de la aplicación SIG (llocRiscContrller/iframeList), en la que se utilizaba lo siguiente:
+Funcio solo contiene el código de riesgo por lo que debe obtener otros datos y por este motivo utiliza un bucle for.
+	resultList = FuncioRisc.createCriteria().list(params,query)
+	results = resultList.getTotalCount()
+
+	//Riscos i literals per les disciplines i grups de risc
+	for(int i = 0; i<resultList.size(); i++)
+	{
+		risc = Risc.findByCodi(resultList[i].codiRisc)
+		riscInstanceList << risc
+		literalsDisciplinaRisc.add(risc.disciplina.toString())
+		literalsGrupRisc.add(risc.grup.toString())			
+	}
+	
+	literalsDisciplinaRisc = TDisciplinaRisc.getElementList(literalsDisciplinaRisc, "descripcio")
+	literalsGrupRisc = TGrupRisc.getElementList(literalsGrupRisc, "descripcio")
+	
+	
+
+<HTML>*************************************************************************************************************************************************
+--------------------------------
+TRADUCIR CÓDIGOS A DESCRIPCIONES
+--------------------------------

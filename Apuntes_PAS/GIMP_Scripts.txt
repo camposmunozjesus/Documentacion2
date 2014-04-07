@@ -1,0 +1,74 @@
+GIMP - SCRIPTS
+==============
+El lenguaje es similar al USER RPL (notación postfija: 3 3 +), pero al revés (notación prefija: + 3 3).
+
+Ir a la consola para realizar pruebas: Filtros -> Script-Fu -> Consola.
+Todo lo que se escriba en la consola en cada enter se puede utilizar después. Por ejemplo, escribir una función, enter, y luego utilizarla.
+
+En primer lugar siempre va el operado/función a ejecutar seguido de un espacio.
+
+No tiene en cuentalos caracteres en blanco extras.
+
+Es un lenguaje sin tipos de datos.
+Devuelve la última declaración -> no utiliza returns.
+
+
+
+---------
+VARIABLES
+---------
+(let* ( (a 1) (b 2) ) (+ a b) )
+
+Asignación con impresión de pantalla:
+(let* ( (x 8) ) x)
+
+
+
+-----------------
+LISTAS DE VALORES
+-----------------
+(let* ( (x '(1 3 5))) x)
+
+Sintaxis para definir una lista:
+'(a b c)
+
+Una lista es un elemento compuesto de una cabeza (primer elemento) y una cola (el resto de elementos).
+
+CONS añade un elemento a la cabeza. Ejemeplo:
+(cons 1 '(2 3 4) ) genera la lista 1 2 3 4.
+
+* Definir lista con LIST:
+(let* ((a 1) (b 2) (c 3)) (list 5 4 3 a b c))
+
+* CAR devuelve la cabeza de la lista:
+(let* ( (x '(1 3 5))) (car  x)) -> Imprimiría: 1
+(let* ((x  '( (1 2 (3 4 5) 6)  7  8  (9 10) ))   )  (car  x) ) -> Imprimiría: (1 2 (3 4 5) 6)
+Con el primer paréntesis interpreta que empieza un elemento que será la cabeza, y hasta que no se cierra el paréntesis correspondiente no se acaba el primer elemento que es la cabeza.
+Podemos probar en devolver nuevamente la cabeza de la lista y devuelve 1, por lo que no elimina el elemento. Ej: (let* ( (x '(1 3 5))) (car  x) (car x))
+
+* CDR devuelve el resto de la lista:
+(let* ((x '(1 3 5))) (cdr  x)) -> Imprimiría: 3 5
+(let* ((x  '( (1 2 (3 4 5) 6)  7  8  (9 10) ))   )  (cdr  x) ) -> Imprimiría: (7 8 (9 10))
+(let* ((x  '( (1 2 (3 4 5) 6)  7  8  (9 10) ))   )  (cdar  x) ) -> Imprimiría: (2 (3 4 5) 6) Devuelve la cola de la cabeza.
+(let* ((x  '( (1 2 (3 4 5) 6)  7  8  (9 10) ))   )  (cadar  x) ) -> Imprimiría: 2 
+
+* Combinaciones:
+(let* ((x  '( (1 2 (3 4 5) 6)  7  8  (9 10) ))   )  (caar  x) ) -> Imprimiría: 1
+Secuencia para devolver el 3 de la lista: (let* ( (x  '( (1 2 (3 4 5) 6)  7  8  (9 10) ))   (b (caddar  x) ))  (car b)) 
+Se guarda (3 4 5 ) en una lista llamada b y posteriormente se consulta su cabeza.
+
+
+
+---------
+FUNCIONES
+---------
+(define (AddXY inX inY) (+ inX inY) )
+y luego se puede usar:
+(AddXY (AddXY 5 6) 4)
+
+
+
+----
+LET*
+----
+let* opera justamente como una función: el valor de la última declaración es el valor devuelto.
