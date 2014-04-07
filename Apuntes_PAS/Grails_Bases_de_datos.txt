@@ -38,7 +38,7 @@ Ahora ya se conecta correctamente a la base de datos.
 Probablemente habría que eliminar "mem" para que mantuviera los cambios en la base de datos.
 
 
-*************************
+******************************************************************************************************************************************************
 ------------------------------------
 CONECTAR LA BASE DE DATOS POSTGRESQL
 ------------------------------------
@@ -604,3 +604,16 @@ Si se declaran y recuperan los datos de la siguiente manera:
 Si se utiliza para imprimir:
 	println "***" + bossesHoresList.codi
 Se imprime la lista de los códigos: ***[001, 002]
+
+
+******************************************************************************************************************************************************
+-----------------------------------------------
+RECUPERAR DATOS Y COMPROBAR SI SON NULOS/VACIOS
+-----------------------------------------------
+Queremos saber si al realizar la consulta a la base de datos hemos recuperado o no algún elemento.
+Ejemplo:
+	def personaInstance
+	def personaInstanceList = Persona.list()
+	personaInstance = personaInstanceList[0]
+	if(!persona) { ... //Si no ha encontrado a nadie (es decir nada), entrará aquí. }
+	else{ ... //Si ha encontrado a alguien entrará aquí. }

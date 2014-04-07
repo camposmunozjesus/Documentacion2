@@ -1,0 +1,3 @@
+COLORES
+=======
+Azul claro (tono cielo/pastel): cce9ed

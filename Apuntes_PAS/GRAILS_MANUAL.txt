@@ -155,7 +155,15 @@ Cuando se entra en el controlador por otras causas que no sean debidas a querer 
 if(params.sort==null){...}
 La condición será TRUE por lo que se ejecutará el if
 	
-	
+--------------------------------------
+PARAMS DESDE PÁGINA GSP AL CONTROLADOR
+--------------------------------------
+Parámetros enviados desde la página GSP al controlador.
+
+En el caso que el elemento (textfield, etc ...) esté en estado disabled, en el controlador no se recibirá su valor.
+Por ejemplo: <g:textField disabled="true" id="primerCognom" name="primerCognom" value="${params?.primerCognom}" class="cercaCognom width120px"/>
+En el controlador params.primerCognom será no tendrá ningún valor.
+
 
 ******************************************************************************************************************************************************
 -------------------------------------------------
@@ -263,8 +271,21 @@ Funcio solo contiene el código de riesgo por lo que debe obtener otros datos y 
 	literalsGrupRisc = TGrupRisc.getElementList(literalsGrupRisc, "descripcio")
 	
 	
-
-<HTML>*************************************************************************************************************************************************
---------------------------------
-TRADUCIR CÓDIGOS A DESCRIPCIONES
---------------------------------
+<INTERACCIÓN ELEMENTOS GSP>****************************************************************************************************************************
+-----------------------
+TEXTFIELD - G:TEXTFIELD
+-----------------------
+Cuando el textfield está vacío, es decir, no hay ninguna letra en su interior y se hace submit, al entrar al controlador ocurre lo siguiente:
+	if(params.primerCognom){
+		//...
+	}else{
+		//Entro aquí.
+	}
+	
+Si en el controlador hago:
+	filtrePrimerCognom = params.primerCognom ?: ''
+	if(filtrePrimerCognom){
+		//...
+	}else{
+		//Entro aquí.
+	}

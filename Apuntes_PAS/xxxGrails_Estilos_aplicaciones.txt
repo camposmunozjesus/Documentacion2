@@ -1,0 +1,105 @@
+ESTILOS UTILIZADOS EN APLICACIONES GRAILS (TEMPUS, SIGRIS, ...)
+===============================================================
+******************************************************************************************************************************************************
+--------------------
+Archivo: estilos.css
+--------------------
+------------------------------------------------
+COLOR BARRA DEL MENÚ DE LA IZQUIERDA DESPLEGABLE
+------------------------------------------------
+Elemento: .dijiTitlePaneTitle (sin estar seleccionado)
+			background: url("../images/icons/shadow.jpg")
+Vista: El color que se ve en la barra desplegable de menús de la izquierda en las aplicaciones TEMPUS y SIGRIS.
+
+Elemento: .dijitTitlePane div.dijitTitlePaneTitle:active , .dijitTitlePane div.dijitTitlePaneTitle:hover.
+Vista: cuando se hace click sobre el elemento o se sitúa encima el mouse.
+	
+Relación imágenes objetos:
+	url("../images/icons/shadow.jpg"): Barra donde pone "Inici", "Raco", "Desconnecta", "nombre@email.com".
+
+Otra explicación:	
+El color que se ve cuando la barra donde se encuentra el título del menú desplegable de la izquierda está en reposo (sin que el ratón se posicione 
+encima).
+Archivo donde se encuentran los etilos: estilos.css
+Clase del elemento: dijiTitlePaneTitle
+Se corresponde con: ../images/icons/shadow.png	
+
+-----------------------------
+TEXTFIELD NOM/COGNOMS/ETC ...
+-----------------------------
+Para los recuadros (textfield) de nombre y apellidos (por separado) se utilizan las clases:(ejemplos en proyectos BDP y SAL)
+.CercaNom
+.CercaCognom
+Archivo donde se encuentran los etilos: estilos.css
+
+Medidas mínimas: 120 px para todos
+Params: usar params.primerCognom, ...
+Label : primerCognom
+
+Para los recuadros Nom i cognoms (todo junto) ir al proyecto CERT.
+
+
+
+******************************************************************************************************************************************************
+-----------------
+Archivo: main.css
+-----------------	
+--------------
+ICONO CONTACTE
+--------------
+Moverlo hacia la izquierda:
+Archivo a modificar: main.css
+Código a modificar:
+	.menuButton a.ajuda {
+    background: url(../images/icons/help.png) center left no-repeat;
+    color: #333;    
+    padding: 4px 10px 0 22px;      
+	}
+Para poner el icono se utiliza la clase "ajuda", pero debería ser la "contacte".
+Hay que modificar el padding original que era: padding: 4px 0 0 22px; al indicado arriba.
+
+Diferentes posiciones: en CERT y SAL está sin el icono de "manual" por lo que aparece el desplazamiento del lado derecho.
+
+
+-------------
+ICONO +/CREAR
+-------------
+Icono utilizado para crear nuevos elementos. Tiene forma de cruz verde.
+class="create"
+main.css?
+
+
+---------------------
+ICONO DISKET/DISQUETE
+---------------------
+Icono utilizado para guardar elementos. Tiene forma de disket.
+class="save"
+main.css?
+
+
+------------
+ICONO DESFER
+------------
+Icono utilizado para deshacer cambios. Tiene forma de flecha de deshacer azul.
+class="undo"
+main.css?
+
+
+
+******************************************************************************************************************************************************
+------------------------
+Archivo: styleHelper.css
+------------------------
+------
+TABLAS
+------
+A veces para construir la pantalla GSP edit/create se utiliza un esquema de tabla para situar los labels para indicar nombre, apellidos, etc en una
+columna y los datos extraídos de la base de datos en otra columna dentro de textfields.
+Para esta tabla, sus filas tiene las siguientes propiedades:
+	<tr class="prop noBackground">
+
+Este esilo se encuentra en el archivo: styleHelper.css
+Y si no existe, habrá que añadir: .noBackground{ background: none;}
+
+De este modo al situar el ratón encima de alguna fila, ésta NO se iluminará.
+Se podrá pulsar sobre ellas/situarse sobre ellas y que se mantangan en blanco.

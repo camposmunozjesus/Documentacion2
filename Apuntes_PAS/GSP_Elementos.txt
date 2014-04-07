@@ -62,15 +62,17 @@ llamado "descripcion" y que vale "Tecn. taller" y otro con nombre "codigo" que v
 que se corresponde con el valor "oculto" por así decirlo de lo que queremos mostrar.
 Hemos supuesto que los valores a mostrar se han obtenido de otra tabla en la que los nombre son ligeramente diferente pero con igual codificación.
 ******************************************************************************************************************************************************	
----------
-TEXTFIELD
----------
+-----------------------
+TEXTFIELD - G:TEXTFIELD
+-----------------------
 *Código Groovy:
 	Para recuperar el valor del textbox hay que usar: params.filtreCodi
 
 *Código GSP:
 	<g:textField name="filtreCodi" maxLength="10" value="${params?.filtreCodi}" class="cercaNom width100px" />
 	
+Si el campo está disabled, su valor NO se recogerá en el controlador.
+
 	
 ******************************************************************************************************************************************************
 ----------
@@ -89,6 +91,16 @@ Barra que se incluye al final de la tabla y permite paginar. Si queremos paginar
 		1) def resultList = Persona.createCriteria().list(params,query)
 		2) def llocTreball = Lloc.findAllByNomAndPrimerCognomAndSegonCognom( params.idNom,params.idCognom1,params.idCognom2, [max:params.max, offset:params.offset] )
 	- El método que carga la tabla es el que recibe los parámetros y es el que debe enviar cualquiera de las listas del ejemeplo.
+	A tener en cuenta:
+		this.paramsMaxSet: recorta le número de resultados obtenidos alos indicado en él.
+		this.paramsMaxSet(5, 10) recorta la consulta -> size no da todos los datos de la consulta. Es decir, si se obtendrían 23 resultados, la consulta
+		únicamente devolverá 5, ya que al quere visualizar una tabla de 5 en 5 resultados, sólo se obtendrá la cantidad que se quiera mostrar, pero
+		para que aparezcan los botones de paginado hay que darle el total real, 23, al parámetro "total" de g:paginate.
+		Para obtner el total se utiliza: (ejemplo)
+			resultList = InscripcioCardiovascular.createCriteria().list(params,query)
+			results = resultList.getTotalCount()
+		Cuando getTotalCount o Count funcionan.
+		Si no hay que utilizar InscripcioCardiovascular.createCriteria().list().size() PERO ES MÁS LENTO!!!.
 	
 *Código GSP:
 	<div class="paginateButtons">
@@ -177,3 +189,57 @@ Colocar una fecha de manera formateada: (Aparecerá sin cuadro de texto alrededo
 	
 Colocar una fecha formateada dentro de un g:textfield:
 	<g:textField name="dataInscripcio" id="dataInscripcio" style="width:280px" disabled="true" value="${formatDate(format:"dd-MM-yyyy HH:mm:ss", date:personaInstance?.dataInscripcio)}" />
+	
+	
+******************************************************************************************************************************************************
+-----------------------------
+ENVIAR DATOS AL BORRAR/EDITAR
+-----------------------------
+Tenemos una tabla con usuarios, y la última columna contiene opciones de editar y borrar al usuario de la aplicación.
+Enviar el pernr al hacer click en editar/borrar.
+En el momento que cliquemos sobre el botón, se deberá enviar al controlador el número de identificación (pernr) del usuario que está en dicha fila
+para que se pueda encontrar en la base de datos y eliminarlo.
+Ejemplo: Todo el código mostrado se ubica en la página GSP.
+*Página GSP:
+	GSP:
+		<g:form>
+			<g:hiddenField name="idCodi" id="idCodi" value="" />
+			<table id="tableList">
+				<thead>
+					<tr>
+						<g:sortableColumn property="nom" title="Nom" params="${params}" style="min-width:150px"/>
+		//Columna que contiene el botón que ejecuta la acción que necesita del identifiacador de la columna.
+						<th class="sortable text">Accions</th>							
+					</tr>
+				</thead>
+				<tbody>
+					<g:if test="${!resultList}">
+						<tr style="display:none"><th></th></tr>
+					</g:if>					
+					<g:each in="${resultList}" status="i" var="personaInstance">
+						<tr id="tr${i}" class="${(i % 2) == 0 ? 'odd' : 'even'}">															
+							<td class="padding">
+								${personaInstance.nom}
+							</td>
+							<td class="buttonCell" style="width: 200px;">
+		//Botón que ejecutará un comando relacionado con el identificador de la columna.
+								<span class="buttons buttonsTableIE"> 
+									<g:actionSubmit class="create" action="create" value="Subscriure" alt="Subscriure la persona de la fila ${i}" />
+								</span>		
+		//Con este script y junto con accioClick se consigue obtener el identificador del usuario de la columna.
+								<script type="text/javascript">									
+									$('#tableList tbody').on('click', '#tr'+${i}+' td input', { codi:'${personaInstance.pernr}'}, accioClick);									
+								</script>		
+							</td>
+						</tr>													
+					</g:each>
+				</tbody>
+			</table>
+		</g:form>
+	JS:
+		<script type="text/javascript">
+			function accioClick(event){	   
+				$('#idCodi').val(event.data.codi);	//idCodi es el campo HIDDEN del formulario.
+													//codi es el indicado en el script de la fila: { codi:'${personaInstance.pernr}'}
+			}	
+		</script>	
