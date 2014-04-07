@@ -1,0 +1,186 @@
+CÓMO INCLUIR ELEMENTOS EN PÁINAS GSP PARA DETERMINADOS PROYECTOS
+================================================================
+-----------
+DESCRIPCIÓN
+-----------
+Se pretende mostrar cómo insertar un cuadro que contenga elemtos para filtrar (selects o combos) con sus respestivos botones de búsqueda.
+Cómo insertar tablas.
+Dentro de qué tipo de formularios van, etc ...
+Se detallan cómo incluir elementos propios de las aplicaciones: botones de paginación, tablas, ...
+Dónde encontrar un ejemplo de ordenación, de vista, etc como la que se ha utilizado en otro proyecto.
+
+	
+<ELEMENTOS>**********************************************************************************************************************************************
+-------------------
+CUADRO DE SELECCIÓN
+-------------------
+La forma general para inserta un cuadro que contiene combos o selects y que va acompañado de botones es la siguiente:
+	<fieldset class="border" style="margin-top:10px">
+	<legend align="left" style="margin-left:15px">Selecció</legend>	
+	<div style="clear:both;"></div>	
+	</fieldset>
+
+Este es el delimitador. Suele ir dentro de un formulario:
+	<g:form action="list" method="POST">
+		<fieldset class="border" style="margin-top:10px">
+		<legend align="left" style="margin-left:15px">Selecció</legend>	
+		<div style="clear:both;"></div>	
+		//Aquí se sitúan los elementos.
+		</fieldset>
+	</g:form>
+
+	
+------
+LEGEND
+------
+Cuando en una página GSP de edit/create se quiere poner la cabecera "Edició" o Creació" que está encima del borde del recuadro, o bien cuando se quiere
+poner "Selecció" en el apartado de búsqueda que engloba los campos Nombre, Apellidos, NIF, etc, se utiliza el TAG LEGEND.
+Vista:
+	----- Selecció -----------------------------|
+	|	Nom		Cognoms		NIF					|
+	|											|
+	|											|
+	|	Cerca Inicialitza						|
+	|-------------------------------------------|
+	
+Ejemplo:
+	<g:form action="save" method="post">
+	<g:hiddenField name="idCodi" value="${personaInstance?.pernr}" />
+	<fieldset class="border" style="margin-top:10px">
+	<legend align="left" style="margin-left:15px">Edició</legend>		
+		<table class="noborder">
+			<tbody>
+				<tr ...
+								
+			</tbody>
+		</table>
+	</fieldset>		
+	</g:form>
+	
+	
+----------------------------
+FORMATOS PÁGINAS EDIT/CREATE
+----------------------------
+Se utiliza una tabla para encajar los elemento en dos columnas.
+La columna de la izquierda es de la clase name.
+La columna de la derecha es de la clase value.
+Ejemplo de código:
+	<g:form action="save" method="post">
+		<g:hiddenField name="idCodi" value="${personaInstance?.pernr}" />
+		<fieldset class="border" style="margin-top:10px">
+		<legend align="left" style="margin-left:15px">Edició</legend>		
+			<table class="noborder">
+				<tbody>
+					<tr class="prop noBackground">
+						<td valign="top" class="name">
+							<label for="nif">DNI</label>
+						</td>
+						<td valign="top" class="value">
+							<g:textField name="nif" id="nif" style="width:280px" disabled="true" value="${personaInstance?.nif}" />
+						</td>
+					</tr>
+					
+					<tr class="prop noBackground">
+						<td valign="top" class="name">
+							<label for="cognom1">Primer cognom</label>
+						</td>
+						<td valign="top" class="value">
+							<g:textField name="cognom1" id="cognom1" style="width:280px" disabled="true" value="${personaInstance?.cognom1}" />
+						</td>
+					</tr>
+											
+					<tr class="prop noBackground">
+						<td valign="top" class="name">
+							<label for="cognom2">Segon cognom</label>
+						</td>
+						<td valign="top" class="value">
+							<g:textField name="cognom2" id="cognom2" style="width:280px" disabled="true" value="${personaInstance?.cognom2}" />
+						</td>
+					</tr>
+											
+					<tr class="prop noBackground">
+						<td valign="top" class="name">
+							<label for="nom">Nom</label>
+						</td>
+						<td valign="top" class="value">
+							<g:textField name="nom" id="nom" style="width:280px" disabled="true" value="${personaInstance?.nom}" />
+						</td>
+					</tr>
+						
+					<tr class="prop noBackground">
+						<td valign="top" class="name">
+							<label for="dataInscripcio">Data de subscripció</label>
+						</td>
+						<td valign="top" class="value">
+							<g:textField name="dataInscripcio" id="dataInscripcio" style="width:280px" disabled="true" value="${formatDate(format:"dd-MM-yyyy", date:personaInstance?.dataInscripcio)}" />
+						</td>
+					</tr>
+					
+					<tr class="prop noBackground">
+						<td valign="top" class="name">
+							<label for="perfil">Perfil</label>
+						</td>
+						<td valign="top" class="value">
+							<g:select name="perfil" id="perfil" style="width:288px" keys="${tipusPerfilsList?.codi}" from="${tipusPerfilsList?.descripcio}" value="${personaInstance?.perfil}" />
+						</td>
+					</tr>
+											
+					<tr class="prop noBackground">
+						<td valign="top" class="name">
+							<label for="correu">Correu electrònic</label>
+						</td>
+						<td valign="top" class="value">
+							<g:textField name="correu" id="correu" style="width:280px" value="${personaInstance?.correu}" />
+						</td>
+					</tr>
+											
+					<tr class="prop noBackground">
+						<td valign="top" class="name">
+							<label for="telefon">Telèfon</label>
+						</td>
+						<td valign="top" class="value">
+							<g:textField name="telefon" id="telefon" style="width:280px" disabled="true" value="${personaInstance?.telefon}" />
+						</td>
+					</tr>
+											
+					<tr class="prop noBackground">
+						<td valign="top" class="name">
+							<label for="campus">Campus</label>
+						</td>
+						<td valign="top" class="value">
+							<g:textField name="campus" id="campus" style="width:280px" disabled="true" value="${campus}" />
+						</td>
+					</tr>
+											
+					<tr class="prop noBackground">
+						<td valign="top" class="name">
+							<label for="areaPersonal">Àrea de personal</label>
+						</td>
+						<td valign="top" class="value">
+							<g:textField name="areaPersonal" id="areaPersonal" style="width:280px" disabled="true" value="${areaPersonal}" />
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</fieldset>		
+		<div class="buttons">
+			<span class="button">
+				<g:submitButton name="create" class="save" value="Actualitzar" />
+			</span> 
+			<span class="button">
+				<g:actionSubmit class="undo" action="list" value="Desfer" />
+			</span>
+		</div>			
+	</g:form>
+
+
+<ACCIONES>*********************************************************************************************************************************************
+---------------
+SORT/ORDENACIÓN
+---------------
+En BDP se puede encontrar la ordenación del tipo:
+	if(params.sort==null){
+		resultList = resultList.sort{ a,b ->
+		a.cognom1 <=> b.cognom1 ?: a.cognom2 <=> b.cognom2 ?: a.nom <=> b.nom
+		}
+	}
