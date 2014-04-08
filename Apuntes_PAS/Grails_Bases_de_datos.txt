@@ -617,3 +617,18 @@ Ejemplo:
 	personaInstance = personaInstanceList[0]
 	if(!persona) { ... //Si no ha encontrado a nadie (es decir nada), entrará aquí. }
 	else{ ... //Si ha encontrado a alguien entrará aquí. }
+	
+	
+******************************************************************************************************************************************************
+----------------------------------------------------------------------
+RECUPERAR DATOS Y ELIMINAR LOS REPETIDOS/QUEDARSE CON LOS NO REPETIDOS
+----------------------------------------------------------------------
+Tenemos una tabla con las personas de una empresa y su Departamento. Cada departamento tiene un código y en cada departamento puede haber más de una
+persona, por lo que al listar toda la tabla de los trabajadores de la empresa, el código de departamento estará repetido.
+
+	def totalPuestos = Lloc.createCriteria().list(query)
+			
+	// Stardot operator, per agafar tots els elements d'una llista d'una altra llista: http://groovy.codehaus.org/Collections		
+	def listaUnidades = (totalPuestos*.codigoDepartamento).unique()
+	
+De esta manera conseguimos quedarnos únicamente con una lista de códigos de departamento, y el resto de campos de la clase del dominio Lloc se obvian.
