@@ -115,6 +115,18 @@ Ejemplo:
 	
 	println mesosAny -> Ya NO imprime los meses repetidos.
 	
+Ejemplo 2: bases de datos
+**********
+Tenemos una tabla con las personas de una empresa y su Departamento. Cada departamento tiene un código y en cada departamento puede haber más de una
+persona, por lo que al listar toda la tabla de los trabajadores de la empresa, el código de departamento estará repetido.
+
+	def totalPuestos = Lloc.createCriteria().list(query)
+			
+	// Stardot operator, per agafar tots els elements d'una llista d'una altra llista: http://groovy.codehaus.org/Collections		
+	def listaUnidades = (totalPuestos*.codigoDepartamento).unique()
+	
+De esta manera conseguimos quedarnos únicamente con una lista de códigos de departamento, y el resto de campos de la clase del dominio Lloc se obvian.
+	
 	
 <PARAMS>**********************************************************************************************************************************************
 -------------------------------------------------------------------------
