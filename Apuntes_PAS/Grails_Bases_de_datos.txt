@@ -448,7 +448,52 @@ class Alumno {
     }
 }
 
+<ASPECTOS BÁSICOS>*************************************************************************************************************************************
+---------------------------------------------------------------------
+TEORÍA SOBRE LO QUE SE RECUPERA EN UNA CONSULTA - RECUPERAR NULL O NO
+---------------------------------------------------------------------
+Se recuperan los NULL?
+
+En el siguiente ejemplo:
+	for (....
+	query = {
+		and
+		{
+			eq("unitatOrganitzativa", lista[i].codigo.toString())
+			ne("formaOcupacio", "CA")
+		}
+	}
+	...}//End for
+
+Disponemos de una tabla cuyo campo "formaOcupacio" puede ser "NULL", "CA", "NT" y otros valores.
+Esta consulta detectará todos los elementos que NO tengan el campo "formaOcupacio" igual a "CA".
+Esto significa:
+	- Si hay un "unitatOrganitzativa" que está repetida y que en un registro tiene "formaOcupacio" igual a "CA" y en otro no, estará dentro de los 
+	resultados obtenido, porque se cumple, que en la tabla puede encontrarse una "unitatOrganitzativa" cuya "formaOcupacio" NO es igual a "CA".
+	- Si hay una "unitatOrganitzativa" cuyas apariciones su "formaOcupacio" vale NULL, no estará en los resultados obtenidos. Aunque NULL no es igual
+	a "CA", tampoco se tiene en cuenta.
+	Para incluir los resultados NULL se debe utilizar:
+		query = {
+			and
+			{
+				eq("unitatOrganitzativa", lista[i].codigo.toString())
+				or{
+					ne("formaOcupacio", "CA")
+					isNull("formaOcupacio")
+				}
+			}
+		}
+	Esta consulta se interpreta como:
+		Debes coger todos los que tienen "unitatOrganitzativa"=lista[i].codigo.toString() y además los que cumplan una de las dos siguientes
+		condiciones: "formaOcupacio"!="CA" o "formaOcupacio"==NULL.
+		Es decir, el AND tiene dos condiciones, debe cumplirse "unitatOrganitzativa"=lista[i].codigo.toString() y luego, una de las dos situaciones
+		siguientes, o bien "formaOcupacio"!="CA" o "formaOcupacio"==NULL.
+		
+		
 <CONSULTAS BÁSICAS>************************************************************************************************************************************
+---------------------------------------
+ELIMINAR EL PRIMER ELEMENTO DE LA LISTA
+---------------------------------------
 Consulta sencilla utilizando una definición para eliminar un elemento:
 	//Aconseguim la llista amb els tipus de bosses d'hores.
 	def query={
