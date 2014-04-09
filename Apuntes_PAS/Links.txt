@@ -89,6 +89,13 @@ JAVASCRIPT
 Datepicker:							http://www.kelvinluck.com/assets/jquery/datePicker/v2/demo/inlineDatePicker.html
 
 
+
+GIMP
+====
+Filtros:	http://www.jesusda.com/blog/?id=371
+Manual:		http://www.ite.educacion.es/formacion/materiales/86/cd/pdf/m6_introduccion_a_los_filtros.pdf
+
+
 OTROS
 =====
 Electrónica:			http://electronics.stackexchange.com/questions/102393/firmware-protection-on-avr-and-pic-controllers
