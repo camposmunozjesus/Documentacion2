@@ -89,15 +89,19 @@ JAVASCRIPT
 Datepicker:							http://www.kelvinluck.com/assets/jquery/datePicker/v2/demo/inlineDatePicker.html
 
 
+LINUX
+=====
+Modificar path:						http://www.troubleshooters.com/linux/prepostpath.htm
+
 
 GIMP
 ====
-Filtros:	http://www.jesusda.com/blog/?id=371
-Manual:		http://www.ite.educacion.es/formacion/materiales/86/cd/pdf/m6_introduccion_a_los_filtros.pdf
+Filtros:							http://www.jesusda.com/blog/?id=371
+Manual:								http://www.ite.educacion.es/formacion/materiales/86/cd/pdf/m6_introduccion_a_los_filtros.pdf
 
 
 OTROS
 =====
-Electrónica:	http://electronics.stackexchange.com/questions/102393/firmware-protection-on-avr-and-pic-controllers
-Iconos:			http://openiconlibrary.sourceforge.net/gallery2/?./Icons/actions&200
-				http://openiconlibrary.sourceforge.net/
+Electrónica:						http://electronics.stackexchange.com/questions/102393/firmware-protection-on-avr-and-pic-controllers
+Iconos:								http://openiconlibrary.sourceforge.net/gallery2/?./Icons/actions&200
+									http://openiconlibrary.sourceforge.net/
