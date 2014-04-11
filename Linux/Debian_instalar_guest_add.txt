@@ -1,0 +1,76 @@
+DEBIAN - INSTALAR GUST ADDITIONS EN EL SISTEMA HUÉSPED/GUEST
+============================================================
+Tenemos instalado un SO Debian en la VirtualBox. Deseamos que se puedan utilizar las Guest Additions para poder compartir carpetas, hacer copy/paste,
+entre otras cosas.
+
+Si se instala de maneral habitual NO funciona, ya que previamente hay que descargar algunos complementos. Para ello hay que realizar las siguientes
+acciones como root:
+apt-get update
+# apt-get upgrade
+# apt-get install build-essential
+# apt-get install linux-headers-$(uname -r)
+Reiniciamos el sistema; después y también como root:
+# apt-get install module-assistant
+Aunque no es esencial para la instalación de GA, se recomienda tener instalado también el paquete dkms.
+Preparar el sistema.
+Primero configuramos el sistema para que se puedan instalar módulos copilados con el comando:
+# module-assistant prepare (o también m-a prepare)
+Instalar Guest Additions: descomprimir el CD que aparece en el escritorio, cambiar permisos y ejecutar ./VBoxLinuxAdditions.run
+
+Referencias:
+http://diversidadyunpocodetodo.blogspot.com.es/2013/07/virtualbox-guest-additions-debian-wheezy-distribuciones-derivadas-point-linux.html
+
+----------------------------
+CONTENIDO ORIGINAL DE LA WEB
+----------------------------
+Guest Additions (en adelante GA) es un software proporcionado por VirtualBox que engloba una serie de aplicaciones y controladores para mejorar la integración y funcionalidades del sistema operativo huésped. Por tanto, hay que instalarlo en cada una de las máquinas virtuales que instalemos en nuestro sistema operativo anfitrión con Virtualbox. Este software aporta al sistema huésped un mejor soporte de vídeo, integración del cursor del ratón, comunicación entre el anfitrión y huésped, sincronización horaria, directorios e incluso unidades de disco compartidas, ventanas compartidas, ventanas sin costuras, portapapeles compartido, etc.
+
+Puesta de Sol en la laguana de Manjavacas. 1920x1200.
+ El procedimiento para instalar GA, en principio, es independiente del sistema anfitrión, pero puede variar según cual sea el sistema huésped. Puede variar de unas distribuciones a otras, o más bien de unas ramas a otras, debido básicamente a los paquetes que son requeridos en cada caso, o si el sistema está configurado para una instalación automática, o se dispone en el repositorio oficial de un paquete específico “ISO”, como en Ubuntu.
+En este artículo nos vamos a centrar en Debian Wheezy y en las distribuciones basadas en esta versión. En general en las distintas distribuciones y ramas, el proceso está compuesto por tres pasos que tenemos que acometer como usuario root (su) o como usuario con privilegios de root (sudo):
+a) Preparar el sistema de la distribución huésped.
+b) Instalar el CD virtual de GA desde el menú de VirtualBox con la máquina virtual en funcionamiento.
+c) Montar el CD virtual y ejecutar GA.
+En Debian Wheezy hay que seguir los tres pasos, pero en algunas distribuciones -como Point Linux basada en ésta- el sistema esta configurado para que en el segundo paso se ejecute automáticamente GA.
+En Ubuntu y distribuciones derivadas (Kubuntu, Linux Mint, etc.), sin embargo, podemos simplemente instalar el paquete “ virtualbox-guest-additions-iso” que está en el repositorio oficial del sistema huésped.
+Sobre module-assistant ...
+Como se indica en esdebian.org “Module-assistant es un instalador de módulos compilados para nuestro núcleo. Es decir, se encarga de compilar e instalar el modulo necesario para usar un hardware no soportado por el núcleo, o que por alguna razón necesitemos una versión más moderna que la incluida en él. Es una herramienta desarrollada para Debian, que se ha propagado a sus distribuciones derivadas, que facilita la vida al usuario para poder usar hardware con drivers externos al núcleo y compilar sus respectivos módulos”. Es una buena opción para, por ejemplo, instalar determinados drivers de dispositivos wifi, pero también, por ejemplo, para instalar el paquete Guest Aditions en maquinas virtuales instaladas con VirtualBox. Si te es de interés visita el siguiente enlace: http://www.esdebian.org/wiki/module-assistant
+Manos a la obra ...
+1. Instalar module-assistant
+Para el correcto funcionamiento de module-assistant -en este caso en un sistema huésped, pero igualmente si lo necesitáremos en el sistema anfitrión con independencia de tener o no VirtualBox- debemos tener en nuestro sistema instalado el metapaquete build-essential y los headers (o cabeceras) para nuestro núcleo, los cuales es posible que ya los tengas instalados, pero si no fuera así en la consola del sistema huésped y como root:
+# su (contraseña)
+# apt-get update
+# apt-get upgrade
+# apt-get install build-essential
+# apt-get install linux-headers-$(uname -r)
+Reiniciamos el sistema; después y también como root:
+# apt-get install module-assistant
+2. Instalar las Guest Additions
+Aunque no es esencial para la instalación de GA, se recomienda tener instalado también el paquete dkms.
+2. 1. Preparar el sistema.
+Primero configuramos el sistema para que se puedan instalar módulos copilados con el comando:
+# module-assistant prepare (o también m-a prepare)
+2.2. Instalar el CD virtual de GA. 
+
+En el menú de VirtualBox con el sistema huesped en funcionamiento (está situado en la parte superior izquierda de la ventana de la máquina virtual), abrimos el desplegable “Dispositivos” y picamos en instalar “Guest Additions”; se preparará una unidad virtual de cdrom, que se localiza en /media/cdrom. No obstante, en alguanas distribuciones, como Point Linux, el sistema puede estar preparado para que la instalación de GA sea automática. En este caso se lanza un asistente, presionamos en “Continuar” y en la siguiente ventana “Ejecutar”. A partir de aquí puede que no aparezca nada que nos indique que el proceso se está ejecutanto, pero tranquilo lo normal es que se esté ejecutando. Como puede que no nos informe de nada lo suyo es darle un tiempo y despues reiniciar el sistema. Podemos comprobar que se han instalado picando en “Carpetas compartidas” en el menú de VirtualBox, y si no nos lanza un mensaje comunicando que “Guest Additions no están instaladas en el sistema huésped” es que todo ha ido bien.
+Si no ha ido bien, o simplemente no esta disponible la ejecución automática, como por ejemplo en la propia Wheezy, seguimos con lo que continúa.
+2.3. Montar el CD y ejecutar GA
+Hay al menos dos posibilidades:
+2.3.1. Gráficamente
+Según el entorno de escritorio el CD puede aparecer en el escritorio (Mate por ejemplo) y entonces lo podemos montar desde aquí. Si no es así, utilizamos el explorador de archivos, picamos en el icono que estará en el panel lateral para que se monte y se habrirá la carpeta. En nuestro explorador -que puede ser Dolphin, Nautilus o Thunar o quizás algún otro- clic derecho y seleccionamos “Abrir terminal aquí”, o algo parecido; en Dolphin “Acciones>Abrir Terminal aquí”. En la carpeta debe estar el archivo VBoxLinuxAdditions.run. En la terminal como usuario root escribimos:
+# sh VBoxLinuxAdditions.run
+En alguanas distribuciones es posible que GA se ejecute haciendo doble click sobre el archivo autorun.sh. En cualquier caso cuando termine la instalación reiniciamos el sistema huésped.
+
+2.3.2. Directamente en la terminal
+Si preferimos hacerlo todo manual, abrimos la terminal y como root:
+# mount /media/cdrom
+Cambiamos de directorio para situarnos en el que está el cdrom y listamos los archivos:
+# cd /media/cdrom
+# ls -l
+La terminal nos muestra un listado de archivos. El archivo que tenemos que poner en funcionamiento es VboxLinuxAdditions.run, lo que hecemos con:
+# sh VBoxLinuxAdditions.run
+Finalmente reiniciamos el sistema.
+
+Cuando actualicemos VirtualBox ...
+Si en algun momento actualizamos VirtualBox en el sistema anfitrión tendremos que volver a instalar Guest Additions para que se encuentren ambos en la misma versión; esto es importante. Simplemente tienes que seguir el mismo procedimiento y los controladores antiguos serán reemplazados por la versión actual. También no debemos olvidar instalar la versión correspondiente de los Extensión Pack.
+En la siguente entrada explicaremos como compartir directorios, portapales y arrastrar y pegar entre el sistema anfitrión y el huesped.
