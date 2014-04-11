@@ -3,6 +3,61 @@ GSP/JS - CÓMO INCLUIR UN DATEPICKER
 ---------------------------
 IMPORTS/INCLUDES NECESARIOS
 ---------------------------
+Esas son las líneas necesarias a incluir un elemento Datepicker en una página HTML que no está integrada en ningún entorno IDE tipo Eclipse.
+Para incluir un Datepicker hay que añadir lo siguiente en el head:
+	<!--  Colores y estilos del Datepicker -->
+	<link href="http://code.jquery.com/ui/1.9.1/themes/base/jquery-ui.css" rel="stylesheet">
+	<!-- Para hacer aparecer el Datepicker -->
+	<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+	<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+	
+Si no se desea cargar desde la red los estilos ni los scrips puede hacer se de la siguiente manera:
+Suponiendo que la página web HTML (test.html) se va a guardar en la carpeta "Pruebas JQuery", descomprimir dentro de ella el zip descargado de la 
+página de JQuery (http://jquery.com/download/), con lo que se obtendrán dos carpetas, "css" y "js".
+La estructura de directiros será:
+\Pruebas JQuery
+	|---\css
+	|	  |
+	|	  |---\ui-lightness
+	|	  		  |
+	|			  |---\images
+	|			  |		|---animated-overlay.gif
+	|			  |		|--- ...
+	|			  |---jquery-ui-1.10.4.custom.css
+	|			  |---jquery-ui-1.10.4.custom.min.css
+	|
+	|---\js
+	|	  |
+	|	  |---jquery-1.10.2.js
+	|	  |---jquery-ui-1.10.4.custom.js
+	|	  |---jquery-ui-1.10.4.custom.min.js
+	|	  
+	|---test.html
+Y hay que incluir en el <head>:
+	<link href="css/ui-lightness/jquery-ui-1.10.4.custom.css" rel="stylesheet">
+	<script src="js/jquery-1.10.2.js"></script>
+	<script src="js/jquery-ui-1.10.4.custom.js"></script>
+
+
+------------------------------------
+IMPORTS/INCLUDES NECESARIOS (GRAILS)
+------------------------------------
+Esas son las líneas necesarias a incluir en una página GSP un elemento Datepicker.
+La carpeta "js" que contiene la carpeta "jquery" que as u vez contiene "jquery-ui-1.8.18.custom.js" debe estar en "web-app".
+Estructura de directorios:
+\web-app
+	|---\css
+	|	  |
+	|	  |---\cupertino
+	|	  		  |
+	|			  |---CSSjquery.css
+	|
+	|---\js
+	|	  |
+	|	  |---\jquery
+	|			  |
+	|			  |---jquery-ui-1.8.18.custom.js
+
 Para incluir un Datepicker hay que añadir lo siguiente en el head:
 	<!-- Para hacer aparecer el Datepicker -->
 	<script type="text/javascript" src="${resource(dir:'js',file:'jquery/jquery-ui-1.8.18.custom.js')}"></script>
@@ -18,11 +73,15 @@ Ya que si no NO funcionará correctamente.
 ------------------------
 CÓMO INCLUIR EL ELEMENTO
 ------------------------
-GSP/HTML: El Datepicker se desplega al hacer click sobre el cuadro de texto.
+Lo siguiente es válido tanto para una página GSP como HTML.
+GSP/HTML: El Datepicker se desplega al hacer click sobre el cuadro de texto o bien con un botón (dependiendo de cómo se configure en la parte JS).
 	<g:textField name="dataInici" id="dataInici" value="${dataInici}" title="Cercador de dates, introduir la data d'inici de la qual es vol filtrar en format DD/MM/AAAA"/>
 	
 JS:
-En esta primera 
+En esta primera función lo que ocurre es que al hacer click sobre el textfield, aparecerá el calendario:
+	$(function() {
+		$( "#dataInici" ).datepicker();
+	});
 
 En la segunda se muestra cómo modificar los parámetros del Datepicker para que en lugar de activarse al hacer click en el textfield aparezca un botón:
 	$(function() {
