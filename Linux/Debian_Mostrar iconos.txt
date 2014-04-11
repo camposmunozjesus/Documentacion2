@@ -1,0 +1,13 @@
+HACER VISIBLES LOS ICONES EN EL ESCRITORIO/DESKTOP (DEBIAN)
+===========================================================
+# show files on desktop
+gsettings set org.gnome.desktop.background show-desktop-icons true
+
+Otras instrucciones:
+# show shares on desktop
+gsettings set org.gnome.nautilus.desktop volumes-visible true
+
+# restart nautilus
+nautilus -q
+
+Referencias: http://askubuntu.com/questions/43246/how-to-configure-gnome-3-to-show-icons-on-desktop
