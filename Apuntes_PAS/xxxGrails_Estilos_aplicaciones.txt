@@ -85,6 +85,23 @@ class="undo"
 main.css?
 
 
+---------------------------------
+TABLAS: COLOR DEL HEADER Y TAMAÑO
+---------------------------------
+Cuando el header de una columna ocupa dos líneas, la imagen se queda corta y sólo se pinta la primera línea.
+Con la siguiente modificación en el archivo main.css se consigue tener una columna header pintada totalmente con degradado.
+Apartado TABLAS/TABLES:
+th {
+	background: url(../images/icons/shadow.jpg) no-repeat center center fixed;
+        background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        -o-background-size: cover;
+    font-weight: bold;
+    line-height: 17px;
+}
+
+
 
 ******************************************************************************************************************************************************
 ------------------------
