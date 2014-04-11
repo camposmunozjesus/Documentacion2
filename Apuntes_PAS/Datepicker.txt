@@ -1,0 +1,52 @@
+GSP/JS - CÓMO INCLUIR UN DATEPICKER
+====================================
+---------------------------
+IMPORTS/INCLUDES NECESARIOS
+---------------------------
+Para incluir un Datepicker hay que añadir lo siguiente en el head:
+	<!-- Para hacer aparecer el Datepicker -->
+	<script type="text/javascript" src="${resource(dir:'js',file:'jquery/jquery-ui-1.8.18.custom.js')}"></script>
+	<!--  Colores y estilos del Datepicker -->
+	<link rel="stylesheet" type="text/css" href="${resource(dir:'css',file:'cupertino/CSSjquery.css')}" />
+	
+Esto puede ir en el <head> de la propia página GSP o de un layout.
+Si se sitúa en un layout, hay que tener en cuenta que debe situarse después de:
+	<script type="text/javascript" src="${resource(dir:'js',file:'jquery/jquery.js')}"></script>
+Ya que si no NO funcionará correctamente.
+
+
+------------------------
+CÓMO INCLUIR EL ELEMENTO
+------------------------
+GSP/HTML: El Datepicker se desplega al hacer click sobre el cuadro de texto.
+	<g:textField name="dataInici" id="dataInici" value="${dataInici}" title="Cercador de dates, introduir la data d'inici de la qual es vol filtrar en format DD/MM/AAAA"/>
+	
+JS:
+En esta primera 
+
+En la segunda se muestra cómo modificar los parámetros del Datepicker para que en lugar de activarse al hacer click en el textfield aparezca un botón:
+	$(function() {
+	   $( "#dataInici").datepicker({
+			onSelect: function(dateText, inst) { addOrRemoveDate(dateText); },
+			numberOfMonths: [1,2],
+			 showOn: "button",
+			 buttonImage: "../images/calendar.png",
+			 buttonImageOnly: true,
+			 showButtonPanel: true,
+			 closeText: "Tancar",		        
+			 beforeShowDay: function(date) {
+
+				
+				
+				var m = date.getMonth(), d = date.getDate(), y = date.getFullYear();
+				
+				for (i = 0; i < dates.length; i++) {			           
+					if($.inArray(padNumber(d) + '/' + padNumber(m + 1) + '/' + y,dates) != -1) {		                    
+						return [true, 'ui-state-highlight', ''];
+					}
+				}
+				return [true];
+			}
+		});		   
+	  $('.mascara').mask("9?9:99");	
+   });	
