@@ -1,5 +1,5 @@
 GSP/JS - CÓMO INCLUIR UN DATEPICKER
-====================================
+===================================
 ---------------------------
 IMPORTS/INCLUDES NECESARIOS
 ---------------------------
@@ -94,9 +94,6 @@ En la segunda se muestra cómo modificar los parámetros del Datepicker para que
 			 showButtonPanel: true,
 			 closeText: "Tancar",		        
 			 beforeShowDay: function(date) {
-
-				
-				
 				var m = date.getMonth(), d = date.getDate(), y = date.getFullYear();
 				
 				for (i = 0; i < dates.length; i++) {			           
