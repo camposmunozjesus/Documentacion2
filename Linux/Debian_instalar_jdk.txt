@@ -1,0 +1,11 @@
+DEBIAN - INSTALAR JDK
+=====================
+La primera forma es instalarlo desde el gestor aptitude:
+# aptitude install openjdk-7-jdk
+Al instalar Eclipse (descomprimirlo en una carpeta y ejecutarlo) detectará automáticamente dónde se encuentra el JDK.
+Aquí el inconveniente es que tendremos la versión de Java que nos ofrece Linux (debian en este caso) y no la que queramos.
+
+La segunda forma es bajar desde la web de Oracle la versión del JDK deseada.
+Se descomprime en una carpeta cualquiera (por ejemplo: /home/jesus/Descargas/jdk1.7.0_51)
+Se añade la ruta de donde se ha descomrpimido (/home/jesus/Descargas/jdk1.7.0_51/bin) al PATH de manera permanente:
+# gedit /etc/profile
