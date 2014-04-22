@@ -1,6 +1,31 @@
 MODIFICACIONES DE DATEPICKER CCS: VERSIÓN CORRECTA
 Modificaciones: eliminar el else del beforeshowday y anyadir a la hoja de estilos el estate active
 ESTA SOLUCIÓN NO ES BUENA. HAY QUE IRSE AL BEFORESHOWDAY Y HACER QUE CUANDO EL VECTOR TIENE 0 ELEMENTOS SE DEVUELVA UNCHECKED.
+Algo así:
+		         beforeShowDay: function(date) {
+			       
+		            var m = date.getMonth(), d = date.getDate(), y = date.getFullYear();
+
+		            //només se selecciona/deselecciona quan hi havia un dia seleccionat
+		            if(dates.length==0)
+			        {
+		            	return [true, 'ui-datepicker-unchecked', ''];
+			        }
+		            else
+			        {
+		           	 for (i = 0; i < dates.length; i++) {			           
+		                if($.inArray(padNumber(d) + '/' + padNumber(m + 1) + '/' + y,dates) != -1) {		                    
+		                    return [true, 'ui-state-highlight', ''];
+		                }
+		                else
+			            {
+		                	 return [true, 'ui-datepicker-unchecked', ''];
+			            }			            
+		              }
+			        }
+		            return [true];
+		        }
+				
 Hoja de estilos definitiva (TODO):
 html, body {
   height: 100%;
