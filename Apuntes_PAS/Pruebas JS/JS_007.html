@@ -1,0 +1,92 @@
+<html>
+	<head>
+	
+	
+		 <!-- <link href="css/ui-lightness/jquery-ui-1.10.4.custom.css" rel="stylesheet"> -->
+		<link href="http://code.jquery.com/ui/1.9.1/themes/base/jquery-ui.css" rel="stylesheet">
+	 
+		<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+		<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+		
+		<script>
+			//Pruebas con objetos.
+			function Factura(idFactura, idCliente)
+			{
+				this.idFactura = idFactura;
+				this.idCliente = idCliente;
+				
+				this.numFactura = this.idFactura;
+
+				this.muestraCliente = function() {
+					alert(this.idCliente);
+				}
+
+				this.muestraId = function() {
+					alert(this.idFactura);
+				}
+				
+				this.muestraNumFactura = function() {
+					alert(this.idFactura);
+					return this.idFactura;
+				}
+				
+				this.aviso = function() {
+					alert("Esto es un aviso!!!");
+				}
+				
+				this.avisoMSG = function(msg) {
+					alert("Esto es un aviso con mensjae personalizable: "+msg);
+				}
+				
+				this.avisoInterno = function() {
+					this.avisoMSG("MSG 1.0");
+					this.avisoMSG();
+				}
+			}
+			
+			Factura.prototype.obtenerElementoX = function() {
+				alert("X");
+			}
+			
+			var laFactura = new Factura(3, 7);
+			//laFactura.obtenerElementoX();
+			
+			
+			//Añadiendo una única propiedad.	
+			//Array.prototype.obtenerElementoX = function(elemento) {
+			//	alert(this[elemento]);
+			//}
+			
+			//Añadiendo varias propiedades.
+			$.extend(Array.prototype, {
+				obtenerElPrimero: function() {	
+					alert("obtenerElPrimero");
+					return this[0];
+				},
+				obtenerElementoX: function(elemento) {
+					alert("obtenerElementoX");
+					return this[elemento];
+				}
+			});
+
+			var arr = new Array();
+			arr[0]="Elemento 0";
+			arr[1]="Elemento 1";
+			arr[2]="Elemento 2";
+			arr[3]="Elemento 3";
+			arr[4]="Elemento 4";
+			arr[5]="Elemento 5";
+			arr[6]="Elemento 6";
+			arr[7]="Elemento 7";
+			arr[8]="Elemento 8";
+			arr[9]="Elemento 9";
+			
+			alert(arr[7]);
+			alert(arr.obtenerElPrimero());
+			alert(arr.obtenerElementoX(8));
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
