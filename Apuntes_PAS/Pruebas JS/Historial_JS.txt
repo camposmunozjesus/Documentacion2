@@ -6,3 +6,13 @@ JS_002.html: Creación de un método de búsqueda en un array de fechas ordenada
 			 datepicker, por ejemplo, en formato DD/MM/YYY/. Para ordenar se utiliza sort sobre el array princiapl, que ordena el array principal según 
 			 el orden del primer elemento del array.
 JS_003.html: Prueba con split.
+JS_004.html: Pruebas con objetos. Se crean objetos sin definir la clase previamente.
+			 - Permite asignar a una propiedad de un objeto una función externa ya creada (que no pertenece a ningún otro objeto).
+			 - Lo mismo pero utilizando una función externa que hace referencia a propiedades internas del objeto que incluirá la función posteriormente. Utiliza this.
+			 - Se trabaja con fechas.
+JS_005.html: Pequeña prueba de cómo obtener propiedades de elementos HTML con selectores JQuery.
+JS_006.html: Pruebas con objetos. Se crean objetos definiendo la clase previamente.
+JS_007.html: Se extienden las propiedades de Array. En principio no existe el método obtenerElPrimero, pero con esta forma se consigue incluirlo.
+			 Webs de ayuda:
+				- Ejemplo obtenido de: http://librosweb.es/ajax/capitulo_3/clases.html.
+				- Corrección (Cambiar el Object por $) obtenido de: http://api.jquery.com/jquery.extend/.
