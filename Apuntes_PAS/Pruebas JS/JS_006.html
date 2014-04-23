@@ -1,0 +1,77 @@
+<html>
+	<head>
+	
+	
+		 <!-- <link href="css/ui-lightness/jquery-ui-1.10.4.custom.css" rel="stylesheet"> -->
+		<link href="http://code.jquery.com/ui/1.9.1/themes/base/jquery-ui.css" rel="stylesheet">
+	 
+		<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+		<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+		
+		<script>
+			//Pruebas con objetos.
+			//Se crea una función externa
+			function obtieneFecha() {
+				var f = new Date();
+				alert("Fecha actual: "+f.getDate() + "/" + (f.getMonth() +1) + "/" + f.getFullYear());
+			}
+			
+			function Factura(idFactura, idCliente)
+			{
+				this.idFactura = idFactura;
+				this.idCliente = idCliente;
+				
+				this.numFactura = this.idFactura;
+
+				this.muestraCliente = function() {
+					alert(this.idCliente);
+				}
+
+				this.muestraId = function() {
+					alert(this.idFactura);
+				}
+				
+				this.muestraNumFactura = function() {
+					alert(this.idFactura);
+					return this.idFactura;
+				}
+				
+				this.aviso = function() {
+					alert("Esto es un aviso!!!");
+				}
+				
+				this.avisoMSG = function(msg) {
+					alert("Esto es un aviso con mensjae personalizable: "+msg);
+				}
+				
+				this.avisoInterno = function() {
+					this.avisoMSG("MSG 1.0");
+					this.avisoMSG();
+				}
+				
+				this.muestraFuncion = this.muestraNumFactura;	
+				this.muestraFuncion2 = this.muestraNumFactura();	//Se ejecuta en el momento de construir el objeto.
+				
+				this.avisando =  this.aviso;						//Se asigna la propiedad -> se le aigna una función.
+				
+				this.fechaDeHoy = obtieneFecha;
+				this.fechaDeHoy2 = obtieneFecha();
+			}
+
+			var laFactura = new Factura(3, 7);
+			//laFactura.muestraNumFactura();
+			//laFactura.muestraFuncion();
+			//laFactura.muestraFuncion();
+//			var v = laFactura.muestraFuncion2;	//Ahora NO se ejecuta la función, la propiedad es un valor.
+			//laFactura.avisando();
+			//laFactura.avisoInterno();
+			alert("****************************************************");
+			laFactura.fechaDeHoy();
+			alert("****************************************************");
+			alert(laFactura.fechaDeHoy2);
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

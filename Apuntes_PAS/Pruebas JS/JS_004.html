@@ -1,0 +1,80 @@
+<html>
+	<head>
+	
+	
+		 <!-- <link href="css/ui-lightness/jquery-ui-1.10.4.custom.css" rel="stylesheet"> -->
+		<link href="http://code.jquery.com/ui/1.9.1/themes/base/jquery-ui.css" rel="stylesheet">
+	 
+		<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+		<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+		
+		<script>
+			//Pruebas con objetos.
+
+			var elObjeto = new Object();
+			elObjeto.id = "10";
+			elObjeto.nombre = "Objeto de prueba";
+			elObjeto.muestraId = function() {
+			  alert("El ID del objeto es "+ this.id);
+			}
+			elObjeto.muestraNombre = function() {
+			  alert(this.nombre);
+			}
+			
+			//Se crea una función externa
+			function obtieneFecha() {
+				var f = new Date();
+				alert("Fecha actual: "+f.getDate() + "/" + (f.getMonth() +1) + "/" + f.getFullYear());
+			}
+			
+			//Se crea una función externa
+			function obtieneFechaFormat2() {
+				var meses = new Array ("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+				var f=new Date();
+				alert("Fecha actual: "+f.getDate() + " de " + meses[f.getMonth()] + " de " + f.getFullYear());
+				return "Fecha actual retornada: "+f.getDate() + " de " + meses[f.getMonth()] + " de " + f.getFullYear();
+			}
+			
+			//Se asigna una de las funciones externas a una propiedad del objeto:
+			elObjeto.fecha = obtieneFecha;
+			elObjeto.fechaFormat2 = obtieneFechaFormat2(); 	//En este momento se realiza la ejecución, por lo que se producirá el ALERT!!!.
+															//Para que luego elObjeto.fechaFormat2 tenga algún valor, le función externa debe hacer
+															//un return.
+			
+			alert(elObjeto.muestraId());
+			
+			//llamada a la función externa:
+			//obtieneFechaFromat2();
+			//Ahora se llama a la función externa desde el objeto:
+			elObjeto.fecha();
+			//elObjeto.fechaFormat2(); 			//Así no se produce el alert.
+			//alert(elObjeto.fechaFormat2());	//Así NO se produce el alert.
+			alert(elObjeto.fechaFormat2);		//Así SÍ se produce el alert. Como lo que se hace es guardar lo que devuelve la función en la propiedad
+												//del objeto, es como guardar una valor en una propiedad, por lo que no tiene sentido acceder a ella
+												//como si fuera una función, es decir, utilizando los paréntesis.
+			
+	
+	
+			//Segunda prueba: función externa que utiliza una propiedad interna del objeto con this.
+			//Ahora se crea una función externa que use this.
+			function miFuncion() {
+				return "ID retornado: "+this.id;
+			}
+			
+			//Ahora se asigna la función externa que utiliza this al objeto ya creado.
+			elObjeto.retID = miFuncion;
+			alert(elObjeto.retID());	//Funciona correctamente, debido a que obtiene el id del objeto al que se ha asignado la función.
+			
+			//Asignar una propiedad del propio objeto a otra.
+			elObjeto.obtieneID = elObjeto.id;
+			alert(elObjeto.obtieneID);
+			
+			//Asignar una propiedad (función) del propio objeto a otra.
+			elObjeto.obtieneFecha = elObjeto.fecha;
+			elObjeto.obtieneFecha();
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
