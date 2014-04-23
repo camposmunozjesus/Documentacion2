@@ -1,0 +1,3 @@
+Historial de funciones JavaScript
+=================================
+HTML_001.html: Muestra cómo hacer que un LABEL tenga la propiedad WIDTH.
