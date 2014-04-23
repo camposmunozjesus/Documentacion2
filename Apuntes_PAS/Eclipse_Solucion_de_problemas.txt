@@ -33,3 +33,11 @@ la siguiente URL:
 http://download.springsource.com/release/TOOLS/third-party/subversive
 
 Entonces se descargan todos y se resuelve el problema.
+
+
+
+-----------------------------
+PROBLEMA CON EL AUTOCOMPLETAR
+-----------------------------
+En el momento en que al escribir "System. " y aparecen solas las opciones disponibles de autocompletado y el GGTS se cuelga hay que ir a:
+Preferences -> Java -> Editor -> Content Assist -> Advanced y desactivar en el panel de arriba todos los "Proposal kinds".
