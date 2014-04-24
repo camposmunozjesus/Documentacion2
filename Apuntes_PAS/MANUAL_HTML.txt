@@ -1,0 +1,58 @@
+HTML - MANUAL
+=============
+--------------------------------------------------
+FORZAR EL NAVEGADOR A UNA DETERMINADA VERSIÓN (IE)
+--------------------------------------------------
+El tag:
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+sirve para que IExplorer funcione con la versión más nueva de la que disponga.
+Pueden haber otras combinaciones:
+    "IE=edge"
+    "IE=10"
+    "IE=EmulateIE10"
+    "IE=9"
+    "IE=EmulateIE9
+    "IE=8"
+    "IE=EmulateIE8"
+    "IE=7"
+    "IE=EmulateIE7"
+    "IE=5"
+	
+Fuentes:
+Stackoverflow: 	http://stackoverflow.com/questions/6771258/whats-the-difference-if-meta-http-equiv-x-ua-compatible-content-ie-edge-e
+				http://stackoverflow.com/questions/6156639/x-ua-compatible-is-set-to-ie-edge-but-it-still-doesnt-stop-compatibility-mode
+				http://stackoverflow.com/questions/17467245/misunderstand-of-meta-http-equiv-x-ua-compatible-content-ie-edge
+
+				
+******************************************************************************************************************************************************
+------------------------------------------------------------------
+TEXT BOX QUE SE ACTIVA/DESACTIVA EN FUNCIÓN DEL VALOR DE UN SELECT
+------------------------------------------------------------------
+En este caso cuando el select valga "JESUS" se desactivarà un checkbox llamado "primerCognom". La lista que carga el select NO está disponible, pero
+se pueden forzar sus valores a mano.
+En el primer caso que se muestra se seleccionan los elementos por id.
+
+1era Forma: seleccionando elementos por id
+***********
+JS:
+	function canvi(){
+		if(document.getElementById('any').value=='JESUS'){
+			document.getElementById('primerCognom').disabled = true;
+		}else{
+			document.getElementById('primerCognom').disabled = false;
+		}
+	}
+HTML/GSP:
+	<g:textField id="primerCognom" name="primerCognom" value="${params?.primerCognom}" class="cercaCognom width120px"/>
+	<g:select name="any" id="any" keys="${resultList?.nom}" from="${resultList?.nom}" value="" onChange="canvi()"/> //Carga la lista y en onChange ejecuta la función JS canvi.
+	
+2da  Forma: seleccionando elementos por name. Aquí hay que indicar la posición del elemento, ya que getElementsByName devuelve una collection of DOM elements. (http://stackoverflow.com/questions/5843893/javascript-problem-getelementsbyname-doesnt-work-for-me)
+***********
+JS:
+	function canvi(){
+		if(document.getElementsByName('any')[0].value=='JESUS'){
+			document.getElementsByName('segonCognom')[0].disabled = true;
+		}else{
+			document.getElementsByName('segonCognom')[0].disabled = false;
+		}
+	}
