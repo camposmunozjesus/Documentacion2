@@ -85,6 +85,15 @@ Esto es lo que actúa cuando se pulsa el botón de borrar, editar, etc!!!!
 	</g:form>
 </div>
 
+Segundo ejemplo:
+****************
+*Código JS:
+	function accioClick(event) { 
+		alert(document.getElementById('horesAutoritzades').value);
+	}
+	
+*Código GSP:
+	<g:actionSubmit name="create" class="save" value="Crear" action="iframeSave" onclick="accioClick()"/>
 
 ******************************************************************************************************************************************************
 ---------------------------------------------------
