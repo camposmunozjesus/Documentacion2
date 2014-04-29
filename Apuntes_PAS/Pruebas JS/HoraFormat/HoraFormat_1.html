@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script>
+			function myFunction()
+			{
+				alert("You pressed a key inside the input field");
+				alert(document.getElementById('prueba').value);
+				alert("con pos: "+document.getElementById('prueba').value[0]);
+				//alert("con pos: "+document.getElementById('prueba').value[1]);
+				//document.getElementById('prueba').value[2]=':';
+				//Cálculo del tamanyo del string contenido en el cuadro de texto:
+				var str = document.getElementById('prueba').value;
+				alert("LONGITUD: "+str.length);
+				alert("Sunstring: "+str.sbtring(2,4));
+			}
+		</script>
+	</head>
+	<body>
+
+		<p>A function is triggered when the user is pressing a key in the input field.</p>
+
+		<input type="text" id="prueba" onkeydown="myFunction()" value="00:00">
+
+	</body>
+</html> 
