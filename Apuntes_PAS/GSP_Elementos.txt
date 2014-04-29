@@ -10,7 +10,7 @@ se mantienen. Para mantenerlos hay que hacer lo siguiente:
 	<g:hiddenField name="idFuncio" id="idFuncio" value="${params?.idFuncio}" />
 
 	
-******************************************************************************************************************************************************
+<COMBO BOX - G:SELECT>*********************************************************************************************************************************
 --------------------
 COMBO BOX - G:SELECT
 --------------------
@@ -57,61 +57,24 @@ Datos:
 		
 Elemento por defecto		
 ********************
-Si el combo muestra  una descripción, por ejemplo "Técni de taller" y devuelve el valor "73", si tenemos una estructura de datos que tiene un campo
+Si el combo muestra  una descripción, por ejemplo "Técnic de taller" y devuelve el valor "73", si tenemos una estructura de datos que tiene un campo
 llamado "descripcion" y que vale "Tecn. taller" y otro con nombre "codigo" que vale "73", en el valor por defecto indicaremos "codigo" ya que es el
 que se corresponde con el valor "oculto" por así decirlo de lo que queremos mostrar.
 Hemos supuesto que los valores a mostrar se han obtenido de otra tabla en la que los nombre son ligeramente diferente pero con igual codificación.
-******************************************************************************************************************************************************	
------------------------
-TEXTFIELD - G:TEXTFIELD
------------------------
-*Código Groovy:
-	Para recuperar el valor del textbox hay que usar: params.filtreCodi
 
-*Código GSP:
-	<g:textField name="filtreCodi" maxLength="10" value="${params?.filtreCodi}" class="cercaNom width100px" />
-	
-Si el campo está disabled, su valor NO se recogerá en el controlador.
 
-	
-******************************************************************************************************************************************************
-----------
-PAGINACIÓN
-----------
-Barra que se incluye al final de la tabla y permite paginar. Si queremos paginar cada 5 elementos hay que enviar sólo 5 elemetos y no todos.
-
-*Código Groovy:
- En el código Groovy hay que hacer lo siguiente:
-	- En el método que se desea utilizar paginación hay que setear el máximo de elementos de la tabla: this.paramsMaxSet(5, 10)
-	  Con esto se consigue delimitar el número de elementos de la tabla, pero no que si le enviamos 15 elementos los divida en grupos de manera
-	  automática. Si le enviamos 15 elementos mostrará los 15 elementos de golpe.
-	- Cada vez que se pulsa el botón de un número que indica una página se le envían al método params.max y params.offset (entre otros), con los que 
-	  se puede realizar una consulta para poblar la tabla adecuadamente.
-	  Ejemplo de consultas: 
-		1) def resultList = Persona.createCriteria().list(params,query)
-		2) def llocTreball = Lloc.findAllByNomAndPrimerCognomAndSegonCognom( params.idNom,params.idCognom1,params.idCognom2, [max:params.max, offset:params.offset] )
-	- El método que carga la tabla es el que recibe los parámetros y es el que debe enviar cualquiera de las listas del ejemeplo.
-	A tener en cuenta:
-		this.paramsMaxSet: recorta le número de resultados obtenidos alos indicado en él.
-		this.paramsMaxSet(5, 10) recorta la consulta -> size no da todos los datos de la consulta. Es decir, si se obtendrían 23 resultados, la consulta
-		únicamente devolverá 5, ya que al quere visualizar una tabla de 5 en 5 resultados, sólo se obtendrá la cantidad que se quiera mostrar, pero
-		para que aparezcan los botones de paginado hay que darle el total real, 23, al parámetro "total" de g:paginate.
-		Para obtner el total se utiliza: (ejemplo)
-			resultList = InscripcioCardiovascular.createCriteria().list(params,query)
-			results = resultList.getTotalCount()
-		Cuando getTotalCount o Count funcionan.
-		Si no hay que utilizar InscripcioCardiovascular.createCriteria().list().size() PERO ES MÁS LENTO!!!.
-	
-*Código GSP:
-	<div class="paginateButtons">
-		<g:paginate total="${funcioTotal}" params="${params}" next="Següent" prev="Anterior" />
-	</div>
-	
-	Donde "funcioTotal" es el total de elemento de la consulta, que se podría lograr con: (código groovy) def funcioTotal =  Lloc.countByNomAndPrimerCognomAndSegonCognom( params.idNom,params.idCognom1,params.idCognom2 )
+-----------------------------------------
+OPCIONES SÍ/NO EN UN COMBO BOX - G:SELECT
+-----------------------------------------
+Mostrar un desplegable con las opciones Sí/No
+*********************************************
+Queremos crear un desplegable con las opciones Sí/No a escoger, desde el controlador se le enviará 'S' para identificar el Sí, y 'N' para identificar
+el No en la variable personaInstance.fiTractament. Por lo tanto, cuando el usuario elija No deberá enviarse 'N' al controlador, y si elige Sí debe
+enviarse 'S'.
+El código a utilizar en la página GSP será:
+	<g:select name="fiTractament" id="fiTractament" style="width:288px" keys="${['S', 'N']}" from="${['Sí', 'No']}" value="${personaInstance?.fiTractament}" />
 
 	
-	
-******************************************************************************************************************************************************
 -------------------------------
 CENTRAR COMBOBOX EN UN RECUADRO
 -------------------------------
@@ -155,7 +118,58 @@ Caso de uso de un elemento con tres combos espaciados y uno oculto (el de subidi
 </g:form>
 
 
+	
+******************************************************************************************************************************************************	
+-----------------------
+TEXTFIELD - G:TEXTFIELD
+-----------------------
+*Código Groovy:
+	Para recuperar el valor del textbox hay que usar: params.filtreCodi
+
+*Código GSP:
+	<g:textField name="filtreCodi" maxLength="10" value="${params?.filtreCodi}" class="cercaNom width100px" />
+	
+Si el campo está disabled, su valor NO se recogerá en el controlador.
+
+	
+	
 ******************************************************************************************************************************************************
+----------
+PAGINACIÓN
+----------
+Barra que se incluye al final de la tabla y permite paginar. Si queremos paginar cada 5 elementos hay que enviar sólo 5 elemetos y no todos.
+
+*Código Groovy:
+ En el código Groovy hay que hacer lo siguiente:
+	- En el método que se desea utilizar paginación hay que setear el máximo de elementos de la tabla: this.paramsMaxSet(5, 10)
+	  Con esto se consigue delimitar el número de elementos de la tabla, pero no que si le enviamos 15 elementos los divida en grupos de manera
+	  automática. Si le enviamos 15 elementos mostrará los 15 elementos de golpe.
+	- Cada vez que se pulsa el botón de un número que indica una página se le envían al método params.max y params.offset (entre otros), con los que 
+	  se puede realizar una consulta para poblar la tabla adecuadamente.
+	  Ejemplo de consultas: 
+		1) def resultList = Persona.createCriteria().list(params,query)
+		2) def llocTreball = Lloc.findAllByNomAndPrimerCognomAndSegonCognom( params.idNom,params.idCognom1,params.idCognom2, [max:params.max, offset:params.offset] )
+	- El método que carga la tabla es el que recibe los parámetros y es el que debe enviar cualquiera de las listas del ejemeplo.
+	A tener en cuenta:
+		this.paramsMaxSet: recorta le número de resultados obtenidos alos indicado en él.
+		this.paramsMaxSet(5, 10) recorta la consulta -> size no da todos los datos de la consulta. Es decir, si se obtendrían 23 resultados, la consulta
+		únicamente devolverá 5, ya que al quere visualizar una tabla de 5 en 5 resultados, sólo se obtendrá la cantidad que se quiera mostrar, pero
+		para que aparezcan los botones de paginado hay que darle el total real, 23, al parámetro "total" de g:paginate.
+		Para obtner el total se utiliza: (ejemplo)
+			resultList = InscripcioCardiovascular.createCriteria().list(params,query)
+			results = resultList.getTotalCount()
+		Cuando getTotalCount o Count funcionan.
+		Si no hay que utilizar InscripcioCardiovascular.createCriteria().list().size() PERO ES MÁS LENTO!!!.
+	
+*Código GSP:
+	<div class="paginateButtons">
+		<g:paginate total="${funcioTotal}" params="${params}" next="Següent" prev="Anterior" />
+	</div>
+	
+	Donde "funcioTotal" es el total de elemento de la consulta, que se podría lograr con: (código groovy) def funcioTotal =  Lloc.countByNomAndPrimerCognomAndSegonCognom( params.idNom,params.idCognom1,params.idCognom2 )
+
+	
+	
 ---------------------------------------
 COLUMNA REORDENABLE - G:SORTABLE COLUNM
 ---------------------------------------
@@ -189,6 +203,7 @@ Colocar una fecha de manera formateada: (Aparecerá sin cuadro de texto alrededo
 	
 Colocar una fecha formateada dentro de un g:textfield:
 	<g:textField name="dataInscripcio" id="dataInscripcio" style="width:280px" disabled="true" value="${formatDate(format:"dd-MM-yyyy HH:mm:ss", date:personaInstance?.dataInscripcio)}" />
+	
 	
 	
 ******************************************************************************************************************************************************
