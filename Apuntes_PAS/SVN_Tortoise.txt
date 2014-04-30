@@ -42,7 +42,7 @@ svn
 -------------------------------------------
 QUITAR UN PROYECTO DEL CONTROL DE VERSIONES
 -------------------------------------------
-Botón derecho sobre la carpeta del proyecto -> TortoiseSVN -> Export y entonces elegimos la misma carpeta. Entonces pregunta´ra si queremos eliminarlo
+Botón derecho sobre la carpeta del proyecto -> TortoiseSVN -> Export y entonces elegimos la misma carpeta. Entonces preguntará si queremos eliminarlo
 del control de versioness y decimos que SÍ.
 
 
@@ -59,3 +59,30 @@ NO SINCRONIZAR UNA CARPETA INTERNA
 ----------------------------------
 Se hace primero el import del proyecto, luego se eliminan las carpetas que no se quieren sincronizar del repositorio web, y posteriormente se
 realiza el checkout.
+
+
+--------------------------------------------------------------
+NO SINCRONIZAR UN ARCHIVO: EVITAR ACTUALIZACIONES DESDE EL SVN
+--------------------------------------------------------------
+Tortoise SVN -> Unversion and add to ignore list -> Nombre_del_proyecto(recursively)
+
+Cuando se descarga el proyecto y queda sincronizado, algunos archivos que se modifican como el classpath o similares se modifican. Estos archivos no
+queremos subirlos al repositorio cuando hagamos un commit, pero tampoco queremos que se nos machaque al hacer un update con el archivo original del 
+repositorio.
+
+La opción es irse sobre el archivo y hacer: Tortoise SVN -> Unversion and add to ignore list -> Nombre_del_proyecto(recursively)
+Aparecerá un icono de una aspa (X) de color rojo.
+
+Para deshacer estos cambios hay dos opciones:
+* Para poder incluir de nuevo el archivo en el control de versiones: Tortoise SVN -> Revert => recuperaremos la versión del repositorio (se perderán
+  los cambios en local) y el archivo volverá a tener el icono verde de sincronizado.
+* Para poder incluir de nuevo el archivo en el control de versiones: Tortoise SVN -> Add(as a replacement)... => aquí lo que ocurre es que se añade
+  el archivo en local (que previamente había sido excluído del control de versiones) al repositorio. Entonces la aspa roja se cambia por:
+	- Un interrogante dentro de un círculo rojo si el archivo ha sido modificado después de señalarlo como unversioned.
+	- Con una cruz azul si el archivo no ha sido modificado después de marcarlo como unversioned.
+  Al ejecutar la acción se sobrescribirá el archivo del repositorio con la versión que tenemos en local.
+  
+NOTAS: CUIDADO!!!
+* Al realizar esta acción, cuando hagamos un commit, SIEMPRE los archivos marcado como unversioned aparecerán como deleted. HAY QUE DESMARCAR LOS 
+  ARCHIVOS UNVERSIONED AL HACER UN COMMIT ya que si no lo hacemos, eliminará los archivos del repositorio.
+* Eliminar los archivos del repositorio implica NO PODER RECUPERAR NINGUNA VERSIÓN, es decir, no poder utilizar el comparador de versiones.
