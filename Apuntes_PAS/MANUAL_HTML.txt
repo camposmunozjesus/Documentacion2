@@ -1,5 +1,12 @@
 HTML - MANUAL
 =============
+<VERSIÓN DEL NAVEGADOR>********************************************************************************************************************************
+---------------------------------
+DETECTAR LA VERSIÓN DEL NAVEGADOR
+---------------------------------
+Detectar si tenemos Internet Explorer: if($.browser.msie)
+Detectar la versión: $.browser.version //Nos informará si es la versión 9.0 de IExplorer o bien la 28.0 de Mozilla Firefox, etc ...
+
 --------------------------------------------------
 FORZAR EL NAVEGADOR A UNA DETERMINADA VERSIÓN (IE)
 --------------------------------------------------
