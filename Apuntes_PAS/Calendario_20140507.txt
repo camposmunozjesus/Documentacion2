@@ -1,0 +1,4321 @@
+Body:  
+Notes:  
+Chair:  CN=Jesus Campos/O=UPC
+Principal:  CN=Jesus Campos/O=UPC
+$altPrincipal:  CN=Jesus Campos/O=UPC
+ExcludeFromView:  D,S
+SequenceNum:  1
+UpdateSeq:  1
+$CSVersion:  2
+$SMTPKeepNotesItems:  1
+$CSWISL:  $S:1,$L:1,$B:1,$R:1,$E:1,$W:1,$O:1,$M:1,RequiredAttendees:1,INetRequiredNames:1,AltRequiredNames:1,StorageRequiredNames:1,OptionalAttendees:1,INetOptionalNames:1,AltOptionalNames:1,StorageOptionalNames:1
+WebDateTimeInit:  1
+OrgTable:  C0
+$AlarmDisabled:  1
+$IconSwitcher:  Reminder
+STARTDATETIME:  08/01/2014 10:00:00
+EndDateTime:  08/01/2014 10:00:00
+CalendarDateTime:  08/01/2014 10:00:00
+$NoPurge:  08/01/2014 10:00:00
+_ViewIcon:  10
+$HFFlags:  1
+Logo:  StdNotesLtr25
+SaveOptions:  
+MailOptions:  
+$FromPreferredLanguage:  ca
+ApptUNID:  EF90DF95AE2C070DC1257C7500312CA6
+$LangChair:  
+AppointmentType:  4
+$TableSwitcher:  Description
+OnlineMeeting:  
+From:  CN=Jesus Campos/O=UPC
+AltChair:  CN=Jesus Campos/O=UPC
+OnlinePlace:  
+IsBroadcast:  0
+$ExpandGroups:  3
+IsTeamCalendar:  
+Importance:  
+OrgConfidential:  1
+Subject:  Primer día de trabajo
+StartTime:  10:00:00
+StartTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+EndTime:  10:00:00
+EndTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+PreventCounter:  
+Location:  
+RoomToReserve:  
+Resources:  
+STRecordMeeting:  
+Categories:  
+$BorderColor:  7F96A3
+$WatchedItems:  $S,$L,$B,$R,$E,$W,$O,$M,RequiredAttendees,INetRequiredNames,AltRequiredNames,StorageRequiredNames,OptionalAttendees,INetOptionalNames,AltOptionalNames,StorageOptionalNames
+CalForwardChairNotificationTo:  
+ReturnReceipt:  
+Sign:  
+Encrypt:  
+BookFreeTime:  1
+StartDate:  08/01/2014
+EndDate:  08/01/2014
+PreventDelegate:  
+EnterSendTo:  
+EnterCopyTo:  
+EnterBlindCopyTo:  
+ConferenceCallInfo:  
+SchedulerSwitcher:  1
+$Abstract:  
+$UpdatedBy:  CN=Jesus Campos/O=UPC
+
+
+
+
+Body:  
+Notes:  
+Chair:  CN=Jesus Campos/O=UPC
+Principal:  CN=Jesus Campos/O=UPC
+$altPrincipal:  CN=Jesus Campos/O=UPC
+ExcludeFromView:  D,S
+SequenceNum:  1
+UpdateSeq:  1
+$CSVersion:  2
+$SMTPKeepNotesItems:  1
+$CSWISL:  $S:1,$L:1,$B:1,$R:1,$E:1,$W:1,$O:1,$M:1,RequiredAttendees:1,INetRequiredNames:1,AltRequiredNames:1,StorageRequiredNames:1,OptionalAttendees:1,INetOptionalNames:1,AltOptionalNames:1,StorageOptionalNames:1
+WebDateTimeInit:  1
+OrgTable:  C0
+$AlarmDisabled:  1
+$IconSwitcher:  Reminder
+STARTDATETIME:  13/01/2014 08:00:00
+EndDateTime:  13/01/2014 08:00:00
+CalendarDateTime:  13/01/2014 08:00:00
+$NoPurge:  13/01/2014 08:00:00
+_ViewIcon:  10
+$HFFlags:  1
+Logo:  StdNotesLtr25
+SaveOptions:  
+MailOptions:  
+$FromPreferredLanguage:  ca
+ApptUNID:  67A62322B5571B21C1257C7500311681
+$LangChair:  
+AppointmentType:  4
+$TableSwitcher:  Description
+OnlineMeeting:  
+From:  CN=Jesus Campos/O=UPC
+AltChair:  CN=Jesus Campos/O=UPC
+OnlinePlace:  
+IsBroadcast:  0
+$ExpandGroups:  3
+IsTeamCalendar:  
+Importance:  
+OrgConfidential:  1
+Subject:  Inicio con Grails
+StartTime:  08:00:00
+StartTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+EndTime:  08:00:00
+EndTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+PreventCounter:  
+Location:  
+RoomToReserve:  
+Resources:  
+STRecordMeeting:  
+Categories:  
+$BorderColor:  7F96A3
+$WatchedItems:  $S,$L,$B,$R,$E,$W,$O,$M,RequiredAttendees,INetRequiredNames,AltRequiredNames,StorageRequiredNames,OptionalAttendees,INetOptionalNames,AltOptionalNames,StorageOptionalNames
+CalForwardChairNotificationTo:  
+ReturnReceipt:  
+Sign:  
+Encrypt:  
+BookFreeTime:  1
+StartDate:  13/01/2014
+EndDate:  13/01/2014
+PreventDelegate:  
+EnterSendTo:  
+EnterCopyTo:  
+EnterBlindCopyTo:  
+ConferenceCallInfo:  
+SchedulerSwitcher:  1
+$Abstract:  
+$UpdatedBy:  CN=Jesus Campos/O=UPC
+
+
+
+
+Body:  
+Notes:  
+Chair:  CN=Jesus Campos/O=UPC
+Principal:  CN=Jesus Campos/O=UPC
+$altPrincipal:  CN=Jesus Campos/O=UPC
+ExcludeFromView:  D,S
+SequenceNum:  1
+UpdateSeq:  1
+$CSVersion:  2
+$SMTPKeepNotesItems:  1
+$CSWISL:  $S:1,$L:1,$B:1,$R:1,$E:1,$W:1,$O:1,$M:1,RequiredAttendees:1,INetRequiredNames:1,AltRequiredNames:1,StorageRequiredNames:1,OptionalAttendees:1,INetOptionalNames:1,AltOptionalNames:1,StorageOptionalNames:1
+WebDateTimeInit:  1
+OrgTable:  C0
+$AlarmDisabled:  1
+$IconSwitcher:  Reminder
+STARTDATETIME:  20/01/2014 08:00:00
+EndDateTime:  20/01/2014 08:00:00
+CalendarDateTime:  20/01/2014 08:00:00
+$NoPurge:  20/01/2014 08:00:00
+_ViewIcon:  10
+$HFFlags:  1
+Logo:  StdNotesLtr25
+SaveOptions:  
+MailOptions:  
+$FromPreferredLanguage:  ca
+ApptUNID:  80C9EFCCEFA1508AC1257C750031234D
+$LangChair:  
+AppointmentType:  4
+$TableSwitcher:  Description
+OnlineMeeting:  
+From:  CN=Jesus Campos/O=UPC
+AltChair:  CN=Jesus Campos/O=UPC
+OnlinePlace:  
+IsBroadcast:  0
+$ExpandGroups:  3
+IsTeamCalendar:  
+Importance:  
+OrgConfidential:  1
+Subject:  Descarga del SIGRIS
+StartTime:  08:00:00
+StartTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+EndTime:  08:00:00
+EndTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+PreventCounter:  
+Location:  
+RoomToReserve:  
+Resources:  
+STRecordMeeting:  
+Categories:  
+$BorderColor:  7F96A3
+$WatchedItems:  $S,$L,$B,$R,$E,$W,$O,$M,RequiredAttendees,INetRequiredNames,AltRequiredNames,StorageRequiredNames,OptionalAttendees,INetOptionalNames,AltOptionalNames,StorageOptionalNames
+CalForwardChairNotificationTo:  
+ReturnReceipt:  
+Sign:  
+Encrypt:  
+BookFreeTime:  1
+StartDate:  20/01/2014
+EndDate:  20/01/2014
+PreventDelegate:  
+EnterSendTo:  
+EnterCopyTo:  
+EnterBlindCopyTo:  
+ConferenceCallInfo:  
+SchedulerSwitcher:  1
+$Abstract:  
+$UpdatedBy:  CN=Jesus Campos/O=UPC
+
+
+
+
+Body:  
+Notes:  
+Chair:  CN=Jesus Campos/O=UPC
+Principal:  CN=Jesus Campos/O=UPC
+$altPrincipal:  CN=Jesus Campos/O=UPC
+ExcludeFromView:  D,S
+SequenceNum:  1
+UpdateSeq:  1
+$CSVersion:  2
+$SMTPKeepNotesItems:  1
+$CSWISL:  $S:1,$L:1,$B:1,$R:1,$E:1,$W:1,$O:1,$M:1,RequiredAttendees:1,INetRequiredNames:1,AltRequiredNames:1,StorageRequiredNames:1,OptionalAttendees:1,INetOptionalNames:1,AltOptionalNames:1,StorageOptionalNames:1
+WebDateTimeInit:  1
+OrgTable:  C0
+$AlarmDisabled:  1
+$IconSwitcher:  Reminder
+STARTDATETIME:  27/01/2014 08:00:00
+EndDateTime:  27/01/2014 08:00:00
+CalendarDateTime:  27/01/2014 08:00:00
+$NoPurge:  27/01/2014 08:00:00
+_ViewIcon:  10
+$HFFlags:  1
+Logo:  StdNotesLtr25
+SaveOptions:  
+MailOptions:  
+$FromPreferredLanguage:  ca
+ApptUNID:  7522761F4FBDDA96C1257C750030F2B2
+$LangChair:  
+AppointmentType:  4
+$TableSwitcher:  Description
+OnlineMeeting:  
+From:  CN=Jesus Campos/O=UPC
+AltChair:  CN=Jesus Campos/O=UPC
+OnlinePlace:  
+IsBroadcast:  0
+$ExpandGroups:  3
+IsTeamCalendar:  
+Importance:  
+OrgConfidential:  1
+Subject:  WS con WS client
+StartTime:  08:00:00
+StartTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+EndTime:  08:00:00
+EndTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+PreventCounter:  
+Location:  
+RoomToReserve:  
+Resources:  
+STRecordMeeting:  
+Categories:  
+$BorderColor:  7F96A3
+$WatchedItems:  $S,$L,$B,$R,$E,$W,$O,$M,RequiredAttendees,INetRequiredNames,AltRequiredNames,StorageRequiredNames,OptionalAttendees,INetOptionalNames,AltOptionalNames,StorageOptionalNames
+CalForwardChairNotificationTo:  
+ReturnReceipt:  
+Sign:  
+Encrypt:  
+BookFreeTime:  1
+StartDate:  27/01/2014
+EndDate:  27/01/2014
+PreventDelegate:  
+EnterSendTo:  
+EnterCopyTo:  
+EnterBlindCopyTo:  
+ConferenceCallInfo:  
+SchedulerSwitcher:  1
+$Abstract:  
+$UpdatedBy:  CN=Jesus Campos/O=UPC
+
+
+
+
+Body:  
+Notes:  
+Chair:  CN=Jesus Campos/O=UPC
+Principal:  CN=Jesus Campos/O=UPC
+$altPrincipal:  CN=Jesus Campos/O=UPC
+ExcludeFromView:  D,S
+SequenceNum:  1
+UpdateSeq:  1
+$CSVersion:  2
+$SMTPKeepNotesItems:  1
+$CSWISL:  $S:1,$L:1,$B:1,$R:1,$E:1,$W:1,$O:1,$M:1,RequiredAttendees:1,INetRequiredNames:1,AltRequiredNames:1,StorageRequiredNames:1,OptionalAttendees:1,INetOptionalNames:1,AltOptionalNames:1,StorageOptionalNames:1
+WebDateTimeInit:  1
+OrgTable:  C0
+$AlarmDisabled:  1
+$IconSwitcher:  Reminder
+STARTDATETIME:  29/01/2014 08:00:00
+EndDateTime:  29/01/2014 08:00:00
+CalendarDateTime:  29/01/2014 08:00:00
+$NoPurge:  29/01/2014 08:00:00
+_ViewIcon:  10
+$HFFlags:  1
+Logo:  StdNotesLtr25
+SaveOptions:  
+MailOptions:  
+$FromPreferredLanguage:  ca
+ApptUNID:  A315C0CE3688A6D2C1257C7500310696
+$LangChair:  
+AppointmentType:  4
+$TableSwitcher:  Description
+OnlineMeeting:  
+From:  CN=Jesus Campos/O=UPC
+AltChair:  CN=Jesus Campos/O=UPC
+OnlinePlace:  
+IsBroadcast:  0
+$ExpandGroups:  3
+IsTeamCalendar:  
+Importance:  
+OrgConfidential:  1
+Subject:  Crear la página con consultas y bien hecha.
+StartTime:  08:00:00
+StartTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+EndTime:  08:00:00
+EndTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+PreventCounter:  
+Location:  
+RoomToReserve:  
+Resources:  
+STRecordMeeting:  
+Categories:  
+$BorderColor:  7F96A3
+$WatchedItems:  $S,$L,$B,$R,$E,$W,$O,$M,RequiredAttendees,INetRequiredNames,AltRequiredNames,StorageRequiredNames,OptionalAttendees,INetOptionalNames,AltOptionalNames,StorageOptionalNames
+CalForwardChairNotificationTo:  
+ReturnReceipt:  
+Sign:  
+Encrypt:  
+BookFreeTime:  1
+StartDate:  29/01/2014
+EndDate:  29/01/2014
+PreventDelegate:  
+EnterSendTo:  
+EnterCopyTo:  
+EnterBlindCopyTo:  
+ConferenceCallInfo:  
+SchedulerSwitcher:  1
+$Abstract:  
+$UpdatedBy:  CN=Jesus Campos/O=UPC
+
+
+
+
+Body:  
+Notes:  
+Chair:  CN=Jesus Campos/O=UPC
+Principal:  CN=Jesus Campos/O=UPC
+$altPrincipal:  CN=Jesus Campos/O=UPC
+ExcludeFromView:  D,S
+SequenceNum:  1
+UpdateSeq:  1
+$CSVersion:  2
+$SMTPKeepNotesItems:  1
+$CSWISL:  $S:1,$L:1,$B:1,$R:1,$E:1,$W:1,$O:1,$M:1,RequiredAttendees:1,INetRequiredNames:1,AltRequiredNames:1,StorageRequiredNames:1,OptionalAttendees:1,INetOptionalNames:1,AltOptionalNames:1,StorageOptionalNames:1
+WebDateTimeInit:  1
+OrgTable:  C0
+$AlarmDisabled:  1
+$IconSwitcher:  Reminder
+STARTDATETIME:  31/01/2014 08:00:00
+EndDateTime:  31/01/2014 08:00:00
+CalendarDateTime:  31/01/2014 08:00:00
+$NoPurge:  31/01/2014 08:00:00
+_ViewIcon:  10
+$HFFlags:  1
+Logo:  StdNotesLtr25
+SaveOptions:  
+MailOptions:  
+$FromPreferredLanguage:  ca
+ApptUNID:  BE24FF60A5691EC7C1257C750030FDF3
+$LangChair:  
+AppointmentType:  4
+$TableSwitcher:  Description
+OnlineMeeting:  
+From:  CN=Jesus Campos/O=UPC
+AltChair:  CN=Jesus Campos/O=UPC
+OnlinePlace:  
+IsBroadcast:  0
+$ExpandGroups:  3
+IsTeamCalendar:  
+Importance:  
+OrgConfidential:  1
+Subject:  WS con CXF
+StartTime:  08:00:00
+StartTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+EndTime:  08:00:00
+EndTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+PreventCounter:  
+Location:  
+RoomToReserve:  
+Resources:  
+STRecordMeeting:  
+Categories:  
+$BorderColor:  7F96A3
+$WatchedItems:  $S,$L,$B,$R,$E,$W,$O,$M,RequiredAttendees,INetRequiredNames,AltRequiredNames,StorageRequiredNames,OptionalAttendees,INetOptionalNames,AltOptionalNames,StorageOptionalNames
+CalForwardChairNotificationTo:  
+ReturnReceipt:  
+Sign:  
+Encrypt:  
+BookFreeTime:  1
+StartDate:  31/01/2014
+EndDate:  31/01/2014
+PreventDelegate:  
+EnterSendTo:  
+EnterCopyTo:  
+EnterBlindCopyTo:  
+ConferenceCallInfo:  
+SchedulerSwitcher:  1
+$Abstract:  
+$UpdatedBy:  CN=Jesus Campos/O=UPC
+
+
+
+
+Chair:  CN=Jesus Campos/O=UPC
+Principal:  CN=Jesus Campos/O=UPC
+$altPrincipal:  CN=Jesus Campos/O=UPC
+ExcludeFromView:  D,S
+SequenceNum:  1
+$CSVersion:  2
+$SMTPKeepNotesItems:  1
+WebDateTimeInit:  1
+OrgTable:  C0
+$AlarmDisabled:  1
+$IconSwitcher:  Reminder
+STARTDATETIME:  03/02/2014 08:00:00
+EndDateTime:  03/02/2014 08:00:00
+$Abstract:  
+$WIModified:  $S
+$CSTrack:  Response_Outgoing_00314388[Charpentier] by Notes on Jesus Campos(Release 8.5.2|August 10, 2010) at 04/02/2014 09:58:13,OA(Update)[Charpentier] by Notes on Jesus Campos(Release 8.5.2|August 10, 2010) at 04/02/2014 09:58:13
+UpdateSeq:  2
+$CSWISL:  $L:1,$B:1,$R:1,$E:1,$W:1,$O:1,$M:1,RequiredAttendees:1,INetRequiredNames:1,AltRequiredNames:1,StorageRequiredNames:1,OptionalAttendees:1,INetOptionalNames:1,AltOptionalNames:1,StorageOptionalNames:1,$S:2
+CalendarDateTime:  03/02/2014 08:00:00
+$NoPurge:  03/02/2014 08:00:00
+_ViewIcon:  10
+$HFFlags:  1
+Logo:  StdNotesLtr25
+SaveOptions:  
+MailOptions:  
+$FromPreferredLanguage:  ca
+ApptUNID:  600080B1C5D52A67C1257C75003136CD
+$LangChair:  
+AppointmentType:  4
+$TableSwitcher:  Description
+OnlineMeeting:  
+From:  CN=Jesus Campos/O=UPC
+AltChair:  CN=Jesus Campos/O=UPC
+OnlinePlace:  
+IsBroadcast:  0
+$ExpandGroups:  3
+IsTeamCalendar:  
+Importance:  
+OrgConfidential:  1
+Subject:  Conseguido realizar WS con CXF
+StartTime:  08:00:00
+StartTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+EndTime:  08:00:00
+EndTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+PreventCounter:  
+Location:  
+RoomToReserve:  
+Resources:  
+STRecordMeeting:  
+Categories:  
+$BorderColor:  7F96A3
+$WatchedItems:  $S,$L,$B,$R,$E,$W,$O,$M,RequiredAttendees,INetRequiredNames,AltRequiredNames,StorageRequiredNames,OptionalAttendees,INetOptionalNames,AltOptionalNames,StorageOptionalNames
+CalForwardChairNotificationTo:  
+ReturnReceipt:  
+Sign:  
+Encrypt:  
+BookFreeTime:  1
+StartDate:  03/02/2014
+EndDate:  03/02/2014
+PreventDelegate:  
+EnterSendTo:  
+EnterCopyTo:  
+EnterBlindCopyTo:  
+ConferenceCallInfo:  
+SchedulerSwitcher:  1
+$UpdatedBy:  CN=Jesus Campos/O=UPC
+$Revisions:  04/02/2014 09:58:00
+
+
+
+
+
+
+Body:  
+Notes:  
+Chair:  CN=Jesus Campos/O=UPC
+Principal:  CN=Jesus Campos/O=UPC
+$altPrincipal:  CN=Jesus Campos/O=UPC
+ExcludeFromView:  D,S
+SequenceNum:  1
+UpdateSeq:  1
+$CSVersion:  2
+$SMTPKeepNotesItems:  1
+$CSWISL:  $S:1,$L:1,$B:1,$R:1,$E:1,$W:1,$O:1,$M:1,RequiredAttendees:1,INetRequiredNames:1,AltRequiredNames:1,StorageRequiredNames:1,OptionalAttendees:1,INetOptionalNames:1,AltOptionalNames:1,StorageOptionalNames:1
+WebDateTimeInit:  1
+OrgTable:  C0
+$AlarmDisabled:  1
+$IconSwitcher:  Reminder
+STARTDATETIME:  04/02/2014 08:00:00
+EndDateTime:  04/02/2014 08:00:00
+CalendarDateTime:  04/02/2014 08:00:00
+$NoPurge:  04/02/2014 08:00:00
+_ViewIcon:  10
+$HFFlags:  1
+Logo:  StdNotesLtr25
+SaveOptions:  
+MailOptions:  
+$FromPreferredLanguage:  ca
+ApptUNID:  620E7249C53AA91FC1257C750030DBDA
+$LangChair:  
+AppointmentType:  4
+$TableSwitcher:  Description
+OnlineMeeting:  
+From:  CN=Jesus Campos/O=UPC
+AltChair:  CN=Jesus Campos/O=UPC
+OnlinePlace:  
+IsBroadcast:  0
+$ExpandGroups:  3
+IsTeamCalendar:  
+Importance:  
+OrgConfidential:  1
+Subject:  Accesibilidad
+StartTime:  08:00:00
+StartTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+EndTime:  08:00:00
+EndTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+PreventCounter:  
+Location:  
+RoomToReserve:  
+Resources:  
+STRecordMeeting:  
+Categories:  
+$BorderColor:  7F96A3
+$WatchedItems:  $S,$L,$B,$R,$E,$W,$O,$M,RequiredAttendees,INetRequiredNames,AltRequiredNames,StorageRequiredNames,OptionalAttendees,INetOptionalNames,AltOptionalNames,StorageOptionalNames
+CalForwardChairNotificationTo:  
+ReturnReceipt:  
+Sign:  
+Encrypt:  
+BookFreeTime:  1
+StartDate:  04/02/2014
+EndDate:  04/02/2014
+PreventDelegate:  
+EnterSendTo:  
+EnterCopyTo:  
+EnterBlindCopyTo:  
+ConferenceCallInfo:  
+SchedulerSwitcher:  1
+$Abstract:  
+$UpdatedBy:  CN=Jesus Campos/O=UPC
+
+
+
+
+$PublicAccess:  1
+Body:  
+Notes:  
+Chair:  CN=Jesus Campos/O=UPC
+Principal:  CN=Jesus Campos/O=UPC
+$altPrincipal:  CN=Jesus Campos/O=UPC
+ExcludeFromView:  D,S
+SequenceNum:  1
+UpdateSeq:  1
+$CSVersion:  2
+$SMTPKeepNotesItems:  1
+$CSWISL:  $S:1,$L:1,$B:1,$R:1,$E:1,$W:1,$O:1,$M:1,RequiredAttendees:1,INetRequiredNames:1,AltRequiredNames:1,StorageRequiredNames:1,OptionalAttendees:1,INetOptionalNames:1,AltOptionalNames:1,StorageOptionalNames:1
+WebDateTimeInit:  1
+OrgTable:  C0
+$AlarmDisabled:  1
+$IconSwitcher:  Reminder
+STARTDATETIME:  21/02/2014 08:00:00
+EndDateTime:  21/02/2014 08:00:00
+CalendarDateTime:  21/02/2014 08:00:00
+$NoPurge:  21/02/2014 08:00:00
+_ViewIcon:  10
+$HFFlags:  1
+Logo:  StdNotesLtr25
+SaveOptions:  
+MailOptions:  
+$FromPreferredLanguage:  ca
+ApptUNID:  52C1B1BFEB520E7DC1257C93002BEA73
+$LangChair:  
+AppointmentType:  4
+$TableSwitcher:  Description
+OnlineMeeting:  
+From:  CN=Jesus Campos/O=UPC
+AltChair:  CN=Jesus Campos/O=UPC
+OnlinePlace:  
+IsBroadcast:  0
+$ExpandGroups:  3
+IsTeamCalendar:  
+Importance:  
+OrgConfidential:  
+Subject:  Inicio documentación Weceem.
+StartTime:  08:00:00
+StartTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+EndTime:  08:00:00
+EndTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+PreventCounter:  
+Location:  
+RoomToReserve:  
+Resources:  
+STRecordMeeting:  
+Categories:  
+$BorderColor:  7F96A3
+$WatchedItems:  $S,$L,$B,$R,$E,$W,$O,$M,RequiredAttendees,INetRequiredNames,AltRequiredNames,StorageRequiredNames,OptionalAttendees,INetOptionalNames,AltOptionalNames,StorageOptionalNames
+CalForwardChairNotificationTo:  
+ReturnReceipt:  
+Sign:  
+Encrypt:  
+BookFreeTime:  1
+StartDate:  21/02/2014
+EndDate:  21/02/2014
+PreventDelegate:  
+EnterSendTo:  
+EnterCopyTo:  
+EnterBlindCopyTo:  
+ConferenceCallInfo:  
+SchedulerSwitcher:  1
+$Abstract:  
+$UpdatedBy:  CN=Jesus Campos/O=UPC
+
+
+
+
+$PublicAccess:  1
+Body:  
+Notes:  
+Chair:  CN=Jesus Campos/O=UPC
+Principal:  CN=Jesus Campos/O=UPC
+$altPrincipal:  CN=Jesus Campos/O=UPC
+ExcludeFromView:  D,S
+SequenceNum:  1
+UpdateSeq:  1
+$CSVersion:  2
+$SMTPKeepNotesItems:  1
+$CSWISL:  $S:1,$L:1,$B:1,$R:1,$E:1,$W:1,$O:1,$M:1,RequiredAttendees:1,INetRequiredNames:1,AltRequiredNames:1,StorageRequiredNames:1,OptionalAttendees:1,INetOptionalNames:1,AltOptionalNames:1,StorageOptionalNames:1
+WebDateTimeInit:  1
+OrgTable:  C0
+$AlarmDisabled:  1
+$IconSwitcher:  Reminder
+STARTDATETIME:  28/02/2014 08:00:00
+EndDateTime:  28/02/2014 08:00:00
+CalendarDateTime:  28/02/2014 08:00:00
+$NoPurge:  28/02/2014 08:00:00
+_ViewIcon:  10
+$HFFlags:  1
+Logo:  StdNotesLtr25
+SaveOptions:  
+MailOptions:  
+$FromPreferredLanguage:  ca
+ApptUNID:  2416882B06ECC957C1257C93002BD1E7
+$LangChair:  
+AppointmentType:  4
+$TableSwitcher:  Description
+OnlineMeeting:  
+From:  CN=Jesus Campos/O=UPC
+AltChair:  CN=Jesus Campos/O=UPC
+OnlinePlace:  
+IsBroadcast:  0
+$ExpandGroups:  3
+IsTeamCalendar:  
+Importance:  
+OrgConfidential:  
+Subject:  Instalada base de datos PostgreSQL y uso con Apache Tomcat para desplegar aplicaciones Grails.
+StartTime:  08:00:00
+StartTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+EndTime:  08:00:00
+EndTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+PreventCounter:  
+Location:  
+RoomToReserve:  
+Resources:  
+STRecordMeeting:  
+Categories:  
+$BorderColor:  7F96A3
+$WatchedItems:  $S,$L,$B,$R,$E,$W,$O,$M,RequiredAttendees,INetRequiredNames,AltRequiredNames,StorageRequiredNames,OptionalAttendees,INetOptionalNames,AltOptionalNames,StorageOptionalNames
+CalForwardChairNotificationTo:  
+ReturnReceipt:  
+Sign:  
+Encrypt:  
+BookFreeTime:  1
+StartDate:  28/02/2014
+EndDate:  28/02/2014
+PreventDelegate:  
+EnterSendTo:  
+EnterCopyTo:  
+EnterBlindCopyTo:  
+ConferenceCallInfo:  
+SchedulerSwitcher:  1
+$Abstract:  
+$UpdatedBy:  CN=Jesus Campos/O=UPC
+
+
+
+
+$PublicAccess:  1
+Body:  
+Notes:  
+Chair:  CN=Jesus Campos/O=UPC
+Principal:  CN=Jesus Campos/O=UPC
+$altPrincipal:  CN=Jesus Campos/O=UPC
+ExcludeFromView:  D,S
+SequenceNum:  1
+UpdateSeq:  1
+$CSVersion:  2
+$SMTPKeepNotesItems:  1
+$CSWISL:  $S:1,$L:1,$B:1,$R:1,$E:1,$W:1,$O:1,$M:1,RequiredAttendees:1,INetRequiredNames:1,AltRequiredNames:1,StorageRequiredNames:1,OptionalAttendees:1,INetOptionalNames:1,AltOptionalNames:1,StorageOptionalNames:1
+WebDateTimeInit:  1
+OrgTable:  C0
+$AlarmDisabled:  1
+$IconSwitcher:  Reminder
+STARTDATETIME:  04/03/2014 08:00:00
+EndDateTime:  04/03/2014 08:00:00
+CalendarDateTime:  04/03/2014 08:00:00
+$NoPurge:  04/03/2014 08:00:00
+_ViewIcon:  10
+$HFFlags:  1
+Logo:  StdNotesLtr25
+SaveOptions:  
+MailOptions:  
+$FromPreferredLanguage:  ca
+ApptUNID:  9ABE5F8662FE3911C1257C93002BBFFB
+$LangChair:  
+AppointmentType:  4
+$TableSwitcher:  Description
+OnlineMeeting:  
+From:  CN=Jesus Campos/O=UPC
+AltChair:  CN=Jesus Campos/O=UPC
+OnlinePlace:  
+IsBroadcast:  0
+$ExpandGroups:  3
+IsTeamCalendar:  
+Importance:  
+OrgConfidential:  
+Subject:  Arrancado en local un Weceem en GGTS con BD PostgreSQL.
+StartTime:  08:00:00
+StartTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+EndTime:  08:00:00
+EndTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+PreventCounter:  
+Location:  
+RoomToReserve:  
+Resources:  
+STRecordMeeting:  
+Categories:  
+$BorderColor:  7F96A3
+$WatchedItems:  $S,$L,$B,$R,$E,$W,$O,$M,RequiredAttendees,INetRequiredNames,AltRequiredNames,StorageRequiredNames,OptionalAttendees,INetOptionalNames,AltOptionalNames,StorageOptionalNames
+CalForwardChairNotificationTo:  
+ReturnReceipt:  
+Sign:  
+Encrypt:  
+BookFreeTime:  1
+StartDate:  04/03/2014
+EndDate:  04/03/2014
+PreventDelegate:  
+EnterSendTo:  
+EnterCopyTo:  
+EnterBlindCopyTo:  
+ConferenceCallInfo:  
+SchedulerSwitcher:  1
+$Abstract:  
+$UpdatedBy:  CN=Jesus Campos/O=UPC
+
+
+
+
+$PublicAccess:  1
+Body:  
+Notes:  
+Chair:  CN=Jesus Campos/O=UPC
+Principal:  CN=Jesus Campos/O=UPC
+$altPrincipal:  CN=Jesus Campos/O=UPC
+ExcludeFromView:  D,S
+SequenceNum:  1
+UpdateSeq:  1
+$CSVersion:  2
+$SMTPKeepNotesItems:  1
+$CSWISL:  $S:1,$L:1,$B:1,$R:1,$E:1,$W:1,$O:1,$M:1,RequiredAttendees:1,INetRequiredNames:1,AltRequiredNames:1,StorageRequiredNames:1,OptionalAttendees:1,INetOptionalNames:1,AltOptionalNames:1,StorageOptionalNames:1
+WebDateTimeInit:  1
+OrgTable:  C0
+$AlarmDisabled:  1
+$IconSwitcher:  Reminder
+STARTDATETIME:  05/03/2014 08:00:00
+EndDateTime:  05/03/2014 08:00:00
+CalendarDateTime:  05/03/2014 08:00:00
+$NoPurge:  05/03/2014 08:00:00
+_ViewIcon:  10
+$HFFlags:  1
+Logo:  StdNotesLtr25
+SaveOptions:  
+MailOptions:  
+$FromPreferredLanguage:  ca
+ApptUNID:  4CFEAC6D51B4356EC1257C93002BA78D
+$LangChair:  
+AppointmentType:  4
+$TableSwitcher:  Description
+OnlineMeeting:  
+From:  CN=Jesus Campos/O=UPC
+AltChair:  CN=Jesus Campos/O=UPC
+OnlinePlace:  
+IsBroadcast:  0
+$ExpandGroups:  3
+IsTeamCalendar:  
+Importance:  
+OrgConfidential:  
+Subject:  Se ha conseguido crerar una plantilla tipo Tempus con JS de desplegables.
+StartTime:  08:00:00
+StartTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+EndTime:  08:00:00
+EndTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+PreventCounter:  
+Location:  
+RoomToReserve:  
+Resources:  
+STRecordMeeting:  
+Categories:  
+$BorderColor:  7F96A3
+$WatchedItems:  $S,$L,$B,$R,$E,$W,$O,$M,RequiredAttendees,INetRequiredNames,AltRequiredNames,StorageRequiredNames,OptionalAttendees,INetOptionalNames,AltOptionalNames,StorageOptionalNames
+CalForwardChairNotificationTo:  
+ReturnReceipt:  
+Sign:  
+Encrypt:  
+BookFreeTime:  1
+StartDate:  05/03/2014
+EndDate:  05/03/2014
+PreventDelegate:  
+EnterSendTo:  
+EnterCopyTo:  
+EnterBlindCopyTo:  
+ConferenceCallInfo:  
+SchedulerSwitcher:  1
+$Abstract:  
+$UpdatedBy:  CN=Jesus Campos/O=UPC
+
+
+
+
+$PublicAccess:  1
+Body:  
+Notes:  
+Chair:  CN=Jesus Campos/O=UPC
+Principal:  CN=Jesus Campos/O=UPC
+$altPrincipal:  CN=Jesus Campos/O=UPC
+ExcludeFromView:  D,S
+SequenceNum:  1
+UpdateSeq:  1
+$CSVersion:  2
+$SMTPKeepNotesItems:  1
+$CSWISL:  $S:1,$L:1,$B:1,$R:1,$E:1,$W:1,$O:1,$M:1,RequiredAttendees:1,INetRequiredNames:1,AltRequiredNames:1,StorageRequiredNames:1,OptionalAttendees:1,INetOptionalNames:1,AltOptionalNames:1,StorageOptionalNames:1
+WebDateTimeInit:  1
+OrgTable:  C0
+$AlarmDisabled:  1
+$IconSwitcher:  Reminder
+STARTDATETIME:  05/03/2014 09:30:00
+EndDateTime:  05/03/2014 09:30:00
+CalendarDateTime:  05/03/2014 09:30:00
+$NoPurge:  05/03/2014 09:30:00
+_ViewIcon:  10
+$HFFlags:  1
+Logo:  StdNotesLtr25
+SaveOptions:  
+MailOptions:  
+$FromPreferredLanguage:  ca
+ApptUNID:  4B8589C07F65C387C1257C93002F5200
+$LangChair:  
+AppointmentType:  4
+$TableSwitcher:  Description
+OnlineMeeting:  
+From:  CN=Jesus Campos/O=UPC
+AltChair:  CN=Jesus Campos/O=UPC
+OnlinePlace:  
+IsBroadcast:  0
+$ExpandGroups:  3
+IsTeamCalendar:  
+Importance:  
+OrgConfidential:  
+Subject:  Me descargo el proyecto RLG a petición de Cristina.
+StartTime:  09:30:00
+StartTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+EndTime:  09:30:00
+EndTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+PreventCounter:  
+Location:  
+RoomToReserve:  
+Resources:  
+STRecordMeeting:  
+Categories:  
+$BorderColor:  7F96A3
+$WatchedItems:  $S,$L,$B,$R,$E,$W,$O,$M,RequiredAttendees,INetRequiredNames,AltRequiredNames,StorageRequiredNames,OptionalAttendees,INetOptionalNames,AltOptionalNames,StorageOptionalNames
+CalForwardChairNotificationTo:  
+ReturnReceipt:  
+Sign:  
+Encrypt:  
+BookFreeTime:  1
+StartDate:  05/03/2014
+EndDate:  05/03/2014
+PreventDelegate:  
+EnterSendTo:  
+EnterCopyTo:  
+EnterBlindCopyTo:  
+ConferenceCallInfo:  
+SchedulerSwitcher:  1
+$Abstract:  
+$UpdatedBy:  CN=Jesus Campos/O=UPC
+
+
+
+
+$PublicAccess:  1
+Body:  
+Notes:  
+Chair:  CN=Jesus Campos/O=UPC
+Principal:  CN=Jesus Campos/O=UPC
+$altPrincipal:  CN=Jesus Campos/O=UPC
+ExcludeFromView:  D,S
+UpdateSeq:  1
+$CSVersion:  2
+$SMTPKeepNotesItems:  1
+$CSWISL:  $S:1,$L:1,$B:1,$R:1,$E:1,$W:1,$O:1,$M:1,RequiredAttendees:1,INetRequiredNames:1,AltRequiredNames:1,StorageRequiredNames:1,OptionalAttendees:1,INetOptionalNames:1,AltOptionalNames:1,StorageOptionalNames:1
+WebDateTimeInit:  1
+OrgTable:  C0
+$AlarmDisabled:  1
+$IconSwitcher:  Reminder
+$HFFlags:  1
+$Abstract:  
+Logo:  StdNotesLtr25
+$FromPreferredLanguage:  ca
+ApptUNID:  DA63DFC7AE38EDD9C1257C9700414709
+$LangChair:  
+AppointmentType:  4
+$BorderColor:  7F96A3
+$WatchedItems:  $S,$L,$B,$R,$E,$W,$O,$M,RequiredAttendees,INetRequiredNames,AltRequiredNames,StorageRequiredNames,OptionalAttendees,INetOptionalNames,AltOptionalNames,StorageOptionalNames
+$TableSwitcher:  Description
+OnlineMeeting:  
+From:  CN=Jesus Campos/O=UPC
+AltChair:  CN=Jesus Campos/O=UPC
+OnlinePlace:  
+IsBroadcast:  0
+$ExpandGroups:  3
+IsTeamCalendar:  
+CalForwardChairNotificationTo:  
+Importance:  
+ReturnReceipt:  
+Sign:  
+Encrypt:  
+OrgConfidential:  
+BookFreeTime:  1
+Subject:  MOD01: Mapear la tabla ZTIPBOS01 en el proyecto RLG. Modificación realizada el mismo día.
+PreventCounter:  
+PreventDelegate:  
+EnterSendTo:  
+EnterCopyTo:  
+EnterBlindCopyTo:  
+Location:  
+ConferenceCallInfo:  
+RoomToReserve:  
+Resources:  
+STRecordMeeting:  
+Categories:  
+SchedulerSwitcher:  1
+StartTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+EndTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+LocalTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+StartDate:  05/03/2014
+StartTime:  10:00:00
+STARTDATETIME:  05/03/2014 10:00:00
+EndDate:  05/03/2014
+EndTime:  10:00:00
+EndDateTime:  05/03/2014 10:00:00
+CalendarDateTime:  05/03/2014 10:00:00
+_ViewIcon:  10
+SequenceNum:  2
+$CSTrack:  Response_Outgoing_00416048[Charpentier] by Notes on Jesus Campos(Release 8.5.2|August 10, 2010) at 10/03/2014 12:54:04,OA(Reschedule)[Charpentier] by Notes on Jesus Campos(Release 8.5.2|August 10, 2010) at 10/03/2014 12:54:04
+$NoPurge:  05/03/2014 10:00:00
+$UpdatedBy:  CN=Jesus Campos/O=UPC
+$Revisions:  10/03/2014 12:53:43
+
+
+
+
+$PublicAccess:  1
+Body:  
+Notes:  
+Chair:  CN=Jesus Campos/O=UPC
+Principal:  CN=Jesus Campos/O=UPC
+$altPrincipal:  CN=Jesus Campos/O=UPC
+ExcludeFromView:  D,S
+SequenceNum:  1
+UpdateSeq:  1
+$CSVersion:  2
+$SMTPKeepNotesItems:  1
+$CSWISL:  $S:1,$L:1,$B:1,$R:1,$E:1,$W:1,$O:1,$M:1,RequiredAttendees:1,INetRequiredNames:1,AltRequiredNames:1,StorageRequiredNames:1,OptionalAttendees:1,INetOptionalNames:1,AltOptionalNames:1,StorageOptionalNames:1
+WebDateTimeInit:  1
+OrgTable:  C0
+$AlarmDisabled:  1
+$IconSwitcher:  Reminder
+STARTDATETIME:  06/03/2014 08:00:00
+EndDateTime:  06/03/2014 08:00:00
+CalendarDateTime:  06/03/2014 08:00:00
+$NoPurge:  06/03/2014 08:00:00
+_ViewIcon:  10
+$HFFlags:  1
+Logo:  StdNotesLtr25
+SaveOptions:  
+MailOptions:  
+$FromPreferredLanguage:  ca
+ApptUNID:  4C61582D9F4E92F6C1257C97004161C3
+$LangChair:  
+AppointmentType:  4
+$TableSwitcher:  Description
+OnlineMeeting:  
+From:  CN=Jesus Campos/O=UPC
+AltChair:  CN=Jesus Campos/O=UPC
+OnlinePlace:  
+IsBroadcast:  0
+$ExpandGroups:  3
+IsTeamCalendar:  
+Importance:  
+OrgConfidential:  
+Subject:  MOD02: Modificar la pantalla "Adm. hores extres" por "Adm. bosses d'hores".
+StartTime:  08:00:00
+StartTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+EndTime:  08:00:00
+EndTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+PreventCounter:  
+Location:  
+RoomToReserve:  
+Resources:  
+STRecordMeeting:  
+Categories:  
+$BorderColor:  7F96A3
+$WatchedItems:  $S,$L,$B,$R,$E,$W,$O,$M,RequiredAttendees,INetRequiredNames,AltRequiredNames,StorageRequiredNames,OptionalAttendees,INetOptionalNames,AltOptionalNames,StorageOptionalNames
+CalForwardChairNotificationTo:  
+ReturnReceipt:  
+Sign:  
+Encrypt:  
+BookFreeTime:  1
+StartDate:  06/03/2014
+EndDate:  06/03/2014
+PreventDelegate:  
+EnterSendTo:  
+EnterCopyTo:  
+EnterBlindCopyTo:  
+ConferenceCallInfo:  
+SchedulerSwitcher:  1
+$Abstract:  
+$UpdatedBy:  CN=Jesus Campos/O=UPC
+
+
+
+
+$PublicAccess:  1
+Body:  
+Notes:  
+Chair:  CN=Jesus Campos/O=UPC
+Principal:  CN=Jesus Campos/O=UPC
+$altPrincipal:  CN=Jesus Campos/O=UPC
+ExcludeFromView:  D,S
+SequenceNum:  1
+UpdateSeq:  1
+$CSVersion:  2
+$SMTPKeepNotesItems:  1
+$CSWISL:  $S:1,$L:1,$B:1,$R:1,$E:1,$W:1,$O:1,$M:1,RequiredAttendees:1,INetRequiredNames:1,AltRequiredNames:1,StorageRequiredNames:1,OptionalAttendees:1,INetOptionalNames:1,AltOptionalNames:1,StorageOptionalNames:1
+WebDateTimeInit:  1
+OrgTable:  C0
+$AlarmDisabled:  1
+$IconSwitcher:  Reminder
+STARTDATETIME:  10/03/2014 12:45:00
+EndDateTime:  10/03/2014 12:45:00
+CalendarDateTime:  10/03/2014 12:45:00
+$NoPurge:  10/03/2014 12:45:00
+_ViewIcon:  10
+$HFFlags:  1
+Logo:  StdNotesLtr25
+SaveOptions:  
+MailOptions:  
+$FromPreferredLanguage:  ca
+ApptUNID:  14DAEAC4C268FD29C1257C9700417F00
+$LangChair:  
+AppointmentType:  4
+$TableSwitcher:  Description
+OnlineMeeting:  
+From:  CN=Jesus Campos/O=UPC
+AltChair:  CN=Jesus Campos/O=UPC
+OnlinePlace:  
+IsBroadcast:  0
+$ExpandGroups:  3
+IsTeamCalendar:  
+Importance:  
+OrgConfidential:  
+Subject:  Finalizada la MOD02
+StartTime:  12:45:00
+StartTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+EndTime:  12:45:00
+EndTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+PreventCounter:  
+Location:  
+RoomToReserve:  
+Resources:  
+STRecordMeeting:  
+Categories:  
+$BorderColor:  7F96A3
+$WatchedItems:  $S,$L,$B,$R,$E,$W,$O,$M,RequiredAttendees,INetRequiredNames,AltRequiredNames,StorageRequiredNames,OptionalAttendees,INetOptionalNames,AltOptionalNames,StorageOptionalNames
+CalForwardChairNotificationTo:  
+ReturnReceipt:  
+Sign:  
+Encrypt:  
+BookFreeTime:  1
+StartDate:  10/03/2014
+EndDate:  10/03/2014
+PreventDelegate:  
+EnterSendTo:  
+EnterCopyTo:  
+EnterBlindCopyTo:  
+ConferenceCallInfo:  
+SchedulerSwitcher:  1
+$Abstract:  
+$UpdatedBy:  CN=Jesus Campos/O=UPC
+
+
+
+
+$PublicAccess:  1
+Body:  
+Notes:  
+Chair:  CN=Jesus Campos/O=UPC
+Principal:  CN=Jesus Campos/O=UPC
+$altPrincipal:  CN=Jesus Campos/O=UPC
+ExcludeFromView:  D,S
+SequenceNum:  1
+UpdateSeq:  1
+$CSVersion:  2
+$SMTPKeepNotesItems:  1
+$CSWISL:  $S:1,$L:1,$B:1,$R:1,$E:1,$W:1,$O:1,$M:1,RequiredAttendees:1,INetRequiredNames:1,AltRequiredNames:1,StorageRequiredNames:1,OptionalAttendees:1,INetOptionalNames:1,AltOptionalNames:1,StorageOptionalNames:1
+WebDateTimeInit:  1
+OrgTable:  C0
+$AlarmDisabled:  1
+$IconSwitcher:  Reminder
+STARTDATETIME:  11/03/2014 10:00:00
+EndDateTime:  11/03/2014 10:00:00
+CalendarDateTime:  11/03/2014 10:00:00
+$NoPurge:  11/03/2014 10:00:00
+_ViewIcon:  10
+$HFFlags:  1
+Logo:  StdNotesLtr25
+SaveOptions:  
+MailOptions:  
+$FromPreferredLanguage:  ca
+ApptUNID:  5467490A332E93D4C1257C9B002899FF
+$LangChair:  
+AppointmentType:  4
+$TableSwitcher:  Description
+OnlineMeeting:  
+From:  CN=Jesus Campos/O=UPC
+AltChair:  CN=Jesus Campos/O=UPC
+OnlinePlace:  
+IsBroadcast:  0
+$ExpandGroups:  3
+IsTeamCalendar:  
+Importance:  
+OrgConfidential:  
+Subject:  Rehacer literales de la MOD02 y cambiar la forma de funcionar de los desplegables. Básicamente llamar de manera diferente a filtreTipusBossaHores en las pantallas de Edit y Create (ahora se llama codiTipusBossesHores). Además, ccuando hay un desfer, el desplegable se iniará siempre en hores extres, y al hacer clear también.
+StartTime:  10:00:00
+StartTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+EndTime:  10:00:00
+EndTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+PreventCounter:  
+Location:  
+RoomToReserve:  
+Resources:  
+STRecordMeeting:  
+Categories:  
+$BorderColor:  7F96A3
+$WatchedItems:  $S,$L,$B,$R,$E,$W,$O,$M,RequiredAttendees,INetRequiredNames,AltRequiredNames,StorageRequiredNames,OptionalAttendees,INetOptionalNames,AltOptionalNames,StorageOptionalNames
+CalForwardChairNotificationTo:  
+ReturnReceipt:  
+Sign:  
+Encrypt:  
+BookFreeTime:  1
+StartDate:  11/03/2014
+EndDate:  11/03/2014
+PreventDelegate:  
+EnterSendTo:  
+EnterCopyTo:  
+EnterBlindCopyTo:  
+ConferenceCallInfo:  
+SchedulerSwitcher:  1
+$Abstract:  
+$UpdatedBy:  CN=Jesus Campos/O=UPC
+
+
+
+
+$PublicAccess:  1
+Body:  
+Notes:  
+Chair:  CN=Jesus Campos/O=UPC
+Principal:  CN=Jesus Campos/O=UPC
+$altPrincipal:  CN=Jesus Campos/O=UPC
+ExcludeFromView:  D,S
+SequenceNum:  1
+UpdateSeq:  1
+$CSVersion:  2
+$SMTPKeepNotesItems:  1
+$CSWISL:  $S:1,$L:1,$B:1,$R:1,$E:1,$W:1,$O:1,$M:1,RequiredAttendees:1,INetRequiredNames:1,AltRequiredNames:1,StorageRequiredNames:1,OptionalAttendees:1,INetOptionalNames:1,AltOptionalNames:1,StorageOptionalNames:1
+WebDateTimeInit:  1
+OrgTable:  C0
+$AlarmDisabled:  1
+$IconSwitcher:  Reminder
+STARTDATETIME:  12/03/2014 12:00:00
+EndDateTime:  12/03/2014 12:00:00
+CalendarDateTime:  12/03/2014 12:00:00
+$NoPurge:  12/03/2014 12:00:00
+_ViewIcon:  10
+$HFFlags:  1
+Logo:  StdNotesLtr25
+SaveOptions:  
+MailOptions:  
+$FromPreferredLanguage:  ca
+ApptUNID:  CDA3A464DB03EE0EC1257C9B00282496
+$LangChair:  
+AppointmentType:  4
+$TableSwitcher:  Description
+OnlineMeeting:  
+From:  CN=Jesus Campos/O=UPC
+AltChair:  CN=Jesus Campos/O=UPC
+OnlinePlace:  
+IsBroadcast:  0
+$ExpandGroups:  3
+IsTeamCalendar:  
+Importance:  
+OrgConfidential:  
+Subject:  MOC03: En el Racó Gestor, clonar la página Hores Extres Autoritzades y hacer que se pueda utilizar para las bolsas de horas de conciliación y cardiovascular. Acabado el mismo día. 
+StartTime:  12:00:00
+StartTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+EndTime:  12:00:00
+EndTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+PreventCounter:  
+Location:  
+RoomToReserve:  
+Resources:  
+STRecordMeeting:  
+Categories:  
+$BorderColor:  7F96A3
+$WatchedItems:  $S,$L,$B,$R,$E,$W,$O,$M,RequiredAttendees,INetRequiredNames,AltRequiredNames,StorageRequiredNames,OptionalAttendees,INetOptionalNames,AltOptionalNames,StorageOptionalNames
+CalForwardChairNotificationTo:  
+ReturnReceipt:  
+Sign:  
+Encrypt:  
+BookFreeTime:  1
+StartDate:  12/03/2014
+EndDate:  12/03/2014
+PreventDelegate:  
+EnterSendTo:  
+EnterCopyTo:  
+EnterBlindCopyTo:  
+ConferenceCallInfo:  
+SchedulerSwitcher:  1
+$Abstract:  
+$UpdatedBy:  CN=Jesus Campos/O=UPC
+
+
+
+
+$PublicAccess:  1
+Body:  
+Notes:  
+Chair:  CN=Jesus Campos/O=UPC
+Principal:  CN=Jesus Campos/O=UPC
+$altPrincipal:  CN=Jesus Campos/O=UPC
+ExcludeFromView:  D,S
+SequenceNum:  1
+UpdateSeq:  1
+$CSVersion:  2
+$SMTPKeepNotesItems:  1
+$CSWISL:  $S:1,$L:1,$B:1,$R:1,$E:1,$W:1,$O:1,$M:1,RequiredAttendees:1,INetRequiredNames:1,AltRequiredNames:1,StorageRequiredNames:1,OptionalAttendees:1,INetOptionalNames:1,AltOptionalNames:1,StorageOptionalNames:1
+WebDateTimeInit:  1
+OrgTable:  C0
+$AlarmDisabled:  1
+$IconSwitcher:  Reminder
+STARTDATETIME:  13/03/2014 08:00:00
+EndDateTime:  13/03/2014 08:00:00
+CalendarDateTime:  13/03/2014 08:00:00
+$NoPurge:  13/03/2014 08:00:00
+_ViewIcon:  10
+$HFFlags:  1
+Logo:  StdNotesLtr25
+SaveOptions:  
+MailOptions:  
+$FromPreferredLanguage:  ca
+ApptUNID:  CFE685C9BD115B59C1257C9B00285D66
+$LangChair:  
+AppointmentType:  4
+$TableSwitcher:  Description
+OnlineMeeting:  
+From:  CN=Jesus Campos/O=UPC
+AltChair:  CN=Jesus Campos/O=UPC
+OnlinePlace:  
+IsBroadcast:  0
+$ExpandGroups:  3
+IsTeamCalendar:  
+Importance:  
+OrgConfidential:  
+Subject:  Weceem: Pasar al manual los apuntes y ver de dónde viene la ruta donde se guardan los archivos en el server. Groovy closures.
+StartTime:  08:00:00
+StartTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+EndTime:  08:00:00
+EndTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+PreventCounter:  
+Location:  
+RoomToReserve:  
+Resources:  
+STRecordMeeting:  
+Categories:  
+$BorderColor:  7F96A3
+$WatchedItems:  $S,$L,$B,$R,$E,$W,$O,$M,RequiredAttendees,INetRequiredNames,AltRequiredNames,StorageRequiredNames,OptionalAttendees,INetOptionalNames,AltOptionalNames,StorageOptionalNames
+CalForwardChairNotificationTo:  
+ReturnReceipt:  
+Sign:  
+Encrypt:  
+BookFreeTime:  1
+StartDate:  13/03/2014
+EndDate:  13/03/2014
+PreventDelegate:  
+EnterSendTo:  
+EnterCopyTo:  
+EnterBlindCopyTo:  
+ConferenceCallInfo:  
+SchedulerSwitcher:  1
+$Abstract:  
+$UpdatedBy:  CN=Jesus Campos/O=UPC
+
+
+
+
+$PublicAccess:  1
+Chair:  CN=Jesus Campos/O=UPC
+Principal:  CN=Jesus Campos/O=UPC
+$altPrincipal:  CN=Jesus Campos/O=UPC
+ExcludeFromView:  D,S
+SequenceNum:  1
+$CSVersion:  2
+$SMTPKeepNotesItems:  1
+WebDateTimeInit:  1
+OrgTable:  C0
+$AlarmDisabled:  1
+$IconSwitcher:  Reminder
+STARTDATETIME:  17/03/2014 08:00:00
+EndDateTime:  17/03/2014 08:00:00
+$Abstract:  
+$WIModified:  $S
+$CSTrack:  Response_Outgoing_0024A750[Charpentier] by Notes on Jesus Campos(Release 8.5.2|August 10, 2010) at 19/03/2014 07:40:22,OA(Update)[Charpentier] by Notes on Jesus Campos(Release 8.5.2|August 10, 2010) at 19/03/2014 07:40:22
+UpdateSeq:  2
+$CSWISL:  $L:1,$B:1,$R:1,$E:1,$W:1,$O:1,$M:1,RequiredAttendees:1,INetRequiredNames:1,AltRequiredNames:1,StorageRequiredNames:1,OptionalAttendees:1,INetOptionalNames:1,AltOptionalNames:1,StorageOptionalNames:1,$S:2
+CalendarDateTime:  17/03/2014 08:00:00
+$NoPurge:  17/03/2014 08:00:00
+_ViewIcon:  10
+$HFFlags:  1
+Logo:  StdNotesLtr25
+SaveOptions:  
+MailOptions:  
+$FromPreferredLanguage:  ca
+ApptUNID:  F89982345EE8C877C1257CA00023F673
+$LangChair:  
+AppointmentType:  4
+$TableSwitcher:  Description
+OnlineMeeting:  
+From:  CN=Jesus Campos/O=UPC
+AltChair:  CN=Jesus Campos/O=UPC
+OnlinePlace:  
+IsBroadcast:  0
+$ExpandGroups:  3
+IsTeamCalendar:  
+Importance:  
+OrgConfidential:  
+Subject:  WECEEM: establecidos restricción de permisos para acceder a la web con contraseña. Establecidos niveles de visión de contenidos en el editor del CMS (persmisos) con el script en Groovy.
+StartTime:  08:00:00
+StartTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+EndTime:  08:00:00
+EndTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+PreventCounter:  
+Location:  
+RoomToReserve:  
+Resources:  
+STRecordMeeting:  
+Categories:  
+$BorderColor:  7F96A3
+$WatchedItems:  $S,$L,$B,$R,$E,$W,$O,$M,RequiredAttendees,INetRequiredNames,AltRequiredNames,StorageRequiredNames,OptionalAttendees,INetOptionalNames,AltOptionalNames,StorageOptionalNames
+CalForwardChairNotificationTo:  
+ReturnReceipt:  
+Sign:  
+Encrypt:  
+BookFreeTime:  1
+StartDate:  17/03/2014
+EndDate:  17/03/2014
+PreventDelegate:  
+EnterSendTo:  
+EnterCopyTo:  
+EnterBlindCopyTo:  
+ConferenceCallInfo:  
+SchedulerSwitcher:  1
+$UpdatedBy:  CN=Jesus Campos/O=UPC
+$Revisions:  19/03/2014 07:35:04
+
+
+
+
+
+
+$PublicAccess:  1
+Body:  
+Notes:  
+Chair:  CN=Jesus Campos/O=UPC
+Principal:  CN=Jesus Campos/O=UPC
+$altPrincipal:  CN=Jesus Campos/O=UPC
+ExcludeFromView:  D,S
+SequenceNum:  1
+UpdateSeq:  1
+$CSVersion:  2
+$SMTPKeepNotesItems:  1
+$CSWISL:  $S:1,$L:1,$B:1,$R:1,$E:1,$W:1,$O:1,$M:1,RequiredAttendees:1,INetRequiredNames:1,AltRequiredNames:1,StorageRequiredNames:1,OptionalAttendees:1,INetOptionalNames:1,AltOptionalNames:1,StorageOptionalNames:1
+WebDateTimeInit:  1
+OrgTable:  C0
+$AlarmDisabled:  1
+$IconSwitcher:  Reminder
+STARTDATETIME:  18/03/2014 08:00:00
+EndDateTime:  18/03/2014 08:00:00
+CalendarDateTime:  18/03/2014 08:00:00
+$NoPurge:  18/03/2014 08:00:00
+_ViewIcon:  10
+$HFFlags:  1
+Logo:  StdNotesLtr25
+SaveOptions:  
+MailOptions:  
+$FromPreferredLanguage:  ca
+ApptUNID:  EAA5798E5F882D88C1257CA000242D09
+$LangChair:  
+AppointmentType:  4
+$TableSwitcher:  Description
+OnlineMeeting:  
+From:  CN=Jesus Campos/O=UPC
+AltChair:  CN=Jesus Campos/O=UPC
+OnlinePlace:  
+IsBroadcast:  0
+$ExpandGroups:  3
+IsTeamCalendar:  
+Importance:  
+OrgConfidential:  
+Subject:  Finalizadas las plantillas del Weceem similares a Tempus y SIGRIS, con sesisón de ususario y entrada logeada en según qué espacios. 
+StartTime:  08:00:00
+StartTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+EndTime:  08:00:00
+EndTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+PreventCounter:  
+Location:  
+RoomToReserve:  
+Resources:  
+STRecordMeeting:  
+Categories:  
+$BorderColor:  7F96A3
+$WatchedItems:  $S,$L,$B,$R,$E,$W,$O,$M,RequiredAttendees,INetRequiredNames,AltRequiredNames,StorageRequiredNames,OptionalAttendees,INetOptionalNames,AltOptionalNames,StorageOptionalNames
+CalForwardChairNotificationTo:  
+ReturnReceipt:  
+Sign:  
+Encrypt:  
+BookFreeTime:  1
+StartDate:  18/03/2014
+EndDate:  18/03/2014
+PreventDelegate:  
+EnterSendTo:  
+EnterCopyTo:  
+EnterBlindCopyTo:  
+ConferenceCallInfo:  
+SchedulerSwitcher:  1
+$Abstract:  
+$UpdatedBy:  CN=Jesus Campos/O=UPC
+
+
+
+
+$PublicAccess:  1
+Body:  
+Notes:  
+Chair:  CN=Jesus Campos/O=UPC
+Principal:  CN=Jesus Campos/O=UPC
+$altPrincipal:  CN=Jesus Campos/O=UPC
+ExcludeFromView:  D,S
+SequenceNum:  1
+UpdateSeq:  1
+$CSVersion:  2
+$SMTPKeepNotesItems:  1
+$CSWISL:  $S:1,$L:1,$B:1,$R:1,$E:1,$W:1,$O:1,$M:1,RequiredAttendees:1,INetRequiredNames:1,AltRequiredNames:1,StorageRequiredNames:1,OptionalAttendees:1,INetOptionalNames:1,AltOptionalNames:1,StorageOptionalNames:1
+WebDateTimeInit:  1
+OrgTable:  C0
+$AlarmDisabled:  1
+$IconSwitcher:  Reminder
+STARTDATETIME:  19/03/2014 08:00:00
+EndDateTime:  19/03/2014 08:00:00
+CalendarDateTime:  19/03/2014 08:00:00
+$NoPurge:  19/03/2014 08:00:00
+_ViewIcon:  10
+$HFFlags:  1
+Logo:  StdNotesLtr25
+SaveOptions:  
+MailOptions:  
+$FromPreferredLanguage:  ca
+ApptUNID:  5D43EDC84AC2DB9AC1257CA10023BD1E
+$LangChair:  
+AppointmentType:  4
+$TableSwitcher:  Description
+OnlineMeeting:  
+From:  CN=Jesus Campos/O=UPC
+AltChair:  CN=Jesus Campos/O=UPC
+OnlinePlace:  
+IsBroadcast:  0
+$ExpandGroups:  3
+IsTeamCalendar:  
+Importance:  
+OrgConfidential:  
+Subject:  Creada una versión standalone personalizada y solucionados problemas con WcmContentController.
+StartTime:  08:00:00
+StartTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+EndTime:  08:00:00
+EndTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+PreventCounter:  
+Location:  
+RoomToReserve:  
+Resources:  
+STRecordMeeting:  
+Categories:  
+$BorderColor:  7F96A3
+$WatchedItems:  $S,$L,$B,$R,$E,$W,$O,$M,RequiredAttendees,INetRequiredNames,AltRequiredNames,StorageRequiredNames,OptionalAttendees,INetOptionalNames,AltOptionalNames,StorageOptionalNames
+CalForwardChairNotificationTo:  
+ReturnReceipt:  
+Sign:  
+Encrypt:  
+BookFreeTime:  1
+StartDate:  19/03/2014
+EndDate:  19/03/2014
+PreventDelegate:  
+EnterSendTo:  
+EnterCopyTo:  
+EnterBlindCopyTo:  
+ConferenceCallInfo:  
+SchedulerSwitcher:  1
+$Abstract:  
+$UpdatedBy:  CN=Jesus Campos/O=UPC
+
+
+
+
+$PublicAccess:  1
+Chair:  CN=Jesus Campos/O=UPC
+Principal:  CN=Jesus Campos/O=UPC
+$altPrincipal:  CN=Jesus Campos/O=UPC
+ExcludeFromView:  D,S
+SequenceNum:  1
+UpdateSeq:  1
+$CSVersion:  2
+$SMTPKeepNotesItems:  1
+$CSWISL:  $S:1,$L:1,$B:1,$R:1,$E:1,$W:1,$O:1,$M:1,RequiredAttendees:1,INetRequiredNames:1,AltRequiredNames:1,StorageRequiredNames:1,OptionalAttendees:1,INetOptionalNames:1,AltOptionalNames:1,StorageOptionalNames:1
+WebDateTimeInit:  1
+STARTDATETIME:  20/03/2014 08:00:00
+$IconSwitcher:  Meeting
+OrgTable:  C0
+$AlarmDisabled:  1
+$Abstract:  
+EndDateTime:  20/03/2014 08:00:00
+CalendarDateTime:  20/03/2014 08:00:00
+$NoPurge:  20/03/2014 08:00:00
+_ViewIcon:  10
+$HFFlags:  1
+Logo:  StdNotesLtr25
+SaveOptions:  
+MailOptions:  
+$FromPreferredLanguage:  ca
+ApptUNID:  67D58046E154E5A1C1257CA600423EA2
+$LangChair:  
+AppointmentType:  4
+$TableSwitcher:  Description
+OnlineMeeting:  
+From:  CN=Jesus Campos/O=UPC
+AltChair:  CN=Jesus Campos/O=UPC
+OnlinePlace:  
+IsBroadcast:  0
+$ExpandGroups:  3
+IsTeamCalendar:  
+Importance:  
+OrgConfidential:  
+Subject:  CMS + JS + cosas del datepicker
+StartTime:  08:00:00
+StartTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+EndTime:  08:00:00
+EndTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+PreventCounter:  
+Location:  
+RoomToReserve:  
+Resources:  
+STRecordMeeting:  
+Categories:  
+$BorderColor:  7F96A3
+$WatchedItems:  $S,$L,$B,$R,$E,$W,$O,$M,RequiredAttendees,INetRequiredNames,AltRequiredNames,StorageRequiredNames,OptionalAttendees,INetOptionalNames,AltOptionalNames,StorageOptionalNames
+CalForwardChairNotificationTo:  
+ReturnReceipt:  
+Sign:  
+Encrypt:  
+BookFreeTime:  1
+StartDate:  20/03/2014
+EndDate:  20/03/2014
+PreventDelegate:  
+EnterSendTo:  
+EnterCopyTo:  
+EnterBlindCopyTo:  
+ConferenceCallInfo:  
+SchedulerSwitcher:  1
+$UpdatedBy:  CN=Jesus Campos/O=UPC
+$Revisions:  25/03/2014 13:03:53
+
+
+
+
+
+
+$PublicAccess:  1
+Body:  
+Notes:  
+Chair:  CN=Jesus Campos/O=UPC
+Principal:  CN=Jesus Campos/O=UPC
+$altPrincipal:  CN=Jesus Campos/O=UPC
+ExcludeFromView:  D,S
+SequenceNum:  1
+UpdateSeq:  1
+$CSVersion:  2
+$SMTPKeepNotesItems:  1
+$CSWISL:  $S:1,$L:1,$B:1,$R:1,$E:1,$W:1,$O:1,$M:1,RequiredAttendees:1,INetRequiredNames:1,AltRequiredNames:1,StorageRequiredNames:1,OptionalAttendees:1,INetOptionalNames:1,AltOptionalNames:1,StorageOptionalNames:1
+WebDateTimeInit:  1
+OrgTable:  C0
+$AlarmDisabled:  1
+$IconSwitcher:  Reminder
+STARTDATETIME:  21/03/2014 08:00:00
+EndDateTime:  21/03/2014 08:00:00
+CalendarDateTime:  21/03/2014 08:00:00
+$NoPurge:  21/03/2014 08:00:00
+_ViewIcon:  10
+$HFFlags:  1
+Logo:  StdNotesLtr25
+SaveOptions:  
+MailOptions:  
+$FromPreferredLanguage:  ca
+ApptUNID:  F28934E66A29EAD6C1257CA6004231A7
+$LangChair:  
+AppointmentType:  4
+$TableSwitcher:  Description
+OnlineMeeting:  
+From:  CN=Jesus Campos/O=UPC
+AltChair:  CN=Jesus Campos/O=UPC
+OnlinePlace:  
+IsBroadcast:  0
+$ExpandGroups:  3
+IsTeamCalendar:  
+Importance:  
+OrgConfidential:  
+Subject:  Datepicker: dejarlo abierto sin que se seleccionen los días.
+StartTime:  08:00:00
+StartTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+EndTime:  08:00:00
+EndTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+PreventCounter:  
+Location:  
+RoomToReserve:  
+Resources:  
+STRecordMeeting:  
+Categories:  
+$BorderColor:  7F96A3
+$WatchedItems:  $S,$L,$B,$R,$E,$W,$O,$M,RequiredAttendees,INetRequiredNames,AltRequiredNames,StorageRequiredNames,OptionalAttendees,INetOptionalNames,AltOptionalNames,StorageOptionalNames
+CalForwardChairNotificationTo:  
+ReturnReceipt:  
+Sign:  
+Encrypt:  
+BookFreeTime:  1
+StartDate:  21/03/2014
+EndDate:  21/03/2014
+PreventDelegate:  
+EnterSendTo:  
+EnterCopyTo:  
+EnterBlindCopyTo:  
+ConferenceCallInfo:  
+SchedulerSwitcher:  1
+$Abstract:  
+$UpdatedBy:  CN=Jesus Campos/O=UPC
+
+
+
+
+$PublicAccess:  1
+Body:  
+Notes:  
+Chair:  CN=Jesus Campos/O=UPC
+Principal:  CN=Jesus Campos/O=UPC
+$altPrincipal:  CN=Jesus Campos/O=UPC
+ExcludeFromView:  D,S
+SequenceNum:  1
+UpdateSeq:  1
+$CSVersion:  2
+$SMTPKeepNotesItems:  1
+$CSWISL:  $S:1,$L:1,$B:1,$R:1,$E:1,$W:1,$O:1,$M:1,RequiredAttendees:1,INetRequiredNames:1,AltRequiredNames:1,StorageRequiredNames:1,OptionalAttendees:1,INetOptionalNames:1,AltOptionalNames:1,StorageOptionalNames:1
+WebDateTimeInit:  1
+OrgTable:  C0
+$AlarmDisabled:  1
+$IconSwitcher:  Reminder
+STARTDATETIME:  24/03/2014 08:00:00
+EndDateTime:  24/03/2014 08:00:00
+CalendarDateTime:  24/03/2014 08:00:00
+$NoPurge:  24/03/2014 08:00:00
+_ViewIcon:  10
+$HFFlags:  1
+Logo:  StdNotesLtr25
+SaveOptions:  
+MailOptions:  
+$FromPreferredLanguage:  ca
+ApptUNID:  B5A520DB7F3833D3C1257CA60042697A
+$LangChair:  
+AppointmentType:  4
+$TableSwitcher:  Description
+OnlineMeeting:  
+From:  CN=Jesus Campos/O=UPC
+AltChair:  CN=Jesus Campos/O=UPC
+OnlinePlace:  
+IsBroadcast:  0
+$ExpandGroups:  3
+IsTeamCalendar:  
+Importance:  
+OrgConfidential:  
+Subject:  Datepicker: solución alternativa con desplegable JQuery. Comienzo del ordenamiento por vector auxiliar (temporal) y que el calendario arranque en fechas marcadas o sino en la actual.
+StartTime:  08:00:00
+StartTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+EndTime:  08:00:00
+EndTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+PreventCounter:  
+Location:  
+RoomToReserve:  
+Resources:  
+STRecordMeeting:  
+Categories:  
+$BorderColor:  7F96A3
+$WatchedItems:  $S,$L,$B,$R,$E,$W,$O,$M,RequiredAttendees,INetRequiredNames,AltRequiredNames,StorageRequiredNames,OptionalAttendees,INetOptionalNames,AltOptionalNames,StorageOptionalNames
+CalForwardChairNotificationTo:  
+ReturnReceipt:  
+Sign:  
+Encrypt:  
+BookFreeTime:  1
+StartDate:  24/03/2014
+EndDate:  24/03/2014
+PreventDelegate:  
+EnterSendTo:  
+EnterCopyTo:  
+EnterBlindCopyTo:  
+ConferenceCallInfo:  
+SchedulerSwitcher:  1
+$Abstract:  
+$UpdatedBy:  CN=Jesus Campos/O=UPC
+
+
+
+
+$PublicAccess:  1
+Body:  
+Notes:  
+Chair:  CN=Jesus Campos/O=UPC
+Principal:  CN=Jesus Campos/O=UPC
+$altPrincipal:  CN=Jesus Campos/O=UPC
+ExcludeFromView:  D,S
+SequenceNum:  1
+UpdateSeq:  1
+$CSVersion:  2
+$SMTPKeepNotesItems:  1
+$CSWISL:  $S:1,$L:1,$B:1,$R:1,$E:1,$W:1,$O:1,$M:1,RequiredAttendees:1,INetRequiredNames:1,AltRequiredNames:1,StorageRequiredNames:1,OptionalAttendees:1,INetOptionalNames:1,AltOptionalNames:1,StorageOptionalNames:1
+WebDateTimeInit:  1
+OrgTable:  C0
+$AlarmDisabled:  1
+$IconSwitcher:  Reminder
+STARTDATETIME:  24/03/2014 09:00:00
+EndDateTime:  24/03/2014 09:00:00
+CalendarDateTime:  24/03/2014 09:00:00
+$NoPurge:  24/03/2014 09:00:00
+_ViewIcon:  10
+$HFFlags:  1
+Logo:  StdNotesLtr25
+SaveOptions:  
+MailOptions:  
+$FromPreferredLanguage:  ca
+ApptUNID:  A857354F73EBAA8FC1257CA60042FAFA
+$LangChair:  
+AppointmentType:  4
+$TableSwitcher:  Description
+OnlineMeeting:  
+From:  CN=Jesus Campos/O=UPC
+AltChair:  CN=Jesus Campos/O=UPC
+OnlinePlace:  
+IsBroadcast:  0
+$ExpandGroups:  3
+IsTeamCalendar:  
+Importance:  
+OrgConfidential:  
+Subject:  Logo "Promoció de la Salut".
+StartTime:  09:00:00
+StartTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+EndTime:  09:00:00
+EndTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+PreventCounter:  
+Location:  
+RoomToReserve:  
+Resources:  
+STRecordMeeting:  
+Categories:  
+$BorderColor:  7F96A3
+$WatchedItems:  $S,$L,$B,$R,$E,$W,$O,$M,RequiredAttendees,INetRequiredNames,AltRequiredNames,StorageRequiredNames,OptionalAttendees,INetOptionalNames,AltOptionalNames,StorageOptionalNames
+CalForwardChairNotificationTo:  
+ReturnReceipt:  
+Sign:  
+Encrypt:  
+BookFreeTime:  1
+StartDate:  24/03/2014
+EndDate:  24/03/2014
+PreventDelegate:  
+EnterSendTo:  
+EnterCopyTo:  
+EnterBlindCopyTo:  
+ConferenceCallInfo:  
+SchedulerSwitcher:  1
+$Abstract:  
+$UpdatedBy:  CN=Jesus Campos/O=UPC
+
+
+
+
+$PublicAccess:  1
+Body:  
+Notes:  
+Chair:  CN=Jesus Campos/O=UPC
+Principal:  CN=Jesus Campos/O=UPC
+$altPrincipal:  CN=Jesus Campos/O=UPC
+ExcludeFromView:  D,S
+SequenceNum:  1
+UpdateSeq:  1
+$CSVersion:  2
+$SMTPKeepNotesItems:  1
+$CSWISL:  $S:1,$L:1,$B:1,$R:1,$E:1,$W:1,$O:1,$M:1,RequiredAttendees:1,INetRequiredNames:1,AltRequiredNames:1,StorageRequiredNames:1,OptionalAttendees:1,INetOptionalNames:1,AltOptionalNames:1,StorageOptionalNames:1
+WebDateTimeInit:  1
+OrgTable:  C0
+$AlarmDisabled:  1
+$IconSwitcher:  Reminder
+STARTDATETIME:  25/03/2014 08:00:00
+EndDateTime:  25/03/2014 08:00:00
+CalendarDateTime:  25/03/2014 08:00:00
+$NoPurge:  25/03/2014 08:00:00
+_ViewIcon:  10
+$HFFlags:  1
+Logo:  StdNotesLtr25
+SaveOptions:  
+MailOptions:  
+$FromPreferredLanguage:  ca
+ApptUNID:  D24770485753DE70C1257CA60042826D
+$LangChair:  
+AppointmentType:  4
+$TableSwitcher:  Description
+OnlineMeeting:  
+From:  CN=Jesus Campos/O=UPC
+AltChair:  CN=Jesus Campos/O=UPC
+OnlinePlace:  
+IsBroadcast:  0
+$ExpandGroups:  3
+IsTeamCalendar:  
+Importance:  
+OrgConfidential:  
+Subject:  Adapatación del orden de fecahs, y casi solución de que queda un único día marcado.
+StartTime:  08:00:00
+StartTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+EndTime:  08:00:00
+EndTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+PreventCounter:  
+Location:  
+RoomToReserve:  
+Resources:  
+STRecordMeeting:  
+Categories:  
+$BorderColor:  7F96A3
+$WatchedItems:  $S,$L,$B,$R,$E,$W,$O,$M,RequiredAttendees,INetRequiredNames,AltRequiredNames,StorageRequiredNames,OptionalAttendees,INetOptionalNames,AltOptionalNames,StorageOptionalNames
+CalForwardChairNotificationTo:  
+ReturnReceipt:  
+Sign:  
+Encrypt:  
+BookFreeTime:  1
+StartDate:  25/03/2014
+EndDate:  25/03/2014
+PreventDelegate:  
+EnterSendTo:  
+EnterCopyTo:  
+EnterBlindCopyTo:  
+ConferenceCallInfo:  
+SchedulerSwitcher:  1
+$Abstract:  
+$UpdatedBy:  CN=Jesus Campos/O=UPC
+
+
+
+
+$PublicAccess:  1
+Body:  
+Notes:  
+Chair:  CN=Jesus Campos/O=UPC
+Principal:  CN=Jesus Campos/O=UPC
+$altPrincipal:  CN=Jesus Campos/O=UPC
+ExcludeFromView:  D,S
+SequenceNum:  1
+UpdateSeq:  1
+$CSVersion:  2
+$SMTPKeepNotesItems:  1
+$CSWISL:  $S:1,$L:1,$B:1,$R:1,$E:1,$W:1,$O:1,$M:1,RequiredAttendees:1,INetRequiredNames:1,AltRequiredNames:1,StorageRequiredNames:1,OptionalAttendees:1,INetOptionalNames:1,AltOptionalNames:1,StorageOptionalNames:1
+WebDateTimeInit:  1
+OrgTable:  C0
+$AlarmDisabled:  1
+$IconSwitcher:  Reminder
+STARTDATETIME:  25/03/2014 09:00:00
+EndDateTime:  25/03/2014 09:00:00
+CalendarDateTime:  25/03/2014 09:00:00
+$NoPurge:  25/03/2014 09:00:00
+_ViewIcon:  10
+$HFFlags:  1
+Logo:  StdNotesLtr25
+SaveOptions:  
+MailOptions:  
+$FromPreferredLanguage:  ca
+ApptUNID:  116E372B19D05D5DC1257CA600429777
+$LangChair:  
+AppointmentType:  4
+$TableSwitcher:  Description
+OnlineMeeting:  
+From:  CN=Jesus Campos/O=UPC
+AltChair:  CN=Jesus Campos/O=UPC
+OnlinePlace:  
+IsBroadcast:  0
+$ExpandGroups:  3
+IsTeamCalendar:  
+Importance:  
+OrgConfidential:  
+Subject:  CMS WECEEM.
+StartTime:  09:00:00
+StartTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+EndTime:  09:00:00
+EndTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+PreventCounter:  
+Location:  
+RoomToReserve:  
+Resources:  
+STRecordMeeting:  
+Categories:  
+$BorderColor:  7F96A3
+$WatchedItems:  $S,$L,$B,$R,$E,$W,$O,$M,RequiredAttendees,INetRequiredNames,AltRequiredNames,StorageRequiredNames,OptionalAttendees,INetOptionalNames,AltOptionalNames,StorageOptionalNames
+CalForwardChairNotificationTo:  
+ReturnReceipt:  
+Sign:  
+Encrypt:  
+BookFreeTime:  1
+StartDate:  25/03/2014
+EndDate:  25/03/2014
+PreventDelegate:  
+EnterSendTo:  
+EnterCopyTo:  
+EnterBlindCopyTo:  
+ConferenceCallInfo:  
+SchedulerSwitcher:  1
+$Abstract:  
+$UpdatedBy:  CN=Jesus Campos/O=UPC
+
+
+
+
+$PublicAccess:  1
+Notes:  
+Chair:  CN=Jesus Campos/O=UPC
+Principal:  CN=Jesus Campos/O=UPC
+$altPrincipal:  CN=Jesus Campos/O=UPC
+ExcludeFromView:  D,S
+SequenceNum:  1
+UpdateSeq:  1
+$CSVersion:  2
+$SMTPKeepNotesItems:  1
+$CSWISL:  $S:1,$L:1,$B:1,$R:1,$E:1,$W:1,$O:1,$M:1,RequiredAttendees:1,INetRequiredNames:1,AltRequiredNames:1,StorageRequiredNames:1,OptionalAttendees:1,INetOptionalNames:1,AltOptionalNames:1,StorageOptionalNames:1
+WebDateTimeInit:  1
+OrgTable:  C0
+$AlarmDisabled:  1
+$IconSwitcher:  Reminder
+STARTDATETIME:  25/03/2014 10:00:00
+EndDateTime:  25/03/2014 10:00:00
+CalendarDateTime:  25/03/2014 10:00:00
+$NoPurge:  25/03/2014 10:00:00
+_ViewIcon:  10
+$HFFlags:  1
+Logo:  StdNotesLtr25
+SaveOptions:  
+MailOptions:  
+$FromPreferredLanguage:  ca
+ApptUNID:  B43922E1C8AB15B7C1257CC200385AF3
+$LangChair:  
+AppointmentType:  4
+$TableSwitcher:  Description
+OnlineMeeting:  
+From:  CN=Jesus Campos/O=UPC
+AltChair:  CN=Jesus Campos/O=UPC
+OnlinePlace:  
+IsBroadcast:  0
+$ExpandGroups:  3
+IsTeamCalendar:  
+Importance:  
+OrgConfidential:  
+Subject:  Datepicker Mejoras
+StartTime:  10:00:00
+StartTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+EndTime:  10:00:00
+EndTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+PreventCounter:  
+Location:  
+RoomToReserve:  
+Resources:  
+STRecordMeeting:  
+Categories:  
+$BorderColor:  7F96A3
+$WatchedItems:  $S,$L,$B,$R,$E,$W,$O,$M,RequiredAttendees,INetRequiredNames,AltRequiredNames,StorageRequiredNames,OptionalAttendees,INetOptionalNames,AltOptionalNames,StorageOptionalNames
+CalForwardChairNotificationTo:  
+ReturnReceipt:  
+Sign:  
+Encrypt:  
+BookFreeTime:  1
+StartDate:  25/03/2014
+EndDate:  25/03/2014
+PreventDelegate:  
+EnterSendTo:  
+EnterCopyTo:  
+EnterBlindCopyTo:  
+ConferenceCallInfo:  
+SchedulerSwitcher:  1
+$Abstract:  Se encuentran en: - Datepicker_20140324_1420: que se inicie en una fecha determinada.
+$UpdatedBy:  CN=Jesus Campos/O=UPC
+
+
+Body:  Se encuentran en:
+- Datepicker_20140324_1420: que se inicie en una fecha determinada.
+- Datepicker_20140325_1130: insertar ordenadamente en el textbox.
+Puede ser que la función beforeShowDay se deba retocar para que al quedar 
+únicamente un día y desmarcarlo se quite su color.
+
+
+$PublicAccess:  1
+Body:  
+Notes:  
+Chair:  CN=Jesus Campos/O=UPC
+Principal:  CN=Jesus Campos/O=UPC
+$altPrincipal:  CN=Jesus Campos/O=UPC
+ExcludeFromView:  D,S
+SequenceNum:  1
+UpdateSeq:  1
+$CSVersion:  2
+$SMTPKeepNotesItems:  1
+$CSWISL:  $S:1,$L:1,$B:1,$R:1,$E:1,$W:1,$O:1,$M:1,RequiredAttendees:1,INetRequiredNames:1,AltRequiredNames:1,StorageRequiredNames:1,OptionalAttendees:1,INetOptionalNames:1,AltOptionalNames:1,StorageOptionalNames:1
+WebDateTimeInit:  1
+OrgTable:  C0
+$AlarmDisabled:  1
+$IconSwitcher:  Reminder
+STARTDATETIME:  26/03/2014 08:00:00
+EndDateTime:  26/03/2014 08:00:00
+CalendarDateTime:  26/03/2014 08:00:00
+$NoPurge:  26/03/2014 08:00:00
+_ViewIcon:  10
+$HFFlags:  1
+Logo:  StdNotesLtr25
+SaveOptions:  
+MailOptions:  
+$FromPreferredLanguage:  ca
+ApptUNID:  A5CB06F1F1AA3AF8C1257CA800414BC0
+$LangChair:  
+AppointmentType:  4
+$TableSwitcher:  Description
+OnlineMeeting:  
+From:  CN=Jesus Campos/O=UPC
+AltChair:  CN=Jesus Campos/O=UPC
+OnlinePlace:  
+IsBroadcast:  0
+$ExpandGroups:  3
+IsTeamCalendar:  
+Importance:  
+OrgConfidential:  
+Subject:  Crear una demo entera para Weceem en la que hay un spacio que redirige a varios y tiene explicaciones a cerca de la plataforma. Consta de dos menús desplegables.
+StartTime:  08:00:00
+StartTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+EndTime:  08:00:00
+EndTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+PreventCounter:  
+Location:  
+RoomToReserve:  
+Resources:  
+STRecordMeeting:  
+Categories:  
+$BorderColor:  7F96A3
+$WatchedItems:  $S,$L,$B,$R,$E,$W,$O,$M,RequiredAttendees,INetRequiredNames,AltRequiredNames,StorageRequiredNames,OptionalAttendees,INetOptionalNames,AltOptionalNames,StorageOptionalNames
+CalForwardChairNotificationTo:  
+ReturnReceipt:  
+Sign:  
+Encrypt:  
+BookFreeTime:  1
+StartDate:  26/03/2014
+EndDate:  26/03/2014
+PreventDelegate:  
+EnterSendTo:  
+EnterCopyTo:  
+EnterBlindCopyTo:  
+ConferenceCallInfo:  
+SchedulerSwitcher:  1
+$Abstract:  
+$UpdatedBy:  CN=Jesus Campos/O=UPC
+
+
+
+
+$PublicAccess:  1
+Notes:  
+Chair:  CN=Jesus Campos/O=UPC
+Principal:  CN=Jesus Campos/O=UPC
+$altPrincipal:  CN=Jesus Campos/O=UPC
+ExcludeFromView:  D,S
+SequenceNum:  1
+UpdateSeq:  1
+$CSVersion:  2
+$SMTPKeepNotesItems:  1
+$CSWISL:  $S:1,$L:1,$B:1,$R:1,$E:1,$W:1,$O:1,$M:1,RequiredAttendees:1,INetRequiredNames:1,AltRequiredNames:1,StorageRequiredNames:1,OptionalAttendees:1,INetOptionalNames:1,AltOptionalNames:1,StorageOptionalNames:1
+WebDateTimeInit:  1
+OrgTable:  C0
+$AlarmDisabled:  1
+$IconSwitcher:  Reminder
+STARTDATETIME:  26/03/2014 09:00:00
+EndDateTime:  26/03/2014 09:00:00
+CalendarDateTime:  26/03/2014 09:00:00
+$NoPurge:  26/03/2014 09:00:00
+_ViewIcon:  10
+$HFFlags:  1
+Logo:  StdNotesLtr25
+SaveOptions:  
+MailOptions:  
+$FromPreferredLanguage:  ca
+ApptUNID:  09A1C064A40C4656C1257CA800418582
+$LangChair:  
+AppointmentType:  4
+$TableSwitcher:  Description
+OnlineMeeting:  
+From:  CN=Jesus Campos/O=UPC
+AltChair:  CN=Jesus Campos/O=UPC
+OnlinePlace:  
+IsBroadcast:  0
+$ExpandGroups:  3
+IsTeamCalendar:  
+Importance:  
+OrgConfidential:  
+Subject:  MOD 05: Compilación estática
+StartTime:  09:00:00
+StartTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+EndTime:  09:00:00
+EndTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+PreventCounter:  
+Location:  
+RoomToReserve:  
+Resources:  
+STRecordMeeting:  
+Categories:  
+$BorderColor:  7F96A3
+$WatchedItems:  $S,$L,$B,$R,$E,$W,$O,$M,RequiredAttendees,INetRequiredNames,AltRequiredNames,StorageRequiredNames,OptionalAttendees,INetOptionalNames,AltOptionalNames,StorageOptionalNames
+CalForwardChairNotificationTo:  
+ReturnReceipt:  
+Sign:  
+Encrypt:  
+BookFreeTime:  1
+StartDate:  26/03/2014
+EndDate:  26/03/2014
+PreventDelegate:  
+EnterSendTo:  
+EnterCopyTo:  
+EnterBlindCopyTo:  
+ConferenceCallInfo:  
+SchedulerSwitcher:  1
+$Abstract:  Tarea a realizar a partir de mañana. Coger de la BDP algo que vaya muy lento, como podrían ser las d
+$UpdatedBy:  CN=Jesus Campos/O=UPC
+
+
+Body:  Tarea a realizar a partir de mañana.
+Coger de la BDP algo que vaya muy lento, como podrían ser las dos primeras 
+opciones. Aunque la segunda vez que se entra en ellas todo va más rápido.
+Meterlo en una aplicación nueva (copiar controlador, etc) y ver lo que 
+tarda con compilación estática.
+
+
+
+$PublicAccess:  1
+Body:  
+Notes:  
+Chair:  CN=Jesus Campos/O=UPC
+Principal:  CN=Jesus Campos/O=UPC
+$altPrincipal:  CN=Jesus Campos/O=UPC
+ExcludeFromView:  D,S
+SequenceNum:  1
+UpdateSeq:  1
+$CSVersion:  2
+$SMTPKeepNotesItems:  1
+$CSWISL:  $S:1,$L:1,$B:1,$R:1,$E:1,$W:1,$O:1,$M:1,RequiredAttendees:1,INetRequiredNames:1,AltRequiredNames:1,StorageRequiredNames:1,OptionalAttendees:1,INetOptionalNames:1,AltOptionalNames:1,StorageOptionalNames:1
+WebDateTimeInit:  1
+OrgTable:  C0
+$AlarmDisabled:  1
+Repeats:  1
+$IconSwitcher:  Reminder
+STARTDATETIME:  27/03/2014 08:00:00
+EndDateTime:  27/03/2014 08:00:00
+CalendarDateTime:  27/03/2014 08:00:00
+$NoPurge:  27/03/2014 08:00:00
+_ViewIcon:  10
+$HFFlags:  1
+Logo:  StdNotesLtr25
+SaveOptions:  
+MailOptions:  
+$FromPreferredLanguage:  ca
+ApptUNID:  74C5CF94D5873933C1257CA800413DBA
+$LangChair:  
+AppointmentType:  4
+$TableSwitcher:  Description
+OnlineMeeting:  
+From:  CN=Jesus Campos/O=UPC
+AltChair:  CN=Jesus Campos/O=UPC
+OnlinePlace:  
+IsBroadcast:  0
+$ExpandGroups:  3
+IsTeamCalendar:  
+Importance:  
+OrgConfidential:  
+Subject:  Acabada la demo Weceem para localhost y Merlot.
+StartTime:  08:00:00
+StartTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+EndTime:  08:00:00
+EndTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+PreventCounter:  
+Location:  
+RoomToReserve:  
+Resources:  
+STRecordMeeting:  
+Categories:  
+$BorderColor:  7F96A3
+$WatchedItems:  $S,$L,$B,$R,$E,$W,$O,$M,RequiredAttendees,INetRequiredNames,AltRequiredNames,StorageRequiredNames,OptionalAttendees,INetOptionalNames,AltOptionalNames,StorageOptionalNames
+CalForwardChairNotificationTo:  
+ReturnReceipt:  
+Sign:  
+Encrypt:  
+BookFreeTime:  1
+StartDate:  27/03/2014
+EndDate:  27/03/2014
+PreventDelegate:  
+EnterSendTo:  
+EnterCopyTo:  
+EnterBlindCopyTo:  
+ConferenceCallInfo:  
+SchedulerSwitcher:  1
+$Abstract:  
+$UpdatedBy:  CN=Jesus Campos/O=UPC
+
+
+
+
+$PublicAccess:  1
+Body:  
+Notes:  
+Chair:  CN=Jesus Campos/O=UPC
+Principal:  CN=Jesus Campos/O=UPC
+$altPrincipal:  CN=Jesus Campos/O=UPC
+ExcludeFromView:  D,S
+SequenceNum:  1
+UpdateSeq:  1
+$CSVersion:  2
+$SMTPKeepNotesItems:  1
+$CSWISL:  $S:1,$L:1,$B:1,$R:1,$E:1,$W:1,$O:1,$M:1,RequiredAttendees:1,INetRequiredNames:1,AltRequiredNames:1,StorageRequiredNames:1,OptionalAttendees:1,INetOptionalNames:1,AltOptionalNames:1,StorageOptionalNames:1
+WebDateTimeInit:  1
+OrgTable:  C0
+$AlarmDisabled:  1
+$IconSwitcher:  Reminder
+STARTDATETIME:  27/03/2014 09:00:00
+EndDateTime:  27/03/2014 09:00:00
+CalendarDateTime:  27/03/2014 09:00:00
+$NoPurge:  27/03/2014 09:00:00
+_ViewIcon:  10
+$HFFlags:  1
+Logo:  StdNotesLtr25
+SaveOptions:  
+MailOptions:  
+$FromPreferredLanguage:  ca
+ApptUNID:  A81172AC914C1E87C1257CA80041ED3B
+$LangChair:  
+AppointmentType:  4
+$TableSwitcher:  Description
+OnlineMeeting:  
+From:  CN=Jesus Campos/O=UPC
+AltChair:  CN=Jesus Campos/O=UPC
+OnlinePlace:  
+IsBroadcast:  0
+$ExpandGroups:  3
+IsTeamCalendar:  
+Importance:  
+OrgConfidential:  
+Subject:  Creado logo para Comunicacions IT/AC.
+StartTime:  09:00:00
+StartTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+EndTime:  09:00:00
+EndTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+PreventCounter:  
+Location:  
+RoomToReserve:  
+Resources:  
+STRecordMeeting:  
+Categories:  
+$BorderColor:  7F96A3
+$WatchedItems:  $S,$L,$B,$R,$E,$W,$O,$M,RequiredAttendees,INetRequiredNames,AltRequiredNames,StorageRequiredNames,OptionalAttendees,INetOptionalNames,AltOptionalNames,StorageOptionalNames
+CalForwardChairNotificationTo:  
+ReturnReceipt:  
+Sign:  
+Encrypt:  
+BookFreeTime:  1
+StartDate:  27/03/2014
+EndDate:  27/03/2014
+PreventDelegate:  
+EnterSendTo:  
+EnterCopyTo:  
+EnterBlindCopyTo:  
+ConferenceCallInfo:  
+SchedulerSwitcher:  1
+$Abstract:  
+$UpdatedBy:  CN=Jesus Campos/O=UPC
+
+
+
+
+$PublicAccess:  1
+Notes:  
+Chair:  CN=Jesus Campos/O=UPC
+Principal:  CN=Jesus Campos/O=UPC
+$altPrincipal:  CN=Jesus Campos/O=UPC
+ExcludeFromView:  D,S
+UpdateSeq:  1
+$CSVersion:  2
+$SMTPKeepNotesItems:  1
+$CSWISL:  $S:1,$L:1,$B:1,$R:1,$E:1,$W:1,$O:1,$M:1,RequiredAttendees:1,INetRequiredNames:1,AltRequiredNames:1,StorageRequiredNames:1,OptionalAttendees:1,INetOptionalNames:1,AltOptionalNames:1,StorageOptionalNames:1
+WebDateTimeInit:  1
+OrgTable:  C0
+$AlarmDisabled:  1
+$IconSwitcher:  Reminder
+$HFFlags:  1
+$Abstract:  Sigue fallando lo mismo que el viernes. NO reconoce la anotación, pero SÍ que compila. El problema e
+Logo:  StdNotesLtr25
+$FromPreferredLanguage:  ca
+ApptUNID:  B3708401312500B2C1257CAC003B5AAA
+$LangChair:  
+AppointmentType:  4
+$BorderColor:  7F96A3
+$WatchedItems:  $S,$L,$B,$R,$E,$W,$O,$M,RequiredAttendees,INetRequiredNames,AltRequiredNames,StorageRequiredNames,OptionalAttendees,INetOptionalNames,AltOptionalNames,StorageOptionalNames
+$TableSwitcher:  Description
+OnlineMeeting:  
+From:  CN=Jesus Campos/O=UPC
+AltChair:  CN=Jesus Campos/O=UPC
+OnlinePlace:  
+IsBroadcast:  0
+$ExpandGroups:  3
+IsTeamCalendar:  
+CalForwardChairNotificationTo:  
+Importance:  
+ReturnReceipt:  
+Sign:  
+Encrypt:  
+OrgConfidential:  
+BookFreeTime:  1
+Subject:  GrailsCompileStatic
+PreventCounter:  
+PreventDelegate:  
+EnterSendTo:  
+EnterCopyTo:  
+EnterBlindCopyTo:  
+Location:  
+ConferenceCallInfo:  
+RoomToReserve:  
+Resources:  
+STRecordMeeting:  
+Categories:  
+SchedulerSwitcher:  1
+StartTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+EndTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+LocalTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+StartDate:  31/03/2014
+StartTime:  08:00:00
+STARTDATETIME:  31/03/2014 08:00:00
+EndDate:  31/03/2014
+EndTime:  08:00:00
+EndDateTime:  31/03/2014 08:00:00
+CalendarDateTime:  31/03/2014 08:00:00
+_ViewIcon:  10
+SequenceNum:  2
+$CSTrack:  Response_Outgoing_0029DAA1[Charpentier] by Notes on Jesus Campos(Release 8.5.2|August 10, 2010) at 02/04/2014 09:37:10,OA(Reschedule)[Charpentier] by Notes on Jesus Campos(Release 8.5.2|August 10, 2010) at 02/04/2014 09:37:10
+$NoPurge:  31/03/2014 08:00:00
+$UpdatedBy:  CN=Jesus Campos/O=UPC
+$Revisions:  31/03/2014 12:51:27
+
+
+Body:  Sigue fallando lo mismo que el viernes. NO reconoce la anotación, pero SÍ 
+que compila. El problema está en que no ofrece las funcionalidades que 
+prometen, por ejemplo, para hacer un createCriteria es imposible debido a 
+que no deja definir las query's.
+
+Se ha instalado en una máquina virtual la nueva versión del GGTS pero ni 
+aún así funciona. Además el último GGTS viene con Groovy 2.1.8 y no con el 
+2.2, que es con el que funciona la versión 2.4 de Grails.
+
+
+$PublicAccess:  1
+Notes:  
+Chair:  CN=Jesus Campos/O=UPC
+Principal:  CN=Jesus Campos/O=UPC
+$altPrincipal:  CN=Jesus Campos/O=UPC
+ExcludeFromView:  D,S
+SequenceNum:  1
+UpdateSeq:  1
+$CSVersion:  2
+$SMTPKeepNotesItems:  1
+$CSWISL:  $S:1,$L:1,$B:1,$R:1,$E:1,$W:1,$O:1,$M:1,RequiredAttendees:1,INetRequiredNames:1,AltRequiredNames:1,StorageRequiredNames:1,OptionalAttendees:1,INetOptionalNames:1,AltOptionalNames:1,StorageOptionalNames:1
+WebDateTimeInit:  1
+OrgTable:  C0
+$AlarmDisabled:  1
+$IconSwitcher:  Reminder
+STARTDATETIME:  01/04/2014 13:00:00
+EndDateTime:  01/04/2014 13:00:00
+CalendarDateTime:  01/04/2014 13:00:00
+$NoPurge:  01/04/2014 13:00:00
+_ViewIcon:  10
+$HFFlags:  1
+Logo:  StdNotesLtr25
+SaveOptions:  
+MailOptions:  
+$FromPreferredLanguage:  ca
+ApptUNID:  4CB236DAA55254DDC1257CAE00296F95
+$LangChair:  
+AppointmentType:  4
+$TableSwitcher:  Description
+OnlineMeeting:  
+From:  CN=Jesus Campos/O=UPC
+AltChair:  CN=Jesus Campos/O=UPC
+OnlinePlace:  
+IsBroadcast:  0
+$ExpandGroups:  3
+IsTeamCalendar:  
+Importance:  
+OrgConfidential:  
+Subject:  MOD06: Aplicación SAL, programa de salut cardiovascular   
+StartTime:  13:00:00
+StartTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+EndTime:  13:00:00
+EndTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+PreventCounter:  
+Location:  
+RoomToReserve:  
+Resources:  
+STRecordMeeting:  
+Categories:  
+$BorderColor:  7F96A3
+$WatchedItems:  $S,$L,$B,$R,$E,$W,$O,$M,RequiredAttendees,INetRequiredNames,AltRequiredNames,StorageRequiredNames,OptionalAttendees,INetOptionalNames,AltOptionalNames,StorageOptionalNames
+CalForwardChairNotificationTo:  
+ReturnReceipt:  
+Sign:  
+Encrypt:  
+BookFreeTime:  1
+StartDate:  01/04/2014
+EndDate:  01/04/2014
+PreventDelegate:  
+EnterSendTo:  
+EnterCopyTo:  
+EnterBlindCopyTo:  
+ConferenceCallInfo:  
+SchedulerSwitcher:  1
+$Abstract:  Primero hay que hacer: -Crear una página para que un usuario se pueda dar de alta y baja a él mismo.
+$UpdatedBy:  CN=Jesus Campos/O=UPC
+
+
+Body:  Primero hay que hacer:
+-Crear una página para que un usuario se pueda dar de alta y baja a él 
+mismo.
+-Si está dado de baja o no està subscrito tiene que aparecer el botón de 
+darse de alta.
+-Si está dado de alta, debe aparecer el botón de darse de baja.
+-Si se encuentra fuera del periodo 02/05/2014 - 15/05/2014 no debe 
+aparecer ningún botón y sí un mensaje indicando que está fuera de fecha.
+
+Posteriormente habrá que hacer la parte en la que un médico (gestor), 
+puede modificar el perfil y el mail de un usuario, y también darlo de baja 
+o alta.
+
+
+$PublicAccess:  1
+Body:  
+Notes:  
+Chair:  CN=Jesus Campos/O=UPC
+Principal:  CN=Jesus Campos/O=UPC
+$altPrincipal:  CN=Jesus Campos/O=UPC
+ExcludeFromView:  D,S
+UpdateSeq:  1
+$CSVersion:  2
+$SMTPKeepNotesItems:  1
+$CSWISL:  $S:1,$L:1,$B:1,$R:1,$E:1,$W:1,$O:1,$M:1,RequiredAttendees:1,INetRequiredNames:1,AltRequiredNames:1,StorageRequiredNames:1,OptionalAttendees:1,INetOptionalNames:1,AltOptionalNames:1,StorageOptionalNames:1
+WebDateTimeInit:  1
+OrgTable:  C0
+$AlarmDisabled:  1
+$IconSwitcher:  Reminder
+$HFFlags:  1
+$Abstract:  
+Logo:  StdNotesLtr25
+$FromPreferredLanguage:  ca
+ApptUNID:  990EF1AF99A1D3C2C1257CAE002A0BD5
+$LangChair:  
+AppointmentType:  4
+$BorderColor:  7F96A3
+$WatchedItems:  $S,$L,$B,$R,$E,$W,$O,$M,RequiredAttendees,INetRequiredNames,AltRequiredNames,StorageRequiredNames,OptionalAttendees,INetOptionalNames,AltOptionalNames,StorageOptionalNames
+$TableSwitcher:  Description
+OnlineMeeting:  
+From:  CN=Jesus Campos/O=UPC
+AltChair:  CN=Jesus Campos/O=UPC
+OnlinePlace:  
+IsBroadcast:  0
+$ExpandGroups:  3
+IsTeamCalendar:  
+CalForwardChairNotificationTo:  
+Importance:  
+ReturnReceipt:  
+Sign:  
+Encrypt:  
+OrgConfidential:  
+BookFreeTime:  1
+Subject:  MOD06: al final del día ya se podía dar de alta y baja un usuario. Sólo queda por hacer que si estamos fuera de fecah no aparezca nada, sólo un mensaje.
+PreventCounter:  
+PreventDelegate:  
+EnterSendTo:  
+EnterCopyTo:  
+EnterBlindCopyTo:  
+Location:  
+ConferenceCallInfo:  
+RoomToReserve:  
+Resources:  
+STRecordMeeting:  
+Categories:  
+SchedulerSwitcher:  1
+StartTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+EndTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+LocalTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+StartDate:  01/04/2014
+StartTime:  13:30:00
+STARTDATETIME:  01/04/2014 13:30:00
+EndDate:  01/04/2014
+EndTime:  13:30:00
+EndDateTime:  01/04/2014 13:30:00
+CalendarDateTime:  01/04/2014 13:30:00
+_ViewIcon:  10
+SequenceNum:  2
+$CSTrack:  Response_Outgoing_002A2242[Charpentier] by Notes on Jesus Campos(Release 8.5.2|August 10, 2010) at 02/04/2014 09:40:14,OA(Reschedule)[Charpentier] by Notes on Jesus Campos(Release 8.5.2|August 10, 2010) at 02/04/2014 09:40:14
+$NoPurge:  01/04/2014 13:30:00
+$UpdatedBy:  CN=Jesus Campos/O=UPC
+$Revisions:  02/04/2014 09:40:02
+
+
+
+
+$PublicAccess:  1
+Notes:  
+Chair:  CN=Jesus Campos/O=UPC
+Principal:  CN=Jesus Campos/O=UPC
+$altPrincipal:  CN=Jesus Campos/O=UPC
+ExcludeFromView:  D,S
+SequenceNum:  1
+UpdateSeq:  1
+$CSVersion:  2
+$SMTPKeepNotesItems:  1
+$CSWISL:  $S:1,$L:1,$B:1,$R:1,$E:1,$W:1,$O:1,$M:1,RequiredAttendees:1,INetRequiredNames:1,AltRequiredNames:1,StorageRequiredNames:1,OptionalAttendees:1,INetOptionalNames:1,AltOptionalNames:1,StorageOptionalNames:1
+WebDateTimeInit:  1
+OrgTable:  C0
+$AlarmDisabled:  1
+$IconSwitcher:  Reminder
+STARTDATETIME:  02/04/2014 08:00:00
+EndDateTime:  02/04/2014 08:00:00
+CalendarDateTime:  02/04/2014 08:00:00
+$NoPurge:  02/04/2014 08:00:00
+_ViewIcon:  10
+$HFFlags:  1
+Logo:  StdNotesLtr25
+SaveOptions:  
+MailOptions:  
+$FromPreferredLanguage:  ca
+ApptUNID:  28553D8D41C0389FC1257CAE0029E5E7
+$LangChair:  
+AppointmentType:  4
+$TableSwitcher:  Description
+OnlineMeeting:  
+From:  CN=Jesus Campos/O=UPC
+AltChair:  CN=Jesus Campos/O=UPC
+OnlinePlace:  
+IsBroadcast:  0
+$ExpandGroups:  3
+IsTeamCalendar:  
+Importance:  
+OrgConfidential:  
+Subject:  MOD06: acabado la primera parte
+StartTime:  08:00:00
+StartTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+EndTime:  08:00:00
+EndTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+PreventCounter:  
+Location:  
+RoomToReserve:  
+Resources:  
+STRecordMeeting:  
+Categories:  
+$BorderColor:  7F96A3
+$WatchedItems:  $S,$L,$B,$R,$E,$W,$O,$M,RequiredAttendees,INetRequiredNames,AltRequiredNames,StorageRequiredNames,OptionalAttendees,INetOptionalNames,AltOptionalNames,StorageOptionalNames
+CalForwardChairNotificationTo:  
+ReturnReceipt:  
+Sign:  
+Encrypt:  
+BookFreeTime:  1
+StartDate:  02/04/2014
+EndDate:  02/04/2014
+PreventDelegate:  
+EnterSendTo:  
+EnterCopyTo:  
+EnterBlindCopyTo:  
+ConferenceCallInfo:  
+SchedulerSwitcher:  1
+$Abstract:  Finalizado a las 09:30 Se ha subido al subversion InscripcioController y su list correspondiente.
+$UpdatedBy:  CN=Jesus Campos/O=UPC
+
+
+Body:  Finalizado a las 09:30
+Se ha subido al subversion InscripcioController y su list correspondiente.
+También se ha creado el war test y se ha subido a melnik.
+
+
+$PublicAccess:  1
+Notes:  
+Chair:  CN=Jesus Campos/O=UPC
+Principal:  CN=Jesus Campos/O=UPC
+$altPrincipal:  CN=Jesus Campos/O=UPC
+ExcludeFromView:  D,S
+SequenceNum:  1
+UpdateSeq:  1
+$CSVersion:  2
+$SMTPKeepNotesItems:  1
+$CSWISL:  $S:1,$L:1,$B:1,$R:1,$E:1,$W:1,$O:1,$M:1,RequiredAttendees:1,INetRequiredNames:1,AltRequiredNames:1,StorageRequiredNames:1,OptionalAttendees:1,INetOptionalNames:1,AltOptionalNames:1,StorageOptionalNames:1
+WebDateTimeInit:  1
+OrgTable:  C0
+$AlarmDisabled:  1
+$IconSwitcher:  Reminder
+STARTDATETIME:  02/04/2014 09:00:00
+EndDateTime:  02/04/2014 09:00:00
+CalendarDateTime:  02/04/2014 09:00:00
+$NoPurge:  02/04/2014 09:00:00
+_ViewIcon:  10
+$HFFlags:  1
+Logo:  StdNotesLtr25
+SaveOptions:  
+MailOptions:  
+$FromPreferredLanguage:  ca
+ApptUNID:  31367F744C972E18C1257CAE002DEBC2
+$LangChair:  
+AppointmentType:  4
+$TableSwitcher:  Description
+OnlineMeeting:  
+From:  CN=Jesus Campos/O=UPC
+AltChair:  CN=Jesus Campos/O=UPC
+OnlinePlace:  
+IsBroadcast:  0
+$ExpandGroups:  3
+IsTeamCalendar:  
+Importance:  
+OrgConfidential:  
+Subject:  MOD06: cambios en seguridad
+StartTime:  09:00:00
+StartTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+EndTime:  09:00:00
+EndTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+PreventCounter:  
+Location:  
+RoomToReserve:  
+Resources:  
+STRecordMeeting:  
+Categories:  
+$BorderColor:  7F96A3
+$WatchedItems:  $S,$L,$B,$R,$E,$W,$O,$M,RequiredAttendees,INetRequiredNames,AltRequiredNames,StorageRequiredNames,OptionalAttendees,INetOptionalNames,AltOptionalNames,StorageOptionalNames
+CalForwardChairNotificationTo:  
+ReturnReceipt:  
+Sign:  
+Encrypt:  
+BookFreeTime:  1
+StartDate:  02/04/2014
+EndDate:  02/04/2014
+PreventDelegate:  
+EnterSendTo:  
+EnterCopyTo:  
+EnterBlindCopyTo:  
+ConferenceCallInfo:  
+SchedulerSwitcher:  1
+$Abstract:  La forma en que se conseguía el id del usuario no era la adecuada porque podían haber problemas de s
+$UpdatedBy:  CN=Jesus Campos/O=UPC
+
+
+Body:  La forma en que se conseguía el id del usuario no era la adecuada porque 
+podían haber problemas de seguridad. Si alguien pasa por la línea del 
+navegador un id de otra persona, se podrían modificar los datos de alguien 
+que no fuese el usuario que ha entrado.
+Para lograrlo se jecuta this.doSecurityCheck(), que realiza una consulta a 
+la bd y consigue el id real. Y luego con this.getRealId conseguimos el 
+pernr.
+
+
+$PublicAccess:  1
+Body:  
+Notes:  
+Chair:  CN=Jesus Campos/O=UPC
+Principal:  CN=Jesus Campos/O=UPC
+$altPrincipal:  CN=Jesus Campos/O=UPC
+ExcludeFromView:  D,S
+SequenceNum:  1
+UpdateSeq:  1
+$CSVersion:  2
+$SMTPKeepNotesItems:  1
+$CSWISL:  $S:1,$L:1,$B:1,$R:1,$E:1,$W:1,$O:1,$M:1,RequiredAttendees:1,INetRequiredNames:1,AltRequiredNames:1,StorageRequiredNames:1,OptionalAttendees:1,INetOptionalNames:1,AltOptionalNames:1,StorageOptionalNames:1
+WebDateTimeInit:  1
+OrgTable:  C0
+$AlarmDisabled:  1
+$IconSwitcher:  Reminder
+STARTDATETIME:  02/04/2014 11:00:00
+EndDateTime:  02/04/2014 11:00:00
+CalendarDateTime:  02/04/2014 11:00:00
+$NoPurge:  02/04/2014 11:00:00
+_ViewIcon:  10
+$HFFlags:  1
+Logo:  StdNotesLtr25
+SaveOptions:  
+MailOptions:  
+$FromPreferredLanguage:  ca
+ApptUNID:  0B85C23D3BC938BFC1257CAF001EE79C
+$LangChair:  
+AppointmentType:  4
+$TableSwitcher:  Description
+OnlineMeeting:  
+From:  CN=Jesus Campos/O=UPC
+AltChair:  CN=Jesus Campos/O=UPC
+OnlinePlace:  
+IsBroadcast:  0
+$ExpandGroups:  3
+IsTeamCalendar:  
+Importance:  
+OrgConfidential:  
+Subject:  MOD06: Comienzo de la parte del Gestor.
+StartTime:  11:00:00
+StartTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+EndTime:  11:00:00
+EndTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+PreventCounter:  
+Location:  
+RoomToReserve:  
+Resources:  
+STRecordMeeting:  
+Categories:  
+$BorderColor:  7F96A3
+$WatchedItems:  $S,$L,$B,$R,$E,$W,$O,$M,RequiredAttendees,INetRequiredNames,AltRequiredNames,StorageRequiredNames,OptionalAttendees,INetOptionalNames,AltOptionalNames,StorageOptionalNames
+CalForwardChairNotificationTo:  
+ReturnReceipt:  
+Sign:  
+Encrypt:  
+BookFreeTime:  1
+StartDate:  02/04/2014
+EndDate:  02/04/2014
+PreventDelegate:  
+EnterSendTo:  
+EnterCopyTo:  
+EnterBlindCopyTo:  
+ConferenceCallInfo:  
+SchedulerSwitcher:  1
+$Abstract:  
+$UpdatedBy:  CN=Jesus Campos/O=UPC
+
+
+
+
+$PublicAccess:  1
+Notes:  
+Chair:  CN=Jesus Campos/O=UPC
+Principal:  CN=Jesus Campos/O=UPC
+$altPrincipal:  CN=Jesus Campos/O=UPC
+ExcludeFromView:  D,S
+SequenceNum:  1
+UpdateSeq:  1
+$CSVersion:  2
+$SMTPKeepNotesItems:  1
+$CSWISL:  $S:1,$L:1,$B:1,$R:1,$E:1,$W:1,$O:1,$M:1,RequiredAttendees:1,INetRequiredNames:1,AltRequiredNames:1,StorageRequiredNames:1,OptionalAttendees:1,INetOptionalNames:1,AltOptionalNames:1,StorageOptionalNames:1
+WebDateTimeInit:  1
+OrgTable:  C0
+$AlarmDisabled:  1
+$IconSwitcher:  Reminder
+STARTDATETIME:  03/04/2014 11:00:00
+EndDateTime:  03/04/2014 11:00:00
+CalendarDateTime:  03/04/2014 11:00:00
+$NoPurge:  03/04/2014 11:00:00
+_ViewIcon:  10
+$HFFlags:  1
+Logo:  StdNotesLtr25
+SaveOptions:  
+MailOptions:  
+$FromPreferredLanguage:  ca
+ApptUNID:  88EF9EA4053B1F20C1257CB00023F1C8
+$LangChair:  
+AppointmentType:  4
+$TableSwitcher:  Description
+OnlineMeeting:  
+From:  CN=Jesus Campos/O=UPC
+AltChair:  CN=Jesus Campos/O=UPC
+OnlinePlace:  
+IsBroadcast:  0
+$ExpandGroups:  3
+IsTeamCalendar:  
+Importance:  
+OrgConfidential:  
+Subject:  MOD06: Trabajo hecho hasta el día de hoy.
+StartTime:  11:00:00
+StartTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+EndTime:  11:00:00
+EndTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+PreventCounter:  
+Location:  
+RoomToReserve:  
+Resources:  
+STRecordMeeting:  
+Categories:  
+$BorderColor:  7F96A3
+$WatchedItems:  $S,$L,$B,$R,$E,$W,$O,$M,RequiredAttendees,INetRequiredNames,AltRequiredNames,StorageRequiredNames,OptionalAttendees,INetOptionalNames,AltOptionalNames,StorageOptionalNames
+CalForwardChairNotificationTo:  
+ReturnReceipt:  
+Sign:  
+Encrypt:  
+BookFreeTime:  1
+StartDate:  03/04/2014
+EndDate:  03/04/2014
+PreventDelegate:  
+EnterSendTo:  
+EnterCopyTo:  
+EnterBlindCopyTo:  
+ConferenceCallInfo:  
+SchedulerSwitcher:  1
+$Abstract:  Se muestran los usuarios inscritos (eso es desde el primer día) Se puede editar un usuario y guardar
+$UpdatedBy:  CN=Jesus Campos/O=UPC
+
+
+Body:  Se muestran los usuarios inscritos (eso es desde el primer día)
+Se puede editar un usuario y guardarlo correctamente: pantalla edit y el 
+def save (faltan cosas como el correo)
+Complicaciones:
+-Pantalla de edit, la tabla se iluminaba en azul al poner el ratón encima 
+(hover). No estaba el .noBackground en StyleHelper.css
+-En el momento de guardar (actualizar) se estaba guardando la descripción 
+en lugar del código en el perfil, entonces alqueres guardar un texto de 
+más de dos caracteres en uno de dos no funcionaba.
+
+
+
+$PublicAccess:  1
+Notes:  
+Chair:  CN=Jesus Campos/O=UPC
+Principal:  CN=Jesus Campos/O=UPC
+$altPrincipal:  CN=Jesus Campos/O=UPC
+ExcludeFromView:  D,S
+SequenceNum:  1
+UpdateSeq:  1
+$CSVersion:  2
+$SMTPKeepNotesItems:  1
+$CSWISL:  $S:1,$L:1,$B:1,$R:1,$E:1,$W:1,$O:1,$M:1,RequiredAttendees:1,INetRequiredNames:1,AltRequiredNames:1,StorageRequiredNames:1,OptionalAttendees:1,INetOptionalNames:1,AltOptionalNames:1,StorageOptionalNames:1
+WebDateTimeInit:  1
+OrgTable:  C0
+$AlarmDisabled:  1
+$IconSwitcher:  Reminder
+STARTDATETIME:  04/04/2014 08:00:00
+EndDateTime:  04/04/2014 08:00:00
+CalendarDateTime:  04/04/2014 08:00:00
+$NoPurge:  04/04/2014 08:00:00
+_ViewIcon:  10
+$HFFlags:  1
+Logo:  StdNotesLtr25
+SaveOptions:  
+MailOptions:  
+$FromPreferredLanguage:  ca
+ApptUNID:  99B1C2AF79D928B1C1257CB000244760
+$LangChair:  
+AppointmentType:  4
+$TableSwitcher:  Description
+OnlineMeeting:  
+From:  CN=Jesus Campos/O=UPC
+AltChair:  CN=Jesus Campos/O=UPC
+OnlinePlace:  
+IsBroadcast:  0
+$ExpandGroups:  3
+IsTeamCalendar:  
+Importance:  
+OrgConfidential:  
+Subject:  MOD06: Trabajo hecho hasta el día de hoy.
+StartTime:  08:00:00
+StartTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+EndTime:  08:00:00
+EndTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+PreventCounter:  
+Location:  
+RoomToReserve:  
+Resources:  
+STRecordMeeting:  
+Categories:  
+$BorderColor:  7F96A3
+$WatchedItems:  $S,$L,$B,$R,$E,$W,$O,$M,RequiredAttendees,INetRequiredNames,AltRequiredNames,StorageRequiredNames,OptionalAttendees,INetOptionalNames,AltOptionalNames,StorageOptionalNames
+CalForwardChairNotificationTo:  
+ReturnReceipt:  
+Sign:  
+Encrypt:  
+BookFreeTime:  1
+StartDate:  04/04/2014
+EndDate:  04/04/2014
+PreventDelegate:  
+EnterSendTo:  
+EnterCopyTo:  
+EnterBlindCopyTo:  
+ConferenceCallInfo:  
+SchedulerSwitcher:  1
+$Abstract:  Se consigue hacer el método de borrar (delete), rápido. Se detecta que en Tempus permís dies está he
+$UpdatedBy:  CN=Jesus Campos/O=UPC
+
+
+Body:  Se consigue hacer el método de borrar (delete), rápido.
+Se detecta que en Tempus permís dies está hecho lo del mail.
+
+
+$PublicAccess:  1
+Chair:  CN=Jesus Campos/O=UPC
+Principal:  CN=Jesus Campos/O=UPC
+$altPrincipal:  CN=Jesus Campos/O=UPC
+ExcludeFromView:  D,S
+SequenceNum:  1
+$CSVersion:  2
+$SMTPKeepNotesItems:  1
+WebDateTimeInit:  1
+OrgTable:  C0
+$AlarmDisabled:  1
+$IconSwitcher:  Reminder
+STARTDATETIME:  04/04/2014 09:00:00
+EndDateTime:  04/04/2014 09:00:00
+$Abstract:  El botón con forma de disket se llamará grabar. En la pantalla de edición/creación se mostrará códig
+$WIModified:  $B
+$CSTrack:  Response_Outgoing_002B8A46[Charpentier] by Notes on Jesus Campos(Release 8.5.2|August 10, 2010) at 04/04/2014 09:55:35,OA(Update)[Charpentier] by Notes on Jesus Campos(Release 8.5.2|August 10, 2010) at 04/04/2014 09:55:35
+UpdateSeq:  2
+$CSWISL:  $S:1,$L:1,$R:1,$E:1,$W:1,$O:1,$M:1,RequiredAttendees:1,INetRequiredNames:1,AltRequiredNames:1,StorageRequiredNames:1,OptionalAttendees:1,INetOptionalNames:1,AltOptionalNames:1,StorageOptionalNames:1,$B:2
+CalendarDateTime:  04/04/2014 09:00:00
+$NoPurge:  04/04/2014 09:00:00
+_ViewIcon:  10
+$HFFlags:  1
+Logo:  StdNotesLtr25
+SaveOptions:  
+MailOptions:  
+$FromPreferredLanguage:  ca
+ApptUNID:  AF3F4AC7F89BE47EC1257CB0002A9C92
+$LangChair:  
+AppointmentType:  4
+$TableSwitcher:  Description
+OnlineMeeting:  
+From:  CN=Jesus Campos/O=UPC
+AltChair:  CN=Jesus Campos/O=UPC
+OnlinePlace:  
+IsBroadcast:  0
+$ExpandGroups:  3
+IsTeamCalendar:  
+Importance:  
+OrgConfidential:  
+Subject:  MOD06: Cambios en el diseño  
+StartTime:  09:00:00
+StartTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+EndTime:  09:00:00
+EndTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+PreventCounter:  
+Location:  
+RoomToReserve:  
+Resources:  
+STRecordMeeting:  
+Categories:  
+$BorderColor:  7F96A3
+$WatchedItems:  $S,$L,$B,$R,$E,$W,$O,$M,RequiredAttendees,INetRequiredNames,AltRequiredNames,StorageRequiredNames,OptionalAttendees,INetOptionalNames,AltOptionalNames,StorageOptionalNames
+CalForwardChairNotificationTo:  
+ReturnReceipt:  
+Sign:  
+Encrypt:  
+BookFreeTime:  1
+StartDate:  04/04/2014
+EndDate:  04/04/2014
+PreventDelegate:  
+EnterSendTo:  
+EnterCopyTo:  
+EnterBlindCopyTo:  
+ConferenceCallInfo:  
+SchedulerSwitcher:  1
+$UpdatedBy:  CN=Jesus Campos/O=UPC
+$Revisions:  04/04/2014 09:48:09
+
+
+Body:  El botón con forma de disket se llamará grabar. En la pantalla de edición/
+creación se mostrará código y descripción del campus y del área personal.
+La opción "Nova subscripció" debe ser una nueva opción del menú.
+Ahora el menú tiene tres opciones:
+-Gestió de subscripcions ...
+-Creació manual de subscripcions al programa ...
+-Perfils
+En las tablas, el perfil debe aparecer como descripción.
+
+
+
+$PublicAccess:  1
+Chair:  CN=Jesus Campos/O=UPC
+Principal:  CN=Jesus Campos/O=UPC
+$altPrincipal:  CN=Jesus Campos/O=UPC
+ExcludeFromView:  D,S
+SequenceNum:  1
+$CSVersion:  2
+$SMTPKeepNotesItems:  1
+WebDateTimeInit:  1
+OrgTable:  C0
+$AlarmDisabled:  1
+$IconSwitcher:  Reminder
+$Abstract:  14:05 Un médico ya podría dar de alta a un usuario.
+$WIModified:  $S
+STARTDATETIME:  04/04/2014 12:15:00
+EndDateTime:  04/04/2014 12:15:00
+$CSTrack:  Response_Outgoing_0042EB54[Charpentier] by Notes on Jesus Campos(Release 8.5.2|August 10, 2010) at 04/04/2014 14:10:56,OA(Update)[Charpentier] by Notes on Jesus Campos(Release 8.5.2|August 10, 2010) at 04/04/2014 14:10:56
+UpdateSeq:  2
+$CSWISL:  $L:1,$B:1,$R:1,$E:1,$W:1,$O:1,$M:1,RequiredAttendees:1,INetRequiredNames:1,AltRequiredNames:1,StorageRequiredNames:1,OptionalAttendees:1,INetOptionalNames:1,AltOptionalNames:1,StorageOptionalNames:1,$S:2
+CalendarDateTime:  04/04/2014 12:15:00
+$NoPurge:  04/04/2014 12:15:00
+_ViewIcon:  10
+$HFFlags:  1
+Logo:  StdNotesLtr25
+SaveOptions:  
+MailOptions:  
+$FromPreferredLanguage:  ca
+ApptUNID:  B94367B9EBCCEC4CC1257CB00042A3E7
+$LangChair:  
+AppointmentType:  4
+$TableSwitcher:  Description
+OnlineMeeting:  
+From:  CN=Jesus Campos/O=UPC
+AltChair:  CN=Jesus Campos/O=UPC
+OnlinePlace:  
+IsBroadcast:  0
+$ExpandGroups:  3
+IsTeamCalendar:  
+Importance:  
+OrgConfidential:  
+Subject:  MOD06: ESTADO DEL PROYECTO
+StartTime:  12:15:00
+StartTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+EndTime:  12:15:00
+EndTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+PreventCounter:  
+Location:  
+RoomToReserve:  
+Resources:  
+STRecordMeeting:  
+Categories:  
+$BorderColor:  7F96A3
+$WatchedItems:  $S,$L,$B,$R,$E,$W,$O,$M,RequiredAttendees,INetRequiredNames,AltRequiredNames,StorageRequiredNames,OptionalAttendees,INetOptionalNames,AltOptionalNames,StorageOptionalNames
+CalForwardChairNotificationTo:  
+ReturnReceipt:  
+Sign:  
+Encrypt:  
+BookFreeTime:  1
+StartDate:  04/04/2014
+EndDate:  04/04/2014
+PreventDelegate:  
+EnterSendTo:  
+EnterCopyTo:  
+EnterBlindCopyTo:  
+ConferenceCallInfo:  
+SchedulerSwitcher:  1
+$UpdatedBy:  CN=Jesus Campos/O=UPC
+$Revisions:  04/04/2014 14:10:19
+
+
+Body:  14:05
+Un médico ya podría dar de alta a un usuario.
+Se controla que el usuario no esté en la tabal de cardio.
+También se controla, que una vez que se le quiere dar de alta y se editan 
+sus datos, di durante ese tiempo, alguien ha introducido al usuario, nos 
+informa que está dado de alta y no lo modifica.
+El periodo de validez afecta a los médicos también, pudiendo ser 
+diferentes periodos para usuarios y médicos.
+Queda por hacer únicamente lo de enviar el mail.
+
+
+
+$PublicAccess:  1
+Chair:  CN=Jesus Campos/O=UPC
+Principal:  CN=Jesus Campos/O=UPC
+$altPrincipal:  CN=Jesus Campos/O=UPC
+ExcludeFromView:  D,S
+SequenceNum:  1
+$CSVersion:  2
+$SMTPKeepNotesItems:  1
+WebDateTimeInit:  1
+OrgTable:  C0
+$AlarmDisabled:  1
+$IconSwitcher:  Reminder
+STARTDATETIME:  07/04/2014 09:00:00
+EndDateTime:  07/04/2014 09:00:00
+$Abstract:  9:00 Acabado.
+$WIModified:  $B
+$CSTrack:  Response_Outgoing_0027B8D9[Charpentier] by Notes on Jesus Campos(Release 8.5.2|August 10, 2010) at 07/04/2014 09:13:53,OA(Update)[Charpentier] by Notes on Jesus Campos(Release 8.5.2|August 10, 2010) at 07/04/2014 09:13:53
+UpdateSeq:  2
+$CSWISL:  $S:1,$L:1,$R:1,$E:1,$W:1,$O:1,$M:1,RequiredAttendees:1,INetRequiredNames:1,AltRequiredNames:1,StorageRequiredNames:1,OptionalAttendees:1,INetOptionalNames:1,AltOptionalNames:1,StorageOptionalNames:1,$B:2
+CalendarDateTime:  07/04/2014 09:00:00
+$NoPurge:  07/04/2014 09:00:00
+_ViewIcon:  10
+$HFFlags:  1
+Logo:  StdNotesLtr25
+SaveOptions:  
+MailOptions:  
+$FromPreferredLanguage:  ca
+ApptUNID:  222DF9323ABE63BFC1257CB300272F7C
+$LangChair:  
+AppointmentType:  4
+$TableSwitcher:  Description
+OnlineMeeting:  
+From:  CN=Jesus Campos/O=UPC
+AltChair:  CN=Jesus Campos/O=UPC
+OnlinePlace:  
+IsBroadcast:  0
+$ExpandGroups:  3
+IsTeamCalendar:  
+Importance:  
+OrgConfidential:  
+Subject:  MOD06: Estado
+StartTime:  09:00:00
+StartTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+EndTime:  09:00:00
+EndTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+PreventCounter:  
+Location:  
+RoomToReserve:  
+Resources:  
+STRecordMeeting:  
+Categories:  
+$BorderColor:  7F96A3
+$WatchedItems:  $S,$L,$B,$R,$E,$W,$O,$M,RequiredAttendees,INetRequiredNames,AltRequiredNames,StorageRequiredNames,OptionalAttendees,INetOptionalNames,AltOptionalNames,StorageOptionalNames
+CalForwardChairNotificationTo:  
+ReturnReceipt:  
+Sign:  
+Encrypt:  
+BookFreeTime:  1
+StartDate:  07/04/2014
+EndDate:  07/04/2014
+PreventDelegate:  
+EnterSendTo:  
+EnterCopyTo:  
+EnterBlindCopyTo:  
+ConferenceCallInfo:  
+SchedulerSwitcher:  1
+$UpdatedBy:  CN=Jesus Campos/O=UPC
+$Revisions:  07/04/2014 09:12:44
+
+
+Body:  9:00
+Acabado.
+Ahora se envían emails a jesus.campos@upc.edu
+Se ha modificado (además de las páginas GSP y controladores):
+- styleHelper (webapps/css): para poder tener el fondo blanco en las 
+pantallas edit/create.
+- Perfil.groovy (domain): para poder traducir el código de cada usuario 
+del perfil a su descripción.
+Subido a melnik.
+A los médicos no les debe afectar el periodo de subscripción.
+
+
+
+$PublicAccess:  1
+Chair:  CN=Jesus Campos/O=UPC
+Principal:  CN=Jesus Campos/O=UPC
+$altPrincipal:  CN=Jesus Campos/O=UPC
+ExcludeFromView:  D,S
+SequenceNum:  1
+$CSVersion:  2
+$SMTPKeepNotesItems:  1
+WebDateTimeInit:  1
+OrgTable:  C0
+$AlarmDisabled:  1
+$IconSwitcher:  Reminder
+STARTDATETIME:  07/04/2014 10:00:00
+EndDateTime:  07/04/2014 10:00:00
+$Abstract:  Se elimina el PERNR de las páginas de edició y creación. DNI, 1er cognom, 2on cognom i nom se pasan
+$CSTrack:  Response_Outgoing_002BEBA9[Charpentier] by Notes on Jesus Campos(Release 8.5.2|August 10, 2010) at 07/04/2014 09:59:44,OA(Update)[Charpentier] by Notes on Jesus Campos(Release 8.5.2|August 10, 2010) at 07/04/2014 09:59:44,Response_Outgoing_0030F152[Charpentier] by Notes on Jesus Campos(Release 8.5.2|August 10, 2010) at 07/04/2014 10:54:36,OA(Update)[Charpentier] by Notes on Jesus Campos(Release 8.5.2|August 10, 2010) at 07/04/2014 10:54:36
+$WIModified:  $B
+UpdateSeq:  3
+$CSWISL:  $S:1,$L:1,$R:1,$E:1,$W:1,$O:1,$M:1,RequiredAttendees:1,INetRequiredNames:1,AltRequiredNames:1,StorageRequiredNames:1,OptionalAttendees:1,INetOptionalNames:1,AltOptionalNames:1,StorageOptionalNames:1,$B:3
+CalendarDateTime:  07/04/2014 10:00:00
+$NoPurge:  07/04/2014 10:00:00
+_ViewIcon:  10
+$HFFlags:  1
+Logo:  StdNotesLtr25
+SaveOptions:  
+MailOptions:  
+$FromPreferredLanguage:  ca
+ApptUNID:  C1E3D13B11024196C1257CB3002B363A
+$LangChair:  
+AppointmentType:  4
+$TableSwitcher:  Description
+OnlineMeeting:  
+From:  CN=Jesus Campos/O=UPC
+AltChair:  CN=Jesus Campos/O=UPC
+OnlinePlace:  
+IsBroadcast:  0
+$ExpandGroups:  3
+IsTeamCalendar:  
+Importance:  
+OrgConfidential:  
+Subject:  MOD06: Cambios
+StartTime:  10:00:00
+StartTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+EndTime:  10:00:00
+EndTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+PreventCounter:  
+Location:  
+RoomToReserve:  
+Resources:  
+STRecordMeeting:  
+Categories:  
+$BorderColor:  7F96A3
+$WatchedItems:  $S,$L,$B,$R,$E,$W,$O,$M,RequiredAttendees,INetRequiredNames,AltRequiredNames,StorageRequiredNames,OptionalAttendees,INetOptionalNames,AltOptionalNames,StorageOptionalNames
+CalForwardChairNotificationTo:  
+ReturnReceipt:  
+Sign:  
+Encrypt:  
+BookFreeTime:  1
+StartDate:  07/04/2014
+EndDate:  07/04/2014
+PreventDelegate:  
+EnterSendTo:  
+EnterCopyTo:  
+EnterBlindCopyTo:  
+ConferenceCallInfo:  
+SchedulerSwitcher:  1
+$UpdatedBy:  CN=Jesus Campos/O=UPC
+$Revisions:  07/04/2014 09:56:42,07/04/2014 09:59:44
+
+
+Body:  Se elimina el PERNR de las páginas de edició y creación.(hecho)
+DNI, 1er cognom, 2on cognom i nom se pasan a la primera posición y a la 
+fecha se le elimina la hora. (hecho)
+Gravar se cambia por Actualitzar. (hecho)
+A los médicos no les afecta la fecha. (ya estaba hecho)
+Quitar el manual NO va a haber manual.(hecho: se ha eliminado de todos los 
+layouts)
+En  unos sitios pone programa de salut cardiovascular y en otros no, 
+igualar a programa de salut cardiovascular.(hecho)
+Eliminar el accioclick de las pantallas edit/creacio para no mantener 
+basurilla. (hecho)
+
+
+
+$PublicAccess:  1
+Notes:  
+Chair:  CN=Jesus Campos/O=UPC
+Principal:  CN=Jesus Campos/O=UPC
+$altPrincipal:  CN=Jesus Campos/O=UPC
+ExcludeFromView:  D,S
+SequenceNum:  1
+UpdateSeq:  1
+$CSVersion:  2
+$SMTPKeepNotesItems:  1
+$CSWISL:  $S:1,$L:1,$B:1,$R:1,$E:1,$W:1,$O:1,$M:1,RequiredAttendees:1,INetRequiredNames:1,AltRequiredNames:1,StorageRequiredNames:1,OptionalAttendees:1,INetOptionalNames:1,AltOptionalNames:1,StorageOptionalNames:1
+WebDateTimeInit:  1
+OrgTable:  C0
+$AlarmDisabled:  1
+$IconSwitcher:  Reminder
+STARTDATETIME:  08/04/2014 09:00:00
+EndDateTime:  08/04/2014 09:00:00
+CalendarDateTime:  08/04/2014 09:00:00
+$NoPurge:  08/04/2014 09:00:00
+_ViewIcon:  10
+$HFFlags:  1
+Logo:  StdNotesLtr25
+SaveOptions:  
+MailOptions:  
+$FromPreferredLanguage:  ca
+ApptUNID:  94F48D2D40F732BCC1257CB6001EDB45
+$LangChair:  
+AppointmentType:  4
+$TableSwitcher:  Description
+OnlineMeeting:  
+From:  CN=Jesus Campos/O=UPC
+AltChair:  CN=Jesus Campos/O=UPC
+OnlinePlace:  
+IsBroadcast:  0
+$ExpandGroups:  3
+IsTeamCalendar:  
+Importance:  
+OrgConfidential:  
+Subject:  Compilación estática y modificación de algunos botones de la apli SAL.
+StartTime:  09:00:00
+StartTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+EndTime:  09:00:00
+EndTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+PreventCounter:  
+Location:  
+RoomToReserve:  
+Resources:  
+STRecordMeeting:  
+Categories:  
+$BorderColor:  7F96A3
+$WatchedItems:  $S,$L,$B,$R,$E,$W,$O,$M,RequiredAttendees,INetRequiredNames,AltRequiredNames,StorageRequiredNames,OptionalAttendees,INetOptionalNames,AltOptionalNames,StorageOptionalNames
+CalForwardChairNotificationTo:  
+ReturnReceipt:  
+Sign:  
+Encrypt:  
+BookFreeTime:  1
+StartDate:  08/04/2014
+EndDate:  08/04/2014
+PreventDelegate:  
+EnterSendTo:  
+EnterCopyTo:  
+EnterBlindCopyTo:  
+ConferenceCallInfo:  
+SchedulerSwitcher:  1
+$Abstract:  Se ha descargado el core-grails y se ha compildao pero no funciona. Los botones de la aplicación SAL
+$UpdatedBy:  CN=Jesus Campos/O=UPC
+
+
+Body:  Se ha descargado el core-grails y se ha compildao pero no funciona.
+Los botones de la aplicación SAL se han modificado para que en lugar de 
+parecerse a los de la aplicación SIGRIS se parezcan a la aplicación TEMPUS 
+(RLG).
+
+
+$PublicAccess:  1
+Notes:  
+Chair:  CN=Jesus Campos/O=UPC
+Principal:  CN=Jesus Campos/O=UPC
+$altPrincipal:  CN=Jesus Campos/O=UPC
+ExcludeFromView:  D,S
+SequenceNum:  1
+UpdateSeq:  1
+$CSVersion:  2
+$SMTPKeepNotesItems:  1
+$CSWISL:  $S:1,$L:1,$B:1,$R:1,$E:1,$W:1,$O:1,$M:1,RequiredAttendees:1,INetRequiredNames:1,AltRequiredNames:1,StorageRequiredNames:1,OptionalAttendees:1,INetOptionalNames:1,AltOptionalNames:1,StorageOptionalNames:1
+WebDateTimeInit:  1
+OrgTable:  C0
+$AlarmDisabled:  1
+$IconSwitcher:  Reminder
+STARTDATETIME:  08/04/2014 16:00:00
+EndDateTime:  08/04/2014 16:00:00
+CalendarDateTime:  08/04/2014 16:00:00
+$NoPurge:  08/04/2014 16:00:00
+_ViewIcon:  10
+$HFFlags:  1
+Logo:  StdNotesLtr25
+SaveOptions:  
+MailOptions:  
+$FromPreferredLanguage:  ca
+ApptUNID:  5D6822DCFCFAEAACC1257CB4004CBD67
+$LangChair:  
+AppointmentType:  4
+$TableSwitcher:  Description
+OnlineMeeting:  
+From:  CN=Jesus Campos/O=UPC
+AltChair:  CN=Jesus Campos/O=UPC
+OnlinePlace:  
+IsBroadcast:  0
+$ExpandGroups:  3
+IsTeamCalendar:  
+Importance:  
+OrgConfidential:  
+Subject:  MOD06: Cambio de los botones de la aplicación SAL.
+StartTime:  16:00:00
+StartTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+EndTime:  16:00:00
+EndTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+PreventCounter:  
+Location:  
+RoomToReserve:  
+Resources:  
+STRecordMeeting:  
+Categories:  
+$BorderColor:  7F96A3
+$WatchedItems:  $S,$L,$B,$R,$E,$W,$O,$M,RequiredAttendees,INetRequiredNames,AltRequiredNames,StorageRequiredNames,OptionalAttendees,INetOptionalNames,AltOptionalNames,StorageOptionalNames
+CalForwardChairNotificationTo:  
+ReturnReceipt:  
+Sign:  
+Encrypt:  
+BookFreeTime:  1
+StartDate:  08/04/2014
+EndDate:  08/04/2014
+PreventDelegate:  
+EnterSendTo:  
+EnterCopyTo:  
+EnterBlindCopyTo:  
+ConferenceCallInfo:  
+SchedulerSwitcher:  1
+$Abstract:  Los botones en las tablas en lugar de ir separados deben ir juntos, como en la aplicación TEMPUS, po
+$UpdatedBy:  CN=Jesus Campos/O=UPC
+
+
+Body:  Los botones en las tablas en lugar de ir separados deben ir juntos, como 
+en la aplicación TEMPUS, por lo que se cambia el estilo noTopMargin y no 
+se deja exactamente igual que el main.css de TEMPUS debido a que se verían 
+afectados los botones de CER e Inicialitza.
+
+
+$PublicAccess:  1
+Body:  
+Notes:  
+Chair:  CN=Jesus Campos/O=UPC
+Principal:  CN=Jesus Campos/O=UPC
+$altPrincipal:  CN=Jesus Campos/O=UPC
+ExcludeFromView:  D,S
+SequenceNum:  1
+UpdateSeq:  1
+$CSVersion:  2
+$SMTPKeepNotesItems:  1
+$CSWISL:  $S:1,$L:1,$B:1,$R:1,$E:1,$W:1,$O:1,$M:1,RequiredAttendees:1,INetRequiredNames:1,AltRequiredNames:1,StorageRequiredNames:1,OptionalAttendees:1,INetOptionalNames:1,AltOptionalNames:1,StorageOptionalNames:1
+WebDateTimeInit:  1
+OrgTable:  C0
+$AlarmDisabled:  1
+$IconSwitcher:  Reminder
+STARTDATETIME:  09/04/2014 09:00:00
+EndDateTime:  09/04/2014 09:00:00
+CalendarDateTime:  09/04/2014 09:00:00
+$NoPurge:  09/04/2014 09:00:00
+_ViewIcon:  10
+$HFFlags:  1
+Logo:  StdNotesLtr25
+SaveOptions:  
+MailOptions:  
+$FromPreferredLanguage:  ca
+ApptUNID:  89F467F2772EA86DC1257CB6001F2BA4
+$LangChair:  
+AppointmentType:  4
+$TableSwitcher:  Description
+OnlineMeeting:  
+From:  CN=Jesus Campos/O=UPC
+AltChair:  CN=Jesus Campos/O=UPC
+OnlinePlace:  
+IsBroadcast:  0
+$ExpandGroups:  3
+IsTeamCalendar:  
+Importance:  
+OrgConfidential:  
+Subject:  Compilación estática.
+StartTime:  09:00:00
+StartTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+EndTime:  09:00:00
+EndTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+PreventCounter:  
+Location:  
+RoomToReserve:  
+Resources:  
+STRecordMeeting:  
+Categories:  
+$BorderColor:  7F96A3
+$WatchedItems:  $S,$L,$B,$R,$E,$W,$O,$M,RequiredAttendees,INetRequiredNames,AltRequiredNames,StorageRequiredNames,OptionalAttendees,INetOptionalNames,AltOptionalNames,StorageOptionalNames
+CalForwardChairNotificationTo:  
+ReturnReceipt:  
+Sign:  
+Encrypt:  
+BookFreeTime:  1
+StartDate:  09/04/2014
+EndDate:  09/04/2014
+PreventDelegate:  
+EnterSendTo:  
+EnterCopyTo:  
+EnterBlindCopyTo:  
+ConferenceCallInfo:  
+SchedulerSwitcher:  1
+$Abstract:  
+$UpdatedBy:  CN=Jesus Campos/O=UPC
+
+
+
+
+$PublicAccess:  1
+Notes:  
+Chair:  CN=Jesus Campos/O=UPC
+Principal:  CN=Jesus Campos/O=UPC
+$altPrincipal:  CN=Jesus Campos/O=UPC
+ExcludeFromView:  D,S
+SequenceNum:  1
+UpdateSeq:  1
+$CSVersion:  2
+$SMTPKeepNotesItems:  1
+$CSWISL:  $S:1,$L:1,$B:1,$R:1,$E:1,$W:1,$O:1,$M:1,RequiredAttendees:1,INetRequiredNames:1,AltRequiredNames:1,StorageRequiredNames:1,OptionalAttendees:1,INetOptionalNames:1,AltOptionalNames:1,StorageOptionalNames:1
+WebDateTimeInit:  1
+OrgTable:  C0
+$AlarmDisabled:  1
+$IconSwitcher:  Reminder
+STARTDATETIME:  23/04/2014 08:00:00
+EndDateTime:  23/04/2014 08:00:00
+CalendarDateTime:  23/04/2014 08:00:00
+$NoPurge:  23/04/2014 08:00:00
+_ViewIcon:  10
+$HFFlags:  1
+Logo:  StdNotesLtr25
+SaveOptions:  
+MailOptions:  
+$FromPreferredLanguage:  ca
+ApptUNID:  96E01138425F2290C1257CC30024364C
+$LangChair:  
+AppointmentType:  4
+$TableSwitcher:  Description
+OnlineMeeting:  
+From:  CN=Jesus Campos/O=UPC
+AltChair:  CN=Jesus Campos/O=UPC
+OnlinePlace:  
+IsBroadcast:  0
+$ExpandGroups:  3
+IsTeamCalendar:  
+Importance:  
+OrgConfidential:  
+Subject:  Mejora: Alineación del nombre y Autoritzador nivell 1 , 2 etc ...
+StartTime:  08:00:00
+StartTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+EndTime:  08:00:00
+EndTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+PreventCounter:  
+Location:  
+RoomToReserve:  
+Resources:  
+STRecordMeeting:  
+Categories:  
+$BorderColor:  7F96A3
+$WatchedItems:  $S,$L,$B,$R,$E,$W,$O,$M,RequiredAttendees,INetRequiredNames,AltRequiredNames,StorageRequiredNames,OptionalAttendees,INetOptionalNames,AltOptionalNames,StorageOptionalNames
+CalForwardChairNotificationTo:  
+ReturnReceipt:  
+Sign:  
+Encrypt:  
+BookFreeTime:  1
+StartDate:  23/04/2014
+EndDate:  23/04/2014
+PreventDelegate:  
+EnterSendTo:  
+EnterCopyTo:  
+EnterBlindCopyTo:  
+ConferenceCallInfo:  
+SchedulerSwitcher:  1
+$Abstract:  Historial: Primero se prueba con pasar a una tabla los labels y textedit. Pero el problema es que al
+$UpdatedBy:  CN=Jesus Campos/O=UPC
+
+
+Body:  Historial:
+Primero se prueba con pasar a una tabla los labels y textedit. Pero el 
+problema es que al hacer un resize la segunda columna de la tabla no pasa 
+a la parte de abajo.
+La solución fue hacer:
+ <label for="email" style="display:inline-block;width:134px;">
+Con esto se consigue que la label (que es un elemento inline) haga caso a 
+la propiedad width.
+
+
+$PublicAccess:  1
+Body:  
+Notes:  
+Chair:  CN=Jesus Campos/O=UPC
+Principal:  CN=Jesus Campos/O=UPC
+$altPrincipal:  CN=Jesus Campos/O=UPC
+ExcludeFromView:  D,S
+UpdateSeq:  1
+$CSVersion:  2
+$SMTPKeepNotesItems:  1
+$CSWISL:  $S:1,$L:1,$B:1,$R:1,$E:1,$W:1,$O:1,$M:1,RequiredAttendees:1,INetRequiredNames:1,AltRequiredNames:1,StorageRequiredNames:1,OptionalAttendees:1,INetOptionalNames:1,AltOptionalNames:1,StorageOptionalNames:1
+WebDateTimeInit:  1
+OrgTable:  C0
+$AlarmDisabled:  1
+$IconSwitcher:  Reminder
+$HFFlags:  1
+$Abstract:  
+Logo:  StdNotesLtr25
+$FromPreferredLanguage:  ca
+ApptUNID:  7B3F30AB23AAD5F7C1257CC9001F7D3C
+$LangChair:  
+AppointmentType:  4
+$BorderColor:  7F96A3
+$WatchedItems:  $S,$L,$B,$R,$E,$W,$O,$M,RequiredAttendees,INetRequiredNames,AltRequiredNames,StorageRequiredNames,OptionalAttendees,INetOptionalNames,AltOptionalNames,StorageOptionalNames
+$TableSwitcher:  Description
+OnlineMeeting:  
+From:  CN=Jesus Campos/O=UPC
+AltChair:  CN=Jesus Campos/O=UPC
+OnlinePlace:  
+IsBroadcast:  0
+$ExpandGroups:  3
+IsTeamCalendar:  
+CalForwardChairNotificationTo:  
+Importance:  
+ReturnReceipt:  
+Sign:  
+Encrypt:  
+OrgConfidential:  
+BookFreeTime:  1
+Subject:  Hacer lo del +/- del TEMPUS.
+PreventCounter:  
+PreventDelegate:  
+EnterSendTo:  
+EnterCopyTo:  
+EnterBlindCopyTo:  
+Location:  
+ConferenceCallInfo:  
+RoomToReserve:  
+Resources:  
+STRecordMeeting:  
+Categories:  
+SchedulerSwitcher:  1
+StartTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+EndTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+LocalTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+StartDate:  25/04/2014
+StartTime:  08:00:00
+STARTDATETIME:  25/04/2014 08:00:00
+EndDate:  25/04/2014
+EndTime:  08:00:00
+EndDateTime:  25/04/2014 08:00:00
+CalendarDateTime:  25/04/2014 08:00:00
+_ViewIcon:  10
+SequenceNum:  2
+$CSTrack:  Response_Outgoing_001F8D4D[Charpentier] by Notes on Jesus Campos(Release 8.5.2|August 10, 2010) at 29/04/2014 07:44:38,OA(Reschedule)[Charpentier] by Notes on Jesus Campos(Release 8.5.2|August 10, 2010) at 29/04/2014 07:44:38
+$NoPurge:  25/04/2014 08:00:00
+$UpdatedBy:  CN=Jesus Campos/O=UPC
+$Revisions:  29/04/2014 07:44:30
+
+
+
+
+$PublicAccess:  1
+Body:  
+Notes:  
+Chair:  CN=Jesus Campos/O=UPC
+Principal:  CN=Jesus Campos/O=UPC
+$altPrincipal:  CN=Jesus Campos/O=UPC
+ExcludeFromView:  D,S
+SequenceNum:  1
+UpdateSeq:  1
+$CSVersion:  2
+$SMTPKeepNotesItems:  1
+$CSWISL:  $S:1,$L:1,$B:1,$R:1,$E:1,$W:1,$O:1,$M:1,RequiredAttendees:1,INetRequiredNames:1,AltRequiredNames:1,StorageRequiredNames:1,OptionalAttendees:1,INetOptionalNames:1,AltOptionalNames:1,StorageOptionalNames:1
+WebDateTimeInit:  1
+OrgTable:  C0
+$AlarmDisabled:  1
+$IconSwitcher:  Reminder
+STARTDATETIME:  28/04/2014 07:00:00
+EndDateTime:  28/04/2014 07:00:00
+CalendarDateTime:  28/04/2014 07:00:00
+$NoPurge:  28/04/2014 07:00:00
+_ViewIcon:  10
+$HFFlags:  1
+Logo:  StdNotesLtr25
+SaveOptions:  
+MailOptions:  
+$FromPreferredLanguage:  ca
+ApptUNID:  D1D3387DACF8D173C1257CC9001F601B
+$LangChair:  
+AppointmentType:  4
+$TableSwitcher:  Description
+OnlineMeeting:  
+From:  CN=Jesus Campos/O=UPC
+AltChair:  CN=Jesus Campos/O=UPC
+OnlinePlace:  
+IsBroadcast:  0
+$ExpandGroups:  3
+IsTeamCalendar:  
+Importance:  
+OrgConfidential:  
+Subject:  acabar lo del +/- y en SAL hacer que cuando alguien o el médico inscribe a una persona en el programa además se guarde que no ha finalizado el proegrama y que cuando finalice se guarde la fecha.
+StartTime:  07:00:00
+StartTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+EndTime:  07:00:00
+EndTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+PreventCounter:  
+Location:  
+RoomToReserve:  
+Resources:  
+STRecordMeeting:  
+Categories:  
+$BorderColor:  7F96A3
+$WatchedItems:  $S,$L,$B,$R,$E,$W,$O,$M,RequiredAttendees,INetRequiredNames,AltRequiredNames,StorageRequiredNames,OptionalAttendees,INetOptionalNames,AltOptionalNames,StorageOptionalNames
+CalForwardChairNotificationTo:  
+ReturnReceipt:  
+Sign:  
+Encrypt:  
+BookFreeTime:  1
+StartDate:  28/04/2014
+EndDate:  28/04/2014
+PreventDelegate:  
+EnterSendTo:  
+EnterCopyTo:  
+EnterBlindCopyTo:  
+ConferenceCallInfo:  
+SchedulerSwitcher:  1
+$Abstract:  
+$UpdatedBy:  CN=Jesus Campos/O=UPC
+
+
+
+
+$PublicAccess:  1
+Notes:  
+Chair:  CN=Jesus Campos/O=UPC
+Principal:  CN=Jesus Campos/O=UPC
+$altPrincipal:  CN=Jesus Campos/O=UPC
+ExcludeFromView:  D,S
+SequenceNum:  1
+UpdateSeq:  1
+$CSVersion:  2
+$SMTPKeepNotesItems:  1
+$CSWISL:  $S:1,$L:1,$B:1,$R:1,$E:1,$W:1,$O:1,$M:1,RequiredAttendees:1,INetRequiredNames:1,AltRequiredNames:1,StorageRequiredNames:1,OptionalAttendees:1,INetOptionalNames:1,AltOptionalNames:1,StorageOptionalNames:1
+WebDateTimeInit:  1
+OrgTable:  C0
+$AlarmDisabled:  1
+$IconSwitcher:  Reminder
+STARTDATETIME:  30/04/2014 08:00:00
+EndDateTime:  30/04/2014 08:00:00
+CalendarDateTime:  30/04/2014 08:00:00
+$NoPurge:  30/04/2014 08:00:00
+_ViewIcon:  10
+$HFFlags:  1
+Logo:  StdNotesLtr25
+SaveOptions:  
+MailOptions:  
+$FromPreferredLanguage:  ca
+ApptUNID:  81A74CB243B6C129C1257CCA003D0EB7
+$LangChair:  
+AppointmentType:  4
+$TableSwitcher:  Description
+OnlineMeeting:  
+From:  CN=Jesus Campos/O=UPC
+AltChair:  CN=Jesus Campos/O=UPC
+OnlinePlace:  
+IsBroadcast:  0
+$ExpandGroups:  3
+IsTeamCalendar:  
+Importance:  
+OrgConfidential:  
+Subject:  SOLUCIONADO: hora con negativos + vista de compatibilidad. Problemas con maskPlugin.
+StartTime:  08:00:00
+StartTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+EndTime:  08:00:00
+EndTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+PreventCounter:  
+Location:  
+RoomToReserve:  
+Resources:  
+STRecordMeeting:  
+Categories:  
+$BorderColor:  7F96A3
+$WatchedItems:  $S,$L,$B,$R,$E,$W,$O,$M,RequiredAttendees,INetRequiredNames,AltRequiredNames,StorageRequiredNames,OptionalAttendees,INetOptionalNames,AltOptionalNames,StorageOptionalNames
+CalForwardChairNotificationTo:  
+ReturnReceipt:  
+Sign:  
+Encrypt:  
+BookFreeTime:  1
+StartDate:  30/04/2014
+EndDate:  30/04/2014
+PreventDelegate:  
+EnterSendTo:  
+EnterCopyTo:  
+EnterBlindCopyTo:  
+ConferenceCallInfo:  
+SchedulerSwitcher:  1
+$Abstract:  Para evitar que al activar la vista de compatibilidad el maskPlugin NO funcione (realmente no se car
+$UpdatedBy:  CN=Jesus Campos/O=UPC
+
+
+Body:  Para evitar que al activar la vista de compatibilidad el maskPlugin NO 
+funcione (realmente no se carga bien), hay que utilizar la versión 
+minified en lugar de la uncompressed..
+
+
+$PublicAccess:  1
+Notes:  
+Chair:  CN=Jesus Campos/O=UPC
+Principal:  CN=Jesus Campos/O=UPC
+$altPrincipal:  CN=Jesus Campos/O=UPC
+ExcludeFromView:  D,S
+SequenceNum:  1
+UpdateSeq:  1
+$CSVersion:  2
+$SMTPKeepNotesItems:  1
+$CSWISL:  $S:1,$L:1,$B:1,$R:1,$E:1,$W:1,$O:1,$M:1,RequiredAttendees:1,INetRequiredNames:1,AltRequiredNames:1,StorageRequiredNames:1,OptionalAttendees:1,INetOptionalNames:1,AltOptionalNames:1,StorageOptionalNames:1
+WebDateTimeInit:  1
+OrgTable:  C0
+$AlarmDisabled:  1
+$IconSwitcher:  Reminder
+STARTDATETIME:  02/05/2014 08:00:00
+EndDateTime:  02/05/2014 08:00:00
+CalendarDateTime:  02/05/2014 08:00:00
+$NoPurge:  02/05/2014 08:00:00
+_ViewIcon:  10
+$HFFlags:  1
+Logo:  StdNotesLtr25
+SaveOptions:  
+MailOptions:  
+$FromPreferredLanguage:  ca
+ApptUNID:  A1799097E4475B33C1257CCF00341813
+$LangChair:  
+AppointmentType:  4
+$TableSwitcher:  Description
+OnlineMeeting:  
+From:  CN=Jesus Campos/O=UPC
+AltChair:  CN=Jesus Campos/O=UPC
+OnlinePlace:  
+IsBroadcast:  0
+$ExpandGroups:  3
+IsTeamCalendar:  
+Importance:  
+OrgConfidential:  
+Subject:  Solucionar incidencia.
+StartTime:  08:00:00
+StartTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+EndTime:  08:00:00
+EndTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+PreventCounter:  
+Location:  
+RoomToReserve:  
+Resources:  
+STRecordMeeting:  
+Categories:  
+$BorderColor:  7F96A3
+$WatchedItems:  $S,$L,$B,$R,$E,$W,$O,$M,RequiredAttendees,INetRequiredNames,AltRequiredNames,StorageRequiredNames,OptionalAttendees,INetOptionalNames,AltOptionalNames,StorageOptionalNames
+CalForwardChairNotificationTo:  
+ReturnReceipt:  
+Sign:  
+Encrypt:  
+BookFreeTime:  1
+StartDate:  02/05/2014
+EndDate:  02/05/2014
+PreventDelegate:  
+EnterSendTo:  
+EnterCopyTo:  
+EnterBlindCopyTo:  
+ConferenceCallInfo:  
+SchedulerSwitcher:  1
+$Abstract:  Solucionar problema del SAL: Error del IF-ELSE IF
+$UpdatedBy:  CN=Jesus Campos/O=UPC
+
+
+Body:  Solucionar problema del SAL:
+Error del IF-ELSE IF
+
+
+$PublicAccess:  1
+Notes:  
+Chair:  CN=Jesus Campos/O=UPC
+Principal:  CN=Jesus Campos/O=UPC
+$altPrincipal:  CN=Jesus Campos/O=UPC
+ExcludeFromView:  D,S
+SequenceNum:  1
+UpdateSeq:  1
+$CSVersion:  2
+$SMTPKeepNotesItems:  1
+$CSWISL:  $S:1,$L:1,$B:1,$R:1,$E:1,$W:1,$O:1,$M:1,RequiredAttendees:1,INetRequiredNames:1,AltRequiredNames:1,StorageRequiredNames:1,OptionalAttendees:1,INetOptionalNames:1,AltOptionalNames:1,StorageOptionalNames:1
+WebDateTimeInit:  1
+OrgTable:  C0
+$AlarmDisabled:  1
+$IconSwitcher:  Reminder
+STARTDATETIME:  02/05/2014 09:00:00
+EndDateTime:  02/05/2014 09:00:00
+CalendarDateTime:  02/05/2014 09:00:00
+$NoPurge:  02/05/2014 09:00:00
+_ViewIcon:  10
+$HFFlags:  1
+Logo:  StdNotesLtr25
+SaveOptions:  
+MailOptions:  
+$FromPreferredLanguage:  ca
+ApptUNID:  C102CC4AEBF4414EC1257CCF00342DCB
+$LangChair:  
+AppointmentType:  4
+$TableSwitcher:  Description
+OnlineMeeting:  
+From:  CN=Jesus Campos/O=UPC
+AltChair:  CN=Jesus Campos/O=UPC
+OnlinePlace:  
+IsBroadcast:  0
+$ExpandGroups:  3
+IsTeamCalendar:  
+Importance:  
+OrgConfidential:  
+Subject:  Acabar de verificar el plugin minified de maskPlugin.
+StartTime:  09:00:00
+StartTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+EndTime:  09:00:00
+EndTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+PreventCounter:  
+Location:  
+RoomToReserve:  
+Resources:  
+STRecordMeeting:  
+Categories:  
+$BorderColor:  7F96A3
+$WatchedItems:  $S,$L,$B,$R,$E,$W,$O,$M,RequiredAttendees,INetRequiredNames,AltRequiredNames,StorageRequiredNames,OptionalAttendees,INetOptionalNames,AltOptionalNames,StorageOptionalNames
+CalForwardChairNotificationTo:  
+ReturnReceipt:  
+Sign:  
+Encrypt:  
+BookFreeTime:  1
+StartDate:  02/05/2014
+EndDate:  02/05/2014
+PreventDelegate:  
+EnterSendTo:  
+EnterCopyTo:  
+EnterBlindCopyTo:  
+ConferenceCallInfo:  
+SchedulerSwitcher:  1
+$Abstract:  maskPlugin bajado de digitalbush -> Funciona OK en TEMPUS. Ahora falta por comprobar el maskPlugin m
+$UpdatedBy:  CN=Jesus Campos/O=UPC
+
+
+Body:  maskPlugin bajado de digitalbush -> Funciona OK en TEMPUS.
+Ahora falta por comprobar el maskPlugin minified de SAL, a ver si funciona 
+correctamente en TEMPUS.
+
+
+$PublicAccess:  1
+Notes:  
+Chair:  CN=Jesus Campos/O=UPC
+Principal:  CN=Jesus Campos/O=UPC
+$altPrincipal:  CN=Jesus Campos/O=UPC
+ExcludeFromView:  D,S
+SequenceNum:  1
+UpdateSeq:  1
+$CSVersion:  2
+$SMTPKeepNotesItems:  1
+$CSWISL:  $S:1,$L:1,$B:1,$R:1,$E:1,$W:1,$O:1,$M:1,RequiredAttendees:1,INetRequiredNames:1,AltRequiredNames:1,StorageRequiredNames:1,OptionalAttendees:1,INetOptionalNames:1,AltOptionalNames:1,StorageOptionalNames:1
+WebDateTimeInit:  1
+OrgTable:  C0
+$AlarmDisabled:  1
+$IconSwitcher:  Reminder
+STARTDATETIME:  02/05/2014 10:00:00
+EndDateTime:  02/05/2014 10:00:00
+CalendarDateTime:  02/05/2014 10:00:00
+$NoPurge:  02/05/2014 10:00:00
+_ViewIcon:  10
+$HFFlags:  1
+Logo:  StdNotesLtr25
+SaveOptions:  
+MailOptions:  
+$FromPreferredLanguage:  ca
+ApptUNID:  481D9BAAA35F8A4AC1257CCF0034C258
+$LangChair:  
+AppointmentType:  4
+$TableSwitcher:  Description
+OnlineMeeting:  
+From:  CN=Jesus Campos/O=UPC
+AltChair:  CN=Jesus Campos/O=UPC
+OnlinePlace:  
+IsBroadcast:  0
+$ExpandGroups:  3
+IsTeamCalendar:  
+Importance:  
+OrgConfidential:  
+Subject:  MOD08: Incluir botón de descargar archivon CSV en la aplicación SAL.
+StartTime:  10:00:00
+StartTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+EndTime:  10:00:00
+EndTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+PreventCounter:  
+Location:  
+RoomToReserve:  
+Resources:  
+STRecordMeeting:  
+Categories:  
+$BorderColor:  7F96A3
+$WatchedItems:  $S,$L,$B,$R,$E,$W,$O,$M,RequiredAttendees,INetRequiredNames,AltRequiredNames,StorageRequiredNames,OptionalAttendees,INetOptionalNames,AltOptionalNames,StorageOptionalNames
+CalForwardChairNotificationTo:  
+ReturnReceipt:  
+Sign:  
+Encrypt:  
+BookFreeTime:  1
+StartDate:  02/05/2014
+EndDate:  02/05/2014
+PreventDelegate:  
+EnterSendTo:  
+EnterCopyTo:  
+EnterBlindCopyTo:  
+ConferenceCallInfo:  
+SchedulerSwitcher:  1
+$Abstract:  En la parte de gestión (Gestión de subscripciones) donde se pueden consultar todos los inscritos al
+$UpdatedBy:  CN=Jesus Campos/O=UPC
+
+
+Body:  En la parte de gestión (Gestión de subscripciones) donde se pueden 
+consultar todos los inscritos al Programa de Promoción de la Salud 
+Cardiovascular, se incluye un botón para poder descargar la lista de 
+personas inscritas en formato CSV.
+
+
+$PublicAccess:  1
+Notes:  
+Chair:  CN=Jesus Campos/O=UPC
+Principal:  CN=Jesus Campos/O=UPC
+$altPrincipal:  CN=Jesus Campos/O=UPC
+ExcludeFromView:  D,S
+SequenceNum:  1
+UpdateSeq:  1
+$CSVersion:  2
+$SMTPKeepNotesItems:  1
+$CSWISL:  $S:1,$L:1,$B:1,$R:1,$E:1,$W:1,$O:1,$M:1,RequiredAttendees:1,INetRequiredNames:1,AltRequiredNames:1,StorageRequiredNames:1,OptionalAttendees:1,INetOptionalNames:1,AltOptionalNames:1,StorageOptionalNames:1
+WebDateTimeInit:  1
+OrgTable:  C0
+$AlarmDisabled:  1
+$IconSwitcher:  Reminder
+STARTDATETIME:  05/05/2014 08:00:00
+EndDateTime:  05/05/2014 08:00:00
+CalendarDateTime:  05/05/2014 08:00:00
+$NoPurge:  05/05/2014 08:00:00
+_ViewIcon:  10
+$HFFlags:  1
+Logo:  StdNotesLtr25
+SaveOptions:  
+MailOptions:  
+$FromPreferredLanguage:  ca
+ApptUNID:  5EF047DBEE1F66C4C1257CCF0034A555
+$LangChair:  
+AppointmentType:  4
+$TableSwitcher:  Description
+OnlineMeeting:  
+From:  CN=Jesus Campos/O=UPC
+AltChair:  CN=Jesus Campos/O=UPC
+OnlinePlace:  
+IsBroadcast:  0
+$ExpandGroups:  3
+IsTeamCalendar:  
+Importance:  
+OrgConfidential:  
+Subject:  MOD08: Colocado el botón en la derecha.
+StartTime:  08:00:00
+StartTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+EndTime:  08:00:00
+EndTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+PreventCounter:  
+Location:  
+RoomToReserve:  
+Resources:  
+STRecordMeeting:  
+Categories:  
+$BorderColor:  7F96A3
+$WatchedItems:  $S,$L,$B,$R,$E,$W,$O,$M,RequiredAttendees,INetRequiredNames,AltRequiredNames,StorageRequiredNames,OptionalAttendees,INetOptionalNames,AltOptionalNames,StorageOptionalNames
+CalForwardChairNotificationTo:  
+ReturnReceipt:  
+Sign:  
+Encrypt:  
+BookFreeTime:  1
+StartDate:  05/05/2014
+EndDate:  05/05/2014
+PreventDelegate:  
+EnterSendTo:  
+EnterCopyTo:  
+EnterBlindCopyTo:  
+ConferenceCallInfo:  
+SchedulerSwitcher:  1
+$Abstract:  Utilizar un divisor vacío: <div style="clear:both;"></div>
+$UpdatedBy:  CN=Jesus Campos/O=UPC
+
+
+Body:  Utilizar un divisor vacío:
+<div style="clear:both;"></div>	
+
+
+$PublicAccess:  1
+Notes:  
+Chair:  CN=Jesus Campos/O=UPC
+Principal:  CN=Jesus Campos/O=UPC
+$altPrincipal:  CN=Jesus Campos/O=UPC
+ExcludeFromView:  D,S
+SequenceNum:  1
+UpdateSeq:  1
+$CSVersion:  2
+$SMTPKeepNotesItems:  1
+$CSWISL:  $S:1,$L:1,$B:1,$R:1,$E:1,$W:1,$O:1,$M:1,RequiredAttendees:1,INetRequiredNames:1,AltRequiredNames:1,StorageRequiredNames:1,OptionalAttendees:1,INetOptionalNames:1,AltOptionalNames:1,StorageOptionalNames:1
+WebDateTimeInit:  1
+OrgTable:  C0
+$AlarmDisabled:  1
+$IconSwitcher:  Reminder
+STARTDATETIME:  06/05/2014 08:00:00
+EndDateTime:  06/05/2014 08:00:00
+CalendarDateTime:  06/05/2014 08:00:00
+$NoPurge:  06/05/2014 08:00:00
+_ViewIcon:  10
+$HFFlags:  1
+Logo:  StdNotesLtr25
+SaveOptions:  
+MailOptions:  
+$FromPreferredLanguage:  ca
+ApptUNID:  535A3253C79C0909C1257CD1001EBC6A
+$LangChair:  
+AppointmentType:  4
+$TableSwitcher:  Description
+OnlineMeeting:  
+From:  CN=Jesus Campos/O=UPC
+AltChair:  CN=Jesus Campos/O=UPC
+OnlinePlace:  
+IsBroadcast:  0
+$ExpandGroups:  3
+IsTeamCalendar:  
+Importance:  
+OrgConfidential:  
+Subject:  Arreglar lo del CSV
+StartTime:  08:00:00
+StartTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+EndTime:  08:00:00
+EndTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+PreventCounter:  
+Location:  
+RoomToReserve:  
+Resources:  
+STRecordMeeting:  
+Categories:  
+$BorderColor:  7F96A3
+$WatchedItems:  $S,$L,$B,$R,$E,$W,$O,$M,RequiredAttendees,INetRequiredNames,AltRequiredNames,StorageRequiredNames,OptionalAttendees,INetOptionalNames,AltOptionalNames,StorageOptionalNames
+CalForwardChairNotificationTo:  
+ReturnReceipt:  
+Sign:  
+Encrypt:  
+BookFreeTime:  1
+StartDate:  06/05/2014
+EndDate:  06/05/2014
+PreventDelegate:  
+EnterSendTo:  
+EnterCopyTo:  
+EnterBlindCopyTo:  
+ConferenceCallInfo:  
+SchedulerSwitcher:  1
+$Abstract:  Tras probar muchas cosas, cambiando codificación en propiedades del proyecto y ver que no funciona,
+$UpdatedBy:  CN=Jesus Campos/O=UPC
+
+
+Body:  Tras probar muchas cosas, cambiando codificación en propiedades del 
+proyecto y ver que no funciona, ver que la aplicación COM tiene el mismo 
+error (ellos no lo detectaban porque abrían siempre con notepa++ o 
+similar) se descubre que el fallo es porque el tomcat está en LINUX y 
+genera UTF-8 con BOM.
+
+
+$PublicAccess:  1
+Notes:  
+Chair:  CN=Jesus Campos/O=UPC
+Principal:  CN=Jesus Campos/O=UPC
+$altPrincipal:  CN=Jesus Campos/O=UPC
+ExcludeFromView:  D,S
+SequenceNum:  1
+UpdateSeq:  1
+$CSVersion:  2
+$SMTPKeepNotesItems:  1
+$CSWISL:  $S:1,$L:1,$B:1,$R:1,$E:1,$W:1,$O:1,$M:1,RequiredAttendees:1,INetRequiredNames:1,AltRequiredNames:1,StorageRequiredNames:1,OptionalAttendees:1,INetOptionalNames:1,AltOptionalNames:1,StorageOptionalNames:1
+WebDateTimeInit:  1
+OrgTable:  C0
+$AlarmDisabled:  1
+$IconSwitcher:  Reminder
+STARTDATETIME:  06/05/2014 09:00:00
+EndDateTime:  06/05/2014 09:00:00
+CalendarDateTime:  06/05/2014 09:00:00
+$NoPurge:  06/05/2014 09:00:00
+_ViewIcon:  10
+$HFFlags:  1
+Logo:  StdNotesLtr25
+SaveOptions:  
+MailOptions:  
+$FromPreferredLanguage:  ca
+ApptUNID:  E5DCF44989426170C1257CD1003B5A50
+$LangChair:  
+AppointmentType:  4
+$TableSwitcher:  Description
+OnlineMeeting:  
+From:  CN=Jesus Campos/O=UPC
+AltChair:  CN=Jesus Campos/O=UPC
+OnlinePlace:  
+IsBroadcast:  0
+$ExpandGroups:  3
+IsTeamCalendar:  
+Importance:  
+OrgConfidential:  
+Subject:  Fallos archivos CVS
+StartTime:  09:00:00
+StartTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+EndTime:  09:00:00
+EndTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+PreventCounter:  
+Location:  
+RoomToReserve:  
+Resources:  
+STRecordMeeting:  
+Categories:  
+$BorderColor:  7F96A3
+$WatchedItems:  $S,$L,$B,$R,$E,$W,$O,$M,RequiredAttendees,INetRequiredNames,AltRequiredNames,StorageRequiredNames,OptionalAttendees,INetOptionalNames,AltOptionalNames,StorageOptionalNames
+CalForwardChairNotificationTo:  
+ReturnReceipt:  
+Sign:  
+Encrypt:  
+BookFreeTime:  1
+StartDate:  06/05/2014
+EndDate:  06/05/2014
+PreventDelegate:  
+EnterSendTo:  
+EnterCopyTo:  
+EnterBlindCopyTo:  
+ConferenceCallInfo:  
+SchedulerSwitcher:  1
+$Abstract:  Se descubre que el Apache Tomcat está corriendo en una máquina Linux y de ahí proviene el fallo, por
+$UpdatedBy:  CN=Jesus Campos/O=UPC
+
+
+Body:  Se descubre que el Apache Tomcat está corriendo en una máquina Linux y de 
+ahí proviene el fallo, por este motivo tanto en local como en un apache 
+ubicado en Linux se produce el fallo
+Se monta un entorno en Linux para no tener que subir el WAR constantemente 
+a melnik con los problemas que ello conlleva.
+
+
+$PublicAccess:  1
+Notes:  
+Chair:  CN=Jesus Campos/O=UPC
+Principal:  CN=Jesus Campos/O=UPC
+$altPrincipal:  CN=Jesus Campos/O=UPC
+ExcludeFromView:  D,S
+SequenceNum:  1
+UpdateSeq:  1
+$CSVersion:  2
+$SMTPKeepNotesItems:  1
+$CSWISL:  $S:1,$L:1,$B:1,$R:1,$E:1,$W:1,$O:1,$M:1,RequiredAttendees:1,INetRequiredNames:1,AltRequiredNames:1,StorageRequiredNames:1,OptionalAttendees:1,INetOptionalNames:1,AltOptionalNames:1,StorageOptionalNames:1
+WebDateTimeInit:  1
+OrgTable:  C0
+$AlarmDisabled:  1
+$IconSwitcher:  Reminder
+STARTDATETIME:  07/05/2014 08:00:00
+EndDateTime:  07/05/2014 08:00:00
+CalendarDateTime:  07/05/2014 08:00:00
+$NoPurge:  07/05/2014 08:00:00
+_ViewIcon:  10
+$HFFlags:  1
+Logo:  StdNotesLtr25
+SaveOptions:  
+MailOptions:  
+$FromPreferredLanguage:  ca
+ApptUNID:  F62CA60698CA36C5C1257CD1003B1BA1
+$LangChair:  
+AppointmentType:  4
+$TableSwitcher:  Description
+OnlineMeeting:  
+From:  CN=Jesus Campos/O=UPC
+AltChair:  CN=Jesus Campos/O=UPC
+OnlinePlace:  
+IsBroadcast:  0
+$ExpandGroups:  3
+IsTeamCalendar:  
+Importance:  
+OrgConfidential:  
+Subject:  Solucionado tema de los acentos y ñ's en archivos CSV.
+StartTime:  08:00:00
+StartTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+EndTime:  08:00:00
+EndTimeZone:  Z=-1$DO=1$DL=3 -1 1 10 -1 1$ZX=71$ZN=Romance
+PreventCounter:  
+Location:  
+RoomToReserve:  
+Resources:  
+STRecordMeeting:  
+Categories:  
+$BorderColor:  7F96A3
+$WatchedItems:  $S,$L,$B,$R,$E,$W,$O,$M,RequiredAttendees,INetRequiredNames,AltRequiredNames,StorageRequiredNames,OptionalAttendees,INetOptionalNames,AltOptionalNames,StorageOptionalNames
+CalForwardChairNotificationTo:  
+ReturnReceipt:  
+Sign:  
+Encrypt:  
+BookFreeTime:  1
+StartDate:  07/05/2014
+EndDate:  07/05/2014
+PreventDelegate:  
+EnterSendTo:  
+EnterCopyTo:  
+EnterBlindCopyTo:  
+ConferenceCallInfo:  
+SchedulerSwitcher:  1
+$Abstract:  El problema estaba en que había que indicar la codificación ISO-8859-1 de la siguiente manera: Map p
+$UpdatedBy:  CN=Jesus Campos/O=UPC
+
+
+Body:  El problema estaba en que había que indicar la codificación ISO-8859-1 de 
+la siguiente manera:
+Map parameters = 
+["header.enabled":1,"separator":";","quoteCharacter":"\u0000","lineEnd":"\r
+\n","encoding":"ISO-8859-1"]
+La solución se ha obtenido de la BDP debido a que esta aplicación 
+funcionaba correctamente.
+
+
+
