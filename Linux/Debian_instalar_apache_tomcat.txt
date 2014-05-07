@@ -1,0 +1,29 @@
+DEBIAN - INSTALAR APACHE TOMCAT
+===============================
+Descargar la versión deseada de la página web (Google: download apache tomcat | Sección download escoger una versión | http://tomcat.apache.org/download-80.cgi)
+Descargar la versión:
+	Binary distributions
+		Core
+			zip (pgp, md5)
+			tar.gz (pgp, md5) 
+	Cualquiera de las dos es válida
+Se descomprime en una carpeta cualquiera (por ejemplo: /home/jesus/Descargas/apache-tomcat-8.0.5)
+Se modifica el archivo catalina.bat (ubicado en la carpeta bin) añadiendo las siguientes líneas al final de los comentarios, es decir, al principio de
+todas las instrucciones:
+SET JAVA_HOME="/home/jesus/Descargas/jdk1.7.0_51"
+SET JAVA_JRE="/home/jesus/Descargas/jre1.7.0_55"
+(Previamente debe haberse instalado el JDK y el JRE)
+
+Generar un usuario con permisos para entrar en el manager y poder gestionar el Tomcat:
+Editar tomcat-users.xml e incluir el siguiente código:
+	<tomcat-users>
+	  <role rolename="manager-gui"/>
+	  <role rolename="role1"/>
+	  <user username="tomcat" password="tomcat" roles="admin,manager-gui"/>
+	  <user username="both" password="tomcat" roles="tomcat,role1"/>
+	  <user username="role1" password="tomcat" roles="role1"/>
+	</tomcat-users>
+Por lo que el usuario "tomcat" con contraseña "tomcat" es capaz de gestionar el Apache Tomcat.
+
+Para arrancar el servidor: /home/jesus/Descargas/apache-tomcat-8.0.5/bin$ ./catalina.sh start
+Para detener el servidor: /home/jesus/Descargas/apache-tomcat-8.0.5/bin$ ./catalina.sh stop

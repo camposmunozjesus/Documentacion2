@@ -1,0 +1,6 @@
+DEBIAN - INSTALAR JRE
+=====================
+Descargar la versión deseada de la página web (Google: download jre)
+Se descomprime en una carpeta cualquiera (por ejemplo: /home/jesus/Descargas/jre1.7.0_55)
+Se añade la ruta de donde se ha descomrpimido (/home/jesus/Descargas/jre1.7.0_55) al PATH de manera permanente:
+# gedit /etc/profile
