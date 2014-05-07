@@ -1,0 +1,364 @@
+GRAILS - COMO EXPORTAR DATOS A UN ARCHIVO CSV
+=============================================
+Para poder realizar esta tarea se debe utilizar el export plugin, al igual que se hace para exportar a Excel.
+
+
+--------------------------
+CONFIGURACIÓN DEL PROYECTO
+--------------------------
+Archivo BuildConfig:
+Dependency :
+compile ":export:1.5"
+
+Archivo Config.groovy:
+grails.mime.types = [ html: ['text/html','application/xhtml+xml'],
+                      xml: ['text/xml', 'application/xml'],
+                      text: 'text/plain',
+                      js: 'text/javascript',
+                      rss: 'application/rss+xml',
+                      atom: 'application/atom+xml',
+                      css: 'text/css',
+                      csv: 'text/csv',
+                      all: '*/*',
+                      json: ['application/json','text/json'],
+                      form: 'application/x-www-form-urlencoded',
+                      multipartForm: 'multipart/form-data',
+					  excel: 'application/vnd.ms-excel'
+                    ]
+					
+					
+-----------
+UTILIZACIÓN
+-----------
+Ejemplo 1:
+**********
+	def getExcelInscripcionsCardio(){
+		// Buscarem les comunicacions per la data d'extracció donada
+		def query =	{
+				order("cognom1","asc")
+				order("cognom2","asc")
+				order("nom","asc")
+		}
+	
+		def resultList = InscripcioCardiovascular.createCriteria().list(query)
+
+		//Definició dels formats
+		def formatPerfil = {domain, value ->
+			if(domain?.perfil!=null && !domain?.perfil.equals("")){
+//				return domain?.perfil + " " + Perfil.findByCodi(domain?.perfil).descripcio
+				return Perfil.findByCodi(domain?.perfil).descripcio
+			}
+			
+		}
+		
+		def formatCampus = {domain, value ->
+			if(domain?.campus!=null && !domain?.perfil.equals("")){
+				return Campus.findByCodi(domain?.campus).descripcioLlarga
+			}
+			
+		}
+		
+		def formatAreaPersonal = {domain, value ->
+			if(domain?.areaPersonal!=null && !domain?.areaPersonal.equals("")){
+				return TPersonaAreaPersonal.findByCodi(domain?.areaPersonal).descripcio
+			}
+			
+		}
+		
+		def formatDataInscripcio = {domain, value ->
+			if(domain?.dataInscripcio!=null){
+				return value.format('dd/MM/yyyy')
+			}
+		}
+		
+		def formatDataFiTractament = {domain, value ->
+			if(domain?.dataFiTractament!=null){
+				return value.format('dd/MM/yyyy')
+			}
+		}
+		
+		def formatFiTractament = {domain, value ->
+			switch (value) {
+				case 'S': return 'Sí'
+				  	break
+				case 'N': return 'No'
+					break
+			}
+		}
+		
+		List fields = []
+		List width = []
+		Map labels = [:]
+
+		// Paràmetres de l'extracció:
+		// Amb capçalera
+		// Separador de camp ";"
+		// Sense caràcter del.limitador de text
+		// Caràcter de nova línia = "\r\n"
+				
+		Map parameters = ["header.enabled":1,"separator":";","quoteCharacter":"\u0000","lineEnd":"\r\n"]
+		
+		Map formatters =[
+			perfil:formatPerfil,
+			dataInscripcio:formatDataInscripcio,
+			campus:formatCampus,
+			areaPersonal:formatAreaPersonal,
+			dataFiTractament:formatDataFiTractament,
+			fiTractament:formatFiTractament
+		]
+
+		//Mapejem les columnes de dades
+		fields.add("nif")
+		labels.put("nif","DNI")
+		width.add(0.2)
+
+		fields.add("cognom1")
+		labels.put("cognom1","PRIMER_COGNOM")
+		width.add(0.2)
+
+		fields.add("cognom2")
+		labels.put("cognom2","SEGON_COGNOM")
+		width.add(0.2)
+		
+		fields.add("nom")
+		labels.put("nom","NOM")
+		width.add(0.2)
+					
+		fields.add("dataInscripcio")
+		labels.put("dataInscripcio","DATA_SUBSCRIPCIO")
+		width.add(0.2)
+			
+		fields.add("perfil")
+		labels.put("perfil","PERFIL")
+		width.add(0.2)
+		
+		fields.add("campus")
+		labels.put("campus","CAMPUS")
+		width.add(0.2)
+
+		fields.add("areaPersonal")
+		labels.put("areaPersonal","AREA_PERSONAL")
+		width.add(0.2)
+		
+		fields.add("fiTractament")
+		labels.put("fiTractament","TRACTAMENT_FINALITZAT")
+		width.add(0.2)
+		
+		fields.add("dataFiTractament")
+		labels.put("dataFiTractament","DATA_FI_TRACTAMENT")
+		width.add(0.2)
+								
+		parameters.put("column.widths", width)
+			
+		response.contentType = grailsApplication.config.grails.mime.types['excel']
+		response.setHeader("Content-disposition", "attachment; filename=Subscripcions_Cardio.xls")
+		exportService.export("excel", response.outputStream,resultList,fields,labels,formatters,parameters)
+	
+	}
+	
+
+Ejemplo 2:
+**********
+	private exportToCSV() //Agafem el array de resultats i l'exportem a excel.
+	{
+		def format = "csv"
+		this.obtenirResultats()
+		def dades = this.resultats
+		def par = params
+		this.parametresCerca = par
+				
+		List fields = []
+		Map labels = [:]
+		Map parameters = [:]
+		Map formatters = [:]						
+		
+---->	parameters.put("encoding", "ISO-8859-1")
+		parameters.put("lineEnd", "\r\n")
+		parameters.put("separator", ";")
+		
+		// Mapejem les columnes de dades
+		fields.add("codi")
+		labels.put("codi", "Lloc: Codi")
+		fields.add("descripcioLlarga")
+		labels.put("descripcioLlarga", "Lloc: Denominació")
+		fields.add("TCUnitatIDescripcio")
+		labels.put("TCUnitatIDescripcio", "Lloc: Unitat")
+		
+		if(this.parametresCerca.tllocGrupPersonalDescripcio)
+		{
+			fields.add("tllocGrupPersonalDescripcio")
+			labels.put("tllocGrupPersonalDescripcio", "Lloc: Grup de personal")
+		}
+		
+		if(this.parametresCerca.tllocAreaPersonalDescripcio)
+		{
+			fields.add("tllocAreaPersonalDescripcio")
+			labels.put("tllocAreaPersonalDescripcio", "Lloc: Àrea de personal")
+		}
+		
+		if(this.parametresCerca.TCestat)
+		{
+			fields.add("TCestat")
+			labels.put("TCestat", "Lloc: Catalogació")
+		}
+		
+		if(this.parametresCerca.TCGrupAcces)
+		{
+			fields.add("TCGrupAcces")
+			labels.put("TCGrupAcces", "Lloc: Grup")
+		}
+		
+		if(this.parametresCerca.nivellComplementDesti)
+		{
+			fields.add("nivellComplementDesti")
+			labels.put("nivellComplementDesti", "Lloc: Nivell")
+		}
+		
+		if(this.parametresCerca.TCCosCat)
+		{
+			fields.add("TCCosCat1")
+			labels.put("TCCosCat1", "Lloc: Cos/categoria")
+		}
+		
+		if(this.parametresCerca.TCEscalaEsp)
+		{
+			fields.add("TCEscalaEsp1")
+			labels.put("TCEscalaEsp1", "Lloc: Escala/especialitat")
+		}
+		
+		if(this.parametresCerca.TCJornada)
+		{
+			fields.add("TCJornada")
+			labels.put("TCJornada", "Lloc: Jornada (PAS)")
+		}
+		
+		if(this.parametresCerca.TCDedicacio)
+		{
+			fields.add("TCDedicacio")
+			labels.put("TCDedicacio", "Lloc: Dedicació")
+		}
+		
+		if(this.parametresCerca.TCFinancament)
+		{
+			fields.add("TCFinancament")
+			labels.put("TCFinancament", "Lloc: Finançament")
+		}
+		
+		if(this.parametresCerca.TCfuncio)
+		{
+			fields.add("TCfuncio")
+			labels.put("TCfuncio", "Lloc: Funció (PAS)")
+		}	
+		
+		if(this.parametresCerca.TCAmbit)
+		{
+			fields.add("TCAmbit")
+			labels.put("TCAmbit", "Lloc: Àmbit (PAS)")
+		}
+		
+		if(this.parametresCerca.TCFamilia)
+		{
+			fields.add("TCFamilia")
+			labels.put("TCFamilia", "Lloc: Família (PAS)")
+		}
+		
+		fields.add("tpernr")
+		labels.put("tpernr", "Ocupant: Id.Personal")
+		
+		fields.add("TCnomComplet")
+		labels.put("TCnomComplet", "Ocupant: Nom i cognoms")
+		
+		/*if(this.parametresCerca.tnaixament)
+		{
+			fields.add("tdataNaixement")
+			labels.put("tdataNaixement", "Ocupant: Data de naixement")
+		}
+		*/
+		if(this.parametresCerca.tgrupPersonaDescripcio)
+		{
+			fields.add("tgrupPersonaDescripcio")
+			labels.put("tgrupPersonaDescripcio", "Ocupant: Grup de personal")
+		}
+		
+		if(this.parametresCerca.tareaPersonalDescripcio)
+		{
+			fields.add("tareaPersonalDescripcio")
+			labels.put("tareaPersonalDescripcio", "Ocupant: Àrea de personal")
+		}
+		
+		if(this.parametresCerca.TCadscripcionsFuncionals)
+		{
+			fields.add("TCadscripcionsFuncionals")
+			labels.put("TCadscripcionsFuncionals", "Ocupant: Vinculació (PDI)")
+		}
+		
+		if(this.parametresCerca.TCcampusdescripcio)
+		{
+			fields.add("TCcampusdescripcio")
+			labels.put("TCcampusdescripcio", "Ocupant: Campus")
+
+			fields.add("ttEdescri")
+			labels.put("ttEdescri", "Ocupant: Edifici")
+			
+			fields.add("TCubicacio")
+			labels.put("TCubicacio", "Ocupant: Ubicació")
+
+			fields.add("ttEdirecc")
+			labels.put("ttEdirecc", "Ocupant: Domicili")
+
+			fields.add("ttEcodpos")
+			labels.put("ttEcodpos", "Ocupant: Codi postal")
+
+			fields.add("ttEpoblac")
+			labels.put("ttEpoblac", "Ocupant: Població")
+		}
+		
+		if(this.parametresCerca.telefon)
+		{
+			fields.add("telefon")
+			labels.put("telefon", "Ocupant: Telèfon lab. principal")
+		}
+		
+		if(this.parametresCerca.telefon2)
+		{
+			fields.add("telefon2")
+			labels.put("telefon2", "Ocupant: Telèfon lab. secundari")
+		}
+		
+		if(this.parametresCerca.tcorreu)
+		{
+			fields.add("tcorreu")
+			labels.put("tcorreu", "Ocupant: Adreça de correu electrònic")
+		}
+		
+		
+		if(this.parametresCerca.tgrupTitulacio)
+		{
+			fields.add("tgrupTitulacio")
+			labels.put("tgrupTitulacio", "Ocupant: Grup")
+		}
+		
+		if(this.parametresCerca.TCCosCatPersonal)
+		{
+			fields.add("TCCosCatPersonal")
+			labels.put("TCCosCatPersonal", "Ocupant: Cos/categoria")
+		}
+		
+		
+		if(this.parametresCerca.TCEscalaEspecialitatPersonal)
+		{
+			fields.add("TCEscalaEspecialitatPersonal")
+			labels.put("TCEscalaEspecialitatPersonal", "Ocupant: Escala/especialitat")
+		}
+		
+		if(this.parametresCerca.TCDedicacioPersonal)
+		{
+			fields.add("TCDedicacioPersonal")
+			labels.put("TCDedicacioPersonal", "Ocupant: Dedicació")
+		}		
+			
+		response.contentType = grailsApplication.config.grails.mime.types[format]
+		response.setHeader("Content-disposition", "attachment; filename=dades.csv")
+		exportService.export(format, response.outputStream, this.resultats, fields, labels, [:], parameters)
+		
+	}
