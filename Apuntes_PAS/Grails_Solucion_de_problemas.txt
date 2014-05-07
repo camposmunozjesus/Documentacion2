@@ -434,3 +434,31 @@ Fuentes:
 Aquí en el primer comentario de Kris De Volder nombra la solución ('/lib/org.springsource.springloaded' into 'lib/com.springsource.springloaded'): https://issuetracker.springsource.com/browse/STS-3128
 Se deduce aquí que la carpeta necesari está en C:\Grails: https://issuetracker.springsource.com/browse/STS-3128
 Habla del GRAILS_HOME: http://stackoverflow.com/questions/11145814/grails-2-0-4-error-opening-zip-file-or-jar-manifest-missing-springloaded
+
+
+******************************************************************************************************************************************************
+------------
+Problema 14: (CODIFICACION) Los símbolos como "ñ" y acentos no se ven bien al abrir el CSV con Excel.
+------------
+En las aplicaciones en las que se generan archivos CSV, el navegador los abre directamente con el Excel, o al descargarlos, se descargan como 
+"Archivo de valores separados por comas de Microsoft Excel (.csv)", por lo que se abren con Excel.
+
+Cuando la aplicación se testea en el GGTS (bajo windows) o se genera el WAR y se desplega en un Apache Tomcat levantado en Windows, todo funciona bien.
+
+El probelma se produce al desplegar el WAR en test o producción, debido a que los Apache Tomcat están corriendo en Linux. Al abrir estos archivos con 
+el Notepad++ todo se ve correctamente, pero al abrirlos con Excel (que es lo que hace el navegador directamente) se ven mal los acentos y las "ñ"'s.
+En Notepad++ podemos ver que los archivos fallidos son "UTF-8 sin BOM" en el apartado "Codificar" y que se visualiza "ANSI as UTF-8". En cambio los que
+se visualizan correctamente son "ANSI" en los dos sitios.
+
+Para replicar el problema de manera fácil, ya que cada vez que se realiza una prueba subir el WAR hay que subirlo a test o producción,, 
+debe utilizarse un entorno de desarrollo/ejecución en Linux. Si se ejecuta el GGTS bajo Linux producirá el mismo fallo.
+
+Solución 14:
+------------
+Extraída del código de la BDP. ExtraccioDadesController.groovy
+Utilizar en el código groovy de generación del archivo CSV:
+	parameters.put("encoding", "ISO-8859-1")
+o bien:
+	Map parameters = ["header.enabled":1,"separator":";","quoteCharacter":"\u0000","lineEnd":"\r\n","encoding":"ISO-8859-1"]
+	
+ISO-8859-1 es la codificación correcta a utilizar.
