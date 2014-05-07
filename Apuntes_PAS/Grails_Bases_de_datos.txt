@@ -47,9 +47,10 @@ Incluir en el BuildConfig.groovy:
         // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes e.g.
         // runtime 'mysql:mysql-connector-java:5.1.24'
 		runtime 'postgresql:postgresql:9.0-801.jdbc4'
+		//Para Grail 2.4M2 se utiliza: runtime 'org.postgresql:postgresql:9.3-1101-jdbc41'
     }
 	
-Archivo Config.groovy:
+Archivo DataSource.groovy:
 dataSource {
 	pooled = true
 	driverClassName = "org.postgresql.Driver"
