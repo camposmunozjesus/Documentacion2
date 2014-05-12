@@ -99,6 +99,9 @@ Pueden haber problemas en el momento de leer la tabla, como indicar que el atrib
 Para que reconozca el esquema, en static maapping hay que indicar: (con comillas dobles!!!)
     static mapping = {
 		table name: "taula", schema: "test"
+		id name:'nombre_de_la variable_que_es_el_id'
+		id generator:'assigned'
+		version false
 		...
     }
 	
@@ -678,3 +681,19 @@ persona, por lo que al listar toda la tabla de los trabajadores de la empresa, e
 	def listaUnidades = (totalPuestos*.codigoDepartamento).unique()
 	
 De esta manera conseguimos quedarnos únicamente con una lista de códigos de departamento, y el resto de campos de la clase del dominio Lloc se obvian.
+
+
+<CLOSURE>*********************************************************************************************************************************************
+-------------
+CLOSURE WHERE
+-------------
+Esta closure está admitida (en principio) con GrailsCompileStatic
+	def query = Person.where {
+	   firstName == "Bart"
+	}
+	Person bart = query.find()
+
+Para ejecutarla directamente:
+	def resultList2 = DataTestOne.where {
+		nom == 'Carlos'
+	}.find()
