@@ -1,0 +1,38 @@
+GRAILS - ENVIAR MAILS
+=====================
+-----------
+DESCRIPCIÓN
+-----------
+Permite recuperar configurarciones almacenadas en archivos (como podría ser en Config.groovy).
+
+En "PruebasBasicas2" -> Package: "ConfigSlurper" se encuentra un ejemplo de utilización.
+
+Recursos web: http://groovy.codehaus.org/ConfigSlurper
+
+
+-----------------------------------
+UTILIZACIÓN - ARCHIVO CONFIG.GROOVY
+-----------------------------------
+En el archivo Config.groovy almacenamos la siguiente variable:
+	com.jesuscamposmunoz.dataTypeA="variable de prueba"
+
+Y se puede recuperar en el controlador de la siguiente manera: 
+	grailsApplication.config.com.jesuscamposmunoz.dataTypeA
+o páginas GSP de la siguiente manera:
+	${grailsApplication.config.com.jesuscamposmunoz.dataTypeA}
+	
+
+---------------------------
+UTILIZACIÓN - NUEVO ARCHIVO 
+---------------------------
+Creamos el siguiente archivo en la carpeta src de nuestro proyecto
+	//Config1.groovy
+	stringProperty="Some string"
+	numberProperty=42
+	booleanProperty=false
+	listProperty=["Monday", "Tuesday", "Wednesday"]
+y lo llamamos "Config1.groovy".
+
+Y se pueden recuperar los valores en él almacenados en el controlador de la siguiente manera: 
+	def config = new ConfigSlurper().parse(new File('src/Config1.groovy').toURL())
+	println config.stringProperty
