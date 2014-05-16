@@ -61,7 +61,7 @@ Ejemplo:
 ----------------------------
 FORMATOS PÁGINAS EDIT/CREATE
 ----------------------------
-Se utiliza una tabla para encajar los elemento en dos columnas.
+Se utiliza una tabla para encajar los elementos en dos columnas.
 La columna de la izquierda es de la clase name.
 La columna de la derecha es de la clase value.
 Ejemplo de código:
