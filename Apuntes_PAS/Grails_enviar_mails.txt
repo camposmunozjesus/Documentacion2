@@ -42,9 +42,9 @@ Otras:					http://stackoverflow.com/questions/2941650/grails-mail-port-configura
 
 
 *****************************************************************************************************************************************************
------------------
-CÓDIGO DE EJEMPLO
------------------
+--------------------------
+CÓDIGO DE EJEMPLO - BÁSICO
+--------------------------
 En un controlador escribir:
     def index() {
 		sendMail {
@@ -82,3 +82,149 @@ de los links (http://grails.1312388.n4.nabble.com/Advice-on-bounced-amp-noreply-
 Otros: 
 http://grails.1312388.n4.nabble.com/How-to-receive-emails-in-Grails-td2329500.html
 http://grails.1312388.n4.nabble.com/Advice-on-bounced-amp-noreply-mails-td2315429.html#a2315429
+
+
+
+*****************************************************************************************************************************************************
+---------------------------------------------------
+UTILIZAR ALIAS PARA EL NOMBRE DEL SERVIDOR DE ENVÍO
+---------------------------------------------------
+Utilizando:
+	senMail{
+		from "UPC Cardio <UPC.Cardio@upc.edu>"
+	}
+	
+Se consigue que el usuario que recibe el mail vea que se lo ha enviado "UPC Cardio" en lugar de "UPC.Cardio@upc.edu". Además el usuario no puede ver
+la dirección "UPC.Cardio@upc.edu".
+Referencia utilizada:
+http://stackoverflow.com/questions/11296333/how-to-get-customized-from-address-in-grails-email-service
+
+
+
+*****************************************************************************************************************************************************
+-----------------
+ADJUNTAR IMÁGENES
+-----------------
+Para adjuntar una imagen debe utilizarse:
+	sendMail {
+		multipart true
+		...
+		inline 'imagenWeb', 'image/jpg', new File('./web-app/images/imagenWeb.png')
+	}
+	
+
+
+*****************************************************************************************************************************************************
+--------------------------
+ENVIAR IMÁGENES EN EL MAIL
+--------------------------
+Se trata de poder enviar imágenes dentro del mail, NO adjuntas que se puedan descargar, sino que sean imágenes que se puedan incluir en la firma.
+
+Se tiene una imagen en la carpeta "web-app" -> "images" -> "imagenWeb.png"
+
+Para poder incluir la imagen junto con el texto del mail hay que utilizar un template. El template debe estar situado en la carpeta "Views" 
+correspondiente al controlador. El template debe ser una página GSP (debe tener extensión GSP) y su nombre debe comenazar por "_". El template es en 
+formato HTML.
+
+Luego, para insertar la imagen, debe especificarse tanto en el template como en el código groovy del controlador.
+En el template como:
+	<img src="cid:imagenWeb"/>	A veces se admite utilizar: <img src="imagenWeb" />
+En el código Groovy como:
+	sendMail {
+		...
+		inline 'imagenWeb', 'image/jpg', new File('./web-app/images/imagenWeb.png')
+	}
+
+Debe indicarse "multipart true" en el controlador, dentro de la closure "sendMail" para que admita imágenes.
+	sendMail {
+		multipart true
+		...
+		inline 'imagenWeb', 'image/jpg', new File('./web-app/images/imagenWeb.png')
+	}
+
+	
+-----------------
+CÓDIGO DE EJEMPLO
+-----------------
+Código del controlador (closure): 
+ * Nombre del controlador (de ejemplo): ClasseAController.groovy
+ * Se envían datos del controlador al template: model: [link:link]
+ 
+	def enviarMail(personaInstance, perfil)
+	{
+		def enviarTo = personaInstance.correu
+		def link = perfil.urlRecomanacio
+		try
+		{
+			//Enviar mail a l'usuari i al gestor to "juan.luis.moreno@UPC.EDU" programa.cardio@upc.edu
+			sendMail {
+			   multipart true
+			   to enviarTo
+			   from "UPC Cardio <UPC.Cardio@upc.edu>"
+			   bcc "campos.tenia.que.ser@gmail.com"
+			   subject "UPC Cardio: recomanacions individualitzades"
+			   html  g.render( template: 'mailTemplate', model: [link:link])
+			   inline 'logo_cor_peque', 'image/jpg', new File('./web-app/images/logo_cor_peque.png')
+			}			
+	   }
+	   catch(Exception e)
+	   {
+		   log.error("Error a l'enviar correu electrònic a "+enviarTo+".")
+		   log.error(e.toString())
+	   }
+   }
+
+   
+Código del controlador:
+ * En template debe ubicarse en "Views" -> "ClasseA".
+ * El template debe llamarse: "_mailTemplate.gsp"
+	<%@ page contentType="text/html" %>
+	<html>
+	<head>
+		<style>
+			.bodyMail{
+				font-family: Arial, Helvetica, sans-serif;
+				font-size:0.8em;
+			}
+			
+			.footerMail{
+				font-family: Arial, Helvetica, sans-serif;
+				margin-top: 3px;
+				font-size:0.7em;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="bodyMail">
+			TEXTO DEL MAIL<br><br>
+		</div>
+		<div class="footerMail">
+			<b>Footer #1</b><br>
+			<div style="color:#0082ca;"><b>Footer #2</b></div><br>
+			<div style="margin-top: -5px;">
+				<div>
+					<img src="cid:logo_cor_peque" width="80px" height="62px" border="0" align="left"/>
+				</div>
+				<div style="margin-left:92px;padding-top:12px;">
+					<a href="http://examplesdevelop.16mb.com/">http://examplesdevelop.16mb.com/</a><br>
+					jesus.campos@upc.edu
+				</div>
+			</div>
+		</div>
+	</body>
+	</html>
+
+
+
+*****************************************************************************************************************************************************
+------------------------------
+Creación:		07-04-2014
+
+Modificación:	16-05-2014
+				UTILIZAR ALIAS PARA EL NOMBRE DEL SERVIDOR DE ENVÍO
+				ENVIAR IMÁGENES EN EL MAIL
+				
+Jesús Campos Muñoz
+jesus.campos@upc.edu
+------------------------------
