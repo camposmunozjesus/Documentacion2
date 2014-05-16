@@ -492,8 +492,39 @@ Esto significa:
 		condiciones: "formaOcupacio"!="CA" o "formaOcupacio"==NULL.
 		Es decir, el AND tiene dos condiciones, debe cumplirse "unitatOrganitzativa"=lista[i].codigo.toString() y luego, una de las dos situaciones
 		siguientes, o bien "formaOcupacio"!="CA" o "formaOcupacio"==NULL.
-		
-		
+	
+
+-------------------------------------
+FUNCIONAMIENTO DE AND/OR EN DEF QUERY
+-------------------------------------
+Ejemplo:
+	def query = {
+		and{
+			eq( .......... ) -> sentencia 1
+			or{
+				eq( .......... ) -> sentencia 2
+				eq( .......... ) -> sentencia 3
+			}
+		}
+	}
+
+	def resultList = DomainClass.createCriteria().list(query)
+	
+La consulta se quedará con todos los que cumplen la sentencia 1 obligatoriamente y además cumplan con una de las dos siguiente: la sentencia 2 o bien
+la sentencia 3. Con que cumpla una de las dos sentencias (la 2 o la 3) y la sentencia 1 ya es suficiente.
+
+
+Explicación:
+Todas las sentencias que hay dentro de un AND deben cumplirse. Pero en esta ocasión la segunda sentencia dentro de la condición AND es una cláusula
+OR, por lo que se interpreta que se deberá cumplir la sentencia número 1 y alguna de las contenidas dentro de la cláusula OR.
+
+
+Equivalencia:
+	def resultList = DomainClass.where {
+		sentencia 1 && (sentencia 2 || sentencia3)
+	}.list()
+
+	
 <CONSULTAS BÁSICAS>************************************************************************************************************************************
 ---------------------------------------
 ELIMINAR EL PRIMER ELEMENTO DE LA LISTA
@@ -514,6 +545,12 @@ De todas formas, la manera sería:
 	tipusBossesHoresList.remove(0) //Com que no volem consultar les hores extres perque ja hi ha un apartat específic
 		
 		
+----
+SAVE
+----
+Permite crear el registro en la tabla, y si existe, lo actualiza.
+
+
 <ORDENACIÓN>*******************************************************************************************************************************************
 -------------------------------------------------
 ORDENAR UN VECTOR RECUPERADO DE UNA BASE DE DATOS
