@@ -141,6 +141,7 @@ Debe indicarse "multipart true" en el controlador, dentro de la closure "sendMai
 		...
 		inline 'imagenWeb', 'image/jpg', new File('./web-app/images/imagenWeb.png')
 	}
+Referencia: http://stackoverflow.com/questions/10445785/send-an-image-in-an-email-with-grails
 
 	
 -----------------
