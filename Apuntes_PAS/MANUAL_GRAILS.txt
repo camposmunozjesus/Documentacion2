@@ -176,6 +176,12 @@ En el caso que el elemento (textfield, etc ...) esté en estado disabled, en el 
 Por ejemplo: <g:textField disabled="true" id="primerCognom" name="primerCognom" value="${params?.primerCognom}" class="cercaCognom width120px"/>
 En el controlador params.primerCognom será no tendrá ningún valor.
 
+En el caso de tener un campo en un desplegable con la forma:
+		<g:select name="perfil" id="perfil" style="width:288px" keys="${tipusPerfilsList?.codi}" from="${tipusPerfilsList?.descripcio}" value="${personaInstance?.perfil}" />
+En el que se envía un valor "perfil1", "perfil2" o bien la opción por defecto "". Al recuperarlo en el controlador, cuando no se recibe ningún perfil
+la comparación para detectarlo es:
+	if(params.perfil.toString().equals(""))
+
 
 ******************************************************************************************************************************************************
 -------------------------------------------------
@@ -301,3 +307,71 @@ Si en el controlador hago:
 	}else{
 		//Entro aquí.
 	}
+	
+	
+<VALORES>**********************************************************************************************************************************************
+----------------------------
+VALOR DEVUELTO EN UN SERVICE
+----------------------------
+Vamos a ver si devuelve nulo u otro valor un servicio. Si tenemos:
+	@Transactional
+	class UsuarioService {
+
+		def serviceMethod() {
+			println "[UsuarioService]::UsuarioService"
+		}
+		
+		DataTestOne Login (userName){
+			
+			def query = {
+				and{
+					eq("nom", userName.toString())
+				}
+			}
+			
+			def persona = DataTestOne.createCriteria().list(query)
+			
+			if (persona){
+				println "[UsuarioService]::UsuarioService:: Logeado correctamente"
+			}
+			else{
+				println "[UsuarioService]::UsuarioService:: Usuario no logeado"
+			}
+				
+			if (persona==null){
+				println "[UsuarioService]::UsuarioService:: NULL"
+			}
+		}
+	}
+
+Y el controlador es:
+	class Test01Controller {
+
+		def usuarioService
+		
+		//También valdría def index = {
+		def index () {
+			usuarioService.serviceMethod()
+			
+			def p = usuarioService.Login("Jessus")
+			
+			if(p){
+				println "[Test01Controller]::index:: Logeado correctamente."
+			}
+			else{
+				println "[Test01Controller]::index:: Logeado NO correctamente."
+			}
+			
+					
+			if(p==null){
+				println "[Test01Controller]::index:: NULL"
+			}
+		}
+	}
+
+Si el servicio no encuentra al usuario imprimirá tanto en el controlador como en el servicio que no se ha logeado, pero no imprimirá que es NULL. En 
+cambio, en el controlador la variable "p" es null, por lo que sí se imprime que es null.
+
+Al intentar imprimir el valor por pantalla de la variable "persona" se verá "[]".
+
+Si se encuentra al usuario correctamente se imprimirá que se ha logeado tanto en el servicio como en el controlador.

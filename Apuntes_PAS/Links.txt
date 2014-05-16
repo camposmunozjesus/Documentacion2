@@ -25,6 +25,8 @@ Explicación del operador ->:		http://stackoverflow.com/questions/5591174/eachwi
 
 Closures:							http://groovy.codehaus.org/Closures+-+Informal+Guide
 
+ConfigSlurper:						http://groovy.codehaus.org/ConfigSlurper
+
 									
 WEB SERVICE QUE SE PUEDEN UTILIZAR
 ==================================
