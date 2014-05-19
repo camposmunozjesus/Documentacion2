@@ -176,7 +176,7 @@ Código del controlador (closure):
    }
 
    
-Código del controlador:
+Código de la página GSP:
  * En template debe ubicarse en "Views" -> "ClasseA".
  * El template debe llamarse: "_mailTemplate.gsp"
 	<%@ page contentType="text/html" %>
