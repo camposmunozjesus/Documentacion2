@@ -14,7 +14,6 @@ grails.project.dependency.resolution = {
 }
 
 
-
 *****************************************************************************************************************************************************
 -------------
 CONFIGURACIÓN
@@ -40,7 +39,6 @@ Referencia utilizada: 	http://stackoverflow.com/questions/13711791/grails-2-1-1-
 Otras:					http://stackoverflow.com/questions/2941650/grails-mail-port-configuration
 
 
-
 *****************************************************************************************************************************************************
 --------------------------
 CÓDIGO DE EJEMPLO - BÁSICO
@@ -55,7 +53,6 @@ En un controlador escribir:
 	}
 
 Y ya está todo.
-
 
 
 *****************************************************************************************************************************************************
@@ -84,7 +81,6 @@ http://grails.1312388.n4.nabble.com/How-to-receive-emails-in-Grails-td2329500.ht
 http://grails.1312388.n4.nabble.com/Advice-on-bounced-amp-noreply-mails-td2315429.html#a2315429
 
 
-
 *****************************************************************************************************************************************************
 ---------------------------------------------------
 UTILIZAR ALIAS PARA EL NOMBRE DEL SERVIDOR DE ENVÍO
@@ -96,9 +92,12 @@ Utilizando:
 	
 Se consigue que el usuario que recibe el mail vea que se lo ha enviado "UPC Cardio" en lugar de "UPC.Cardio@upc.edu". Además el usuario no puede ver
 la dirección "UPC.Cardio@upc.edu".
+
+En el caso de tener configurada la cuenta de envío en el archivo Config.groovy hay que indicar el alias seguido de la cuenta que está puesta en el 
+archivo Config.groovy.
+
 Referencia utilizada:
 http://stackoverflow.com/questions/11296333/how-to-get-customized-from-address-in-grails-email-service
-
 
 
 *****************************************************************************************************************************************************
@@ -112,6 +111,7 @@ Para adjuntar una imagen debe utilizarse:
 		inline 'imagenWeb', 'image/jpg', new File('./web-app/images/imagenWeb.png')
 	}
 	
+Suponiendo que se tiene una imagen en la carpeta "web-app" -> "images" -> "imagenWeb.png"
 
 
 *****************************************************************************************************************************************************
@@ -199,6 +199,7 @@ Código de la página GSP:
 	<body>
 		<div class="bodyMail">
 			TEXTO DEL MAIL<br><br>
+			${link}
 		</div>
 		<div class="footerMail">
 			<b>Footer #1</b><br>
@@ -215,7 +216,6 @@ Código de la página GSP:
 		</div>
 	</body>
 	</html>
-
 
 
 *****************************************************************************************************************************************************
