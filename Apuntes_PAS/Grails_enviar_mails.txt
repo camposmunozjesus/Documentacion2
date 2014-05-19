@@ -100,7 +100,7 @@ Referencia utilizada:
 http://stackoverflow.com/questions/11296333/how-to-get-customized-from-address-in-grails-email-service
 
 
-*****************************************************************************************************************************************************
+<ARCHIVOS ADJUNTOS>***********************************************************************************************************************************
 -----------------
 ADJUNTAR IMÁGENES
 -----------------
@@ -108,10 +108,23 @@ Para adjuntar una imagen debe utilizarse:
 	sendMail {
 		multipart true
 		...
-		inline 'imagenWeb', 'image/jpg', new File('./web-app/images/imagenWeb.png')
+		attach  'imagenWeb.png', 'image/png', new File('./web-app/images/imagenWeb.png')
 	}
 	
 Suponiendo que se tiene una imagen en la carpeta "web-app" -> "images" -> "imagenWeb.png"
+
+
+----------------------
+ADJUNTAR ARCHVIVOS ZIP
+----------------------
+Para adjuntar una imagen debe utilizarse:
+	sendMail {
+		multipart true
+		...
+		attach  'Desktop.zip', '*/*', new File('./web-app/docs/Desktop.zip')
+	}
+	
+Suponiendo que se tiene un archivo comprimido con extensión .zip en la carpeta "web-app" -> "docs" -> "Desktop.zip"
 
 
 *****************************************************************************************************************************************************
