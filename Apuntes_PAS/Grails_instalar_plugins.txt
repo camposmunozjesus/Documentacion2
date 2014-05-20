@@ -12,3 +12,15 @@ grails.project.dependency.resolution = {
       compile ":mail:1.0.4"
    }
 }
+
+
+--------------
+WEBFLOW PLUGIN
+--------------
+Referencia de utilización: http://grails.org/plugin/webflow
+Permite crear un webflow en Grails.
+En la versión 2.3 se instala de la siguiente manera: (archivo BuildConfig.groovy)
+plugins {
+   …
+   compile ':webflow:2.0.8.1'
+}

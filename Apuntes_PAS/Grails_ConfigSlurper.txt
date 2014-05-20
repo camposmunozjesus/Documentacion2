@@ -1,5 +1,5 @@
-GRAILS - ENVIAR MAILS
-=====================
+GRAILS - CONFIG SLURPER
+=======================
 -----------
 DESCRIPCIÓN
 -----------

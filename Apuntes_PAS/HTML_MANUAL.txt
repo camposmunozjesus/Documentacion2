@@ -56,3 +56,8 @@ JS:
 			document.getElementsByName('segonCognom')[0].disabled = false;
 		}
 	}
+	
+Si deseáramos saber si el elemento está vacío:
+	if(document.getElementById('dataInici').value=='' && document.getElementById('dataFi').value==''){
+		loadIframes();
+	}

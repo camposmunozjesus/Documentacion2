@@ -1,9 +1,0 @@
-Groovy
-======
-Ejemplo tipo "Hello Wrold":			http://groovy.codehaus.org/Create+Your+First+Groovy+Project
-Ejemplo de instalación de GRAILS: 	http://jckmex.net/grails-introduccion/
-
-Grails
-======
-Libro en pdf de grails: 			http://www.vivelalectura.com.mx/aura/1/1%29%20Manual%20Grails.pdf
-Enlace a tutoriales: 				http://www.grailsexample.net/course-outline/
