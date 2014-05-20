@@ -1,0 +1,16 @@
+GRAILS - FILTROS
+================
+
+---------------------
+CREACIÓN DE UN FILTRO
+---------------------
+Sobre la carpeta "conf" hacer botón derecho -> "New" -> "Filters". Entonces se habrá creado un nuevo filtro.
+
+
+*****************************************************************************************************************************************************
+------------------------------
+Creación:	20-05-2014
+
+Jesús Campos Muñoz
+jesus.campos@upc.edu
+------------------------------
