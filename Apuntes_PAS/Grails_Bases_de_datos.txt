@@ -701,8 +701,16 @@ Ejemplo:
 	def personaInstance
 	def personaInstanceList = Persona.list()
 	personaInstance = personaInstanceList[0]
-	if(!persona) { ... //Si no ha encontrado a nadie (es decir nada), entrará aquí. }
+	if(!persona) { ... //Si no ha encontrado a nadie (es decir nada), entrará aquí.}
 	else{ ... //Si ha encontrado a alguien entrará aquí. }
+	
+Ejemplo:
+	def resultList = PermisHores.createCriteria().list(query)
+	if(resultList.size()>0){
+		... //Si ha encontrado a nadie (es decir nada), entrará aquí.
+	}
+	
+Se puede utilizar el size() o la condición if(persona) ó if(!persona).
 	
 	
 ******************************************************************************************************************************************************
