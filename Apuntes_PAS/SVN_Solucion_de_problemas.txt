@@ -1,3 +1,5 @@
+SNV TORTOISE - SOLUCIÓN DE PROBLEMAS
+====================================
 The Subversive project is aimed to integrate the Subversion (SVN) version control system with the Eclipse platform. Using the Subversive plug-in, 
 you can work with projects stored in Subversion repositories directly from the Eclipse workbench in a way similar to work with other Eclipse version 
 control providers, such as CVS and Git. 
@@ -18,3 +20,48 @@ The project follows all Eclipse guidelines and requirements to deliver a quality
 Support of the Latest SVN Versions - Subversive evolves together with the Subversion project to provide Eclipse users with the features that 
 appeared in new versions of the SVN implementation. You can use the new SVN functionality in Eclipse by installing the Early Access version of 
 Subversive.
+
+
+-----------
+Problema 1: (GENERAL) Al hacer un commit aparece un mensaje de "is out of date".
+-----------
+Si al hacer un commit aparece lo siguiente:
+Action	Path
+Error	Commit failed (details follow):
+Error	File 'nombre_del_archivo' is out of date; try updating
+Error	resource out of date; try updating
+
+Puede deberse a dos cosas:
+1er caso:
+	- Se ha descargado un archivo(versión 1)
+	- Alguien lo modifica y lo sube (se crea la versión 2)
+	- Tú modificas la versión 1 e intentas subirla (intentando machacar la versión 2)
+	
+1do caso:
+	- Un fallo que no tiene explicación
+	- A veces sucede aunque intentemos actualizar la última versión, es decir descargamos la versión n del archivo y se intenta hacer un commit de esa
+	  misma versión n.
+	- A veces sucede que no deja actualizar una carpeta entera, y sí deja archivo por archivo. Por lo que encontrar explicación es difícil.
+
+	
+Solución 1:
+-----------
+En ambas situaciones nos pide hacer un update y posteriormente un commit para solucionar el problema. Esto funciona, pero hay que tener en cuenta ...
+1er caso: 
+	- Cuando se haga el update, la copia local incluirá los cambios que se produjeron en la versión 2 y que se subieron al repositorio pero no descargamos.
+	- Cuando se haga el commit, se añadirán nuestros cambios a la versión existente, con lo que resultará una tercera versión (nuestros cambios más los
+	  de la segunda versión).
+
+2do caso:
+	- No pasará nada, debido que al ser un fallo del programa, el archivo realmente no ha variado.
+	- Si se ha podido actualizar archivo por archivo de manera correcta (aunque no hhaya dejado hacerlo con la carpeta) los archivos estarán correctamente
+	  actualizados, por lo que al hacer el merge, no añadirá nada.
+	  
+	  
+*****************************************************************************************************************************************************
+------------------------------
+Creación:	20-05-2014
+
+Jesús Campos Muñoz
+jesus.campos@upc.edu
+------------------------------
