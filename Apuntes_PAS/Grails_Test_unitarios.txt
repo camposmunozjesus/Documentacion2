@@ -1,0 +1,40 @@
+GRAILS - TEST UNITARIOS
+=======================
+
+----------------------------
+CREACIÓN DE UN TEST UNITARIO
+----------------------------
+Cuando creamos un controlador automáticamente se cre un test unitario de pruebas con "NombreControladorSpec.groovy" en la carpeta "test/unit/NombrePackage".
+
+También se puede crear de manera manual haciendo:
+	- Botón derecho sobre la aplicación (mejor sobre test/unit/NombrePackage)
+	- Elegir la opción "Grails Unit Test"
+Y se creará una clase igual que las que se crean automáticamente al crear un controlador.
+
+
+
+-------------------------------------
+CAMBIOS A REALIZAR EN LA CLASE CREADA
+-------------------------------------
+Para poder usar la clase deben hacerse los siguiente cambios:
+	- Eliminar todos los imports existentes.
+	- Eliminar la anotación @TestFor(GenteService).
+	- Cambiar extends Specification por extends GrailsUnitTestCase.
+	- Hacer un import de grails.test.GrailsUnitTestCase.
+
+
+
+---------------------------
+EJECUCIÓN DEL TEST UNITARIO
+---------------------------
+Para ejecutar el test unitario creado hay que seleccionar la clase en la que se ha escrito el test, botón derecho y "Run as" -> "Grails Command (test-app)"
+
+
+
+*****************************************************************************************************************************************************
+------------------------------
+Creación:	21-05-2014
+
+Jesús Campos Muñoz
+jesus.campos@upc.edu
+------------------------------
