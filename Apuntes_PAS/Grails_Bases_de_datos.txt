@@ -492,7 +492,27 @@ Esto significa:
 		condiciones: "formaOcupacio"!="CA" o "formaOcupacio"==NULL.
 		Es decir, el AND tiene dos condiciones, debe cumplirse "unitatOrganitzativa"=lista[i].codigo.toString() y luego, una de las dos situaciones
 		siguientes, o bien "formaOcupacio"!="CA" o "formaOcupacio"==NULL.
+
+
+-----------------------------------------------
+RECUPERAR DATOS Y COMPROBAR SI SON NULOS/VACIOS
+-----------------------------------------------
+Queremos saber si al realizar la consulta a la base de datos hemos recuperado o no algún elemento.
+Ejemplo:
+	def personaInstance
+	def personaInstanceList = Persona.list()
+	personaInstance = personaInstanceList[0]
+	if(!persona) { ... //Si no ha encontrado a nadie (es decir nada), entrará aquí.}
+	else{ ... //Si ha encontrado a alguien entrará aquí. }
 	
+Ejemplo:
+	def resultList = PermisHores.createCriteria().list(query)
+	if(resultList.size()>0){
+		... //Si ha encontrado a nadie (es decir nada), entrará aquí.
+	}
+	
+Se puede utilizar el size() o la condición if(persona) ó if(!persona).		
+
 
 -------------------------------------
 FUNCIONAMIENTO DE AND/OR EN DEF QUERY
@@ -692,26 +712,29 @@ Si se utiliza para imprimir:
 Se imprime la lista de los códigos: ***[001, 002]
 
 
-******************************************************************************************************************************************************
------------------------------------------------
-RECUPERAR DATOS Y COMPROBAR SI SON NULOS/VACIOS
------------------------------------------------
-Queremos saber si al realizar la consulta a la base de datos hemos recuperado o no algún elemento.
+<LISTAS DE ELEMENTOS>*********************************************************************************************************************************
+--------------------------------------------------------------------------------
+RECUPERAR DATOS QUE CUMPLAN CON UN CAMPO QUE SEA IGUAL AL DE DENTRO DE UNA LISTA
+--------------------------------------------------------------------------------
+Queremos realizar una consulta en la que un campo debe de coincidir o no con los que se encuentran dentro de una determinada lista.
 Ejemplo:
-	def personaInstance
-	def personaInstanceList = Persona.list()
-	personaInstance = personaInstanceList[0]
-	if(!persona) { ... //Si no ha encontrado a nadie (es decir nada), entrará aquí.}
-	else{ ... //Si ha encontrado a alguien entrará aquí. }
-	
-Ejemplo:
-	def resultList = PermisHores.createCriteria().list(query)
-	if(resultList.size()>0){
-		... //Si ha encontrado a nadie (es decir nada), entrará aquí.
+	query = {
+		and {
+			eq("pernr", this.getRealId())
+			'in'("codiPermisHores", ["7043", "7044"]) //codiPermisHores es un campo tipo String.
+			ne("estado",2)
+			ge("permisDataTemps", limitInferiorPermis )
+			le("permisDataTemps", limitSuperiorPermis )
+		}
 	}
+						   
+	def resultList = DomainClass.createCriteria().list(query)
 	
-Se puede utilizar el size() o la condición if(persona) ó if(!persona).
-	
+En este caso se utiliza 'in' indicándole una lista de Strings entre los que queremos encontrar que se produzca la coincidencia. Si en la tabla se encuentra
+una fila que "codiPermisHores" valga "7043" o bien "7044" y además cumpla el resto de condiciones será válida para nuestros propósitos.
+
+Referencia: http://grails.org/doc/2.3.x/ref/Domain%20Classes/createCriteria.html
+
 	
 ******************************************************************************************************************************************************
 ----------------------------------------------------------------------

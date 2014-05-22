@@ -1,0 +1,45 @@
+GRAILS - UTILIZAR UNA CLASE JAVA
+================================
+------------
+INTRODUCCIÓN
+------------
+En este documento se muestra cómo crear una clase Java y luego poder utilizarla en un controlador de Grails.
+
+
+----------------------
+IMPORTAR LA CALSE JAVA
+----------------------
+La clase Java se guardará por defecto en "src/java". Suponemos que tenemos una clase Java llamada "JavaTest.java" dentro del package "com.test".
+La estructura que veríamos sería la siguiente:
+	/src/java
+		|
+		|---/com
+		|	  |---/test
+		|	  |     |---JavaTest.java
+
+En el controlador de Grails hay que usar la siguiente sentencia:
+import com.test.JavaTest;
+
+Entonces ya se puede utilizar la clase Java.
+
+
+---------------------------------------------
+REALIZAR LA LAMADA A MÉTODOS DE LA CALSE JAVA
+---------------------------------------------
+Para llamar a un método estático de la calse importada:
+	JavaTest.nombreMetdodEstatico()
+	
+	
+-----------------------
+COSAS A TENER EN CUENTA
+-----------------------
+Cuando se crea un nuevo método, éste no funciona, hay que parar la aplicación y volverla a arrancar.		
+
+
+*****************************************************************************************************************************************************
+------------------------------
+Creación:	22-05-2014
+
+Jesús Campos Muñoz
+jesus.campos@upc.edu
+------------------------------
