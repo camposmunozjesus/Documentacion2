@@ -1,6 +1,6 @@
 JQUERY - MANUAL
 ===============
-<TEORÍA>*************************************************************************************************************************************************
+<TEORÍA>**********************************************************************************************************************************************
 --------
 SINTAXIS
 --------
@@ -53,3 +53,75 @@ $("h1, p") 		Selecciona todos los elementos <h1> y <p>.
 $("ul ~ table") Selecciona todos los <table> que son siblings (están dentro) de un <ul>.
 
 Echar un vistazo a http://www.w3schools.com/Jquery/trysel.asp que hay ejemplos interesantes.
+
+
+
+<PASO DE PARÁMETROS A FUNCIONES>**********************************************************************************************************************
+-------------------------------------------
+PASAR PARÁMETROS A UN EFECTO/FUNCIÓN JQUERY
+-------------------------------------------
+Queremos pasar un parámetro a la siguiente función (la función que está dentro del click):
+	$('#Menu0 div.dijitTitlePaneTitle').click(function() {
+		$('#Outer0').slideToggle('medium'); ---> AQUÍ ES DONDE SE QUIERE UTILIZAR EL PARÁMETRO (*)
+	});
+	
+	(*) Este trozo se ejecutará cuando se haga click en el elemento cuyo id sea 'Menu0'. Entonces forzará aque el elemento cuyo id sea 'Outer0' se
+	despliegue o se oculte (hacer toggle).
+	
+Aquí dentro se puede hacer referencia a variables JS que estén fuera de $('#Menu0 div.diji ..., pero tendrán el valor del momento en que se realice el
+click sobre el elemento con id='Menu0', es decir, en el siguiente ejemplo:
+	var numMenusDesplegables = 3;
+	
+	for(var i=0; i<8; i++){
+		$('#Menu'+i+' div.dijitTitlePaneTitle').click(function() {
+			$('#Outer'+i).slideToggle('medium');	(**)
+			alert(i);								(**)
+		}); 
+	}
+
+Se espera que al pulsar sobre 'Menu0' se haga toggle sobre 'Outer0', cuando se pulse sobre 'Menu1' se haga toggle sobre 'Outer1', y así sucesivamente 
+hasta 'Menu8 y 'Outer8'. Pero esto NO ocurrre así.
+
+Esto sucede porque la zona (**) se ejecuta únicamente caundo se produce un click en alguno de los elementos con id='Menu-i', por lo que 'i' siempre
+valdrá 8 y debido a esto 'Menu0' que hace toggle sobre 'Outer8', 'Menu2' que hace toggle sobre 'Outer8', y así hasta 'Menu8 que hace toggle sobre 
+'Outer8'. Contando que si hay 8 menús numerados del 0 al 7 no se desplegará ninguno. El alert siempre mostrará 8.
+
+Solución:
+---------
+Pasar la variable de iteración 'i' como parámetro a la función que hay dentro de la cabecera del efecto click.
+
+Para pasar parámetros en este tipo de situaciones se utiliza:
+	for(var i=0; i<8; i++){
+		$('#Menu'+i+' div.dijitTitlePaneTitle').click({id: i},function(event) {
+			$('#Outer'+event.data.id).slideToggle('medium');
+		}); 
+	}
+
+De modo genérico:
+	// say your selector and click handler looks something like this...
+	$("some selector").click({param1: "Hello", param2: "World"}, cool_function);
+
+	// in your function, just grab the event object and go crazy...
+	function cool_function(event){
+		alert(event.data.param1);
+		alert(event.data.param2);
+	}
+
+O incluyendo la función en la cabecera:
+	$("some selector").click({param1: "Hello", param2: "World"}, function(event){
+		alert(event.data.param1);
+		alert(event.data.param2);
+	});
+	
+	
+NOTA: la variable de la cabecera (el mapa de datos que recibe la función) NO tiene por qué llamarse 'event', puede tener cualquier otro nombre.
+
+
+
+*****************************************************************************************************************************************************
+------------------------------
+Creación:	24-04-2014
+
+Jesús Campos Muñoz
+jesus.campos@upc.edu
+------------------------------
