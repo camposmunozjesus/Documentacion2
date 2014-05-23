@@ -86,7 +86,7 @@ http://grails.1312388.n4.nabble.com/Advice-on-bounced-amp-noreply-mails-td231542
 UTILIZAR ALIAS PARA EL NOMBRE DEL SERVIDOR DE ENVÍO
 ---------------------------------------------------
 Utilizando:
-	senMail{
+	sendMail{
 		from "UPC Cardio <UPC.Cardio@upc.edu>"
 	}
 	
