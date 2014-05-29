@@ -1,0 +1,228 @@
+package sal.user
+
+import java.util.Date;
+
+import utils.*
+import controler.*
+import sal.Persona;
+import sal.Lloc;
+import sal.Unitat;
+import sal.Edifici;
+import sal.Campus;
+import sal.InscripcioCardiovascular;
+import grails.plugins.springsecurity.Secured;
+
+// permisos:
+@Secured(['ROLE_USER'])
+
+class IncripcioCardioController extends BaseControler {
+
+	static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
+	
+     def index(){
+		redirect(action: "list", params: params)
+	 }
+	 
+	 def list(){
+		 println "LIST"
+		 this.populateUserName();
+		 
+		 /* ****************************************** */
+		 //MOSTRAR LA TABLA
+		 def taula = InscripcioCardiovascular.list()
+		 println "TAULA CARDIO: "+taula.nom
+		 println "TAULA CARDIO: "+taula.telefon
+		 println "TAULA CARDIO: "+taula.campus
+		 /* ****************************************** */
+		 //Buscarem usuari a BDP_YPERSON01 per aconseguir el seu PERNR
+		 def query =
+		 {
+			 and
+			 {
+				 eq("usuari", session.user, [ignoreCase: true])
+			 }
+		 }
+		 
+		 def personesInstance = Persona.createCriteria().list(query)
+//		 println personesInstance.cognom2
+		 def persona = personesInstance[0] // Un únic usuari per persona
+		 println persona.pernr
+		 //Busqueam si el PERNR es troba a la taula SAL_YINSCAR01. Si es troba l'usuari està donat d'alta al programa.
+		 // Buscarem usuari a BDP_YPERSON01 per aconseguir el seu PERNR
+		 query =
+		 {
+			 and
+			 {
+				 //eq("pernr", (long)711777)
+				 eq("pernr", persona.pernr)
+			 }
+		 }
+		 
+		 def personesInscritesInstance = InscripcioCardiovascular.createCriteria().list(query)
+//		 println "personesInscritesInstance:pernr "+personesInscritesInstance.pernr
+//		 println "personesInscritesInstance:data "+personesInscritesInstance.dataInscripcio
+//		 println "personesInscritesInstance:perfil "+personesInscritesInstance.perfil
+//		 println "personesInscritesInstance:c1 "+personesInscritesInstance.cognom1
+//		 println "personesInscritesInstance:c2 "+personesInscritesInstance.cognom2
+//		 println "personesInscritesInstance:nom "+personesInscritesInstance.nom
+//		 println "personesInscritesInstance:nif "+personesInscritesInstance.nif
+//		 println "personesInscritesInstance:correu "+personesInscritesInstance.correu
+//		 println "personesInscritesInstance:telefon "+personesInscritesInstance.telefon
+//		 println "personesInscritesInstance:campus "+personesInscritesInstance.campus
+		 def personaInscrita = personesInscritesInstance[0] // Un únic usuari per persona
+		 if(personaInscrita==null){
+			 println "PERSONA NO INSCRITA"
+		 }else{
+		 	println "DADO DE ALTA"
+		 }
+		 
+		 [personaInscrita:personaInscrita]	
+	 }
+	 
+	 def save(){
+		 println "GUARDANDO!!!"+session.user+"---"
+		 
+		 //Buscarem les dades del PERNR a BDP_YPERSON01
+		 //Buscarem usuari a BDP_YPERSON01 per aconseguir el seu PERNR
+		 def query =
+		 {
+			 and
+			 {
+				 eq("usuari", session.user, [ignoreCase: true])
+			 }
+		 }
+		 
+		 def personesInstance = Persona.createCriteria().list(query)
+//		 println personesInstance
+		 def persona = personesInstance[0] // Un únic usuari per persona
+		 
+		 println persona.pernr
+//		 println persona.dataInscripcio
+//		 println persona.perfil
+		 println persona.cognom1
+		 println persona.cognom2
+		 println persona.nom
+		 println persona.identificacio
+		 println persona.correu
+//		 println persona.telefon //es null
+//		 println persona.campus	//es null
+		 
+		 def telefon = null
+		 def campus = null
+		 
+		 def lloc =  (Lloc) persona.getLlocVigent()
+		 if(lloc!=null)
+		 {
+			 //Aconseguim el telèfon
+			 if (lloc.telefon!=null){
+				 	telefon = lloc.telefon.toString()
+//			 		println "1:"+t.length()
+			 	}
+			 else (lloc.telefon2!=null){
+				 telefon = lloc.telefon2.toString().trim()
+//				 println "2:"+t
+			 }
+			 
+			 def unitat = (Unitat) lloc.getUnitat()
+			 if(unitat!=null){
+				 def edifici = (Edifici) unitat.getEdifici()
+				 if(edifici!=null){
+					 def campusClass = (Campus) edifici.getCampus()
+					 if(campusClass!=null){
+						 campus = campusClass.codi
+						 println campusClass.codi+campusClass.descripcioCurta+campusClass.descripcioLlarga
+					 }
+				 }
+			 }
+			 
+//			 println "XXXXXXXXXXXXXXXXXXXXXX"
+//			 println lloc.codi.toString()
+//			 if (lloc.telefon!=null){
+//				 def t = lloc.telefon.toString().trim()
+//				  println "1:"+t.length()
+//				  }
+//			 if (lloc.telefon2!=null){
+//				 def t = lloc.telefon2.toString().trim()
+//				 println "2:"+t
+//				 }
+		 }
+//		 prinln "Telefono1: "+lloc
+//		 prinln "Telefono2: "+lloc.telefon2
+		 
+//		 println persona.pernr+persona.cognom2+persona.nom+persona.identificacio+persona.correu
+		 
+//		 def lloc = Persona
+		 
+		 def inscripcioPersona = new InscripcioCardiovascular (
+			 pernr: persona.pernr ,
+			 dataInscripcio: new Date(),
+			 perfil: null,
+			 cognom1: persona.cognom1 ,
+			 cognom2: persona.cognom2 ,
+			 nom: persona.nom ,
+			 nif: persona.identificacio ,
+			 correu: persona.correu ,
+			 telefon: telefon,
+			 campus: campus)
+		 println "****************************"
+		 
+		 try
+		 {
+			 if (inscripcioPersona.save(flush: true)) {
+				 flash.message="S'ha donat d'alta al programa de salut cardiovascular"
+			 } else {
+				  flash.message = "No s'ha pogut donar d'alta al programa de salut cardiovascular"
+			 }
+		 }
+		 catch(Exception e)
+		 {
+			 log.error(e.toString())
+			 flash.message = "Sessió no vàlida. Torni a connectar-se a l'aplicació"
+		 }
+		 
+		 
+		 redirect(action: "list")
+		 
+	 }
+	 
+	 def delete(){
+		 println "BORRANDO!!!"
+		 
+		 //println "ID "+params.id
+		 
+		 def query =
+		 {
+			 and
+			 {
+				 eq("pernr", params.id.toLong())
+			 }
+		 }
+		 
+		 def personesInscritesInstance = InscripcioCardiovascular.createCriteria().list(query)
+		 println "personesInscritesInstance "+personesInscritesInstance.cognom2
+		 def personaInscrita = personesInscritesInstance[0] // Un únic usuari per persona
+		 if(personaInscrita==null){
+			 println "no existe la persona"
+		 }else{
+		 	println "se borrará a la persona"
+		 }
+		 
+		 
+		 if (personaInscrita) {
+			 try {
+				 personaInscrita.delete(flush: true)
+				 flash.message = "S'ha donat de baixa al programa de salut cardiovascular"
+			 }
+			 catch (org.springframework.dao.DataIntegrityViolationException e) {
+				 flash.message = "No s'ha pogut donar de baixa al programa de salut cardiovascular"
+				 log.error(e.toString())
+			 }
+		 }
+		 else {
+			 flash.message = "Usuari no trobat"
+		 }
+	 
+		 println "****************************"
+		 redirect(action: "list")		 
+	 }
+}

@@ -1,0 +1,298 @@
+package sal.gestor
+
+import org.springframework.dao.DataIntegrityViolationException;
+
+import grails.plugins.springsecurity.Secured;
+import utils.BaseControler;
+import sal.InscripcioCardiovascular;
+import sal.Perfil
+import sal.Campus
+import sal.Persona
+import sal.TPersonaAreaPersonal
+
+@Secured(['ROLE_GESTOR'])
+
+class InscripcioCardioGestioController extends BaseControler{
+
+	static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
+	
+	def index() {
+        redirect(action: "list", params: params)
+    }
+	
+	def list()
+	{
+		this.populateUserName()
+		this.paramsMaxSet(15,30)
+		
+		def tipusPerfilsList
+		def resultList
+		def results
+		def perfilInstanceList = []
+		def literalsPerfils = []
+		def perfil
+		
+		if(params.get("reset")=="Inicialitza")
+		{
+			params.nif = "";
+			params.primerCognom = "";
+			params.segonCognom = "";
+			params.nom = "";
+			
+
+		}
+		
+		def filtreNif = params.nif?:''
+		def filtrePrimerCognom = params.primerCognom?:''
+		def filtreSegonCognom = params.segonCognom?:''
+		def filtreNom = params.nom?:''
+
+		def query = {
+			and{
+				//Si el filtreNif és diferent a '', es fa selecció
+				if(filtreNif){
+					ilike("nif", "%"+ filtreNif +"%")
+				}
+				
+				//Si el filtrePrimerCognom és diferent a '', es fa selecció
+				if(filtrePrimerCognom){
+					ilike("cognom1", "%"+ filtrePrimerCognom +"%")
+				}
+				
+				//Si el filtreSegonCognom és diferent a '', es fa selecció
+				if(filtreSegonCognom){
+					ilike("cognom2", "%"+ filtreSegonCognom +"%")
+				}
+				
+				//Si el filtreNom és diferent a '', es fa selecció
+				if(filtreNom){
+					ilike("nom", "%"+ filtreNom +"%")
+				}
+			}
+		}
+		
+		resultList = InscripcioCardiovascular.createCriteria().list(params,query)
+		results = resultList.getTotalCount()
+		
+		//Si l'usuari no ha fet click sobre una columna, l'ordenació per defecte es primer cognom, segon cognom i nom.
+		if(params.sort==null){
+				resultList = resultList.sort{ a,b ->
+				a.cognom1 <=> b.cognom1 ?: a.cognom2 <=> b.cognom2 ?: a.nom <=> b.nom
+			}
+		}
+		
+		//Traducció del codi del perfil a descripció
+//		for(int i = 0; i<resultList.size(); i++)
+//		{
+//			perfil = Perfil.findByCodi(resultList[i].perfil)
+//			perfilInstanceList << perfil
+//			literalsPerfils.add(perfil.codi.toString())
+//		}
+		literalsPerfils = Perfil.getElementList(resultList.perfil, "descripcio")
+		
+		[resultList:resultList , results:results , tipusPerfilsList:tipusPerfilsList , literalsPerfils:literalsPerfils]
+		
+	}
+	
+	def edit(){
+		//NO SE CONTROLA SI EL PERNR EXISTE EN LA TABLA PORQUE LO ESTÁ COGIENDO DE UN ELEMENTO DE DE LA PROPIA TABLA.
+		//SÍ HAY QUE CONTROLARLO.
+		println "EDIT"+params.idCodi.toLong()
+		
+		def tipusPerfilsList = []
+		def campus = ''
+		def areaPersonal = ''
+		
+		def query =
+		{
+			and
+			{
+				eq("pernr", params.idCodi.toLong())
+//				eq("pernr", 101763.toLong())
+			}
+		}
+		
+		def personaInscritaInstance = InscripcioCardiovascular.createCriteria().list(query)
+		def personaInstance = personaInscritaInstance[0] // Un únic usuari per persona
+		
+		//Si s'ha trobat la persona
+		if(personaInstance){
+			//S'aconsegueixen el tipus de perfils
+			tipusPerfilsList = Perfil.list()
+			tipusPerfilsList.add(0,[descripcio: "", codi:''])
+			//S'aconsegueix la descripció del campus on es troba ubicada
+			campus = Campus.findByCodi(personaInstance.campus).descripcioLlarga
+			areaPersonal = TPersonaAreaPersonal.findByCodi(personaInstance.areaPersonal).descripcio
+		}
+
+		
+//		/* ****************************************** */
+//		//MOSTRAR LA TABLA
+//		println "TAULA CARDIO:nom     "+personaInstance.nom
+//		println "TAULA CARDIO:cognom1 "+personaInstance.cognom1
+//		println "TAULA CARDIO:cognom2 "+personaInstance.cognom2
+//		println "TAULA CARDIO:perfil  "+personaInstance.perfil
+//		println "TAULA CARDIO:data    "+personaInstance.dataInscripcio
+//		println "TAULA CARDIO:telefon "+personaInstance.telefon
+//		println "TAULA CARDIO:nif     "+personaInstance.nif
+//		println "TAULA CARDIO:correu  "+personaInstance.correu
+//		println "TAULA CARDIO:campus  "+personaInstance.campus
+//		println "TAULA CARDIO:area    "+personaInstance.areaPersonal
+//		/* ****************************************** */
+		
+		[personaInstance:personaInstance , tipusPerfilsList:tipusPerfilsList , campus:campus , areaPersonal:areaPersonal]
+		
+
+//		
+//		redirect(action: "list")
+	}
+	
+	def save(){
+		println "SAVE"
+		
+		def idCodi = params.idCodi?:0
+		
+		def query =
+		{
+			and
+			{
+				eq("pernr", idCodi.toLong())
+			}
+		}
+		
+		def personaInscritaInstance = InscripcioCardiovascular.createCriteria().list(query)
+		def personaInstance = personaInscritaInstance[0] // Un únic usuari per persona
+		
+		if(personaInstance){
+			personaInstance.perfil = params.perfil.toString()
+			personaInstance.correu = params.correu
+			
+			try
+			{
+				def mailRes = ''
+				if (!personaInstance.hasErrors() && personaInstance.save(flush: true)) {
+					if(!personaInstance.perfil.equals("")){
+						println "Se envia el mail"
+						mailRes = enviarMail(personaInstance, Perfil.findByCodi(personaInstance.perfil))
+					}
+					else{
+						println "NO se envia el mail"
+					}
+					flash.message = "Programa de salut cardiovascular actualitzat correctament"+mailRes
+					redirect(action: "list")
+				}
+				else {
+					flash.message = "Error a l'actualitzar el programa de salut cardiovascular actualitzat"
+					redirect(action: "list")
+				}
+			}
+			catch(org.springframework.dao.DataIntegrityViolationException e)
+			{
+				flash.message = "Error d'integritat de dades de la base de dades."
+				redirect(action: "list")
+			}
+		}
+		else{
+			flash.message  = "L'usuari no es troba a la base de dades"
+			redirect(action: "list")
+		}
+		
+		
+		
+////				/* ****************************************** */
+////				//MOSTRAR LA TABLA
+////				println "TAULA CARDIO:nom     "+personaInstance.nom
+////				println "TAULA CARDIO:cognom1 "+personaInstance.cognom1
+////				println "TAULA CARDIO:cognom2 "+personaInstance.cognom2
+////				println "TAULA CARDIO:perfil  "+personaInstance.perfil
+////				println "TAULA CARDIO:data    "+personaInstance.dataInscripcio
+////				println "TAULA CARDIO:telefon "+personaInstance.telefon
+////				println "TAULA CARDIO:nif     "+personaInstance.nif
+////				println "TAULA CARDIO:correu  "+personaInstance.correu
+////				println "TAULA CARDIO:campus  "+personaInstance.campus
+////				println "TAULA CARDIO:area    "+personaInstance.areaPersonal
+////				/* ****************************************** */
+//	
+////				personaInscritaInstance = InscripcioCardiovascular.createCriteria().list(query)
+////				personaInstance = personaInscritaInstance[0] // Un únic usuari per persona
+////				
+////				/* ****************************************** */
+////				//MOSTRAR LA TABLA
+////				println "NOVA TAULA CARDIO:nom     "+personaInstance.nom
+////				println "NOVA TAULA CARDIO:cognom1 "+personaInstance.cognom1
+////				println "NOVA TAULA CARDIO:cognom2 "+personaInstance.cognom2
+////				println "NOVA TAULA CARDIO:perfil  "+personaInstance.perfil
+////				println "NOVA TAULA CARDIO:data    "+personaInstance.dataInscripcio
+////				println "NOVA TAULA CARDIO:telefon "+personaInstance.telefon
+////				println "NOVA TAULA CARDIO:nif     "+personaInstance.nif
+////				println "NOVA TAULA CARDIO:correu  "+personaInstance.correu
+////				println "NOVA TAULA CARDIO:campus  "+personaInstance.campus
+////				println "NOVA TAULA CARDIO:area    "+personaInstance.areaPersonal
+////				/* ****************************************** */
+////				
+////				redirect(action: "list")
+	}
+	
+	def delete(){
+		println "DELETE"
+		
+		def query =
+		{
+			and
+			{
+				eq("pernr", params.idCodi.toLong())
+//				eq("pernr", 101763.toLong())
+			}
+		}
+		
+		def personaInscritaInstance = InscripcioCardiovascular.createCriteria().list(query)
+		def personaInstance = personaInscritaInstance[0] // Un únic usuari per persona
+		
+		//Si s'ha trobat la persona, s'esborra de la taula de persones inscrites al programa cardiovascular.
+		if(personaInstance){
+			try {
+				personaInstance.delete(flush: true)
+				flash.message = "S'ha anul·lat la subscripció de l'usuari al programa de salut cardiovascular"
+				redirect(action: "list")
+				return
+			}
+			catch (org.springframework.dao.DataIntegrityViolationException e) {
+				flash.message = "No s'ha pogut anul·lar la subscripció de l'usuari al programa de salut cardiovascular"
+				log.error(e.toString())
+				redirect(action: "list")
+				return
+			}
+		}else{
+			flash.message = "Usuari no trobat"
+			redirect(action: "list")
+			return
+		}
+		
+	}
+	
+	def enviarMail(personaInstance, perfil)
+	{
+		def enviarTo = personaInstance.correu
+		println "email: "+enviarTo
+		println "perfil "+perfil.descripcio
+		
+		try
+		{
+			//Enviar mail a usuari autoritzador nivell 1 amb bcc a adm.tempus
+			sendMail {
+			   to "JESUS.CAMPOS@UPC.EDU"
+			   from "Gestio.promocio.salut@upc.edu"
+			   subject "Modificació de subscripció al programa de salut cardiovascular"
+			   body "Segueixi les recomanacions del seu metge per tal de millorar l'aspecte cardiovascular de la seva salut a:\n"+perfil.urlRecomanacio 
+			}
+			return ''
+						
+	   }
+	   catch(Exception e)
+	   {
+		   log.error("Error a l'enviar correu electrònic.")
+		   log.error(e.toString())
+		   return "\nError a l'enviar correu electrònic a "+enviarTo+". Si us plau, poseu-vos en contacte amb l'adminitrador (Gestio.promocio.salut@upc.edu) per tal de solucionar el problema"
+	   }
+   }
+}

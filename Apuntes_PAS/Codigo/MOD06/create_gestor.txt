@@ -1,0 +1,181 @@
+<%@ page import="sal.InscripcioCardiovascular"%>
+<html>
+<head>
+	<!-- <meta name="layout" content="mainGestor" /> -->
+
+	<title>Creació manual de subscripcions al programa de salut cardiovascular</title>
+	
+		<script type="text/javascript" src="${resource(dir:'js',file:'crossbrowser.js')}"></script>		
+		<script type="text/javascript">    
+			
+		// S'activa quan clickem sobre qualsevol icona d'acció
+	    function accioClick(event){	    
+		    $('#idCodi').val(event.data.codi);
+	    }	
+   	</script>	
+	
+</head>
+
+<body>
+	<div class="nav">
+		<div class="leftNav">
+			<span class="menuButton">
+				<a class="home" href="${createLink(uri: '/inscripcioCardioGestio')}">
+					Inici
+				</a>
+			</span>	
+			<sec:access expression="hasRole('ROLE_USER')">
+				<span class="menuButton">
+					<a class="jump" href="${createLink(uri: '/')}">
+						Racó personal
+					</a>
+				</span>	
+			</sec:access>				
+		</div>
+		<div class="menuButton logout floatRight"> 
+			<g:if test="${session.user!=null}">
+				<span class="login"> 
+					${session.user}
+				</span>
+			</g:if> 
+			<g:link class="exit" controller="logout">Desconnecta</g:link>
+		</div>
+	</div>
+	
+	<div class="body" >
+	
+		<h2>Creació manual de subscripcions al programa de salut cardiovascular</h2>
+		
+		<g:if test="${flash.message}">
+			<div class="message">
+				${flash.message}
+			</div>
+		</g:if>
+		
+		<g:hasErrors bean="${personaInstance}">
+			<div class="errors">
+				<g:renderErrors bean="${personaInstance}" as="list" />
+			</div>
+		</g:hasErrors>
+		
+		<g:form action="save" method="post">
+			<g:hiddenField name="idCodi" value="${personaInstance?.pernr}" />
+			<fieldset class="border" style="margin-top:10px">
+			<legend align="left" style="margin-left:15px">Edició</legend>		
+				<table class="noborder">
+					<tbody>	
+						<tr class="prop noBackground">
+							<td valign="top" class="name">
+								<label for="codiPernr">PERNR</label>
+							</td>
+							<td valign="top" class="value">
+								<g:textField name="codiPernr" id="codiPernr" style="width:280px" disabled="true" value="${personaInstance?.pernr}" />
+							</td>
+						</tr>
+						
+						<tr class="prop noBackground">
+							<td valign="top" class="name">
+								<label for="dataInscripcio">Data de subscripció</label>
+							</td>
+							<td valign="top" class="value">
+								<g:textField name="dataInscripcio" id="dataInscripcio" style="width:280px" disabled="true" value="${formatDate(format:"dd-MM-yyyy HH:mm:ss", date:personaInstance?.dataInscripcio)}" />
+							</td>
+						</tr>
+						
+						<tr class="prop noBackground">
+							<td valign="top" class="name">
+								<label for="perfil">Perfil</label>
+							</td>
+							<td valign="top" class="value">
+								<g:select name="perfil" id="perfil" style="width:288px" keys="${tipusPerfilsList?.codi}" from="${tipusPerfilsList?.descripcio}" value="${personaInstance?.perfil}" />
+							</td>
+						</tr>
+						
+						
+						<tr class="prop noBackground">
+							<td valign="top" class="name">
+								<label for="nif">DNI</label>
+							</td>
+							<td valign="top" class="value">
+								<g:textField name="nif" id="nif" style="width:280px" disabled="true" value="${personaInstance?.nif}" />
+							</td>
+						</tr>
+						
+						<tr class="prop noBackground">
+							<td valign="top" class="name">
+								<label for="cognom1">Primer cognom</label>
+							</td>
+							<td valign="top" class="value">
+								<g:textField name="cognom1" id="cognom1" style="width:280px" disabled="true" value="${personaInstance?.cognom1}" />
+							</td>
+						</tr>
+												
+						<tr class="prop noBackground">
+							<td valign="top" class="name">
+								<label for="cognom2">Segon cognom</label>
+							</td>
+							<td valign="top" class="value">
+								<g:textField name="cognom2" id="cognom2" style="width:280px" disabled="true" value="${personaInstance?.cognom2}" />
+							</td>
+						</tr>
+												
+						<tr class="prop noBackground">
+							<td valign="top" class="name">
+								<label for="nom">Nom</label>
+							</td>
+							<td valign="top" class="value">
+								<g:textField name="nom" id="nom" style="width:280px" disabled="true" value="${personaInstance?.nom}" />
+							</td>
+						</tr>
+												
+						<tr class="prop noBackground">
+							<td valign="top" class="name">
+								<label for="correu">Correu electrònic</label>
+							</td>
+							<td valign="top" class="value">
+								<g:textField name="correu" id="correu" style="width:280px" value="${personaInstance?.correu}" />
+							</td>
+						</tr>
+												
+						<tr class="prop noBackground">
+							<td valign="top" class="name">
+								<label for="telefon">Telèfon</label>
+							</td>
+							<td valign="top" class="value">
+								<g:textField name="telefon" id="telefon" style="width:280px" disabled="true" value="${personaInstance?.telefon}" />
+							</td>
+						</tr>
+												
+						<tr class="prop noBackground">
+							<td valign="top" class="name">
+								<label for="campus">Campus</label>
+							</td>
+							<td valign="top" class="value">
+								<g:textField name="campus" id="campus" style="width:280px" disabled="true" value="${campus}" />
+							</td>
+						</tr>
+												
+						<tr class="prop noBackground">
+							<td valign="top" class="name">
+								<label for="areaPersonal">Àrea de personal</label>
+							</td>
+							<td valign="top" class="value">
+								<g:textField name="areaPersonal" id="areaPersonal" style="width:280px" disabled="true" value="${areaPersonal}" />
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</fieldset>		
+			<div class="buttons">
+				<span class="button">
+					<g:submitButton name="create" class="save" value="Gravar" />
+				</span> 
+				<span class="button">
+					<g:actionSubmit class="undo" action="list" value="Desfer" />
+				</span>
+			</div>			
+		</g:form>
+		
+	</div>
+</body>
+</html>

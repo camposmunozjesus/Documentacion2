@@ -1,0 +1,394 @@
+package sal.gestor
+
+import org.springframework.dao.DataIntegrityViolationException;
+
+import grails.plugins.springsecurity.Secured;
+import utils.BaseControler;
+import sal.Edifici
+import sal.InscripcioCardiovascular;
+import sal.Lloc
+import sal.Perfil
+import sal.Campus
+import sal.Persona
+import sal.TPersonaAreaPersonal
+import sal.Unitat
+
+@Secured(['ROLE_GESTOR'])
+
+class NovaInscripcioCardioGestioController extends BaseControler{
+
+	static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
+	
+	def index() {
+        redirect(action: "list", params: params)
+    }
+	
+	def list()
+	{
+		println "noInscrits"
+		
+		this.populateUserName()
+		this.paramsMaxSet(15,30)
+		
+		def resultList
+		def results
+		
+		if(params.get("reset")=="Inicialitza")
+		{
+			params.nif = "";
+			params.primerCognom = "";
+			params.segonCognom = "";
+			params.nom = "";
+		}
+		
+		def filtreNif = params.nif?:''
+		def filtrePrimerCognom = params.primerCognom?:''
+		def filtreSegonCognom = params.segonCognom?:''
+		def filtreNom = params.nom?:''
+
+		def query = {
+			and{
+				if(filtreNif){
+					ilike("identificacio", "%"+ filtreNif +"%")
+				}
+				
+				//Si el filtrePrimerCognom és diferent a '', es fa selecció
+				if(filtrePrimerCognom){
+					ilike("cognom1", "%"+ filtrePrimerCognom +"%")
+				}
+				
+				//Si el filtreSegonCognom és diferent a '', es fa selecció
+				if(filtreSegonCognom){
+					ilike("cognom2", "%"+ filtreSegonCognom +"%")
+				}
+				
+				//Si el filtreNom és diferent a '', es fa selecció
+				if(filtreNom){
+					ilike("nom", "%"+ filtreNom +"%")
+				}
+			}
+		}
+		
+		//BUSCAR EN BDP_YPERSON01
+		resultList =  Persona.createCriteria().list(params, query)
+		results = resultList.getTotalCount()
+		
+		//Si l'usuari no ha fet click sobre una columna, l'ordenació per defecte es primer cognom, segon cognom i nom.
+		if(params.sort==null){
+				resultList = resultList.sort{ a,b ->
+				a.cognom1 <=> b.cognom1 ?: a.cognom2 <=> b.cognom2 ?: a.nom <=> b.nom
+			}
+		}
+			
+		[resultList:resultList , results:results]
+	}
+	
+	def create(){
+		
+		def tipusPerfilsList = []
+		def personaInstance
+		def persona
+		def campusDescripcio = ''
+		def areaPersonalDescripcio = ''
+		def inscripcioPersona
+		
+		def query =
+		{
+			and
+			{
+				eq("pernr", params.idCodi.toLong())
+//				eq("pernr", 101763.toLong())
+			}
+		}
+		
+		//Si estem fora del període de subscripció, no es podrà realitzar la subscripció.
+		def periodeValid = validarDataSubscripcio()
+		if(periodeValid){
+			//Busquem si el PERNR es troba a la taula SAL_YINSCAR01. Si es troba l'usuari està donat d'alta al programa.
+			def personaInscritaInstance = InscripcioCardiovascular.createCriteria().list(query)
+			personaInstance = personaInscritaInstance[0] // Un únic usuari per persona
+			//Si no s'ha trobat la persona es va a la pàgina per acabar d'editar les seves dades
+			if(!personaInstance){
+				//S'aconsegueixen el tipus de perfils
+				tipusPerfilsList = Perfil.list()
+				tipusPerfilsList.add(0,[descripcio: "", codi:''])
+				
+				//S'aconsegueixen les dades de l'usuari de la BDP.
+				 personaInstance = Persona.createCriteria().list(query)
+				 persona = personaInstance[0] // Un únic usuari per persona
+				 def telefon = null
+				 def campusCodi = null
+				 def lloc =  (Lloc) persona.getLlocVigent()
+				 if(lloc!=null)
+				 {
+					 //Aconseguim el telèfon
+					 if (lloc.telefon!=null){
+						 	telefon = lloc.telefon.toString()
+					 }
+					 else (lloc.telefon2!=null){
+						 telefon = lloc.telefon2.toString().trim()
+					 }
+					 //Aconseguim el campus
+					 def unitat = (Unitat) lloc.getUnitat()
+					 if(unitat!=null){
+						 def edifici = (Edifici) unitat.getEdifici()
+						 if(edifici!=null){
+								 campusCodi = edifici.codiCampus
+						 }
+					 }
+				 }
+				 
+				 //Es recullen totes les dades.
+				 inscripcioPersona = new InscripcioCardiovascular()
+				 inscripcioPersona.pernr=persona.pernr
+				 inscripcioPersona.dataInscripcio=new Date()
+				 inscripcioPersona.perfil=null
+				 inscripcioPersona.cognom1=persona.cognom1
+				 inscripcioPersona.cognom2=persona.cognom2
+				 inscripcioPersona.nom=persona.nom
+				 inscripcioPersona.nif=persona.identificacio
+				 inscripcioPersona.correu=persona.correu
+				 inscripcioPersona.telefon=telefon
+				 inscripcioPersona.campus=campusCodi
+				 inscripcioPersona.areaPersonal=persona.areaPersonal
+		 
+				 //		//MOSTRAR LA TABLA
+//				 		println "TAULA CARDIO:nom     "+inscripcioPersona.nom
+//				 		println "TAULA CARDIO:cognom1 "+inscripcioPersona.cognom1
+//				 		println "TAULA CARDIO:cognom2 "+inscripcioPersona.cognom2
+//				 		println "TAULA CARDIO:perfil  "+inscripcioPersona.perfil
+//				 		println "TAULA CARDIO:data    "+inscripcioPersona.dataInscripcio
+//				 		println "TAULA CARDIO:telefon "+inscripcioPersona.telefon
+//				 		println "TAULA CARDIO:nif     "+inscripcioPersona.nif
+//				 		println "TAULA CARDIO:correu  "+inscripcioPersona.correu
+//				 		println "TAULA CARDIO:campus  "+inscripcioPersona.campus
+//				 		println "TAULA CARDIO:area    "+inscripcioPersona.areaPersonal
+				 //S'aconsegueix la descripció del campus on es troba ubicada
+				 campusDescripcio = Campus.findByCodi(inscripcioPersona.campus).descripcioLlarga
+				 areaPersonalDescripcio = TPersonaAreaPersonal.findByCodi(inscripcioPersona.areaPersonal).descripcio
+//				flash.message="S'ha subscrit a la persona al programa cardiovascular"
+//				redirect(action: "list")
+			}else{
+				flash.message="La persona ja es troba subscrita al programa cardiovascular"
+				redirect(action: "list")
+			}
+		}
+		else{
+			flash.message="Es troba fora del període de subscripció"
+			redirect(action: "list")
+		}
+		
+//		/* ****************************************** */
+//		//MOSTRAR LA TABLA
+//		println "TAULA CARDIO:nom     "+personaInstance.nom
+//		println "TAULA CARDIO:cognom1 "+personaInstance.cognom1
+//		println "TAULA CARDIO:cognom2 "+personaInstance.cognom2
+//		println "TAULA CARDIO:perfil  "+personaInstance.perfil
+//		println "TAULA CARDIO:data    "+personaInstance.dataInscripcio
+//		println "TAULA CARDIO:telefon "+personaInstance.telefon
+//		println "TAULA CARDIO:nif     "+personaInstance.nif
+//		println "TAULA CARDIO:correu  "+personaInstance.correu
+//		println "TAULA CARDIO:campus  "+personaInstance.campus
+//		println "TAULA CARDIO:area    "+personaInstance.areaPersonal
+//		/* ****************************************** */
+		
+		[personaInstance:inscripcioPersona , tipusPerfilsList:tipusPerfilsList , campus:campusDescripcio , areaPersonal:areaPersonalDescripcio]
+		
+
+//		
+//		redirect(action: "list")
+	}
+	
+	def save(){
+		println "SAVE"
+		
+		def idCodi = params.idCodi?:0
+		def personaInstance
+		def persona
+		def inscripcioPersona
+		
+		def query =
+		{
+			and
+			{
+				eq("pernr", idCodi.toLong())
+//				eq("pernr", 101762.toLong())
+			}
+		}
+		
+		
+		//Busquem si el PERNR es troba a la taula SAL_YINSCAR01. Si es troba l'usuari està donat d'alta al programa.
+		def personaInscritaInstance = InscripcioCardiovascular.createCriteria().list(query)
+		personaInstance = personaInscritaInstance[0] // Un únic usuari per persona
+		//Si no s'ha trobat la persona s'inscriu al programa cardiovascular
+		if(!personaInstance){
+			//S'aconsegueixen les dades de l'usuari de la BDP per posar-les a la taula SAL_YINSCAR01.
+			personaInstance = Persona.createCriteria().list(query)
+			persona = personaInstance[0] // Un únic usuari per persona
+			def telefon = null
+			def campusCodi = null
+			def lloc =  (Lloc) persona.getLlocVigent()
+			if(lloc!=null)
+			{
+				//Aconseguim el telèfon
+				if (lloc.telefon!=null){
+						telefon = lloc.telefon.toString()
+				}
+				else (lloc.telefon2!=null){
+					telefon = lloc.telefon2.toString().trim()
+				}
+				//Aconseguim el campus
+				def unitat = (Unitat) lloc.getUnitat()
+				if(unitat!=null){
+					def edifici = (Edifici) unitat.getEdifici()
+					if(edifici!=null){
+							campusCodi = edifici.codiCampus
+					}
+				}
+			}
+			
+			//Es recullen totes les dades.
+			inscripcioPersona = new InscripcioCardiovascular()
+			inscripcioPersona.pernr=persona.pernr
+			inscripcioPersona.dataInscripcio=new Date()
+			inscripcioPersona.perfil=params.perfil.toString()
+			inscripcioPersona.cognom1=persona.cognom1
+			inscripcioPersona.cognom2=persona.cognom2
+			inscripcioPersona.nom=persona.nom
+			inscripcioPersona.nif=persona.identificacio
+			inscripcioPersona.correu=params.correu
+			inscripcioPersona.telefon=telefon
+			inscripcioPersona.campus=campusCodi
+			inscripcioPersona.areaPersonal=persona.areaPersonal
+			//Es graven les dades
+			try
+			{
+				def mailRes = ''
+				if (!inscripcioPersona.hasErrors() && inscripcioPersona.save(flush: true)) {
+					if(!inscripcioPersona.perfil.equals("")){
+						println "Se envia el mail"
+						mailRes = enviarMail(inscripcioPersona, Perfil.findByCodi(inscripcioPersona.perfil))
+					}
+					else{
+						println "NO se envia el mail"
+					}
+					flash.message="S'ha subscrit a la persona al programa de salut cardiovascular"+mailRes
+					redirect(action: "list")
+				}
+				else {
+					 flash.message = "No s'ha pogut subscriure a la persona al programa de salut cardiovascular"
+					 redirect(action: "list")
+				}
+			}
+			catch(Exception e)
+			{
+				log.error(e.toString())
+				flash.message = "Sessió no vàlida. Torni a connectar-se a l'aplicació"
+			}
+		}
+		else{
+		   flash.message="La persona ja es troba subscrita al programa cardiovascular"
+		   redirect(action: "list")
+		}
+////				/* ****************************************** */
+////				//MOSTRAR LA TABLA
+////				println "TAULA CARDIO:nom     "+personaInstance.nom
+////				println "TAULA CARDIO:cognom1 "+personaInstance.cognom1
+////				println "TAULA CARDIO:cognom2 "+personaInstance.cognom2
+////				println "TAULA CARDIO:perfil  "+personaInstance.perfil
+////				println "TAULA CARDIO:data    "+personaInstance.dataInscripcio
+////				println "TAULA CARDIO:telefon "+personaInstance.telefon
+////				println "TAULA CARDIO:nif     "+personaInstance.nif
+////				println "TAULA CARDIO:correu  "+personaInstance.correu
+////				println "TAULA CARDIO:campus  "+personaInstance.campus
+////				println "TAULA CARDIO:area    "+personaInstance.areaPersonal
+////				/* ****************************************** */
+//	
+////				personaInscritaInstance = InscripcioCardiovascular.createCriteria().list(query)
+////				personaInstance = personaInscritaInstance[0] // Un únic usuari per persona
+////				
+////				/* ****************************************** */
+////				//MOSTRAR LA TABLA
+////				println "NOVA TAULA CARDIO:nom     "+personaInstance.nom
+////				println "NOVA TAULA CARDIO:cognom1 "+personaInstance.cognom1
+////				println "NOVA TAULA CARDIO:cognom2 "+personaInstance.cognom2
+////				println "NOVA TAULA CARDIO:perfil  "+personaInstance.perfil
+////				println "NOVA TAULA CARDIO:data    "+personaInstance.dataInscripcio
+////				println "NOVA TAULA CARDIO:telefon "+personaInstance.telefon
+////				println "NOVA TAULA CARDIO:nif     "+personaInstance.nif
+////				println "NOVA TAULA CARDIO:correu  "+personaInstance.correu
+////				println "NOVA TAULA CARDIO:campus  "+personaInstance.campus
+////				println "NOVA TAULA CARDIO:area    "+personaInstance.areaPersonal
+////				/* ****************************************** */
+////				
+////				redirect(action: "list")
+	}
+	
+	private boolean validarDataSubscripcio(){
+		//SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss")
+		try
+		{
+			 Calendar cal = Calendar.getInstance()
+			 //Fixem el primer dia del període de validesa: 02/05/2014 00:00:00
+			 cal.set(Calendar.HOUR_OF_DAY, 00)
+			 cal.set(Calendar.MINUTE, 00)
+			 cal.set(Calendar.SECOND, 00)
+			 cal.set(Calendar.YEAR, 2014)
+			 cal.set(Calendar.MONTH, 1)	//el mes va de 0 a 11.
+			 cal.set(Calendar.DAY_OF_MONTH, 2)
+			 //Comprovem si estem per sobre d'aquesta data
+			 //println "CalendariINI: "+ sdf.format(cal.getTime())
+			 if(cal.getTime().before(new Date()))
+			 {
+				 //Fixem l'últim dia del període de validesa: 15/05/2014 23:59:59
+				 cal.set(Calendar.HOUR_OF_DAY, 23)
+				 cal.set(Calendar.MINUTE, 59)
+				 cal.set(Calendar.SECOND, 59)
+				 cal.set(Calendar.YEAR, 2014)
+				 cal.set(Calendar.MONTH, 4)	//el mes va de 0 a 11.
+				 cal.set(Calendar.DAY_OF_MONTH, 15)
+				 //println "CalendariFIN: "+ sdf.format(cal.getTime())
+				 if(cal.getTime().after(new Date()))
+				 {
+					 return true
+				 }
+				 else{
+					 return false
+				 }
+			 }
+			 else{
+				 return false
+			 }
+			 
+		}
+		catch(Exception e){}
+		
+	}
+	
+	def enviarMail(personaInstance, perfil)
+	{
+		def enviarTo = personaInstance.correu
+		println "email: "+enviarTo
+		println "perfil "+perfil.descripcio
+		
+		try
+		{
+			//Enviar mail a usuari autoritzador nivell 1 amb bcc a adm.tempus
+			sendMail {
+			   to "JESUS.CAMPOS@UPC.EDU"
+			   from "Gestio.promocio.salut@upc.edu"
+			   subject "Nova subscripció al programa de salut cardiovascular"
+			   body "Segueixi les recomanacions del seu metge per tal de millorar l'aspecte cardiovascular de la seva salut a:\n"+perfil.urlRecomanacio
+			}
+			return ''
+						
+	   }
+	   catch(Exception e)
+	   {
+		   log.error("Error a l'enviar correu electrònic.")
+		   log.error(e.toString())
+		   return "\nError a l'enviar correu electrònic a "+enviarTo+". Si us plau, poseu-vos en contacte amb l'adminitrador (Gestio.promocio.salut@upc.edu) per tal de solucionar el problema"
+	   }
+   }
+}
+
