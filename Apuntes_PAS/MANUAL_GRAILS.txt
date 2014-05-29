@@ -105,7 +105,7 @@ Métodos heredados:
 --------
 UNIQUE()
 --------
-Sirve para eliminar elementos redundantes en una list. Se puede usar en código Groovy ó GSP.
+Sirve para eliminar elementos redundantes en una list. Se puede usar en código Groovy ó GSP. Modifica la propia lista sobre la que se ejecuta el método.
 Ejemplo:
 	def mesosAny = ["Gener", "Gener", "Febrer", "Març", "Abril", "Maig", "Juny", "Juliol", "Agost", "Setembre", "Octubre", "Novembre", "Desembre","Tots"]
 	
@@ -115,7 +115,7 @@ Ejemplo:
 	
 	println mesosAny -> Ya NO imprime los meses repetidos.
 	
-Ejemplo 2: bases de datos
+Ejemplo 1: bases de datos.
 **********
 Tenemos una tabla con las personas de una empresa y su Departamento. Cada departamento tiene un código y en cada departamento puede haber más de una
 persona, por lo que al listar toda la tabla de los trabajadores de la empresa, el código de departamento estará repetido.
@@ -127,6 +127,92 @@ persona, por lo que al listar toda la tabla de los trabajadores de la empresa, e
 	
 De esta manera conseguimos quedarnos únicamente con una lista de códigos de departamento, y el resto de campos de la clase del dominio Lloc se obvian.
 	
+	
+----------------------------
+UNIQUE() - USANDO COMPARATOR
+----------------------------
+A veces puede interesarnos pasarle un objeto que extienda de la interficie Comparator como parámetro a unique.
+Este objeto debe ser una instancia creada, no se le puede pasar la clase de manera genérica.
+Hay dos formas:
+	- Creando el Comparator en una closure. Haciendo new Closurecomparator e implementar qué realizará la closure.
+	- Al estilo de Java, crear una clase que extienda de la interface Comparator (en un archivo a parte o dentro del mismo archivo).
+	
+Creando una closure
+-------------------
+En la siguiente línea <=> es un operador de comparación. Si el valor absoluto de a:
+	- es menor que el de b -> devuelve -1.
+	- es igual al de b -> devuelve 0.
+	- es mayor que el de b -> devuelve 1.
+	
+	def comparator = new ClosureComparator({a, b -> Math.abs(a) <=> Math.abs(b)})
+Una vez creada la closure se puede ejecutar y utilizar el resultado obtenido:
+	def it = list.iterator().unique(comparator)
+	def result = it.toList()
+	
+Ejemplo 1: controlador con tres closures/métodos de ejemplo. Todo el código necesario está aquí.
+**********
+	class UniqueTestComparatorController {
+
+		def index() {
+			redirect (action : "testUniqueOnIterator")
+		}
+		
+		def testUniqueOnIterator() {
+			def list = [-1, 0, 1, 1, 0, -1]
+			def comparator = new ClosureComparator({a, b -> Math.abs(a) <=> Math.abs(b)})
+			def it = list.iterator().unique(comparator)
+			assert it instanceof Iterator
+			def result = it.toList()
+			println result
+		}
+
+		def testUniqueWithComparatorList() {
+			def list = [-1, 0, 1, 1, 0, -1]
+			def comparator = new ClosureComparator({a, b -> Math.abs(a) <=> Math.abs(b)})
+			assert list.unique(comparator) == [-1, 0]
+		}
+
+		def testUniqueWithComparatorSet() {
+			def set = [-1, 0, 1] as Set
+			def comparator = new ClosureComparator({a, b -> Math.abs(a) <=> Math.abs(b)})
+			assert set.unique(comparator).size() == 2
+		}
+	}
+
+Extendiendo de Comparator
+-------------------------
+La clase a crear que extienda de la interfaz Comparator se puede crear tanto en Java como en Groovy. En el caso de Java deberá de ser en un archivo
+a parte y deberá ser importado. Si es Groovy se puede crear dentro del mismo controlador.
+
+Ejemplo 1: 
+**********
+Creando la clase Groovy:
+	package com.utils
+	class NumericComparator implements Comparator{
+		@Override
+		public int compare(Object o1, Object o2) {
+			// TODO Auto-generated method stub
+			int a = (int) o1
+			int b = (int) o2
+			//return a < b ? -1 : a == b ? 0 : 1; 
+			if(a>b) return 1
+			if(a==b)return 0
+			if(a<b)	return -1
+		}
+	}
+
+Entonces en el controlador debe importarse la clase:
+	import com.utils.NumericComparator
+	
+Código del conrolador para utilizar el ejemplo:
+	def testUniqueOnIterator() {
+        def list = [-1, 0, 1, 1, 0, -1]
+        def it = list.iterator().unique(new NumericComparator())
+        assert it instanceof Iterator
+        def result = it.toList()
+		println result
+	}
+
 	
 <PARAMS>**********************************************************************************************************************************************
 -------------------------------------------------------------------------
@@ -375,3 +461,15 @@ cambio, en el controlador la variable "p" es null, por lo que sí se imprime que
 Al intentar imprimir el valor por pantalla de la variable "persona" se verá "[]".
 
 Si se encuentra al usuario correctamente se imprimirá que se ha logeado tanto en el servicio como en el controlador.
+
+
+<OPERADORES>******************************************************************************************************************************************
+------------------------------------------------
+OPERADOR SPACESHIP <=> - OPERADOR DE COMPARACIÓN
+------------------------------------------------
+El operador <=> es útil para comparaciones.
+Devuelve -1 si el operando de la izquierda es menor que el de la derecha.
+Devuelve 0 si ambos operadores son iguales.
+Devuelve 1 si el operador de la izquierda es mayor que el de la derecha.
+
+Referencia: http://groovy.codehaus.org/Operators
