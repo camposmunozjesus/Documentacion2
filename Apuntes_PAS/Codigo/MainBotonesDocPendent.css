@@ -1,0 +1,705 @@
+html, body {
+  height: 100%;
+}    
+
+html * {
+    margin: 0;
+    /*padding: 0; SELECT NOT DISPLAYED CORRECTLY IN FIREFOX */
+}
+
+img {
+	border: 0;
+}
+body {
+	background: #fff;
+    color: #333;
+	Font-family: Verdana, Helvetica, Arial, Sans-serif;
+    font: 0.7em verdana, arial, helvetica, sans-serif; /*11px*/
+    width: 99.9%;
+}
+
+.body {
+    float: left;
+    margin: 0px 15px 0px 20%;
+    width: 79%;
+}
+
+textarea {
+	overflow: hidden;
+	resize:none;
+	height:80px;
+	vertical-align: top;
+}
+
+
+.widthMobile {
+	min-width: 950px;
+}
+
+#totalWidth {
+	/*width: 1090px;*/
+	width:100%;	
+	clear: both;   
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -35px;
+}
+
+/* GENERAL */
+
+.spinner {
+    padding: 5px;
+    position: absolute;
+    right: 0;
+}
+
+#upcLogo {
+	padding:8px;
+}
+
+a,a:link {
+	color:#333333;
+	text-decoration:none;
+}
+a:visited{
+	color:#333333;
+}
+a:hover {
+	text-decoration:underline;
+}
+
+a.noDeco:hover  {
+	text-decoration:none;
+} 
+
+.linkBlau {
+	color:#007DCC !important;
+	
+}
+
+.linkGrisFosc
+{
+	color:#333 !important;
+}
+
+.linkGris
+{
+	color:#666 !important;
+}
+
+.linkGrisClar
+{
+	color:#999 !important;
+}
+
+h1 {
+    color: #007BC0;
+    font-family: Helvetica, Arial, Verdana, Sans-serif;
+    font-weight: normal;
+    font-size: 1.5em !important; /*27px*/
+    margin: .8em 0 .3em 0;
+}
+
+/*Nota, farem servir el h2 com a H3 perquÃ© Ã©s massa gran, H2 hauria de tindre 22px*/
+
+h2 {
+    color: #007BC0;
+    font-family: Helvetica, Arial, Verdana, Sans-serif !important;
+    font-weight: normal;
+    font-size: 1.7em !important; /*19px*/
+	margin-top:10px;
+    margin-bottom:10px;}
+
+h3 {
+    color: #007BC0;
+    font-family: Helvetica, Arial, Verdana, Sans-serif !important;
+    font-weight: normal;
+    font-size: 1.7em !important; /*19px*/       
+}
+
+h4 {
+    color: #007BC0;
+    font-family: Helvetica, Arial, Verdana, Sans-serif !important;
+    font-weight: normal;
+    font-size: 1.5em !important; /*17px*/
+}
+
+ul {
+    padding-left: 15px;
+}
+
+input, select, textarea {
+    background-color: #fcfcfc;
+    border: 1px solid #ccc;
+    font: 1em verdana, arial, helvetica, sans-serif; /*11px*/
+    margin: 2px 0;
+    padding: 2px 5px 2px 2px;
+}
+
+input[type="radio"],input[type="checkbox"] {
+    cursor: pointer;
+	margin-left: 7px;
+	margin-right: 7px;
+    vertical-align: middle;    
+}
+
+input.reset, select.reset, textarea.reset {
+    font: 0.7em verdana, arial, helvetica, sans-serif; /*11px*/
+    background-color: transparent;
+    border: 0px;
+}
+
+select {
+   padding: 2px 2px 2px 0;
+}
+
+
+input:focus, select:focus, textarea:focus {
+    border: 1px solid #b2d1ff;
+}
+
+.bodyIframe{
+    float: left;
+    width: 99.9%;
+}
+
+/* NAVIGATION MENU */
+
+.nav {
+    background: #fff url(../images/icons/shadow.jpg) bottom repeat-x;
+    border: 1px solid #ccc;
+    border-style: solid solid solid solid;
+    margin-top: 5px;
+    padding: 7px 5px;
+    height: 15px;
+    width: 97%;
+    margin-left:1%;
+}
+
+.margin
+{
+	margin-left:10%;
+}
+
+.margin20p
+{
+	margin-left:20%;
+}
+
+.bigMargin
+{
+	margin-left:25%;
+}
+
+.centerMargin
+{
+	margin-left:40%;
+}
+
+.menuButton {
+    font-size: 1em; /*11px*/
+    padding: 0 5px;     
+}
+
+.menuButton a {
+    color: #333;
+    padding: 4px 15px;
+}
+
+.menuButton a.ajuda {
+    background: url(../images/icons/help.png) center left no-repeat;
+    color: #333;    
+    padding: 4px 10px 0 22px;      
+}
+
+.menuButton a.contacte {
+    background: url(../images/icons/help.png) center left no-repeat;
+    color: #333;    
+    padding: 4px 10px 0 22px;      
+}
+
+.menuButton a.manual {
+    background: url(../images/icons/separador.png) center left no-repeat;
+    color: #333;    
+    padding: 4px 10px;   
+}
+
+.menuButton a.exit {
+    background: url(../images/icons/porta-blava.png) center left no-repeat;
+    color: #333;
+    padding-left: 22px;    
+}
+
+.menuButton .login {
+    background: url(../images/login.png) center left no-repeat;
+    color: #333;
+    padding-left: 17px;
+    margin-right:3px;
+}
+
+.menuButton a.home {
+    background: url(../images/icons/home.png) center left no-repeat;
+    color: #333;
+    padding-left: 25px;
+}
+
+.menuButton a.jump {
+    background: url(../images/icons/rol.png) center left no-repeat;
+    color: #333;
+    padding-left: 25px;
+}
+
+.menuButton a.jump_user {
+    background: url(../images/icons/rol_user.png) center left no-repeat;
+    color: #333;
+    padding-left: 25px;
+}
+
+.menuButton a.jump_gestor {
+    background: url(../images/icons/rol_gestor.png) center left no-repeat;
+    color: #333;
+    padding-left: 25px;
+}
+
+.menuButton a.jump_admin {
+    background: url(../images/icons/rol_admin.png) center left no-repeat;
+    color: #333;
+    padding-left: 25px;
+}
+
+.menuButton a.list {
+    background: url(../images/icons/database_table.png) center left no-repeat;
+    color: #333;
+    padding-left: 25px;
+}
+.menuButton a.create {
+    background: url(../images/icons/afegir.png) center left no-repeat;
+    color: #333;
+    padding-left: 25px;
+}
+
+.menuButton a.marcatgeEntrada {
+    background: url(../images/icons/rellotge-verd.png) center left no-repeat;
+    color: #333;
+    padding-left: 25px;
+}
+
+.menuButton a.marcatgeSortida {
+    background: url(../images/icons/rellotge-blau.png) center left no-repeat;
+    color: #333;
+    padding-left: 25px;
+}
+
+
+/* MESSAGES AND ERRORS */
+
+.message {
+    background: #f3f8fc url(../images/icons/information.png) 8px 50% no-repeat;
+    border: 1px solid #b2d1ff;
+    color: #006dba;
+    margin: 10px 0 5px 0;
+    padding: 5px 5px 5px 30px
+}
+
+div.errors {
+    background: #fff3f3;
+    border: 1px solid red;
+    color: #cc0000;
+    margin: 10px 0 5px 0;
+    padding: 5px 0 5px 0;
+}
+div.errors ul {
+    list-style: none;
+    padding: 0;
+}
+div.errors li {
+	background: url(../images/icons/exclamation.png) 8px 0% no-repeat;
+    line-height: 16px;
+    padding-left: 30px;
+}
+
+td.errors select {
+    border: 1px solid red;
+}
+td.errors input {
+    border: 1px solid red;
+}
+td.errors textarea {
+    border: 1px solid red;
+}
+
+/* TABLES */
+
+table.noborder {
+    border: 0px !important;
+}
+
+table {
+    border: 1px solid #ccc;
+    width: 100%
+}
+tr {
+    border: 0;
+}
+
+td, th {
+    font: 1em verdana, arial, helvetica, sans-serif; /*11px*/
+    color: #333;
+    text-align: left;
+    vertical-align: middle;
+    padding: 2px 6px;
+}
+th {
+    background: url(../images/icons/shadow.jpg) repeat-x #FFFFFF;
+    font-weight: bold;
+    line-height: 17px;
+}
+
+th a:link, th a:visited, th a:hover {
+    color: #333;
+    display: block;
+    font-size: 1em; /*11px*/
+    text-decoration: none;
+}
+
+th.asc a {
+    background-image: url(../images/icons/sorted_asc.gif);
+    background-position: right; 
+    background-repeat: no-repeat;    
+}
+th.desc a {
+    background-image: url(../images/icons/sorted_desc.gif);
+    background-position: right; 
+    background-repeat: no-repeat;    
+}
+th.left a {
+    background-position: left;   
+}
+
+.odd {
+    background: #f7f7f7;
+    vertical-align:middle;
+}
+.even {
+    background: #fff;
+    vertical-align:middle;
+}
+
+.oddFixed {
+    background: #f7f7f7 !important;
+    vertical-align:middle;
+}
+.evenFixed {
+    background: #fff !important;
+    vertical-align:middle;
+}
+
+
+.blue
+{
+    background: #DDEBF0;
+    padding:4px;
+    vertical-align:middle;	
+}
+.orange
+{
+    background: #FDD08C !important;
+    padding:4px;
+    vertical-align:middle;	
+}
+.orange tr:hover 
+{
+	 background: #FDD08C ;
+}
+.standardBlueGradient {
+  background: #DDEBF0 url("../images/standardGradient.png") repeat-x scroll 0 0;
+}
+.standardOrangeGradient {
+  background: #FDD08C url("../images/standardGradient.png") repeat-x scroll 0 0;
+}
+
+/* LIST */
+
+.list table {
+    border-collapse: collapse;
+    width:100%;
+}
+.list th, .list td {
+    border-left: 1px solid #ddd;
+}
+.hovered {
+  background: none repeat scroll 0 0 #D7EFF7; 
+}
+.hoveredGradient {
+  /*background: url("../images/standardGradient.png") repeat-x #ABD6FF;*/
+	background: url("../images/standardGradient.png") repeat-x scroll 0 0 #ABD6FF;  
+  
+}
+.activatedGradient {
+  background: url("../images/standardGradient.png") repeat-x #7DBDFA;	
+}
+
+/* PAGINATION */
+
+.paginateButtons {
+    background: #fff url(../images/icons/shadow.jpg) bottom repeat-x;
+    border: 1px solid #ccc;
+    border-top: 0;
+    color: #666;
+    font-size: 1em; /*10px*/
+    overflow: hidden;
+    padding: 10px 3px;
+}
+.paginateButtons a {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-color: #ccc #aaa #aaa #ccc;
+    color: #666;
+    margin: 0 3px;
+    padding: 2px 6px;
+}
+.paginateButtons span {
+    padding: 2px 3px;
+}
+
+/* DIALOG */
+
+.dialog table {
+    padding: 5px 0;
+}
+
+.prop {
+    padding: 5px;
+}
+.prop .name {
+    text-align: left;
+    vertical-align: middle;
+    width: 15%;
+    white-space: nowrap;
+}
+.prop .value {
+    text-align: left;
+    width: 85%;
+}
+
+/* ACTION BUTTONS */
+
+.buttons {
+    background: #fff url(../images/icons/shadow.jpg) bottom repeat-x;
+    border: 1px solid #ccc;
+    color: #666;
+    font-size: 0.9em; /*10px*/
+    margin-top: 5px;
+    overflow: hidden;
+    padding: 4px 3px 3px 3px; 
+}
+
+.buttonsTable {
+    background: #fff url(../images/icons/shadow.jpg) bottom repeat-x;
+    border: 1px solid #ccc;
+    color: #666;
+    font-size: 0.9em; /*10px*/
+    margin-top: 5px;
+    overflow: hidden;
+    padding: 0px;       
+}
+
+.noTopMargin
+{
+    margin-top: 0px;
+    padding: 0px; 
+}
+
+.buttons input {
+    background: #fff;
+    border: 0;
+    color: #333;
+    cursor: pointer;
+    font-size: 1.1em; /*11px*/
+    margin-left: 3px;
+    overflow: visible;
+    padding: 2px 6px;
+}
+
+.buttonsTable input {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 0 none;
+    color: #333333;
+    cursor: pointer;
+    font-size: 1em; /*11px*/
+    margin-left: 3px;
+    overflow: visible;
+    padding: 2px 6px;
+}
+
+.buttons input:hover {
+	text-decoration:underline;
+}
+
+.buttons input.reset {
+    background: transparent url(../images/icons/reset.png) 5px 60% no-repeat;
+    padding-left: 28px;
+}
+.buttons input.veure {
+    background: transparent url(../images/icons/veure.png) 5px 60% no-repeat;
+    padding-left: 28px;
+}
+.buttons input.delete {
+    //background: transparent url(../images/icons/papelera.png) 5px 50% no-repeat;
+    //carpetasbackground: transparent url(../images/icons/doc_pendent_1.png) 5px 50% no-repeat;
+//    background: transparent url(../images/icons/docs_pendents_1111.png) 5px 50% no-repeat;
+//    background: transparent url(../images/icons/document-open-8_2.png) 5px 50% no-repeat;
+//    background: transparent url(../images/icons/document-new-7_1.png) 5px 50% no-repeat;
+//    background: transparent url(../images/icons/edit-copy-9_1.png) 5px 50% no-repeat;
+    background: transparent url(../images/icons/archive-insert-3_1.png) 5px 50% no-repeat;
+    padding-left: 28px;
+}
+
+.buttonsTable input.delete {
+    background: transparent url(../images/icons/papelera.png) 5px 50% no-repeat;
+    padding-left: 28px;
+}
+.buttons input.edit {
+    //background: transparent url(../images/icons/editar.png) 5px 50% no-repeat;
+    //carpetasbackground: transparent url(../images/icons/doc_pendent_2.png) 5px 50% no-repeat;
+//    background: transparent url(../images/icons/docs_pendents_22.png) 5px 50% no-repeat;
+//    background: transparent url(../images/icons/archive-insert-3.png) 5px 50% no-repeat;
+    background: transparent url(../images/icons/docs_pendents_anim_9.gif) 5px 50% no-repeat;
+    padding-left: 28px;
+}
+
+.buttonsTable input.edit {
+    background: transparent url(../images/icons/editar.png) 5px 50% no-repeat;
+    padding-left: 28px;
+}
+
+.buttons input.visualitza {
+    background: transparent url(../images/icons/comentari.png) 5px 50% no-repeat;
+    padding-left: 28px;
+}
+
+.buttons input.save {
+    background: transparent url(../images/icons/guardar.png) 5px 50% no-repeat;
+    padding-left: 28px;
+}
+.buttonsTable input.save {
+    background: transparent url(../images/icons/guardar.png) 5px 50% no-repeat;
+    padding-left: 28px;
+}
+.buttons input.undo {
+    background: transparent url(../images/icons/undo.png) 5px 50% no-repeat;
+    padding-left: 28px;
+}
+
+.buttons input.create {
+    background: transparent url(../images/icons/afegir.png) 5px 50% no-repeat;
+    background: transparent url(../images/icons/archive-insert-3_2.png) 5px 50% no-repeat;
+    background: transparent url(../images/icons/docs_pendents_anim_1.gif) 5px 50% no-repeat;
+    background: transparent url(../images/icons/docs_pendents_anim_1.gif) 5px 50% no-repeat;
+    background: transparent url(../images/icons/archive-insert-3.png) 5px 50% no-repeat;
+    padding-left: 28px;
+}
+
+.buttons input.info {
+    background: transparent url(../images/icons/help.png) 5px 50% no-repeat;
+    padding-left: 28px;
+}
+.buttons input.unitat {
+    background: transparent url(../images/icons/unitat.png) 5px 50% no-repeat;
+    padding-left: 28px;
+}
+.buttons input.lloc_treball {
+    background: transparent url(../images/icons/lloc_treball.png) 5px 50% no-repeat;
+    padding-left: 28px;
+}
+.buttons input.dades_ocupant {
+    background: transparent url(../images/icons/dades_ocupant.png) 5px 50% no-repeat;
+    padding-left: 28px;
+}
+.buttons input.persona {
+    background: transparent url(../images/login.png) 5px 50% no-repeat;
+    padding-left: 28px;
+}
+.buttons input.excel {
+    background: transparent url(../images/excel.png) 5px 50% no-repeat;
+    padding-left: 28px;
+}
+.buttons input.csv {
+    background: transparent url(../images/csv.png) 5px 50% no-repeat;
+    padding-left: 28px;
+}
+.buttons input.extract {
+    background: transparent url(../images/extract.png) 5px 50% no-repeat;
+    padding-left: 28px;
+}
+
+.buttons input.transparent {
+    background: transparent 5px 50% no-repeat;
+    padding-left: 28px;
+    text-decoration:none;
+}
+
+.enllac {
+    border: 0px;
+    color: #666;
+    font-size: 0.9em; /*10px*/
+    margin-top: 5px;
+    overflow: hidden;
+    padding: 0;
+}
+
+.enllac input {
+    background: #fff;
+    border: 0;
+    color: #333;
+    cursor: pointer;
+    font-size: 1em; /*11px*/
+    margin-left: 3px;
+    overflow: visible;
+    padding: 2px 6px;
+}
+
+.enllac input:hover {
+	text-decoration:underline;
+}
+
+.enllac input.create {
+    background: url(../images/icons/afegir.png) center left no-repeat;
+    color: #333;
+    padding-left: 25px;
+}
+
+.borderTop
+{
+	border-top: 1px solid #DDDDDD;
+}
+
+a.taronja
+{
+	color: #FDD08C !important;
+}
+
+.ui-datepicker-trigger {
+	margin-left: 3px;
+	margin-bottom: -3px;
+}
+
+.ui-datepicker-today a {
+   border: 1px solid #aed0ea !important; background: #d7ebf9 url(images/ui-bg_glass_80_d7ebf9_1x400.png) 50% 50% repeat-x !important; font-weight: bold !important; color: #2779aa !important;
+}
+
+.ui-state-highlight a { 
+	border: 1px solid #2694e8 !important; background: #3baae3 url(images/ui-bg_glass_50_3baae3_1x400.png) 50% 50% repeat-x !important; font-weight: bold !important; color: #ffffff !important; 
+}
+
+.ui-state-highlight { 
+	border: 1px solid transparent !important;
+	background: transparent !important;  
+}
+
+button.ui-datepicker-current { display: none; }
+
+.ui-datepicker-unchecked a {
+   border: 1px solid #aed0ea !important; background: #d7ebf9 url(images/ui-bg_glass_80_d7ebf9_1x400.png) 50% 50% repeat-x !important; font-weight: bold !important; color: #2779aa !important;
+}

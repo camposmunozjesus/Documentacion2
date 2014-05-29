@@ -1,0 +1,211 @@
+package sal.user
+
+import java.text.SimpleDateFormat
+import java.util.Date;
+
+import utils.*
+import controler.*
+import sal.Persona;
+import sal.Lloc;
+import sal.Unitat;
+import sal.Edifici;
+import sal.Campus;
+import sal.InscripcioCardiovascular;
+import grails.plugins.springsecurity.Secured;
+
+// permisos:
+@Secured(['ROLE_USER'])
+
+class IncripcioCardioController extends BaseControler {
+
+	static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
+	
+     def index(){
+		redirect(action: "list", params: params)
+	 }
+	 
+	 def list(){
+
+		 this.populateUserName();
+		 
+		 def personaInscrita
+		 def periodeValid = validarDataSubscripcio()
+		 if(periodeValid){
+			 //Buscarem usuari a BDP_YPERSON01 per aconseguir el seu PERNR
+			 def query =
+			 {
+				 and
+				 {
+					 eq("usuari", session.user, [ignoreCase: true])
+				 }
+			 }
+			 
+			 def personesInstance = Persona.createCriteria().list(query)
+			 def persona = personesInstance[0] // Un únic usuari per persona
+			 
+			 //Busqueam si el PERNR es troba a la taula SAL_YINSCAR01. Si es troba l'usuari està donat d'alta al programa.
+			 query =
+			 {
+				 and
+				 {
+					 eq("pernr", persona.pernr)
+				 }
+			 }
+			 
+			 def personesInscritesInstance = InscripcioCardiovascular.createCriteria().list(query)
+			 personaInscrita = personesInscritesInstance[0] // Un únic usuari per persona
+		 
+		 }
+		 else{
+			 flash.message="Es troba fora del període de subscripció"
+		 }
+		 
+
+		 [personaInscrita:personaInscrita, periodeValid:periodeValid]	
+	 }
+	 
+	 def save(){
+		 
+		 //Buscarem usuari a BDP_YPERSON01 per aconseguir el seu PERNR
+		 def query =
+		 {
+			 and
+			 {
+				 eq("usuari", session.user, [ignoreCase: true])
+			 }
+		 }
+		 
+		 def personesInstance = Persona.createCriteria().list(query)
+		 def persona = personesInstance[0] // Un únic usuari per persona
+		 
+		 def telefon = null
+		 def campus = null
+		 
+		 def lloc =  (Lloc) persona.getLlocVigent()
+		 if(lloc!=null)
+		 {
+			 //Aconseguim el telèfon
+			 if (lloc.telefon!=null){
+				 	telefon = lloc.telefon.toString()
+			 	}
+			 else (lloc.telefon2!=null){
+				 telefon = lloc.telefon2.toString().trim()
+			 }
+			 
+			 //Aconseguim el campus
+			 def unitat = (Unitat) lloc.getUnitat()
+			 if(unitat!=null){
+				 def edifici = (Edifici) unitat.getEdifici()
+				 if(edifici!=null){
+					 def campusClass = (Campus) edifici.getCampus()
+					 if(campusClass!=null){
+						 campus = campusClass.codi
+					 }
+				 }
+			 }
+		 }
+		 
+		 //Es recullen totes les dades de la persona per posar-les a la taula SAL_YINSCAR01.
+		 def inscripcioPersona = new InscripcioCardiovascular (
+			 pernr: persona.pernr ,
+			 dataInscripcio: new Date(),
+			 perfil: null,
+			 cognom1: persona.cognom1 ,
+			 cognom2: persona.cognom2 ,
+			 nom: persona.nom ,
+			 nif: persona.identificacio ,
+			 correu: persona.correu ,
+			 telefon: telefon,
+			 campus: campus,
+			 areaPersonal: persona.areaPersonal )
+		 
+		 try
+		 {
+			 if (inscripcioPersona.save(flush: true)) {
+				 flash.message="S'ha donat d'alta al programa de salut cardiovascular"
+			 } else {
+				  flash.message = "No s'ha pogut donar d'alta al programa de salut cardiovascular"
+			 }
+		 }
+		 catch(Exception e)
+		 {
+			 log.error(e.toString())
+			 flash.message = "Sessió no vàlida. Torni a connectar-se a l'aplicació"
+		 }
+		 
+		 redirect(action: "list")
+		 
+	 }
+	 
+	 def delete(){
+		 
+		 def query =
+		 {
+			 and
+			 {
+				 eq("pernr", params.id.toLong())
+			 }
+		 }
+		 
+		 def personesInscritesInstance = InscripcioCardiovascular.createCriteria().list(query)
+		 def personaInscrita = personesInscritesInstance[0] // Un únic usuari per persona
+		 
+		 if (personaInscrita) {
+			 try {
+				 personaInscrita.delete(flush: true)
+				 flash.message = "S'ha donat de baixa al programa de salut cardiovascular"
+			 }
+			 catch (org.springframework.dao.DataIntegrityViolationException e) {
+				 flash.message = "No s'ha pogut donar de baixa al programa de salut cardiovascular"
+				 log.error(e.toString())
+			 }
+		 }
+		 else {
+			 flash.message = "Usuari no trobat"
+		 }
+	 
+		 redirect(action: "list")		 
+	 }
+	 
+	 private boolean validarDataSubscripcio(){
+		 //SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss")
+		 try
+		 {
+			  Calendar cal = Calendar.getInstance()
+			  //Fixem el primer dia del període de validesa: 02/05/2014 00:00:00
+			  cal.set(Calendar.HOUR_OF_DAY, 00)
+			  cal.set(Calendar.MINUTE, 00)
+			  cal.set(Calendar.SECOND, 00)
+			  cal.set(Calendar.YEAR, 2014)
+			  cal.set(Calendar.MONTH, 1)	//el mes va de 0 a 11.
+			  cal.set(Calendar.DAY_OF_MONTH, 2)
+			  //Comprovem si estem per sobre d'aquesta data
+			  //println "CalendariINI: "+ sdf.format(cal.getTime())
+			  if(cal.getTime().before(new Date()))
+			  {
+				  //Fixem el primer dia del període de validesa: 15/05/2014 23:59:59
+				  cal.set(Calendar.HOUR_OF_DAY, 23)
+				  cal.set(Calendar.MINUTE, 59)
+				  cal.set(Calendar.SECOND, 59)
+				  cal.set(Calendar.YEAR, 2014)
+				  cal.set(Calendar.MONTH, 4)	//el mes va de 0 a 11.
+				  cal.set(Calendar.DAY_OF_MONTH, 15)
+				  //println "CalendariFIN: "+ sdf.format(cal.getTime())
+				  if(cal.getTime().after(new Date()))
+				  {
+					  return true
+				  }
+				  else{
+					  return false
+				  }
+			  }
+			  else
+			  {
+				  return false
+			  }
+			  
+		 }
+		 catch(Exception e){}
+		 
+	 }
+}

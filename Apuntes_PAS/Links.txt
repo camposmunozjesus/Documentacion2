@@ -8,6 +8,7 @@ GRAILS
 ======
 Libro en pdf de grails: 			http://www.vivelalectura.com.mx/aura/1/1%29%20Manual%20Grails.pdf
 									https://docs.google.com/document/d/11UfUcjhh7xn0-3spB7ePGkfHDWduCR7y2r-w2bHTD3M/edit?pli=1
+
 Enlace a tutoriales: 				http://www.grailsexample.net/course-outline/
 	WEB SERVICES
 	-Web Services en grails:			http://docs.codehaus.org/display/GROOVY/GroovyWS (donde descargar el módulo JAR y ejemplos)
@@ -16,6 +17,8 @@ Enlace a tutoriales: 				http://www.grailsexample.net/course-outline/
 	-Web Services en castellano:		http://una-programadora-mas-en-el-mundo.blogspot.com.es/2011/09/grails-servicios-web-con-cxf.html
 	-Ejeplo CXF:						https://github.com/Grails-Plugin-Consortium/grails-cxf-client/blob/master/grails-app/conf/Config.groovy
 										http://stackoverflow.com/questions/18481433/grails-wsdl2java-script-in-cxf-client-plugin-does-not-generate-any-java-classes
+									
+Apuntes GRails de universidad:		http://www.jtech.ua.es/apuntes/grails2010_2/index.html
 
 Apache POI:		Referencias			http://grails.org/plugins/tag/poi
 				Ejemplos			http://grails.org/plugin/excel-import

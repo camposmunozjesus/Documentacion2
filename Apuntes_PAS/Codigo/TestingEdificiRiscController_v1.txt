@@ -1,0 +1,134 @@
+package sig.admin
+import org.springframework.dao.DataIntegrityViolationException;
+
+import grails.plugins.springsecurity.Secured;
+
+import java.text.DateFormat
+import java.text.SimpleDateFormat
+import java.util.regex.Matcher
+import java.util.regex.Pattern
+
+import org.tempuri.WSMeteorologico
+import org.tempuri.WSMeteorologicoSoap
+
+import sig.Edifici
+import sig.Funcio
+import sig.FechaService;
+import sig.Lloc
+import sig.Persona
+import sig.TAmbit
+import utils.BaseControler
+
+
+@Secured(['ROLE_ADMIN'])
+
+class TestingEdificiRiscController extends BaseControler{
+
+	static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
+	
+	FechaService fechaService
+	
+	def index() {
+		println "index testing ..."
+		redirect(action:"list", params:[fecha:fechaService.getHora().toString()])
+	}
+	
+	def list(){
+		
+		flash.fecha = params.fecha?:flash.fecha
+		
+		this.populateUserName()
+		this.paramsMaxSet(5, 10)
+		
+		def edificiList = []
+		
+		
+		if(params.get("reset")=="Inicialitza")
+		{
+			params.filtreEdifici = "";
+		}
+
+		def filtreEdifici = params.filtreEdifici?:''
+		
+		//Cargamos los edificios:
+		edificiList = Edifici.list()
+		edificiList.add(0,[descripcio: "Tots", codi:''])
+		
+		
+//		def resultList = Lloc.createCriteria().list(params,query)
+//		def r = resultList.get{
+//			projections {
+//				countDistinct "descripcioLlarga"
+//			}
+//		}
+		
+		//Se buscan las diferentes funciones que hay en un determinado edificio.
+		def resultListFuncions = Lloc.createCriteria()list{
+			
+			and
+			{
+				if(filtreEdifici)
+				{
+					eq("edifici",filtreEdifici)
+				}
+				
+				ne("codi","99999999")
+				
+				order("descripcioLlarga", "asc")
+			}
+			
+			projections {
+				distinct "descripcioLlarga"
+			}
+		}
+		
+		
+//		for (val in resultListFuncions){
+//			println "---> "+val
+//		}
+		println resultListFuncions.size
+		
+		//Se buscan las funciones, código y ámbito en la tabla SIG_ZFUNCIO01
+		def query =
+		{
+			and
+			{
+				eq("edifici","NDB3")
+			}
+				
+		}
+		
+		def resultList = Lloc.createCriteria().list(query)
+		def result =  resultList.size()
+		println resultList.unique{it.funcio}.funcio
+		println resultList.unique{it.funcio}.size()
+//		println resultList.unique{it.funcio}.descripcioLlarga
+		resultList.remove(0)
+//		println resultList.unique{it.funcio}.descripcioLlarga
+//		println result
+		
+		
+		//Se buscan las funciones, código y ámbito en la tabla SIG_ZFUNCIO01
+		def query2 =
+		{
+			or
+			{
+//				for(int i=72; i<74; i++){
+//					eq("codi",i.toLong())
+//				}
+//				eq("codi",72.toLong())
+//				eq("codi",73.toLong())
+				for(val in resultList.unique{it.funcio}.funcio){
+					eq("codi",val.toLong())
+				}
+
+			}
+				
+		}
+		def resultList2 = Funcio.createCriteria().list(query2)
+		println "R2: "+ resultList2.descripcioLlarga
+		println "R2: "+ resultList2.codi
+		println "R2: "+ resultList2.ambit
+		[edificiList:edificiList , funcioList:resultList2]
+	}
+}

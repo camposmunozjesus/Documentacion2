@@ -1,0 +1,267 @@
+package sig.admin
+
+import org.springframework.dao.DataIntegrityViolationException;
+
+import grails.plugins.springsecurity.Secured;
+import java.text.DateFormat
+import java.text.SimpleDateFormat
+import java.util.regex.Matcher
+import java.util.regex.Pattern
+
+import org.tempuri.WSMeteorologico
+import org.tempuri.WSMeteorologicoSoap
+
+import sig.Edifici
+import sig.Lloc
+import sig.Persona
+import utils.BaseControler
+
+import sig.Risc;
+import sig.Funcio;
+import sig.TAmbit;
+import sig.Unitat;
+import sig.Lloc;
+import sig.FuncioRisc;
+import sig.TDisciplinaRisc;
+import sig.TGrupRisc;
+import sig.FactorRisc;
+import sig.TFactorRisc;
+import sig.MesuraPrevencio;
+import sig.TMesuresPrevencio;
+import sig.TTipusMesuraPrev;
+
+
+@Secured(['ROLE_ADMIN'])
+
+class SubPerfilesController extends BaseControler{
+
+	static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
+
+    def index() {
+		redirect(action:"list", params:params)
+	}
+	
+	def list(){
+		this.paramsMaxSet(5, 10)
+
+//		println "LIST - ++++++++++++++++"
+//		println "list Numero a modificar: "+params.idLloc
+//		println "list Empleado consultado: "+ params.idNom+params.idCognom1+params.idCognom2
+////		println "FLASH - list Numero a modificar: "+flash.idLloc
+////		println "FLASH - list Empleado consultado: "+ flash.idNom+flash.idCognom1+flash.idCognom2
+//		println "LIST - ++++++++++++++++"
+		
+		//Llista amb totes les disciplines de risc, per la creació
+		def funcioAmbitList = TAmbit.list()
+		
+		def funcioTotal =  Lloc.countByNomAndPrimerCognomAndSegonCognom( params.idNom,params.idCognom1,params.idCognom2 )
+		def llocTreball = Lloc.findAllByNomAndPrimerCognomAndSegonCognom( params.idNom,params.idCognom1,params.idCognom2, [max:params.max, offset:params.offset] )
+		def persona = Persona.findByNomAndCognom1AndCognom2( params.idNom,params.idCognom1,params.idCognom2)
+		
+		[llocTreball:llocTreball, funcioTotal:funcioTotal , funcioAmbitList:funcioAmbitList , email:persona?.usuari]
+	}
+	
+	def create()
+	{
+		def edificiList = []
+//		def ambitList = TAmbit.list()
+		
+//		def familiatList = TFamilia.list()
+		
+		def funciotList = Funcio.list()
+		
+		//Cargamos los edificios:
+		edificiList = Edifici.list()
+		edificiList.add(0,[descripcio: "Sense asignar", codi:''])
+		
+		[funcioList:funciotList , edificiList:edificiList]
+	}
+	
+	def save()
+	{
+		def dat = Funcio.findByCodi(params.filtreFuncio)
+
+		def llocTreball = new Lloc(
+			//34008187
+			codi:params.filtreCodi,
+			descripcioCurta:dat.familia,
+			descripcioLlarga:dat.descripcioCurta,
+			primerCognom:params.idCognom1,
+			segonCognom:params.idCognom2,
+			nom:params.idNom,
+			dataInici:new Date(),
+			dataFi:new Date(),
+			vigent:"S",
+			edifici:params.filtreEdifici?:''
+			 )
+		
+		llocTreball.save(flush: true)
+		
+		redirect(action: "list",params:params)
+		
+	}
+	
+	def delete()
+	{
+		println "Numero eliminado: "+params.idCodi
+		println "empleado: "+flash.idNom+flash.idCognom1+flash.idCognom2
+		//PARA BORRAR.
+		def llocTreball = Lloc.findByNomAndPrimerCognomAndSegonCognomAndCodi(flash.idNom,flash.idCognom1,flash.idCognom2, params.idCodi)
+		if(llocTreball!=null){
+			println "ww"
+//			llocTreball.delete(flush: true)
+//			flash.message = "S'ha eliminat el lloc de treball amb codi "+params.idCodi
+		}
+		else{
+			println "zz"
+			flash.message = "No s'ha pogut eliminar el lloc de treball"
+		}
+		
+		redirect(action: "list", params: [idNom: flash.idNom, idCognom1:flash.idCognom1, idCognom2:flash.idCognom2])
+		
+	}
+	
+	def edit()
+	{
+//		println "edit () - ++++++++++++++++"
+////		println "flash edit Numero a modificar: "+flash.idLloc
+////		println "flash edit Empleado consultado: "+ flash.idNom+flash.idCognom1+flash.idCognom2
+//		println "params edit Numero a modificar: "+params.idCodi
+//		println "params edit Empleado consultado: "+ params.idNom+params.idCognom1+params.idCognom2
+//		println "edit () - ++++++++++++++++"
+		
+		def tAmbitList = []
+		def funcioList = []
+		
+		//Cargamos los ámbitos:
+		tAmbitList = TAmbit.list()
+		tAmbitList.add(0,[descripcio: "Sense asignar", codi:''])
+		
+		//Cargamos las funciones:
+		funcioList = Funcio.list()
+		funcioList.add(0,[descripcioLlarga: "Sense asignar", codi:''])
+		
+		def llocTreball = Lloc.findByCodi(params.idCodi)
+//		println "*"+llocTreball.codi
+//		println "+"+llocTreball.ambit
+//		println "-"+llocTreball.funcio
+//		println "/*"+llocTreball.funcioSpa
+//		println "/"+llocTreball.edifici
+//		println "/ll"+llocTreball.descripcioLlarga
+//		println "/crt"+llocTreball.descripcioLlarga
+		
+		[llocTreball:llocTreball , tAmbitList:tAmbitList , funcioList:funcioList]
+
+	}
+	
+	def update(){
+		
+		def tAmbitList = []
+		def funcioList = []
+		
+		//Cargamos los ámbitos:
+		tAmbitList = TAmbit.list()
+		tAmbitList.add(0,[descripcio: "Sense asignar", codi:''])
+		
+		//Cargamos las funciones:
+		funcioList = Funcio.list()
+		funcioList.add(0,[descripcioLlarga: "Sense asignar", codi:''])
+		
+//		println "->params: "+ params.idNom+params.idCognom1+params.idCognom2+ params.idCodi
+		def llocTreball = Lloc.findByCodi(Integer.valueOf(params.idCodi))
+		
+		if(!params.filtreFuncio.equals("")){
+//			println params.filtreFuncio
+			def funcioLiteral = Funcio.findByCodi(params.filtreFuncio)
+			llocTreball.funcio = params.filtreFuncio.toLong()
+			llocTreball.descripcioCurta = funcioLiteral.descripcioCurta
+			llocTreball.descripcioLlarga = funcioLiteral.descripcioLlarga
+		}else{
+			llocTreball.funcio = null
+		}
+		
+		if(!params.filtreAmbit.equals("")){
+			llocTreball.ambit = params.filtreAmbit
+		}else{
+			llocTreball.ambit = null
+		}
+		
+		if(llocTreball.save(flush: true)){
+			flash.message = "Actualització realitzada correctament."
+//			println "SAVED"
+		}
+		else{
+			flash.message = "Error a l'actualitzar el lloc de treball amb codi " + new Formatter().format('%08d',params.idCodi?.toLong())
+			render(view: "edit", model: [llocTreball:llocTreball , tAmbitList:tAmbitList , funcioList:funcioList])
+			return;
+//			flash.message = "No s'ha pogut realitzar l'actualització."
+////			println "NO SAVED"
+		}
+		 
+		redirect(action:"list", params:[idCodi:params.idCodi ,idNom:llocTreball.nom , idCognom1:llocTreball.primerCognom , idCognom2:llocTreball.segonCognom])
+	}
+	
+	def iframeList()
+	{
+//		println "IFRAMELIST - **************"
+//		println "Ilist Numero a modificar: "+params.idLloc
+//		println "Ilist Empleado consultado: "+ params.idNom+params.idCognom1+params.idCognom2
+//		println "IFRAMELIST - **************"
+		
+		println params
+		def riscInstanceList = []
+		def risc
+		def literalsDisciplinaRisc = []
+		def literalsGrupRisc = []
+		
+		def resultList = []
+		def results = 0
+		
+		this.paramsMaxSet(10, 20)
+		
+		if(params.idLloc)
+		{
+			def lloc = Lloc.findByCodi(params.idLloc)
+			
+			flash.descriLloc = params.idLloc + " " + lloc.descripcioLlarga
+			flash.descriOcupant = lloc.primerCognom + " " + lloc.segonCognom + " " + lloc.nom
+			
+			//Si el lloc té assignada una funció
+			if(lloc.funcio)
+			{
+				try
+				{
+					def query =
+					{
+						eq("codiFuncio",lloc.funcio)
+					}
+				
+					resultList = FuncioRisc.createCriteria().list(params,query)
+					results = resultList.getTotalCount()
+
+					//Riscos i literals per les disciplines i grups de risc
+					for(int i = 0; i<resultList.size(); i++)
+					{
+						risc = Risc.findByCodi(resultList[i].codiRisc)
+						riscInstanceList << risc
+						literalsDisciplinaRisc.add(risc.disciplina.toString())
+						literalsGrupRisc.add(risc.grup.toString())
+					}
+				
+					literalsDisciplinaRisc = TDisciplinaRisc.getElementList(literalsDisciplinaRisc, "descripcio")
+					literalsGrupRisc = TGrupRisc.getElementList(literalsGrupRisc, "descripcio")
+		
+				}
+				catch(Exception e)
+				{
+					log.error(e.toString())
+					riscInstanceList = []
+					results = 0
+				}
+			}
+		}
+		
+		[riscInstanceList: riscInstanceList, riscTotal: results, literalsDisciplinaRisc:literalsDisciplinaRisc, literalsGrupRisc:literalsGrupRisc]
+		
+	}
+}

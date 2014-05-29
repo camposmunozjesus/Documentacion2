@@ -1,0 +1,313 @@
+class TestingEdificisController extends BaseControler{
+
+	static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
+	
+    def index() { 
+		def res=getHora()
+		redirect(action:"list", params:[fecha:res.toString()])
+	}
+	
+	def list(){
+		
+		flash.fecha = params.fecha?:flash.fecha
+//		println "f"+flash.fecha
+		this.populateUserName()
+		this.paramsMaxSet(5, 10)
+		
+		def tAmbitList = []
+		def funcioList = []
+		def edificiList = []
+		
+		def literalsFuncio = []
+		def literalsTAmbit = []
+		
+		if(params.get("reset")=="Inicialitza")
+		{
+			params.filtreAmbit = "";
+			params.filtreFuncio = "";
+			params.filtreEdifici = "";
+		}
+
+		def filtreAmbit = params.filtreAmbit?:''
+		def filtreFuncio = params.filtreFuncio?:''
+		def filtreEdifici = params.filtreEdifici?:''
+		
+		
+		//Cargamos los ámbitos:
+		tAmbitList = TAmbit.list()
+		tAmbitList.add(0,[descripcio: "Tots", codi:''])
+		
+		//Cargamos las funciones:
+		funcioList = Funcio.list()
+		funcioList.add(0,[descripcioLlarga: "Totes", codi:''])
+		
+		//Cargamos los edificios:
+		edificiList = Edifici.list()
+		edificiList.add(0,[descripcio: "Tots", codi:''])
+
+		
+		//Cerca dels llocs de treball a SIG_ZPUESTR01
+		def query =
+		{
+			and
+			{
+				//Si el filtreAmbit és diferent a '' (Tots), es fa selecció
+				if(filtreAmbit)
+				{
+					eq("ambit",filtreAmbit)
+				}
+				
+				//Si el filtreFuncio és diferent a '' (Totes), es fa selecció
+				if(filtreFuncio)
+				{
+					eq("funcio",filtreFuncio.toLong())
+				}
+				
+				if(filtreEdifici)
+				{
+					eq("edifici",filtreEdifici)
+				}
+				
+				ne("codi","99999999")
+				
+			}
+		}
+		
+		def resultList = Lloc.createCriteria().list(params,query)
+		def results = resultList.getTotalCount()
+		
+		//Literals pels àmbits i les funcions
+		for(int i = 0; i<resultList.size(); i++)
+		{
+			literalsTAmbit.add(resultList[i].ambit.toString())
+			literalsFuncio.add(resultList[i].funcio.toString())
+		}
+		
+		literalsTAmbit = TAmbit.getElementList(literalsTAmbit, "descripcio")
+		literalsFuncio = Funcio.getElementList(literalsFuncio, "descripcioLlarga")
+		
+		[llocInstanceList: resultList, llocTotal: results, literalsTAmbit:literalsTAmbit, literalsFuncio:literalsFuncio, fecha:params.fecha , tAmbitList:tAmbitList , funcioList:funcioList, edificiList:edificiList]
+	}
+	
+	def iframeList() {
+		flash.fecha = params.fecha?:flash.fecha
+		this.paramsMaxSet(5, 10)
+
+		flash.idNom = params.idNom?:''
+		flash.idCognom1 = params.idCognom1?:''
+		flash.idCognom2 = params.idCognom2?:''
+		
+		//Llista amb totes les disciplines de risc, per la creació
+		def funcioAmbitList = TAmbit.list()
+		
+		def funcioTotal =  Lloc.countByNomAndPrimerCognomAndSegonCognom( params.idNom,params.idCognom1,params.idCognom2 )
+		def llocTreball = Lloc.findAllByNomAndPrimerCognomAndSegonCognom( params.idNom,params.idCognom1,params.idCognom2, [max:params.max, offset:params.offset] )
+		def persona = Persona.findByNomAndCognom1AndCognom2( params.idNom,params.idCognom1,params.idCognom2)
+		
+		[llocTreball:llocTreball, funcioTotal:funcioTotal , funcioAmbitList:funcioAmbitList , email:persona?.usuari]
+
+	}
+	
+	def iframeCreate()
+	{
+		def edificiList = []
+//		def ambitList = TAmbit.list()
+		
+//		def familiatList = TFamilia.list()
+		
+		def funciotList = Funcio.list()
+		
+		//Cargamos los edificios:
+		edificiList = Edifici.list()
+		edificiList.add(0,[descripcio: "Sense asignar", codi:''])
+		
+		[funcioList:funciotList , edificiList:edificiList]
+	}
+	
+	def iframeSave()
+	{
+//		println params.filtreFuncio
+//		println params.idNom
+//		println params.idCognom1
+//		println params.idCognom2
+//		println "---"+params.filtreEdifici
+
+		
+		def dat = Funcio.findByCodi(params.filtreFuncio)
+
+//		println dat.familia
+//		println dat.descripcioCurta
+		
+		def llocTreball = new Lloc(
+			//34008187
+			codi:params.filtreCodi,
+			descripcioCurta:dat.familia,
+			descripcioLlarga:dat.descripcioCurta,
+			primerCognom:params.idCognom1,
+			segonCognom:params.idCognom2,
+			nom:params.idNom,
+			dataInici:new Date(),
+			dataFi:new Date(),
+			vigent:"S",
+			edifici:params.filtreEdifici?:''
+			 )
+		
+		llocTreball.save(flush: true)
+		
+		redirect(action: "iframeList",params:params)
+		
+	}
+	
+	def iframeDelete(){
+		println "Numero eliminado: "+params.idCodi
+		println "empleado: "+flash.idNom+flash.idCognom1+flash.idCognom2
+		//PARA BORRAR.
+		def llocTreball = Lloc.findByNomAndPrimerCognomAndSegonCognomAndCodi(flash.idNom,flash.idCognom1,flash.idCognom2, params.idCodi)
+		if(llocTreball!=null){
+			println "ww"
+//			llocTreball.delete(flush: true)
+//			flash.message = "S'ha eliminat el lloc de treball amb codi "+params.idCodi
+		}
+		else{
+			println "zz"
+			flash.message = "No s'ha pogut eliminar el lloc de treball"
+		}
+		
+		redirect(action: "iframeList", params: [idNom: flash.idNom, idCognom1:flash.idCognom1, idCognom2:flash.idCognom2])
+		
+	}
+	
+	def edit()
+	{
+		println "Numero a modificar: "+params.idCodi
+		println "Empleado consultado: "+ flash.idNom+flash.idCognom1+flash.idCognom2
+		
+		
+		flash.idNom = flash.idNom?:''
+		flash.idCognom1 = flash.idCognom1?:''
+		flash.idCognom2 = flash.idCognom2?:''
+		
+		def tAmbitList = []
+		def funcioList = []
+		
+		//Cargamos los ámbitos:
+		tAmbitList = TAmbit.list()
+		tAmbitList.add(0,[descripcio: "Sense asignar", codi:''])
+		
+		//Cargamos las funciones:
+		funcioList = Funcio.list()
+		funcioList.add(0,[descripcioLlarga: "Sense asignar", codi:''])
+		
+		def llocTreball = Lloc.findByNomAndPrimerCognomAndSegonCognomAndCodi(flash.idNom,flash.idCognom1,flash.idCognom2, params.idCodi)
+//		println "*"+llocTreball.codi
+//		println "+"+llocTreball.ambit
+//		println "-"+llocTreball.funcio
+//		println "/*"+llocTreball.funcioSpa
+//		println "/"+llocTreball.edifici
+//		println "/ll"+llocTreball.descripcioLlarga
+//		println "/crt"+llocTreball.descripcioLlarga
+		
+		[llocTreball:llocTreball , tAmbitList:tAmbitList , funcioList:funcioList]
+
+	}
+	
+	def getHora(){
+		WSMeteorologico meteo =new WSMeteorologico();
+		WSMeteorologicoSoap serveiMeteo = meteo.getWSMeteorologicoSoap()
+		
+		def hora
+		def fecha
+		
+		try{
+			hora = serveiMeteo.hora()
+		}catch(Exception e){
+			System.out.println(e.toString())
+		}
+		
+		try{
+			fecha = serveiMeteo.fecha()
+		}catch(Exception e){
+			System.out.println(e.toString())
+		}
+		
+		def res = getHoraLocal(fecha, hora);
+		
+	}
+	
+	def getHoraLocal(String fecha, String hora){
+		
+		def t = []
+		t = fecha.split("\\s");
+		t[4]="de";
+		fecha="";
+		for(String str: t)
+			fecha = fecha+" "+str;
+		fecha=fecha.trim();
+		
+		Pattern p = Pattern.compile("a.m.")
+		Matcher m = p.matcher(hora)
+		if(m.find()){
+			hora = hora.substring(0,6) + "am"
+		}
+		else{
+			hora = hora.substring(0,6) + "pm"
+		}
+		
+		try{
+			DateFormat df = DateFormat.getDateInstance(DateFormat.FULL, new Locale("es"))
+			Date dtemp = df.parse(fecha)
+			DateFormat df2 = DateFormat.getInstance()
+			fecha=df2.format(dtemp).substring(0,9)+ hora
+			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yy hh:mm a", new Locale("es", "ES"))
+			Date de = sdf.parse(fecha);
+			Calendar c =Calendar.getInstance()
+			c.setTime(de)
+			c.add(Calendar.HOUR, 7)
+//			SimpleDateFormat dateFormat = new SimpleDateFormat("EEEE d MMMM  yyyy   HH:mm")
+//			fecha=dateFormat.format(c.getTime())
+			SimpleDateFormat dateFormat = new SimpleDateFormat("EEEE d MMMM  yyyy")
+			fecha=dateFormat.format(c.getTime())
+			SimpleDateFormat dateFormath = new SimpleDateFormat("HH:mm")
+			fecha=fecha + " a les "+dateFormath.format(c.getTime())
+			
+		}catch(IOException e){
+			System.out.println(e.toString())
+		}
+		
+		return fecha
+	}
+	
+	def update(){
+
+//		println "->params: "+ params.idNom+params.idCognom1+params.idCognom2+ params.idCodi
+		def llocTreball = Lloc.findByNomAndPrimerCognomAndSegonCognomAndCodi(params.idNom,params.idCognom1,params.idCognom2, Integer.valueOf(params.idCodi))
+		
+		if(!params.filtreFuncio.equals("")){
+//			println params.filtreFuncio
+			def funcioLiteral = Funcio.findByCodi(params.filtreFuncio)
+			llocTreball.funcio = params.filtreFuncio.toLong()
+			llocTreball.descripcioCurta = funcioLiteral.descripcioCurta
+			llocTreball.descripcioLlarga = funcioLiteral.descripcioLlarga
+		}else{
+			llocTreball.funcio = null
+		}
+		
+		if(!params.filtreAmbit.equals("")){
+			llocTreball.ambit = params.filtreAmbit
+		}else{
+			llocTreball.ambit = null
+		}
+		
+		if(llocTreball.save(flush: true)){
+			flash.message = "Actualització realitzada correctament."
+//			println "SAVED"
+		}
+		else{
+			flash.message = "No s'ha pogut realitzar l'actualització."
+//			println "NO SAVED"
+		}
+		 
+		redirect(action:"iframeList", params:params)
+	}
+
+}
