@@ -100,8 +100,22 @@ Métodos heredados:
 	def lista = []
  
  
- 
-******************************************************************************************************************************************************
+------
+SIZE()
+------
+En Groovy/Grails siempre se utiliza el método size() para determinar el tamaño de un objeto:
+   Tipo					En Java				  En Groovy
+   ----					-------				  ---------
+Array				Propiedad length		Método size()
+String				Método length()			Método size()
+StringBuffer		Método length()			Método size()
+Collection			Método size()			Método size()
+Map					Método size()			Método size()
+File				Método length()			Método size()
+Matcher				Método groupCount()		Método size()
+
+
+<UNIQUE>**********************************************************************************************************************************************
 --------
 UNIQUE()
 --------
@@ -473,3 +487,59 @@ Devuelve 0 si ambos operadores son iguales.
 Devuelve 1 si el operador de la izquierda es mayor que el de la derecha.
 
 Referencia: http://groovy.codehaus.org/Operators
+
+
+<LIST>************************************************************************************************************************************************
+-------------------------
+MÉTODO FIND() / FINDALL()
+-------------------------
+Cuando tenemos una lista podemos aplicarle el método find() (como cuando se aplica la propiedad toString()).
+
+find() devuelve la primera coincidencia que se produce, mientras que findAll() devuelve todas las coincidencias que encuentre.
+
+Si se ejecuta:
+	def list = [1, 2, 3, 4 , 5 , 6 , 7]
+	println list.find()
+	
+Devolverá el 1. Para que devuelva el o los números que cumplan una determinadad condición se le ha de pasar una closure o bien un método para utilizarlo
+de comparación.
+
+Closure
+-------
+El siguiente código imprimirá un 5 por pantalla. findAll() imprimiría 5, 6, 7.
+	def list = [1, 2, 3, 4 , 5 , 6 , 7]
+	println list.find { it > 4}		---> La closure es lo que hay entre paréntesis
+	
+Método de comparación
+---------------------
+Se crea una clase (dentro del mismo controlador es válido):
+	class LimitClass{
+
+		int limite
+		
+		LimitClass (int limite){
+			this.limite = limite
+		}
+
+		boolean validar (int valor){
+			println "A validar: "+valor
+			return valor <= limite
+		}
+	}
+
+Se le pasa el método (la dirección del método) para que lo utilice como una closure, por eso se pone NombreClase.&metodo (& indica dirección):
+	println list.find(lm.&validar)
+	
+Código de ejemplo: PruebasBasica2.findMethod.FindMethodTest01Controller
+
+
+<ASPECTOS BÁSICOS>*************************************************************************************************************************************
+--------------------
+OBJETOS NULL / FALSE
+--------------------
+Para Groovy:
+	NULL = FALSE
+	NOT NULL = TRUE
+	
+Para más información sobre este tipo de situaciones consultar: Grails_Bases_de_datos.txt -> <ASPECTOS BÁSICOS>TEORÍA SOBRE LO QUE SE RECUPERA EN UNA CONSULTA - RECUPERAR NULL O NO
+Donde se puede ver qué es lo que se devuelve en una consulta a la base de datos.
