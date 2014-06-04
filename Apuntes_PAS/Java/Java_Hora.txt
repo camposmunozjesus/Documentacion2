@@ -93,3 +93,9 @@ Lo mismo pero estableciendo directamente la fecha en el calendario:
 			  }
 		 }
 		 catch(Exception e){}
+		 
+		 
+____
+cal.isWeekDateSupported()
+
+cal.set(Calendar.DATE, cal.getActualMaximum(Calendar.DATE));
