@@ -533,6 +533,20 @@ Se le pasa el método (la dirección del método) para que lo utilice como una c
 Código de ejemplo: PruebasBasica2.findMethod.FindMethodTest01Controller
 
 
+----------
+CONTAINS()
+----------
+Sirve para saber si un elemento está contenido dentro de una lista.
+
+Por ejemplo, se realiza una consulta a la base de datos:
+	def resultList = Domain.createCriteria().list(query)
+	
+Y de la lista devuelta, se quiere saber si alguno de los elementos tiene como valor en el campo 'codigo' (en este caso un String) el valor '5001'.
+	resultList.codigo.contains('5001')
+	o bien si hay que transformarlo en una lista previamente:
+	resultList.codigo.toList().contains('5001')
+
+
 <ASPECTOS BÁSICOS>*************************************************************************************************************************************
 --------------------
 OBJETOS NULL / FALSE

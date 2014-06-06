@@ -1,5 +1,18 @@
 JAVA - HORA
 ===========
+<MÉTODOS>*********************************************************************************************************************************************
+-------------------
+MÉTODOS DE UTILIDAD
+-------------------
+Dado un Calendar tal que: Calendar cal = Calendar.getInstance()
+*cal.isWeekDateSupported(): indica si soporta la consulta de getActualMaximum.
+*cal.set(Calendar.DATE, cal.getActualMaximum(Calendar.DATE)): sirve para saber cual es el último día del mes actual marcado en el Calendar.
+*cal.set(Calendar.DATE, cal.getActualMaximum(Calendar.DAY_OF_MONTH)): sirve para saber cual es el último día del mes actual marcado en el Calendar.
+Otro método para saber el último día de un mes (si la instrucción anterior no funciona) es situarse en el primer día del mes siguiente, restarle un
+día y mirar en que día ha quedado el calendario.
+
+
+<EXPERESAR FECHA: MES, AÑO, ETC ...>******************************************************************************************************************
 --------------------------------------------------
 EXPRESAR LA FECHA ACTUAL EN UN FORMATO DETERMINADO
 --------------------------------------------------
@@ -23,6 +36,170 @@ cal.set(Calendar.DAY_OF_MONTH, 2)
 println "Calendario: "+ sdf.format(cal.getTime())
 
 
+<DÍA>
+------------------------------------------------------------------------------------------
+EXPRESAR/CONSEGUIR SÓLO EL DÍA DE LA SEMANA CON ABREVIATURA EN UN IDIOMA DETERMINADO - (I)
+------------------------------------------------------------------------------------------
+Si tenemos la fecha en un calendar:
+	Calendar cal = Calendar.getInstance()
+	cal.set(Calendar.YEAR, 2014)
+	cal.set(Calendar.MONTH, 7)
+	cal.set(Calendar.DAY_OF_MONTH, 1)
+	cal.set(Calendar.HOUR_OF_DAY, 00)
+	cal.set(Calendar.MINUTE, 00)
+	cal.set(Calendar.SECOND, 00)
+	cal.set(Calendar.MILLISECOND, 00)
+	
+Se emplea un SimpleDateFormat para decir que queremos conseguir únicamente el día de la semana de manera abreviada:
+	SimpleDateFormat sdfDescripcioDia = new SimpleDateFormat("E", new Locale("ca", "ES")) //Abreviatura dia setmana.
+Y el día de la semana abreviado se obtiene con:
+	sdfDescripcioDia.format(cal.getTime())
+Para eliminar el punto del final:
+	sdfDescripcioDia.format(cal.getTime()).substring(0, 2)
+	
+
+-------------------------------------------------------------------------------------------
+EXPRESAR/CONSEGUIR SÓLO EL DÍA DE LA SEMANA CON ABREVIATURA EN UN IDIOMA DETERMINADO - (II)
+-------------------------------------------------------------------------------------------
+Si tenemos la fecha en un calendar:
+	Calendar cal = Calendar.getInstance()
+	cal.set(Calendar.YEAR, 2014)
+	cal.set(Calendar.MONTH, 7)
+	cal.set(Calendar.DAY_OF_MONTH, 1)
+	cal.set(Calendar.HOUR_OF_DAY, 00)
+	cal.set(Calendar.MINUTE, 00)
+	cal.set(Calendar.SECOND, 00)
+	cal.set(Calendar.MILLISECOND, 00)
+	
+A veces los Locale NO funcionan bien y se debe utilizar
+	String[] diesCat = ["","diumenge","dilluns","dimarts","dimecres","dijous","divendres","dissabte","diumenge"]
+		
+	DateFormatSymbols simbols = new DateFormatSymbols();
+	simbols.setShortWeekdays(diesCat);
+	
+	SimpleDateFormat sdf = new SimpleDateFormat("E", simbols);
+	Date today = new Date();
+	String result = sdf.format(today);
+	System.out.println(result);	
+	
+	
+-------------------------------------------------------------------------------
+EXPRESAR/CONSEGUIR SÓLO EL DÍA ACTUAL DE UNA FECHA ALMACENADA EN DESDE CALENDAR
+-------------------------------------------------------------------------------
+Si tenemos la fecha en un calendar:
+	Calendar cal = Calendar.getInstance()
+	cal.set(Calendar.YEAR, 2014)
+	cal.set(Calendar.MONTH, 7)
+	cal.set(Calendar.DAY_OF_MONTH, 1)
+	cal.set(Calendar.HOUR_OF_DAY, 00)
+	cal.set(Calendar.MINUTE, 00)
+	cal.set(Calendar.SECOND, 00)
+	cal.set(Calendar.MILLISECOND, 00)
+	
+Se emplea un SimpleDateFormat para decir que queremos conseguir únicamente el día de la fecha:
+	SimpleDateFormat sdfDia = new SimpleDateFormat("d") -> para obtener del 1 al 9 con un único dígito.
+	o bien
+	SimpleDateFormat sdfDia = new SimpleDateFormat("dd") -> para obtener del 1 al 9 con dos dígitos.
+Y el día se obtiene con:
+	sdfDia.format(cal.getTime())
+
+	
+-----------------------------------------------------------------------
+EXPRESAR/CONSEGUIR SÓLO EL DÍA ACTUAL DE UNA FECHA ALMACENADA EN STRING
+-----------------------------------------------------------------------
+Si tenemos la fecha en un String:
+	String str = "01/08/2014")
+	
+Se emplea un SimpleDateFormat para parsear el String y convertirlo en una fecha:
+	SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy")
+Se emplea un SimpleDateFormat para decir que queremos conseguir únicamente el día de la fecha:
+	SimpleDateFormat sdfDia = new SimpleDateFormat("d") -> para obtener del 1 al 9 con un único dígito.
+	o bien
+	SimpleDateFormat sdfDia = new SimpleDateFormat("dd") -> para obtener del 1 al 9 con dos dígitos.
+Y el mes se obtiene con:
+	sdfDia.format(sdf.parse(str))
+	
+	De otra manera:
+	* fecha = sdf.parse(str): convierte en fecha el String.
+	* sdfDia.format(fecha): el String parseado a fecha es formateado de manera que únicamente se visualizará el mes del año.
+	
+
+<MES>
+-------------------------------------------------------------------------------
+EXPRESAR/CONSEGUIR SÓLO EL MES ACTUAL DE UNA FECHA ALMACENADA EN DESDE CALENDAR
+-------------------------------------------------------------------------------
+Si tenemos la fecha en un calendar:
+	Calendar cal = Calendar.getInstance()
+	cal.set(Calendar.YEAR, 2014)
+	cal.set(Calendar.MONTH, 7)
+	cal.set(Calendar.DAY_OF_MONTH, 1)
+	cal.set(Calendar.HOUR_OF_DAY, 00)
+	cal.set(Calendar.MINUTE, 00)
+	cal.set(Calendar.SECOND, 00)
+	cal.set(Calendar.MILLISECOND, 00)
+	
+Se emplea un SimpleDateFormat para decir que queremos conseguir únicamente el mes de la fecha:
+	SimpleDateFormat sdfMes = new SimpleDateFormat("MM")
+Y el mes se obtiene con:
+	sdfMes.format(cal.getTime())
+
+	
+-----------------------------------------------------------------------
+EXPRESAR/CONSEGUIR SÓLO EL MES ACTUAL DE UNA FECHA ALMACENADA EN STRING
+-----------------------------------------------------------------------
+Si tenemos la fecha en un String:
+	String str = "01/08/2014")
+	
+Se emplea un SimpleDateFormat para parsear el String y convertirlo en una fecha:
+	SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy")
+Se emplea un SimpleDateFormat para decir que queremos conseguir únicamente el mes de la fecha:
+	SimpleDateFormat sdfMes = new SimpleDateFormat("MM")
+Y el mes se obtiene con:
+	sdfMes.format(sdf.parse(str))
+	
+	De otra manera:
+	* fecha = sdf.parse(str): convierte en fecha el String.
+	* sdfMes.format(fecha): el String parseado a fecha es formateado de manera que únicamente se visualizará el mes del año.
+
+	
+<AÑO>
+-------------------------------------------------------------------------------
+EXPRESAR/CONSEGUIR SÓLO EL AÑO ACTUAL DE UNA FECHA ALMACENADA EN DESDE CALENDAR
+-------------------------------------------------------------------------------
+Si tenemos la fecha en un calendar:
+	Calendar cal = Calendar.getInstance()
+	cal.set(Calendar.YEAR, 2014)
+	cal.set(Calendar.MONTH, 7)
+	cal.set(Calendar.DAY_OF_MONTH, 1)
+	cal.set(Calendar.HOUR_OF_DAY, 00)
+	cal.set(Calendar.MINUTE, 00)
+	cal.set(Calendar.SECOND, 00)
+	cal.set(Calendar.MILLISECOND, 00)
+	
+Se emplea un SimpleDateFormat para decir que queremos conseguir únicamente el año de la fecha:
+	SimpleDateFormat sdfAny = new SimpleDateFormat("yyyy")
+Y el mes se obtiene con:
+	sdfAny.format(cal.getTime())
+
+-----------------------------------------------------------------------
+EXPRESAR/CONSEGUIR SÓLO EL AÑO ACTUAL DE UNA FECHA ALMACENADA EN STRING
+-----------------------------------------------------------------------
+Si tenemos la fecha en un String:
+	String str = "01/08/2014")
+	
+Se emplea un SimpleDateFormat para parsear el String y convertirlo en una fecha:
+	SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy")
+Se emplea un SimpleDateFormat para decir que queremos conseguir únicamente el año de la fecha:
+	SimpleDateFormat sdfAny = new SimpleDateFormat("MM")
+Y el mes se obtiene con:
+	sdfAny.format(sdf.parse(str))
+	
+	De otra manera:
+	* fecha = sdf.parse(str): convierte en fecha el String.
+	* sdfAny.format(fecha): el String parseado a fecha es formateado de manera que únicamente se visualizará el mes del año.
+	
+	
+<COMPARAR FECHAS>*************************************************************************************************************************************
 ---------------
 COMPARAR FECHAS
 ---------------
@@ -95,7 +272,48 @@ Lo mismo pero estableciendo directamente la fecha en el calendario:
 		 catch(Exception e){}
 		 
 		 
-____
-cal.isWeekDateSupported()
+-------------
+MÉTODO EQUALS
+-------------
+Cuando se comparan dos fechas utilizando equals (o ge o le en una recuperación de base de datos) hay que tener en cuenta que si en la bd se ha guardado
+con los mseg y en la fecha de comparación no se ponen, no se consideran iguales. Por ejemplo:
+01/08/2014 00:00:00.0 es diferente de 01/08/2014 00:00:00
 
-cal.set(Calendar.DATE, cal.getActualMaximum(Calendar.DATE));
+
+<PARSEO>**********************************************************************************************************************************************
+----------------
+PARSE dd/MM/yyyy
+----------------
+Cuando se parsea con:
+	SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy")
+La hora establecida por defecto es 00:00:00. Al comparar con un día creado en Calendar, basta con establecerle las horas, minuto y segundos a 00. Los
+mseg se pueden establecer o no, ya que al hacer equals, se establezcan o no los mseg, si es el mismo día dirá que sí.
+
+Ejemplo:
+	 Date d5 = null;
+	 
+	 Calendar cal = Calendar.getInstance()
+	 cal.set(Calendar.HOUR_OF_DAY, 00)
+	 cal.set(Calendar.MINUTE, 00)
+	 cal.set(Calendar.SECOND, 00)
+	 cal.set(Calendar.YEAR, 2014)
+	 cal.set(Calendar.MONTH, 7)	//el mes va de 0 a 11.
+	 cal.set(Calendar.DAY_OF_MONTH, 1)
+	//cal.set(Calendar.MILLISECOND, 000)
+	 d5 = cal.getTime();
+	 println "DATA 5: "+d5
+	 SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy")
+	 String str = "01/08/2014"
+	 
+	 println sdf.parse(str)
+	 
+	 if(d5.equals(sdf.parse(str)))
+	 {
+		 println "Fechas d5 y str iguales"
+	 }
+	 else
+	 {
+		 println "d5 y str no son la misma fecha"
+	 }
+
+Dirá que las fechas son iguales tanto si se establecen los mseg como si no.
