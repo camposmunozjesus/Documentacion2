@@ -258,3 +258,23 @@ Ejemplo: Todo el código mostrado se ubica en la página GSP.
 													//codi es el indicado en el script de la fila: { codi:'${personaInstance.pernr}'}
 			}	
 		</script>	
+
+		
+		
+******************************************************************************************************************************************************
+----------------------------
+CONSULTAR TAMAÑO DE VECTORES
+----------------------------
+En el vector de iteración del siguiente bucle:
+	<g:each in="${resultList}" status="i" var="personaInstance">
+	</g:each>
+	
+Se desea consultar el tamaño total del vector para saber si estamos en la última iteración:
+	${resultList.size()}
+
+De este modo podemos saber si estamos en la última iteración:
+	<g:each in="${resultList}" status="i" var="personaInstance">
+		<g:if test="${(i == (resultList.size()-1))}">
+			//Instrucciones ...
+		</g:if>
+	</g:each>	

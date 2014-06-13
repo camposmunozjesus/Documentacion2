@@ -62,7 +62,8 @@ SYSTEM PROPERTIES
 -----------------
 Cómo obtener ciertos elementos del sistema:	http://docs.oracle.com/javase/tutorial/essential/environment/sysprop.html
 				
-				
+	
+
 LIBRERÍAS
 =========
 joda-time-1.5.jar					http://www.java2s.com/Code/Jar/j/Downloadjodatime15jar.htm
@@ -76,9 +77,11 @@ Página oficial:						http://www.weceem.org/weceem/Documentation/User-Guide
 Más documentación					http://jcatalog.github.io/weceem-plugin/guide/3.GeneralBehaviourAndConcepts.html
 
 
+
 LIBROS
 ======
 Groovy:								http://it-ebooks.info/book/2715/
+
 
 
 JOOMLA
@@ -87,14 +90,20 @@ Página en español:					http://joomla.com.es/curso-joomla.html
 Libros y guías:						http://ayuda.joomlaspanish.org/guia-de-instalacion-2-5x/444-joomla-2-5-guia-para-principiantes
 
 
+
 CSS
 ===
 Estilos de una tabla (cabecera):	http://www.lawebera.es/como-hacer/ejemplos-css/expandir-imagen-fondo-css.php
 
 
+
 JAVASCRIPT
 ==========
 Datepicker:							http://www.kelvinluck.com/assets/jquery/datePicker/v2/demo/inlineDatePicker.html
+Detectar un submit de cualquier		http://stackoverflow.com/questions/1213840/how-can-2-html-forms-share-1-hidden-field
+formulario:
+Añadir elementos a un formulario:	http://www.jguru.com/faq/view.jsp?EID=448075
+
 
 
 LINUX
@@ -102,10 +111,12 @@ LINUX
 Modificar path:						http://www.troubleshooters.com/linux/prepostpath.htm
 
 
+
 GIMP
 ====
 Filtros:							http://www.jesusda.com/blog/?id=371
 Manual:								http://www.ite.educacion.es/formacion/materiales/86/cd/pdf/m6_introduccion_a_los_filtros.pdf
+
 
 
 OTROS

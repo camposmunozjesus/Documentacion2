@@ -1,0 +1,35 @@
+GRAILS - STRINGS
+================
+----------------------------------
+USO DE LOS PUNTOS SUSPENSIVOS (..)
+----------------------------------
+Para imprimir una parte de un String se pueden utilizar los puntos suspensivos:
+	String name = "palabras sueltas"
+	println name[0..5]
+	println name[3..7]
+	
+También se pueden usar para realizar comparaciones:
+	if(name[0..2] == 'pal'){
+		println "Coincidencia"
+	}
+	else{
+		println "No coincidencia"
+	}
+	
+O bien:
+	if(name[0..2] == "pal"){
+		println "Coincidencia"
+	}
+	else{
+		println "No coincidencia"
+	}
+
+
+
+*****************************************************************************************************************************************************
+------------------------------
+Creación:	10-06-2014
+
+Jesús Campos Muñoz
+jesus.campos@upc.edu
+------------------------------
