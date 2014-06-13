@@ -1,3 +1,15 @@
 COLORES
 =======
 Azul claro (tono cielo/pastel): cce9ed
+
+amarillo:
+	#F2F5A9
+	#F3F781
+
+verde
+	#A9F5A9
+	#9FF781
+	
+rojo
+	#FF0000
+	#FA5858
