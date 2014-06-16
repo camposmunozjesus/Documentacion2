@@ -133,7 +133,7 @@ o bien:
 para pasar más de un parámetro.	
 
 
-******************************************************************************************************************************************************
+<FORMULARIOS>*****************************************************************************************************************************************
 ----------------------------------------------------
 BOTÓN DE SUBMIT QUE ACTIVA FORMULARIO POR JAVASCRIPT
 ----------------------------------------------------
@@ -154,6 +154,58 @@ El formulario debe tener como id y como name "fm".
 	</div>
 
 
+-----------------------------------------------------------
+DETECTAR LA ACTIVACIÓN DE CUALQUIER FORMULARIO DE LA PÁGINA
+-----------------------------------------------------------
+Se puede detectar de manera general cuándo se desea realizar un submit de cualquier formulario contenido en la página:
+
+	$('form').submit(function() {
+	);
+
+	
+--------------------------------------------------------------------
+AÑADIR UN CAMPO HIDDEN A UN FORMULARIO CON JAVASCRIPT Y HACER SUBMIT
+--------------------------------------------------------------------
+Cuando se detecta que se hace submit sobre un determinado formulario se añade un campo HIDDEN al formulario y se realiza el submit.
+JS:
+	$(function() {
+		$('#form1').submit(function() {
+			var form = document.forms['form1'];
+			var hiddenField = document.createElement("input");
+			hiddenField.type = "hidden";
+			hiddenField.name = "idFactor";
+			hiddenField.value = document.getElementById("idFactor").value; //Coge el valor de otro campo HIDDEN presente en la página.
+			form.appendChild(hiddenField);
+			form.submit();
+		});
+		
+	}
+HTML/GSP:
+	<g:form id="form1" name="form1">
+		<table id="tableList">
+			<thead>
+				<tr>
+					<th class="text">...</th>
+				</tr>
+			</thead>
+			<tbody>
+			<g:if test="${!mesuresList}">
+				<tr style="display:none"><th></th></tr>
+			</g:if>					
+			<g:each in="${mesuresList}" status="i" var="mesura">
+				<tr id="tr${i}" class="${(i % 2) == 0 ? 'odd' : 'even'}">
+					<td class="buttonCell" style="width: 100px;">																													
+						<span class="buttons buttonsTableIE"> 
+							<g:actionSubmit class="delete" action="iframeDeleteMesura" value="Esborrar" onclick="return confirm('Està segur?');" alt="Esborrar mesura preventiva de la fila ${i}" />
+						</span>																															
+					</td>																					
+				</tr>
+			</g:each>
+			</tbody>
+		</table>
+	</g:form>
+
+	
 ******************************************************************************************************************************************************
 ------------------------------------------------------------------
 TEXT BOX QUE SE ACTIVA/DESACTIVA EN FUNCIÓN DEL VALOR DE UN SELECT
