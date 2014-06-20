@@ -1,0 +1,12 @@
+HISTORIAL DE SPACE WECEEM
+=========================
+Basic_20140618: Tiene la sección del Buscador y la de pruebas para automatizar el recorrido de carpetas.
+Basic_20140620: Tiene el menú automatizado en el template "Menú Automatizado". En el template también utiliza un tag personalizado, que podría fallar en otro Weceem.
+
+*****************************************************************************************************************************************************
+------------------------------
+Creación:	18-06-2014
+
+Jesús Campos Muñoz
+jesus.campos@upc.edu
+------------------------------
