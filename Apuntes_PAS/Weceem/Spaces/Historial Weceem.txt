@@ -5,6 +5,9 @@ Basic_20140620: Tiene el menú automatizado en el template "Menú Automatizado". E
 Basic_20140620_1355: En el template de automatización 2 hay mejoras sobre desplegar un menú y ocultar otros.
 					 En el template de automatización 1 se ha mejorado la forma de conseguir el número de menús de manera automática.
 
+Test_local_20140627_1321: contiene los menus en formato widget
+Basic_local_20140621_1322: contiene la barra del peu ok
+
 *****************************************************************************************************************************************************
 ------------------------------
 Creación:	18-06-2014
