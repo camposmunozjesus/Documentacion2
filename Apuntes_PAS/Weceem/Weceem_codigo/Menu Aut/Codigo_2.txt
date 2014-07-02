@@ -1,0 +1,171 @@
+    <g:each var="hijo" in="${menuNode.children}">
+      1 - z---> menuNode: ${hijo.titleForMenu.encodeAsHTML()}<br>
+    </g:each>
+	
+	
+	
+	
+	custom="true" path="content"
+	
+	
+	
+	
+	
+	<!-- Menú descriptiu de la plataforma -->
+    <div id="menuNav">
+	  <div id="Menu" title="Menú" class="dijitTitlePane">
+        <div class="dijitTitlePaneTitle">
+          <span class="dijitTitlePaneTextNode">Racó personal</span>
+        </div>        
+      </div>
+      <br/>
+      <div id="Menu0" title="Menú" class="dijitTitlePane">
+        <div class="dijitTitlePaneTitle">
+          <div>
+            <img class="dijitArrowNode" alt="Fletxa" src="${wcm.createLinkToFile(path:'images/blank.gif')}" />
+          </div>
+          <span class="dijitTitlePaneTextNode">Indicacions sobre Weceem</span>
+        </div>
+        <div id="Outer0" class="dijitTitlePaneContentOuter">
+          <ul id="uli0" class="iconList">
+            <li class="bullet">
+              <a href="${wcm.createLink(path:'index')}">Descripció global</a></li>
+            <li class="bullet">
+              <a href="${wcm.createLink(path:'welcome/templates')}">Templates</a></li>        
+            <li class="bullet">
+              <a href="${wcm.createLink(path:'welcome/export_import')}">Exportació/importació</a></li>
+            <li class="bullet" >
+              <a href="${wcm.createLink(path:'welcome/nova_apli')}">Nova aplicació</a></li>
+            <li class="bullet" >
+              <a href="${wcm.createLink(path:'welcome/estils')}">Estils de l'aplicació</a></li>
+            <li class="bullet" >
+              <a href="${wcm.createLink(path:'welcome/menus_despl')}">Menús desplegables</a></li>
+            <li class="bullet" >
+              <a href="${wcm.createLink(path:'welcome/buscador')}">Cercador de continguts</a></li>
+          </ul>
+        </div>
+      </div>
+	  
+	  
+	  
+	  <wcm:menu levels="1"  custom="true" types="[org.weceem.content.WcmFolder]">
+        <g:if test="${menuNode.titleForMenu.encodeAsHTML().equals('Desplegable')}">
+          <li class="${active ? 'current' : ''}">
+            <a href="${link}">${menuNode.titleForMenu.encodeAsHTML()}</a> ---
+            <a href="${link}">${menuNode.titleForMenu.encodeAsHTML()}</a>
+            <br>
+            <g:each var="hijo" in="${menuNode.children}">
+               1 - n---> hijo.titleForMenu: ${hijo.titleForMenu.encodeAsHTML()}<br>
+              <g:each var="hijo2" in="${hijo.children}">
+              2 - n---> hijo2.titleForMenu: ${hijo2.titleForMenu.encodeAsHTML()}<br>
+              </g:each>
+            </g:each>
+            <br><br>
+          </li>
+          <g:if test="${last}">
+          </ul>
+          </g:if>
+        </g:if>
+      </wcm:menu>
+	
+un paso intermedio
+
+      <wcm:menu levels="1"  custom="true" types="[org.weceem.content.WcmFolder]">
+        <g:if test="${menuNode.titleForMenu.encodeAsHTML().equals('Desplegable')}">
+          <li class="${active ? 'current' : ''}">
+            <a href="${link}">${menuNode.titleForMenu.encodeAsHTML()}</a> <br>
+            ${last}<br>
+            ${level}
+            <br>
+            <g:each var="hijo" in="${menuNode.children}">
+              <g:if test="${hijo.titleForMenu.encodeAsHTML().equals('Administrador')}">
+                > ${hijo.aliasURI.encodeAsHTML()} <
+              1 - n---> hijo.titleForMenu: ${hijo.titleForMenu.encodeAsHTML()}-${last} - ${level}<br>
+              <g:each var="hijo2" in="${hijo.children}">
+                2 - n---> hijo2.titleForMenu: ${hijo2.titleForMenu.encodeAsHTML()}-${last} - ${level}<br>
+              </g:each>
+              </g:if>
+            </g:each>             
+            
+
+            <br><br>
+          </li>
+          <g:if test="${last}">
+          </ul>
+          </g:if>
+        </g:if>
+      </wcm:menu>	
+	  
+	  
+********************************************************************************************************************************
+RESULTADO FINAL 
+
+
+
+
+	  
+	  
+          <br>--------------<br>
+<div id="menuNav">
+
+  <wcm:menu levels="1"  custom="true" types="[org.weceem.content.WcmFolder]">
+    <g:if test="${menuNode.titleForMenu.encodeAsHTML().equals('Desplegable')}">
+    
+      <g:each var="hijo" in="${menuNode.children}">
+        <g:if test="${hijo.aliasURI.encodeAsHTML().equals('raco_personal')}">
+          <div id="Menu" title="Menú" class="dijitTitlePane">
+            <div class="dijitTitlePaneTitle">
+            <span class="dijitTitlePaneTextNode">${hijo.titleForMenu.encodeAsHTML()}</span>
+            </div>        
+          </div>
+          <br/>
+
+          1 - n---> hijo.titleForMenu: ${hijo.titleForMenu.encodeAsHTML()}-${last} - ${level}<br>
+          <g:each var="hijo2" in="${hijo.children}">
+          <!-- abrir desplegable-->
+          2 - n---> hijo2.titleForMenu: ${hijo2.titleForMenu.encodeAsHTML()}-${last} - ${level}<br>
+          <!-- cerrar desplegable-->
+          </g:each>
+
+        </g:if>
+
+      </g:each>             
+
+      <br><br>
+      
+    </g:if>
+  </wcm:menu>
+	  
+	  
+	  
+	FUNCIONA !!!!!! sólo el titulo
+	          <br>--------------<br>
+<div id="menuNav">
+
+  <wcm:menu levels="1"  custom="true" types="[org.weceem.content.WcmFolder]">
+    <g:if test="${menuNode.titleForMenu.encodeAsHTML().equals('Desplegable')}">
+    
+      <g:each var="hijo" in="${menuNode.children}">
+        <g:if test="${hijo.aliasURI.encodeAsHTML().equals('raco_personal')}">
+          <div id="Menu" title="Menú" class="dijitTitlePane">
+            <div class="dijitTitlePaneTitle">
+            <span class="dijitTitlePaneTextNode">${hijo.titleForMenu.encodeAsHTML()}</span>
+            </div>        
+          </div>
+          <br/>
+
+          1 - n---> hijo.titleForMenu: ${hijo.titleForMenu.encodeAsHTML()}-${last} - ${level}<br>
+          <g:each var="hijo2" in="${hijo.children}">
+          <!-- abrir desplegable-->
+          2 - n---> hijo2.titleForMenu: ${hijo2.titleForMenu.encodeAsHTML()}-${last} - ${level}<br>
+          <!-- cerrar desplegable-->
+          </g:each>
+
+        </g:if>
+
+      </g:each>             
+
+      <br><br>
+      
+    </g:if>
+  </wcm:menu>

@@ -1,0 +1,21 @@
+<div class="nav">
+  <div class="leftNav">
+	<span class="menuButton"> <a class="home" href="${wcm.createLink(path:'index')}">Inici</a></span>
+  </div>
+  
+  <div class="menuButton logout floatRight">
+	<g:if test="${wcm.loggedInUserEmail().encodeAsHTML()}">
+	  <span class="login">
+		${wcm.loggedInUserEmail().encodeAsHTML()}
+	  </span>
+	</g:if>
+	<g:link class="home" controller="wcmRepository">Repositori</g:link>
+  </div>
+</div>
+
+<div class="body">
+  <wcm:content />
+</div>
+
+
+barra admin gestor ,etc

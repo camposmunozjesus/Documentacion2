@@ -1,0 +1,99 @@
+VERSIONES DE STATUS BAR
+=======================
+funciona ok!!!
+<div class="nav">
+  <div class="leftNav">
+    <span class="menuButton"> <a class="home" href="${wcm.createLink(path:'index')}">Inici</a></span>
+    <wcm:menu levels="1"  custom="true" types="[org.weceem.content.WcmFolder]">
+      <g:if test="${menuNode.aliasURI.encodeAsHTML().equals(rootFolder)}">
+        <g:each var="seccion" in="${menuNode.children}">
+          <g:if test="${seccion.class.toString().equals('class org.weceem.content.WcmFolder') && (seccion.aliasURI.encodeAsHTML().equals(enlaceAdmin) || seccion.aliasURI.encodeAsHTML().equals(enlaceGestor) || seccion.aliasURI.encodeAsHTML().equals(enlacePersonal))}">
+            <g:each var="s2" in="${seccion.children}"> <!-- 1 INI -->
+              ${s2.aliasURI.encodeAsHTML()}
+            </g:each> <!-- 1 FIN -->
+            <a style="margin-left: 25px;" href="${wcm.createLink(path:'welcome/buscador')}">${seccion.titleForMenu.encodeAsHTML()}</a>
+          </g:if>
+        </g:each>
+      </g:if>     
+    </wcm:menu>
+  </div>
+  
+  <div class="menuButton logout floatRight">
+  <g:if test="${wcm.loggedInUserEmail().encodeAsHTML()}">
+    <span class="login">
+    ${wcm.loggedInUserEmail().encodeAsHTML()}
+    </span>
+  </g:if>
+  <g:link class="home" controller="wcmRepository">Repositori</g:link>
+  </div>
+</div>
+
+
+
+funciona v2:
+<div class="nav">
+  <div class="leftNav">
+    <span class="menuButton"> <a class="home" href="${wcm.createLink(path:'index')}">Inici</a></span>
+    <wcm:menu levels="1"  custom="true" types="[org.weceem.content.WcmFolder]">
+      <g:if test="${menuNode.aliasURI.encodeAsHTML().equals(rootFolder)}">
+        <g:each var="seccion" in="${menuNode.children}">
+          <g:if test="${seccion.class.toString().equals('class org.weceem.content.WcmFolder') && (seccion.aliasURI.encodeAsHTML().equals(enlaceAdmin) || seccion.aliasURI.encodeAsHTML().equals(enlaceGestor) || seccion.aliasURI.encodeAsHTML().equals(enlacePersonal))}">
+            <g:each var="contenedor" in="${seccion.children}"> <!-- 1 INI --> <!-- Buscar el enlace -->
+              <g:each status="i" var="enlacePrincipal" in="${contenedor.children}"> <!-- 2 INI -->
+                <g:if test="${i == 0}" >
+                  ${enlacePrincipal.aliasURI.encodeAsHTML()}
+                </g:if>
+              </g:each> <!-- 2 FIN -->
+            </g:each> <!-- 1 FIN -->
+            <a style="margin-left: 25px;" href="${wcm.createLink(path:'welcome/buscador')}">${seccion.titleForMenu.encodeAsHTML()}</a>
+          </g:if>
+        </g:each>
+      </g:if>     
+    </wcm:menu>
+  </div>
+  
+  <div class="menuButton logout floatRight">
+  <g:if test="${wcm.loggedInUserEmail().encodeAsHTML()}">
+    <span class="login">
+    ${wcm.loggedInUserEmail().encodeAsHTML()}
+    </span>
+  </g:if>
+  <g:link class="home" controller="wcmRepository">Repositori</g:link>
+  </div>
+</div>
+
+
+
+VERSIÓN BUENA DE TEMPLATE STATUS-BAR
+
+<div class="nav">
+  <div class="leftNav">
+    <span class="menuButton"> <a class="home" href="${wcm.createLink(path:'index')}">Inici</a></span>
+    <wcm:menu levels="1"  custom="true" types="[org.weceem.content.WcmFolder]">
+      <g:if test="${menuNode.aliasURI.encodeAsHTML().equals(rootFolder)}">
+        <g:each var="seccion" in="${menuNode.children}">
+          <g:if test="${seccion.class.toString().equals('class org.weceem.content.WcmFolder') && (seccion.aliasURI.encodeAsHTML().equals(enlaceAdmin) || seccion.aliasURI.encodeAsHTML().equals(enlaceGestor) || seccion.aliasURI.encodeAsHTML().equals(enlacePersonal))}">
+            <g:each status="i" var="contenedor" in="${seccion.children}"> <!-- 1 INI --> <!-- Buscar el enlace -->
+               <g:if test="${i == 0}" >
+                 <g:each status="j" var="enlacePrincipal" in="${contenedor.children}"> <!-- 2 INI -->
+                   <g:if test="${j == 0}" >
+                     <a style="margin-left: 25px;" href="/weceem-1.2-M1/${space?.name}/${menuNode.aliasURI}/${seccion.aliasURI}/${contenedor.aliasURI}/${enlacePrincipal.aliasURI}">${seccion.titleForMenu.encodeAsHTML()}</a>
+                   </g:if>
+               </g:each> <!-- 2 FIN -->
+              </g:if>
+            </g:each> <!-- 1 FIN -->
+          </g:if>
+        </g:each>
+      </g:if>     
+    </wcm:menu>
+  </div>
+  
+  <div class="menuButton logout floatRight">
+  <g:if test="${wcm.loggedInUserEmail().encodeAsHTML()}">
+    <span class="login">
+    ${wcm.loggedInUserEmail().encodeAsHTML()}
+    </span>
+  </g:if>
+  <g:link class="home" controller="wcmRepository">Repositori</g:link>
+  </div>
+</div>

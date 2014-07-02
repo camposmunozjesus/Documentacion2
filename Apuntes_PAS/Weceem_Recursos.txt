@@ -1,0 +1,31 @@
+INSTRUCCIONES WECEEM
+====================
+---
+GSP
+---
+${desplegable.children.size()}<br>
+space:${space}<br>
+space?.name:${space?.name}<br>
+aliasURI: ${enlace.aliasURI}<br>
+seccion: ${seccion}<br>
+link: ${link}<br>	
+TIPO: ${menuNode}<br>
+TIPO Desplegable: ${desplegable.class}<br>
+TIPO Item       : ${enlace.class}<br>
+<a href="${menuNode.aliasURI}/${seccion.aliasURI}/${desplegable.aliasURI}/${enlace.aliasURI}">${enlace.titleForMenu.encodeAsHTML()}</a>
+${menuNode.aliasURI}<br>${seccion.aliasURI}<br>${desplegable.aliasURI}<br>${enlace.aliasURI}}<br>
+${menuNode.aliasURI}/${seccion.aliasURI}/${desplegable.aliasURI}/${enlace.aliasURI}
+
+------
+GROOVY
+------
+
+
+
+*****************************************************************************************************************************************************
+------------------------------
+Creación:	20-06-2014
+
+Jesús Campos Muñoz
+jesus.campos@upc.edu
+------------------------------

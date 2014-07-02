@@ -1,0 +1,14 @@
+      <div id="Menu0" title="Menú" class="dijitTitlePane">
+        <div class="dijitTitlePaneTitle">
+          <div>
+            <img class="dijitArrowNode" alt="Fletxa" src="${wcm.createLinkToFile(path:'images/blank.gif')}" />
+          </div>
+          <span class="dijitTitlePaneTextNode">Indicacions sobre Weceem</span>
+        </div>
+        <div id="Outer0" class="dijitTitlePaneContentOuter">
+          <ul id="uli0" class="iconList">
+            <li class="bullet">
+              <a href="${wcm.createLink(path:'index')}">Descripció global</a></li>
+          </ul>
+        </div>
+      </div>

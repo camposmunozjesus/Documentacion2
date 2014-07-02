@@ -1,0 +1,104 @@
+<div id="menuNav"> //1
+      <wcm:menu levels="5"  custom="true" types="[org.weceem.content.WcmFolder]">  
+        <g:if test="${menuNode.aliasURI.encodeAsHTML().equals('desplegable')}"> <!-- 0 INI -->
+          <g:each var="seccion" in="${menuNode.children}"> <!-- 1 INI -->
+          
+            <g:if test="${seccion.aliasURI.encodeAsHTML().equals('weceem')}"> <!-- 2 INI -->
+              <!-- Barra de titulo -->
+              <div id="Menu" title="Menú" class="dijitTitlePane">
+                <div class="dijitTitlePaneTitle">
+                  <span class="dijitTitlePaneTextNode">${seccion.titleForMenu.encodeAsHTML()}</span>
+                </div>        
+              </div>
+              <br>
+              <!-- Cada each es un desplegable -->
+              <g:each status="i" var="desplegable" in="${seccion.children}"> <!-- INI 3 -->
+                
+                <!-- Abrir desplegable solo si es un Folder-->
+                
+
+                <g:if test="${desplegable.class.toString().equals('class org.weceem.content.WcmFolder')}" > <!-- INI 35 -->
+                           
+                <div id="Menu${i}" title="Menú" class="dijitTitlePane"> <!-- INI 4 -->
+                  <div class="dijitTitlePaneTitle">
+                    <div>
+                      <img class="dijitArrowNode" alt="Fletxa" src="${wcm.createLinkToFile(path:'images/blank.gif')}" />
+                    </div>
+                    <span class="dijitTitlePaneTextNode">${desplegable.titleForMenu.encodeAsHTML()}</span>
+                  </div>
+                  <g:each status="j" var="enlace" in="${desplegable.children}"> <!-- INI 5 -->
+
+                                    <g:if test="${j == 0}">
+                      <div id="Outer${i}" class="dijitTitlePaneContentOuter">
+                        <ul id="uli${i}" class="iconList">
+                        </g:if>
+                          <li class="bullet">
+
+ <a href="/weceem/${space?.name}/${menuNode.aliasURI}/${seccion.aliasURI}/${desplegable.aliasURI}/${enlace.aliasURI}">${enlace.titleForMenu.encodeAsHTML()}</a>
+                          </li>
+                          <g:if test="${j == (desplegable.children.size()-1)}">
+                        </ul>
+                      </div>
+                    </g:if>  
+                          
+
+
+                  </g:each> <!-- FIN 5 -->
+                  <!-- cerrar desplegable-->
+                         </div>     <!-- FIN 4 -->
+                          </g:if> <!-- FIN 35 -->
+                     <!-- Se guarda el número de iteraciones realizadas para crear menús desplegables -->
+                     <g:set var="numDesplegables" value="${i}" />                     
+                </g:each> <!-- FIN 3 -->
+              </g:if> <!-- 2 FIN -->
+           </g:each> <!-- 1 FIN -->         
+         </g:if>     <!-- 0 FIN -->
+       </wcm:menu>
+    <!-- Se guarda la variable para poder recuperarla en JS -->                      
+    <g:hiddenField name="numMenusDesplegables " id="numMenusDesplegables " value="${numDesplegables}" />                  
+    
+                          
+                          
+</div>//1
+	 
+	 
+	 
+	 
+	 El menu original obtenido de una apli Grails
+	 
+<div id="menuNav">//1
+	<div id="Menu0" title="Menú" class="dijitTitlePane">//12
+	  <div class="dijitTitlePaneTitle">
+		<div>
+			<img class="dijitArrowNode" alt="Fletxa" src="${wcm.createLinkToFile(path:'images/blank.gif')}" />
+		</div>
+		<span class="dijitTitlePaneTextNode">Web Services</span>
+	  </div>
+	</div>//12
+	<br>
+          
+	<div id="Menu0" title="Menú" class="dijitTitlePane">//13
+		<div class="dijitTitlePaneTitle">
+		  <div>
+			<img class="dijitArrowNode" alt="Fletxa" src="${wcm.createLinkToFile(path:'images/blank.gif')}" />
+		  </div>
+		  <span class="dijitTitlePaneTextNode">Web Services</span>
+		</div>
+		<div id="Outer0" class="dijitTitlePaneContentOuter">
+		  <ul id="uli1" class="iconList">
+			<li class="bullet">
+			  <a href="Tempus/index">Tempus</a></li>
+			<li class="bullet">
+			  <a href="Tempus_v2/index">Tempus - v2</a></li>
+			<li class="bullet">
+			  <a href="Test/index">Test</a></li>
+			<li class="bullet">
+			  <a href="Free/index">Free Space Acces</a></li>
+		  </ul>
+		</div>
+	</div>//13
+</div>//1
+	
+	
+	
+	
