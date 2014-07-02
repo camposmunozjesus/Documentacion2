@@ -7,6 +7,8 @@ Basic_20140620_1355: En el template de automatización 2 hay mejoras sobre desple
 
 Test_local_20140627_1321: contiene los menus en formato widget
 Basic_local_20140621_1322: contiene la barra del peu ok
+AutoB_20140630: Contiene una versión que genera de manera correcta los enlaces de gestión, admin, etc en la barra de estado superior. Pone el pie en su lugar correcto.
+				Se ha tenido que eliminar la restricción de que sólo los folder pueden ser desplegables (se elimina la condición 35, "consultar Menu_dslp_restric_folder)".
 
 *****************************************************************************************************************************************************
 ------------------------------

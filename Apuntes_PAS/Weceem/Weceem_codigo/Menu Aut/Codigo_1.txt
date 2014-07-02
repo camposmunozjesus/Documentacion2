@@ -1,0 +1,59 @@
+   Busca todas las carpetas de la raiz
+
+	<wcm:menu levels="2" custom="true">
+        <g:if test="${first}">
+          <ul class="${level == 0 ? 'sf-menu sf-navbar' : ''}">
+        </g:if>
+          <li class="${active ? 'current' : ''}"><a href="${link}">${menuNode.titleForMenu.encodeAsHTML()}</a>
+          <a href="${link}">${menuNode.titleForMenu.encodeAsHTML()}</a>
+          <br>  ---> ${menuNode.encodeAsHTML()}
+            <br>  ---> ${menuNode.titleForMenu.encodeAsHTML()}
+            <br>  ---> ${menuNode.titleForMenu.encodeAsHTML()}
+            <br>  ---> ${menuNode}
+            
+          ${nested}
+          </li>
+        <g:if test="${last}">
+          </ul>
+        </g:if>
+      </wcm:menu>
+	  
+	  
+	  Recorre carpetas y directorios :debido a indicar type
+	  
+	  
+	  
+	              <wcm:menu levels="1" custom="true" path="content" types="[org.weceem.html.WcmHTMLContent, org.weceem.content.WcmFolder]">
+              <li class="${active ? 'current' : ''}">
+                <a href="${link}">${menuNode.titleForMenu.encodeAsHTML()}</a> ---
+                <a href="${link}">${menuNode.titleForMenu.encodeAsHTML()}</a>
+                <br>  ---> ${menuNode.encodeAsHTML()}
+                <br>  ---> ${menuNode.titleForMenu.encodeAsHTML()}
+                <br>  ---> ${menuNode.titleForMenu.encodeAsHTML()}
+                <br>  ---> ${menuNode.encodeAsHTML()}
+              </li>
+              <g:if test="${last}">
+              </ul>
+              </g:if>
+            </wcm:menu>
+			
+			
+			
+			                <wcm:menu levels="1" custom="true" path="content" types="[org.weceem.content.WcmFolder]">
+                </wcm:menu>
+				
+				
+				
+Menus desplegables Weceem
+<form controller="wcmRepository">
+  
+  You can filter results by type: <select id="classFilter">
+  <option value="none">All</option>
+  <g:each in="${grailsApplication.domainClasses.findAll{org.weceem.content.WcmContent.isAssignableFrom(it.clazz) && (it.clazz != org.weceem.content.WcmContent)}.sort({a,b->a.name.compareTo(b.name)})}">
+    <option value="${it.fullName}"><g:message code="content.item.name.${it.fullName}" encodeAs="HTML"/></option>
+  </g:each>
+  </select>,
+  status: <g:select name="statusFilter" id="statusFilter" from="${[['description': 'all', 'code': 0]] + org.weceem.content.WcmStatus.list()}" optionKey="code" optionValue="description" />
+  and date <g:select name="fieldFilter" id="fieldFilter" from="[[id:'createdOn', value:'created'], [id:'changedOn', value:'changed']]"  optionKey="id" optionValue="value"/> from <input id="fromDate" type="text"/> to <input id="toDate" type="text"/>
+  
+</form>

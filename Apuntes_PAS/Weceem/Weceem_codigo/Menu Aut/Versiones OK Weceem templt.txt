@@ -1,0 +1,64 @@
+funciona bien 
+
+
+      <wcm:menu levels="1"  custom="true" types="[org.weceem.content.WcmFolder]">
+        <g:if test="${menuNode.titleForMenu.encodeAsHTML().equals('Desplegable')}">
+          
+          <g:each var="hijo" in="${menuNode.children}">
+            <g:if test="${hijo.aliasURI.encodeAsHTML().equals('raco_personal')}">
+              <div id="Menu" title="Menú" class="dijitTitlePane">
+                <div class="dijitTitlePaneTitle">
+                  <span class="dijitTitlePaneTextNode">${hijo.titleForMenu.encodeAsHTML()}</span>
+                </div>        
+              </div>
+              <br/>
+              
+              1 - n---> hijo.titleForMenu: ${hijo.titleForMenu.encodeAsHTML()}-${last} - ${level}<br>
+              <g:each var="hijo2" in="${hijo.children}">
+                <!-- abrir desplegable-->
+                2 - n---> hijo2.titleForMenu: ${hijo2.titleForMenu.encodeAsHTML()}-${last} - ${level}<br>
+                <!-- cerrar desplegable-->
+              </g:each>
+              
+            </g:if>
+            
+          </g:each>             
+          
+          <br><br>
+          
+        </g:if>
+      </wcm:menu> 
+	  
+	  
+Funciona bien 8:20 2014-06-19
+<div id="menuNav">
+  
+  <wcm:menu levels="1"  custom="true" types="[org.weceem.content.WcmFolder]">
+	<g:if test="${menuNode.titleForMenu.encodeAsHTML().equals('Desplegable')}">
+	  
+	  <g:each var="hijo" in="${menuNode.children}">
+		<br/>--- >iteración:${i}> -----
+		<g:if test="${hijo.aliasURI.encodeAsHTML().equals('raco_personal')}">
+		  <!-- Barra de titulo -->
+		  <div id="Menu" title="Menú" class="dijitTitlePane">
+			<div class="dijitTitlePaneTitle">
+			  <span class="dijitTitlePaneTextNode">${hijo.titleForMenu.encodeAsHTML()}</span>
+			</div>        
+		  </div>
+		  <br>
+		  
+		  <!-- Cada each es un desplegable -->
+		  <g:each status="i" var="desplegable" in="${hijo.children}">
+			<!-- abrir desplegable-->
+			2 - n---> desplegable.titleForMenu: ${desplegable.titleForMenu.encodeAsHTML()}-${last} - ${level}<br>
+			<!-- cerrar desplegable-->
+		  </g:each>
+		  
+		</g:if>
+		
+	  </g:each>             
+	  
+	  <br><br>
+	  
+	</g:if>
+  </wcm:menu>  

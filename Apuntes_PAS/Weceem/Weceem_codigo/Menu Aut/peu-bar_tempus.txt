@@ -1,0 +1,17 @@
+<div class="clearFloat"></div>
+<div id="peu">
+	<div class="bandaInferior"></div>
+	<div class="floatLeft">Vicegerència de Personal i Organització</div>
+	<div class="floatRight">
+		<a href="/SIG/accessibilitat" target="_blank"
+		onclick="window.open(this.href,this.target,'width=1000,height=550,resizable=yes,scrollbars=yes');return false">Accessibilitat</a>&nbsp;&nbsp;<a
+		href="#top"><img alt="Amunt" src="${wcm.createLinkToFile(path:'images/amunt.gif')}" /></a>
+	</div>
+	<div class="clearFloat"></div>
+	<div>
+		&copy; <a class="peu" href="http://www.upc.edu">UPC</a>. Universitat
+		Politècnica de Catalunya <span>●</span> BarcelonaTech
+	</div>
+</div>
+
+PEU
