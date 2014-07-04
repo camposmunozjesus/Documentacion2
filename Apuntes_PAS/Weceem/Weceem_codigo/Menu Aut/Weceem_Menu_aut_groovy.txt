@@ -1,0 +1,123 @@
+ESQUEMA DE CREACIÓN DEL MENÚ AUTOMÁTICO
+=======================================
+--------------------------
+PRIMERA VERSIÓN DEFINITIVA
+--------------------------
+
+		println "MENU GESTOR ***********************************"
+		println "SPACE ACTUAL: "+request[RenderEngine.REQUEST_ATTRIBUTE_SPACE]
+		def query = {
+			//eq("aliasURI", "com.upc.WcmDesplegable")
+			//eq("language", "sss")
+			eq("class", "com.upc.WcmMenuGestor")
+			eq("space", request[RenderEngine.REQUEST_ATTRIBUTE_SPACE]) //De esta manera sólo se muestra el menu del space actual.
+		}
+		
+		def menuGestorElem = WcmContent.createCriteria().list(query)
+		
+		if(menuGestorElem){
+			println "Titulo del menu: "+menuGestorElem.title
+			println "Codigo del menu: "+menuGestorElem.id
+			println "DEsplegables del menu: "+menuGestorElem.children
+			println "***********************************"
+			for(menuDesplegable in menuGestorElem.children){
+				println "Desplegables : " + menuDesplegable.title
+				for(desplegable in menuDesplegable){	//Para cada desplegable se obtienen sus items
+					println "\tTitulo del desplegable : " + desplegable.title
+					println "\tCodigo del desplegable : " + desplegable.id
+					println "\t\tRecorriendo los items de uno en uno"
+					for(item in desplegable.children){
+						println "\t\t\tEnlace-i: "+item.title	
+						println "\t\t\tCodigo-i: "+item.id
+					}
+				}
+			}
+		}
+		else{
+			println "no hay datos class"
+		}
+	}
+
+	
+	
+------------------
+VERSIÓN DE PRUEBAS
+------------------
+De aquí se puede obtener una buena idea, con eachWithIndex, se puede recorrer los títulos de los desplegables, asignarles su Menu0, Menu1, etc en los
+div de HTML y recorrer sus hijos todo de una tacada. El código groovy de pruebas (de donde se obtiene el definitivo) es:
+PRUEBA
+******
+		println "MENU GESTOR ***********************************"
+		println "SPACE ACTUAL: "+request[RenderEngine.REQUEST_ATTRIBUTE_SPACE]
+		def query = {
+			//eq("aliasURI", "com.upc.WcmDesplegable")
+			//eq("language", "sss")
+			eq("class", "com.upc.WcmMenuGestor")
+			eq("space", request[RenderEngine.REQUEST_ATTRIBUTE_SPACE]) //De esta manera sólo se muestra el menu del space actual.
+		}
+		
+		def menuGestorElem = WcmContent.createCriteria().list(query)
+		
+		def o = out //Salida HTML
+		
+		//Por el momento, si hay más de una carpeta de este estilo, sólo se representa la primera que exista en el Space.
+		if(menuGestorElem){	
+			
+			o << "<div id=\"menuNav\">"	//INI - 001
+			o << "<!-- Barra de titulo -->"
+			o << "<div id=\"Menu\" title=\"Menú\" class=\"dijitTitlePane\">"	//INI - 001_1
+			o << "<div class=\"dijitTitlePaneTitle\">"	//INI - 001_1_1
+			o << "<span class=\"dijitTitlePaneTextNode\">"+menuGestorElem[0].title+"</span>"
+			o << "</div>"	//FIN - 001_1_1
+			o << "</div>"	//FIN - 001_1
+			o << "<br>"
+			o << " </div>"
+			
+			println "Titulo del menu: "+menuGestorElem[0].title	//Coger sólo el primer elemento.
+			println "Codigo del menu: "+menuGestorElem.id
+			println "DEsplegables del menu: "+menuGestorElem.children
+			println "***********************************"
+			for(menuDesplegable in menuGestorElem[0].children){
+				println "Desplegables : " + menuDesplegable.title
+				for(desplegable in menuDesplegable){	//Para cada desplegable se obtienen sus items
+					println "\tTitulo del desplegable : " + desplegable.title
+					println "\tCodigo del desplegable : " + desplegable.id
+					println "\t\tRecorriendo los items de uno en uno"
+					for(item in desplegable.children){
+						println "\t\t\tEnlace-i: "+item.title	
+						println "\t\t\tCodigo-i: "+item.id
+					}
+					
+					
+					println "Segunda forma *******************************"
+					desplegable.children.eachWithIndex { enlace, i ->
+						println " ${i}: ${enlace}"
+						println "TITULO "+enlace.title
+					}
+					println "Segunda forma *******************************"
+				}
+				
+				println "Tercera forma *******************************"
+				menuDesplegable.children.eachWithIndex { enlace, i ->
+					println " ${i}: ${enlace}"
+					println "TITULO "+enlace.title
+				}
+				println "Tercera forma *******************************"
+			}
+			println "Cuarta forma *******************************"
+			println menuGestorElem.children[0]
+			menuGestorElem.children[0].eachWithIndex { enlace, i ->
+				println " ${i}: ${enlace}"
+				println "TITULO: "+enlace.title.toString()+" indice: "+i
+			}
+			println "Cuarta forma *******************************"
+		}
+		else{
+			println "no hay datos class"
+		}
+	}
+
+
+
+request[RenderEngine.REQUEST_ATTRIBUTE_SPACE]: obtiene el id del space actual
+content.space.aliasURI
