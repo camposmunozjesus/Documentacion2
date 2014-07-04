@@ -1,0 +1,149 @@
+
+content.item.name.com.upc.WcmMenuGestor=Menu Desplegable Gestor
+content.item.name.com.upc.WcmMenuAdmin=Menu Desplegable Administrador
+content.item.name.com.upc.WcmMenuPersonal=Menu Desplegable Personal
+
+
+content.type.name.com.upc.WcmMenuGestor=Menu Desplegable Gestor
+content.type.name.com.upc.WcmMenuAdmin=Menu Desplegable Administrador
+content.type.name.com.upc.WcmMenuPersonal=Menu Desplegable Personal
+
+***************************************************************************************
+Parametros adicionales
+
+			println "id: "+menuGestorElem.id
+			println "parent: "+menuGestorElem.parent
+			println "children: "+menuGestorElem.children
+			//Si hay algún elemento del tipo Menú Gestor se obtiene su ID para determinar los desplegables que tendrá.
+//					println "DATOS GENERALES:"+menuGestorElem
+//					println "aliasURI:"+menuGestorElem.aliasURI
+//					println "id:"+menuGestorElem.id
+
+***************************************************************************************
+***************************************************************************************
+ESQUEMA DEL MENU
+***************************************************************************************
+    <div id="menuNav">
+      <wcm:menu levels="5"  custom="true" types="[org.weceem.content.WcmFolder]">  
+        <g:if test="${menuNode.aliasURI.encodeAsHTML().equals('desplegable')}"> <!-- 0 INI -->
+          <g:each var="seccion" in="${menuNode.children}"> <!-- 1 INI -->
+          
+            <g:if test="${seccion.aliasURI.encodeAsHTML().equals('weceem')}"> <!-- 2 INI -->
+              <!-- Barra de titulo -->
+              <div id="Menu" title="Menú" class="dijitTitlePane">
+                <div class="dijitTitlePaneTitle">
+                  <span class="dijitTitlePaneTextNode">${seccion.titleForMenu.encodeAsHTML()}</span>
+                </div>        
+              </div>
+              <br>
+			  ----------------------------------------------------------------------------------------------------------
+              <!-- Cada each es un desplegable -->
+              <g:each status="i" var="desplegable" in="${seccion.children}"> <!-- INI 3 -->
+                
+            
+                
+                
+                <!-- Abrir desplegable solo si es un Folder-->
+                
+
+                <g:if test="${desplegable.class.toString().equals('class org.weceem.content.WcmFolder')}" > <!-- INI 35 -->
+                           
+                <div id="Menu${i}" title="Menú" class="dijitTitlePane"> <!-- INI 4 -->
+                  <div class="dijitTitlePaneTitle">
+                    <div>
+                      <img class="dijitArrowNode" alt="Fletxa" src="${wcm.createLinkToFile(path:'images/blank.gif')}" />
+                    </div>
+                    <span class="dijitTitlePaneTextNode">${desplegable.titleForMenu.encodeAsHTML()}</span>
+                  </div>
+                  <g:each status="j" var="enlace" in="${desplegable.children}"> <!-- INI 5 -->
+
+                                    <g:if test="${j == 0}">
+                      <div id="Outer${i}" class="dijitTitlePaneContentOuter">
+                        <ul id="uli${i}" class="iconList">
+                        </g:if>
+                          <li class="bullet">
+
+ <a href="/weceem/${space?.name}/${menuNode.aliasURI}/${seccion.aliasURI}/${desplegable.aliasURI}/${enlace.aliasURI}">${enlace.titleForMenu.encodeAsHTML()}</a>
+                          </li>
+                          <g:if test="${j == (desplegable.children.size()-1)}">
+                        </ul>
+                      </div>
+                    </g:if>  
+                          
+
+
+                  </g:each> <!-- FIN 5 -->
+                  <!-- cerrar desplegable-->
+                         </div>     <!-- FIN 4 -->
+                          </g:if> <!-- FIN 35 -->
+                                        <g:set var="idFactorTmpVar" value="${i}" />
+      
+                </g:each> <!-- FIN 3 -->
+                        
+              </g:if> <!-- 2 FIN -->
+           </g:each> <!-- 1 FIN -->         
+         </g:if>     <!-- 0 FIN -->
+       </wcm:menu>
+                          
+       <g:hiddenField name="idFactorTmp" id="idFactorTmp" value="${idFactorTmpVar}" />
+                          
+                          ----------${idFactorTmpVar} -- plk${i}                   
+    
+                          
+                          
+     </div> //PUESTO EN EL OUT
+	 
+	 
+*****************************
+*****************************
+*****************************
+//		out << "[WeceemTagLib]::<wcm:menujesus>"
+//		
+//		def lineage = request[RenderEngine.REQUEST_ATTRIBUTE_PAGE].lineage
+//		println "lineage: "+lineage
+//		
+//		println "attrs[ATTR_FOLDER]: "+attrs[ATTR_FOLDER]
+//		println "attrs.folder: "+attrs.folder
+//		
+//		println ""+attrs
+//		//
+//		//nodes.space: org.weceem.content.WcmSpace : 2742
+//		//args: [status:published, type:class org.weceem.content.WcmFolder, params:[sort:orderIndex]]
+//		
+//		def types = attrs[ATTR_TYPES] ?: [org.weceem.html.WcmHTMLContent]
+//		println "types: "+types
+//
+//		def args = [
+//            status:WcmContentRepositoryService.STATUS_ANY_PUBLISHED,
+//            type: types.size() == 1 ? types[0] : org.weceem.content.WcmContent,
+//            params:[sort:'orderIndex']
+//        ]
+//		
+//		println "args: "+args
+//
+//				def o = out
+//		
+//		o << "<ul>"
+//		o << "<li>Item 1</li>"
+//		o << "<li>Item 2</li>"
+//		o << "<li>Item 3</li>"
+//		o << "<li>Item 4</li>"
+//		o << "</ul>"
+//		
+//		
+//		def space = WcmSpace.list()
+//		println space.aliasURI
+//		println space.name
+//		
+//		println "customized"
+//		//def content = WcmContent.list()
+//		//println space.aliasURI
+//		
+//		def query = {
+//			eq("aliasURI", "Tempus_v2")
+//		}
+//		
+//		def r = WcmSpace.createCriteria().list(query)
+//		
+//		println r
+//		println r.name
