@@ -1,0 +1,38 @@
+
+a,a:link {
+	color:#007DCC;
+	text-decoration:none;
+}
+a:visited{
+	color:#33BDEE;
+}
+a:hover {
+	text-decoration:underline;
+}
+
+.linkGrisFosc
+{
+	color:#333 !important;
+}
+
+.linkGris
+{
+	color:#666 !important;
+}
+
+.linkGrisClar
+{
+	color:#999 !important;
+}
+
+#totalWidth
+{
+	/*width: 1090px;*/
+	width:100%;	
+	clear: both;
+    margin: 0 auto;
+}
+
+
+
+
