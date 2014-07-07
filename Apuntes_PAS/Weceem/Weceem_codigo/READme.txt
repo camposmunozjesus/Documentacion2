@@ -1,0 +1,2 @@
+weceem-1.2: es el plugin de la aplicación Portal.
+weceem-app-master: puede ser la aplicación original con la que se consiguió conectar con Oracle, pero NO está el plugin. Seguramente es la misma que hay dentro de v1.
