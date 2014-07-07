@@ -1,0 +1,80 @@
+table.details, div.details {
+  border: 1px solid #CCCCCC;
+  margin-bottom: 5px;
+}
+
+table.details th {
+  font-weight: bold;
+  text-align: center;
+  white-space: nowrap;
+}
+
+table.details td {
+  vertical-align: top;
+}
+
+table.details td.header {
+  border-bottom: 1px solid #CCCCCC;
+  font-weight: bold;
+  padding-bottom: 5px;
+  text-align: center;
+}
+
+table.details td.footer {
+  border-top: 1px solid #CCCCCC;
+  padding-top: 5px;
+  text-align: center;
+}
+
+/* 
+Tree table stuff
+*/
+
+td.selected {
+   background-color: #99c2ff;
+}
+
+td.selected-lowlight {
+   background-color: #BB0000;
+}
+
+.crop-x {
+    overflow-x: hidden;
+}
+
+#insert-marker { 
+    position: relative;
+    height: 0;
+    z-index: 500;
+}
+
+#insert-marker img { 
+    height: 7px;
+    position: relative;
+}
+
+#treeTable th.page-column {
+    padding-left: 25px;
+}
+
+span.loadingMessage {
+  background: url("../images/weceem/ajax_load.gif") left center no-repeat;
+  padding: 2px 0 2px 20px;
+}
+
+.contentRepositoryError {
+  background: url("../images/weceem/error_16.gif") left top no-repeat;
+  color: red;
+  padding: 2px 0 2px 20px;
+}
+
+.contentRepositoryError a, .contentRepositoryError a:visited {
+  color: red;
+  text-decoration: underline;
+}
+
+.ui-datepicker {
+    display: none;
+}
+
+
