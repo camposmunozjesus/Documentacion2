@@ -1,0 +1,68 @@
+Cambios para hacer que el breadcrumb funcione con una única plantilla:
+
+En WeceemTagLib.groovy:
+	//INI - REV-001 BREADCRUMB
+	def breadcrumbMain = { attrs, body ->
+		println ">------------------>ENTRANDO EN BREADCRUMB: "+new Date()
+		println "params.tipusMenu: "+attrs['tipusMenu']
+//		println "params.: "+attrs
+		def node = request[RenderEngine.REQUEST_ATTRIBUTE_NODE]
+		def lineage = request[RenderEngine.REQUEST_ATTRIBUTE_PAGE].lineage
+		def div = (attrs.divider != null) ? attrs.divider.decodeHTML() : ' &gt; '
+		def first = true
+		if (!attrs.custom?.toString()?.toBoolean()) {
+			body = { args ->
+				println "ARGS: "+ args.toString()
+				def o = new StringBuilder()
+				if (!args.first) {
+					println "DIV: "+div.toString()
+					o << div
+				}
+
+				def title = args.breadcrumbNode.titleForMenu.encodeAsHTML()
+				println ">>>>>>>>>>>>>>>title: "+args.breadcrumbNode.titleForMenu.encodeAsHTML()
+				println ">>>>>>>>>>>>>>>URI    "+args.breadcrumbNode.aliasURI.encodeAsHTML()
+				println ">>>>>>>>>>>>>>>args.breadcrumbNode    "+args.breadcrumbNode
+				if (!args.last) {
+					o << wcm.linkMain(node:args.breadcrumbNode, tipusMenu: attrs['tipusMenu']) {
+						println "------------------> node: "+node.toString()
+						println "------------------> args.breadcrumbNode: "+args.breadcrumbNode.toString()
+						println "------------------> TITLE: "+title.toString()
+						out << title
+					}
+				} else {
+					o << "<span class=\"last\">${title}</span>"
+				}
+				return o.toString()
+			}
+		}
+		
+		def nodes = lineage
+		println "<<<<<<<<<<<<<<<<<NODES: "+nodes.toString()
+		nodes.each { current ->
+			out << body(first:first, last: current.ident() == node.ident(), breadcrumbNode:current)
+			first = false
+		}
+	}
+	
+	def linkMain = { attrs, body ->
+		println "-----------------------------"+attrs['tipusMenu']
+		
+//		println "tmnenus: "+tmenus
+		println "ATTRS: "+attrs
+		println "ATTRS: "+attrs["node"].aliasURI.encodeAsHTML()
+		println "TIPUS MENU: "
+		def ref = attrs["tipusMenu"].toString()
+		
+		def o = out
+		o << "<a href=\"${wcm.createLink(attrs)}?tipusMenu=${ref}\""
+		o << attrs.collect {k, v -> " $k=\"$v\"" }.join('')
+		o << '>'
+		o << body()
+		o << "</a>"
+	}
+	//END - REV-001
+	
+	
+Uso:
+<wcm:breadcrumbMain tipusMenu="${params.tipusMenu}"/>
