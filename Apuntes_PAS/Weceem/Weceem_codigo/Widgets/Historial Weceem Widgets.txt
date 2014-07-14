@@ -1,0 +1,12 @@
+HISTORIAL WIDGETS WECEEM
+========================
+Menu_desplegable.txt: Desplega un menú correspondiente a la carpeta rootFolder. Los elementos desplegables sólo pueden ser HTML's. Se corresponde con ESPAI PAS 2014-07-11 08:20.
+Status_bar.txt: Barra de estado con las opciones de admin, gestor, etc limitadas. Se corresponde con ESPAI PAS 2014-07-11 08:20.
+
+*****************************************************************************************************************************************************
+------------------------------
+Creación:	11-07-2014
+
+Jesús Campos Muñoz
+jesus.campos@upc.edu
+------------------------------
