@@ -1,0 +1,24 @@
+<div class="nav">
+  <div class="leftNav">
+    <span class="menuButton"> <a class="home" href="${wcm.createLink(path:'index')}">Inici</a></span>
+    <wcm:menu levels="1" custom="true" types="[org.weceem.html.WcmHTMLContent]">
+      <g:if test="${menuNode.aliasURI.encodeAsHTML().equals(rootContent)}">
+        <g:each var="seccion" in="${menuNode.children}">
+          <!-- Nivel 1: Desplegables info_general, etc ... Debe ser un HTML -->
+          <g:if test="${seccion.class.toString().equals('class org.weceem.html.WcmHTMLContent')}">
+            <a style="margin-left: 25px;" href="/Portal/${space?.name}/${menuNode.aliasURI}/${seccion.aliasURI}?tipusMenu=${seccion.aliasURI}">${seccion.titleForMenu.encodeAsHTML()}</a>
+          </g:if>
+        </g:each>
+      </g:if>     
+    </wcm:menu>
+  </div>
+  
+  <div class="menuButton logout floatRight">
+  <g:if test="${wcm.loggedInUserEmail().encodeAsHTML()}">
+    <span class="login">
+    ${wcm.loggedInUserEmail().encodeAsHTML()}
+    </span>
+  </g:if>
+  <g:link class="home" controller="wcmRepository">Repositori</g:link>
+  </div>
+</div>

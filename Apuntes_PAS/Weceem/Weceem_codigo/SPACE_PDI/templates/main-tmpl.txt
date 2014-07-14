@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ca" lang="ca">
+<head>
+  
+  <wcm:widget path="widgets/upc-head"/>
+  <script type="text/javascript">  
+  $(document).ready(function(){
+    //Se recupera la variable para generar de manera automática el toggle parar cada desplegable.
+    var numMenusDesplegables = parseInt(document.getElementById("numMenusDesplegables ").value)+1;
+    
+    for(var i=0; i<numMenusDesplegables; i++){
+      $('#Menu'+i+' div.dijitTitlePaneTitle').click({id: i},function(event) {
+        $('#Outer'+event.data.id).slideToggle('medium');
+      });
+    }
+  });  
+  </script>
+    
+</head>
+  
+<body class="widthMobile">
+  <div id="totalWidth">
+    <wcm:widget path="widgets/top-nav"/>
+    
+    <div id="menuNav">
+
+      <wcm:widget path="widgets/menu-desplegable" model="[rootContent:'index']"/>           
+             
+     
+    </div>
+    
+    <wcm:widget path="widgets/status-bar" model="[rootContent:'index']"/>
+    
+    <div class="body">
+      ${params}
+      <wcm:widget path="widgets/breadCrumb-bar" model="[rootContent:'index']"/>
+      <wcm:content />
+    </div>
+
+  </div>
+    
+  <wcm:widget path="widgets/bottom-nav"/>
+  
+    </body>
+    
+</html>

@@ -1,0 +1,32 @@
+<script type="text/javascript" src="${wcm.createLink(path:'js/crossloader.js')}"></script>
+
+
+<div id="spinner" class="spinner" style="display: none;">
+  <img alt="Carregant..." src="${wcm.createLinkToFile(path:'images/spinner.gif')}" />
+</div>
+
+
+<div class="width100p">
+  <div class="bandaSuperior">
+  <div class="bandaEsq"></div>
+  <div class="bandaDre"></div>
+  </div>
+
+  <div id="upcLogo" class="padding floatLeft">
+  <a href="http://www.upc.edu"><img alt="Universitat Politècnica de Catalunya" src="${wcm.createLinkToFile(path:'images/logo_upc.png')}" style="width: 60px; height: 60px;"/></a>
+  </div>
+  <div id="weceemLogo1" class="padding floatLeft">
+  <img alt="Weceem CMS" src="${wcm.createLinkToFile(path:'images/EspaiPersonalPAS.png')}" style="border:0;"/>
+  </div>
+  <div class="menuButton ajuda floatRight">
+  <a class="ajuda" href="/SIG/contacte" target="_blank" onclick="window.open(this.href,this.target,'width=750,height=550,resizable=yes,scrollbars=yes');return false">Contacte</a>
+  <a class="manual" href="${wcm.createLink(path:'docs/manual_usuari.pdf')}" target="_blank" onclick="window.open(this.href,this.target,'width=750,height=550,resizable=yes');return false">Manual d'usuari</a>
+   </div>
+  
+  
+  
+</div>
+
+
+
+<div style="clear: both;"></div>

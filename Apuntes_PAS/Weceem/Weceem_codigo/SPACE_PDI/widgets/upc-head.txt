@@ -1,0 +1,10 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- Render the common head tags to include CSS and JS files -->
+<script type="text/javascript" src="${wcm.createLink(path:'js/jquery/jquery.js')}"></script>
+<link rel="shortcut icon" href="${wcm.createLink(path:'images/favicon.ico')}" type="image/x-icon" />
+<link rel="stylesheet" href="${wcm.createLink(path:'css/main.css')}" type="text/css" />
+<!--[if IE]>
+<link rel="stylesheet" href="${wcm.createLink(path:'css/mainIE.css')}" type="text/css" />
+<![endif]-->
+<link rel="stylesheet" href="${wcm.createLink(path:'css/estilos.css')}" type="text/css" />
+<link rel="stylesheet" href="${wcm.createLink(path:'css/styleHelper.css')}" type="text/css" />
