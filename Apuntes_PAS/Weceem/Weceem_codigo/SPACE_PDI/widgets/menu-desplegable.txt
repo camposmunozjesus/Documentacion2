@@ -35,7 +35,11 @@
         </g:if>
           <g:if test="${enlace.class.toString().equals('class org.weceem.html.WcmHTMLContent') && !enlace.aliasURI.encodeAsHTML().equals('index') && enlace.status.id.toString().equals('26') }" > <!-- INI 6 -->
             STATUS: ${enlace.status}---<br>
+            STATUS:-${enlace.status.id}---<br> 
+			                       STATUS: ${enlace.status}---<br>
             STATUS:-${enlace.status.id}---<br>
+             STATUS:-${enlace.status.code}---<br>
+            STATUS:-${enlace.status.description}---<br>
             <g:if test="${enlace.status.id.toString().equals('26')}">
               sII
             </g:if>
