@@ -103,6 +103,7 @@ Datepicker:							http://www.kelvinluck.com/assets/jquery/datePicker/v2/demo/inl
 Detectar un submit de cualquier		http://stackoverflow.com/questions/1213840/how-can-2-html-forms-share-1-hidden-field
 formulario:
 Añadir elementos a un formulario:	http://www.jguru.com/faq/view.jsp?EID=448075
+Capturar parámetros de http:		http://stackoverflow.com/questions/831030/how-to-get-get-request-parameters-in-javascript
 
 
 

@@ -1,11 +1,11 @@
 GRAILS - CAMBIAR EL NOMBRE DE LA APLICACIÓN (NOMBRE VISIBLE AL DESPLEGAR Y EN ECLIPSE/GGTS)
 ===========================================================================================
 Para cambiar el nombre de la aplicación (visible al desplegar):
-Hay que ir al archivo application:
+Hay que ir al archivo application.properties:
 app.name=Portal
 app.version=1.2-M1
 
-Para cambiar el nombre de la aplicación qu se ve en Eclipse hay que ir al archivo .properties.project que se encuentra en la raíz del proyecto (en Eclipse/GGTS se ve en el Navigator) y modificar:
+Para cambiar el nombre de la aplicación qu se ve en Eclipse hay que ir al archivo .project que se encuentra en la raíz del proyecto (en Eclipse/GGTS se ve en el Navigator) y modificar:
 <projectDescription>
 	<name>weceem-app-master</name>
 	.......
