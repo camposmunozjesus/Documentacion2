@@ -18,6 +18,55 @@ A partir de aquí ya NO se quiere mostrar el interior de las carpetas.
 PAS_20140709_0850_merlot: Space que parte desde cero en el que se han incluído widgets, templates e imágenes para empezar a desarrollar.
 PAS_20140711_0820_merlot: Se pretende que todo cuelgue del HTML index. Antes de continuar con los cambios, se hace esta copia de seguridad.
 
+Test3_20140716_1221_local: tiene los desplegables que se iluminan. Pasa "tipusMenu" e "itemSelected" como referencias. Para que funcione el BreadCrumb se necesita tener el código de la siguiente manera en el WeceemTaglib:
+	//INI - REV-002 BREADCRUMB
+	def breadcrumbMain = { attrs, body ->
+		def node = request[RenderEngine.REQUEST_ATTRIBUTE_NODE]
+		def lineage = request[RenderEngine.REQUEST_ATTRIBUTE_PAGE].lineage
+		def div = (attrs.divider != null) ? attrs.divider.decodeHTML() : ' &gt; '
+		def first = true
+		if (!attrs.custom?.toString()?.toBoolean()) {
+			body = { args ->
+				def o = new StringBuilder()
+				if (!args.first) {
+					o << div
+				}
+
+				def title = args.breadcrumbNode.titleForMenu.encodeAsHTML()
+				if (!args.last) {
+					o << wcm.linkMain(node:args.breadcrumbNode, tipusMenu: attrs['tipusMenu'], itemSelected: args.breadcrumbNode.aliasURI.encodeAsHTML()) {
+						out << title
+					}
+				} else {
+					o << "<span class=\"last\">${title}</span>"
+				}
+				return o.toString()
+			}
+		}
+		
+		def nodes = lineage
+		nodes.each { current ->
+			out << body(first:first, last: current.ident() == node.ident(), breadcrumbNode:current)
+			first = false
+		}
+	}
+	
+	def linkMain = { attrs, body ->
+		def ref1 = attrs["tipusMenu"].toString()
+		def ref2 = attrs["itemSelected"].toString()
+		
+		def o = out
+		o << "<a href=\"${wcm.createLink(attrs)}?tipusMenu=${ref1}&itemSelected=${ref2}\""
+		o << attrs.collect {k, v -> " $k=\"$v\"" }.join('')
+		o << '>'
+		o << body()
+		o << "</a>"
+	}
+	//END - REV-002
+	
+Test3_20140716_1239_local: igual que el anterior pero con los colores de seleccionado bien definidos.
+
+TESET4: Se empiza a desarrollar los templates sin parámetros por URL.
 
 *****************************************************************************************************************************************************
 ------------------------------
@@ -26,3 +75,22 @@ Creación:	18-06-2014
 Jesús Campos Muñoz
 jesus.campos@upc.edu
 ------------------------------
+
+
+
+
+
+
+
+
+				println "<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> "+content.getClass().toString()
+				if(content.getClass().toString().equals("class org.weceem.html.WcmHTMLContent")){
+					println "<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>PARSEAR e INCLUIR "
+					def values = info.uri.split("/")
+					for(i in values){
+						println "++++++++++++++++++++++ "+i
+					}
+				}
+				
+				
+				
