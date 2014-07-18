@@ -1,0 +1,75 @@
+                ${desplegable.children.size()}<br>
+				
+			                          space:${space}<br>
+                          space?.name:${space?.name}<br>
+                          aliasURI: ${enlace.aliasURI}<br>
+                          seccion: ${seccion}<br>
+                          link: ${link}<br>	
+						  
+						  
+						  
+						                              TIPO: ${menuNode}<br>
+                            TIPO Desplegable: ${desplegable.class}<br>
+                            TIPO Item       : ${enlace.class}<br>
+							
+							
+							
+				                            <a href="${menuNode.aliasURI}/${seccion.aliasURI}/${desplegable.aliasURI}/${enlace.aliasURI}">${enlace.titleForMenu.encodeAsHTML()}</a>
+                            <br>
+							
+							
+							
+							${menuNode.aliasURI}<br>${seccion.aliasURI}<br>${desplegable.aliasURI}<br>${enlace.aliasURI}}<br>
+ <!--   ${menuNode.aliasURI}/${seccion.aliasURI}/${desplegable.aliasURI}/${enlace.aliasURI}                          -->
+ 
+Para comprobar que el rol del usuario es el correcto:
+<sec:access expression="hasRole('ROLE_AsDMIN')">
+	<span class="menuButton">
+		Racó admin
+	</span>  
+</sec:access>
+
+				
+<div id="menuNav">
+	<wcm:menu levels="5"  custom="true" types="[org.weceem.content.WcmFolder]">  
+		<g:if test="${menuNode.titleForMenu.encodeAsHTML().equals('Desplegable')}"> <!-- 0 INI -->
+			<g:each var="hijo" in="${menuNode.children}"> <!-- 1 INI -->
+				<g:if test="${hijo.aliasURI.encodeAsHTML().equals('raco_personal')}"> <!-- 2 INI -->
+				<!-- Barra de titulo -->
+				<div id="Menu" title="Menú" class="dijitTitlePane">
+					<div class="dijitTitlePaneTitle">
+					<span class="dijitTitlePaneTextNode">${hijo.titleForMenu.encodeAsHTML()}</span>
+					</div>        
+				</div>
+				<br>
+					<!-- Cada each es un desplegable -->
+					<g:each status="i" var="desplegable" in="${hijo.children}"> <!-- INI 3 -->
+						<!-- abrir desplegable-->
+						<div id="Menu${i}" title="Menú" class="dijitTitlePane"> <!-- INI 4 -->
+							<div class="dijitTitlePaneTitle">
+								<div>
+									<img class="dijitArrowNode" alt="Fletxa" src="${wcm.createLinkToFile(path:'images/blank.gif')}" />
+								</div>
+								<span class="dijitTitlePaneTextNode">${desplegable.titleForMenu.encodeAsHTML()}</span>
+							</div>
+
+							<g:each status="j" var="enlace" in="${desplegable.children}"> <!-- INI 3 -->
+								<g:if test="${j == 0}">
+									<div id="Outer${i}" class="dijitTitlePaneContentOuter">
+										<ul id="uli${i}" class="iconList">
+								</g:if>
+											<li class="bullet">
+											<a href="${wcm.createLink(path:'index')}">${enlace.titleForMenu.encodeAsHTML()}</a></li>
+								<g:if test="${j == (desplegable.children.size()-1)}">
+											</ul>
+										</div>
+								</g:if>       
+							</g:each>
+							<!-- cerrar desplegable-->
+						</div>   <!-- FIN 4 -->
+					</g:each> <!-- FIN 3 -->
+				</g:if> <!-- 2 FIN -->
+			</g:each> <!-- 1 FIN -->         
+		</g:if>     <!-- 0 FIN -->
+	</wcm:menu>
+</div>

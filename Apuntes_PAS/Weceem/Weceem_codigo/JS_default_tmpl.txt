@@ -1,0 +1,23 @@
+  <script type="text/javascript">  
+  $(document).ready(function(){
+    //Se recupera la variable para generar de manera automática el toggle parar cada desplegable.
+    var numMenusDesplegables = parseInt(document.getElementById("numMenusDesplegables ").value)+1;
+    
+    for(var i=0; i<numMenusDesplegables; i++){
+      $('#Menu'+i+' div.dijitTitlePaneTitle').click({id: i},function(event) {
+            $('#Outer'+event.data.id).slideToggle('medium');
+      });
+    }
+    
+    function get(name){
+   if(name=(new RegExp('[?&]'+encodeURIComponent(name)+'=([^&]*)')).exec(location.search))
+      return decodeURIComponent(name[1]);
+}
+    
+    //alert(get('itemSelected'));
+    if(get('itemSelected')!=null){
+         document.getElementById(get('itemSelected')).className="itemSelected";
+    }
+    
+  });  
+  </script>
