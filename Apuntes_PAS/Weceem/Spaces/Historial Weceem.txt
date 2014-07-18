@@ -66,7 +66,9 @@ Test3_20140716_1221_local: tiene los desplegables que se iluminan. Pasa "tipusMe
 	
 Test3_20140716_1239_local: igual que el anterior pero con los colores de seleccionado bien definidos.
 
-TESET4: Se empiza a desarrollar los templates sin parámetros por URL.
+TEST4: Se empiza a desarrollar los templates sin parámetros por URL.
+PAS_20140718_merlot: basado en el Test4 de local. La página deja márgenes a derecha e izquierda. Tiene letras con degradado en HTML.
+Test4_20140718_local: copia de seguridad del space local. Tiene implementada el ocultar el resto de menus pero no funciona bien. Se autodesplegan y se esconden.
 
 *****************************************************************************************************************************************************
 ------------------------------
