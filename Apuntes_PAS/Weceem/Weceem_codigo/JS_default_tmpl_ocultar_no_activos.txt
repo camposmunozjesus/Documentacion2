@@ -1,0 +1,93 @@
+<script type="text/javascript">  
+  $(document).ready(function(){
+
+   //Se recupera la variable para generar de manera automática el toggle parar cada desplegable.
+    var numMenusDesplegables = parseInt(document.getElementById("numMenusDesplegables ").value);
+    
+   
+  //Recuperar el desplegable a mantener abierto
+  var desplegableSelected= document.getElementById("desplegableSelected").value.toString();
+  //Estado inicial de los desplegables
+  
+  
+  for(var i=0; i<numMenusDesplegables; i++){
+      $('#Menu'+i).click({id: i},function(event) {
+
+    for(var i=0; i<numMenusDesplegables; i++){
+      if(i!=event.data.id){
+      //$('#Outer'+i).slideToggle('fast');
+      $('#Outer'+i).slideUp('fast');
+      }else{
+        $('#Outer'+i).slideDown('fast');
+      }
+    }
+  });
+  }
+  
+  for(var i=0; i<numMenusDesplegables; i++){
+    if ($('#Outer'+i).attr("name").toString() == desplegableSelected) {
+      $('#Outer'+i).slideDown('fast');
+
+    }else{
+      $('#Outer'+i).slideUp('fast');
+
+    }
+  }
+   
+    
+  
+ 
+  });  
+</script>
+
+Utilidades:
+http://stackoverflow.com/questions/1107220/how-can-i-select-an-element-by-name-with-jquery
+http://stackoverflow.com/questions/2983288/alert-a-variable-value
+
+
+
+El original es:
+<script type="text/javascript">  
+  $(document).ready(function(){
+
+   //Se recupera la variable para generar de manera automática el toggle parar cada desplegable.
+    var numMenusDesplegables = parseInt(document.getElementById("numMenusDesplegables ").value);
+    
+   
+    //Recuperar el desplegable a mantener abierto
+    var desplegableSelected= document.getElementById("desplegableSelected").value.toString();
+    //Estado inicial de los desplegables
+    for(var i=0; i<numMenusDesplegables; i++){
+if ($('#Outer'+i).attr("name").toString() == desplegableSelected) {
+        $('#Outer'+i).slideDown('fast');
+
+  }else{
+       $('#Outer'+i).slideUp('fast');}
+    }
+        
+  
+  for(var i=0; i<numMenusDesplegables; i++){
+      $('#Menu'+i).click({id: i},function(event) {
+    for(var i=0; i<numMenusDesplegables; i++){
+      if(i!=event.data.id){
+      //$('#Outer'+i).slideToggle('fast');
+        $('#Outer'+i).slideUp('fast');
+        
+      }else{
+         $('#Outer'+i).slideDown('fast');
+      }
+    }
+   });
+  }
+ 
+   if (!$('#Outer'+event.data.id).is(':visible')){
+    
+        //alert("if"+event.data.id);
+   }
+    else{
+        // alert("else"+event.data.id);
+    }
+        
+ 
+  });  
+  </script>
