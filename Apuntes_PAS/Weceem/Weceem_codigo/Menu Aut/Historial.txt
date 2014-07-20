@@ -1,0 +1,6 @@
+HISTORIAL
+=========
+JS_template_0001/0002: Actúa medianamente bien, pero ejecutado en local se ve lento. Al hacer click sobre el enlace del desplegable tarda en colorearse.
+					   Se utiliza en el JS de los templates pra crear un menú desplegable que al clickar oculte los no activos.
+					   
+GSP_menu-desplegable_0001: Al clickar fuera de las letras se vuelva a recargar la página.

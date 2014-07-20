@@ -1,0 +1,29 @@
+Se reduce el código del if, y además se hace que al clickar fuera de las letras se vuelva a recargar la página.
+
+<g:if test="${(desplegable.class.toString().substring(0,36).equals('class org.weceem.html.WcmHTMLContent') || desplegable.class.toString().substring(0,35).equals('class org.weceem.content.WcmContent')) && desplegable.status.description.toString().equals('published') }" > <!-- INI 35 -->
+      <div id="Menu${i}" name="Menu${i}" title="Menú" class="dijitTitlePane"> <!-- INI 4 -->
+        
+x        <g:if test="${params.desplegableSelected.toString().equals(desplegable.aliasURI)}">
+          <div id="Menu${i}" name="Menu${i}" class="dijitTitlePaneTitleSelected" onclick="return goMid()">
+        </g:if>
+        <g:else>
+          <div class="dijitTitlePaneTitle" onclick="parent.location='http://localhost:8080/weceem/${space?.name}/${menuNode.aliasURI}/${seccion.aliasURI}/${desplegable.aliasURI}'" >
+        </g:else>
+            <span class="dijitTitlePaneTextNode"><a href="/weceem/${space?.name}/${menuNode.aliasURI}/${seccion.aliasURI}/${desplegable.aliasURI}">${desplegable.titleForMenu.encodeAsHTML()}</a></span>
+x         </div>   
+        
+       
+  
+       
+
+        
+        
+        <g:each status="j" var="enlace" ................
+
+*****************************************************************************************************************************************************
+------------------------------
+Creación:	20-07-2014
+
+Jesús Campos Muñoz
+jesus.campos@upc.edu
+------------------------------

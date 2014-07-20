@@ -1,0 +1,85 @@
+JS que se incluye en los templates de Weceem para obtener los desplegables.
+
+Necesita las siguientes modificaciones:
+* En estilos.css añadir "display:none;" en dijitTitlePaneContentOuter para que al iniciar NO se despleguen los elementos no deseados.
+* En el widget menu-deplegable incluir  <div id="Outer${i}" name="${desplegable.aliasURI}" class="dijitTitlePaneContentOuterSelected"> para el desplegado seleccionado.
+* Además crear el estilo copiado de dijitTitlePaneContentOuterSelected igual que el dijitTitlePaneContentOuter pero sin el "display:none;".
+
+$(document).ready(function(){
+	//Se recupera la variable para generar de manera automática el toggle parar cada desplegable.
+	var numMenusDesplegables = parseInt(document.getElementById("numMenusDesplegables ").value);
+
+	//Cambiar estado en función de hacer click en un desplegable
+	for(var i=0; i<numMenusDesplegables; i++){  
+		$('#Menu'+i).click({id: i},function(event) {
+			$('.dijitTitlePaneContentOuterSelected').slideUp('fast');
+			$('.dijitTitlePaneContentOuter').slideUp('fast');
+			$('#Outer'+event.data.id).slideDown('fast');
+
+
+			if (!$('#Outer'+event.data.id).is(':visible')){
+				$('#Outer'+event.data.id).slideToggle('medium');
+			}
+			else{
+				alert($('#Outer'+event.data.id).is(':visible'));
+			}
+		});
+	}
+
+});  
+
+
+
+
+
+
+$(document).ready(function(){
+    // alert (nnn);
+    var numMenusDesplegables = parseInt(document.getElementById("idFactorTmp").value)+1;
+    //alert("numMenusDesplegables :::"+numMenusDesplegables );
+    // alert("idfactor:"+ document.getElementById("idFactorTmp").value );
+    
+    //$('#Outer0').slideToggle('fast');
+    
+    for(var i=0; i<numMenusDesplegables; i++){
+       $('#Outer'+i).slideUp('fast');
+    }
+    
+    
+    for(var i=0; i<numMenusDesplegables; i++){
+		$('#Menu'+i+' div.dijitTitlePaneTitle').click({id: i},function(event) {
+			//alert(event.data.id);
+			$('#Outer'+event.data.id).attr("src", "../images/icons/fletxa-dreta.png");
+
+			for(var i=0; i<numMenusDesplegables; i++){
+				//alert("i: "+i+"     event.data.id: "+event.data.id)
+				if(i!=event.data.id){
+					//$('#Outer'+i).slideToggle('fast');
+					$('#Outer'+i).slideUp('fast');
+				}
+				else{ 
+					//alert(i)
+				}
+			}
+    
+			alert("Outer"+event.data.id);
+			if (!$('#Outer'+event.data.id).is(':visible')){
+				$('#Outer'+event.data.id).slideToggle('medium');}
+			else{
+				alert($('#Outer'+event.data.id).is(':visible'));
+			}
+    
+			//alert($('#Outer'+event.data.id).height());
+    
+			//$('#Outer'+event.data.id).slideToggle('medium');
+		});
+    }
+});
+
+*****************************************************************************************************************************************************
+------------------------------
+Creación:	20-07-2014
+
+Jesús Campos Muñoz
+jesus.campos@upc.edu
+------------------------------
