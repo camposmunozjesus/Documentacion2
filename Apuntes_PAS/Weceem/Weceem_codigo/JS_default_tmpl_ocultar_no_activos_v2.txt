@@ -1,0 +1,48 @@
+utiliza display:none en dijitTitlePaneContentOuter. El problema es que el JS de despliegue/cerrado al clickar fuera del título hace lenata la carga de la página.
+<script type="text/javascript">  
+	$(document).ready(function(){
+		//Se recupera la variable para generar de manera automática el toggle parar cada desplegable.
+		var numMenusDesplegables = parseInt(document.getElementById("numMenusDesplegables ").value);
+
+		//Recuperar el desplegable a mantener abierto
+		var desplegableSelected= document.getElementById("desplegableSelected").value.toString();
+
+		//Estado inicial de los desplegables. Se abre el que su nombre coincida con del desplegableSelected
+		for(var i=0; i<numMenusDesplegables; i++){
+			if ($('#Outer'+i).attr("name") == desplegableSelected) {
+				$('#Outer'+i).slideDown('fast');
+			}else{
+				$('#Outer'+i).slideUp('fast');
+			}
+			
+		}
+		
+		//Cambiar estado en función de hacer click en un desplegable
+		for(var i=0; i<numMenusDesplegables; i++){  
+		  $('#Menu'+i).click({id: i},function(event) {
+			for(var i=0; i<numMenusDesplegables; i++){
+			  if(i!=event.data.id){
+				//$('#Outer'+i).slideToggle('fast');
+				$('#Outer'+i).slideUp('fast');
+			  }else{
+				$('#Outer'+i).slideDown('fast');
+			  }
+			}
+		  });
+    } 
+
+	});  
+</script>
+
+
+
+
+ 
+
+
+
+
+
+
+
+

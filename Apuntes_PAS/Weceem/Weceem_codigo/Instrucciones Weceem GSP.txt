@@ -1,1 +1,36 @@
-${node.title.encodeAsHTML()}
+INSTRUCCIONES DE UTILIDAD EN PÁGINAS GSP - WECEEM
+=================================================
+-----------------------------
+DETECTAR ENTORNO DE EJECUCIÓN
+-----------------------------
+<g:if env="development">
+    We are in Development Mode
+</g:if>
+
+<g:if env="production">
+    We are in Production Mode
+</g:if>
+
+<g:if env="test">
+    We are in Test Mode
+</g:if>
+
+
+--------------------------------
+DETECTAR NOMBRE DE LA APLICACIÓN
+--------------------------------
+${grails.util.Metadata.current.'app.name'}
+
+
+-------------------
+OTRAS INSTRUCCIONES
+-------------------
+${node.title.encodeAsHTML()}:Obtener la página actual que se está viendo.
+
+*****************************************************************************************************************************************************
+------------------------------
+Creación:	20-07-2014
+
+Jesús Campos Muñoz
+jesus.campos@upc.edu
+------------------------------

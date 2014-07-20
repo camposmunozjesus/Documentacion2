@@ -1,0 +1,40 @@
+JS que se incluye en los templates de Weceem para obtener los desplegables.
+
+Actúa medianamente bien, pero ejecutado en local se ve lento. Al hacer click sobre el enlace del desplegable tarda en colorearse.
+
+Necesita las siguientes modificaciones:
+* En estilos.css añadir "display:none;" en dijitTitlePaneContentOuter para que al iniciar NO se despleguen los elementos no deseados.
+* En el widget menu-deplegable incluir  <div id="Outer${i}" name="${desplegable.aliasURI}" class="dijitTitlePaneContentOuterSelected"> para el desplegado seleccionado.
+* Además crear el estilo copiado de dijitTitlePaneContentOuterSelected igual que el dijitTitlePaneContentOuter pero sin el "display:none;".
+
+<script type="text/javascript">  
+ $(document).ready(function(){
+
+   var numMenusDesplegables = parseInt(document.getElementById("numMenusDesplegables").value);
+    
+   for(var i=0; i<numMenusDesplegables; i++){
+    $('#Menu'+i).click({id: i},function(event) {
+      for(var i=0; i<numMenusDesplegables; i++){
+        if(i!=event.data.id){
+          //$('#Outer'+i).slideToggle('fast');
+          $('#Outer'+i).slideUp('fast');
+        }
+
+      }
+    
+      if (!$('#Outer'+event.data.id).is(':visible')){
+        $('#Outer'+event.data.id).slideToggle('medium');
+      }
+    
+    });
+   }
+});
+</script>
+
+*****************************************************************************************************************************************************
+------------------------------
+Creación:	20-07-2014
+
+Jesús Campos Muñoz
+jesus.campos@upc.edu
+------------------------------
