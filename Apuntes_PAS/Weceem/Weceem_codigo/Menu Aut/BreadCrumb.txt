@@ -1,0 +1,6 @@
+    <g:if test="${node.parent}">
+    <div class="span-24 last" id="content-breadcrumb">
+      <!-- Use the breadcrumb tag to render links to all parents -->
+      <wcm:link path="index">Home</wcm:link> &gt; <wcm:breadcrumb/>
+    </div>
+    </g:if>

@@ -70,6 +70,8 @@ TEST4: Se empiza a desarrollar los templates sin parámetros por URL.
 PAS_20140718_merlot: basado en el Test4 de local. La página deja márgenes a derecha e izquierda. Tiene letras con degradado en HTML.
 Test4_20140718_local: copia de seguridad del space local. Tiene implementada el ocultar el resto de menus pero no funciona bien. Se autodesplegan y se esconden.
 
+PAS_20140721_merlot: Tiene el buscado pero en merlot NO funciona!!!. Tiene márgenes derechos en blanco y ya no utiliza la palabra Portal, sino que usa una variable. Aunque sólo en el menu-desplegable, hay que cambiarlo en todos los sitios que haga falta.
+
 *****************************************************************************************************************************************************
 ------------------------------
 Creación:	18-06-2014
