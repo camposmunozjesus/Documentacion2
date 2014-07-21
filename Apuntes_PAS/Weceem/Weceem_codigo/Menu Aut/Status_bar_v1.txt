@@ -1,0 +1,36 @@
+//Status bar que mira de enlazar con el prier html del directorio.
+<div class="nav">
+  <div class="leftNav">
+    <span class="menuButton"> <a class="home" href="${wcm.createLink(path:'index')}">Inici</a></span>
+    <wcm:menu levels="1" custom="true" types="[org.weceem.content.WcmFolder]">
+      <g:if test="${menuNode.aliasURI.encodeAsHTML().equals(rootFolder)}">
+        1: ${menuNode.aliasURI.encodeAsHTML()}<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <g:each var="seccion" in="${menuNode.children}">
+          <br><br>2: ${seccion.aliasURI.encodeAsHTML()}<br>
+          <!-- Nivel 1: Desplegables info_general, etc ... Debe ser un HTML -->
+          <g:if test="${seccion.class.toString().equals('class org.weceem.content.WcmFolder') && (seccion.aliasURI.encodeAsHTML().equals(enlaceAdmin) || seccion.aliasURI.encodeAsHTML().equals(enlaceGestor) || seccion.aliasURI.encodeAsHTML().equals(enlacePersonal) || seccion.aliasURI.encodeAsHTML().equals(enlaceInfoGeneral))}">
+            <br><br>3: ${seccion.aliasURI.encodeAsHTML()}<br>
+            <g:each status="i" var="contenedor" in="${seccion.children}"> <!-- 1 INI --> <!-- Buscar el enlace y será la primera página que encuentre -->
+               <g:if test="${i == 0}" >
+                 <g:each status="j" var="enlacePrincipal" in="${contenedor.children}"> <!-- 2 INI -->
+                   <g:if test="${j == 0}" >
+                     <a style="margin-left: 25px;" href="/Portal/${space?.name}/${menuNode.aliasURI}/${seccion.aliasURI}/${contenedor.aliasURI}/${enlacePrincipal.aliasURI}">${seccion.titleForMenu.encodeAsHTML()}</a>
+                   </g:if>
+               </g:each> <!-- 2 FIN -->
+              </g:if>
+            </g:each> <!-- 1 FIN -->
+          </g:if>
+        </g:each>
+      </g:if>     
+    </wcm:menu>
+  </div>
+  
+  <div class="menuButton logout floatRight">
+  <g:if test="${wcm.loggedInUserEmail().encodeAsHTML()}">
+    <span class="login">
+    ${wcm.loggedInUserEmail().encodeAsHTML()}
+    </span>
+  </g:if>
+  <g:link class="home" controller="wcmRepository">Repositori</g:link>
+  </div>
+</div>
