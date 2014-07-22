@@ -1,0 +1,96 @@
+<wcm:menu levels="1"  custom="true" types="[org.weceem.html.WcmHTMLContent]">
+
+  <g:if test="${menuNode.aliasURI.encodeAsHTML().equals(rootContent)}"> <!-- 0 INI -->
+
+    <g:each var="seccion" in="${menuNode.children}"> <!-- 1 INI -->
+
+      <g:if test="${seccion.aliasURI.encodeAsHTML().equals(params.tipusMenu)}"> <!-- 2 INI -->
+
+        <!-- Barra de titulo -->
+<g:if test="${params.itemSelected.toString().equals(seccion.aliasURI)}">
+
+  <div id="Menu" title="Menú" class="dijitTitlePane">
+    <div class="dijitTitlePaneTitleSelected ">
+    <span ><a href="/Portal/${space?.name}/${menuNode.aliasURI}/${seccion.aliasURI}">${seccion.titleForMenu.encodeAsHTML()}</a></span>
+    </div>        
+  </div>
+  <br>
+</g:if>
+<g:else>
+
+  <div id="Menu" title="Menú" class="dijitTitlePane">
+    <div class="dijitTitlePaneTitle">
+    <span class="dijitTitlePaneTextNode"><a href="/Portal/${space?.name}/${menuNode.aliasURI}/${seccion.aliasURI}">${seccion.titleForMenu.encodeAsHTML()}</a></span>
+    </div>        
+  </div>
+  <br>   
+</g:else>
+        
+        
+        <!-- Cada each es un desplegable -->
+        <g:each status="i" var="desplegable" in="${seccion.children}"> <!-- INI 3 -->
+         
+        <!-- Abrir desplegable solo si es un HTML y coincide con el tipusMenu enviado (se incluye Content, porque a veces retorna Content en lugar de HTML -->
+
+<g:if test="${(desplegable.class.toString().substring(0,36).equals('class org.weceem.html.WcmHTMLContent') || desplegable.class.toString().substring(0,35).equals('class org.weceem.content.WcmContent')) && desplegable.status.description.toString().equals('published') }" > <!-- INI 35 -->
+      <div id="Menu${i}" name="Menu${i}" title="Menú" class="dijitTitlePane"> <!-- INI 4 -->
+        
+        <g:if test="${params.desplegableSelected.toString().equals(desplegable.aliasURI)}">
+          <div class="dijitTitlePaneTitleSelected ">
+            <div>
+              <img class="dijitArrowNode" alt="Fletxa" src="${wcm.createLinkToFile(path:'images/blank.gif')}" />
+            </div>
+            <span class="dijitTitlePaneTextNode"><a href="/Portal/${space?.name}/${menuNode.aliasURI}/${seccion.aliasURI}/${desplegable.aliasURI}">${desplegable.titleForMenu.encodeAsHTML()}</a></span>
+          </div>   
+        </g:if>
+        <g:else>
+          <div class="dijitTitlePaneTitle">
+            <div>
+              <img class="dijitArrowNode" alt="Fletxa" src="${wcm.createLinkToFile(path:'images/blank.gif')}" />
+            </div>
+            <span class="dijitTitlePaneTextNode"><a href="/Portal/${space?.name}/${menuNode.aliasURI}/${seccion.aliasURI}/${desplegable.aliasURI}">${desplegable.titleForMenu.encodeAsHTML()}</a></span>
+          </div>   
+        </g:else>
+
+        
+        
+        <g:each status="j" var="enlace" in="${desplegable.children}"> <!-- INI 5 -->
+
+        <g:if test="${j == 0}">
+        <div id="Outer${i}" name="${desplegable.aliasURI}" class="dijitTitlePaneContentOuter">
+        <ul id="uli${i}" class="iconList">
+        </g:if>
+           <g:if test="${(desplegable.class.toString().substring(0,36).equals('class org.weceem.html.WcmHTMLContent') || desplegable.class.toString().substring(0,35).equals('class org.weceem.content.WcmContent')) && !enlace.aliasURI.encodeAsHTML().equals('index') && enlace.status.description.toString().equals('published')}" > <!-- INI 6 -->
+
+            <g:if test="${params.itemSelected.toString().equals(enlace.aliasURI)}">
+              <li id="item${i}${j}" class="bulletGreen selected">
+                <a href="/Portal/${space?.name}/${menuNode.aliasURI}/${seccion.aliasURI}/${desplegable.aliasURI}/${enlace.aliasURI}">${enlace.titleForMenu.encodeAsHTML()}</a>
+              </li>
+            </g:if>
+        <g:else>
+              <li class="bullet">
+                <a href="/Portal/${space?.name}/${menuNode.aliasURI}/${seccion.aliasURI}/${desplegable.aliasURI}/${enlace.aliasURI}">${enlace.titleForMenu.encodeAsHTML()}</a>
+              </li>
+            </g:else>
+
+          </g:if> <!-- FIN 6 -->
+          <g:if test="${j == (desplegable.children.size()-1)}">
+        </ul>
+        </div>
+        </g:if>  
+
+        </g:each> <!-- FIN 5 -->
+        <!-- cerrar desplegable-->
+      </div>     <!-- FIN 4 -->
+        </g:if> <!-- FIN 35 -->
+           <!-- Se guarda el número de iteraciones realizadas para crear menús desplegables -->
+           <g:set var="numDesplegables" value="${i}" />                     
+        </g:each> <!-- FIN 3 -->
+        </g:if> <!-- 2 FIN -->
+    </g:each> <!-- 1 FIN -->         
+   </g:if>     <!-- 0 FIN -->
+</wcm:menu>
+<!-- Se guarda la variable para poder recuperarla en JS -->                      
+<g:hiddenField name="numMenusDesplegables " id="numMenusDesplegables " value="${numDesplegables}" />
+<!-- Se guarda el desplegable -->
+<g:hiddenField name="desplegableSelected" id="desplegableSelected" value="${params.desplegableSelected}" />
