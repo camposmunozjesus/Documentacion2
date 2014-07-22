@@ -1,0 +1,49 @@
+<g:if test="${(desplegable.class.toString().substring(0,36).equals('class org.weceem.html.WcmHTMLContent') || desplegable.class.toString().substring(0,35).equals('class org.weceem.content.WcmContent')) && !enlace.aliasURI.encodeAsHTML().equals('index') && enlace.status.description.toString().equals('published')}" > <!-- INI 6 -->
+
+</g:if> <!-- FIN 6 -->
+
+
+
+
+
+
+
+
+
+
+<g:if test="${(desplegable.class.toString().substring(0,36).equals('class org.weceem.html.WcmHTMLContent') || desplegable.class.toString().substring(0,35).equals('class org.weceem.content.WcmContent')) && !enlace.aliasURI.encodeAsHTML().equals('index') && enlace.status.description.toString().equals('published')}" > <!-- INI 6 -->
+
+
+
+
+
+
+
+
+
+
+								<g:if test="${j==0}"> <!-- INI 55 -->
+									<g:if test="${params.desplegableSelected.toString().equals(desplegable.aliasURI)}">
+										<div id="Outer${i}" name="${desplegable.aliasURI}" class="dijitTitlePaneContentOuterSelected">
+									</g:if>
+									<g:else>
+										<div id="Outer${i}" name="${desplegable.aliasURI}" class="dijitTitlePaneContentOuter">
+									</g:else>
+											<ul id="uli${i}" class="iconList">
+								</g:if> <!-- FIN 55 -->
+								
+									<g:if test="${params.itemSelected.toString().equals(enlace.aliasURI)}">
+										<li id="item${i}${j}" class="bulletGreen selected">
+											<a href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/${menuNode.aliasURI}/${seccion.aliasURI}/${desplegable.aliasURI}/${enlace.aliasURI}">${enlace.titleForMenu.encodeAsHTML()}</a>
+										</li>
+									</g:if>
+									<g:else>
+										<li class="bullet">
+										<a href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/${menuNode.aliasURI}/${seccion.aliasURI}/${desplegable.aliasURI}/${enlace.aliasURI}">${enlace.titleForMenu.encodeAsHTML()}</a>
+										</li>
+									</g:else>
+								
+								<g:if test="${j == (desplegable.children.size()-1)}"> <!-- INI 66 -->
+											</ul>
+										</div>
+								</g:if>  <!-- FIN 66 -->

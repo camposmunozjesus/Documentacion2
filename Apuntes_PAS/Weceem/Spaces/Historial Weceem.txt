@@ -71,6 +71,7 @@ PAS_20140718_merlot: basado en el Test4 de local. La página deja márgenes a dere
 Test4_20140718_local: copia de seguridad del space local. Tiene implementada el ocultar el resto de menus pero no funciona bien. Se autodesplegan y se esconden.
 
 PAS_20140721_merlot: Tiene el buscado pero en merlot NO funciona!!!. Tiene márgenes derechos en blanco y ya no utiliza la palabra Portal, sino que usa una variable. Aunque sólo en el menu-desplegable, hay que cambiarlo en todos los sitios que haga falta.
+PAS_20140722_merlot: Último space antes de comenzar a cambiar el color de fondo.
 
 *****************************************************************************************************************************************************
 ------------------------------
@@ -79,22 +80,3 @@ Creación:	18-06-2014
 Jesús Campos Muñoz
 jesus.campos@upc.edu
 ------------------------------
-
-
-
-
-
-
-
-
-				println "<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> "+content.getClass().toString()
-				if(content.getClass().toString().equals("class org.weceem.html.WcmHTMLContent")){
-					println "<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>PARSEAR e INCLUIR "
-					def values = info.uri.split("/")
-					for(i in values){
-						println "++++++++++++++++++++++ "+i
-					}
-				}
-				
-				
-				

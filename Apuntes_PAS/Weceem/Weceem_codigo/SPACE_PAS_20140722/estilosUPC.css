@@ -1,0 +1,89 @@
+Estilos Grises estilosUPC.css - > WECEEM SPACE PAS
+
+#Menu a:hover {
+    text-decoration: none;
+}
+
+#item a:hover {
+    text-decoration: none;
+  
+}
+
+.boxSelected{
+  padding-left: 12px;
+  padding-right: 30px;
+  padding-bottom: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #b5bcc7 !important;
+  border-bottom: 1px solid #b5bcc7 !important;
+  border-left: 2px solid #b5bcc7 !important;
+  border-right: 12px solid #b5bcc7 !important;
+  
+}
+
+.box{
+  padding-left: 12px;
+  padding-right: 30px;
+  padding-bottom: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #b5bcc7 !important;
+  border-bottom: 1px solid #b5bcc7 !important;
+  border-left: 2px solid #b5bcc7 !important;
+  border-right: 2px solid #b5bcc7 !important;
+
+  
+}
+
+.link_blank{
+  background: url(../images/icons/icon_blank.gif) center left no-repeat;
+  color: #333;    
+  padding: 0px 10px 0px 0px;      
+}
+
+.customSearchField:hover{
+  background-color: #D7EFF7;
+}
+.customSearchField{
+  margin-right: 3px;
+  height: 17px;
+  min-width: 200px;
+}
+
+.customSearchButton{
+  margin-top: -1px;
+  background-color: #efefef;
+  background-image: url("../images/standardGradient.png");
+  background-repeat: repeat-x;
+  border: 1px solid #b5bcc7;
+  height: 23px;
+  background: url("../images/icons/shadow.jpg") repeat-x scroll center bottom #FFFFFF;
+  cursor: pointer;
+  padding: 2px 10px;
+  vertical-align: middle;
+}
+
+.buscador{
+  margin-top:35px;
+  margin-right:-160px;
+}
+
+h1.firstHeading {
+  border-color: #D9D9D9 !important;
+  width: 100% !important;
+  color: #4D4D4D !important;
+  border-bottom: 5px solid #D9D9D9;
+  font-size: 2.4em !important;
+  font-weight: normal !important;
+  position: relative !important;
+  margin-right:152px !important;
+  margin-top: 10px !important;
+
+}
+ 
+h1.firstHeading span{
+  background: url("../images/gradient.png") repeat-x !important;
+  position: absolute !important;
+  display: block !important;
+  width: 100% !important;
+  height: 30px !important;
+}

@@ -1,0 +1,26 @@
+<div class="nav">
+  <div class="leftNav" style="margin-left:135px;">  
+    <span class="menuButton" style="width:700px;"> <a class="home" href="${wcm.createLink(path:'index')}">Inici</a>
+    <wcm:menu levels="1" custom="true" types="[org.weceem.html.WcmHTMLContent]">
+      <g:if test="${menuNode.aliasURI.encodeAsHTML().equals(rootContent)}">
+        <g:each var="seccion" in="${menuNode.children}">
+          <!-- Nivel 1: Desplegables info_general, etc ... Debe ser un HTML -->
+          <g:if test="${seccion.class.toString().equals('class org.weceem.html.WcmHTMLContent') && seccion.status.description.toString().equals('published')}">
+            <a class="${seccion.aliasURI}" style="margin-left: 25px;" href="/Portal/${space?.name}/${menuNode.aliasURI}/${seccion.aliasURI}">${seccion.titleForMenu.encodeAsHTML()}</a>
+          </g:if>
+        </g:each>
+      </g:if>     
+    </wcm:menu>
+    </span>    
+  </div>
+  
+  <div class="menuButton logout floatRight" style="margin-right:114px">
+  <g:if test="${wcm.loggedInUserName().encodeAsHTML()}">
+    <span class="login">
+    ${wcm.loggedInUserName().encodeAsHTML()}      
+    </span>
+  </g:if>    
+  <!--<g:link class="home" controller="wcmRepository">Repositori</g:link>-->
+    <g:link class="exit" controller="logout">Desconnecta</g:link>
+  </div>
+</div>
