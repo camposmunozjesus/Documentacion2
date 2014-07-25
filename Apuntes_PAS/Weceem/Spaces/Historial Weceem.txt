@@ -73,8 +73,8 @@ Test4_20140718_local: copia de seguridad del space local. Tiene implementada el 
 PAS_20140721_merlot: Tiene el buscado pero en merlot NO funciona!!!. Tiene márgenes derechos en blanco y ya no utiliza la palabra Portal, sino que usa una variable. Aunque sólo en el menu-desplegable, hay que cambiarlo en todos los sitios que haga falta.
 PAS_20140722_merlot: Último space antes de comenzar a cambiar el color de fondo.
 PAS_20140722_1400_merlot: Nuevo fondo con colores distintos. A partir de aquí se cambiará el fondo de la pantalla, cambiando ancho y distribución de la misma.
-PAS_20140724_1240_merlot.zip: Se han eliminado los menús desplegables y el cuerpo principal comienza a estar "bien" hecho, con div's que separan el footer del contenido etc. Los menús ya no se mueven al seleccionar algo.
-
+PAS_20140724_1240_merlot: Se han eliminado los menús desplegables y el cuerpo principal comienza a estar "bien" hecho, con div's que separan el footer del contenido etc. Los menús ya no se mueven al seleccionar algo.
+PAS_20140725_1355_merlot: El anterior pero actualizado.
 
 
 *****************************************************************************************************************************************************
