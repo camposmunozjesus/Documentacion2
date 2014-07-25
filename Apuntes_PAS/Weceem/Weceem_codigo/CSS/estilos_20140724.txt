@@ -1,0 +1,575 @@
+Antes de comenzar a encoger las líneas del menú.
+
+.dijitTitlePaneTitle {
+  //background-color:  #efefef;;
+  //background-image: url("../images/standardGradient.png");
+  background-repeat: repeat-x;
+  border-bottom: 0.5px solid #b5bcc7;
+  min-height: 17px;
+  //background: url("../images/icons/shadow.jpg") repeat-x scroll center bottom #FFFFFF;
+  cursor: pointer;
+  padding: 3px 10px;
+  vertical-align: middle;
+  background: #ffffff;
+   padding-right: 18px;
+  
+  border-left: 12px solid #fff;
+   border-right: 12px solid #fff;
+}
+
+.dijitTitlePaneContentOuterSelected {
+  background: #ffffff;
+  //border: 1px solid #b5bcc7;
+  //border-top: none;
+  //padding: 10px;
+}
+
+.dijitTitlePaneTitleSelected {
+  background-color: #fcedd6 !important;
+  background-image: url("../images/standardGradient.png");
+  background-color: #ffff66 !important;
+  background-repeat: repeat-x;
+  //border: 1px solid #b5bcc7;
+  //border-top: 0.5px solid #b5bcc7;
+  border-bottom: 0.5px solid #b5bcc7;
+  min-height: 17px;
+  background: url("../images/icons/shadowOrange.jpg") background: url("../images/icons/shadowOrange.jpg") repeat-x scroll center bottom #FFFFFF;
+  cursor: pointer;
+  padding: 3px 10px;
+  vertical-align: middle;
+   
+  background-color: #FFf !important;
+    
+
+  border-right: 8px solid #41b7d8 !important;
+  padding-right: 0px  !important;
+  
+
+}
+
+.selected
+{
+  background-color: #D7EFF7;!important;
+
+}
+
+i.selected a
+{
+  background-color: red !important;
+}
+
+#menuNav li:hover
+{
+  background-color: #D7EFF7;
+}
+
+li.bulletGreen
+{
+  background-image: url(../images/icons/bullet-green.png);
+  background-repeat: no-repeat;
+  background-position: inherit;
+  padding: 3px 0 0px 20px;
+  margin: .4em 0;  
+}
+
+li.bulletOrange
+{
+  background-image: url(../images/icons/bullet-orange.png);
+  background-repeat: no-repeat;
+  background-position: inherit;
+  padding: 3px 0 0px 20px;
+  margin: .4em 0;  
+}
+
+li.bulletVioleta
+{
+  background-image: url(../images/icons/bullet-violeta.png);
+  background-repeat: no-repeat;
+  background-position: inherit;
+  padding: 3px 0 0px 20px;
+  margin: .4em 0;  
+}
+
+#pageBody {
+  margin-top: 3.8em;
+}
+
+/* dojo.css */
+fieldset, img {
+    border: 0 none;
+}
+/* Classes del MenÃº esquerre, dojo.TitlePane */
+#menuNav {
+  position:absolute;
+  margin-top: 120px;
+    margin-left: 15px;      
+    /* hack para IE */
+    /* margin-left: 0%\9; */    
+    width:17.2%;   
+    min-width: 170px;
+}
+.dijitTitlePane {
+    display: block;
+    overflow: hidden;
+  
+}
+.dijitTitlePane div.dijitTitlePaneTitle:hover {
+  background: #abd6ff;
+  border-color: #759dc0;
+  background-image: url("../images/standardGradient.png");
+  background-repeat: repeat-x;
+  //background-color: #FF6 !important;
+  background-color: #FFf !important;
+    
+  border-right: 8px solid #41b7d8 !important;
+  padding-right: 10px  !important;
+}
+.dijitTitlePane div.dijitTitlePaneTitle:active {
+  background-color: #7dbdfa;
+  border-color: #759dc0;
+  background-image: url("../images/standardGradient.png");
+  background-repeat: repeat-x;
+}
+ .dijitTitlePane .dijitArrowNodeInner {
+    display: none;
+}
+
+.dijitTitlePaneTextNode {
+  margin-right: 4px;
+  color: red!important;
+ /* vertical-align: text-top; */
+}
+
+.dijitTitlePaneContentOuter {
+  background: #ffffff;
+  border: 1px solid #b5bcc7;
+  border-top: none;
+  padding: 10px;
+  display:none;
+}
+
+
+/* Fem Override del css del menu de la esquerra de dojo */
+#menuNav .dijitArrowNode
+{
+  background-image: url(../images/icons/fletxa-avall.png) !important;
+  background-position: 0 center;
+  height: 14px;
+  width: 16px;  
+  float: left;
+  margin-right: 4px;  
+}
+
+/* Classes dels ChackBox, dojo.CheckBox */
+.dijitCheckBox {
+  background-image: url("../images/checkboxRadioButtonStates.png");
+  background-repeat: no-repeat;
+  width: 15px;
+  height: 15px;
+  margin: 0 2px 0 0;
+  padding: 0;
+  display: inline-block;
+  vertical-align: bottom;
+}
+.dijitCheckBox {
+  background-position: -15px;
+}
+.dijitCheckBoxChecked {
+  background-position: 0;
+}
+.dijitCheckBoxDisabled {
+  background-position: -75px;
+}
+.dijitCheckBoxCheckedDisabled {
+  background-position: -60px;
+}
+.dijitCheckBoxHover {
+  background-position: -45px;
+}
+.dijitCheckBoxCheckedHover {
+  background-position: -30px;
+}
+
+
+/* Menu d'iconos de la esquerra */
+.iconList
+{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+li.clock
+{
+  background-image: url(../images/icons/clock-icon.png);
+  background-repeat: no-repeat;
+  background-position: 0 50%;
+  padding: 3px 0 3px 20px;
+  margin: .4em 0;
+}
+li.arrow
+{
+  background-image: url(../images/icons/clock-icon.png);
+  background-repeat: no-repeat;
+  background-position: 0 50%;
+  padding: 3px 0 3px 20px;
+  margin: .4em 0;  
+}
+
+
+ol li, ul li {
+    font-size: 1em;
+    line-height: 1.5em;
+    margin: 0;
+}
+
+.leftNav
+{
+  left:7px;
+}
+
+.logout
+{
+  margin-top:-12px;
+
+}
+
+.ajuda
+{
+  margin-top:10px;
+}
+
+.homePagePanel * {
+    margin:0px;
+}
+.homePagePanel .panelBody ul {
+    list-style-type:none;
+    margin-bottom:10px;
+}
+.homePagePanel .panelBody h1 {
+    text-transform:uppercase;
+    font-size:1.1em;
+    margin-bottom:10px;
+}
+.homePagePanel .panelBody {
+    background: url(../images/leftnav_midstretch.png) repeat-y top;
+    margin:0px;
+    padding:15px;
+}
+.homePagePanel .panelBtm {
+    background: url(../images/leftnav_btm.png) no-repeat top;
+    height:20px;
+    margin:0px;
+}
+
+.homePagePanel .panelTop {
+    background: url(../images/leftnav_top.png) no-repeat top;
+    height:11px;
+    margin:0px;
+}
+
+
+#pageBody {
+    margin-left:280px;
+    margin-right:20px;
+}
+.cercaNom
+{
+  margin-left:5px;
+  text-transform:uppercase;  
+}
+
+.cercaLloc
+{
+  margin-left:5px;
+  text-transform:uppercase;  
+}
+
+.cercaCognom
+{
+  margin-left:5px;
+  text-transform:uppercase;
+}
+
+.cercaDates
+{
+  height: 30px;
+  vertical-align: text-top;
+  width:99%
+}
+
+.bandaSuperior {
+  background-image: url(../images/bandaSupEsqDre.png);
+  background-color: #1BA0DF;           /* #007bc0; UPC_original */
+  height: 6px;
+  background-position: 0 -31px;        
+
+    margin-left: 1%;    
+    width: 98%;
+}
+.bandaEsq {
+  background-image: url(../images/bandaSupEsqDre.png);  
+  height: 6px;
+  float: left;  
+  width: 12px;
+  background-position: 0 -78px;      
+}
+.bandaDre {
+  background-image: url(../images/bandaSupEsqDre.png);  
+  height: 6px;
+  padding-right: 12px;
+  float: right;
+  background-position: right -78px;    
+  background-repeat: no-repeat;
+}
+
+.bandaInferior {  
+    background-color: #d9d9d9;  
+    height: 4px;   
+    width: 100%;
+}
+
+/* Menu d'iconos de la esquerra */
+.iconList
+{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li.clock
+{
+  background-image: url(../images/icons/clock-icon.png);
+  background-repeat: no-repeat;
+  background-position: 0 50%;
+  padding: 3px 0 3px 20px;
+  margin: .4em 0;
+}
+
+
+
+li.arrow
+{
+  background-image: url(../images/icons/clock-icon.png);
+  background-repeat: no-repeat;
+  background-position: 0 50%;
+  padding: 3px 2px 3px 20px;
+  margin: .4em 0;  
+}
+
+li.bullet
+{
+  background-image: url(../images/icons/bullet-blue.png);
+  background-repeat: no-repeat;
+  background-position: inherit;
+  padding: 3px 0 0px 20px;
+  margin: .4em 0;  
+}
+
+
+.cercaDates
+{
+  height: 30px;
+  vertical-align: text-top;
+  width:99%
+}
+
+.bandaSuperior {
+    background-color: #1BA0DF;
+/*    
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#047DCD', endColorstr='#1EADEA'); // for IE
+  background: -webkit-gradient(linear, left top, left bottom, from(#047DCD), to(#1EADEA)); // for webkit browsers    
+    background-image: -moz-linear-gradient(center bottom , #047DCD 0%, #1EADEA 100%);
+    border-radius: 0 0 7px 7px;     
+*/
+  height: 6px;
+    margin-left: 1%;    
+    width: 98%;
+}
+#peu {  
+  position: static; /* relative (peu per sobre del Menú esquerre) */
+    margin-left: 1%;  
+    width: 98%;    
+    height: 35px;
+    
+}
+
+.bandaInferior {  
+    background-color: #d9d9d9;  
+    height: 4px;   
+    width: 100%;
+}
+
+a.peu:link {
+  color:#007DCC;
+  text-decoration:none;
+}
+a.peu:visited {
+  color:#33BDEE;
+}
+a.peu:hover {
+  text-decoration:underline;
+}
+#column1 {
+    float:left;
+    width: 33%;
+  }
+
+#column2 {
+    float:left;
+    width: 33%;
+  }
+
+#column3 {
+    float:left;
+    width: 33%;
+  }
+
+.m_filtro {
+    width: 100%;
+}
+/*.m_filtro .icono {
+    border: 4px solid #dcdcdc;
+    float: left;
+    width: 60px;
+}
+.m_filtro:hover .icono {
+    border-color: #af1657;
+}
+.m_filtro .icono img {
+    opacity: 0.5;
+}
+.m_filtro:hover .icono img {
+    opacity: 1;
+}*/
+
+.m_filtro .columna2_p {
+}
+.m_filtro .columna2_p .icono {
+    border: 4px solid #dcdcdc;
+    float: left;
+    width: 60px;
+}
+.m_filtro .columna2_p:hover .icono {
+    border-color: #007bc0;
+}
+.m_filtro .columna2_p .icono img {
+    opacity: 0.5;
+}
+.m_filtro .columna2_p:hover .icono img {
+    opacity: 1;
+}
+.m_filtro .columna2_p .ficha {
+    float: right;
+    height: 110px;
+    width: 78%;
+}
+.m_filtro .columna2_p .ficha p {
+    border-bottom: 4px solid #dcdcdc;
+    font-size: 15px;
+    font-weight: normal;
+    padding-bottom: 3px;
+}
+
+.m_filtro .columna2_p .ficha .desc {
+    border-bottom: medium none;
+    font-size: 10px;
+    font-weight: normal;
+    padding-top: 3px;
+}
+.m_filtro .columna2_p:hover .ficha p {
+    border-bottom-color: #007bc0;
+}
+.m_filtro .columna2_p .ficha a {
+    color: #007bc0;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.m_filtro .columna2_p .ficha a:hover {
+    color: #007bc0;
+    text-decoration: underline;
+}
+
+
+.m_filtro .columna2_p .icono_taronja {
+    border: 4px solid #dcdcdc;
+    float: left;
+    width: 60px;
+}
+.m_filtro .columna2_p:hover .icono_taronja {
+    border-color: #e47d03;
+}
+.m_filtro .columna2_p .icono_taronja img {
+    opacity: 0.5;
+}
+.m_filtro .columna2_p:hover .icono_taronja img {
+    opacity: 1;
+}
+.m_filtro .columna2_p .ficha_taronja {
+    float: right;
+    height: 110px;
+    width: 78%;
+}
+.m_filtro .columna2_p .ficha_taronja p {
+    border-bottom: 4px solid #dcdcdc;
+    font-size: 15px;
+    font-weight: normal;
+    padding-bottom: 3px;
+}
+
+.m_filtro .columna2_p .ficha_taronja .desc {
+    border-bottom: medium none;
+    font-size: 10px;
+    font-weight: normal;
+    padding-top: 3px;
+}
+.m_filtro .columna2_p:hover .ficha_taronja p {
+    border-bottom-color: #e47d03;
+}
+.m_filtro .columna2_p .ficha_taronja a {
+    color: #e47d03;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.m_filtro .columna2_p .ficha_taronja a:hover {
+    color: #e47d03;
+    text-decoration: underline;
+}
+
+
+
+
+
+
+.m_filtro .columna2_p .seccion {
+    float: right;
+    /*height: 110px;*/
+    width: 100%;
+}
+.m_filtro .columna2_p .seccion p {
+    border-bottom: 4px solid #dcdcdc;
+    font-size: 15px;
+    font-weight: normal;
+    padding-bottom: 3px;
+}
+
+.m_filtro .columna2_p .seccion .desc {
+    border-bottom: medium none;
+    font-size: 10px;
+    font-weight: normal;
+    padding-top: 3px;
+}
+.m_filtro .columna2_p:hover .seccion p {
+    border-bottom-color: #007bc0;
+}
+.m_filtro .columna2_p .seccion a {
+    color: #007bc0;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.m_filtro .columna2_p .seccion a:hover {
+    color: #007bc0;
+    text-decoration: underline;
+}
