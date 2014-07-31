@@ -1,0 +1,8 @@
+Arreglo para que funcione correctamente sin error en los tags de cierre:
+<p>La cerca de &quot;<b>${params.query.encodeAsHTML()}</b>&quot; ha trobat ${searchResults.total} resultats:</p>
+<g:each in="${searchResults.results}" var="r">
+	<wcm:ifUserCanView node="${r}">
+		<wcm:link path="${r.absoluteURI}">${r.title.encodeAsHTML()}</wcm:link> (Space: ${r.space.name.encodeAsHTML()})<br />
+
+	</wcm:ifUserCanView>
+</g:each>

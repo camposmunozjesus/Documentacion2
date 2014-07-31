@@ -1,0 +1,11 @@
+Arreglo para que funcione correctamente:
+<p>Your search for &quot;${params.query.encodeAsHTML()}&quot; returned ${searchResults.total} results:</p>
+<g:each in="${searchResults.results}" var="r">
+<wcm:ifUserCanView node="${r}">
+
+<wcm:link path="${r.absoluteURI}">${r.title.encodeAsHTML()}</wcm:link>
+  (Space: ${r.space.name.encodeAsHTML()})<br />
+  <!-- <wcm:summarize encodeAs="HTML">${r.contentAsText}</wcm:summarize>
+  </wcm:ifUserCanView>
+  --------------------<br> -->
+</g:each>

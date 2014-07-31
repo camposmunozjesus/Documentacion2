@@ -1,0 +1,58 @@
+UPCTagLib
+
+package edu.upc.tags
+import org.weceem.content.RenderEngine
+
+class UpcTagLib {
+
+	static ATTR_RESULTSPATH = "resultsPath"
+	
+	static namespace = "upc"
+	
+	def search = { attrs ->
+		//REV-005- Poder cambiar el nombre y el estilo de la herramienta Search.
+		def buttonName = attrs['caption'] ?:'Cerca'
+		def spaceAlias = request[RenderEngine.REQUEST_ATTRIBUTE_SPACE].aliasURI
+		def resPath = attrs.remove(ATTR_RESULTSPATH)
+		def p = resPath ? [resultsPath:spaceAlias+'/'+resPath] : [:]
+		// Search the current space only
+		p.uri = spaceAlias+'/'
+		def base = attrs.remove('baseURI')
+		if (base) {
+			p.uri += base
+		}
+		// Copy the rest of attribs over
+		p.putAll(attrs)
+		
+		out << g.form(controller:'wcmSearch', action:'search', params:p) {
+			out << upc.searchField(attrs)
+			//REV-005- Poder cambiar el nombre y el estilo de la herramienta Search.
+			out << g.submitButton(name:'submit', class:'customSearchButton', value:buttonName)
+		}
+	}
+	
+	def searchField = { attrs ->
+		//REV-006- Poder incluir un placeHolder y determinar su comportamiento.
+		/* PlaceHolder: texto que aparece en el textbox del Search. Se utiliza el atributo placeHolder="Texto a mostrar ..."
+		 * Ej: <upc:search placeHolder="Buscar ..." types="org.weceem.html.WcmHTMLContent,org.weceem.blog.WcmBlogEntry,org.weceem.content.WcmComment"></upc:search>
+		 * El texto puede desaparecer al hacer click en el textbox (no indicando el atributo erasePlaceHolder o 
+		 * erasePlaceHolder="yes"). erasePlaceHolder="no" hará que el placeHolder desaparezca cuando se escriba en el 
+		 * textbox.
+		 * Ej: <upc:search placeHolder="Buscar ..." erasePlaceHolder="NO" types="org.weceem.html.WcmHTMLContent,org.weceem.blog.WcmBlogEntry,org.weceem.content.WcmComment"></upc:search>
+		 */
+		def initialText = attrs['placeHolder'] ?:''
+		
+		def placeHolderEraseOnClick
+		if(!attrs['erasePlaceHolder'] || attrs['erasePlaceHolder'].toString().toLowerCase().equals("yes") ){
+			placeHolderEraseOnClick = "this.placeholder = ''"
+		}
+		else{
+			placeHolderEraseOnClick = ""
+		}
+		 
+		//REV-005- Poder cambiar el nombre y el estilo de la herramienta Search.
+		out << g.textField(name:'query', 'class':'customSearchField', placeholder:initialText, onfocus:placeHolderEraseOnClick)
+	}
+	
+}
+
