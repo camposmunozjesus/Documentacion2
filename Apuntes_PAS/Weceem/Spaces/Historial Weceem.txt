@@ -75,7 +75,11 @@ PAS_20140722_merlot: Último space antes de comenzar a cambiar el color de fondo.
 PAS_20140722_1400_merlot: Nuevo fondo con colores distintos. A partir de aquí se cambiará el fondo de la pantalla, cambiando ancho y distribución de la misma.
 PAS_20140724_1240_merlot: Se han eliminado los menús desplegables y el cuerpo principal comienza a estar "bien" hecho, con div's que separan el footer del contenido etc. Los menús ya no se mueven al seleccionar algo.
 PAS_20140725_1355_merlot: El anterior pero actualizado.
-
+PAS_20140729_merlot: Se ven correctamente todos los iconos en IExplorer y Firefox. En IE7, IE8 el botón de Cercar no queda muy alineado.
+					 Versiones del día anterior a ésta son copias de seguridad.
+PAS_20140731_0915_merlot: Tiene una plantilla para crear contenidos con desplegables en un HTML. El elemento de buscar se agranda al ganar el foco. 
+						  Hay que solucionar que al hacer click desaparece el "Cercar..." pero si no se escribe nada al perder el foco no vuelve a aparecer.
+					 
 
 *****************************************************************************************************************************************************
 ------------------------------
