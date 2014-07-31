@@ -1,0 +1,427 @@
+.dijitTitlePane div.dijitTitlePaneTitle:hover {
+  
+  background: #abd6ff;
+  
+  /* border-color: #759dc0;
+   */
+   
+  background-color: #FFf !important;
+  
+    
+  border-right: 8px solid #41b7d8 !important;
+  
+  /* padding-right: 10px  !important; */
+    
+  padding-left: 15px;
+      
+  padding-top: 3px;
+  
+  padding-bottom: 3px;    
+  
+  background: url("../images/icons/rectangularBullet_4.png") -1px 7px no-repeat;
+  
+  background-origin: padding-box ;
+  
+  /* border-right: 22px solid #fff !important;
+   */
+
+}
+
+.dijitTitlePaneTitle {
+  
+  /* background-color:  #efefef; */
+  
+  
+  background-repeat: repeat-x;
+  
+  border-top: 0.5px solid #b5bcc7;
+  
+  min-height: 17px;
+  
+  /* background: url("../images/icons/shadow.jpg") repeat-x scroll center bottom #FFFFFF; */
+  
+  cursor: pointer;
+  
+  
+  vertical-align: middle;
+  
+  background: #ffffff;
+    
+  padding-left: 15px;
+      
+  padding-top: 3px;
+  
+  padding-bottom: 3px;
+  
+  padding-right: 0px  !important;
+    
+  border-left: 22px solid #fff;
+    
+  border-right: 16px solid #fff !important;
+  
+  background: url("../images/icons/rectangularBullet_4.png") -1px 7px no-repeat;
+  
+  background-origin: padding-box ;
+  
+
+}
+
+
+
+
+.dijitTitlePaneTitleSelected {
+  
+  background-color: #fcedd6 !important;
+  
+
+  
+  background-color: #ffff66 !important;
+  
+  background-repeat: repeat-x;
+  
+  /* border: 1px solid #b5bcc7; */
+  
+  /* border-top: 0.5px solid #b5bcc7; */
+  
+  border-top: 0.5px solid #b5bcc7;
+  
+  min-height: 17px;
+  
+    
+  cursor: pointer;
+  
+  padding: 3px 10px;
+  
+  vertical-align: middle;
+  
+  background-color: #FFf !important;
+     
+  border-right: 8px solid #41b7d8 !important;
+  
+
+  
+  border-left: 22px solid #fff !important;
+  
+    
+        
+  padding-left: 15px;
+      
+  padding-top: 3px;
+  
+  padding-bottom: 3px;    
+  
+  background: url("../images/icons/rectangularBullet_4.png") -1px 7px no-repeat;
+  
+  background-origin: padding-box ;
+
+
+}
+
+
+
+.dijitTitlePane div.dijitTitlePaneTitle:active {
+  
+ /* background-color: #7dbdfa;
+  
+  border-color: #759dc0;
+  
+  background-image: url("../images/standardGradient.png");
+  
+  background-repeat: repeat-x;
+   */
+
+}
+
+
+
+.dijitTitlePaneContentOuterSelected {
+  
+  background: #ffffff;
+  
+  /*border: 1px solid #b5bcc7;
+  
+  border-top: none;
+  
+  padding: 10px; */
+  
+
+}
+
+
+
+
+.selected
+{
+  
+  background-color: #D7EFF7;
+  !important;
+  
+
+
+}
+
+
+
+i.selected a
+{
+  
+  background-color: red !important;
+  
+
+}
+
+
+
+/* ************************* */
+#quadreMenu
+{
+  
+  border: 1px solid #b5bcc7;
+  
+
+}
+
+
+
+#barraGradMenu{
+  
+  
+  /* barra de color azul degradado */
+    height: 5px;
+  
+    background: -moz-linear-gradient(#fff, #4fa4d3, #007bbf, #007bbf, #edf6fa);
+   /* For Firefox 3.6 to 15 */
+  
+    
+
+
+}
+
+
+
+.firstTitle{
+  
+  /* border-top: 0.5px solid #b5bcc7;
+   */
+  /* border-top: 4px solid #007bbf;
+     */
+  border-top: 0px solid #fff;
+  
+
+}
+
+
+
+
+#Menu a{
+  
+  color: #007bbf;
+   
+
+}
+
+
+
+#Menu a:hover {
+  
+    text-decoration: none;
+  
+
+}
+
+
+
+#item a:hover {
+  
+  color: #e95c33;
+  
+  text-decoration: none;
+  
+  
+
+}
+
+
+
+#item a {
+  
+  color: #e95c33;
+  
+  text-decoration: none;
+  
+  
+
+}
+
+
+
+.boxSelected{
+  
+  color: green !important;
+  
+  border-right: 8px solid #41b7d8 !important;
+  
+  padding-right: 10px  !important;
+  
+  
+
+}
+
+
+
+.box{
+  
+  padding-left: 12px;
+  
+  padding-right: 12px;
+  
+  padding-bottom: 12px;
+  
+  padding-top: 12px;
+  
+  /* border-top: 1px solid #b5bcc7 ; */
+  
+  border-bottom: 0.5px solid #b5bcc7 ;
+  
+  /* border-left: 1px solid #b5bcc7 ; */
+  
+  /* border-right: 1px solid #b5bcc7 ; */
+  
+  background-color: #f5f5f5;
+  
+  /* min-height: 22px; */
+  
+  
+
+}
+
+img.link_blank {
+    display: inline !important;
+    float: none !important;
+    height: 10px !important;
+    margin-top: 0 !important;
+    width: 10px !important;
+    font-size: 90%;
+    /* margin-bottom: 0.15em;  */
+    position: relative;
+    /* padding: 0px 10px 0px 0px; */
+}
+:-moz-any-link img, img[usemap], object[usemap] {
+    border: 0 none;
+}
+
+
+
+
+
+
+.customSearchField:hover{
+  
+  /* background-color: #D7EFF7; */
+  
+
+}
+
+
+.customSearchField{
+  
+  margin-right: 3px;
+  
+  height: 17px;
+  
+  min-width: 200px;
+  
+
+}
+
+
+
+.customSearchButton{
+  
+  margin-top: -1px;
+  
+  background-color: #efefef;
+  
+  background-image: url("../images/standardGradient.png");
+  
+  background-repeat: repeat-x;
+  
+  border: 1px solid #b5bcc7;
+  
+  height: 23px;
+  
+  background: url("../images/icons/shadow.jpg") repeat-x scroll center bottom #FFFFFF;
+  
+  cursor: pointer;
+  
+  padding: 2px 10px;
+  
+  vertical-align: middle;
+  
+
+}
+
+
+
+.buscador{  
+  padding-top: 12px;
+  padding-right: 13px;
+}
+
+
+
+h1.firstHeading {
+  
+  border-color: #D9D9D9 !important;
+  
+  width: 100% !important;
+  
+  color: #4D4D4D !important;
+  
+  border-bottom: 5px solid #D9D9D9;
+  
+  font-size: 2.4em !important;
+  
+  font-weight: normal !important;
+  
+  position: relative !important;
+  
+  margin-right:152px !important;
+  
+  margin-top: 10px !important;
+  
+
+
+}
+
+
+ 
+h1.firstHeading span{
+  
+  background: url("../images/gradient.png") repeat-x !important;
+  
+  position: absolute !important;
+  
+  display: block !important;
+  
+  width: 100% !important;
+  
+  height: 30px !important;
+  
+
+}
+
+
+
+
+
+/* Estilos de formateo: tamanyo div's, etc ... */
+#mainContent
+{
+  
+  height:1000px;
+  
+  width:100%;
+  
+
+}
