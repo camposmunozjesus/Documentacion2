@@ -1,0 +1,21 @@
+MODIFICACIONES EN ELEMENTOS DEL PLUGIN/APLICACIÓN - WECEEM
+==========================================================
+Se muestra cómo cambiar un comportamiento, por ejemplo, cómo modificar el lugar de la página de búsqueda.
+
+---------------------------------------
+MODIFICACIONES EN LA PÁGINA DE BÚSQUEDA
+---------------------------------------
+Para modificar la página de búsqueda cargada, es decir, despúes de apretar al "Search" se carga la página "/view/search-results". Pues bien para modifcar
+el lugar de la ubicación o la vista HTML a cargar hay que ir al
+Controlador: WcmSearchController
+DEF: search
+y modificar la línea 63 (aprox): def uri = params.resultsPath ?: (data.space.aliasURI ?: '')+'/view/search-results'
+
+
+*****************************************************************************************************************************************************
+------------------------------
+Creación:	20-07-2014
+
+Jesús Campos Muñoz
+jesus.campos@upc.edu
+------------------------------
