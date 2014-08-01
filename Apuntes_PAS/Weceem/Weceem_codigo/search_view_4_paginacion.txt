@@ -1,6 +1,8 @@
 Si la búsqueda encontrada es la propia página de resultados, no la mostrará ni la contabilizará. Mejora sensible de todas las versiones anteriores.
 Si hay cero resultados muestra que no se han encontrado resultados.
-Para que la cantidad  de elemento a mostrar funcione correctmanete max debe coincidir con static DEFAULT_RESULTS_PER_PAGE de WcmSearchController.
+//ESTO NO: Para que la cantidad  de elemento a mostrar funcione correctmanete max debe coincidir con static DEFAULT_RESULTS_PER_PAGE de WcmSearchController.
+Simplemente, en el caso de que no se quieran obtener los resultados de 10 en 10, hay que pasar el max en el widget wcm:search como se indica:
+ <wcm:search max="5" .... ></wcm:search> 
 Tiene paginación.
 <div class="paginaBuscador" >
   PARAMS: ${params}<br>
