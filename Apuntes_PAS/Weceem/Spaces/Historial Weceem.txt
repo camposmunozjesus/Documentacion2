@@ -79,7 +79,8 @@ PAS_20140729_merlot: Se ven correctamente todos los iconos en IExplorer y Firefo
 					 Versiones del día anterior a ésta son copias de seguridad.
 PAS_20140731_0915_merlot: Tiene una plantilla para crear contenidos con desplegables en un HTML. El elemento de buscar se agranda al ganar el foco. 
 						  Hay que solucionar que al hacer click desaparece el "Cercar..." pero si no se escribe nada al perder el foco no vuelve a aparecer.
-					 
+PAS_20140801_merlot: Se comienzan a cambiar los estilos de la plantilla de desplegables.
+
 
 *****************************************************************************************************************************************************
 ------------------------------
