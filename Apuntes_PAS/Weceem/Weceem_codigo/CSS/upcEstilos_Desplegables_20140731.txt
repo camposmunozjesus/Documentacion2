@@ -1,0 +1,124 @@
+/* DESPLEGABLES: Primera versión. Colores grises con el más en color gris/azul */
+/* Título previo a un grupo de desplegables */
+.preDsplTitol{
+  font: 1.7em verdana, arial, helvetica, sans-serif;
+  font-weight: bold;
+  color: #798c91;
+  margin-top: 25px;
+  margin-bottom: 5px;
+}
+
+/* Barra de título */
+.dsplTitol{
+  
+  border: 1px solid #b2b2b2;
+  border-radius: 3px;
+  margin-top: 2px;
+  margin-right: 10px;
+  
+  padding-left: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  
+  color: #007bc0;
+  
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  font: 1.1em verdana, arial, helvetica, sans-serif;
+  
+  padding-right: 4px;
+  
+  background-image: url('../images/icons/dsplContentGrey.png');
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: right center;
+  background-clip: border-box;
+  background-size: auto auto;
+  background-origin: content-box;
+  
+  
+}
+
+.selectedTitol{
+  border-top: 1px solid #b2b2b2;
+  border-bottom: 0px solid #b2b2b2;
+  border-left: 1px solid #b2b2b2;
+  border-right: 1px solid #b2b2b2;
+  
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  margin-top: 2px;
+  margin-right: 10px;
+  
+  padding-left: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  
+  color: #007bc0;
+  
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  font: 1.1em verdana, arial, helvetica, sans-serif;
+  
+  padding-right: 4px;
+  
+  background-image: url('../images/icons/dsplContentGrey.png');
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: right center;
+  background-clip: border-box;
+  background-size: auto auto;
+  background-origin: content-box;
+}
+
+
+.dsplTitol:hover{
+  background: none repeat scroll 0% 0% #F2F8FB;
+  color: #005A8D;
+  cursor: pointer;
+  
+  padding-right: 4px;
+  
+  background-image: url('../images/icons/dsplContentBlue.png');
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: right center;
+  background-clip: border-box;
+  background-size: auto auto;
+  background-origin: content-box;
+
+}
+
+.selectedTitol:hover{
+  background: none repeat scroll 0% 0% #F2F8FB;
+  color: #005A8D;
+  cursor: pointer;
+  
+  padding-right: 4px;
+  
+  background-image: url('../images/icons/dsplContentBlue.png');
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: right center;
+  background-clip: border-box;
+  background-size: auto auto;
+  background-origin: content-box;
+  
+}
+
+/* Contenido: lo que se muestra al desplegar */
+.dsplContent{
+  margin-right: 10px;
+  border: 1px solid #b2b2b2;
+  /* display: none; */
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  text-align: justify;
+  font: 1.1em verdana, arial, helvetica, sans-serif;
+}
+/* *** */

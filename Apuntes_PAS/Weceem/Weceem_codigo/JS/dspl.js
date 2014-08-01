@@ -128,3 +128,43 @@ $(document).ready(function(){
   });
 
 });
+
+
+**************************************************************************************
+Versión muy correcta. Necesita display:none en el css EstilosUPC.css .dsplContent: Aparecen todos los desplegables ocultos. Se abre únicamente el seleccionado y cierra el que esté abierto, si es que lo hay.
+$(document).ready(function(){
+  
+  //Variable que guarda el último título sobre el que se hizo click para devolverle su forma original.
+  var titolAnterior;
+  
+  $('.dsplTitol').click(function(event) {
+    if(titolAnterior){
+      document.getElementById(titolAnterior).className = "dsplTitol";
+    }
+       
+    //alert($(this).attr("id"));
+    var id = $(this).attr("id");
+    
+    //Mostrar elemento: con toggle.
+    //$("#dsplContent_"+id).toggle("slow");
+    
+    //Mostrar elemento: hace un toggle con slideUp y slideDown.
+    if ($("#dsplContent_"+id).is(':visible')){
+      $("#dsplContent_"+id).slideUp("fast");
+      document.getElementById(id).className = "dsplTitol";
+    }
+    else{
+      $("#dsplContent_"+id).slideDown("fast");
+      document.getElementById(id).className = "selectedTitol";
+    }    
+
+    //Oculta el resto de elementos
+    //Las tres líneas siguientes hacen que se cierren los NO activos
+    document.getElementById("dsplContent_"+id).className = "";    
+    $(".dsplContent").slideUp("fast");
+    document.getElementById("dsplContent_"+id).className = "dsplContent";
+    
+    titolAnterior=id;
+  });
+
+});
