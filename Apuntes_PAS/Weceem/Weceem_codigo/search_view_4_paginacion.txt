@@ -1,0 +1,106 @@
+Si la búsqueda encontrada es la propia página de resultados, no la mostrará ni la contabilizará. Mejora sensible de todas las versiones anteriores.
+Si hay cero resultados muestra que no se han encontrado resultados.
+Para que la cantidad  de elemento a mostrar funcione correctmanete max debe coincidir con static DEFAULT_RESULTS_PER_PAGE de WcmSearchController.
+Tiene paginación.
+<div class="paginaBuscador" >
+  PARAMS: ${params}<br>
+  <g:each in="${searchResults.results}" var="r">
+    <g:if test="${r.aliasURI.equals('search-results')}">
+      <g:set var="total" value="${searchResults.total-1}" />        
+    </g:if>
+    <g:else>
+      <g:set var="total" value="${searchResults.total}" />                
+    </g:else>
+  </g:each>
+ 
+  <p>La cerca de &quot;<b>${params.query.encodeAsHTML()}</b>&quot;
+    <g:if test="${total}">
+      ha trobat ${total}
+      <g:if test="${total==1}">
+        resultat:
+      </g:if>
+      <g:else>
+        resultats:           
+      </g:else>
+    </g:if>
+    <g:else>
+      no ha trobat resultats
+    </g:else>   
+  </p>
+  
+  <g:each in="${searchResults.results}" var="r">
+    <wcm:ifUserCanView node="${r}">
+      <g:if test="${!r.aliasURI.equals('search-results')}">
+        <div class="resultadosBuscador">
+          <div class="tituloBuscador">
+            <wcm:link path="${r.absoluteURI}">${r.title.encodeAsHTML()}</wcm:link> <br/>
+          </div>
+          <div class="urlBuscador">
+            https://merlot.upc.edu/${grails.util.Metadata.current.'app.name'}/${space?.name}/${r.absoluteURI}
+          </div>
+          <div class="descripcionBuscador">
+            ${r.description} --- ${r.aliasURI}
+          </div>
+        </div>
+        <div class="separadorBuscador"></div>
+      </g:if>
+    </wcm:ifUserCanView>
+  </g:each>
+  
+  <div class="paginateButtons ">
+    <g:paginate params="${params}" max="5" next="Següent" prev="Anterior"
+    maxsteps="0" controller="wcmSearch"
+    action="search" total="${total}" />
+  </div>
+</div>
+
+Necesita que se modifique:
+Añadir en WcmContentRepositoryService def SearchForPublicContent (y seguramente en tags etc si es que se usan dichas opciones)
+	println "1: " + sdf.format(new Date())
+	//REV - 000
+	//Conseguir el total de elementos:
+	def totalResults = WcmContent.search([reload:true, offset:0, max:100]){
+		println "QUERY: "+query
+		must(queryString(query))
+
+		// @todo apply baseURI
+
+		// Restrict to public
+		must(term('status_publicContent', true))
+
+		// Restrict to space
+		must {
+			listContentClassNames( {
+				def hasSCProp = it.metaClass.hasProperty(proxyHandler.unwrapIfProxy(it).class, 'standaloneContent')
+				!hasSCProp || it.standaloneContent
+			} ).each { n ->
+				def t = '$/'+n.replaceAll('\\.', '_')+'/space/id'
+				term(t, space.id)
+			}
+		}
+	}
+	println "2: " + sdf.format(new Date())
+		
+Para contabilizar los resultador y cambiar
+	// Filter by type if required
+	if (args.types) {
+		results.results = filterToTypes(results.results, args.types)
+		results.total = results.results.size()
+	}
+
+Por
+	// Filter by type if required
+	if (args.types) {
+		results.results = filterToTypes(results.results, args.types)
+		results.total = totalResults.results.size()
+		println "WCMCONTENTRPOSITORYSERVICE"+results.total
+	}
+
+
+*****************************************************************************************************************************************************
+------------------------------
+Creación:	01-08-2014
+
+Jesús Campos Muñoz
+jesus.campos@upc.edu
+------------------------------

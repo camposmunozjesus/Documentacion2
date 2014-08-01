@@ -1,4 +1,5 @@
-Si la búsqueda encontrada es la propia página de resultados, no la mostrará ni la contabilizará. Mejroa sensible de todas las versiones anteriores.
+Si la búsqueda encontrada es la propia página de resultados, no la mostrará ni la contabilizará. Mejora sensible de todas las versiones anteriores.
+Si hay cero resultados mmuestra que no se han encontrado resultados.
 <div class="paginaBuscador" >
   <g:each in="${searchResults.results}" var="r">
     <g:if test="${r.aliasURI.equals('search-results')}">
@@ -8,15 +9,22 @@ Si la búsqueda encontrada es la propia página de resultados, no la mostrará n
       <g:set var="total" value="${searchResults.total}" />                
     </g:else>
   </g:each>
-  
-  <p>La cerca de &quot;<b>${params.query.encodeAsHTML()}</b>&quot; ha trobat ${total}
-    <g:if test="${total==1}">
-      resultat:</p>
+ 
+  <p>La cerca de &quot;<b>${params.query.encodeAsHTML()}</b>&quot;
+    <g:if test="${total}">
+      ha trobat ${total}
+      <g:if test="${total==1}">
+        resultat:
+      </g:if>
+      <g:else>
+        resultats:            
+      </g:else>
     </g:if>
     <g:else>
-      resultats:</p>            
-    </g:else>    
-
+      no ha trobat resultats
+    </g:else>   
+  </p>
+  
   <g:each in="${searchResults.results}" var="r">
     <wcm:ifUserCanView node="${r}">
       <g:if test="${!r.aliasURI.equals('search-results')}">
@@ -35,6 +43,7 @@ Si la búsqueda encontrada es la propia página de resultados, no la mostrará n
       </g:if>
     </wcm:ifUserCanView>
   </g:each>
+
 </div>
 
 
