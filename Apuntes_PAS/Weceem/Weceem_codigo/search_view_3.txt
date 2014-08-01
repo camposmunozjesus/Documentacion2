@@ -1,0 +1,41 @@
+Si la búsqueda encontrada es la propia página de resultados, no la mostrará ni la contabilizará. Mejroa sensible de todas las versiones anteriores.
+<div class="paginaBuscador" >
+  <g:each in="${searchResults.results}" var="r">
+    <g:if test="${r.aliasURI.equals('search-results')}">
+      <g:set var="total" value="${searchResults.total-1}" />        
+    </g:if>
+    <g:else>
+      <g:set var="total" value="${searchResults.total}" />                
+    </g:else>
+  </g:each>
+  
+  <p>La cerca de &quot;<b>${params.query.encodeAsHTML()}</b>&quot; ha trobat ${total} resultats:</p>
+  <g:each in="${searchResults.results}" var="r">
+    <wcm:ifUserCanView node="${r}">
+      <g:if test="${!r.aliasURI.equals('search-results')}">
+        <div class="resultadosBuscador">
+          <div class="tituloBuscador">
+            <wcm:link path="${r.absoluteURI}">${r.title.encodeAsHTML()}</wcm:link> <br/>
+          </div>
+          <div class="urlBuscador">
+            https://merlot.upc.edu/${grails.util.Metadata.current.'app.name'}/${space?.name}/${r.absoluteURI}
+          </div>
+          <div class="descripcionBuscador">
+            ${r.description} --- ${r.aliasURI}
+          </div>
+        </div>
+        <div class="separadorBuscador"></div>
+      </g:if>
+    </wcm:ifUserCanView>
+  </g:each>
+
+</div>
+
+
+*****************************************************************************************************************************************************
+------------------------------
+Creación:	01-08-2014
+
+Jesús Campos Muñoz
+jesus.campos@upc.edu
+------------------------------
