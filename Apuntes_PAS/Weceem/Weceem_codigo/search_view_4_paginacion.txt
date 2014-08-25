@@ -2,7 +2,7 @@ Si la búsqueda encontrada es la propia página de resultados, no la mostrará n
 Si hay cero resultados muestra que no se han encontrado resultados.
 //ESTO NO: Para que la cantidad  de elemento a mostrar funcione correctmanete max debe coincidir con static DEFAULT_RESULTS_PER_PAGE de WcmSearchController.
 Simplemente, en el caso de que no se quieran obtener los resultados de 10 en 10, hay que pasar el max en el widget wcm:search como se indica:
- <wcm:search max="5" .... ></wcm:search> 
+ <wcm:search max="5" .... ></wcm:search> por lo que en <g:paginate ...> el param max se puede obviar.
 Tiene paginación.
 <div class="paginaBuscador" >
   PARAMS: ${params}<br>
@@ -50,7 +50,7 @@ Tiene paginación.
   </g:each>
   
   <div class="paginateButtons ">
-    <g:paginate params="${params}" max="5" next="Següent" prev="Anterior"
+    <g:paginate params="${params}" max="5" next="Següent" prev="Anterior"  ----->  Aquí max pùede NO usarse
     maxsteps="0" controller="wcmSearch"
     action="search" total="${total}" />
   </div>
@@ -61,7 +61,7 @@ Añadir en WcmContentRepositoryService def SearchForPublicContent (y seguramente
 	println "1: " + sdf.format(new Date())
 	//REV - 000
 	//Conseguir el total de elementos:
-	def totalResults = WcmContent.search([reload:true, offset:0, max:100]){
+	def totalResults = WcmContent.search([reload:true, offset:0, max:100]){ --->Este max=100 implica que como mucho podremos encontrar 100 resultados.
 		println "QUERY: "+query
 		must(queryString(query))
 
@@ -99,6 +99,24 @@ Por
 	}
 
 
+Dónde verlo funcionando:
+Weceem localhost space Buscador.
+
+---------------------------------------
+MODIFICACIONES EN LA PÁGINA DE BÚSQUEDA
+---------------------------------------
+Para modificar la página de búsqueda cargada, es decir, despúes de apretar al "Search" se carga la página "/view/search-results". Pues bien para modifcar
+el lugar de la ubicación o la vista HTML a cargar hay que ir al
+Controlador: WcmSearchController
+DEF: search
+y modificar la línea 63 (aprox): def uri = params.resultsPath ?: (data.space.aliasURI ?: '')+'/view/search-results'
+
+Workaround:
+1) Cambiar la dirección en el controlador y ver cómo falla.
+2) Crear la nueva página en la nueva ubicación y ejecutar para ver que funciona.
+3) Eliminar la página original (si es que se desea
+
+	
 *****************************************************************************************************************************************************
 ------------------------------
 Creación:	01-08-2014
