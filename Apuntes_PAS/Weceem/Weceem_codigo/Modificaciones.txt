@@ -11,7 +11,7 @@ Controlador: WcmSearchController
 DEF: search
 y modificar la línea 63 (aprox): def uri = params.resultsPath ?: (data.space.aliasURI ?: '')+'/view/search-results'
 
-Woraround:
+Workaround:
 1) Cambiar la dirección en el controlador y ver cómo falla.
 2) Crear la nueva página en la nueva ubicación y ejecutar para ver que funciona.
 3) Eliminar la página original (si es que se desea
