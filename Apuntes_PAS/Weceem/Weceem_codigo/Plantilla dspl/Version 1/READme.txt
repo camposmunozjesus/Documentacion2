@@ -6,6 +6,9 @@ Características de la plantilla desplegable:
 - NO esxiste hover sobre el título ni el contenido.
 - Al ocultar el contenido el título redondea todos los bordes.
 
+Estilos_CSS_v2.txt: 1)Consigue que al hacer scroll el icono de la derecha no desaparezca (posición del icono de la derecha right center)
+					2)Consigue que se vean correctamente los iconos en IExplorer (aumentando la fuente a 1.4 em)
+
 *****************************************************************************************************************************************************
 ------------------------------
 Creación:	25-08-2014
