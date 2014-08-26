@@ -18,6 +18,7 @@ Que se simplifica como:
 
 	});
 
+En un documento HTML debe ir incluído entre los tags <script> y </script>.
 
 ----------
 SELECTORES
