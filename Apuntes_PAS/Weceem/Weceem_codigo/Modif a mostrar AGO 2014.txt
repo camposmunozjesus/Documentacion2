@@ -1,0 +1,64 @@
+COSAS A MOSTRAR
+===============
+PLANTILLA DE CONTENIDOS ACABADA
+-------------------------------
+*merlot space:PAS
+
+OTROS
+
+BUSCADOR CON PAGINACIÓN
+-----------------------
+*local space:Buscador
+*se modifica el CMS
+*se puede cambiar la ubicación de la página de resultados
+
+PLACEHOLDER FUNCIONANDO EN IEXPLORER
+------------------------------------
+*merlot space:PAS
+*se ha explicado mejor el funcionamientos en los comentarios del CMS. No afecta a la aplicación sólo hay que subirlo al SVN
+*la mejora se consigue con código JS.
+
+BREADCRUMB MEJORADO - SIMILAR AL DE LA UPC
+------------------------------------------
+*local space:BreadCrumb
+*se modifica el CMS (tanto los separadores como los títulos de las migas de pan ahora tiene estilos mediante los cuales pueden ser modificados)
+*se puede modificar el estilo del separador
+*se puede cambiar el color de los enlaces de las migas de pan, de manera que el último (página actual) puede tener un color diferente a los demás (por eso se utiliza el color naranja, para mostrarlo).
+*meter imágenes como separador??? se podrías hacer (NO implementado)
+Una vez realizada la modificación en el CMS y utilizando los estilos de UPC para los ángulos simples y dobles, para que todo quede igual se debe modificar:
+.breadCrumb (main.css)
+ margin-top: -12px;
+ 
+.bodySenseMenuLateral (main.css)
+ margin-top: 65px;
+ 
+.body
+ margin-top: 53px;
+ 
+Estos cambios son debidos a que el separado UPC utiliza una fuente de tamaño 2.5 em y todo se descoloca.
+
+Estilos UPC de los separadores (copiados de la web):
+.breadCrumbSeparator{
+  font-family: Arial,Helvetica,sans-serif !important;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: 2.5em;
+  line-height: 1em;
+  font-size-adjust: none;
+  font-stretch: normal;
+  -moz-font-feature-settings: normal;
+  -moz-font-language-override: normal;
+  
+  font-style: normal;
+  color: #CCC;
+  position: relative;
+  top: 4px;
+  margin: 0px 5px;
+
+}
+
+.firstSeparator
+{
+  margin-left: 0px;
+
+}
