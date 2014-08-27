@@ -1,0 +1,97 @@
+Se pretende variar los estilos de los separadores y títulos (diferenciando el último título de los demás).
+
+Cambios en el CMS. Par que tanto los separadores como las migas de pan tengan estilos:
+    def breadcrumb = { attrs, body -> 
+        def node = request[RenderEngine.REQUEST_ATTRIBUTE_NODE]
+        def lineage = request[RenderEngine.REQUEST_ATTRIBUTE_PAGE].lineage
+        def div = (attrs.divider != null) ? attrs.divider.decodeHTML() : ' &gt; '
+        def first = true
+        if (!attrs.custom?.toString()?.toBoolean()) {
+            body = { args -> 
+                def o = new StringBuilder()
+                if (!args.first) {
+					//o << div
+					//REV-001 Opción de personalizar el estilo del separador
+					o << "<span class=\"breadCrumbSeparator\">"+div+"</span>"
+                }
+
+                def title = args.breadcrumbNode.titleForMenu.encodeAsHTML() 
+                if (!args.last) {
+                    o << wcm.link(node:args.breadcrumbNode) {
+                        //out << title
+						//REV-002 Opción de personalizar el estilo de los títulos intermedios
+						out << "<span class=\"breadCrumbItem\">${title}</span>"
+                    } 
+                } else {
+                    o << "<span class=\"breadCrumbLastItem\">${title}</span>"
+                }
+                return o.toString()
+            }
+        }
+        
+        def nodes = lineage
+        nodes.each { current ->
+            out << body(first:first, last: current.ident() == node.ident(), breadcrumbNode:current)
+            first = false
+        }
+    }
+	
+Hay que modificar el widget Barra BreadCrumb:
+	<span class="breadCrumbSeparator firstSeparator">&raquo;</span> </b><wcm:breadcrumb divider="&rsaquo;" />
+Para tener un ángulo doble en lugar de dos símbolos mayor que y que el separador sea un ángulo simple.
+
+Modificaciones en las hojas de estilos:
+Estilos de los separadores tipo UPC:
+	.breadCrumbSeparator{
+	  font-family: Arial,Helvetica,sans-serif !important;
+	  font-variant: normal;
+	  font-weight: normal;
+	  font-size: 2.5em;
+	  line-height: 1em;
+	  font-size-adjust: none;
+	  font-stretch: normal;
+	  -moz-font-feature-settings: normal;
+	  -moz-font-language-override: normal;
+	  
+	  font-style: normal;
+	  color: #CCC;
+	  position: relative;
+	  top: 4px;
+	  margin: 0px 5px;
+
+	}
+
+	.firstSeparator
+	{
+	  margin-left: 0px;
+
+	}
+
+Estilo de las migas de pan:
+	.breadCrumbItem
+	{
+	  color: #007BC0;
+	}
+
+	.breadCrumbLastItem
+	{
+	  color: #E47D03;
+	}
+	
+Una vez hecho esto todo queda descuadrado por lo que conviene modificar:
+.breadCrumb (main.css)
+ margin-top: -12px;
+ 
+.bodySenseMenuLateral (main.css)
+ margin-top: 65px;
+ 
+.body
+ margin-top: 53px;
+ 
+*****************************************************************************************************************************************************
+------------------------------
+Creación:	27-08-2014
+
+Jesús Campos Muñoz
+jesus.campos@upc.edu
+------------------------------
