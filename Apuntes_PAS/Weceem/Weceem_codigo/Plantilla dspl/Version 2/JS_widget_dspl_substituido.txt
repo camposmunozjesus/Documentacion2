@@ -1,0 +1,66 @@
+<g:if env="development">
+    <g:set var="host" value="melnik.upc.edu" />
+</g:if>
+
+<g:if env="production">
+    
+</g:if>
+
+<g:if env="test">
+    <g:set var="host" value="merlot.upc.edu" />
+</g:if>
+
+<wcm:menu levels="1"  custom="true" types="[org.weceem.html.WcmHTMLContent]">
+
+  <g:if test="${menuNode.aliasURI.encodeAsHTML().equals(rootContent)}"> <!-- 0 INI -->
+    
+    <g:each var="seccion" in="${menuNode.children}"> <!-- 1 INI -->
+      
+
+      
+      <g:if test="${seccion.aliasURI.encodeAsHTML().equals(params.tipusMenu)}"> <!-- 2 INI -->
+     
+<div id="quadreMenu">   
+        
+
+        <!-- Cada each es un desplegable -->
+        <g:each status="i" var="desplegable" in="${seccion.children}"> <!-- INI 3 -->
+  
+          <g:if test="${(desplegable.class.toString().substring(0,36).equals('class org.weceem.html.WcmHTMLContent') || desplegable.class.toString().substring(0,35).equals('class org.weceem.content.WcmContent')
+          || desplegable.class.toString().substring(0,36).equals('class org.weceem.content.WcmExternalLink') || desplegable.class.toString().substring(0,40).equals('class org.weceem.content.WcmExternalLink') ) && desplegable.status.description.toString().equals('published') }" > <!-- INI 35 -->
+          
+            <g:if test="${i == 0}">
+              <g:set var="isFirst" value="firstTitle" />
+            </g:if>      
+            <g:else>
+              <g:set var="isFirst" value="" />
+            </g:else>
+            
+            <div id="Menu${i}" name="Menu${i}" title="Menú" class="dijitTitlePane"> <!-- INI 4 -->
+              <g:if test="${params.desplegableSelected.toString().equals(desplegable.aliasURI)}">
+          
+                  <div id="Menu" name="Menu${i}" class="dijitTitlePaneTitleSelected ${isFirst}" onclick="parent.location='https://merlot.upc.edu/${grails.util.Metadata.current.'app.name'}/${space?.name}/${menuNode.aliasURI}/${seccion.aliasURI}/${desplegable.aliasURI}'" >
+               
+              </g:if>
+              <g:else>
+               
+                  <div id="Menu" name="Menu${i}" class="dijitTitlePaneTitle ${isFirst}" onclick="parent.location='https://merlot.upc.edu/${grails.util.Metadata.current.'app.name'}/${space?.name}/${menuNode.aliasURI}/${seccion.aliasURI}/${desplegable.aliasURI}'" >
+           
+              </g:else>
+                  <span class="dijitTitlePaneTextNode"><a href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/${menuNode.aliasURI}/${seccion.aliasURI}/${desplegable.aliasURI}">${desplegable.titleForMenu.encodeAsHTML()}</a></span>
+                </div>
+            </div>     <!-- FIN 4 -->
+          </g:if> <!-- FIN 35 -->
+          <!-- Se guarda el número de iteraciones realizadas para crear menús desplegables -->
+          <g:set var="numDesplegables" value="${i}" />   
+             
+        </g:each> <!-- FIN 3 -->
+                   </div>
+      </g:if> <!-- 2 FIN -->
+    </g:each> <!-- 1 FIN -->         
+  </g:if>     <!-- 0 FIN -->
+</wcm:menu>
+<!-- Se guarda la variable para poder recuperarla en JS -->                      
+<g:hiddenField name="numMenusDesplegables " id="numMenusDesplegables " value="${numDesplegables}" />
+<!-- Se guarda el desplegable -->
+<g:hiddenField name="desplegableSelected" id="desplegableSelected" value="${params.desplegableSelected}" />
