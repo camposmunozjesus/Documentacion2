@@ -1,0 +1,30 @@
+	def paramsMaxSet(numeroRegistresTaula,maximRegistresTaula)
+	{	println "**+++++++++++++++++++++++++++++**"
+		try
+		{
+			long max
+			if(params.max){
+				println "PARAMS TRUE"
+			}else{
+				println "PARAMS FALSE"
+			}
+			
+			
+			if(params.max!=null){
+				max = params.max.toLong()
+			}
+			println "params.int('max')     "+params.int('max')
+			println "max:                  "+max
+			println "numeroRegistresTaula: "+numeroRegistresTaula
+			println "maximRegistresTaula : "+maximRegistresTaula 
+			if(max<0) params.max=numeroRegistresTaula;
+			params.max = Math.min(params.max ? params.int('max') : numeroRegistresTaula, maximRegistresTaula)
+			println "max:                  "+params.max.toLong()
+			println "params.int('max')     "+params.int('max')
+		}
+		catch (Exception e)
+		{	println "EXCEPTION: "+e.message
+			params.max = numeroRegistresTaula;
+			println "max:                  "+params.max.toLong()
+		}
+	}

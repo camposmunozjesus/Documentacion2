@@ -238,3 +238,26 @@ JS:
 			document.getElementsByName('segonCognom')[0].disabled = false;
 		}
 	}
+	
+	
+******************************************************************************************************************************************************
+--------------------------------------------------------------
+OBTENER TODOS LOS ELEMENTOS QUE TIENEN UN DETERMINADO ATRIBUTO
+--------------------------------------------------------------
+Por ejemplo, se quiere obtener una lista con todos los elementos que tienen el atributo "placeholder".
+	alert("----------------:"+$('[placeholder]'));
+$('[placeholder]') es una lista/array.
+
+
+******************************************************************************************************************************************************
+----------------------------------------
+OBTENER THIS DE UN ELEMENTO EN EJECUCIÓN
+----------------------------------------
+Cuando se detecta una acción, por ejemplo un click u otra similar, y se desea conseguir el propio elemento para acceder a él se utiliza $(this).
+En el siguiente ejemplo se detecta cuando un elemento con la propiedad "placeholder" gana el foco y entonces se realizan alerts de una serie de 
+propiedades del elemento.
+$('[placeholder]').focus(function() {
+	var input = $(this);
+	alert(input.attr('placeholder'));
+	alert(input.attr('value'));
+});

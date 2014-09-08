@@ -11,3 +11,18 @@ Luego también aparecen problemas conehcache.
 Solución 1:
 -----------
 Descomprimir de nuevo el weceem-app-master en otro lugar, con GGTS en otro workspace arrancar la aplicación y se soluciona el problema.
+
+
+-----------
+Problema 2: (GENERAL) Problema con JavacMain compiler o similar.
+-----------
+Este probelma surgió intentando arreglar un error de native ascii.
+Casualmente el día que se tuvo que reinstalar el JDK surgió lo del native ascii.
+Al eliminar todos los plugins era incapaz de cargar los plugins y daba error en javacMain compiler o similar.
+
+
+Solución 2:
+-----------
+Reinstalar jdk_7_0_45 y luego jdk_7_0_51.
+Seleccionar en Eclipse JDK 7.051
+Descargar todos los plugins y pergar el plugin weceem-1.2M
