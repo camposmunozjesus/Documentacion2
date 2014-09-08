@@ -85,8 +85,20 @@ Una vez hecho esto todo queda descuadrado por lo que conviene modificar:
 .bodySenseMenuLateral (main.css)
  margin-top: 65px;
  
+
+ 
 .body
  margin-top: 53px;
+ 
+.bodyAmb2MenusLaterals (main.css)
+ margin-top: 53px;
+ 
+h1.firstHeading {
+ margin-top: 7px !important; /* El original era 10 */
+ 
+#menuNavDret (estilos.css)
+ margin-top: 68px;
+  
  
 *****************************************************************************************************************************************************
 ------------------------------

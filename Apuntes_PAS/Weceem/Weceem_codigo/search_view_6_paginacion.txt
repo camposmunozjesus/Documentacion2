@@ -7,60 +7,8 @@ Tiene paginación.
 Diferencia con la versión 4: si se busca algo que no se ha encontrado, la aplicación no peta. Hay que controlar el número de resultados, ya que 
 el tag paginate requiere del total y cuando no se encuentra nada el total NO existe.
 
-<div class="paginaBuscador" >
-	<g:each in="${searchResults.results}" var="r">
-		<g:if test="${r.aliasURI.equals('search-results')}">
-			<g:set var="total" value="${searchResults.total-1}" />        
-		</g:if>
-		<g:else>
-			<g:set var="total" value="${searchResults.total}" />                
-		</g:else>
-	</g:each>
 
-	<p>La cerca de &quot;<b>${params.query.encodeAsHTML()}</b>&quot;
-		<g:if test="${total}">
-			ha trobat ${total}
-		<g:if test="${total==1}">
-			resultat:
-		</g:if>
-		<g:else>
-			resultats:           
-		</g:else>
-		</g:if>
-		<g:else>
-		no ha trobat resultats
-		</g:else>   
-	</p>  
-  
-   <g:if test="${total>0}">     
-     <g:each in="${searchResults.results}" var="r">
-       <wcm:ifUserCanView node="${r}">
-         <g:if test="${!r.aliasURI.equals('search-results')}">
-           <div class="resultadosBuscador">
-             <div class="tituloBuscador">
-               <wcm:link path="${r.absoluteURI}">${r.title.encodeAsHTML()}</wcm:link> <br/>
-             </div>
-             <div class="urlBuscador">
-               https://merlot.upc.edu/${grails.util.Metadata.current.'app.name'}/${space?.name}/${r.absoluteURI}
-             </div>
-             <div class="descripcionBuscador">
-               ${r.description} --- ${r.aliasURI}
-             </div>
-           </div>
-           <div class="separadorBuscador"></div>
-         </g:if>
-       </wcm:ifUserCanView>
-     </g:each>
-     
-     <div class="paginateButtons ">
-       <g:paginate params="${params}" next="Següent" prev="Anterior"
-       maxsteps="0" controller="wcmSearch"
-       action="search" total="${total}" />
-     </div>     
-  </g:if>
-
-</div>
-
+MODIFCACIONES A REALIZAR TANTO EN GSP COMO EN GROOVY...
 
 Necesita que se modifique:
 Añadir en WcmContentRepositoryService (services/org/weceem/services) def SearchForPublicContent (y seguramente en tags etc si es que se usan dichas opciones)
@@ -122,7 +70,65 @@ Workaround:
 2) Crear la nueva página en la nueva ubicación y ejecutar para ver que funciona.
 3) Eliminar la página original (si es que se desea
 
-	
+--------------------------------------
+CAMBIOS RESPECTO A LA VERSIÓN ANTERIOR
+--------------------------------------
+<div class="paginaBuscador" >
+	----------------------------------------------------------------------------------------|
+	<g:each in="${searchResults.results}" var="r">											|
+		<g:if test="${r.aliasURI.equals('search-results')}">								|
+			<g:set var="total" value="${searchResults.total-1}" />        					|
+		</g:if>																				| Esta zona No evita el problema de mostrar la propia página de resultados.
+		<g:else>																			| Debido a que al haber paginación, sólo aparece cuando está en el grupo que se envía a mostrar => Hay que restar el elemento en el código Groovy.
+			<g:set var="total" value="${searchResults.total}" />                			| Al ir paginando el número de elementos van variando.
+		</g:else>																			| Sin paginación sería correcto.
+	</g:each>																				|
+	----------------------------------------------------------------------------------------|
+	<p>La cerca de &quot;<b>${params.query.encodeAsHTML()}</b>&quot;
+		<g:if test="${total}">
+			ha trobat ${total}
+		<g:if test="${total==1}">
+			resultat:
+		</g:if>
+		<g:else>
+			resultats:           
+		</g:else>
+		</g:if>
+		<g:else>
+		no ha trobat resultats
+		</g:else>   
+	</p>  
+  
+   <g:if test="${total>0}">     
+     <g:each in="${searchResults.results}" var="r">
+       <wcm:ifUserCanView node="${r}">
+         <g:if test="${!r.aliasURI.equals('search-results')}">
+           <div class="resultadosBuscador">
+             <div class="tituloBuscador">
+               <wcm:link path="${r.absoluteURI}">${r.title.encodeAsHTML()}</wcm:link> <br/>
+             </div>
+             <div class="urlBuscador">
+               https://merlot.upc.edu/${grails.util.Metadata.current.'app.name'}/${space?.name}/${r.absoluteURI}
+             </div>
+             <div class="descripcionBuscador">
+               ${r.description} --- ${r.aliasURI}
+             </div>
+           </div>
+           <div class="separadorBuscador"></div>
+         </g:if>
+       </wcm:ifUserCanView>
+     </g:each>
+     
+     <div class="paginateButtons ">
+       <g:paginate params="${params}" next="Següent" prev="Anterior"
+       maxsteps="0" controller="wcmSearch"
+       action="search" total="${total}" />
+     </div>     
+  </g:if>
+
+</div>
+
+
 *****************************************************************************************************************************************************
 ------------------------------
 Creación:	01-08-2014

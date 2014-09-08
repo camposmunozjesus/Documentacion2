@@ -1,0 +1,42 @@
+El panel de Extras (extras, Opciones Avanzadas, Metada, Historial de Cambios, ...) aparece con las letras encima de las flechas.
+Para corregirlo hay que crear un nuevo archivo llamado upc-theme.css en \Portal\plugins\weceem-1.2\web-app\_weceem\css (C:\Users\Jesus Campos\.grails\2.3.7\projects\Portal\plugins\weceem-1.2\web-app\_weceem\css).
+con el siguiente contenido:
+.extrasPanelAdjust
+{
+	padding-left: 30px !important;
+}
+
+Luego hay que añadir este fichero CSS a los layouts para ser cargado. Hay que añadir la siguiente línea:
+	<link rel="stylesheet" href="${resource(dir: '_weceem/css',file:'upc-theme.css')}"/>
+en los ficheros:
+- weceemadmin-alt.gsp
+- weceemadmin-contenthistory.gsp
+- weceemadmin.gsp
+aprosimadamente después de:
+    <link rel="stylesheet" href="${resource(dir: '_weceem/css',file:'admin.css')}"/>
+    <link rel="stylesheet" href="${resource(dir: '_weceem/css',file:'admin-theme.css')}"/>
+
+Para finalizar hay que ir a las vistas (carpeta views/wcmEditor/_editor.gsp) y añadir el código (*):
+	//REV-20140905
+	//Para ajustar la posición de los títulos (Extras, Advanced Options, ...) dentro del divisor desplegable.
+	$('a').addClass('extrasPanelAdjust')
+dentro de:
+	$( function() {
+	...
+	}
+	
+(*) En lugar de añadir este fragmento de código se puede añadir en las líneas 66, 79 y 90:
+	class="extrasPanelAdjust"
+al tag <a>
+
+Todos los tags <a> de esta página están relacionados con los títulos de los desplegables, por lo que añadir la clase a todos los tags <a> no tiene
+ninguna afectación.
+
+
+*****************************************************************************************************************************************************
+------------------------------
+Creación:	05-09-2014
+
+Jesús Campos Muñoz
+jesus.campos@upc.edu
+------------------------------
