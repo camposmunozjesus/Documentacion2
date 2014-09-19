@@ -1,0 +1,102 @@
+BUSCADOR AVANZADO
+Permite seleccionar el tipo de búsqueda, es decir, seleccionar con un checkbox el tipo de elementos sobre el que se desea realizar la búsqueda:
+
+El siguiente código se inserta en la página donde se encuentra el buscador. El JS permite que según lo seleccionado en el checkbox se cambie la propiedad
+action de manera que se modifique  el tipo de elemento a buscar.
+	<script>
+	$(document).ready(function(){
+	  $(".searcherSelector").click(function(){
+	  var v = $(this);
+	  //Recupera en valor del checkbox.
+	  //  alert("value: "+v.val());
+	  //Consigue saber si el checkbox está checked o no.
+	  //  alert("selected: "+v.get(0).checked);
+
+	  //Se recupera el número máximo de elementos.
+	  var maxResults = document.getElementById("maxResults").value;
+	  if(!maxResults){
+		 maxResults = 10;
+	  //  alert("NO HAY MAX");
+	  }else
+	  {
+	  //  alert("HAY MAX");
+	  }
+	  
+	  //Se recupera el nombre del space.
+	  var space = document.getElementById("spaceName").value;
+	  //  alert("space: "+space);
+	  
+	  //Se recuperan el resto de checkboxes, sólo los seleccionados.
+	  var str = "/weceem/cms/tools/search?uri="+space+"%2F&max="+maxResults+"&types=";
+	  $("input:checkbox:checked").each(function(){
+		if($(this).val()=="Plantilla"){
+		   str = str + "%2C+com.upc.WcmFormDesplegable";
+	  //       alert("se ha escogido plantilla - %2C+com.upc.WcmFormDesplegable");
+		}
+		else if($(this).val()=="HTML"){
+		   str = str + "%2C+org.weceem.html.WcmHTMLContent";
+	  //       alert("se ha escogido HTML - org.weceem.html.WcmHTMLContent");
+		}
+
+	  
+	  //  alert($(this).val());
+	  
+	  //Consigue el action del formulario:
+	  var action = document.getElementById("searcher").action = str;
+	  //  alert("ACTION: " + action);
+	  
+	  });
+	  
+	  //  alert("a buscar: "+str);
+	  });
+	});
+	</script>
+
+	<br>-------------------------<br>
+	BUSCADORES COMBINADOS:
+	WcmFormDesplegable (Plantilla Desplegable) + HTML:
+	<wcm:search types="org.weceem.html.WcmHTMLContent, com.upc.WcmFormDesplegable"></wcm:search>
+
+	<br>---------------------------------------<br>
+	<input class="searcherSelector" type="checkbox" name="typeSearcher" value="HTML">HTML<br>
+	<input class="searcherSelector" type="checkbox" name="typeSearcher" value="Plantilla">Plantilla Desplegable<br>
+
+	${space?.name}
+	${params.max} --- MAX
+	<g:hiddenField name="spaceName" id="spaceName" value="${space?.name}" />
+	<g:hiddenField name="maxResults" id="maxResults" value="${params?.max}" />
+	
+MODIFICACIONES EN EL CÓDIGO GROOVY
+Línea 914 (WeceemTagLib en el def search) aprox hay que ponerle un atributo "name" a gform para asignarle un atributo "id" con el cual se pueda acceder a él con getElementById.
+	Ej: out << g.form(controller:'wcmSearch', name:'searcher' ,action:'search', params:p) 
+	
+Antes de esto hay que añadir a los parámetros el máximo de elementos de la búsqueda:
+	params.max=attrs['max']	
+
+	
+Hay que saber que cuando se escribe:
+	<wcm:search types="org.weceem.html.WcmHTMLContent, com.upc.WcmFormDesplegable"></wcm:search>
+	
+En HTML se obtiene:
+	<form id="searcher" name="searcher" method="post" action="/weceem/cms/tools/search?uri=Buscador%2F&max=10&types=%2C+com.upc.WcmFormDesplegable">
+
+		<input id="query" class="searchField" type="text" value="" name="query"></input>
+		<input id="submit" type="submit" value="Search" name="submit"></input>
+
+	</form>
+	
+Por lo que el código JS lo que hace es:
+	* Cuando se clica sobre un checkbox:
+		* Mira el estado de todos los checkbox y memoriza los que estan activos asignado a un string el tipo.
+		* Crea el string que substituirá a action en función de num max de elems en la búsqueda, etc.
+	* Modificar finalmente el parámetro action con todos los datos recogidos.
+
+
+
+*****************************************************************************************************************************************************
+------------------------------
+Creación:	16-09-2014
+
+Jesús Campos Muñoz
+jesus.campos@upc.edu
+------------------------------

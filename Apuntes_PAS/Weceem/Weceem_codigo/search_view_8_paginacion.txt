@@ -1,0 +1,210 @@
+Si la búsqueda encontrada es la propia página de resultados, no la mostrará ni la contabilizará. Mejora sensible de todas las versiones anteriores.
+Si hay cero resultados muestra que no se han encontrado resultados.
+//ESTO NO: Para que la cantidad  de elemento a mostrar funcione correctmanete max debe coincidir con static DEFAULT_RESULTS_PER_PAGE de WcmSearchController.
+Simplemente, en el caso de que no se quieran obtener los resultados de 10 en 10, hay que pasar el max en el widget wcm:search como se indica:
+ <wcm:search max="5" .... ></wcm:search> por lo que en <g:paginate ...> el param max se puede obviar.
+Tiene paginación.
+Diferencia con la versión 7: la paginación se realiza manualment con una lista. Primero se extraen los elementos, luego se filtran por tipo (HTML, Fitxa Plantilla ...)
+y por último se envían los elementos paginados.
+
+Hay que regular el número por defecto de paginación en WcmSearchController: static DEFAULT_RESULTS_PER_PAGE = 10
+
+
+MODIFCACIONES A REALIZAR TANTO EN GSP COMO EN GROOVY...
+GSP (en el CMS): código de la página del buscador.
+<div class="paginaBuscador" >
+  <g:each in="${searchResults.results}" var="r">
+    <g:set var="total" value="${searchResults.total}" />
+  </g:each>
+
+  <p>La cerca de &quot;<b>${params.query.encodeAsHTML()}</b>&quot;
+    <g:if test="${total}">
+      ha trobat ${total}
+    <g:if test="${total==1}">
+      resultat:
+    </g:if>
+    <g:else>
+      resultats:           
+    </g:else>
+    </g:if>
+    <g:else>
+    no ha trobat resultats
+    </g:else>   
+  </p>  
+  
+   <g:if test="${total>0}">     
+     <g:each in="${searchResults.results}" var="r">
+       <wcm:ifUserCanView node="${r}">
+         
+           <div class="resultadosBuscador">
+             <div class="tituloBuscador">
+               <wcm:link path="${r.absoluteURI}">${r.title.encodeAsHTML()}</wcm:link> <br/>
+             </div>
+             <div class="urlBuscador">
+               https://merlot.upc.edu/${grails.util.Metadata.current.'app.name'}/${space?.name}/${r.absoluteURI}
+             </div>
+             <div class="descripcionBuscador">
+             </div>
+           </div>
+           <div class="separadorBuscador"></div>
+
+       </wcm:ifUserCanView>
+     </g:each>
+     
+     <div class="paginateButtons ">
+       <g:paginate params="${params}" next="Següent" prev="Anterior"
+       maxsteps="0" controller="wcmSearch"
+       action="search" total="${total}" />
+     </div>     
+  </g:if>
+
+</div>
+
+Necesita que se modifique:
+Añadir en WcmContentRepositoryService (services/org/weceem/services) def SearchForPublicContent (y seguramente en tags etc si es que se usan dichas opciones)
+    def searchForPublicContent(String query, WcmSpace space, contentOrPath = null, args = null) {
+        if (!query) {
+            return [total:0]
+        }
+        
+        def baseURI
+        if (contentOrPath) {
+            if (contentOrPath instanceof WcmContent) {
+                baseURI = contentOrPath.absoluteURI
+            } else {
+                baseURI = contentOrPath.toString()
+            }
+        }
+		
+        def results = WcmContent.search([reload:true, offset:0,  max:100]){
+            must(queryString(query))
+
+            // @todo apply baseURI
+
+            // Restrict to public
+            must(term('status_publicContent', true))
+
+            // Restrict to space
+            must {
+                listContentClassNames( { 
+                    def hasSCProp = it.metaClass.hasProperty(proxyHandler.unwrapIfProxy(it).class, 'standaloneContent')
+                    !hasSCProp || it.standaloneContent
+                } ).each { n ->
+                    def t = '$/'+n.replaceAll('\\.', '_')+'/space/id'
+                    term(t, space.id)
+                }
+            }
+        }
+
+        // Filter by type if required
+        if (args.types) {
+            results.results = filterToTypes(results.results, args.types)
+			//Una vez filtrados los resultados, nos quedamos con la cifra real de elementos
+            results.total = results.results.size()
+        }
+        println "ARGS: "+args.max
+		if(args.max){
+			//Se realiza la paginación manualmente
+			def lista = []
+	
+			def offset = args.offset ?: 0
+			def max = args.max
+	
+			def limit = (offset+max) > results.total ? results.total : (offset+max)
+		
+			for(int i=offset; i<limit; i++){
+				lista << results.results[i]
+			}
+			
+			results.results = lista
+			
+		}
+
+        return results
+	}
+
+
+
+Dónde verlo funcionando:
+Weceem localhost space Buscador.
+
+---------------------------------------
+MODIFICACIONES EN LA PÁGINA DE BÚSQUEDA
+---------------------------------------
+Para modificar la página de búsqueda cargada, es decir, despúes de apretar al "Search" se carga la página "/view/search-results". Pues bien para modifcar
+el lugar de la ubicación o la vista HTML a cargar hay que ir al
+Controlador: WcmSearchController
+DEF: search
+y modificar la línea 63 (aprox): def uri = params.resultsPath ?: (data.space.aliasURI ?: '')+'/view/search-results'
+
+Workaround:
+1) Cambiar la dirección en el controlador y ver cómo falla.
+2) Crear la nueva página en la nueva ubicación y ejecutar para ver que funciona.
+3) Eliminar la página original (si es que se desea
+
+-----------------------------------------
+CAMBIOS RESPECTO A OTRAS VERSIÓN ANTERIOR
+-----------------------------------------
+<div class="paginaBuscador" >
+	----------------------------------------------------------------------------------------|
+	<g:each in="${searchResults.results}" var="r">											|
+		<g:if test="${r.aliasURI.equals('search-results')}">								|
+			<g:set var="total" value="${searchResults.total-1}" />        					|
+		</g:if>																				| Esta zona No evita el problema de mostrar la propia página de resultados.
+		<g:else>																			| Debido a que al haber paginación, sólo aparece cuando está en el grupo que se envía a mostrar => Hay que restar el elemento en el código Groovy.
+			<g:set var="total" value="${searchResults.total}" />                			| Al ir paginando el número de elementos van variando.
+		</g:else>																			| Sin paginación sería correcto.
+	</g:each>																				|
+	----------------------------------------------------------------------------------------|
+	<p>La cerca de &quot;<b>${params.query.encodeAsHTML()}</b>&quot;
+		<g:if test="${total}">
+			ha trobat ${total}
+		<g:if test="${total==1}">
+			resultat:
+		</g:if>
+		<g:else>
+			resultats:           
+		</g:else>
+		</g:if>
+		<g:else>
+		no ha trobat resultats
+		</g:else>   
+	</p>  
+  
+   <g:if test="${total>0}">     
+     <g:each in="${searchResults.results}" var="r">
+       <wcm:ifUserCanView node="${r}">
+         <g:if test="${!r.aliasURI.equals('search-results')}">
+           <div class="resultadosBuscador">
+             <div class="tituloBuscador">
+               <wcm:link path="${r.absoluteURI}">${r.title.encodeAsHTML()}</wcm:link> <br/>
+             </div>
+             <div class="urlBuscador">
+               https://merlot.upc.edu/${grails.util.Metadata.current.'app.name'}/${space?.name}/${r.absoluteURI}
+             </div>
+             <div class="descripcionBuscador">
+               ${r.description} --- ${r.aliasURI}
+             </div>
+           </div>
+           <div class="separadorBuscador"></div>
+         </g:if>
+       </wcm:ifUserCanView>
+     </g:each>
+     
+     <div class="paginateButtons ">
+       <g:paginate params="${params}" next="Següent" prev="Anterior"
+       maxsteps="0" controller="wcmSearch"
+       action="search" total="${total}" />
+     </div>     
+  </g:if>
+
+</div>
+
+
+*****************************************************************************************************************************************************
+------------------------------
+Creación:	16-09-2014
+
+Jesús Campos Muñoz
+jesus.campos@upc.edu
+------------------------------
