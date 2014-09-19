@@ -1,0 +1,35 @@
+SOLUCIÓN DE PROBLEMAS - WECEEM
+==============================
+Problemas que han surgido a lo largo del desarrollo de código nuevo, y cómo se han solucionado.
+
+-----------------------
+EL BUSCADOR NO FUNCIONA
+-----------------------
+Una vez se ha reiniciado el servidor, las páginas deben ser grabadas nuevamente para ser encontradas por el buscador. El problema es que si se vuelve a reiniciar
+nuevamente, deben volverse a grabar otra vez las páginas.
+
+Para solucionarlo hay que ir al apartado "conf", archivo "Searchable.groovy" y en el apartado "test" dentro de "environments" poner:
+        searchable {
+            // disable bulk index on startup
+			//INI - Config original: al realizar un reinicio del servidor los índices de búsqueda no se rehacían por lo que el buscador no funcionaba de manera correcta.
+//            bulkIndexOnStartup = false
+//
+//            // use faster in-memory index
+//            compassConnection = "ram://test-index"
+			//FIN - Config original
+			
+			bulkIndexOnStartup = true
+        }
+		
+De este modo conseguiremos que cada vez que se despliegue el WAR en test se recontruya el índice de búsquedas.
+
+El problema surge porque por defecto ( se suele trabajar con el war de test) en test NO se reconstruyen los índices, mientras que en "development", que
+es el entorno que se arranca en local, sí que los recontruye.
+
+*****************************************************************************************************************************************************
+------------------------------
+Creación:	17-09-2014
+
+Jesús Campos Muñoz
+jesus.campos@upc.edu
+------------------------------
