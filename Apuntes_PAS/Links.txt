@@ -100,6 +100,7 @@ DISEÑO RESPONSIVO
 -----------------
 Foro con enlace a bootstraps diferentes:	http://w3schools.invisionzone.com/index.php?showtopic=45816
 Media queries:								http://htmldog.com/guides/css/advanced/mediaqueries/
+Libro de bootstrap:							http://librosweb.es/bootstrap_3/
 
 
 
