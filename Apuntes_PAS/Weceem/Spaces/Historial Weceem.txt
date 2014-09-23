@@ -82,6 +82,8 @@ PAS_20140731_0915_merlot: Tiene una plantilla para crear contenidos con desplega
 PAS_20140801_merlot: Se comienzan a cambiar los estilos de la plantilla de desplegables.
 PAS_20140903_merlot: Copia de seguridad.
 PAS_20140903_merlot: Tiene un página con dos columnas de desplegables. (Provisió de llocs de treball)
+PAS_20140923_merlot: Tiene las migas de pan correctamente. Hay que solucionar que el menú desplegable de dos líneas no se ve bien en IExplorer.
+PAS_20140923_1230_merlot: Solucionado lo de los menús desplegables.
 
 
 *****************************************************************************************************************************************************

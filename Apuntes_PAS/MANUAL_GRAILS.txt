@@ -53,7 +53,7 @@ class LibroController {
 - El controlador y el dominio se han de llamar igual sólo en el caso de quere utilizar scaffold.
 
 
-******************************************************************************************************************************************************
+<LISTAS>**********************************************************************************************************************************************
 -------------------------------------------------------------------------------------
 INSTRUCCIONES PARA CONSULTAR TAMAÑO DE VECTORES, LISTS, ETC .../MOSTRAR SUS ELEMENTOS
 -------------------------------------------------------------------------------------
@@ -113,6 +113,17 @@ Collection			Método size()			Método size()
 Map					Método size()			Método size()
 File				Método length()			Método size()
 Matcher				Método groupCount()		Método size()
+
+
+----------------------------------------
+NÚSQUEDA DE ELEMENTOS DENTRO DE UNA LIST
+----------------------------------------
+Se utliza nombreLista.contains(String). 
+
+Devuelve true si el elemento está dentro de la lista.
+
+Diferencia entre mayúsculas y minúsculas.
+
 
 
 <UNIQUE>**********************************************************************************************************************************************
