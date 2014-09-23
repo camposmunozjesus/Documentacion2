@@ -63,3 +63,10 @@ JS:
 			document.getElementsByName('segonCognom')[0].disabled = false;
 		}
 	}
+	
+	
+******************************************************************************************************************************************************
+--------------------------------------------
+BOTÓN QUE DEVUELVE LA RESOLUCIÓN DE PANTALLA
+--------------------------------------------	
+<input type="button" value="Resolución" onclick="javascript:alert('La resolución es: '+screen.width+' x '+screen.height)">
