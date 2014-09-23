@@ -95,6 +95,11 @@ CSS
 ===
 Estilos de una tabla (cabecera):	http://www.lawebera.es/como-hacer/ejemplos-css/expandir-imagen-fondo-css.php
 
+-----------------
+DISEÑO RESPONSIVO
+-----------------
+Foro con enlace a bootstraps diferentes:	http://w3schools.invisionzone.com/index.php?showtopic=45816
+
 
 
 JAVASCRIPT

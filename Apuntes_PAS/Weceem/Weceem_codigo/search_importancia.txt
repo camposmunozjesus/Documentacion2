@@ -1,0 +1,44 @@
+Para que en la búsqueda aparezcan primer los que contiene la palabra buscada en el título y luego el resto se debe incorporar lo siguiente en el archivo
+WcmContentRepositoryService (en la def searchForPublicContent)
+
+Se crea el método/closure encargado de ordenar las búsquedas:
+	def orderByTitle(listOfContent, String query) {
+		
+		def listQueryInTitle = []
+		def listOthers = []
+		
+		listOfContent.each { elem ->
+			if(elem.title.toLowerCase().contains(query.toLowerCase())){
+				listQueryInTitle << elem
+			}
+			else{
+				listOthers << elem
+			}
+		}
+		
+		def globalList = listQueryInTitle+listOthers
+		return globalList
+	}
+
+Y su llamada se realiza en:
+	...
+	// Filter by type if required
+	if (args.types) {
+		results.results = filterToTypes(results.results, args.types)
+		//20140922 - Primero aparecerán los resultados que tengan la palabra en su título.
+		results.results = orderByTitle(results.results, query)
+		
+		//Una vez filtrados los resultados, nos quedamos con la cifra real de elementos
+		results.total = results.results.size()
+	}
+	...
+	
+	
+	
+*****************************************************************************************************************************************************
+------------------------------
+Creación:	16-09-2014
+
+Jesús Campos Muñoz
+jesus.campos@upc.edu
+------------------------------
