@@ -1,0 +1,101 @@
+BOOTSTRAP - MANUAL
+==================
+Para que las páginas se muestren correctamente y el zoom funcione bien en los dispositivos móviles, es importante que añadas la siguiente etiqueta 
+dentro de la cabecera <head> de las páginas:
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+-------------------------------------
+IMPEDIR REALIZAR EL ZOOM EN LA PÁGINA
+-------------------------------------
+Hay que utilizar la propiedad "user-scalable=no" en la etiqueta:
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+
+---------------
+CALSE CONTAINER
+---------------
+Si quieres centrar una página respecto a la ventana del navegador, encierra sus contenidos dentro de un elemento y aplícale la clase .container:
+
+	<div class="container">
+	  ...
+	</div>
+
+La anchura del contenedor varía en cada punto de ruptura del diseño para adaptarse a la rejilla. Los contenedores no se pueden anidar debido a la 
+propiedad padding y a su anchura fija.
+
+
+
+----------------------------------
+PARA QUE UNA IMAGEN SEA RESPONSIVA
+----------------------------------
+Para que la imagen se dapte hay que utilizar la calse .img-responsive:
+	<img src="..." class="img-responsive" alt="Imagen responsive">
+Ya que por defecto ella sola NO se adapta.
+
+
+-----------------
+PÁRRAFO DESTACADO
+-----------------
+<p class="lead"> ... </p>
+
+ 
+------------
+ABREVIATURAS
+------------
+Si empleas la etiqueta <abbr> de HTML para marcar las abreviaturas y los acrónimos, los usuarios podrán ver su contenido completo al pasar el ratón por
+encima de ellas. Además, si la abreviatura define el atributo title, Bootstrap añade un fino borde inferior punteado para indicar al usuario que puede
+pasar el ratón por encima (también cambia el tipo de puntero que se muestra al pasar el ratón por encima).
+
+
+
+----------------------------
+ALINEAR BARRAS DE NAVEGACIÓN
+----------------------------
+No utilices estas clases para alinear los componentes de las barras de navegación .navbar. Utiliza en su lugar las dos clases equivalentes 
+.navbar-left y .navbar-right.
+
+
+-------------------------------------
+LIMPIANDO ELEMENTOS FLOTANTES (4.3.4)
+-------------------------------------
+Cuando un diseño utiliza muchos elementos flotantes, es común tener que limpiar un elemento para que no le afecten otros elementos flotantes. 
+Bootstrap 3 utiliza para ello el famoso hack clearfix creado originalmente por Nicolas Gallagher.
+
+Ejemplo:
+
+<div class="clearfix">...</div>
+
+Este es el código CSS aplicado a esta clase:
+
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: " "
+}
+.clearfix:after {
+  clear: both;
+}
+
+
+----------------------------------
+CONTENIDOS OCULTOS (ACCESIBILIDAD)
+----------------------------------
+Cuando se diseña un sitio web accesible, es común añadir ayudas en forma de texto que no se ve por pantalla, pero sí que se lee en los lectores que 
+utilizan para navegar las personas discapacitadas.
+
+Bootstrap 3 define la clase .sr-only para marcar un contenido como oculto y que sólo esté disponible para los lectores ("screen readers" en inglés, 
+de ahí el nombre de la clase CSS). 
+Ejemplo:
+
+<a class="sr-only" href="#contenido">Ir al contenido</a>
+
+
+
+
+*********************************************************************************************************************************************************
+------------------------------
+Creación:	25-09-2014
+
+Jesús Campos Muñoz
+jesus.campos@upc.edu

@@ -94,6 +94,7 @@ Libros y guías:						http://ayuda.joomlaspanish.org/guia-de-instalacion-2-5x/44
 CSS
 ===
 Estilos de una tabla (cabecera):	http://www.lawebera.es/como-hacer/ejemplos-css/expandir-imagen-fondo-css.php
+MIXINS:								http://ivanmendoza.net/diseno-web-2/mixins-y-eso-con-que-se-come
 
 -----------------
 DISEÑO RESPONSIVO
