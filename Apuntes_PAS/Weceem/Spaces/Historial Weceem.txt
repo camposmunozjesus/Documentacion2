@@ -86,6 +86,11 @@ PAS_20140923_merlot: Tiene las migas de pan correctamente. Hay que solucionar qu
 PAS_20140923_1230_merlot: Solucionado lo de los menús desplegables.
 
 
+Bootstrap_20141001_local: Space con el menú de barra estat que se comporta de manera bastante correcta.
+Bootstrap_20141002_local: Space que tiene el menú desplegable en formato móvil de manera correcta.
+
+
+
 *****************************************************************************************************************************************************
 ------------------------------
 Creación:	18-06-2014
