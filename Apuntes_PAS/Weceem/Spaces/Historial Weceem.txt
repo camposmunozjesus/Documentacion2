@@ -85,12 +85,24 @@ PAS_20140903_merlot: Tiene un página con dos columnas de desplegables. (Provisió
 PAS_20140923_merlot: Tiene las migas de pan correctamente. Hay que solucionar que el menú desplegable de dos líneas no se ve bien en IExplorer.
 PAS_20140923_1230_merlot: Solucionado lo de los menús desplegables.
 
-
+VERSIONES BASADAS EN BOOTSTRAP (Se para de desarrollar para SPACE PAS. Bootstrap es la versión en local de PDI merlot)
+----------------------------------------------------------------------------------------------------------------------
 Bootstrap_20141001_local: Space con el menú de barra estat que se comporta de manera bastante correcta.
 Bootstrap_20141002_local: Space que tiene el menú desplegable en formato móvil de manera correcta.
 Bootstrap_20141003_local: Space donde se comienza a incluir el busador.
 Bootstrap_20141006_local: Space con el apartado de cerca bastante bien hecho.
 
+PDI_20141007_merlot: El portal PDI tiene la misma apariencia que el PAS antiguo.
+					 Falta por centrar los elementos y recortarlos en modo móvil.
+PDI_20141007_1610_merlot: En modo móvil la barra de estado (INICI) es más pequeña.
+PDI_20141008_merlot: Se tienen menús desplegables de 1 y 2 columnas. Aún falta por ajustar el contenido para darle más anchura.
+PDI_20141008_1400_merlot: Se ha ajustado el contenido a la rejilla.
+
+
+----------------------
+ARREGLOS CÓDIGO GROOVY
+----------------------
+WcmContentController_20140922: permite que aparezcan en el menú las plantillas fitxa.
 
 *****************************************************************************************************************************************************
 ------------------------------

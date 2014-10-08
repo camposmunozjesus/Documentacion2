@@ -1,0 +1,29 @@
+TEMPLATE CON REJILLA DOS COLUMNAS: ORDENACIÓN NORMAL
+====================================================
+<wcm:widget path="widgets/doctype-bootstrap"/>
+<html>
+  
+  <head>
+    <wcm:widget path="widgets/upc-head"/>
+  </head>
+  
+  <body>
+    <div class="container">
+      <div class="container-UPC">
+        <wcm:widget path="widgets/top-nav"/>      
+        <wcm:widget path="widgets/status-bar" model="[rootContent:'index']"/>
+      </div>
+      <!-- Rejilla con el contenido principal -->
+      <div class="row">
+        <div class="col-vxs-4 col-sm-4 col-md-4 col-lg-3">
+          <wcm:widget path="widgets/menu-desplegable" model="[rootContent:'index']"/>
+        </div>
+        <div class="col-vxs-8 col-sm-8 col-md-8 col-lg-9">
+          <wcm:content />
+        </div>
+      </div>          
+      
+    </div>
+  </body>
+  
+</html>
