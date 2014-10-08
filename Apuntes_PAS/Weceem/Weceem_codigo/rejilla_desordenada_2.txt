@@ -1,0 +1,34 @@
+TEMPLATE CON REJILLA TRES COLUMNAS: EL BODY VA ANTES QUE EL MENÚ DE LA IZQUIERDA, LUEGO MENÚ DE LA IZQUIERDA, FINALMENTE MENÚ DE LA DERECHA
+===========================================================================================================================================
+<wcm:widget path="widgets/doctype-bootstrap"/>
+<html>
+  
+  <head>
+    <wcm:widget path="widgets/upc-head"/>
+  </head>
+  
+  <body>
+    <div class="container">
+      <div class="container-UPC">
+        <wcm:widget path="widgets/top-nav"/>      
+        <wcm:widget path="widgets/status-bar" model="[rootContent:'index']"/>
+      </div>
+      <!-- Rejilla con el contenido principal -->
+      <div class="row">
+        <div class="col-vxs-6 col-vxs-push-3 col-sm-6 col-sm-push-3 col-md-6 col-md-push-3 col-lg-6 col-lg-push-3" style="background-color:red">
+          <wcm:content />
+        </div>
+        <div class="col-vxs-3 col-vxs-pull-6 col-sm-3 col-sm-pull-6 col-md-3 col-md-pull-6 col-lg-3 col-lg-pull-6" style="background-color:rgba(236, 242, 24, 1)">
+          <wcm:widget path="widgets/menu-desplegable" model="[rootContent:'index']"/>
+          menu izq
+        </div>
+        <div class="col-vxs-3 col-vxs-pull-0 col-sm-3 col-sm-pull-0 col-md-3 col-md-pull-0 col-lg-3 col-lg-pull-0" style="background-color:rgba(52, 224, 237, 1)">
+          <wcm:widget path="widgets/menu-desplegable" model="[rootContent:'index']"/>
+          menu der
+        </div>
+      </div>          
+      
+    </div>
+  </body>
+  
+</html>
