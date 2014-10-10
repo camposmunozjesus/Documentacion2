@@ -100,8 +100,12 @@ PDI_20141008_1400_merlot: Se ha ajustado el contenido a la rejilla.
 
 Bootstrap_20141009_local: Space que no contiene scrolls horizontales, márgenes ajustados y las barras de menú se despliegan bien (aparentemente) .Se basa en el Space PDI del día anterior.
 
-PAS_20141009_merlot: Copia de seguridad de un Space que funciona bien para restaurar los fallos en local.
+PDI_20141009_merlot: Copia de seguridad de un Space que funciona bien para restaurar los fallos en local.
+PDI_20141010_merlot: Copia de seguridad del Space existente antes de incorporar los menús con barras horizontales en el móvil.
 
+Test1: copia seg.
+
+Bootstrap_20141010_local: Space en local que contiene las líneas horizontales delos menús para móvil.
 ----------------------
 ARREGLOS CÓDIGO GROOVY
 ----------------------
