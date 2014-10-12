@@ -106,6 +106,9 @@ PDI_20141010_merlot: Copia de seguridad del Space existente antes de incorporar 
 Test1: copia seg.
 
 Bootstrap_20141010_local: Space en local que contiene las líneas horizontales delos menús para móvil.
+
+Test_casa_20121012: Nunca aprece un scroll bar, y sólo hay que arreglar los espacios entre desplegables para que se puedan pulsar los enlaces en el móvil.
+
 ----------------------
 ARREGLOS CÓDIGO GROOVY
 ----------------------
