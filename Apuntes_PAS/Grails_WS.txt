@@ -58,7 +58,7 @@ Pasos a seguir para conseguir realizar un cliente:
 			}
 		}
 	}
-5) En "Command Grails History" ejecutar "wdsl2java" con el nombre del proyecto seleccionado. Se obtiene la TRAZA 2.
+5) En "Command Grails History" ejecutar "wsdl2java" con el nombre del proyecto seleccionado. Se obtiene la TRAZA 2.
 6) Añadir el clientinterface en el archivo Config.groovy. Descomentar las líneas del clientinterface y el archivo Config.groovy quedará de la siguiente manera.
 	cxf {
 		client {
