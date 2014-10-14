@@ -105,7 +105,10 @@ PDI_20141010_merlot: Copia de seguridad del Space existente antes de incorporar 
 
 Test1: copia seg.
 
-Bootstrap_20141010_local: Space en local que contiene las líneas horizontales delos menús para móvil.
+Bootstrap_20141010_local: Space en local que contiene las líneas horizontales de los menús para móvil.
+Bootstrap_20141014_local: Tiene la barra de INICI de manera correcta en cualquier resolución. Puede que tenga algún fallo.
+Bootstrap_20141014_1645_local: Mejor que el anterior.
+Bootstrap_20141014_1730_local: Falta ajustar el buscardor y algunos espacios. En general parece que bien.
 
 Test_casa_20121012: Nunca aprece un scroll bar, y sólo hay que arreglar los espacios entre desplegables para que se puedan pulsar los enlaces en el móvil.
 
