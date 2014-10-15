@@ -114,6 +114,10 @@ Bootstrap_20141014_1645_local: Mejor que el anterior.
 Bootstrap_20141014_1730_local: Falta ajustar el buscardor y algunos espacios. En general parece que bien.
 
 Bootstrap_20141015_local: PARECE PERFECTO, tanto en móvil como en web. Falta centrar el buscador entre 400px y 700px aprox y en 767px se descuadra y aparece la barra espaciadora.
+						  Posibles arreglos: - Eliminar el titolSelected, porque a veces se quedan 2 títulos iluminados.
+											 - Cambiar el tamaño del recuadro clickable.
+Bootstrap_20141015_1210_local: Tiene bien alineados siempre los desplegables de 1 columna. El de dos aparece con scroll bar, hay que solucionarlo.
+Bootstrap_20141015_1400_local: Tiene la barra de breadcrumb (migas de pan) que desaparece.
 
 ----------------------
 ARREGLOS CÓDIGO GROOVY
