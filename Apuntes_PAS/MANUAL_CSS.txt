@@ -1,0 +1,16 @@
+CSS - MANUAL
+============
+-------------------------
+EJEMPLO DE SELECTORES CSS
+-------------------------
+/* Elemento row que tenga un hijo cuyo id sea s101 y a la vez tenga la clase c */
+.row #s101.c {
+    margin-top: 10px !important;
+}
+
+*********************************************************************************************************************************************************
+------------------------------
+Creación:	16-10-2014
+
+Jesús Campos Muñoz
+jesus.campos@upc.edu

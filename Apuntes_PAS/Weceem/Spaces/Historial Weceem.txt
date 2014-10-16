@@ -98,6 +98,7 @@ PDI_20141007_1610_merlot: En modo móvil la barra de estado (INICI) es más pequeñ
 PDI_20141008_merlot: Se tienen menús desplegables de 1 y 2 columnas. Aún falta por ajustar el contenido para darle más anchura.
 PDI_20141008_1400_merlot: Se ha ajustado el contenido a la rejilla.
 
+(Bootstrap_20141008_local?)
 Bootstrap_20141009_local: Space que no contiene scrolls horizontales, márgenes ajustados y las barras de menú se despliegan bien (aparentemente) .Se basa en el Space PDI del día anterior.
 
 PDI_20141009_merlot: Copia de seguridad de un Space que funciona bien para restaurar los fallos en local.
@@ -118,6 +119,15 @@ Bootstrap_20141015_local: PARECE PERFECTO, tanto en móvil como en web. Falta cen
 											 - Cambiar el tamaño del recuadro clickable.
 Bootstrap_20141015_1210_local: Tiene bien alineados siempre los desplegables de 1 columna. El de dos aparece con scroll bar, hay que solucionarlo.
 Bootstrap_20141015_1400_local: Tiene la barra de breadcrumb (migas de pan) que desaparece.
+Bootstrap_20141016_0830_local: Tiene la página de columnas dobles desplegables arreglada. Se ha tenido que modificar el JS porque los id estaban mal, 
+							   emepezaban por una cifra. Ya no hay scroll tampoco, se ha añadido no-scroll-bar a la row de la página HTML.
+							   Ya no se descuadra el Contacte y Directori UPC y desparece la barra de scroll. portal-UPC y navbar.info debían realizar
+							   el cambio a 767px y no a 768.
+							   Mejoras a realizar:
+								-Se podría centrar el buscador de manera automática?
+								-Que el título en modo móvil aparezca entre el menú y el contenido en lugar de arriba del todo?
+Bootstrap_20141016_0830_local: Se ve la página de Informació General bien. Las imágenes no deberían ser respondivas. Hay que ajustar el texto para que
+							   no desaparezca una parte por el lado derecho.
 
 ----------------------
 ARREGLOS CÓDIGO GROOVY
