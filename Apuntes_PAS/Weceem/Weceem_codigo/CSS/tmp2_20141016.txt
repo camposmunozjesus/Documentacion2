@@ -1,0 +1,70 @@
+Afecta a los estilos de la página de informació general. Es la que funcionaba bien antes de recortar los elementos que en teoría sobraban
+.ficha_inici {
+    float: left;
+    /* height: 250px; */
+    width: 100%;
+   
+}
+.ficha_inici p {
+    border-bottom: 4px solid #dcdcdc;
+    
+    font-size: 15px;
+    font-weight: normal;
+    padding-bottom: 3px;  
+  font-size: 1.1em;
+}
+
+.ficha_inici .desc {
+    border-bottom: medium none;
+    font-size: 11px;
+    font-weight: normal;
+    padding-top: 3px;    
+}
+.ficha_inici:hover p {
+    border-bottom-color: #007bc0;
+}
+.ficha_inici a {
+    color: #007bc0;
+    font-weight: bold;
+    text-decoration: none;
+  font-size: 1.1em;
+}
+
+.ficha_inici a:hover {
+    color: #007bc0;
+    text-decoration: underline;
+}
+
+
+//Nueva página:
+
+.ficha_inici p {
+    border-bottom: 4px solid #dcdcdc;
+    
+    font-size: 15px;
+    font-weight: normal;
+    padding-bottom: 3px;  
+    font-size: 1.1em;
+}
+
+.ficha_inici .desc {
+    border-bottom: medium none;
+    font-size: 11px;
+    font-weight: normal;
+    padding-top: 3px;    
+}
+
+.ficha_inici:hover p {
+    border-bottom-color: #007bc0;
+}
+.ficha_inici a {
+    color: #007bc0;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1.1em;
+}
+
+.ficha_inici a:hover {
+    color: #007bc0;
+    text-decoration: underline;
+}
