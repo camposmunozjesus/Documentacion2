@@ -1,0 +1,16 @@
+$(document).ready(function(){
+  
+  $('.menuPosicio').click(function(event) {
+    //Mostrar el menú con las opciones: hace un toggle con slideUp y slideDown.
+    if ($(".quadreMenu").is(':visible')){
+      $(".quadreMenu").slideUp("fast");     
+      document.getElementById("menuPosicio").className = "menuPosicio";
+    }
+    else{
+      $(".quadreMenu").slideDown("fast");    
+      document.getElementById("menuPosicio").className = "menuPosicio open";
+    }  
+
+  });
+  
+});

@@ -1,0 +1,30 @@
+<wcm:menu levels="1"  custom="true" types="[org.weceem.html.WcmHTMLContent]">
+  <g:if test="${menuNode.aliasURI.encodeAsHTML().equals(rootContent)}"> <!-- 0 INI -->    
+    <g:each var="seccion" in="${menuNode.children}"> <!-- 1 INI -->      
+      <g:if test="${seccion.aliasURI.encodeAsHTML().equals(params.tipusMenu)}"> <!-- 2 INI -->        
+        <!-- Cada each es un desplegable -->
+        <g:each status="i" var="desplegable" in="${seccion.children}"> <!-- INI 3 -->
+          <!-- Controlar el tamaño del string y no obtener un String index out of range -->
+          <g:if test="${desplegable.class.toString().size()>35}"> <!-- INI 31 -->            
+          <g:if test="${desplegable.class.toString().size()>30 & (desplegable.class.toString().substring(0,36).equals('class org.weceem.html.WcmHTMLContent') || desplegable.class.toString().substring(0,35).equals('class org.weceem.content.WcmContent')
+          || desplegable.class.toString().substring(0,36).equals('class org.weceem.content.WcmExternalLink') || desplegable.class.toString().substring(0,40).equals('class org.weceem.content.WcmExternalLink')
+      ) && desplegable.status.description.toString().equals('published') }" > <!-- INI 35 -->
+        
+        <g:if test="${params.desplegableSelected.toString().equals(desplegable.aliasURI)}">
+          <div id="menuPosicio" class="menuPosicio">
+           <div >${desplegable.titleForMenu.encodeAsHTML()}</div>
+          </div>
+    </g:if>    
+ 
+          </g:if> <!-- FIN 35 -->
+      </g:if> <!-- FIN 31 -->
+    
+        <!-- Se guarda el número de iteraciones realizadas para crear menús desplegables -->
+        <g:set var="numDesplegables" value="${i}" />   
+        
+        </g:each> <!-- FIN 3 -->
+        
+      </g:if> <!-- 2 FIN -->
+    </g:each> <!-- 1 FIN -->         
+  </g:if>     <!-- 0 FIN -->
+</wcm:menu>
