@@ -1,0 +1,182 @@
+<!-- Primera Fila -->
+<div class="fit-column">
+  <div class="row no-scroll-bar">    
+    <div class="col-xs-12 col-info-3 col-sm-2 col-md-2 col-lg-2 row-margin-bottom-imagen">  
+      <div class="imagen">    
+        <a href="Informacio_General/El-PAS-a-la-UPC" target="_self"><img alt="El PAS a la UPC" class="img-responsive" src="/weceem/uploads/Test1/Image/pas_upc.jpg" style="width: 150px; height: 150px;" /></a>      
+        <div class="cont1">
+          <a href="Informacio_General/El-PAS-a-la-UPC" target="_self">&nbsp;</a>
+        </div>
+        <div class="cont2">
+          <p class="blanco">El PAS a la UPC</p>
+        </div>
+      </div>
+    </div>    
+    <div class="col-xs-12 col-info-9 col-sm-4 col-md-4 col-lg-4 row-margin-bottom-descripcio">
+      <div class="ficha_inici">
+        <p>
+          <span id="novedad"><a href="Informacio_General/El-PAS-a-la-UPC">El PAS a la UPC</a></span></p>
+        <p class="desc">
+          <span id="trayCover_page0ivu0" style="margin:0;padding:0"><span class="urTxtStd"><span class="urTxtStd">Informació sobre els diferents col·lectius de PAS, el Manual de Perfils, la relació de Llocs de Treball, el teletreball i el Manual d'Acollida del PAS.</span></span></span></p>
+      </div>      
+    </div>
+    
+     <div class="col-xs-12 col-info-3 col-sm-2 col-md-2 col-lg-2 row-margin-bottom-imagen">  
+      <div class="imagen">    
+        <a href="Informacio_General/El-PAS-a-la-UPC" target="_self"><img alt="El PAS a la UPC" class="img-responsive" src="/weceem/uploads/Test1/Image/pas_upc.jpg" style="width: 150px; height: 150px;" /></a>      
+        <div class="cont1">
+          <a href="Informacio_General/El-PAS-a-la-UPC" target="_self">&nbsp;</a>
+        </div>
+        <div class="cont2">
+          <p class="blanco">El PAS a la UPC</p>
+        </div>
+      </div>
+    </div>    
+    <div class="col-xs-12 col-info-9 col-sm-4 col-md-4 col-lg-4 row-margin-bottom-descripcio">
+      <div class="ficha_inici">
+        <p>
+          <span id="novedad"><a href="Informacio_General/El-PAS-a-la-UPC">El PAS a la UPC</a></span></p>
+        <p class="desc">
+          <span id="trayCover_page0ivu0" style="margin:0;padding:0"><span class="urTxtStd"><span class="urTxtStd">Informació sobre els diferents col·lectius de PAS, el Manual de Perfils, la relació de Llocs de Treball, el teletreball i el Manual d'Acollida del PAS.</span></span></span></p>
+      </div>      
+    </div>
+  </div>
+</div>
+
+
+<!-- Primera Fila -->
+<div class="fit-column">
+  <div class="row no-scroll-bar">    
+    <div class="col-xs-12 col-info-3 col-sm-2 col-md-2 col-lg-2 row-margin-bottom-imagen">  
+      <div class="imagen">    
+        <a href="Informacio_General/El-PAS-a-la-UPC" target="_self"><img alt="El PAS a la UPC" class="img-responsive" src="/weceem/uploads/Test1/Image/pas_upc.jpg" style="width: 150px; height: 150px;" /></a>      
+        <div class="cont1">
+          <a href="Informacio_General/El-PAS-a-la-UPC" target="_self">&nbsp;</a>
+        </div>
+        <div class="cont2">
+          <p class="blanco">El PAS a la UPC</p>
+        </div>
+      </div>
+    </div>    
+    <div class="col-xs-12 col-info-9 col-sm-4 col-md-4 col-lg-4 row-margin-bottom-descripcio">
+      <div class="ficha_inici">
+        <p>
+          <span id="novedad"><a href="Informacio_General/El-PAS-a-la-UPC">El PAS a la UPC</a></span></p>
+        <p class="desc">
+          <span id="trayCover_page0ivu0" style="margin:0;padding:0"><span class="urTxtStd"><span class="urTxtStd">Informació sobre els diferents col·lectius de PAS, el Manual de Perfils, la relació de Llocs de Treball, el teletreball i el Manual d'Acollida del PAS.</span></span></span></p>
+      </div>      
+    </div>
+    
+     <div class="col-xs-12 col-info-3 col-sm-2 col-md-2 col-lg-2 row-margin-bottom-imagen">  
+      <div class="imagen">    
+        <a href="Informacio_General/El-PAS-a-la-UPC" target="_self"><img alt="El PAS a la UPC" class="img-responsive" src="/weceem/uploads/Test1/Image/pas_upc.jpg" style="width: 150px; height: 150px;" /></a>      
+        <div class="cont1">
+          <a href="Informacio_General/El-PAS-a-la-UPC" target="_self">&nbsp;</a>
+        </div>
+        <div class="cont2">
+          <p class="blanco">El PAS a la UPC</p>
+        </div>
+      </div>
+    </div>    
+    <div class="col-xs-12 col-info-9 col-sm-4 col-md-4 col-lg-4 row-margin-bottom-descripcio">
+      <div class="ficha_inici">
+        <p>
+          <span id="novedad"><a href="Informacio_General/El-PAS-a-la-UPC">El PAS a la UPC</a></span></p>
+        <p class="desc">
+          <span id="trayCover_page0ivu0" style="margin:0;padding:0"><span class="urTxtStd"><span class="urTxtStd">Informació sobre els diferents col·lectius de PAS, el Manual de Perfils, la relació de Llocs de Treball, el teletreball i el Manual d'Acollida del PAS.</span></span></span></p>
+      </div>      
+    </div>
+  </div>
+</div>
+
+
+<!-- Primera Fila -->
+<div class="fit-column">
+  <div class="row no-scroll-bar">    
+    <div class="col-xs-12 col-info-3 col-sm-2 col-md-2 col-lg-2 row-margin-bottom-imagen">  
+      <div class="imagen">    
+        <a href="Informacio_General/El-PAS-a-la-UPC" target="_self"><img alt="El PAS a la UPC" class="img-responsive" src="/weceem/uploads/Test1/Image/pas_upc.jpg" style="width: 150px; height: 150px;" /></a>      
+        <div class="cont1">
+          <a href="Informacio_General/El-PAS-a-la-UPC" target="_self">&nbsp;</a>
+        </div>
+        <div class="cont2">
+          <p class="blanco">El PAS a la UPC</p>
+        </div>
+      </div>
+    </div>    
+    <div class="col-xs-12 col-info-9 col-sm-4 col-md-4 col-lg-4 row-margin-bottom-descripcio">
+      <div class="ficha_inici">
+        <p>
+          <span id="novedad"><a href="Informacio_General/El-PAS-a-la-UPC">El PAS a la UPC</a></span></p>
+        <p class="desc">
+          <span id="trayCover_page0ivu0" style="margin:0;padding:0"><span class="urTxtStd"><span class="urTxtStd">Informació sobre els diferents col·lectius de PAS, el Manual de Perfils, la relació de Llocs de Treball, el teletreball i el Manual d'Acollida del PAS.</span></span></span></p>
+      </div>      
+    </div>
+    
+     <div class="col-xs-12 col-info-3 col-sm-2 col-md-2 col-lg-2 row-margin-bottom-imagen">  
+      <div class="imagen">    
+        <a href="Informacio_General/El-PAS-a-la-UPC" target="_self"><img alt="El PAS a la UPC" class="img-responsive" src="/weceem/uploads/Test1/Image/pas_upc.jpg" style="width: 150px; height: 150px;" /></a>      
+        <div class="cont1">
+          <a href="Informacio_General/El-PAS-a-la-UPC" target="_self">&nbsp;</a>
+        </div>
+        <div class="cont2">
+          <p class="blanco">El PAS a la UPC</p>
+        </div>
+      </div>
+    </div>    
+    <div class="col-xs-12 col-info-9 col-sm-4 col-md-4 col-lg-4 row-margin-bottom-descripcio">
+      <div class="ficha_inici">
+        <p>
+          <span id="novedad"><a href="Informacio_General/El-PAS-a-la-UPC">El PAS a la UPC</a></span></p>
+        <p class="desc">
+          <span id="trayCover_page0ivu0" style="margin:0;padding:0"><span class="urTxtStd"><span class="urTxtStd">Informació sobre els diferents col·lectius de PAS, el Manual de Perfils, la relació de Llocs de Treball, el teletreball i el Manual d'Acollida del PAS.</span></span></span></p>
+      </div>      
+    </div>
+  </div>
+</div>
+
+
+<!-- Primera Fila -->
+<div class="fit-column">
+  <div class="row no-scroll-bar">    
+    <div class="col-xs-12 col-info-3 col-sm-2 col-md-2 col-lg-2 row-margin-bottom-imagen">  
+      <div class="imagen">    
+        <a href="Informacio_General/El-PAS-a-la-UPC" target="_self"><img alt="El PAS a la UPC" class="img-responsive" src="/weceem/uploads/Test1/Image/pas_upc.jpg" style="width: 150px; height: 150px;" /></a>      
+        <div class="cont1">
+          <a href="Informacio_General/El-PAS-a-la-UPC" target="_self">&nbsp;</a>
+        </div>
+        <div class="cont2">
+          <p class="blanco">El PAS a la UPC</p>
+        </div>
+      </div>
+    </div>    
+    <div class="col-xs-12 col-info-9 col-sm-4 col-md-4 col-lg-4 row-margin-bottom-descripcio">
+      <div class="ficha_inici">
+        <p>
+          <span id="novedad"><a href="Informacio_General/El-PAS-a-la-UPC">El PAS a la UPC</a></span></p>
+        <p class="desc">
+          <span id="trayCover_page0ivu0" style="margin:0;padding:0"><span class="urTxtStd"><span class="urTxtStd">Informació sobre els diferents col·lectius de PAS, el Manual de Perfils, la relació de Llocs de Treball, el teletreball i el Manual d'Acollida del PAS.</span></span></span></p>
+      </div>      
+    </div>
+    
+     <div class="col-xs-12 col-info-3 col-sm-2 col-md-2 col-lg-2 row-margin-bottom-imagen">  
+      <div class="imagen">    
+        <a href="Informacio_General/El-PAS-a-la-UPC" target="_self"><img alt="El PAS a la UPC" class="img-responsive" src="/weceem/uploads/Test1/Image/pas_upc.jpg" style="width: 150px; height: 150px;" /></a>      
+        <div class="cont1">
+          <a href="Informacio_General/El-PAS-a-la-UPC" target="_self">&nbsp;</a>
+        </div>
+        <div class="cont2">
+          <p class="blanco">El PAS a la UPC</p>
+        </div>
+      </div>
+    </div>    
+    <div class="col-xs-12 col-info-9 col-sm-4 col-md-4 col-lg-4 row-margin-bottom-descripcio">
+      <div class="ficha_inici">
+        <p>
+          <span id="novedad"><a href="Informacio_General/El-PAS-a-la-UPC">El PAS a la UPC</a></span></p>
+        <p class="desc">
+          <span id="trayCover_page0ivu0" style="margin:0;padding:0"><span class="urTxtStd"><span class="urTxtStd">Informació sobre els diferents col·lectius de PAS, el Manual de Perfils, la relació de Llocs de Treball, el teletreball i el Manual d'Acollida del PAS.</span></span></span></p>
+      </div>      
+    </div>
+  </div>
+</div>

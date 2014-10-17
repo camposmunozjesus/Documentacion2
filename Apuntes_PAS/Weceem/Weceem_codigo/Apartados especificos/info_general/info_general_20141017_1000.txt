@@ -1,0 +1,45 @@
+<!-- Primera Fila -->
+<div class="fit-column">
+  <div class="row no-scroll-bar">
+    <div class="col-xs-12 col-info-4 col-sm-3 col-md-3 col-lg-2 row-margin-bottom-imagen" style="background-color:#CCFF66;">
+      <div class="imagen">
+        <a href="Informacio_General/El-PAS-a-la-UPC" target="_self"><img alt="El PAS a la UPC" src="/weceem/uploads/Test1/Image/pas_upc.jpg" style="width: 150px; height: 150px;" /></a>
+        <div class="cont1">
+          <a href="Informacio_General/El-PAS-a-la-UPC" target="_self">&nbsp;</a></div>
+        <div class="cont2">
+          <p class="blanco">
+            El PAS a la UPC</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-info-8 col-sm-3 col-md-3 col-lg-4 row-margin-bottom-descripcio">
+      <div class="ficha_inici">
+        <p>
+          <span id="novedad"><a href="Informacio_General/El-PAS-a-la-UPC">El PAS a la UPC</a></span></p>
+        <p class="desc">
+          <span id="trayCover_page0ivu0" style="margin:0;padding:0"><span class="urTxtStd"><span class="urTxtStd">Informaci&oacute; sobre els diferents col&middot;lectius de PAS, el Manual de Perfils, la relaci&oacute; de Llocs de Treball, el teletreball i el Manual d&#39;Acollida del PAS.</span></span></span></p>
+      </div>
+    </div>
+    <div class="col-xs-12 col-info-4 col-sm-3 col-md-3 col-lg-2 row-margin-bottom-imagen">
+      <div class="imagen">
+        <a href="Informacio_General/Sistema-retributiu" target="_self"><img alt="El PAS a la UPC" src="/weceem/uploads/Test1/Image/sistema_retributiu.jpg" style="width: 150px; height: 150px;" /></a>
+        <div class="cont1">
+          <a href="Informacio_General/Sistema-retributiu" target="_self">&nbsp;</a></div>
+        <div class="cont2">
+          <p class="blanco">
+            Sistema-retributiu</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-info-8 col-sm-3 col-md-3 col-lg-4 row-margin-bottom-descripcio">
+      <div class="ficha_inici">
+        <p>
+          <span id="novedad"><a href="Informacio_General/Sistema-retributiu">Sistema Retributiu</a></span></p>
+        <p class="desc">
+          <span id="trayCover_page0ivu0" style="margin:0;padding:0"><span class="urTxtStd"><span class="urTxtStd">Informaci&oacute; sobre els diferents col&middot;lectius de PAS, el Manual de Perfils, la relaci&oacute; de Llocs de Treball, el teletreball i el Manual d&#39;Acollida del PAS.</span></span></span></p>
+      </div>
+    </div>
+  </div>
+</div>
+<p>
+  &nbsp;</p>

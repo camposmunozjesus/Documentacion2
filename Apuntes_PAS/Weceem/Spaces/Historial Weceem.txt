@@ -128,6 +128,11 @@ Bootstrap_20141016_0830_local: Tiene la página de columnas dobles desplegables a
 								-Que el título en modo móvil aparezca entre el menú y el contenido en lugar de arriba del todo?
 Bootstrap_20141016_0830_local: Se ve la página de Informació General bien. Las imágenes no deberían ser respondivas. Hay que ajustar el texto para que
 							   no desaparezca una parte por el lado derecho.
+Bootstrap_20141017_1115_local: Se tiene algo medianamente aceptable, pero NO definitivo, de la página Informació General. Hay que mejorarla.
+							   Se pasa a desarrollar el nuevo menú.
+Bootstrap_20141017_1430_local: Nuevo menú desplegable en modo móvil. Lo principal en el template compuesto. El jucatoons se puede perder en próximas versiones, ya que no es modular.
+							   
+							
 
 ----------------------
 ARREGLOS CÓDIGO GROOVY
