@@ -1,0 +1,62 @@
+.menuPosicio
+{  
+  background: #fff url(../images/icons/shadow.jpg) bottom repeat-x;
+  
+  border: 1px solid #b2b2b2;
+  border-radius: 3px;  
+  border: 2.5px solid #B5BCC7;
+
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+  margin-right: -10px;
+  margin-left: -9px;
+  
+  margin-top: 10px;
+  margin-bottom: -1px;
+  margin-right: -10px;
+  margin-left: -9px;    
+}
+
+.menuPosicio div{
+    /* text-align: center; */
+  font: 1.5em verdana, arial, helvetica, sans-serif;
+  padding-right: 0px;
+  padding-left: 18px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  
+  background-image: url('../images/icons/fletxa-avall.png');
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: right 10px center;
+  background-clip: border-box;
+  background-size: auto auto;
+  background-origin: padding-box;
+
+  color: #007BBF;
+}
+
+.open{
+    border-radius: 3px 3px 0px 0px;
+}
+
+@media (min-width: 636px) {
+  .menuPosicio
+  {
+   display: none;
+  }
+}
+
+
+@media (max-width: 635px) {
+  .quadreMenu
+  {
+   display: none;
+  }
+}
+
+@media (min-width: 636px) {
+  .quadreMenu
+  {
+   display: block !important;
+  }
+}
