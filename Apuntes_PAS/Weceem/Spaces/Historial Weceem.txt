@@ -131,6 +131,8 @@ Bootstrap_20141016_0830_local: Se ve la página de Informació General bien. Las i
 Bootstrap_20141017_1115_local: Se tiene algo medianamente aceptable, pero NO definitivo, de la página Informació General. Hay que mejorarla.
 							   Se pasa a desarrollar el nuevo menú.
 Bootstrap_20141017_1430_local: Nuevo menú desplegable en modo móvil. Lo principal en el template compuesto. El jucatoons se puede perder en próximas versiones, ya que no es modular.
+Bootstrap_20141020_0940_local: Tiene la página Informació General hecha de manera correcta. El menú lateral es un desplegable para móviles y estático para web.
+Bootstrap_20141020_1430_local: Funcionan bien los desplegables 1 y dos columnas. El siguiente paso en mover de sitio el título, entre el menú y en contenido de la página.
 							   
 							
 
