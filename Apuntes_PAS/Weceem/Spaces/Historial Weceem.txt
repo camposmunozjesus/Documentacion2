@@ -133,7 +133,15 @@ Bootstrap_20141017_1115_local: Se tiene algo medianamente aceptable, pero NO def
 Bootstrap_20141017_1430_local: Nuevo menú desplegable en modo móvil. Lo principal en el template compuesto. El jucatoons se puede perder en próximas versiones, ya que no es modular.
 Bootstrap_20141020_0940_local: Tiene la página Informació General hecha de manera correcta. El menú lateral es un desplegable para móviles y estático para web.
 Bootstrap_20141020_1430_local: Funcionan bien los desplegables 1 y dos columnas. El siguiente paso en mover de sitio el título, entre el menú y en contenido de la página.
-							   
+Bootstrap_20141021_0810_local: El título aparece entre el menú desplegable y el contenido.
+							   Mejoras que se intentarán abordar:
+							    -Reducir y mejorar la estructura de las hojas de estilos.
+							    -Cosas como que se oculte el título y las migas de pan por separado cuando se puede ocultar todo el conjunto.
+Bootstrap_20141021_0810_local: En Inici e Informació General se muestra el título.
+Bootstrap_20141021_1240_local: Informació general y Racó personal hechos de manera correcta. Se ha aligerado un poco el CSS con reglas que no se utilizaban.								
+Bootstrap_20141021_1640_local: Tiene las imágenes de Racó personal y de Informació general centradas en modo móvil.
+Bootstrap_20141021_1725_local: Buscador centrado. Pero quedan un poco mal colocados los botones.
+Bootstrap_20141021_1740_local: Buscador y botones (los 3) centrados.
 							
 
 ----------------------
