@@ -142,6 +142,9 @@ Bootstrap_20141021_1240_local: Informació general y Racó personal hechos de mane
 Bootstrap_20141021_1640_local: Tiene las imágenes de Racó personal y de Informació general centradas en modo móvil.
 Bootstrap_20141021_1725_local: Buscador centrado. Pero quedan un poco mal colocados los botones.
 Bootstrap_20141021_1740_local: Buscador y botones (los 3) centrados.
+Bootstrap_20141022_0805_local: El CSS centra los botones de manera correcta. CONTIENE EJEMPLO DE COMO CENTRAR ELEMENTOS EN REJILLAS BOOTSTRAP (P1 Y P2).
+Bootstrap_20141022_0805_local: Contiene las letras del menú desplegables algo más grandes y el canto inferior redondeado.
+Bootstrap_20141022_1200_local: Contiene el template Inici sin buscador. Se empiezan las pruebas para el pie de página.
 							
 
 ----------------------

@@ -1,0 +1,659 @@
+Cabecera con botones y buscador centrados del mismo modo. Los botones están un poco hacia la derecha. Con el siguiente CSS se ven los botones centrados,
+ha habido que ponerles el margen a la izquierda en lugar de la derecha (btn-header).
+
+<script type="text/javascript" src="${wcm.createLink(path:'js/crossloader.js')}"></script>
+
+<div id="spinner" class="spinner" style="display: none;">
+  <img alt="Carregant..." src="${wcm.createLinkToFile(path:'images/spinner.gif')}" />
+</div>
+
+<div class="row no-scroll-bar">
+  <div class="col-xs-12 col-vxs-12 col-sm-7 col-md-7 col-lg-8 row-margin-bottom-header">
+    <h1 class="pull-left logo-portal">
+      <img usemap = "#upc_link" class="img-responsive" alt="Universitat Politècnica de Catalunya" src="${wcm.createLinkToFile(path:'images/logo_upc_portal_pdi_2.png')}" style="border:0;"/>
+      <map name="upc_link">
+        <area shape=Rect Coords=0,0,50,60 href="http://www.upc.edu" target="_blank">
+      </map>
+    </h1>  
+  </div>
+  <div class="col-xs-12 col-vxs-12 col-sm-5 col-md-5 col-lg-4 row-margin-bottom-header">
+    <div class="navbar navbar-default navbar-Info" role="navigation">
+      <div class="navbar-container-UPC">
+        <div class="navbar-header">
+          <div class="columna-centrada-header">
+    
+            
+              <button class="navbar-toggle collapsed navbar-toggle-header btn-header" data-target="#navbar-collapse-search" data-toggle="collapse" type="button">
+                <span class="sr-only">Cercar</span>
+                <span class="glyphicon glyphicon-search"></span>
+              </button>
+              <button class="navbar-toggle collapsed navbar-toggle-header btn-header" data-target="#navbar-collapse-info" data-toggle="collapse" type="button">
+                <span class="sr-only">Contacte i directori</span>
+                <span class="glyphicon glyphicon-info-sign"></span>
+              </button>
+              <button class="navbar-toggle collapsed navbar-toggle-header btn-header" data-target="#navbar-collapse-portal" data-toggle="collapse" type="button">
+                <span class="sr-only">Altres portals</span>
+                <span class="glyphicon glyphicon-new-window"></span>
+              </button>      
+   
+            
+          </div>      
+        </div>
+        <div class="columna-centrada">
+        <div id="navbar-collapse-search" class="navbar-collapse collapse">        
+          <ul class="nav navbar-nav navbar-right search-position">          
+            <li>
+              <div class="clearfix pull-right buscador">
+                
+                  <upc:search max="2" erasePlaceHolder="no" placeHolder="Cercar..." types="com.upc.WcmPlantillaFitxa"></upc:search>
+                
+              </div>
+            </li>
+          </ul>        
+        </div>
+        </div>
+        
+        <div id="navbar-collapse-info" class="navbar-collapse collapse navbar-info format-lletra-upc">        
+          <ul class="nav navbar-nav navbar-right info-position">          
+            <li>
+              <span class="contacte">
+                <a href="/SIG/contacte" target="_blank" onclick="window.open(this.href,this.target,'width=750,height=550,resizable=yes,scrollbars=yes');return false">Contacte</a>
+              </span>
+            </li>
+            <li>
+              <span class="enllacPortal">
+                <a href="http://directori.upc.edu/directori/" target="_blank" onclick="window.open(this.href,this.target,'width=750,height=550,resizable=yes');return false">Directori UPC</a>
+              </span>
+            </li>
+          </ul>    
+        </div>        
+        <!-- /.nav-collapse -->
+      </div>
+      <!-- /.container-fluid -->
+    </div>
+  </div>
+</div>
+
+<div class="row no-scroll-bar">
+  <div class="col-vxs-12 col-sm-7 col-md-7 col-lg-8">
+    <div id="navbar-collapse-portal" class="navbar-collapse collapse navbar-portal format-lletra-upc">        
+      <ul class="nav navbar-nav">
+        <li>
+          <span class="enllacPortalFirst portal-UPC">
+            <a href="/Portal/PAS/">Portal PAS</a>
+          </span>
+          
+        </li>
+        <li>
+          <span class="enllacPortal">  
+            <a href="/Portal/Gestor/">Portal gestor/a</a>
+          </span>
+        </li>  
+        <li>
+          <span class="enllacPortal enllacPortalLast">
+            <a href="/Portal/BEC/">Portal beques grau/màster</a>
+          </span>
+        </li>
+      </ul>
+    </div>
+  </div>  
+</div>
+
+
+
+
+/* *************************** CSS *********************************** */
+/* */
+/* LISTAS */
+.ficha_inici ul
+{
+  margin-left: -25px;
+  
+}
+
+/* ROW's MARGIN */
+/* Margen superior que se utiliza en los desplegables para separarlos del título/menú. */
+@media (max-width: 635px) {
+ .row-margin-top-col{
+  margin-top: -25px;
+ }
+}
+
+/* Margen inferior que se utiliza en la primera columna de desplegables en la ficha con dos columnas desplegables. Antes se usaba row-margin-bottom2 */
+.row-margin-bottom-col1{
+  margin-bottom: 10px
+}
+
+.row-margin-bottom-info{
+  margin-bottom: 5px;
+}
+
+@media (max-width: 635px) {
+  .row-margin-top20
+  {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 635px) {
+  .row-margin-top20-imagen
+  {
+    margin-top: 20px;
+  }
+  .row-margin-top20-descripcio
+  {
+    margin-top: 20px;
+  }
+}
+@media (max-width: 499px) {
+  .row-margin-top20-descripcio
+  {
+    margin-top: -5px;
+  }
+}
+
+
+
+/* *** */
+@media (max-width: 635px) {
+ .content-movil{
+    margin-left: -8px !important;
+    margin-right: -12px !important;
+ }
+}
+
+/* Para que Informació general se ajuste a Inici en modo móvil. */
+@media (max-width: 767px) {
+ .navbar-UPC ul li:first-child{
+   margin-top: -8px;
+ }
+}
+
+@media (max-width: 767px) {
+ .portal-UPC {
+    /* margin-top: -10px; */
+    border-color: #DDD;
+    border-top: 1px solid #DDD;
+    border-width: 1px;
+
+ }
+}
+
+@media (max-width: 768px) {
+ .row-margin-bottom2 {
+     margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+ .navbar-portal{
+   /* background-color: antiquewhite; */
+  margin-right: -15px;
+ }
+}
+
+@media (max-width: 768px) {
+ .row-margin-top-xx{
+   /* background-color: antiquewhite; */
+  /* margin-top: -20px; */
+ }
+}
+
+/* Para ajustar el espacio entre la fila que contiene la imagen y el resto */
+.container-UPC .row .row-margin-bottom-header:first-child
+{
+    /* background-color: antiquewhite; */
+  margin-bottom: -12px;
+}
+@media (max-width: 768px) {
+ .container-UPC .row .row-margin-bottom-header:first-child{
+    /* background-color: antiquewhite; */
+  margin-bottom: -10px;
+ }
+}
+
+.row-margin-bottom-header{
+  /* background-color: antiquewhite; */
+  margin-bottom: -12px;
+}
+@media (max-width: 768px) {
+ .row-margin-bottom-header{
+   /* background-color: antiquewhite; */
+  margin-bottom: -20px;
+ }
+}
+
+
+.row-margin-bottom-m20{
+  /* background-color: antiquewhite; */
+  margin-bottom: -20px;
+}
+
+
+
+@media (max-width: 767px) {
+ .navbar-info{
+   /* background-color: antiquewhite; */
+  margin-right: -15px;
+  margin-bottom: -10px;
+ }
+}
+
+@media (max-width: 636px) {
+ .row-margin-bottom2
+ {
+   margin-bottom: 40px;
+ }
+}
+
+/* Ajustar el contenido de la información (columna central) del menú de inici. Evitar una separación excesiva entre menús y contenido. */
+.fit-content{
+   margin-left: 15px;
+  margin-right: 5px;
+}
+@media (min-width: 636px) {
+ .fit-content{
+   margin-right: -30px;
+   margin-left: -15px;
+ }
+}
+
+
+/* Para la cabecera */
+@media (min-width: 768px) {
+ .fit-column-header
+ {
+  margin-right: -15px;
+ }
+}
+
+.no-scroll-bar{
+  margin-right: 0px !important;
+}
+
+@media (max-width: 636px) {
+ .no-scroll-bar{
+   margin-right: 0px;
+ }
+}
+
+@media (min-width: 636px) {
+/* Para ajustarse a la izquierda de la columna en la rejilla */
+ .fit-column2right{
+   margin-right: -15px;
+ }
+/* Para ajustarse a la izquierda de la columna en la rejilla */
+ .fit-column2left{
+   margin-left: -15px;
+ }
+/* Para ajustarse a la derecha de la columna en la rejilla */
+ .fit-column
+ {
+  /* background-color: red; */
+   margin: 0 -15px;
+ }
+}
+
+/* Cuando estamos en modo móvil para poder ajustarse a los márgenes derecho e izquierdo. Se usa en plantilla fitxa. */
+@media (max-width: 636px) {
+/* Para ajustarse a la izquierda de la columna en la rejilla */
+ .fit-column2left{
+   margin-left: -12px;
+ }
+/* Para ajustarse a la derecha de la columna en la rejilla */
+ .fit-column
+ {
+  /* background-color: red; */
+   margin-right: -15px;
+ }
+}
+
+
+/* */
+
+@media (min-width: 768px) {
+ .navbar-container-UPC{
+   margin-right: -15px;  
+ }
+ .info-position{
+   margin-top:-57px;
+ }
+
+ .search-position{
+   margin-top: 33px;
+ }
+}
+
+/* ** MENÚ DESPLEGABLE DERECHA *** */
+/* Menú lateral izquierdo, derecho (INICI) evitar que el primer ítem tenga borde superior */
+.dijitTitlePaneTitleCap + .dijitTitlePaneTitle, .dijitTitlePaneTitleCap + .dijitTitlePaneTitle:hover {
+    border-top: 0px solid #b5bcc7 !important;;
+}
+
+/* Para que el primer elemento no tenga línea superior */
+.dijitTitlePane:first-child .dijitTitlePaneTitle:first-child{
+   border-top: 0px solid #b5bcc7;
+}
+.dijitTitlePane:first-child  .dijitTitlePaneTitleSelected:first-child{
+   border-top: 0px solid #b5bcc7;
+}
+
+.dijitTitlePaneTextNode a:hover{
+  text-decoration: none;
+  color: #428BCA;
+}
+
+/* Sólo hay borde azul derecho en la opción por la que pasa el mouse en modo navegador */
+@media (min-width: 636px) {
+ .dijitTitlePane div.dijitTitlePaneTitle:hover {
+  border-right: 8px solid #41b7d8 !important;  
+  padding-left: 15px;      
+  padding-top: 6px;  
+  padding-bottom: 6px;     
+  background: url("../images/icons/rectangularBullet_4.png") -1px 10px no-repeat;  
+  background-origin: padding-box ; 
+   
+ }
+}
+
+
+.dijitTitlePaneTitle {  
+  /* border-top: 0.5px solid #b5bcc7;*/
+  border-top: 0.5px solid #b5bcc7;
+  cursor: pointer;  
+  vertical-align: middle;   
+  padding-left: 15px;      
+  padding-top: 6px;  
+  padding-bottom: 6px;  
+  padding-right: 0px  !important;    
+  border-left: 22px solid #fff;    
+  border-right: 8px solid #fff !important;  
+  background: url("../images/icons/rectangularBullet_4.png") -1px 10px no-repeat;
+  font: 0.8em verdana,arial,helvetica,sans-serif
+}
+@media (max-width: 635px) {
+  .dijitTitlePaneTitle
+  {  
+    border-top: 2px solid #b5bcc7;
+    border-left: transparent !important;
+    border-right: transparent !important;
+    padding-left: 38px;
+    padding-right: 16px;
+    padding-top: 16px;  
+    padding-bottom: 16px;
+    background: url("../images/icons/rectangularBullet_4.png") 21px 18px no-repeat;
+   }
+}
+
+
+.dijitTitlePaneTitleSelected {
+  /* border-top: 0.5px solid #b5bcc7;   */
+  border-top: 0.5px solid #b5bcc7;
+  min-height: 19px;    
+  cursor: pointer;  
+  /* padding: 3px 10px;   */
+  vertical-align: middle;      
+  border-right: 8px solid #41b7d8 !important;  
+  border-left: 22px solid #fff !important;        
+  padding-left: 15px;      
+  padding-top: 6px;  
+  padding-bottom: 6px;  
+  background: url("../images/icons/rectangularBullet_4.png") -1px 10px no-repeat;  
+  background-origin: padding-box ;
+  font: 0.8em verdana,arial,helvetica,sans-serif
+}
+@media (max-width: 635px) {
+  .dijitTitlePaneTitleSelected
+  {  
+    border-top: 2px solid #b5bcc7;
+    border-left: transparent !important;
+    padding-left: 38px;
+    padding-right: 16px;
+    padding-top: 16px;  
+    padding-bottom: 16px;
+    background: url("../images/icons/rectangularBullet_4.png") 21px 18px no-repeat;
+   }}
+}
+
+.dijitTitlePane div.dijitTitlePaneTitle:active {
+
+}
+
+.dijitTitlePaneContentOuterSelected {  
+
+}
+
+
+/* ************************* */
+.quadreMenu
+{  
+  border: 1px solid #b5bcc7;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  /* margin-right: 16px;
+  margin-left: -15px; */
+  margin-right: 9px;
+    
+}
+@media (max-width: 767px) {
+  .quadreMenu
+  {  
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+}
+
+@media (max-width: 635px) {
+  .quadreMenu
+  {  
+    border: 2.5px solid #b5bcc7;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    margin-right: -10px;
+    margin-left: -9px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+.tituloBuscador{
+  
+  margin-bottom: 5px;
+  font: 1.7em verdana, arial, helvetica, sans-serif;
+}
+
+.urlBuscador{
+  
+  margin-bottom: 10px;
+  color: #6D7D00;
+}
+
+.descripcionBuscador{
+  
+}
+
+.separadorBuscador{
+    
+  border: 1px solid #d9d9d9;
+  margin-bottom: -4px;
+  margin-top: -4px;  
+
+}
+
+.body .paginaBuscador{
+    
+  float: left;
+    
+  margin-bottom:110px;
+    
+  margin-left: -210px;
+  
+  padding-left:15px;
+    
+  width: 120%;
+    
+  
+
+}
+
+
+.resultadosBuscador{
+  border-left: 1px solid #fff;   
+  border-right: 1px solid #fff;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+
+  margin-top: 2px;
+  margin-bottom: 2px;
+  
+  padding-left: 10px;
+  
+  padding-top: 8px;
+  
+  padding-bottom: 8px;
+  
+  border-radius:2px;
+  
+ 
+  
+}
+
+.resultadosBuscador:hover{
+  border-left: 1px solid #d9d9d9;   
+  border-right: 1px solid #d9d9d9;
+  border-top: 1px solid #d9d9d9;
+  border-bottom: 1px solid #d9d9d9;
+  background: #fcfcfc;
+  
+ 
+  
+  
+}
+
+.resultadosBuscador a:hover{
+ 
+  /* text-decoration: none; */
+  color: #4e86b9!important;
+  
+}
+
+.resultadosBuscador a:link{
+ 
+  /* Link no visitado: OK #7bd8f6 */
+  color: #3a7bc0;
+  
+}
+
+.resultadosBuscador a:visited{
+ /* Link visitado: OK */
+  color: #5abbee;
+  
+}
+
+.resultadosBuscador a:active{
+ 
+  color: #c00092;
+  
+}
+
+.customSearchButton{
+  color: #333;
+  background-color: #efefef;  
+  background-image: url("../images/standardGradient.png");  
+  background-repeat: repeat-x;  
+  border: 1px solid #b5bcc7;  
+  height: 23px;  
+  background: url("../images/icons/shadow.jpg") repeat-x scroll center bottom #FFFFFF;  
+  cursor: pointer;  
+  padding-left: 10px;
+  padding-right: 10px;
+  vertical-align: middle;  
+  border-radius:25px;
+  font: 0.8em verdana,arial,helvetica,sans-serif;
+  font-weight:bold;
+  opacity: 0.6;
+}
+@media (max-width: 767px) {
+  .customSearchButton{
+    border-radius: 8px;
+    height: 35px;
+    padding-left: 12px;
+    padding-right: 12px;
+    font: 0.9em verdana,arial,helvetica,sans-serif;
+  }
+}
+
+.buscador{  
+/*
+  padding-top: 12px;
+  padding-right: 13px;
+  */
+}
+
+
+.customSearchField:focus {
+  /* min-width: 225px; */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  font: 0.8em verdana,arial,helvetica,sans-serif;
+}
+
+
+.customSearchField{
+  border: 1px solid #CCC;
+  margin: 3px 0px;
+  padding: 2px 5px 2px 2px;
+  font: 1em verdana,arial,helvetica,sans-serif;
+  background-color: #FCFCFC;
+  
+  margin-right: 5px;
+  height: 23px;
+  min-width: 180px;
+  vertical-align: middle;
+  padding-left: 10px;
+  border-radius: 8px;
+  font: 0.8em verdana,arial,helvetica,sans-serif;
+}
+
+@media (max-width: 767px) {
+  .customSearchField{
+    min-width: 230px;
+    height: 35px;
+    font: 0.9em verdana,arial,helvetica,sans-serif;
+  }
+
+  .columna-centrada{
+  /*background-color: red; */
+  width: 310px;
+  margin:auto; /* Eliminando esto únicamente, se alinea o se centra la imagen */
+  /* border: 4px solid #DCDCDC; */
+  }
+  .columna-centrada-header{
+  /*background-color: red; */
+  width: 175px;
+  margin:auto; /* Eliminando esto únicamente, se alinea o se centra la imagen */
+
+  }
+  .btn-header{
+     margin-right: -2px;
+    margin-left: 19px;
+  }
+}
+@media (max-width: 315px) {
+  .customSearchField{
+    min-width: 200px;
+    height: 35px;
+    font: 0.9em verdana,arial,helvetica,sans-serif;
+  }
+  .columna-centrada{
+  /*background-color: red; */
+  width: 280px;
+  margin:auto; /* Eliminando esto únicamente, se alinea o se centra la imagen */
+  /* border: 4px solid #DCDCDC; */
+  }
+}

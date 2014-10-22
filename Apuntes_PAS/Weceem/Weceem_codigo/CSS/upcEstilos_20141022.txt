@@ -1,0 +1,478 @@
+Con esta configuración lo único que fallaba era la página de inici, que tenía los márgenes inferiores de color gris y azul en hover.
+/* Ajustar el títuloa a los laterales en modo móvil */
+@media (max-width: 635px) {
+  .breadCrumb{
+  /* margin-top:20px; */
+  /* margin-bottom: -15px; */
+  margin-right: 15px;
+  margin-left: 15px;
+ }
+}
+
+/* Texto descriptivo: texto de descripción de la página Informació Genreal y Racó Personal */
+.txt-descripcio
+{
+  text-align: justify;
+  font-size:0.9em !important;  
+  border-bottom: medium none !important;
+  padding-top: 0px;
+  font-size: 11px;
+  /* Fuente de la descripción */
+  font: 0.65em verdana,arial,helvetica,sans-serif;
+  font-size: 11px;  
+}
+
+/* Muestra el título siempre en plantillas como Inici y Default sense menú */
+.tmpl-no-menu .breadCrumb h1.firstHeading {
+ display: block !important;  
+}
+
+/* Ajustar el título a los laterales en modo móvil */
+.titulo-fitxa{
+  margin-top: 20px;
+  margin-bottom: -15px;
+  margin-right: -8px; 
+  margin-left: -5px;
+}
+
+@media (min-width: 636px) {
+ .titulo-fitxa{
+   display: none; 
+ }
+}
+
+
+/* Hace desaparecer el título que hay en las migas de pan */
+@media (max-width: 635px) {
+ .breadCrumb h1.firstHeading{
+    display: none; 
+ }
+}
+
+
+/* Título de la página con degradado */
+h1.firstHeading {
+  
+  //border-color: #D9D9D9 !important;
+  
+  width: 100% !important;
+  
+  color: #4D4D4D !important;
+  
+  //border-bottom: 5px solid #D9D9D9;
+  border-bottom: 1px solid #b2b2b2;
+  box-shadow: 0 6px 4px -4px rgba(0, 0, 0, 0.1);  
+  padding-bottom: 1px;
+  
+  font-family: Helvetica,Arial,Verdana,sans-serif;
+  font-size: 2.3em !important;
+  
+  font-weight: normal !important;
+  
+  position: relative !important;
+  
+  margin-right:152px !important;
+  
+  margin-top: 9px !important;
+  margin-bottom: 17px;
+}
+@media (max-width: 635px) {
+ h1.firstHeading{
+   font-size: 1.5em !important;
+ }
+}
+
+
+ 
+h1.firstHeading span{
+  
+  background: url("../images/gradient.png") repeat-x !important;
+  
+  position: absolute !important;
+  
+  display: block !important;
+  
+  width: 100% !important;
+  
+  height: 30px !important;
+  
+
+}
+/* Migas de pan - Breadcrumb */
+/* Hace desaparecer las migas de pan */
+@media (max-width: 635px) {
+ .breadCrumb > div{
+   display: none;
+ }
+}
+
+.breadCrumb{
+    font: 0.8em verdana,arial,helvetica,sans-serif;
+}
+@media (max-width: 767px) {
+  .breadCrumb{
+    font: 1em verdana,arial,helvetica,sans-serif !important;
+  }
+}
+
+.breadCrumb{
+    margin-top: -3px;
+    font: 0.8em verdana,arial,helvetica,sans-serif;
+}
+
+.breadCrumbSeparator{
+  font-family: Arial,Helvetica,sans-serif !important;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: 2.5em;
+  line-height: 1em;
+  font-size-adjust: none;
+  font-stretch: normal;
+  -moz-font-feature-settings: normal;
+  -moz-font-language-override: normal;
+  
+  font-style: normal;
+  color: #CCC;
+  position: relative;
+  top: 4px;
+  margin: 0px 5px;    
+}
+
+.firstSeparator
+{
+  margin-left: 0px;  
+}
+
+
+.breadCrumbItem
+{
+  color: #007BC0;
+   
+}
+
+
+.breadCrumbLastItem
+{
+  /* color: #E47D03; */
+
+}
+
+/* */
+
+.menuPaneTitle{    
+  color: #333;    
+  font: 1.3em "Trebuchet MS", arial, helvetica, sans-serif;
+  font-weight:bold;
+  opacity: 0.6;
+  
+  border-top: 0px solid #b5bcc7;
+  border-bottom: 3px solid #007bbf;
+  border-left: 0px solid #fff;    
+  border-right: 0px solid #fff !important;
+  
+  min-height: 20px;
+  vertical-align: middle;
+ 
+  padding-left: 20px;      
+  padding-top: 10px;  
+  padding-bottom: 3px;  
+  padding-right: 10px;  
+}
+
+.menuBoxItem{
+  border-bottom: 1px solid red;  
+}
+/*
+.menuBoxItem{  
+  border-top: 0px solid black;
+  border-bottom: 1px solid red;  
+  border-left: 22px solid yellow;    
+  border-right: 16px solid green;
+  
+  border-top: 0px solid #b5bcc7;
+  border-bottom: 1px solid #007bbf;  
+  border-left: 22px solid #fff;    
+  border-right: 16px solid #fff;
+
+  cursor: pointer;  
+  vertical-align: middle;  
+  
+  padding-left: 15px;      
+  padding-top: 6px;  
+  padding-bottom: 6px;  
+  padding-right: 0px;  
+  
+  background: url("../images/icons/rectangularBullet_4.png") -1px 10px no-repeat;
+  font: 0.8em verdana,arial,helvetica,sans-serif;
+
+
+
+}
+*/
+
+.menutItem a, .menutItem a:hover{
+  text-decoration: none;
+  color: #428BCA;
+}
+
+
+.quadreMenuDret
+{  
+  border: 1px solid #b5bcc7;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  /* margin-right: 16px;
+  margin-left: -15px; */
+  margin-left: 24px;
+  margin-right: -15px;
+    
+}
+@media (max-width: 635px) {
+  .quadreMenuDret
+  {  
+    border: 2.5px solid #b5bcc7;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    margin-right: -10px;
+    margin-left: 3px;
+  }
+}
+.quadreMenuEsq
+{  
+  border: 1px solid #b5bcc7;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  /* margin-right: 16px;
+  margin-left: -15px; */
+  margin-right: 9px;
+    
+}
+@media (max-width: 767px) {
+  .quadreMenuEsq
+  {  
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+}
+
+@media (max-width: 635px) {
+  .quadreMenuEsq
+  {      
+    border: 2.5px solid #b5bcc7;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    margin-right: -10px;
+    margin-left: 3px;
+  }
+}
+
+.menuBoxRight
+{  
+  border: 1px solid #b5bcc7;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  /* margin-right: 16px;
+  margin-left: -15px; */
+  margin-left: 24px;
+  margin-right: -15px;
+    
+}
+@media (max-width: 767px) {
+  .menuBoxRight
+  {  
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+}
+
+
+.dijitTitlePaneTitleCap {  
+  
+  color: #333;    
+  font: 1.1em "Trebuchet MS", arial, helvetica, sans-serif; /*11px*/
+  font-weight:bold;
+  opacity: 0.6;
+  
+  border-top: 0px solid #b5bcc7;
+  border-bottom: 3px solid #007bbf;
+  
+  min-height: 20px;
+  
+  vertical-align: middle;
+  
+  /*background: #ffffff;*/
+    
+  padding-left: 20px;      
+  padding-top: 10px;  
+  padding-bottom: 3px;  
+  padding-right: 10px  !important;  
+    
+  border-left: 0px solid #fff;    
+  border-right: 0px solid #fff !important;
+
+}
+
+
+
+
+
+
+.m_filtro {
+    width: 100%;
+}
+
+.m_filtro > td
+{
+  padding-bottom: 15px;  
+  vertical-align: top;
+}
+
+.m_filtro .columna2_p {
+     
+}
+.m_filtro .columna2_p .icono {
+    border: 4px solid #dcdcdc;
+    float: left;    
+    /* width: 60px; */
+}
+.m_filtro .columna2_p:hover .icono {
+    border-color: #007bc0;
+}
+.m_filtro .columna2_p .icono img {
+    opacity: 0.6;
+}
+.m_filtro .columna2_p:hover .icono img {
+    opacity: 1;
+}
+
+.m_filtro .columna2_p .imagen {
+    border: 4px solid #dcdcdc;
+    float: left;
+    /* width: 60px; */
+}
+.m_filtro .columna2_p:hover .imagen {
+    border-color: #007bc0;
+}
+.m_filtro .columna2_p .imagen img {
+    opacity: 1;
+}
+.m_filtro .columna2_p:hover .imagen img {
+    opacity: 0.6;
+}
+.m_filtro .columna2_p .ficha {
+    float: right;
+    /* height: 250px; */
+    width: 83%;
+   
+}
+.m_filtro .columna2_p .ficha p {
+    border-bottom: 4px solid #dcdcdc;
+    
+    font-size: 15px;
+    font-weight: normal;
+    padding-bottom: 3px;    
+}
+
+
+.m_filtro .columna2_p:hover .ficha p {
+    border-bottom-color: #007bc0;
+}
+.m_filtro .columna2_p .ficha a {
+    color: #007bc0;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.m_filtro .columna2_p .ficha a:hover {
+    color: #007bc0;
+    text-decoration: underline;
+}
+
+.m_filtro .columna2_p .ficha2 {
+    float: right;
+    /* height: 250px; */
+    width: 65%;    
+}
+.m_filtro .columna2_p .ficha2 p {
+    border-bottom: 4px solid #dcdcdc;
+    font-size: 15px;
+    font-weight: normal;
+    padding-bottom: 3px;
+}
+
+
+
+.m_filtro .columna2_p:hover .ficha2 p {
+    border-bottom-color: #007bc0;
+}
+.m_filtro .columna2_p .ficha2 a {
+    color: #007bc0;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.m_filtro .columna2_p .ficha2 a:hover {
+    color: #007bc0;
+    text-decoration: underline;
+}
+
+.m_filtro .columna2_p .ficha_inici {
+    float: left;
+    /* height: 250px; */
+    width: 100%;
+   
+}
+.m_filtro .columna2_p .ficha_inici p {
+    border-bottom: 4px solid #dcdcdc;
+    
+    font-size: 15px;
+    font-weight: normal;
+    padding-bottom: 3px;  
+  font-size: 1.1em;
+}
+
+
+.m_filtro .columna2_p:hover .ficha_inici p {
+    border-bottom-color: #007bc0;
+}
+.m_filtro .columna2_p .ficha_inici a {
+    color: #007bc0;
+    font-weight: bold;
+    text-decoration: none;
+  font-size: 1em;
+}
+
+.m_filtro .columna2_p .ficha_inici a:hover {
+    color: #007bc0;
+    text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+.m_filtro .columna2_p .seccion {
+    float: right;
+    /*height: 110px;*/
+    width: 100%;
+}
+.m_filtro .columna2_p .seccion p {
+    border-bottom: 4px solid #dcdcdc;
+    font-size: 15px;
+    font-weight: normal;
+    padding-bottom: 3px;
+}
+
+
+.m_filtro .columna2_p:hover .seccion p {
+    border-bottom-color: #007bc0;
+}
+.m_filtro .columna2_p .seccion a {
+    color: #007bc0;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.m_filtro .columna2_p .seccion a:hover {
+    color: #007bc0;
+    text-decoration: underline;
+}
