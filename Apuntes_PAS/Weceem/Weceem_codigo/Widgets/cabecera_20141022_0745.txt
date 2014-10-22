@@ -1,0 +1,99 @@
+Cabecera con botones centrados mediante cuadrícula y buscador centrado. Los botones están un poco hacia la izquierda.
+
+<script type="text/javascript" src="${wcm.createLink(path:'js/crossloader.js')}"></script>
+
+<div id="spinner" class="spinner" style="display: none;">
+  <img alt="Carregant..." src="${wcm.createLinkToFile(path:'images/spinner.gif')}" />
+</div>
+
+<div class="row no-scroll-bar">
+  <div class="col-xs-12 col-vxs-12 col-sm-7 col-md-7 col-lg-8 row-margin-bottom-header">
+    <h1 class="pull-left logo-portal">
+      <img usemap = "#upc_link" class="img-responsive" alt="Universitat Politècnica de Catalunya" src="${wcm.createLinkToFile(path:'images/logo_upc_portal_pdi_2.png')}" style="border:0;"/>
+      <map name="upc_link">
+        <area shape=Rect Coords=0,0,50,60 href="http://www.upc.edu" target="_blank">
+      </map>
+    </h1>  
+  </div>
+  <div class="col-xs-12 col-vxs-12 col-sm-5 col-md-5 col-lg-4 row-margin-bottom-header">
+    <div class="navbar navbar-default navbar-Info" role="navigation">
+      <div class="navbar-container-UPC">
+        <div class="navbar-header">
+          <div class="row">
+            <div class="col-xs-3 col-vxs-4 col-md-4"></div>
+            <div class="col-xs-8 col-vxs-4 col-md-4" align="center">  
+              <button class="navbar-toggle collapsed navbar-toggle-header btn-header" data-target="#navbar-collapse-search" data-toggle="collapse" type="button">
+                <span class="sr-only">Cercar</span>
+                <span class="glyphicon glyphicon-search"></span>
+              </button>
+              <button class="navbar-toggle collapsed navbar-toggle-header btn-header" data-target="#navbar-collapse-info" data-toggle="collapse" type="button">
+                <span class="sr-only">Contacte i directori</span>
+                <span class="glyphicon glyphicon-info-sign"></span>
+              </button>
+              <button class="navbar-toggle collapsed navbar-toggle-header btn-header" data-target="#navbar-collapse-portal" data-toggle="collapse" type="button">
+                <span class="sr-only">Altres portals</span>
+                <span class="glyphicon glyphicon-new-window"></span>
+              </button>      
+            </div>
+            <div class="col-xs-1 col-vxs-4 col-md-4"></div>
+          </div>      
+        </div>
+        <div class="columna-centrada">
+        <div id="navbar-collapse-search" class="navbar-collapse collapse">        
+          <ul class="nav navbar-nav navbar-right search-position">          
+            <li>
+              <div class="clearfix pull-right buscador">
+                
+                  <upc:search max="2" erasePlaceHolder="no" placeHolder="Cercar..." types="com.upc.WcmPlantillaFitxa"></upc:search>
+                
+              </div>
+            </li>
+          </ul>        
+        </div>
+        </div>
+        
+        <div id="navbar-collapse-info" class="navbar-collapse collapse navbar-info format-lletra-upc">        
+          <ul class="nav navbar-nav navbar-right info-position">          
+            <li>
+              <span class="contacte">
+                <a href="/SIG/contacte" target="_blank" onclick="window.open(this.href,this.target,'width=750,height=550,resizable=yes,scrollbars=yes');return false">Contacte</a>
+              </span>
+            </li>
+            <li>
+              <span class="enllacPortal">
+                <a href="http://directori.upc.edu/directori/" target="_blank" onclick="window.open(this.href,this.target,'width=750,height=550,resizable=yes');return false">Directori UPC</a>
+              </span>
+            </li>
+          </ul>    
+        </div>        
+        <!-- /.nav-collapse -->
+      </div>
+      <!-- /.container-fluid -->
+    </div>
+  </div>
+</div>
+
+<div class="row no-scroll-bar">
+  <div class="col-vxs-12 col-sm-7 col-md-7 col-lg-8">
+    <div id="navbar-collapse-portal" class="navbar-collapse collapse navbar-portal format-lletra-upc">        
+      <ul class="nav navbar-nav">
+        <li>
+          <span class="enllacPortalFirst portal-UPC">
+            <a href="/Portal/PAS/">Portal PAS</a>
+          </span>
+          
+        </li>
+        <li>
+          <span class="enllacPortal">  
+            <a href="/Portal/Gestor/">Portal gestor/a</a>
+          </span>
+        </li>  
+        <li>
+          <span class="enllacPortal enllacPortalLast">
+            <a href="/Portal/BEC/">Portal beques grau/màster</a>
+          </span>
+        </li>
+      </ul>
+    </div>
+  </div>  
+</div>
