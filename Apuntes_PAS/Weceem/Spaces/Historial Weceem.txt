@@ -145,6 +145,10 @@ Bootstrap_20141021_1740_local: Buscador y botones (los 3) centrados.
 Bootstrap_20141022_0805_local: El CSS centra los botones de manera correcta. CONTIENE EJEMPLO DE COMO CENTRAR ELEMENTOS EN REJILLAS BOOTSTRAP (P1 Y P2).
 Bootstrap_20141022_0805_local: Contiene las letras del menú desplegables algo más grandes y el canto inferior redondeado.
 Bootstrap_20141022_1200_local: Contiene el template Inici sin buscador. Se empiezan las pruebas para el pie de página.
+Bootstrap_20141023_0950_local: Contiene el pie de página bien colocado.
+Bootstrap_20141023_1145_local: Espacio con todo correcto. Se procede a realizar limpieza de archivos CSS.
+Bootstrap_20141023_1400_local: Hay una buena parte del CSS ordenada. Parece que funciona bien.
+Bootstrap_20141023_1440_local: Hay una buena parte del CSS ordenada. Parece que funciona bien.
 							
 
 ----------------------
