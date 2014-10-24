@@ -1,0 +1,53 @@
+BOOTSTRAP_20141024_1235
+-----------------------
+Es necesario que cada HTML o Fitxa Plantilla cargue el template correspondient, NO-TEMPLATE (INHERIT) NO FUNCIONA.
+Carpeta Widgets (/widgets - Folder)
+	DOCTYPE Bootstrap (/doctype-bootstrap - Widget)
+	UPC head section (/upc-head - Widget)
+		Realiza los include de los JS y CSS comunes a todo.
+	Capçalera (/top-nav - Widget)
+	Barra estat (/status-bar - Widget)
+	Barra BreadCrumb (/breadCrumb-bar - Widget)
+	Peu (/bottom-nav - Widget)
+	Posició Menú Dspl Mòbil (/posicio-menu-dspl - Widget)
+	Menu desplegable (/menu-desplegable - Widget)
+	Menu Inici Esquerra (/menu-inici-esq - Widget)
+	Menú Inici Dreta (/menu-inici-dret - Widget)
+	Desplegable 1 columna (/desplegable-1-columna - Widget)
+	Desplegable 2 columnes (/desplegable-2-columnes - Widget)
+
+Carpeta Templates
+	Inici (/Inici - Template)
+		A utilizar únicamente en la página de Inici.
+	Página amb imatges/enllaços (/default-no-menu - Template)
+		A utilizar en Informació general y Racó personal.
+	Fitxes amb 2 columnes - nivell 3 (/default-3 - Template)
+		A utilizar en los HTML de dos columnas.
+	Fitxes amb 1 columna - nivell 4 (/default-4 - Template)
+		A utilizar en las fichas de una columna.
+
+Carpeta Styklesheets (/css - Folder)
+	main (/main.css - CSS)
+	bootstrap UPC (/bootstrapUPC.css - CSS)
+		Override de elementos del bootstrap original adaptados al formato UPC.
+	Estils UPC (/estilsUPC.css - CSS)
+		Estilos de los elementos de la barra de navegación, migas de pan, título, márgenes de las filas y ajustes utilizados en las rejillas, 
+		imágenes centradas en rejillas.
+	Estilos PAS (/estils-pas.css - CSS)													ANTES estilos-pas.js
+		Estilos heredados del space PAS, básicamente se utilizan en la página de Inici.
+	Fitxes Desplegables (/desplegables-fitxa.css - CSS)									ANTES dspl.css
+		Estilos referentes a los HTML de 1 y 2 columnas.
+	Menús (/menus.css - CSS)
+		Menús laterales estáticos (página de Inici), menú desplegable y el botón que lo muestra/oculta.
+	Estils peu pàgina (/sticky-footer.css - CSS)
+		Estilos referentes al pie de página.
+
+Carpeta JavaScript (/js - Folder)
+	Fitxes Desplegables JS 1 columna (/desplegables-fitxa-1.js - JavaScript)			ANTES dspl.js
+		Código del HTML de una columna desplegable.
+	Fitxes Desplegables JS 2 columnes (/desplegables-fitxa-2.js - JavaScript)			ANTES dspl2.js
+		Código del HTML con dos columnas desplegables.
+	Menú desplegable JS (/posicion-menu.js - JavaScript) 								ANTES menu.js
+		Código utilizado para mostrar/ocultar el menú en modo móvil.
+
+

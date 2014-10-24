@@ -1,0 +1,57 @@
+WECEEM - ESTILOS CREADOS Y EN DÓNDE SE UTILIZAN
+-----------------------------------------------
+Documento para realizar un control de los estilos que realmente se están utilizando.
+
+
+TEMPLATE/ARCHIVO			ESTILOS QUE SE UTILIZAN								PARA QUÉ ...
+----------------			-----------------------								------------
+Default (tmpl)				row-margin-bottom2									filas donde se usa el menú desplegable
+							fit-column											DIV que encierra las filas del menú desplegable y del contenido
+							fit-column2left fit-column content-movil			DIV que encierra <wcm:content />
+							
+Inici (tmpl)				tmpl-no-menu										para no cargar el título
+							fit-column2left fit-column-inici					DIV que encierra las filas de los menús laterales y del contenido
+							fit-content											DIV que encierra <wcm:content />
+							row-margin-top10									margen del contenido
+							row-margin-bottom2									margen de los menús
+							
+Default sense menu
+(tmpl)
+
+Menú comp - N3 (tmpl)		fit-column											DIV que encierra las filas del menú desplegable y del contenido
+							row-margin-bottom2									margen del menú
+							row-margin-top-col									margen del contenido
+							fit-column2left fit-column content-movil			DIV que encierra <wcm:content />
+							
+Menú comp - N4 (tmpl)		fit-column											DIV que encierra las filas del menú desplegable y del contenido
+							row-margin-bottom2									margen del menú
+							row-margin-top-col									margen del contenido
+							fit-column2left fit-column content-movil			DIV que encierra <wcm:content />
+							
+WIDGETS	
+Peu							row-margin-top-peu									separar accesibilitat en modo móvil de la fila superior
+
+Capçalera					row-margin-bottom-header
+							
+HOJAS
+Info gen					row-margin-bottom-imagen row-margin-top20-imagen
+	row-margin-bottom-descripcio row-margin-top20-descripcio col-info-height
+	
+Hoja n3						columnas-dobles
+							row-margin-bottom-col1
+
+
+
+							
+ROW's utilizados
+----------------							
+row-margin-bottom2  ----> Pasa a ser row-margin-bottom40
+row-margin-bottom-header x
+row-margin-bottom-imagen x
+row-margin-bottom-descripcio x
+row-margin-bottom-col1	x
+row-margin-top10	x								
+row-margin-top-col	x
+row-margin-top-peu 
+row-margin-top20-imagen x
+row-margin-top20-descripcio x

@@ -149,6 +149,12 @@ Bootstrap_20141023_0950_local: Contiene el pie de página bien colocado.
 Bootstrap_20141023_1145_local: Espacio con todo correcto. Se procede a realizar limpieza de archivos CSS.
 Bootstrap_20141023_1400_local: Hay una buena parte del CSS ordenada. Parece que funciona bien.
 Bootstrap_20141023_1440_local: Hay una buena parte del CSS ordenada. Parece que funciona bien.
+Bootstrap_20141024_0800_local: Está reducido todo el JS y pocas hojas CSS. Ahora habrá que eliminar los estilos ROW-MARGIN que no se utilicen.
+Bootstrap_20141024_0915_local: Se cambia row-margin-top2 por row-margin-top40. Parece que funciona bien.
+Bootstrap_20141024_1000_local: Se han reordenado todas las hojas. Hace falta revisar estilos-pass, que debería eliminarse una vez re-hecho Inici (HTML). Parece que funciona bien.
+Bootstrap_20141024_1150_local: Espacio correcto. A partir de aquí se intentará cambiar los estilos de la página de Inici.
+Bootstrap_20141024_1250_local: Reorganizado el Space.
+Bootstrap_20141024_1400_local: Falta por poner el espacio correcto en la página de Inici.
 							
 
 ----------------------

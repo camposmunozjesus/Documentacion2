@@ -2,3 +2,9 @@ CAMBIOS SIGNIFICATIVOS - ESTILOS CSS WECEEM PDI/TEST1
 =====================================================
 Margen inferior que hay entre el últimos desplegable del HTML de columnas dobles con el final del navegador: en la propia hoja HTMl, en la segunda clase
 	row hay un 'row-margin-bottom2'. Se ha quitado para que no teneer ningún tipo de espacio.
+	
+20141024: Introducido
+ .fit-column2right{
+   margin-right: -15px;
+ }
+En estilsUPC, esto podría provocar algún descuadre.
