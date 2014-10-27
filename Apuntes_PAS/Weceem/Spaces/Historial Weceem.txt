@@ -155,8 +155,19 @@ Bootstrap_20141024_1000_local: Se han reordenado todas las hojas. Hace falta rev
 Bootstrap_20141024_1150_local: Espacio correcto. A partir de aquí se intentará cambiar los estilos de la página de Inici.
 Bootstrap_20141024_1250_local: Reorganizado el Space.
 Bootstrap_20141024_1400_local: Falta por poner el espacio correcto en la página de Inici.
+Bootstrap_20141027_0800_local: Falta por arreglar Info General, que se descuadran un poco los títulos entre los 600 y los 900 px. (aprox)
+Bootstrap_20141027_0815_local: Centadas de la misma manera las páginas de Info General y Racó Personal. Funcionan bien.
+
+PAS_20141027_0900_merlot: Es la copia de seguridad antes de cambiar totalmente el space PAS del merlot.
+
+Bootstrap_20141027_0900_local: Copia de seguridad. TODO parece estar bien.
+Bootstrap_20141027_1230_local: Se ha modificado el menú posició desplegable JS para que el código funcione bien en la nueva aplicación RP y en weceem. También se han modificado los widgets: menú posició y menú desplegable.
+
+PAS_20141027_1230_merlot: Es la copia de seguridad antes de cambiar comenzar a limpiar el space PAS del merlot.
+Bootstrap_20141027_1500_local: Diversas modificaciones y mejoras.
 							
 
+							
 ----------------------
 ARREGLOS CÓDIGO GROOVY
 ----------------------
