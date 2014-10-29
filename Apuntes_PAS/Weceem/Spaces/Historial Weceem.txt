@@ -164,7 +164,12 @@ Bootstrap_20141027_0900_local: Copia de seguridad. TODO parece estar bien.
 Bootstrap_20141027_1230_local: Se ha modificado el menú posició desplegable JS para que el código funcione bien en la nueva aplicación RP y en weceem. También se han modificado los widgets: menú posició y menú desplegable.
 
 PAS_20141027_1230_merlot: Es la copia de seguridad antes de cambiar comenzar a limpiar el space PAS del merlot.
+
 Bootstrap_20141027_1500_local: Diversas modificaciones y mejoras.
+Bootstrap_20141028_1320_local: Buscador funcionando correctamente. Consigue la URL de cada servidor mediante JS + prepend (JQuery).
+Bootstrap_20141029_0950_local: Contiene la página y los estilos de Contacte.
+Bootstrap_20141029_1330_local: Contiene la página de Contacte bien direccionada y la de Accessibilitat.
+Bootstrap_20141029_1430_local: CPSEG.
 							
 
 							
