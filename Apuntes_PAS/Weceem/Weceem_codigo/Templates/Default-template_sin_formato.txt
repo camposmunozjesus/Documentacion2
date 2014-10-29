@@ -1,0 +1,19 @@
+Template sin formato pero que carga el container y container-UPC:
+<wcm:widget path="widgets/doctype-bootstrap"/>
+<html>
+  
+  <head>
+    <!-- Template que carga estilos CSS y JS únicamenre -->
+    <wcm:widget path="widgets/upc-head"/>
+  </head>
+
+  <body>
+    <div id="tmpl-no-format" class="container">
+      <div class="container-UPC">
+        <!-- Rejilla con el contenido principal -->
+        <wcm:content />        
+      </div>
+    </div>
+  </body>
+  
+</html>
