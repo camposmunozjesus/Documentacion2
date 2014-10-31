@@ -170,6 +170,14 @@ Bootstrap_20141028_1320_local: Buscador funcionando correctamente. Consigue la U
 Bootstrap_20141029_0950_local: Contiene la página y los estilos de Contacte.
 Bootstrap_20141029_1330_local: Contiene la página de Contacte bien direccionada y la de Accessibilitat.
 Bootstrap_20141029_1430_local: CPSEG.
+
+PAS_20141030_0815_merlot: CPSEG.
+PDI_20141030_0815_merlot: CPSEG.
+
+Bootstrap_20141030_1105_local: CPSEG antes de hacer una prueba para aprovechar los laterales blancos (banners, menús, etc ...).
+							   Se ha mejorado: icono de contacte, cambai la forma del ratón sobre los desplegables.
+							   
+PAS_20141030_1230_merlot: CPSEG. Tiene el menú lateral izuqierdo con tres apartados. El menú lateral dercho son banners.
 							
 
 							
