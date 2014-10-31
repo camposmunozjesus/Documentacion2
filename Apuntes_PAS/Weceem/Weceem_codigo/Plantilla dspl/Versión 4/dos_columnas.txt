@@ -1,0 +1,43 @@
+<div class="row no-scroll-bar columnas-dobles">
+  <div class="col-vxs-6 col-sm-6 col-md-6 col-lg-6 row-margin-bottom-col1">
+    <!--titulo 1 -->
+    <div class="selectedTitol" id="cuadro_101">
+      <div class="minus" id="estilo_cuadro_101">
+        TITULO 1</div>
+    </div>
+    <!-- Contenido  1 -->
+    <div class="dsplContent" id="dsplContent_cuadro_101">
+		<div>Contenido</div>	
+    </div>
+    <!--Titulo 2 -->
+    <div class="selectedTitol" id="cuadro_102">
+      <div class="minus" id="estilo_cuadro_102">
+        TITULO 2</div>
+    </div>
+    <!-- Contenido  2 -->
+    <div class="dsplContent" id="dsplContent_cuadro_102">
+      <div>Contenido</div>
+    </div>
+    <!-- Cierre primera columna--></div>
+  <!--SEGUNDA COLUMNAS -->
+  <div class="col-vxs-6 col-sm-6 col-md-6 col-lg-6">
+        <!--titulo 1 -->
+    <div class="selectedTitol" id="cuadro_201">
+      <div class="minus" id="estilo_cuadro_201">
+        TITULO 1</div>
+    </div>
+    <!-- Contenido  1 -->
+    <div class="dsplContent" id="dsplContent_cuadro_201">
+		<div>Contenido</div>	
+    </div>
+    <!--Titulo 2 -->
+    <div class="selectedTitol" id="cuadro_202">
+      <div class="minus" id="estilo_cuadro_202">
+        TITULO 2</div>
+    </div>
+    <!-- Contenido  2 -->
+    <div class="dsplContent" id="dsplContent_cuadro_202">
+      <div>Contenido</div>
+    </div>
+	<!-- Cierre segunda columna--></div>
+</div>

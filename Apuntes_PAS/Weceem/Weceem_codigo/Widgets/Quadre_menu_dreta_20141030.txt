@@ -1,0 +1,16 @@
+<div class="quadreMenuDret">   
+  <div id="Menu0" name="Menu0" title="Menú" class="dijitTitlePane">
+    <div id="Menu" name="Menu0" class="dijitTitlePaneTitleCap" style="background: url(images/icons/click.png) right no-repeat;" nclick="parent.location='https://merlot.upc.edu/${grails.util.Metadata.current.'app.name'}/${space?.name}/index" >
+      <span class="dijitTitlePaneTextNode">A un click</span>
+    </div>
+    <div id="Menu" name="Menu1" class="dijitTitlePaneTitle" onclick="parent.location='https://merlot.upc.edu/${grails.util.Metadata.current.'app.name'}/${space?.name}/index'" >
+      <span class="dijitTitlePaneTextNode"><a href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index">Dades generals</a></span>
+    </div>
+    <div id="Menu" name="Menu2" class="dijitTitlePaneTitle" onclick="parent.location='https://merlot.upc.edu/${grails.util.Metadata.current.'app.name'}/${space?.name}/index'" >
+      <span class="dijitTitlePaneTextNode"><a href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index">Vinculació i altres dades</a></span>
+    </div>
+    <div id="Menu" name="Menu3" class="dijitTitlePaneTitle" onclick="parent.location='https://merlot.upc.edu/${grails.util.Metadata.current.'app.name'}/${space?.name}/index'" >
+      <span class="dijitTitlePaneTextNode"><a href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index">Formació</a></span>
+    </div>
+  </div>
+</div>

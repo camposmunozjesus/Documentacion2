@@ -22,10 +22,20 @@ DETECTAR NOMBRE DE LA APLICACIÓN
 ${grails.util.Metadata.current.'app.name'}
 
 
+-------------------------
+DETECTAR NOMBRE DEL SPACE
+-------------------------
+${space?.name}
+
+
 -------------------
 OTRAS INSTRUCCIONES
 -------------------
 ${node.title.encodeAsHTML()}:Obtener la página actual que se está viendo.
+
+/${grails.util.Metadata.current.'app.name'}/${space?.name}/
+Detectará por ejemplo: /Portal/PAS/ ó /weceem/Test1/
+
 
 *****************************************************************************************************************************************************
 ------------------------------

@@ -1,0 +1,68 @@
+Una columna formato Grails. Preparado para la plantilla, admite listas:
+
+String content = "<div class=\"selectedTitol\" id=\"solicitud\">  <div class=\"minus_solicitud\" id=\"estilo_solicitud\">    Qui ho pot sol&middot;licitar</div></div><div class=\"dsplContent\" id=\"dsplContent_solicitud\">  <div>Contingut de &quot;Qui ho pot sol&middot;licitar&quot;</div></div><div class=\"selectedTitol\" id=\"descripcio\">  <div class=\"minus_descripcio\" id=\"estilo_descripcio\">    Descripci&oacute;</div></div><div class=\"dsplContent\" id=\"dsplContent_descripcio\">  <div>Contingut de &quot;Descripci&oacute;&quot;</div></div><div class=\"selectedTitol\" id=\"tramitar\">  <div class=\"minus_tramitar\" id=\"estilo_tramitar\">    Com tramitar-ho</div></div><div class=\"dsplContent\" id=\"dsplContent_tramitar\">  <div>Contingut de &quot;Com tramitar-ho&quot;</div></div><div class=\"selectedTitol\" id=\"adjuntar\">  <div class=\"minus_adjuntar\" id=\"estilo_adjuntar\">    Documentaci&oacute; que cal adjuntar</div></div><div class=\"dsplContent\" id=\"dsplContent_adjuntar\">  <div>Contingut de &quot;Documentaci&oacute; que cal adjuntar&quot;</div></div><div class=\"selectedTitol\" id=\"compte\">  <div class=\"minus_compte\" id=\"estilo_compte\">    Cal tenir en compte que...</div></div><div class=\"dsplContent\" id=\"dsplContent_compte\">  <div>Contingut de &quot;Cal tenir en compte que...&quot;</div></div><div class=\"selectedTitol\" id=\"enllacos\">  <div class=\"minus_enllacos\" id=\"estilo_enllacos\">    Enlla&ccedil;os d&#39;inter&egrave;s</div></div><div class=\"dsplContent\" id=\"dsplContent_enllacos\">  <div>Contingut de &quot;Enlla&ccedil;os d&#39;inter&egrave;s&quot;</div></div><div class=\"selectedTitol\" id=\"normativa\">  <div class=\"minus_normativa\" id=\"estilo_normativa\">    Normativa de refer&egrave;ncia</div></div><div class=\"dsplContent\" id=\"dsplContent_normativa\">  <div>Contingut de &quot;Normativa de refer&egrave;ncia&quot;</div></div><div class=\"selectedTitol\" id=\"consulta\">  <div class=\"minus_consulta\" id=\"estilo_consulta\">    Per fer una consulta...</div></div><div class=\"dsplContent\" id=\"dsplContent_consulta\">  <div>Contingut de &quot;Per fer una consulta...&quot;</div></div>"
+
+<div class="selectedTitol" id="solicitud">
+  <div class="minus_solicitud" id="estilo_solicitud">
+    Qui ho pot sol&middot;licitar</div>
+</div>
+<div class="dsplContent" id="dsplContent_solicitud">
+  <div>
+    Contingut de &quot;Qui ho pot sol&middot;licitar&quot;</div>
+</div>
+<div class="selectedTitol" id="descripcio">
+  <div class="minus_descripcio" id="estilo_descripcio">
+    Descripci&oacute;</div>
+</div>
+<div class="dsplContent" id="dsplContent_descripcio">
+  <div>
+    Contingut de &quot;Descripci&oacute;&quot;</div>
+</div>
+<div class="selectedTitol" id="tramitar">
+  <div class="minus_tramitar" id="estilo_tramitar">
+    Com tramitar-ho</div>
+</div>
+<div class="dsplContent" id="dsplContent_tramitar">
+  <div>
+    Contingut de &quot;Com tramitar-ho&quot;</div>
+</div>
+<div class="selectedTitol" id="adjuntar">
+  <div class="minus_adjuntar" id="estilo_adjuntar">
+    Documentaci&oacute; que cal adjuntar</div>
+</div>
+<div class="dsplContent" id="dsplContent_adjuntar">
+  <div>
+    Contingut de &quot;Documentaci&oacute; que cal adjuntar&quot;</div>
+</div>
+<div class="selectedTitol" id="compte">
+  <div class="minus_compte" id="estilo_compte">
+    Cal tenir en compte que...</div>
+</div>
+<div class="dsplContent" id="dsplContent_compte">
+  <div>
+    Contingut de &quot;Cal tenir en compte que...&quot;</div>
+</div>
+<div class="selectedTitol" id="enllacos">
+  <div class="minus_enllacos" id="estilo_enllacos">
+    Enlla&ccedil;os d&#39;inter&egrave;s</div>
+</div>
+<div class="dsplContent" id="dsplContent_enllacos">
+  <div>
+    Contingut de &quot;Enlla&ccedil;os d&#39;inter&egrave;s&quot;</div>
+</div>
+<div class="selectedTitol" id="normativa">
+  <div class="minus_normativa" id="estilo_normativa">
+    Normativa de refer&egrave;ncia</div>
+</div>
+<div class="dsplContent" id="dsplContent_normativa">
+  <div>
+    Contingut de &quot;Normativa de refer&egrave;ncia&quot;</div>
+</div>
+<div class="selectedTitol" id="consulta">
+  <div class="minus_consulta" id="estilo_consulta">
+    Per fer una consulta...</div>
+</div>
+<div class="dsplContent" id="dsplContent_consulta">
+  <div>
+    Contingut de &quot;Per fer una consulta...&quot;</div>
+</div>
