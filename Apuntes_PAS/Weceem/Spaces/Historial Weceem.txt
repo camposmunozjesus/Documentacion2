@@ -178,7 +178,9 @@ Bootstrap_20141030_1105_local: CPSEG antes de hacer una prueba para aprovechar l
 							   Se ha mejorado: icono de contacte, cambai la forma del ratón sobre los desplegables.
 							   
 PAS_20141030_1230_merlot: CPSEG. Tiene el menú lateral izuqierdo con tres apartados. El menú lateral dercho son banners.
-							
+PAS_20141031_1000_merlot: Tiene un carrusel slider bien montado.
+
+Bootstrap_20141031_1300_local: Tiene un carrusel/slider con las imágenes un poco reducidas en cuanto a altura.							
 
 							
 ----------------------
