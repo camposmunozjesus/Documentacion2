@@ -1,0 +1,250 @@
+INSTRUCCIONES DE CONFIGURACIÓN DE PRIVACIDAD (ARCHIVO POLIVY) - WECEEM
+======================================================================
+Para poder utilizar un archivo de configuración de privacidad en Eclipse se debe introducir la siguiente línea de comandos:
+run-app --verbose --stacktrace -Dserver.port=8090 -Dweceem.security.policy.path="C:/wec/portalpolicy.groovy"
+
+Se supone que el archivo se llama portalpolicy.groovy y está ubicado en C:/wec.
+
+-------------------------------------------------
+EJEMPLO DE ARCHIVO DE CONFIGURACIÓN DE PRIVACIDAD
+-------------------------------------------------
+Este archivo permite restringir acceso/vista/edición a determinados usuarios dependiendo de su rol.
+
+Los comentarios a continuación deben eliminarse para que el archivo funcione adecuadamente.
+
+policy = {
+
+    'ROLE_ADMIN' {
+		space '*'	---> Se aplica a este rol para todos los spaces
+
+        admin true
+        create true
+        edit true
+        view true
+        delete true
+		
+		"widgets" {	---> Impide ver widgets (en este caso es una carpeta -> NO se podrán ver tampoco sus contenidos)
+			view false
+		}
+
+		"templates" {
+			view false
+		}
+
+		"css" {
+			view false
+		}
+
+		"js" {
+			view false
+		}
+
+		"fonts" {
+			view false
+		}
+		
+		"views" {
+			view false
+		}
+		
+		"search-results" {
+			view false
+		}
+	
+		"contacte" { ---> Impide ver widgets (en este caso es un HTML)
+			view false
+		}
+		
+		"accessibilitat" {
+			view false
+		}
+		
+		"css/default.css" {
+			view false
+		}
+		
+		"widgets/blog-entry-widget" {
+			view false
+		}
+		
+		"widgets/common-head" {
+			view false
+		}		
+		
+		"widgets/header" {
+			view false
+		}		
+		
+		"widgets/footer" {
+			view false
+		}
+
+		"widgets/header" {
+			edit false
+		}
+
+		"libs" {
+			edit false
+			delete false
+		}				
+	}
+
+    'ROLE_USER' {
+		space '*'
+
+        admin true
+        create true
+        edit true
+        view true
+        delete true
+		
+		"widgets" {
+			view false
+		}
+
+		"templates" {
+			view false
+		}
+
+		"css" {
+			view false
+		}
+
+		"js" {
+			view false
+		}
+
+		"fonts" {
+			view false
+		}
+		
+		"views" {
+			view false
+		}
+		
+		"search-results" {
+			view false
+		}
+	
+		"contacte" {
+			view false
+		}
+		
+		"accessibilitat" {
+			view false
+		}
+		
+		"css/default.css" {
+			view false
+		}
+		
+		"widgets/blog-entry-widget" {
+			view false
+		}
+		
+		"widgets/common-head" {
+			view false
+		}		
+		
+		"widgets/header" {
+			view false
+		}		
+		
+		"widgets/footer" {
+			view false
+		}
+
+		"widgets/header" {
+			edit false
+		}
+
+		"libs" {
+			edit false
+			delete false
+		}				
+	}
+
+	'ROLE_GUEST' {
+		space '*'
+
+        admin true
+        create true
+        edit true
+        view true
+        delete true
+		
+		"widgets" {
+			view false
+		}
+
+		"templates" {
+			view false
+		}
+
+		"css" {
+			view false
+		}
+
+		"js" {
+			view false
+		}
+
+		"fonts" {
+			view false
+		}
+		
+		"views" {
+			view false
+		}
+		
+		"search-results" {
+			view false
+		}
+	
+		"contacte" {
+			view false
+		}
+		
+		"accessibilitat" {
+			view false
+		}
+		
+		"css/default.css" {
+			view false
+		}
+		
+		"widgets/blog-entry-widget" {
+			view false
+		}
+		
+		"widgets/common-head" {
+			view false
+		}		
+		
+		"widgets/header" {
+			view false
+		}		
+		
+		"widgets/footer" {
+			view false
+		}
+
+		"widgets/header" {
+			edit false
+		}
+
+		"libs" {
+			edit false
+			delete false
+		}				
+	}
+}
+
+
+*****************************************************************************************************************************************************
+------------------------------
+Creación:	31-10-2014
+
+Jesús Campos Muñoz
+jesus.campos@upc.edu
+------------------------------
