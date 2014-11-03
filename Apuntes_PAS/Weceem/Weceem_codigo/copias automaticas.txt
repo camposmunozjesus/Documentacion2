@@ -1,0 +1,55 @@
+WECEEM - GENERACIÓN DE COPIAS AUTOMÁTICAS
+=========================================
+Se pretende que una vez iniciada la aplicación, se realicen copias de seguridad de los spaces de manera automática cada cierto tiempo.
+
+1era versión:
+GSP: views/wcmSpace/exportSpace.gsp se ñade el botón para ejecutar la acción (aún en pruebas)
+	  <g:form controller="wcmSpace" method="post" params="[id:space.id]"
+			action="performCpseg">
+		<div class="dialog">
+		  <table>
+			<tbody>
+			  <tr>
+				<td colspan="2">
+				  <input type="submit"class="button ui-state-default ui-corner-all" value="CPSEG"/>
+				</td>
+			  </tr>
+			</tbody>
+		  </table>
+		</div>
+	  </g:form>
+
+En WcmSpaceController.groovy
+	def performCpseg = {
+		println "CPSEG1: " + WcmSpace.get(params.id)
+		
+//		log.debug "Starting export of space [${params.space}] - all params: ${params}"
+		def space = WcmSpace.get(params.id)
+//		assert wcmSecurityService.hasPermissions(space, [WeceemSecurityPolicy.PERMISSION_ADMIN])
+//		log.debug "Export found space [${space}]"
+		try {
+			def file = wcmImportExportService.exportSpace(space, "simpleSpaceExporter")
+			println file
+////			log.debug "Exported space to temp file [${file}]"
+//			response.contentType = wcmImportExportService.getExportMimeType("simpleSpaceExporter")
+//			response.addHeader('WcmContent-Length', file.length().toString())
+//			def contDisp = "attachment;filename=${space.name}.${FilenameUtils.getExtension(file.name)}"
+////			log.debug "Returning exported space to client with content disposition: [${contDisp}]"
+//			response.addHeader('Content-disposition', contDisp)
+//			response.outputStream << file.readBytes() 
+		} catch (Exception e) {
+//			log.error "Could not export space ${params.space}", e
+			// This is unlikely to work!
+			println "ERROR: " + e.message
+
+		}
+		
+Hasta ahora se consigue tener el archivo y que no salga el diálogo de descarga.
+
+*****************************************************************************************************************************************************
+------------------------------
+Creación:	03-10-2014
+
+Jesús Campos Muñoz
+jesus.campos@upc.edu
+------------------------------
