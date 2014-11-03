@@ -1,0 +1,65 @@
+GRAILS - TAGLIBs
+================
+--------------------------------------------
+CREAR TAGLIB PERSONALIZADA: EJEMPLO SENCILLO
+--------------------------------------------
+En en apartado taglib hacer New -> taglib: por ejemplo, MyTagLib.
+
+En el nuevo taglib se define:
+	class MyTagLib {
+	
+		static namespace = "wcm"
+	
+		def myTag = { attrs, body ->
+			out << "<div class='${attrs.estilo}'>"
+			out << body()
+			out << "<div>"
+		}
+	}
+	
+Para utilizar la taglib en una GSP:
+	<wcm:myTag />
+	
+-------------------------------------------------------------------------------------
+CREAR TAGLIB PERSONALIZADA: UTILIZANDO VARIABLES DEL CÓDIGO GROOVY EN LA PANTALLA GSP
+-------------------------------------------------------------------------------------
+Se define un nuevo taglib.
+
+	def jclTagLib = { attrs, body ->
+		def params = makeFindParams(attrs)
+		def id = attrs[ATTR_ID]
+
+		def c
+		if (id) {
+			c = WcmContent.get(id)
+		}
+		
+		println c
+		println c.aliasURI
+		
+		def bodyargs = [
+			first: c,
+			menucls: "MENU"
+		]
+		
+		
+		out << body(bodyargs)
+		
+		return c
+	}
+
+En este caso se puede observar que se le pasan argumentos al body de la página. En concreto, se recupera un elemento de la base de datos (a partir de un
+atributo que se pasa mediante la tag en la pantalla GSP) y se guarda en la variable "c". El objeto de la base de datos tiene diversos atributos, y uno 
+de ellos es "aliasURI". Posteriormente esta variable puede ser consultada en la pantalla GSP como se muestra a continuación:
+	<wcm:jclTagLib id="${desplegable.id}">
+	  <br> bodyargs.menucls: ${menucls} <br>
+	  <br> bodyargs.first : ${first.aliasURI} <br>
+	</wcm:jclTagLib >
+
+*****************************************************************************************************************************************************
+------------------------------
+Creación:	03-10-2014
+
+Jesús Campos Muñoz
+jesus.campos@upc.edu
+------------------------------
