@@ -43,8 +43,46 @@ En WcmSpaceController.groovy
 			println "ERROR: " + e.message
 
 		}
-		
+	}
 Hasta ahora se consigue tener el archivo y que no salga el diálogo de descarga.
+
+MODIF: En lugar de meterse en el código fuente a fondo, lo que se hace es mover y cambiar el nombre al archivo final que hay en el temporal
+	/* CPSEG - 20141103 */
+	def performCpseg = {
+		println "CPSEG1: " + WcmSpace.get(params.id)
+		
+		println "executenado CPSEG - executeBackup"
+		def ts = new SimpleDateFormat('yyyyMMdd'+'_'+'HHmm').format(new Date())
+		println "fecha:"+ts
+		
+//		log.debug "Starting export of space [${params.space}] - all params: ${params}"
+		def space = WcmSpace.get(params.id)
+//		assert wcmSecurityService.hasPermissions(space, [WeceemSecurityPolicy.PERMISSION_ADMIN])
+//		log.debug "Export found space [${space}]"
+		try {
+			def file = wcmImportExportService.exportSpace(space, "simpleSpaceExporter")
+			println file
+			 
+    	   if(file.renameTo(new File("E:/weceem/cpseg/"+space.name+"_"+ts+".zip"))){
+    		System.out.println("File is moved successful!");
+    	   }else{
+    		System.out.println("File is failed to move!");
+    	   }
+		   
+////			log.debug "Exported space to temp file [${file}]"
+//			response.contentType = wcmImportExportService.getExportMimeType("simpleSpaceExporter")
+//			response.addHeader('WcmContent-Length', file.length().toString())
+//			def contDisp = "attachment;filename=${space.name}.${FilenameUtils.getExtension(file.name)}"
+////			log.debug "Returning exported space to client with content disposition: [${contDisp}]"
+//			response.addHeader('Content-disposition', contDisp)
+//			response.outputStream << file.readBytes()
+		} catch (Exception e) {
+//			log.error "Could not export space ${params.space}", e
+			// This is unlikely to work!
+			println "ERROR: " + e.message
+
+		}
+    }
 
 *****************************************************************************************************************************************************
 ------------------------------
