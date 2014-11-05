@@ -1,0 +1,25 @@
+WECEEM - ESTILOS CSS
+====================
+Cuando creamos un nuevo tipo de elemento del dominio, como puede ser la plantilla ficha, los comentarios que van seguidos aparecen en la misma línea.
+Por este motivo se añaden en la hoja de estilos xmlcolor.css de la ruta C:\Users\Jesus\.grails\2.3.4\projects\weceem\plugins\weceem-1.2-M1\web-app\_weceem\codemirror\css\xmlcolors.css,
+dentro del plugin en la parte de .links, las siguientes reglas:
+
+/* Hace que cada span que contiene un comentario se muestre en una línea separada */
+span.xml-comment {
+    color: #A70;
+    display: block;
+}
+
+/* Hace que no se muestre el salto de línea en HTML <br> cuando se sitúa detrás de un xml-comment. Evita dobles espacios */
+span.xml-comment + br{
+  display: none;
+}
+
+
+*****************************************************************************************************************************************************
+------------------------------
+Creación:	05-11-2014
+
+Jesús Campos Muñoz
+jesus.campos@upc.edu
+------------------------------
