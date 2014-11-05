@@ -1,0 +1,56 @@
+Cambiar cuadro por box y estilo por title:
+<!-- Para duplicar un desplegable copiar desde el comentario donde indica PRIMER DESPLEGABLE ... hasta el DIV que se encuentra justo antes de SEGUNDO DESPLEGABLE ... , y pegarlo justo despues del DIV que viene antes de SEGUNDO DESPLEGABLE ... o el comentario El siguiente DIV cierra la ... -->
+<div class="row no-scroll-bar columnas-dobles">
+  <div class="col-vxs-6 col-sm-6 col-md-6 col-lg-6 row-margin-bottom-col1">
+    <!-- ********** PRIMER DESPLEGABLE COLUMNA #1 ********** -->
+    <div class="selectedTitol" id="box_101">
+	  <!-- Titulo 1 -->
+      <div class="minus" id="title_box_101">
+        TITULO 1</div>
+    </div>
+    <div class="dsplContent" id="dsplContent_box_101">
+	    <!-- Contenido  1 -->
+		<div>Contenido</div>	
+    </div>
+    <!-- ********** SEGUNDO DESPLEGABLE COLUMNA #1 ********** -->
+    <div class="selectedTitol" id="box_102">
+	  <!--Titulo 2 -->
+      <div class="minus" id="title_box_102">
+        TITULO 2</div>
+    </div>
+    <div class="dsplContent" id="dsplContent_box_102">
+	  <!-- Contenido  2 -->
+      <div>Contenido</div>
+    </div>
+    <!-- El siguiente DIV cierra la primera columna--></div>
+  <!--SEGUNDA COLUMNAS -->
+  <div class="col-vxs-6 col-sm-6 col-md-6 col-lg-6">
+    <!-- ********** PRIMER DESPLEGABLE COLUMNA #2 ********** -->   
+    <div class="selectedTitol" id="box_201">
+	  <!-- Titulo 1 -->
+      <div class="minus" id="title_box_201">
+        TITULO 1</div>
+    </div>
+    <div class="dsplContent" id="dsplContent_box_201">
+	    <!-- Contenido  1 -->
+		<div>Contenido</div>	
+    </div>
+	<!-- ********** SEGUNDO DESPLEGABLE COLUMNA #2 ********** -->
+    <div class="selectedTitol" id="box_202">
+	  <!-- Titulo 2 -->
+      <div class="minus" id="title_box_202">
+        TITULO 2</div>
+    </div>
+    <div class="dsplContent" id="dsplContent_box_202">
+	  <!-- Contenido  1 -->
+      <div>Contenido</div>
+    </div>
+	<!-- El siguiente DIV cierra la segunda columna--></div>
+</div>
+
+
+--------------------------------
+STRING PARA EL DOMINIO DE GRAILS
+--------------------------------
+
+<!-- Para duplicar un desplegable copiar desde el comentario donde indica PRIMER DESPLEGABLE ... hasta el DIV que se encuentra justo antes de SEGUNDO DESPLEGABLE ... , y pegarlo justo despues del DIV que viene antes de SEGUNDO DESPLEGABLE ... o el comentario El siguiente DIV cierra la ... --><div class="row no-scroll-bar columnas-dobles">  <div class="col-vxs-6 col-sm-6 col-md-6 col-lg-6 row-margin-bottom-col1">    <!-- ********** PRIMER DESPLEGABLE COLUMNA #1 ********** -->    <div class="selectedTitol" id="box_101">	  <!-- Titulo 1 -->      <div class="minus" id="title_box_101">        TITULO 1</div>    </div>    <div class="dsplContent" id="dsplContent_box_101">	    <!-- Contenido  1 -->		<div>Contenido</div>	    </div>    <!-- ********** SEGUNDO DESPLEGABLE COLUMNA #1 ********** -->    <div class="selectedTitol" id="box_102">	  <!--Titulo 2 -->      <div class="minus" id="title_box_102">        TITULO 2</div>    </div>    <div class="dsplContent" id="dsplContent_box_102">	  <!-- Contenido  2 -->      <div>Contenido</div>    </div>    <!-- El siguiente DIV cierra la primera columna--></div>  <!--SEGUNDA COLUMNAS -->  <div class="col-vxs-6 col-sm-6 col-md-6 col-lg-6">    <!-- ********** PRIMER DESPLEGABLE COLUMNA #2 ********** -->       <div class="selectedTitol" id="box_201">	  <!-- Titulo 1 -->      <div class="minus" id="title_box_201">        TITULO 1</div>    </div>    <div class="dsplContent" id="dsplContent_box_201">	    <!-- Contenido  1 -->		<div>Contenido</div>	    </div>	<!-- ********** SEGUNDO DESPLEGABLE COLUMNA #2 ********** -->    <div class="selectedTitol" id="box_202">	  <!-- Titulo 2 -->      <div class="minus" id="title_box_202">        TITULO 2</div>    </div>    <div class="dsplContent" id="dsplContent_box_202">	  <!-- Contenido  1 -->      <div>Contenido</div>    </div>	<!-- El siguiente DIV cierra la segunda columna--></div></div>

@@ -1,0 +1,59 @@
+1 columna
+
+$(document).ready(function(){
+  
+  //Variable que guarda el último título sobre el que se hizo click para devolverle su forma original.
+  //REV-001
+  //var titolAnterior;
+  
+  $('.selectedTitol').click(function(event) {
+    //REV-001
+    //if(titolAnterior){
+      //document.getElementById(titolAnterior).className = "dsplTitol";
+    //}
+       
+    var id = $(this).attr("id");
+    
+    //Mostrar elemento: con toggle.
+    //$("#dsplContent_"+id).toggle("slow");
+    
+    //Mostrar elemento: hace un toggle con slideUp y slideDown.
+    if ($("#dsplContent_"+id).is(':visible')){
+      $("#dsplContent_"+id).slideUp("fast");
+      document.getElementById(id).className = "dsplTitol";      
+      document.getElementById("estilo_"+id).className = "plus_"+id;
+    }
+    else{
+      $("#dsplContent_"+id).slideDown("fast");
+      document.getElementById(id).className = "selectedTitol";      
+      document.getElementById("estilo_"+id).className = "minus_"+id;
+    }    
+
+    //Oculta el resto de elementos
+    //Las tres líneas siguientes hacen que se cierren los NO activos - REV-001
+   // document.getElementById("dsplContent_"+id).className = "";    
+    //$(".dsplContent").slideUp("fast");
+    //document.getElementById("dsplContent_"+id).className = "dsplContent";
+    //REV-001
+    //titolAnterior=id;
+  });
+  
+  
+  //REV-002
+  //Correcto funcionamiento del placeholder en InternetExplorer.
+  $('[placeholder]').focus(function() {
+    var input = $(this);
+    if (input.val() == input.attr('placeholder')) {
+      input.val('');
+      input.removeClass('placeholder');
+    }
+  }).blur(function() {
+      var input = $(this);
+      if (input.val() == '' || input.val() == input.attr('placeholder')) {
+      input.addClass('placeholder');
+      input.val(input.attr('placeholder'));
+  }
+}).blur();
+  //REV-002
+
+});

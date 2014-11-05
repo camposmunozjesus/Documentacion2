@@ -1,0 +1,261 @@
+Añadir box_ al estilo de cada div class=selectedTitol. Quitar estilo_ de cada div class=minus_solicitud y añadir title_box_. Cambiar dsplContent_
+de cada div class=dsplContent por dsplContent_box_:
+<!-- Cuadro desplegable SOLICITUD -->
+<!-- Titulo del cuadro -->
+<div class="selectedTitol" id="box_solicitud">
+  <div class="minus" id="title_box_solicitud">
+    Qui ho pot sol&middot;licitar</div>
+</div>
+<div class="dsplContent" id="dsplContent_box_solicitud">
+  <div>
+    Contingut de &quot;Qui ho pot sol&middot;licitar&quot;</div>
+</div>
+<!-- Cuadro desplegable DESCRIPCIO -->
+<!-- Titulo del cuadro -->
+<div class="selectedTitol" id="box_descripcio">
+  <div class="minus" id="title_box_descripcio">
+    Descripci&oacute;</div>
+</div>
+<div class="dsplContent" id="dsplContent_box_descripcio">
+  <div>
+    Contingut de &quot;Descripci&oacute;&quot;</div>
+</div>
+<div class="selectedTitol" id="box_tramitar">
+  <div class="minus" id="title_box_tramitar">
+    Com tramitar-ho</div>
+</div>
+<div class="dsplContent" id="dsplContent_box_tramitar">
+  <div>
+    Contingut de &quot;Com tramitar-ho&quot;</div>
+</div>
+<div class="selectedTitol" id="box_adjuntar">
+  <div class="minus" id="title_box_adjuntar">
+    Documentaci&oacute; que cal adjuntar</div>
+</div>
+<div class="dsplContent" id="dsplContent_box_adjuntar">
+  <div>
+    Contingut de &quot;Documentaci&oacute; que cal adjuntar&quot;</div>
+</div>
+<div class="selectedTitol" id="box_compte">
+  <div class="minus" id="title_box_compte">
+    Cal tenir en compte que...</div>
+</div>
+<div class="dsplContent" id="dsplContent_box_compte">
+  <div>
+    Contingut de &quot;Cal tenir en compte que...&quot;</div>
+</div>
+<div class="selectedTitol" id="box_enllacos">
+  <div class="minus" id="title_box_enllacos">
+    Enlla&ccedil;os d&#39;inter&egrave;s</div>
+</div>
+<div class="dsplContent" id="dsplContent_box_enllacos">
+  <div>
+    Contingut de &quot;Enlla&ccedil;os d&#39;inter&egrave;s&quot;</div>
+</div>
+<div class="selectedTitol" id="box_normativa">
+  <div class="minus" id="title_box_normativa">
+    Normativa de refer&egrave;ncia</div>
+</div>
+<div class="dsplContent" id="dsplContent_box_normativa">
+  <div>
+    Contingut de &quot;Normativa de refer&egrave;ncia&quot;</div>
+</div>
+<div class="selectedTitol" id="box_consulta">
+  <div class="minus" id="title_box_consulta">
+    Per fer una consulta...</div>
+</div>
+<div class="dsplContent" id="dsplContent_box_consulta">
+  <div>
+    Contingut de &quot;Per fer una consulta...&quot;</div>
+</div>
+
+
+---------------
+CON COMENTARIOS
+---------------
+<!-- ****************************************************************** -->
+<!-- ****************** Cuadro desplegable SOLICITUD ****************** -->
+<!-- Titulo del cuadro -->
+<div class="selectedTitol" id="box_solicitud">
+  <div class="minus" id="title_box_solicitud">
+    Qui ho pot sol&middot;licitar</div>
+</div>
+<!-- Contenido desplegable -->
+<div class="dsplContent" id="dsplContent_box_solicitud">
+  <div>
+    Contingut de &quot;Qui ho pot sol&middot;licitar&quot;</div>
+</div>
+<!-- ****************************************************************** -->
+<!-- ****************** Cuadro desplegable DESCRIPCIO ***************** -->
+<!-- Titulo del cuadro -->
+<div class="selectedTitol" id="box_descripcio">
+  <div class="minus" id="title_box_descripcio">
+    Descripci&oacute;</div>
+</div>
+<!-- Contenido desplegable -->
+<div class="dsplContent" id="dsplContent_box_descripcio">
+  <div>
+    Contingut de &quot;Descripci&oacute;&quot;</div>
+</div>
+<!-- ****************************************************************** -->
+<!-- ****************** Cuadro desplegable TRAMITAR  ****************** -->
+<!-- Titulo del cuadro -->
+<div class="selectedTitol" id="box_tramitar">
+  <div class="minus" id="title_box_tramitar">
+    Com tramitar-ho</div>
+</div>
+<!-- Contenido desplegable -->
+<div class="dsplContent" id="dsplContent_box_tramitar">
+  <div>
+    Contingut de &quot;Com tramitar-ho&quot;</div>
+</div>
+<!-- ****************************************************************** -->
+<!-- ****************** Cuadro desplegable ADJUNTAR  ****************** -->
+<!-- Titulo del cuadro -->
+<div class="selectedTitol" id="box_adjuntar">
+  <div class="minus" id="title_box_adjuntar">
+    Documentaci&oacute; que cal adjuntar</div>
+</div>
+<!-- Contenido desplegable -->
+<div class="dsplContent" id="dsplContent_box_adjuntar">
+  <div>
+    Contingut de &quot;Documentaci&oacute; que cal adjuntar&quot;</div>
+</div>
+<!-- ****************************************************************** -->
+<!-- ******************   Cuadro desplegable COMPTE  ****************** -->
+<!-- Titulo del cuadro -->
+<div class="selectedTitol" id="box_compte">
+  <div class="minus" id="title_box_compte">
+    Cal tenir en compte que...</div>
+</div>
+<!-- Contenido desplegable -->
+<div class="dsplContent" id="dsplContent_box_compte">
+  <div>
+    Contingut de &quot;Cal tenir en compte que...&quot;</div>
+</div>
+<!-- ****************************************************************** -->
+<!-- ****************** Cuadro desplegable ENLLACOS  ****************** -->
+<!-- Titulo del cuadro -->
+<div class="selectedTitol" id="box_enllacos">
+  <div class="minus" id="title_box_enllacos">
+    Enlla&ccedil;os d&#39;inter&egrave;s</div>
+</div>
+<!-- Contenido desplegable -->
+<div class="dsplContent" id="dsplContent_box_enllacos">
+  <div>
+    Contingut de &quot;Enlla&ccedil;os d&#39;inter&egrave;s&quot;</div>
+</div>
+<!-- ****************************************************************** -->
+<!-- ****************** Cuadro desplegable NORMATIVA ****************** -->
+<!-- Titulo del cuadro -->
+<div class="selectedTitol" id="box_normativa">
+  <div class="minus" id="title_box_normativa">
+    Normativa de refer&egrave;ncia</div>
+</div>
+<!-- Contenido desplegable -->
+<div class="dsplContent" id="dsplContent_box_normativa">
+  <div>
+    Contingut de &quot;Normativa de refer&egrave;ncia&quot;</div>
+</div>
+<!-- ****************************************************************** -->
+<!-- ****************** Cuadro desplegable CONSULTA  ****************** -->
+<!-- Titulo del cuadro -->
+<div class="selectedTitol" id="box_consulta">
+  <div class="minus" id="title_box_consulta">
+    Per fer una consulta...</div>
+</div>
+<!-- Contenido desplegable -->
+<div class="dsplContent" id="dsplContent_box_consulta">
+  <div>
+    Contingut de &quot;Per fer una consulta...&quot;</div>
+</div>
+
+
+--------------------------------
+STRING PARA EL DOMINIO DE GRAILS
+--------------------------------
+String content = " <!-- ****************************************************************** --> <!-- ****************** Cuadro desplegable SOLICITUD ****************** --> <!-- Titulo del cuadro --> <div class=\"selectedTitol\" id=\"box_solicitud\"> <div class=\"minus\" id=\"title_box_solicitud\"> Qui ho pot sol&middot;licitar</div> </div> <!-- Contenido desplegable --> <div class=\"dsplContent\" id=\"dsplContent_box_solicitud\"> <div>Contingut de &quot;Qui ho pot sol&middot;licitar&quot;</div> </div>"
+<!-- ****************************************************************** -->
+<!-- ****************** Cuadro desplegable DESCRIPCIO ***************** -->
+<!-- Titulo del cuadro -->
+<div class="selectedTitol" id="box_descripcio">
+  <div class="minus" id="title_box_descripcio">
+    Descripci&oacute;</div>
+</div>
+<!-- Contenido desplegable -->
+<div class="dsplContent" id="dsplContent_box_descripcio">
+  <div>
+    Contingut de &quot;Descripci&oacute;&quot;</div>
+</div>
+<!-- ****************************************************************** -->
+<!-- ****************** Cuadro desplegable TRAMITAR  ****************** -->
+<!-- Titulo del cuadro -->
+<div class="selectedTitol" id="box_tramitar">
+  <div class="minus" id="title_box_tramitar">
+    Com tramitar-ho</div>
+</div>
+<!-- Contenido desplegable -->
+<div class="dsplContent" id="dsplContent_box_tramitar">
+  <div>
+    Contingut de &quot;Com tramitar-ho&quot;</div>
+</div>
+<!-- ****************************************************************** -->
+<!-- ****************** Cuadro desplegable ADJUNTAR  ****************** -->
+<!-- Titulo del cuadro -->
+<div class="selectedTitol" id="box_adjuntar">
+  <div class="minus" id="title_box_adjuntar">
+    Documentaci&oacute; que cal adjuntar</div>
+</div>
+<!-- Contenido desplegable -->
+<div class="dsplContent" id="dsplContent_box_adjuntar">
+  <div>
+    Contingut de &quot;Documentaci&oacute; que cal adjuntar&quot;</div>
+</div>
+<!-- ****************************************************************** -->
+<!-- ******************   Cuadro desplegable COMPTE  ****************** -->
+<!-- Titulo del cuadro -->
+<div class="selectedTitol" id="box_compte">
+  <div class="minus" id="title_box_compte">
+    Cal tenir en compte que...</div>
+</div>
+<!-- Contenido desplegable -->
+<div class="dsplContent" id="dsplContent_box_compte">
+  <div>
+    Contingut de &quot;Cal tenir en compte que...&quot;</div>
+</div>
+<!-- ****************************************************************** -->
+<!-- ****************** Cuadro desplegable ENLLACOS  ****************** -->
+<!-- Titulo del cuadro -->
+<div class="selectedTitol" id="box_enllacos">
+  <div class="minus" id="title_box_enllacos">
+    Enlla&ccedil;os d&#39;inter&egrave;s</div>
+</div>
+<!-- Contenido desplegable -->
+<div class="dsplContent" id="dsplContent_box_enllacos">
+  <div>
+    Contingut de &quot;Enlla&ccedil;os d&#39;inter&egrave;s&quot;</div>
+</div>
+<!-- ****************************************************************** -->
+<!-- ****************** Cuadro desplegable NORMATIVA ****************** -->
+<!-- Titulo del cuadro -->
+<div class="selectedTitol" id="box_normativa">
+  <div class="minus" id="title_box_normativa">
+    Normativa de refer&egrave;ncia</div>
+</div>
+<!-- Contenido desplegable -->
+<div class="dsplContent" id="dsplContent_box_normativa">
+  <div>
+    Contingut de &quot;Normativa de refer&egrave;ncia&quot;</div>
+</div>
+<!-- ****************************************************************** -->
+<!-- ****************** Cuadro desplegable CONSULTA  ****************** -->
+<!-- Titulo del cuadro -->
+<div class="selectedTitol" id="box_consulta">
+  <div class="minus" id="title_box_consulta">
+    Per fer una consulta...</div>
+</div>
+<!-- Contenido desplegable -->
+<div class="dsplContent" id="dsplContent_box_consulta">
+  <div>
+    Contingut de &quot;Per fer una consulta...&quot;</div>
+</div>

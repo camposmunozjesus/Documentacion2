@@ -1,0 +1,14 @@
+GRAILS - CREAR UN PLUGIN Y UTILIZARLO
+=====================================
+- creas un proyecto nuevo de tipo plugin
+
+- creas o copias las clases de dominio
+
+- ejecutas:
+	grails package-plugin
+
+- en el proyecto que quieres el plug-in ejecutas:
+	install-plugin D:\grails-sigris-domain-0.1.zip (path y nombre del plugin empaquetados)
+
+
+Y LISTO!!!

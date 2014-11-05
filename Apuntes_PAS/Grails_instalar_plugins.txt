@@ -24,3 +24,15 @@ plugins {
    …
    compile ':webflow:2.0.8.1'
 }
+
+
+-------------
+QUARTZ PLUGIN (Usado el 04-11-2014)
+-------------
+Referencia de utilización: https://grails.org/version/Quartz+plugin/24 y http://grails-plugins.github.io/grails-quartz/guide/scheduling.html
+Permite realizar tareas de manera programada, similar a CRONTAB de Linux. No es necesario que el usuaro ejecute nada para que se realicen las acciones.
+En la versión 2.3.4 se instala de la siguiente manera: (archivo BuildConfig.groovy)
+plugins {
+   …
+   compile ":quartz:1.0.2"
+}

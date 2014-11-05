@@ -1,0 +1,44 @@
+Cambiar cuadro por box y estilo por title:
+<div class="row no-scroll-bar columnas-dobles">
+  <div class="col-vxs-6 col-sm-6 col-md-6 col-lg-6 row-margin-bottom-col1">
+    <!--titulo 1 -->
+    <div class="selectedTitol" id="box_101">
+      <div class="minus" id="title_box_101">
+        TITULO 1</div>
+    </div>
+    <!-- Contenido  1 -->
+    <div class="dsplContent" id="dsplContent_box_101">
+		<div>Contenido</div>	
+    </div>
+    <!--Titulo 2 -->
+    <div class="selectedTitol" id="box_102">
+      <div class="minus" id="title_box_102">
+        TITULO 2</div>
+    </div>
+    <!-- Contenido  2 -->
+    <div class="dsplContent" id="dsplContent_box_102">
+      <div>Contenido</div>
+    </div>
+    <!-- Cierre primera columna--></div>
+  <!--SEGUNDA COLUMNAS -->
+  <div class="col-vxs-6 col-sm-6 col-md-6 col-lg-6">
+        <!--titulo 1 -->
+    <div class="selectedTitol" id="box_201">
+      <div class="minus" id="title_box_201">
+        TITULO 1</div>
+    </div>
+    <!-- Contenido  1 -->
+    <div class="dsplContent" id="dsplContent_box_201">
+		<div>Contenido</div>	
+    </div>
+    <!--Titulo 2 -->
+    <div class="selectedTitol" id="box_202">
+      <div class="minus" id="title_box_202">
+        TITULO 2</div>
+    </div>
+    <!-- Contenido  2 -->
+    <div class="dsplContent" id="dsplContent_box_202">
+      <div>Contenido</div>
+    </div>
+	<!-- Cierre segunda columna--></div>
+</div>

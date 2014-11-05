@@ -1,0 +1,712 @@
+Versión que había hasta que se decidió cambiar el estilos de los desplegable utilizando el id. Intento de unificar todos los desplegables, ya sean dos
+columnas, una o una sin iconos.
+/* DESPLEGABLES: todo lo relacionado con los desplegables de las fichas (1 y 2 columnas) */
+/* Título previo a un grupo de desplegables */
+.preDsplTitol{
+  font: 1.7em verdana, arial, helvetica, sans-serif;
+  font-weight: bold;
+  color: #798c91;
+  margin-top: 3px;
+  margin-bottom: 25px;
+  /* margin-bottom: 5px; */
+}
+
+/* Barra de título */
+.dsplTitol{
+  background: #fff url(../images/icons/shadow.jpg) bottom repeat-x;
+
+  border: 1px solid #b2b2b2;
+  border-radius: 3px;
+  
+  margin-top: 10px;
+  /* margin-right: 10px;*/
+  
+  padding-right: 4px;
+  padding-left: 15px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  
+  color: #007bc0;
+  
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  font: 0.9em verdana, arial, helvetica, sans-serif;  
+}
+@media (max-width: 635px) {
+ .dsplTitol
+ {
+   margin-right: 3px;
+ }
+}
+
+.selectedTitol{
+  background: #fff url(../images/icons/shadow.jpg) bottom repeat-x;  
+  
+  border: 1px solid #ccc;
+  border-style: solid solid solid solid;
+  border-top: 1px solid #b2b2b2;
+  border-bottom: 0px solid #b2b2b2;
+  border-left: 1px solid #b2b2b2;
+  border-right: 1px solid #b2b2b2;  
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  
+  margin-top: 10px;
+  /* margin-right: 10px; */
+  
+  padding-right: 4px;
+  padding-left: 15px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  
+  color: #007bc0;
+  
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  font: 0.9em verdana, arial, helvetica, sans-serif;
+  
+  cursor:pointer;
+}
+@media (max-width: 635px) {
+ .selectedTitol
+ {
+   margin-right: 3px;
+ }
+}
+
+/* Contenido: lo que se muestra al desplegar */
+.dsplContent{
+  /* margin-right: 10px; */
+  border: 1px solid #b2b2b2;
+  /* display: none; */
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  text-align: justify;
+  font: 0.9em verdana, arial, helvetica, sans-serif;
+}
+@media (max-width: 635px) {
+ .dsplContent
+ {
+   margin-right: 3px;
+ }
+}
+
+/* Estilos para cada título desplegable */
+/* solicitud */
+.plus_solicitud
+{
+  /* opacity: 0.6; */
+  background-image: url(../images/icons/expedient_personal_op60.png), url(../images/icons/dsplContentBlue.png);
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: -7px center, right center;
+  background-clip: border-box;
+  background-size: auto auto;
+  background-origin: padding-box;
+ 
+  padding-left: 25px;
+ 
+  color: #007BBF;
+
+  font: bold 1.2em "Trebuchet MS",arial,helvetica,sans-serif;
+  min-height: 21px; /* Para que el icono de la derecha encaje bien */
+  padding-top: 1px; /* Centrar texto */
+}
+@media (max-width: 636px) {
+ .plus_solicitud
+ {
+   min-height: 22px; /* Para que el icono de la derecha encaje bien */
+   padding-top: 2px; /* Centrar texto */
+ }
+}
+
+
+.minus_solicitud
+{
+  /* opacity: 0.6; */
+  background-image: url(../images/icons/expedient_personal_op60.png), url(../images/icons/dsplMinusContentBlue.png);
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: -7px center, right center;
+  background-clip: border-box;
+  background-size: auto auto;
+  background-origin: padding-box;
+
+  padding-left: 25px;
+
+  color: #007BBF;
+
+  font: bold 1.2em "Trebuchet MS",arial,helvetica,sans-serif;
+  min-height: 21px; /* Para que el icono de la derecha encaje bien */
+  padding-top: 1px; /* Centrar texto */
+}
+@media (max-width: 636px) {
+ .minus_solicitud
+ {
+   min-height: 22px; /* Para que el icono de la derecha encaje bien */
+   padding-top: 2px; /* Centrar texto */
+ }
+}
+
+/* Para que se ajuste el primer desplegable al margen de arriba */
+.row #solicitud{
+  margin-top: 0px !important;
+}
+
+/* descripcio*/
+.plus_descripcio
+{
+  /* opacity: 0.6; */
+  background-image: url(../images/icons/descripcio_op60.png), url(../images/icons/dsplContentBlue.png);
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: -3px center, right center;
+  background-clip: border-box;
+  background-size: auto auto;
+  background-origin: padding-box;
+ 
+  padding-left: 25px;
+ 
+  color: #007BBF;
+
+  font: bold 1.2em "Trebuchet MS",arial,helvetica,sans-serif;
+  min-height: 21px; /* Para que el icono de la derecha encaje bien */
+  padding-top: 1px; /* Centrar texto */
+}
+@media (max-width: 636px) {
+ .minus_descripcio
+ {
+   min-height: 22px; /* Para que el icono de la derecha encaje bien */
+   padding-top: 2px; /* Centrar texto */
+ }
+}
+
+.minus_descripcio
+{
+  /* opacity: 0.6; */
+  background-image: url(../images/icons/descripcio_op60.png), url(../images/icons/dsplMinusContentBlue.png);
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: -3px center, right center;
+  background-clip: border-box;
+  background-size: auto auto;
+  background-origin: padding-box;
+
+  padding-left: 25px;
+
+  color: #007BBF;
+
+  font: bold 1.2em "Trebuchet MS",arial,helvetica,sans-serif;
+  min-height: 21px; /* Para que el icono de la derecha encaje bien */
+  padding-top: 1px; /* Centrar texto */
+}
+@media (max-width: 636px) {
+ .minus_descripcio
+ {
+   min-height: 22px; /* Para que el icono de la derecha encaje bien */
+   padding-top: 2px; /* Centrar texto */
+ }
+}
+
+/* tramitar */
+.plus_tramitar
+{
+  /* opacity: 0.6; */
+  background-image: url(../images/icons/tramitar_op60.png), url(../images/icons/dsplContentBlue.png);
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: -3px center, right center;
+  background-clip: border-box;
+  background-size: auto auto;
+  background-origin: padding-box;
+ 
+  padding-left: 25px;
+ 
+  color: #007BBF;
+
+  font: bold 1.2em "Trebuchet MS",arial,helvetica,sans-serif;
+  min-height: 21px; /* Para que el icono de la derecha encaje bien */
+  padding-top: 1px; /* Centrar texto */
+}
+@media (max-width: 636px) {
+ .minus_tramitar
+ {
+   min-height: 22px; /* Para que el icono de la derecha encaje bien */
+   padding-top: 2px; /* Centrar texto */
+ }
+}
+
+.minus_tramitar
+{
+  /* opacity: 0.6; */
+  background-image: url(../images/icons/tramitar_op60.png), url(../images/icons/dsplMinusContentBlue.png);
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: -3px center, right center;
+  background-clip: border-box;
+  background-size: auto auto;
+  background-origin: padding-box;
+
+  padding-left: 25px;
+
+  color: #007BBF;
+
+  font: bold 1.2em "Trebuchet MS",arial,helvetica,sans-serif;
+  min-height: 21px; /* Para que el icono de la derecha encaje bien */
+  padding-top: 1px; /* Centrar texto */
+}
+@media (max-width: 636px) {
+ .minus_tramitar
+ {
+   min-height: 22px; /* Para que el icono de la derecha encaje bien */
+   padding-top: 2px; /* Centrar texto */
+ }
+}
+
+/* adjuntar */
+.plus_adjuntar
+{
+  /* opacity: 0.6; */
+  background-image: url(../images/icons/adjuntar_op60.png), url(../images/icons/dsplContentBlue.png);
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: 0px center, right center;
+  background-clip: border-box;
+  background-size: 20px 20px, auto auto;
+  background-origin: padding-box;
+ 
+  padding-left: 25px;
+ 
+  color: #007BBF;
+
+  font: bold 1.2em "Trebuchet MS",arial,helvetica,sans-serif;
+  min-height: 21px; /* Para que el icono de la derecha encaje bien */
+  padding-top: 1px; /* Centrar texto */
+}
+@media (max-width: 636px) {
+ .minus_adjuntar
+ {
+   min-height: 22px; /* Para que el icono de la derecha encaje bien */
+   padding-top: 2px; /* Centrar texto */
+ }
+}
+
+.minus_adjuntar
+{
+  /* opacity: 0.6; */
+  background-image: url(../images/icons/adjuntar_op60.png), url(../images/icons/dsplMinusContentBlue.png);
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: 0px center, right center;
+  background-clip: border-box;
+  background-size: 20px 20px, auto auto;
+  background-origin: padding-box;
+
+  padding-left: 25px;
+
+  color: #007BBF;
+
+  font: bold 1.2em "Trebuchet MS",arial,helvetica,sans-serif;
+  min-height: 21px; /* Para que el icono de la derecha encaje bien */
+  padding-top: 1px; /* Centrar texto */
+}
+@media (max-width: 636px) {
+ .minus_adjuntar
+ {
+   min-height: 22px; /* Para que el icono de la derecha encaje bien */
+   padding-top: 2px; /* Centrar texto */
+ }
+}
+
+/* compte*/
+.plus_compte
+{
+  /* opacity: 0.6; */
+  background-image: url(../images/icons/compte_op60.png), url(../images/icons/dsplContentBlue.png);
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: 0px center, right center;
+  background-clip: border-box;
+  background-size:  19px 19px, auto auto;
+  background-origin: padding-box;
+ 
+  padding-left: 25px;
+ 
+  color: #007BBF;
+
+  font: bold 1.2em "Trebuchet MS",arial,helvetica,sans-serif;
+  min-height: 21px; /* Para que el icono de la derecha encaje bien */
+  padding-top: 1px; /* Centrar texto */
+}
+@media (max-width: 636px) {
+ .minus_compte
+ {
+   min-height: 22px; /* Para que el icono de la derecha encaje bien */
+   padding-top: 2px; /* Centrar texto */
+ }
+}
+
+.minus_compte
+{
+  /* opacity: 0.6; */
+  background-image: url(../images/icons/compte_op60.png), url(../images/icons/dsplMinusContentBlue.png);
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: 0px center, right center;
+  background-clip: border-box;
+  background-size:  19px 19px, auto auto;
+  background-origin: padding-box;
+
+  padding-left: 25px;
+
+  color: #007BBF;
+
+  font: bold 1.2em "Trebuchet MS",arial,helvetica,sans-serif;
+  min-height: 21px; /* Para que el icono de la derecha encaje bien */
+  padding-top: 1px; /* Centrar texto */
+}
+@media (max-width: 636px) {
+ .minus_compte
+ {
+   min-height: 22px; /* Para que el icono de la derecha encaje bien */
+   padding-top: 2px; /* Centrar texto */
+ }
+}
+
+/* enllacos */
+.plus_enllacos
+{
+  /* opacity: 0.6; */
+  background-image: url(../images/icons/enllacos_op60.png), url(../images/icons/dsplContentBlue.png);
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: 0px center, right center;
+  background-clip: border-box;
+  background-size: 22px 18px, auto auto;
+  background-origin: padding-box;
+ 
+  padding-left: 25px;
+ 
+  color: #007BBF;
+
+  font: bold 1.2em "Trebuchet MS",arial,helvetica,sans-serif;
+  min-height: 21px; /* Para que el icono de la derecha encaje bien */
+  padding-top: 1px; /* Centrar texto */
+}
+@media (max-width: 636px) {
+ .minus_enllacos
+ {
+   min-height: 22px; /* Para que el icono de la derecha encaje bien */
+   padding-top: 2px; /* Centrar texto */
+ }
+}
+
+.minus_enllacos
+{
+  /* opacity: 0.6; */
+  background-image: url(../images/icons/enllacos_op60.png), url(../images/icons/dsplMinusContentBlue.png);
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: 0px center, right center;
+  background-clip: border-box;
+  background-size: 22px 18px, auto auto;
+  background-origin: padding-box;
+
+  padding-left: 25px;
+
+  color: #007BBF;
+
+  font: bold 1.2em "Trebuchet MS",arial,helvetica,sans-serif;
+  min-height: 21px; /* Para que el icono de la derecha encaje bien */
+  padding-top: 1px; /* Centrar texto */
+}
+@media (max-width: 636px) {
+ .minus_enllacos
+ {
+   min-height: 22px; /* Para que el icono de la derecha encaje bien */
+   padding-top: 2px; /* Centrar texto */
+ }
+}
+
+/* normativa*/
+.plus_normativa
+{
+  /* opacity: 0.6; */
+  background-image: url(../images/icons/normativa_op60.png), url(../images/icons/dsplContentBlue.png);
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: 0px center, right center;
+  background-clip: border-box;
+  background-size: 22px 22px, auto auto;
+  background-origin: padding-box;
+ 
+  padding-left: 25px;
+ 
+  color: #007BBF;
+
+  font: bold 1.2em "Trebuchet MS",arial,helvetica,sans-serif;
+  min-height: 21px; /* Para que el icono de la derecha encaje bien */
+  padding-top: 1px; /* Centrar texto */
+}
+@media (max-width: 636px) {
+ .minus_normativa
+ {
+   min-height: 22px; /* Para que el icono de la derecha encaje bien */
+   padding-top: 2px; /* Centrar texto */
+ }
+}
+
+.minus_normativa
+{
+  /* opacity: 0.6; */
+  background-image: url(../images/icons/normativa_op60.png), url(../images/icons/dsplMinusContentBlue.png);
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: 0px center, right center;
+  background-clip: border-box;
+  background-size: 22px 22px, auto auto;
+  background-origin: padding-box;
+
+  padding-left: 25px;
+
+  color: #007BBF;
+
+  font: bold 1.2em "Trebuchet MS",arial,helvetica,sans-serif;
+  min-height: 21px; /* Para que el icono de la derecha encaje bien */
+  padding-top: 1px; /* Centrar texto */
+}
+@media (max-width: 636px) {
+ .minus_normativa
+ {
+   min-height: 22px; /* Para que el icono de la derecha encaje bien */
+   padding-top: 2px; /* Centrar texto */
+ }
+}
+
+/* consulta*/
+.plus_consulta
+{
+  /* opacity: 0.6; */
+  background-image: url(../images/icons/consulta_op60.png), url(../images/icons/dsplContentBlue.png);
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: 0px center, right center;
+  background-clip: border-box;
+  background-size: 20px 20px, auto auto;
+  background-origin: padding-box;
+ 
+  padding-left: 25px;
+ 
+    color: #007BBF;
+
+  font: bold 1.2em "Trebuchet MS",arial,helvetica,sans-serif;
+  min-height: 21px; /* Para que el icono de la derecha encaje bien */
+  padding-top: 1px; /* Centrar texto */
+}
+@media (max-width: 636px) {
+ .minus_consulta
+ {
+   min-height: 22px; /* Para que el icono de la derecha encaje bien */
+   padding-top: 2px; /* Centrar texto */
+ }
+}
+
+.minus_consulta
+{
+  
+  /* opacity: 0.6; */
+  background-image: url(../images/icons/consulta_op60.png), url(../images/icons/dsplMinusContentBlue.png);
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: 0px center, right center;
+  background-clip: border-box;
+  background-size: 20px 20px, auto auto;
+  background-origin: padding-box;
+  
+
+  padding-left: 25px;
+
+    /* color: #333; Antiguo color negro al que se le aplicaba opacidad */
+  color: #007BBF;
+
+  font: bold 1.2em "Trebuchet MS",arial,helvetica,sans-serif;
+  min-height: 21px; /* Para que el icono de la derecha encaje bien */
+  padding-top: 1px; /* Centrar texto */
+}
+@media (max-width: 636px) {
+ .minus_consulta
+ {
+   min-height: 22px; /* Para que el icono de la derecha encaje bien */
+   padding-top: 2px; /* Centrar texto */
+ }
+}
+
+/* Estilos usados en los HTML de dos columnas desplegables */
+/* general */
+.plus
+{
+  /* opacity: 0.6; */
+  background-image: url(../images/icons/dsplContentBlue.png);
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position:  right center;
+  background-clip: border-box;
+  background-size: auto auto;
+  background-origin: padding-box;
+ 
+  /* padding-left: 25px; */
+  padding-right: 23px;
+ 
+    color: #007BBF;
+
+  font: bold 1.2em "Trebuchet MS",arial,helvetica,sans-serif;
+  min-height: 21px; /* Para que el icono de la derecha encaje bien */
+  padding-top: 1px; /* Centrar texto */
+}
+@media (max-width: 636px) {
+ .plus
+ {
+   min-height: 22px; /* Para que el icono de la derecha encaje bien */
+   padding-top: 2px; /* Centrar texto */
+ }
+}
+
+.minus
+{
+  
+  /* opacity: 0.6; */
+  background-image: url(../images/icons/dsplMinusContentBlue.png);
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: right center;
+  background-clip: border-box;
+  background-size: auto auto;
+  background-origin: padding-box;
+  
+
+  /* padding-left: 25px; */
+  padding-right: 23px;
+
+  /* color: #333; Antiguo color negro al que se le aplicaba opacidad */
+    color: #007BBF;
+
+  font: bold 1.2em "Trebuchet MS",arial,helvetica,sans-serif;
+  min-height: 21px; /* Para que el icono de la derecha encaje bien */
+  padding-top: 1px; /* Centrar texto */
+}
+@media (max-width: 636px) {
+ .minus
+ {
+   min-height: 22px; /* Para que el icono de la derecha encaje bien */
+   padding-top: 2px; /* Centrar texto */
+ }
+}
+
+/* Ajustes de los desplegables a la rejilla del navegador */
+/* Ajustar arriba las dos columnas en la hoja desplegables 2 columnas */
+/* .row #cuadro_101, .row #cuadro_201 {
+    margin-top: 0px !important;
+} */
+
+.row #box_101, .row #box_201 {
+    margin-top: 0px !important;
+}
+
+.columnas-dobles .selectedTitol, .columnas-dobles .dsplContent{
+  margin-right: -15px;  
+}
+@media (max-width: 635px) {
+ .columnas-dobles .selectedTitol, .columnas-dobles .dsplContent{
+   margin-right: -10px;  
+ }
+}
+
+/* Ajustar desplegables a las columnas laterales */
+.columnas-dobles .selectedTitol, .columnas-dobles .dsplContent{
+  margin-right: -15px;  
+}
+@media (max-width: 635px) {
+ .columnas-dobles .selectedTitol, .columnas-dobles .dsplContent{
+   margin-right: -10px;  
+ }
+}
+
+.columnas-dobles .dsplTitol{
+  margin-right: -15px;  
+}
+@media (max-width: 635px) {
+ .columnas-dobles .dsplTitol{
+   margin-right: -10px;  
+ }
+}
+
+Versión que se corresponde con la ficha:
+<div class="selectedTitol" id="solicitud">
+  <div class="minus_solicitud" id="estilo_solicitud">
+    Qui ho pot sol&middot;licitar</div>
+</div>
+<div class="dsplContent" id="dsplContent_solicitud">
+  <div>
+    Contingut de &quot;Qui ho pot sol&middot;licitar&quot;</div>
+</div>
+<div class="selectedTitol" id="descripcio">
+  <div class="minus_descripcio" id="estilo_descripcio">
+    Descripci&oacute;</div>
+</div>
+<div class="dsplContent" id="dsplContent_descripcio">
+  <div>
+    Contingut de &quot;Descripci&oacute;&quot;</div>
+</div>
+<div class="selectedTitol" id="tramitar">
+  <div class="minus_tramitar" id="estilo_tramitar">
+    Com tramitar-ho</div>
+</div>
+<div class="dsplContent" id="dsplContent_tramitar">
+  <div>
+    Contingut de &quot;Com tramitar-ho&quot;</div>
+</div>
+<div class="selectedTitol" id="adjuntar">
+  <div class="minus_adjuntar" id="estilo_adjuntar">
+    Documentaci&oacute; que cal adjuntar</div>
+</div>
+<div class="dsplContent" id="dsplContent_adjuntar">
+  <div>
+    Contingut de &quot;Documentaci&oacute; que cal adjuntar&quot;</div>
+</div>
+<div class="selectedTitol" id="compte">
+  <div class="minus_compte" id="estilo_compte">
+    Cal tenir en compte que...</div>
+</div>
+<div class="dsplContent" id="dsplContent_compte">
+  <div>
+    Contingut de &quot;Cal tenir en compte que...&quot;</div>
+</div>
+<div class="selectedTitol" id="enllacos">
+  <div class="minus_enllacos" id="estilo_enllacos">
+    Enlla&ccedil;os d&#39;inter&egrave;s</div>
+</div>
+<div class="dsplContent" id="dsplContent_enllacos">
+  <div>
+    Contingut de &quot;Enlla&ccedil;os d&#39;inter&egrave;s&quot;</div>
+</div>
+<div class="selectedTitol" id="normativa">
+  <div class="minus_normativa" id="estilo_normativa">
+    Normativa de refer&egrave;ncia</div>
+</div>
+<div class="dsplContent" id="dsplContent_normativa">
+  <div>
+    Contingut de &quot;Normativa de refer&egrave;ncia&quot;</div>
+</div>
+<div class="selectedTitol" id="consulta">
+  <div class="minus_consulta" id="estilo_consulta">
+    Per fer una consulta...</div>
+</div>
+<div class="dsplContent" id="dsplContent_consulta">
+  <div>
+    Contingut de &quot;Per fer una consulta...&quot;</div>
+</div>
