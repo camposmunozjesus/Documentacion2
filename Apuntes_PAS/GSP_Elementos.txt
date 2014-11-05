@@ -278,3 +278,23 @@ De este modo podemos saber si estamos en la última iteración:
 			//Instrucciones ...
 		</g:if>
 	</g:each>	
+	
+	
+	
+******************************************************************************************************************************************************
+--------------------
+LISTAR CONTROLADORES
+--------------------
+Nos permite visualizar en una página GSP todos los controladores que existen en la aplicación sin necesidad de incluirlos de manera manual, es deicr,
+un bucle que los recorre todos.
+
+Listar controladores con el nombre completamente cualificado (con su package):
+<g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName } }">
+	<li class="controller"><g:link controller="${c.logicalPropertyName}">${c.fullName}</g:link></li>
+</g:each>
+
+Listar únicamente el nombre del controlador:
+<g:each var="c" in="${grailsApplication.controllerClasses.sort { it.name } }">
+	<li class="controller"><g:link controller="${c.logicalPropertyName}">${c.name}</g:link></li>
+</g:each>	
+******************************************************************************************************************************************************

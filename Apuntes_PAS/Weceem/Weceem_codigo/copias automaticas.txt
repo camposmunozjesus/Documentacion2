@@ -84,6 +84,91 @@ MODIF: En lugar de meterse en el código fuente a fondo, lo que se hace es mover
 		}
     }
 
+MODIF: método definitivo. Realiza un zip de cada Space. En el caso de utilizarlo con un botón en una página web.
+	/* CPSEG - 20141104 */
+	def performCpseg = {
+		println "performCpseg: " + WcmSpace.list()
+		
+		def ts = new SimpleDateFormat('yyyyMMdd'+'_'+'HHmm').format(new Date())
+		println "***********************************************"
+		WcmSpace.list().each {  space ->
+			println space	//Esto ya es un space.
+			try {
+				def file = wcmImportExportService.exportSpace(space, "simpleSpaceExporter")				 				
+				def finalFile = new File("D:/cpseg/"+space.name+"_"+ts+".zip")
+				if(file.renameTo(finalFile)){
+					println ("File is moved successful to "+finalFile);
+					println "*********************END***********************"
+				}else{
+					log.error("File is failed to move!");
+				}
+			} catch (Exception e) {
+	//			log.error "Could not export space ${params.space}", e
+				// This is unlikely to work!
+				log.error "ERROR: " + e.message
+	
+			}			
+		}
+    }
+	
+---------------------------------
+AUTOMATIZADO CON QUARTZ EN WECEEM
+---------------------------------
+Tenemos la suerte de que el plugin weceem (el que está en .links) tiene instalado ya el plugin Quartz, que sirve para programar tareas, como si del
+CRONTAB de Linux se tratase. Ahora las copias se realizan cada 20 segundos, y la primera de ellas es a los 2 segundos de haber arrancado el CMS.
+
+Para crear el programador nos situamos sobre la carpeta "Jobs" (C:\Users\Jesus Campos\.grails\2.3.4\projects\weceem\plugins\weceem-1.2\grails-app\jobs\org\weceem\jobs\)
+y se crea un nuevo archivo groovy. El nombre de dicho archivo debe finalizar en Job (tal y como un controlador debe acabar en Controller). En este caso
+lo hemos llamado "SpaceBackupJob.groovy".
+
+El código de dicho archivo groovy es el siguiente:
+	package org.weceem.jobs
+
+	import java.text.SimpleDateFormat
+	import org.weceem.content.*
+	import org.weceem.export.*
+
+	class SpaceBackupJob {
+
+		def wcmImportExportService
+		
+		static triggers = {
+			simple name: 'spacebackup', startDelay: 2000, repeatInterval: 20000
+		  }
+		  def group = "spacebackupGroup"
+		  def description = "To do a backup of all spaces in weceem"
+		
+		def execute(){ 
+			println "performCpseg: " + WcmSpace.list()
+			
+			def ts = new SimpleDateFormat('yyyyMMdd'+'_'+'HHmm').format(new Date())
+			println "***********************************************"
+			WcmSpace.list().each {  space ->
+
+				if (space.id == 7){
+					println space	//Esto ya es un space.
+					try {
+						def file = wcmImportExportService.exportSpace(space, "simpleSpaceExporter")
+						def finalFile = new File("D:/cpseg/"+space.name+"_"+ts+".zip")
+						if(file.renameTo(finalFile)){
+							println ("File is moved successful to "+finalFile);
+							println "*********************END***********************"
+						}else{
+							log.error("File is failed to move!");
+						}
+					} catch (Exception e) {
+			//			log.error "Could not export space ${params.space}", e
+						// This is unlikely to work!
+						log.error "ERROR: " + e.message
+		
+					}
+				}
+			}
+		}	
+	}
+
+
+
 *****************************************************************************************************************************************************
 ------------------------------
 Creación:	03-10-2014

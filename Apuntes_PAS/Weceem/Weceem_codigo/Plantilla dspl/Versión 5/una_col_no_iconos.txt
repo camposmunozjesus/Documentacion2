@@ -1,0 +1,42 @@
+<!-- INICIO Desplegable 1 --> 
+<!-- Titulo 1 -->
+<div class="selectedTitol" id="box_101">
+	<div class="minus" id="title_box_101">
+		TITULO 1
+	</div>
+</div>
+<!-- Contenido  1 -->
+<div class="dsplContent" id="dsplContent_box_101">
+	<div>
+		Contenido
+	</div>	
+</div>
+<!-- FIN Desplegable 1 -->
+<!-- Para obtener otro desplegable hacer copy/paste de codigo entre INICIO Desplegable 1 y FIN Desplegable 1 y cambiar, en los atributos id de los divisores,
+el número que sigue a box_, title_box_ y dsplContent_box_ por uno que no exista. En el caso de querer tener iconos en la izquierda para cada desplegable
+existe la opción de substituir el numero por una de las siguientes palabras: solicitud, descripcio, tramitar, adjuntar, compte, enllacos, normativa, consulta.
+Ejemplo:
+	<div class="selectedTitol" id="box_consulta">
+		<div class="minus" id="title_box_consulta">
+			TITULO 1
+		</div>
+	</div>
+	<div class="dsplContent" id="dsplContent_box_consulta">
+		<div>
+			Contenido
+		</div>	
+	</div>
+	Al igual que un número no se puede repetir en una ficha o página HTML, tampoco es posible repetir las palabras que los substituyen en una ficha o página. -->
+
+<!-- Titulo 2 -->
+<div class="selectedTitol" id="box_102">
+	<div class="minus" id="title_box_102">
+		TITULO 2
+	</div>
+</div>
+<!-- Contenido  2 -->
+<div class="dsplContent" id="dsplContent_box_102">
+	<div>
+		Contenido
+	</div>
+</div>
