@@ -1,0 +1,43 @@
+WECEEM - CAMBIAR COMPORTAMIENTO Y TEXTO DE LOS BOTONES DEL MENÚ DE CREACIÓN DE ELEMENTOS
+========================================================================================
+Para modificar el comportamiento de las opciones OK y Cancel que viene por defecto en Weceem en el momento de Crear un nuevo contenido hay que ir al
+archivo core.treeTable.js (C:\Users\Jesus Campos\.grails\2.3.4\projects\weceem\plugins\weceem-1.2\web-app\_weceem\js\treeTable\javascripts\core.treeTable.js).
+Allí sobre la línea 610 se encuentran los botones para este caso:
+
+buttons: 
+	[ 
+		{ 
+		text: "Crear", 
+		click: function() { 
+				var parentid = getSelectedNodeIds()
+				$("#parentid").attr("value", parentid)
+				$('#createNewDialog form').submit()
+				$(this).dialog('close') 
+			} 
+		}, 
+		{ 
+		text: "Cancel\u00b7lar", 
+		click: function() { 
+				$(this).dialog('close') 
+			} 
+		} 
+	]
+
+Al utilizar la opción text se permite añadir carácteres como · y otros que con el código original no se podía.	
+	
+---------------
+CÓDIGO ORIGINAL
+---------------
+Alrededor de la línea 615:
+
+Crear : function () {
+	            var parentid = getSelectedNodeIds()
+	            $("#parentid").attr("value", parentid)
+	            $('#createNewDialog form').submit()
+	            $(this).dialog('close')
+	        },
+	        Cancel\u0f3flar : function () {  
+	            $(this).dialog('close')
+	        }
+			
+Admitía letras con acentos pero no el punto en medio. Se ha tenido que personalizar con la opción "text".

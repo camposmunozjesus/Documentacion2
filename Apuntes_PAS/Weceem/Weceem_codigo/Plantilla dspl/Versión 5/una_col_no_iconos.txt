@@ -40,3 +40,127 @@ Ejemplo:
 		Contenido
 	</div>
 </div>
+
+---------
+VERSIÓN 2
+---------
+
+<!-- ************ INICIO 1ER DESPLEGABLE ************ -->
+<div class="selectedTitol" id="box_101">
+  <!-- Titulo Desplegable 1 -->
+  <div class="minus" id="title_box_101">
+    TITULO 1
+  </div>
+</div>
+<div class="dsplContent" id="dsplContent_box_101">
+  <!-- Contenido Desplegable 1 -->
+  <div>
+    Contenido
+  </div>  
+</div>
+<!-- ************ FIN 1ER DESPLEGABLE ************ -->
+
+<!-- ************ INICIO 2DO DESPLEGABLE ************ -->
+<div class="selectedTitol" id="box_102">
+  <!-- Titulo Desplegable 2 -->
+  <div class="minus" id="title_box_102">
+    TITULO 2
+  </div>
+</div>
+<div class="dsplContent" id="dsplContent_box_102">
+  <!-- Contenido Desplegable 2 -->
+  <div>
+    Contenido
+  </div>
+</div>
+
+<!-- ************ FIN 2DO DESPLEGABLE ************ -->
+
+<!-- Para obtener otro desplegable hacer copy/paste de codigo entre INICIO 1ER -->
+<!-- DESPLEGABLE y FIN 1ER DESPLEGABLE y cambiar, en los atributos id de los   -->
+<!-- divisores, el número que sigue a box_, title_box_ y dsplContent_box_ por uno -->
+<!-- que no exista. En el caso de querer tener iconos en la izquierda para cada -->
+<!-- desplegable existe la opción de substituir el numero por una de las siguientes -->
+<!-- palabras: solicitud, descripcio, tramitar, adjuntar, compte, enllacos, normativa, consulta. -->
+<!-- Ejemplo: -->
+<!--   <div class="selectedTitol" id="box_consulta"> -->
+<!--     <div class="minus" id="title_box_consulta"> -->
+<!--       TITULO 1 -->
+<!--     </div> -->
+<!--   </div> -->
+<!--   <div class="dsplContent" id="dsplContent_box_consulta"> -->
+<!--     <div> -->
+<!--       Contenido -->
+<!--     </div>   -->
+<!--   </div> -->
+<!--   Al igual que un número no se puede repetir en una ficha o página HTML, -->
+<!--   tampoco es posible repetir las palabras que los substituyen en una ficha o  -->
+<!--   página. -->
+
+-------------
+STRING GRAILS
+-------------
+
+<!-- ************ INICIO 1ER DESPLEGABLE ************ --><div class=\"selectedTitol\" id=\"box_101\">  <!-- Titulo Desplegable 1 -->  <div class=\"minus\" id=\"title_box_101\">    TITULO 1  </div></div><div class=\"dsplContent\" id=\"dsplContent_box_101\">  <!-- Contenido Desplegable 1 -->  <div>    Contenido  </div>  </div><!-- ************ FIN 1ER DESPLEGABLE ************ --><!-- ************ INICIO 2DO DESPLEGABLE ************ --><div class=\"selectedTitol\" id=\"box_102\">  <!-- Titulo Desplegable 2 -->  <div class=\"minus\" id=\"title_box_102\">    TITULO 2  </div></div><div class=\"dsplContent\" id=\"dsplContent_box_102\">  <!-- Contenido Desplegable 2 -->  <div>    Contenido  </div></div><!-- ************ FIN 2DO DESPLEGABLE ************ --><!-- Para obtener otro desplegable hacer copy/paste de codigo entre INICIO 1ER --><!-- DESPLEGABLE y FIN 1ER DESPLEGABLE y cambiar, en los atributos id de los   --><!-- divisores, el número que sigue a box_, title_box_ y dsplContent_box_ por uno --><!-- que no exista. En el caso de querer tener iconos en la izquierda para cada --><!-- desplegable existe la opción de substituir el numero por una de las siguientes --><!-- palabras: solicitud, descripcio, tramitar, adjuntar, compte, enllacos, normativa, consulta. --><!-- Ejemplo: --><!--   <div class=\"selectedTitol\" id=\"box_consulta\"> --><!--     <div class=\"minus\" id=\"title_box_consulta\"> --><!--       TITULO 1 --><!--     </div> --><!--   </div> --><!--   <div class=\"dsplContent\" id=\"dsplContent_box_consulta\"> --><!--     <div> --><!--       Contenido --><!--     </div>   --><!--   </div> --><!--   Al igual que un número no se puede repetir en una ficha o página HTML, --><!--   tampoco es posible repetir las palabras que los substituyen en una ficha o  --><!--   página. -->
+
+
+-------
+CATALAN
+-------
+<!-- ************ INICI 1ER DESPLEGABLE ************ -->
+<div class="selectedTitol" id="box_101">
+  <!-- T\u00edtol Desplegable 1 -->
+  <div class="minus" id="title_box_101">
+    T\u00cdTOL 1
+  </div>
+</div>
+<div class="dsplContent" id="dsplContent_box_101">
+  <!-- Contingut Desplegable 1 -->
+  <div>
+    Contingut
+  </div>  
+</div>
+<!-- ************ FINAL 1ER DESPLEGABLE ************ -->
+
+<!-- ************ INICI 2ON DESPLEGABLE ************ -->
+<div class="selectedTitol" id="box_102">
+  <!-- T\u00edtol Desplegable 2 -->
+  <div class="minus" id="title_box_102">
+    T\u00cdTOL 2
+  </div>
+</div>
+<div class="dsplContent" id="dsplContent_box_102">
+  <!-- Contingut Desplegable 2 -->
+  <div>
+    Contingut
+  </div>
+</div>
+
+<!-- ************ FINAL 2ON DESPLEGABLE ************ -->
+
+<!-- Per afegir un desplegable seleccionar el codi compr\u00e9s entre INICI 1ER -->
+<!-- DESPLEGABLE i FINAL 1ER DESPLEGABLE y canviar, en los atributs id dels     -->
+<!-- divisors DIV, el nombre que sigue a box_, title_box_ y dsplContent_box_ per un -->
+<!-- altre que no existeixi. En el cas de voler posar icones en la part esquerra del desplegable -->
+<!-- existe la opci\u00f3 de substituir el nombre por una de les sig\u00fcents -->
+<!-- paraules: solicitud, descripcio, tramitar, adjuntar, compte, enllacos, normativa, consulta. -->
+<!-- Exemple: -->
+<!--   <div class="selectedTitol" id="box_consulta"> -->
+<!--     <div class="minus" id="title_box_consulta"> -->
+<!--       T\u00cdTOL 1 -->
+<!--     </div> -->
+<!--   </div> -->
+<!--   <div class="dsplContent" id="dsplContent_box_consulta"> -->
+<!--     <div> -->
+<!--       Contingut -->
+<!--     </div>   -->
+<!--   </div> -->
+<!--   De la mateixa manera que el nombre que acompanya als id: box_, title_box_ -->
+<!--   i dsplContent_box_ no es pot repetir en una fitxa o p\u00e0gina HTML, -->
+<!--   no \u00e9s posible repetir les palabras que els substitueixen en una fitxa o  -->
+<!--   p\u00e0gina. -->
+
+
+STRING GRAILS
+
+<!-- ************ INICI 1ER DESPLEGABLE ************ --><div class=\"selectedTitol\" id=\"box_101\">  <!-- T\u00edtol Desplegable 1 -->  <div class=\"minus\" id=\"title_box_101\">    T\u00cdTOL 1  </div></div><div class=\"dsplContent\" id=\"dsplContent_box_101\">  <!-- Contingut Desplegable 1 -->  <div>    Contingut  </div>  </div><!-- ************ FINAL 1ER DESPLEGABLE ************ --><!-- ************ INICI 2ON DESPLEGABLE ************ --><div class=\"selectedTitol\" id=\"box_102\">  <!-- T\u00edtol Desplegable 2 -->  <div class=\"minus\" id=\"title_box_102\">    T\u00cdTOL 2  </div></div><div class=\"dsplContent\" id=\"dsplContent_box_102\">  <!-- Contingut Desplegable 2 -->  <div>    Contingut  </div></div><!-- ************ FINAL 2ON DESPLEGABLE ************ --><!-- Per afegir un desplegable seleccionar el codi compr\u00e9s entre INICI 1ER --><!-- DESPLEGABLE i FINAL 1ER DESPLEGABLE y canviar, en los atributs id dels     --><!-- divisors DIV, el nombre que sigue a box_, title_box_ y dsplContent_box_ per un --><!-- altre que no existeixi. En el cas de voler posar icones en la part esquerra del desplegable --><!-- existe la opci\u00f3 de substituir el nombre por una de les sig\u00fcents --><!-- paraules: solicitud, descripcio, tramitar, adjuntar, compte, enllacos, normativa, consulta. --><!-- Exemple: --><!--   <div class=\"selectedTitol\" id=\"box_consulta\"> --><!--     <div class=\"minus\" id=\"title_box_consulta\"> --><!--       T\u00cdTOL 1 --><!--     </div> --><!--   </div> --><!--   <div class=\"dsplContent\" id=\"dsplContent_box_consulta\"> --><!--     <div> --><!--       Contingut --><!--     </div>   --><!--   </div> --><!--   De la mateixa manera que el nombre que acompanya als id: box_, title_box_ --><!--   i dsplContent_box_ no es pot repetir en una fitxa o p\u00e0gina HTML, --><!--   no \u00e9s posible repetir les palabras que els substitueixen en una fitxa o  --><!--   p\u00e0gina. -->
