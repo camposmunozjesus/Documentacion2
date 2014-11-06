@@ -1,0 +1,16 @@
+WECEEM - COMANDOS DE UTILIDAD
+=============================
+--------------------------
+CREAR UNA CLASE DE DOMINIO
+--------------------------
+Para crear una clase del dominio (se creará en la aplicación, no en los plugins), ejecutar en el intérprete de comandos:
+	create-content-class com.upc.WcmPlantillaFitxaGenerica2
+	create-content-class package.Nombre_de_la_Clase
+
+*****************************************************************************************************************************************************
+------------------------------
+Creación:	06-11-2014
+
+Jesús Campos Muñoz
+jesus.campos@upc.edu
+------------------------------
