@@ -10,3 +10,5 @@ Placeholder: para que funcione el placeholder se han efectuado cambios en el cód
 			 
 			 
 Widgets/Menu_dspl_bootstrap: están los archivos necesarios para hacer el desplegable que se encuentra encima del menú izquierdo.
+
+JS/20141106_opcion_cancelar.txt: muestra cómo modificar los botones que aparecen en el menú de Crear nuevo contenido (New Content)
