@@ -4,6 +4,21 @@ COMANDOS ÚTILES EN GRAILS
 CREAR UN WAR
 ------------
 Hay que ir a la línea de comandos y escribir:
-test war
+	test war
 y lo crea e la carpeta "target".
+
+-------------------------------------
+CREAR UN NUEVO JOB (TAREA PROGRAMADA)
+-------------------------------------
+Escribir en la línea de comandos:
+	create-job nombre del JOB
+Hay que haber instalado previamente el plugin QUARTZ, sin el plugin el comando NO funciona.
+
+*****************************************************************************************************************************************************
+------------------------------
+Creación:	14-02-2014
+
+Jesús Campos Muñoz
+jesus.campos@upc.edu
+------------------------------
 	
