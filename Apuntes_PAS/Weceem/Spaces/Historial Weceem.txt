@@ -186,6 +186,7 @@ Bootstrap_20141144_1230_local: Copia de seguridad antes de hacer una restauració
 PAS_20141104_1230_merlot: Copia de seguridad de merlot PAS. Hay que hacer cambios, la nueva plantilla, desplegable de 1 columna sin icones y todo bastante generalizado, etc.
 PAS_20141104_1240_merlot: El mismo de antes incorporando los etilos de Cristina y quitando [readonly] de form-control-UPC.
 PAS_20141106_1250_merlot: Copia de seguridad antes de adaptar el space al nuevo tipo de plantillas.
+PAS_20141107_1320_merlot: Space PAS con todas las páginas HTML (de desplegables) pasadas al nuevo formato (Plantillas Fitxa X).
 							
 ----------------------
 ARREGLOS CÓDIGO GROOVY
