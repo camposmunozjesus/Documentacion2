@@ -261,3 +261,17 @@ $('[placeholder]').focus(function() {
 	alert(input.attr('placeholder'));
 	alert(input.attr('value'));
 });
+
+
+
+******************************************************************************************************************************************************
+-----------------------------------------
+OBTENER LA HORA CUANDO ARRANCA UNA PÁGINA
+-----------------------------------------
+Cuando la página carga este punto se visualiza la hora en el TAG <p> con id="demo".
+<p id="demo"></p>
+<script>
+    var d = new Date();
+    var n = d.getMinutes()+":"+d.getSeconds()+":"+d.getMilliseconds(); ;
+    document.getElementById("demo").innerHTML = n;  
+</script>
