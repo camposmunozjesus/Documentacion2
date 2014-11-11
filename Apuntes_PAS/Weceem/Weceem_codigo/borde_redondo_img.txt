@@ -1,0 +1,8 @@
+En este caso separando la imgane del círculo:
+.imagen img
+{
+  width: 149px; 
+  height: 149px;
+  padding-top: 1px;
+  padding-left: 1px;
+}

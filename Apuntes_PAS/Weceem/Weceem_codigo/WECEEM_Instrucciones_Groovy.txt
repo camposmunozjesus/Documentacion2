@@ -1,0 +1,20 @@
+INSTRUCCIONES DE UTILIDAD EN CÓDIGO GROOVY - WECEEM
+===================================================
+--------------------------------
+DETECTAR NOMBRE DE LA APLICACIÓN
+--------------------------------
+grails.util.Metadata.current.'app.name'
+grailsApplication.metadata['app.name']
+
+
+-------------------
+OTRAS INSTRUCCIONES
+-------------------
+
+*****************************************************************************************************************************************************
+------------------------------
+Creación:	20-07-2014
+
+Jesús Campos Muñoz
+jesus.campos@upc.edu
+------------------------------

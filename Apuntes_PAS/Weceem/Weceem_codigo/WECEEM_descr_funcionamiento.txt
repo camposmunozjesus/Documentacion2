@@ -1,0 +1,57 @@
+WECEEM - DESCRIPCIÓN Y FUNCIONAMIENTO
+=====================================
+------------------------
+LOCALIZACIÓN DE ARCHIVOS
+------------------------
+En local, las imágenes se guardan en:
+	D:\var\www\weceem.org\uploads\PAS
+Indicado en la parte development del archivo Config.groovy de la aplicación. Se arranca en developmant cuando se ejecuta el comando:
+	run-app --verbose --stacktrace  -Dserver.port=8090
+
+	
+-----
+RUTAS
+-----
+Cuando se indica en una pantalla GSP del editor Weceem (código GSP activado) lo siguiente:
+	src=${wcm.createLinkToFile(path:'images/logo_upc_portal_pas_2.png')}
+	
+La ruta equivale a:
+	src=/Portal/WeceemFiles/PAS/images/logo_upc_portal_pas_2.png
+
+Significa que :
+	src=${wcm.createLinkToFile(path:'....')}
+	
+Añade el path:
+	/Portal/WeceemFiles/PAS/
+
+A la ruta indicada, en este caso: images/logo_upc_portal_pas_2.png
+
+Las dos instrucciones siguientes deberían ser equivalentes:
+	src="${wcm.createLinkToFile(path:'Image/Informacio_General/sistema_retributiu.jpg')}"
+	src="/Portal/WeceemFiles/PAS/Image/Informacio_General/sistema_retributiu.jpg" 
+
+
+----------------
+RUTAS E IMÁGENES
+----------------
+Cuando se añade una imagen desde el CKEditor (rich editor, tipo MS Word), la ruta en la que se encuentra la imagen es:
+	/Portal/WeceemFiles/PAS/Image/Informacio_General/sistema_retributiu.jpg
+
+Suponiendo que cuando se abre la ventana para seleccionar la imagen, en la parte de la izquierda, hay una carpeta llamada "Informacio_General" y dentro 
+se encuentra la imagen "sistema_retributiu.jpg".
+
+
+*****************************************************************************************************************************************************
+------------------------------
+Creación:	10-11-2014
+
+Jesús Campos Muñoz
+jesus.campos@upc.edu
+------------------------------
+
+
+
+
+
+
+
