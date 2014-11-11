@@ -8,6 +8,33 @@ EJEMPLO DE SELECTORES CSS
     margin-top: 10px !important;
 }
 
+
+------------------------
+IMAGEN CON FORMA REDONDA
+------------------------
+Para que una imagen cuadrada tenga forma redonda hay que añadir 
+	border-radius: XXXpx;
+al estilo de la calse de la etiqueta img que contiene la imagen.
+
+-----------------------
+USO DE VARIABLES EN CSS
+-----------------------
+Ejemplo:
+	:root {
+	  --main-color: #06c;
+	  --accent-color: #006;
+	}
+
+	.container 
+	{
+	  background-color: var(--main-color);
+	}
+
+Esto produce que el background-color del elemento con la clase container vale #06c.
+
+Esto es útil por ejemplo para los estilos de las plantillas ficha, en las que se desea asignar el mismo tipo de letra para los 5 ó 6 estilos existentes.
+De este modo se puede varia el estilo de letra de todos los elementos a la vez.
+
 *********************************************************************************************************************************************************
 ------------------------------
 Creación:	16-10-2014
