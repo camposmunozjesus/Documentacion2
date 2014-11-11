@@ -1,0 +1,70 @@
+MODIFICACIONES EN ELEMENTOS DEL PLUGIN/APLICACIÓN - WECEEM
+==========================================================
+Se muestra cómo cambiar un comportamiento, por ejemplo, cómo modificar el lugar de la página de búsqueda.
+
+---------------------------------------
+MODIFICACIONES EN LA PÁGINA DE BÚSQUEDA
+---------------------------------------
+Para modificar la página de búsqueda cargada, es decir, despúes de apretar al "Search" se carga la página "/view/search-results". Pues bien para modifcar
+el lugar de la ubicación o la vista HTML a cargar hay que ir al
+Controlador: WcmSearchController
+DEF: search
+y modificar la línea 63 (aprox): def uri = params.resultsPath ?: (data.space.aliasURI ?: '')+'/view/search-results'
+
+Workaround:
+1) Cambiar la dirección en el controlador y ver cómo falla.
+2) Crear la nueva página en la nueva ubicación y ejecutar para ver que funciona.
+3) Eliminar la página original (si es que se desea
+
+
+----------------------------------
+RECONSTRUIR EL ÍNDICE DEL BUSCADOR
+----------------------------------
+Una vez se ha reiniciado el servidor, las páginas deben ser grabadas nuevamente para ser encontradas por el buscador. El problema es que si se vuelve a reiniciar
+nuevamente, deben volverse a grabar otra vez las páginas.
+
+Para solucionarlo hay que ir al apartado "conf", archivo "Searchable.groovy" y en el apartado "test" dentro de "environments" poner:
+        searchable {
+            // disable bulk index on startup
+			//INI - Config original: al realizar un reinicio del servidor los índices de búsqueda no se rehacían por lo que el buscador no funcionaba de manera correcta.
+//            bulkIndexOnStartup = false
+//
+//            // use faster in-memory index
+//            compassConnection = "ram://test-index"
+			//FIN - Config original
+			
+			bulkIndexOnStartup = true
+        }
+		
+De este modo conseguiremos que cada vez que se despliegue el WAR en test se recontruya el índice de búsquedas.
+
+El problema surge porque por defecto ( se suele trabajar con el war de test) en test NO se reconstruyen los índices, mientras que en "development", que
+es el entorno que se arranca en local, sí que los recontruye.
+
+
+--------------------
+REDIRECCIONAR VISTAS
+--------------------
+Cuando el usuario quiere visitar un Space entra en juego el controlador "WcmContentController" (del plugin Weceem) y la closure "show".
+
+Por ejemplo, si queremos redireccionar el Space "Default" cuando alguien lo visite, lo que podemos hacer en este controlador es que en el momento que
+detecte que estamos en el Space "default" carge otro. Ejemplo:
+	...
+	if(space.name.equals("Default")){	
+			def newSpace = WcmSpace.findByAliasURI("newSpace")
+			if(newSpace){
+				space=newSpace
+			}
+	}
+	...
+
+
+
+
+*****************************************************************************************************************************************************
+------------------------------
+Creación:	01-08-2014
+
+Jesús Campos Muñoz
+jesus.campos@upc.edu
+------------------------------

@@ -1,0 +1,72 @@
+MODIFICACIONES EN HOJAS DE ESTILOS CSS - WECEEM
+===============================================
+Se muestran modificaciones en hojas CSS y el por qué de su realización. Explica las modificaciones realizadas en los estilos CSS del Bootstrap para 
+poder adaptar correctamente las aplicaciones.
+
+------------------
+TABLAS RESPONSIVAS
+------------------
+Generaalmente se utiliza la clase ".table-responsive" para que una tabla se comporte de manera responsiva. Esta clase actúa para un tamaño de pantalla
+de 767 píxeles o menos. El problema está en el ancho de los datos de la tabla, por ejemplo, en el caso de tener una pala sin espacios como "ddddddddddddddddddddddddddddddddddd",
+la cual no puede ser partida en dos filas y obliga a que el ancho de la columna se como mínimo éste. Para menos de 767px no hay problema, aparece una 
+barra de scroll y aunque se pueda dividir en dos fila no lo hace. Pero cuando estamos por encima de este ancho la tabla puede salirse del container.
+
+La solución es cambiar la clase ".table-responsive" por ".table-responsive-UPC" y añadir a la hoja CSS las siguientes reglas:
+@media screen and (max-width: 1199px) {
+  .table-responsive-UPC {
+    width: 100%;
+    margin-bottom: 15px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    border: 1px solid #ddd;
+  }
+  .table-responsive-UPC > .table {
+    margin-bottom: 0;
+  }
+  .table-responsive-UPC > .table > thead > tr > th,
+  .table-responsive-UPC > .table > tbody > tr > th,
+  .table-responsive-UPC > .table > tfoot > tr > th,
+  .table-responsive-UPC > .table > thead > tr > td,
+  .table-responsive-UPC > .table > tbody > tr > td,
+  .table-responsive-UPC > .table > tfoot > tr > td {
+    white-space: nowrap;
+  }
+  .table-responsive-UPC > .table-bordered {
+    border: 0;
+  }
+  .table-responsive-UPC > .table-bordered > thead > tr > th:first-child,
+  .table-responsive-UPC > .table-bordered > tbody > tr > th:first-child,
+  .table-responsive-UPC > .table-bordered > tfoot > tr > th:first-child,
+  .table-responsive-UPC > .table-bordered > thead > tr > td:first-child,
+  .table-responsive-UPC > .table-bordered > tbody > tr > td:first-child,
+  .table-responsive-UPC > .table-bordered > tfoot > tr > td:first-child {
+    border-left: 0;
+  }
+  .table-responsive-UPC > .table-bordered > thead > tr > th:last-child,
+  .table-responsive-UPC > .table-bordered > tbody > tr > th:last-child,
+  .table-responsive-UPC > .table-bordered > tfoot > tr > th:last-child,
+  .table-responsive-UPC > .table-bordered > thead > tr > td:last-child,
+  .table-responsive-UPC > .table-bordered > tbody > tr > td:last-child,
+  .table-responsive-UPC > .table-bordered > tfoot > tr > td:last-child {
+    border-right: 0;
+  }
+  .table-responsive-UPC > .table-bordered > tbody > tr:last-child > th,
+  .table-responsive-UPC > .table-bordered > tfoot > tr:last-child > th,
+  .table-responsive-UPC > .table-bordered > tbody > tr:last-child > td,
+  .table-responsive-UPC > .table-bordered > tfoot > tr:last-child > td {
+    border-bottom: 0;
+  }
+}
+
+Se considera que para más de 1200px la tabla cabe entera, si no es así, hay que ajustar esta cifra.
+
+
+*****************************************************************************************************************************************************
+------------------------------
+Creación:	11-11-2014
+
+Jesús Campos Muñoz
+jesus.campos@upc.edu
+------------------------------
