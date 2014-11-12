@@ -33,6 +33,8 @@ WECEEM_Modificaciones.txt: Explica cómo realizar modificaciones en el código Gro
 
 WECEEM_Modificaciones_CSS.txt: Explica las modificaciones realizadas en los estilos CSS del Bootstrap para poder adaptar correctamente las aplicaciones.
 
+WECEEM_Oracle.txt: Explica cómo adaptar Weceem a la base de datos Oracle.
+
 Instrucciones Weceem GSP_.txt: hay instrucciones que hay que extraer del código que en él se encuentra.
 
 
