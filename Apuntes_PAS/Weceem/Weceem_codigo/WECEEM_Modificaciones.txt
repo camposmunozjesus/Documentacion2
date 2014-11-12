@@ -59,6 +59,100 @@ detecte que estamos en el Space "default" carge otro. Ejemplo:
 	...
 
 
+----------------------------------------------------------
+GESTIÓN DE LOS SPACES EN FUNCIÓN DEL PERFIL: BASE DE DATOS	
+----------------------------------------------------------
+Dependiendo si el usuario es PAS, PDI o Becario la aplicación lo redirigirá a una zona u otra:
+	//20140922 - En función del perfil del usuario redirige al space PAS, PDI o Becario.
+	if(space.name.equals("Default")){
+
+		def princ = springSecurityService.getPrincipal()
+		if (princ instanceof String) {
+			return null
+		} else {
+			def username = springSecurityService.getPrincipal()?.username
+			
+			//Se consigue el grupo de la persona: PAS, PDI o BECario
+			def persona = Persona.findByUsuari(username.toString())
+
+			if(persona){
+				if(listPAS.contains(persona.areaPersonal.toString().toUpperCase())){
+					def newSpace = WcmSpace.findByAliasURI("PAS")
+					if(newSpace){
+						space=newSpace
+					}
+				}
+				else if(listPDI.contains(persona.areaPersonal.toString().toUpperCase())){
+					def newSpace = WcmSpace.findByAliasURI("PDI")
+					if(newSpace){
+						space=newSpace
+					}
+				}
+	//					else if(listBEC.contains(persona.areaPersonal.toString().toUpperCase())){
+	//						println "ES BECario"
+	//						def newSpace = WcmSpace.findByAliasURI("BEC")
+	//						if(newSpace){
+	//							space=newSpace
+	//						}
+	//					}
+			}
+		}
+	}
+	//20140922 - FIN
+			
+Se basa en seleccionar el space en función del perfil.
+Controller: WcmContentController (weceem-1.2)
+def show línea 75 aprox
+
+
+---------------------------
+ELIMINAR SPRINGSECURITY-CAS
+---------------------------
+Una vez se tiene instalado y bien configurado el SpringSecurity CAS, si se desea poder acceder a la aplicación sin logearse hay que eliminarlo. Para
+ello hay que modificar los siguientes archivos:
+- Config.groovy:
+	- Línea 64 -> Comentar  aprox (y toda la definición): weceem.springsecurity.details.mapper
+	- Línea 85 -> Comentar toda la definición de springsecurity en: 
+		grails {
+			plugins {
+			//	springsecurity{
+			//	 ...
+			//	}
+	- En los respectivos entornos, comentar todas las instrucciones:
+		- grails.plugins.springsecurity.cas.[ALGO]
+	- Comentar las siguientes líneas al final del archivo:
+		//// Added by the Spring Security Core plugin:
+		//grails.plugins.springsecurity.userLookup.userDomainClassName = 'Security.SecUser'
+		//grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'Security.SecUserSecRole'
+		//grails.plugins.springsecurity.authority.className = 'Security.SecRole'
+		//grails.plugins.springsecurity.securityConfigType = 'Annotation'
+		//grails.plugins.springsecurity.rejectIfNoRule = false
+- Bootstrap.groovy: comentar la declaración ctx.wcmSecurityService.securityDelegate y su contenido.
+- BuildConfig.groovy: comentar compile ":spring-security-cas:1.0.5".
+- En TODOS los controladores donde @Secured(['ROLE_ADMIN']) hay que comentarlo. Los siguientes controladores (al menos hasta ahora):
+	- WcmArchiveController
+	- WcmContentController
+	- WcmContentSubmissionController
+	- WcmEditorController
+	- WcmFeedsController
+	- WcmPortalController
+	- WcmRepositoryController
+	- WcmSearchController
+	- WcmSpaceController
+	- WcmSynchronizationController
+	- WcmWikiItemRenderController
+- En "WcmContentController" cambiar el código qu redirecciona al usuario al correspondiente Space en función de su perfil por:
+	//20141112 - INI - Cuando se elimina el CAS forzamos la redirección del space Default al del PAS.
+	def newSpace = WcmSpace.findByAliasURI("PAS")
+	if(newSpace){
+		space=newSpace
+	}
+	//20141112 - FIN
+
+En la carpeta NO_CAS se pueden encontrar los archivos.
+En SI_CAS se encuentran los mismo archivos preparados para el CAS (recordar de volver a poner @Secured(['ROLE_ADMIN']) en los controladores).
+
+Puede que la primera vez después de volver a instalar el CAS falle el arranque con un Aplication Shutdown Context.
 
 
 *****************************************************************************************************************************************************
