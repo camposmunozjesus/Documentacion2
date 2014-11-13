@@ -13,7 +13,41 @@ C:\Users\Jesus Campos\.grails\2.4.3\projects\weceem\plugins\weceem-1.3-M1\src\ja
 
 Hay que eliminarlos de esta ubicación.
 
+
+*******************************************************************************************************************************************************
+----------------------------------------------------------------------------------
+CAMBIAR EL NOMBRE DE LA APLICACIÓN (NOMBRE VISIBLE AL DESPLEGAR Y EN ECLIPSE/GGTS)
+----------------------------------------------------------------------------------
+Es recomendable realizarlo antes de cambiar cosas en los controladores/taglibs/servicios de los plugin debido a que cuando se cambia el nombre y la
+ubicación de los plugin (C:\User\User_name\.grails\.link_to_plugins\ ... ) éstos se vuelven a descargar y hay que hacer de nuevo dichos cambios.
+
+Para cambiar el nombre de la aplicación (visible al desplegar):
+Crear un directorio con el nuevo nombre y copiarlo todo (en el workspace).
+Hay que ir al archivo application.properties:
+app.name=Portal
+app.version=1.2-M1
+
+Para cambiar el nombre de la aplicación qu se ve en Eclipse hay que ir al archivo .project que se encuentra en la raíz del proyecto (en Eclipse/GGTS se ve en el Navigator) y modificar:
+<projectDescription>
+	<name>weceem-app-master</name>
+	.......
+	<linkedResources>
+		<link>
+			<name>.link_to_grails_plugins</name>
+			<type>2</type>
+			<locationURI>GRAILS_ROOT/2.3.4/projects/weceem/plugins</locationURI>
+			......
+<name> se debe modificar.
+Donde "weceem" es el nombre del directorio que tendrá la aplicación para los plugins que descargur, que es una de las partes a modificar.
+
+
 <BD:POSTGRESQL>****************************************************************************************************************************************
+Para descargar los conectores de la base de datos incluir en el BuildConfig.groovy:
+	dependencies {
+		...
+		runtime 'org.postgresql:postgresql:9.3-1100-jdbc41'
+	}
+	
 ----------
 DATASOURCE
 ----------
@@ -602,6 +636,7 @@ Ir a la def breadcrumb y substituirlo por:
 -----------------------------------------------------------------------------------
 CORRECTA VISUALIZACIÓN DEL CÓDIGO GSP DE LOS ELEMENTOS DEL DOMINIO CREADOS (FICHAS)
 -----------------------------------------------------------------------------------
+TagLib: EditorFieldTagLib
 OJO! La nueva versión admine \n dentro de un comentario.
 Para que cuando se encuentren dos comentarios seguidos en el String content de las fichas se puedan visualizar en líneas diferentes:
 1ero: Substituir 
@@ -647,7 +682,7 @@ Para que cuando se encuentren dos comentarios seguidos en el String content de l
 			xmlcolors = "xmlcolorsficha.css"
 		}
 	- En la def editorFieldHtmlCode, línea 277 aprox (stylesheet: "${g.resource(plugin:'weceem', dir:'_weceem/codemirror/css', file:'xmlcolors.css').encodeAsJavaScript()}",)
-	  Substituir 'xmlcolors.css' por xmlcolors.css, es decir, eliminar las comas simples.
+	  Substituir 'xmlcolors.css' por xmlcolors, es decir, eliminar las comas simples y el .css.
 			
 3ero: Hay que incluir la hoja de estilos "xmlcolorsficha.css" en "/Portal/.link_to_grails_plugins/weceem-1.2/web-app/_weceem/codemirror/css/xmlcolorsficha.css".
 El contenido del CSS es el siguiente:
@@ -727,7 +762,7 @@ VISUALIZACIÓN DE FICHAS EN EL MENÚ DE LA IZQUIERDA
 --------------------------------------------------
 Permite la visualización en el menú izquierdo de diferentes tipos de fichas.
 Controlador: WcmContentController: 
-Línea: 96 
+Línea: 96 justo después del código que hay con el comentario // Resolve any virtual nodes
 Pegar el siguiente código:
 	//REV-004-20141112 - INI - Visualizar menú desplegable para determinados tipos
 	if((content.getClass().toString().equals("class org.weceem.html.WcmHTMLContent") 
@@ -756,6 +791,86 @@ Pegar el siguiente código:
 	//REV-004-FIN
 
 *******************************************************************************************************************************************************
+-----------------------------------------------------------------------------------------
+MODIFICACIONES EN LA PÁGINA DE BÚSQUEDA / CAMBIO DE LA UBICACIÓN DE LA PÁGINA DE BÚSQUEDA
+-----------------------------------------------------------------------------------------
+Para modificar la página de búsqueda cargada, es decir, despúes de apretar al "Search" se carga la página "/view/search-results".Pues bien, para modifcar
+el lugar de la ubicación o la vista HTML a cargar hay que ir al
+Controlador: WcmSearchController
+DEF: search
+y modificar la línea 63 (aprox): def uri = params.resultsPath ?: (data.space.aliasURI ?: '')+'/view/search-results'
+
+Workaround: (por si no funciona a la primera)
+1) Cambiar la dirección en el controlador y ver cómo falla.
+2) Crear la nueva página en la nueva ubicación y ejecutar para ver que funciona.
+3) Eliminar la página original (si es que se desea)
+
+
+-----------------------------------------
+CAMBIOS EN EL COMPORTAMIENTO DEL BUSCADOR
+-----------------------------------------
+Servicio: WcmContentRepositoryService
+DEF: searchForPublicContent
+Línea: 2520 aprox.
+Eliminar/Comentar toda la definición que comienza por "def results = WcmContent.search([reload:true, offset:args?.offset ?:0, max:args?.max ?: 25]){".
+Luego añadir el siguiente código adaptando la parte del IF.
+	//REV-20140910 Permite paginación y filtrado de tipos de documentos.
+	def results = WcmContent.search([reload:true, offset:0,  max:100]){
+		must(queryString(query))
+
+		// @todo apply baseURI
+
+		// Restrict to public
+		must(term('status_publicContent', true))
+
+		// Restrict to space
+		must {
+			listContentClassNames( {
+				def hasSCProp = it.metaClass.hasProperty(proxyHandler.unwrapIfProxy(it).class, 'standaloneContent')
+				!hasSCProp || it.standaloneContent
+			} ).each { n ->
+				def t = '$/'+n.replaceAll('\\.', '_')+'/space/id'
+				term(t, space.id)
+			}
+		}
+	}
+
+	// Filter by type if required
+	if (args.types) {
+		results.results = filterToTypes(results.results, args.types)
+		//20140922 - Primero aparecerán los resultados que tengan la palabra en su título.
+		results.results = orderByTitle(results.results, query)
+		
+		//Una vez filtrados los resultados, nos quedamos con la cifra real de elementos
+		results.total = results.results.size()
+	}
+	
+	//20140922 - INI
+	if(args.max){
+		//Se realiza la paginación manualmente
+		def lista = []
+
+		def offset = args.offset ?: 0
+		def max = args.max
+
+		def limit = (offset+max) > results.total ? results.total : (offset+max)
+	
+		for(int i=offset; i<limit; i++){
+			lista << results.results[i]
+		}
+		
+		results.results = lista
+		
+	}
+	//20140922 - FIN
+
+	
+*******************************************************************************************************************************************************
+A partir de ahora se harán las adpataciones para la base de datos Oracle y el CAS.
+DOC: WECEEM_v1_3_M1_ORACLE.txt
+
+*******************************************************************************************************************************************************
+
 ------------------------------
 Creación:	11-12-2014
 
