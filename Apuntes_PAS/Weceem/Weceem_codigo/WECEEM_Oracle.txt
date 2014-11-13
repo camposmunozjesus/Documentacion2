@@ -1,6 +1,6 @@
 weceem-app-master: contiene los archivos de la aplicación que funciona correctamente con el CAS + Oracle.
 weceem-1.2: plugin modificado para poder funcionar con Oracle. Se han tocado:
-	WcmContent (Dominio) y todas las clases que heredan de él. Cambiando 'text' por 'materialized_clob'
+	WcmContent (Dominio) y todas las clases que heredan de él. Cambiando 'text' (en content type:'text') por 'materialized_clob'
 	WcmContent se anyade content type:'materialized_clob' al static mapping.
 	WcmSpace (Dominio) queda de la siguiente manera:
 		//

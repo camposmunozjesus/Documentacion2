@@ -15,7 +15,7 @@ Para cambiar el nombre de la aplicación qu se ve en Eclipse hay que ir al archi
 			<type>2</type>
 			<locationURI>GRAILS_ROOT/2.3.4/projects/weceem/plugins</locationURI>
 			......
-
+Donde "weceem" es el nombre que tendrá la aplicación,que es lo que se debe modificar.
 
 *****************************************************************************************************************************************************
 ------------------------------

@@ -1,0 +1,123 @@
+WECEEM 1.3M1/1.3M2 - NOTAS PARA SU INSTALACIÓN (CÓDIGO FUENTE)
+==============================================================
+Adaptaciones a la base de datos Oracle y a la utilización del CAS.
+
+Primero se ha de conectar con la base de datos para que el CAS pueda validar las dredenciales.
+
+
+<BD:ORACLE>********************************************************************************************************************************************
+Copiar en la carpeta lib del proyecto la librería Oracle JDBC que se encuentra en la carpeta "lib_oracle" en este directorio.
+
+NO HAY QUE REALIZAR CAMBIOS --- > ÚNICAMENTE HAY QUE CREAR LAS TABLAS DE NUEVO --- > NO ES COMPATIBLE CON LAS TABLAS CREADAS PARA ORACLE CON WECEEM-1.2
+
+/* ************************************************************************************************************************************************* */
+-----------------------------
+SOLUCIÓN FALLO EN LOS ÍNDICES
+-----------------------------
+Error que se puede producir:
+Error |
+2014-11-13 12:00:39,034 [localhost-startStop-1] ERROR hbm2ddl.SchemaUpdate  - Unsuccessful: create index space_name_Idx on wcm_space (name)
+Error |
+2014-11-13 12:00:39,034 [localhost-startStop-1] ERROR hbm2ddl.SchemaUpdate  - ORA-01408: aquesta llista de columnes ja està indexada
+
+Error |
+2014-11-13 12:00:39,037 [localhost-startStop-1] ERROR hbm2ddl.SchemaUpdate  - Unsuccessful: create index space_aliasURI_Idx on wcm_space (aliasuri)
+Error |
+2014-11-13 12:00:39,037 [localhost-startStop-1] ERROR hbm2ddl.SchemaUpdate  - ORA-01408: aquesta llista de columnes ja està indexada
+
+Para solucionar las líneas de error relacionadas con el error 1408 de Oracle y la creación de índices hay que ir al WcmSpace (en el
+dominio) y dejar la zona del static mapping tal y como está:
+    static mapping = {
+        cache usage: 'read-write'
+//        name index: 'space_name_Idx'
+//        aliasURI index: 'space_aliasURI_Idx'
+    }
+
+Para la versión 1.2 de Weceem hay que realizar más modificaciones: archivo WECEEM_Oracle.txt.
+	
+----------
+DATASOURCE
+----------
+
+---> BASE DE DATOS EN UNA MÁQUINA VIRTUAL --- PARA REALIZAR PRUEBAS
+//DATA SOURCE ORACLE INSIDE OF VM GUEST
+dataSource {
+	pooled = true
+	driverClassName = "org.h2.Driver"
+	pooled = true
+	autoReconnect = true
+	driverClassName = 'oracle.jdbc.driver.OracleDriver'
+	dialect='org.hibernate.dialect.Oracle10gDialect'
+	logSql = false
+	properties {
+		maxActive = 50
+		maxIdle = 25
+		minIdle = 5
+		initialSize = 5
+		minEvictableIdleTimeMillis = 60000
+		timeBetweenEvictionRunsMillis = 60000
+		maxWait = 10000
+		testOnBorrow=true
+		testWhileIdle=true
+		testOnReturn=true
+		validationQuery = "SELECT * FROM DUAL"
+	}
+
+}
+hibernate {
+	cache.use_second_level_cache = true
+	cache.use_query_cache = false
+	cache.region.factory_class = 'net.sf.ehcache.hibernate.EhCacheRegionFactory' // Hibernate 3
+//    cache.region.factory_class = 'org.hibernate.cache.ehcache.EhCacheRegionFactory' // Hibernate 4
+}
+
+// environment specific settings
+environments {
+	development {
+		dataSource {
+			dbCreate = "update" // one of 'create', 'create-drop', 'update', 'validate', ''
+			url = "jdbc:oracle:thin:@192.168.56.101:1521:orcl"
+			username = "cs"
+			password = "hola"
+		}
+	}
+	test {
+		dataSource {
+			dbCreate = "update"
+			url = "jdbc:oracle:thin:@192.168.56.101:1521:orcl"
+			username = "cs"
+			password = "hola"
+		}
+	}
+	production {
+		dataSource {
+//            dbCreate = "update"
+			url = "jdbc:oracle:thin:@192.168.56.101:1521:orcl"
+			properties {
+			   maxActive = -1
+			   minEvictableIdleTimeMillis=1800000
+			   timeBetweenEvictionRunsMillis=1800000
+			   numTestsPerEvictionRun=3
+			   testOnBorrow=true
+			   testWhileIdle=true
+			   testOnReturn=false
+			   validationQuery="SELECT 1"
+			   jdbcInterceptors="ConnectionState"
+			}
+		}
+	}
+}
+
+
+<CAS>**************************************************************************************************************************************************
+
+
+	
+*******************************************************************************************************************************************************
+
+------------------------------
+Creación:	11-13-2014
+
+Jesús Campos Muñoz
+jesus.campos@upc.edu
+------------------------------

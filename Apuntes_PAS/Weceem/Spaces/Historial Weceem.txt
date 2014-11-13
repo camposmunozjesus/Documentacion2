@@ -187,6 +187,9 @@ PAS_20141104_1230_merlot: Copia de seguridad de merlot PAS. Hay que hacer cambio
 PAS_20141104_1240_merlot: El mismo de antes incorporando los etilos de Cristina y quitando [readonly] de form-control-UPC.
 PAS_20141106_1250_merlot: Copia de seguridad antes de adaptar el space al nuevo tipo de plantillas.
 PAS_20141107_1320_merlot: Space PAS con todas las páginas HTML (de desplegables) pasadas al nuevo formato (Plantillas Fitxa X).
+PAS_20141113_0810_merlot: CPSEG antes de intentar probar la nueva versión de Weceem (1.3M1). Contiene imágenes redondas y listas ajustadas.
+
+PDI_20141113_0810_merlot: CPSEG antes de intentar probar la nueva versión de Weceem (1.3M1). Probablemente sea igual que la última CPSEG.
 							
 ----------------------
 ARREGLOS CÓDIGO GROOVY
