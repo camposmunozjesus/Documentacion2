@@ -14,6 +14,7 @@ C:\Users\Jesus Campos\.grails\2.4.3\projects\weceem\plugins\weceem-1.3-M1\src\ja
 Hay que eliminarlos de esta ubicación.
 
 
+
 *******************************************************************************************************************************************************
 ----------------------------------------------------------------------------------
 CAMBIAR EL NOMBRE DE LA APLICACIÓN (NOMBRE VISIBLE AL DESPLEGAR Y EN ECLIPSE/GGTS)
@@ -108,7 +109,69 @@ environments {
 }
 
 
+
+<CONFIG.GROOVY>****************************************************************************************************************************************
+--------------------------------------------------
+DESHABILITAR EL CACHE DE LAS PÁGINAS EN MODO VISTA
+--------------------------------------------------
+En el archivo Config.groovy se descomenta la siguiente línea:
+cache.headers.enabled = false
+
+------------------------------------------------------
+ESTABLECER UNA DIRECCIÓN ACCESIBLE DESDE OTRO TERMINAL
+------------------------------------------------------
+En este caso adaptar el proyecto para que sea accesible desde el terminal móvil.
+En el archivo Config.groovy en el apartado de environments { development { ...} ...} poner:
+	grails.serverURL = "http://pc24094.upc.es:8090/weceem"
+	
+	
+
+<SEGURIDAD>********************************************************************************************************************************************
+Este apartado es bueno hacerlo después de configurar la base de datos debido a que se ha realizado después de conectar con ORACLE y ha fallado, y al 
+deshacer los pasos no ha sido posible volver a hacer funcionar el proyecto.
+
+Deshacer esta operación no es tan simple como deshacer los pasos realizados.
+
+--------------------------------------------------------
+ELIMINAR EL SPRING SECURITY POR DEFECTO DE LA APLICACIÓN
+--------------------------------------------------------
+Config.groovy comentar:
+	- La definición weceem.springsecurity.details.mapper.
+	- La definición grails { plugin { springsecurity ...
+	
+BootStrap.groovy comentar:
+	-   if (!CMSRole.findByAuthority('ROLE_USER')) {
+			assert new CMSRole(authority: 'ROLE_USER', description: 'User role').save(flush:true)
+		}
+		if (!CMSRole.findByAuthority('ROLE_ADMIN')) {
+			assert new CMSRole(authority: 'ROLE_ADMIN', description: 'Admin role').save(flush:true)
+		}
+
+		if (!CMSUser.findByUsername('admin')) {
+			assert new CMSUser(username: 'admin', firstName: 'admin', lastName: '',
+					passwd: "${springSecurityService.encodePassword('admin', 'admin')}",
+					email: 'admin@admin.com',
+					enabled: true)
+					.addToAuthorities(CMSRole.findWhere(authority: 'ROLE_ADMIN'))
+					.addToAuthorities(CMSRole.findWhere(authority: 'ROLE_USER'))
+					.save(flush:true)
+		} 
+		
+BuildConfig.groovy comentar:
+	- //compile ":weceem-spring-security:1.3-M2"
+	
+	
+	
 <DOMINIO>**********************************************************************************************************************************************
+------------------------------
+MODIFICACIÓN DE WCMHTMLCONTENT
+------------------------------   
+Para que el buscador funcione debidamente en WcmHTMLContent el siguiente apartado debe quedar como sigue:
+	static searchable = {
+        alias WcmHTMLContent.name.replaceAll("\\.", '_')
+        only = ['content', 'keywords', 'htmlTitle', 'menuTitle', 'title', 'status']
+    }
+	
 ------------------------------------------------------------------------
 GENERACIÓN DE LOS ELEMENTOS PERSONALIZADOS DEL DOMINIO: PLANTILLAS FICHA
 ------------------------------------------------------------------------
@@ -528,6 +591,7 @@ class WcmPlantillaFitxaGenerica2Col extends WcmContent {
 }
 
 
+
 <TAGS>*************************************************************************************************************************************************
 ---------
 UPCTAGLIB
@@ -756,6 +820,7 @@ El contenido del CSS es el siguiente:
 	}
 
 
+	
 <CONTROLADORES>****************************************************************************************************************************************
 --------------------------------------------------
 VISUALIZACIÓN DE FICHAS EN EL MENÚ DE LA IZQUIERDA
@@ -790,6 +855,8 @@ Pegar el siguiente código:
 	}
 	//REV-004-FIN
 
+	
+	
 *******************************************************************************************************************************************************
 -----------------------------------------------------------------------------------------
 MODIFICACIONES EN LA PÁGINA DE BÚSQUEDA / CAMBIO DE LA UBICACIÓN DE LA PÁGINA DE BÚSQUEDA
@@ -865,12 +932,15 @@ Luego añadir el siguiente código adaptando la parte del IF.
 	//20140922 - FIN
 
 	
+	
 *******************************************************************************************************************************************************
 A partir de ahora se harán las adpataciones para la base de datos Oracle y el CAS.
 DOC: WECEEM_v1_3_M1_ORACLE.txt
 
 *******************************************************************************************************************************************************
 
+		
+		
 ------------------------------
 Creación:	11-12-2014
 

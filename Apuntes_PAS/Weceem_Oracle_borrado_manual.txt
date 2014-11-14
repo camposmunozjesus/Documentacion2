@@ -1,0 +1,31 @@
+ORACLE - BORRAR UN SPACE DE MANERA MANUAL EN BASE DE DATOS ORACLE
+=================================================================
+Para poder eliminar el space se desactivan las siguientes constraints de la tabla WCM_CONTENT: 
+(Botón derecho sobre la tabla Constraints->Disable single, sin hacer check en el checkbox de verificar)
+CS.FK951FF55B988A1A5A
+CS.FK951FF55BE1775669
+CS.FK951FF55B988A1A5A
+CS.FK951FF55B3A4CE4A4
+Primero se elimina el space de la tabla WCM_SPACE y luego los elementos de la tabla WCM_CONTENT cuyo SPCE_ID coincida con ID del elemento eliminado en la
+tabla WCM_SPACE.
+
+Luego hacer Constraints -> Enable all
+
+
+**********************
+Otro método:
+Para poder eliminar el space se desactiva la siguiente constraint de la tabla WCM_CONTENT:
+CS.FK951FF55BF1D5C51A
+Se activa la constraint y se desactivan las siguientes (también de WCM_CONTENT):
+CS.FK951FF55BE1775669
+CS.FK951FF55B988A1A5A
+
+
+*******************************************************************************************************************************************************
+
+------------------------------
+Creación:	11-14-2014
+
+Jesús Campos Muñoz
+jesus.campos@upc.edu
+------------------------------
