@@ -1,0 +1,106 @@
+WECEEM - TAGLIBs
+================
+******************************************************************************************************************************************************
+**************************************************	TAGLIBS PROPIAS: DESCRIPCIÓN Y USO EN PANTALLAS GSP	**********************************************
+******************************************************************************************************************************************************
+--------------------
+TAGLIB: getPageAttrs
+--------------------
+Función: sirve para encontrar los datos de una página: título, id, aliasURI, etc.
+Uso: se declara el tag en la página gsp y se printa los parámetros deseados. Varias formas de utilización:
+	- Si no se le pas ningún parámetro devolverá los datos de la página actual.
+	- Si se le pasa el ID, número, devolverá los datos de la página que tenga dicho ID.
+	- Si se le pasa el path de la página, devolverá los datos de la página que tenga dicho path.
+	- Si se le pasa el título de la página, devolverá los datos de la página que tenga dicho título. (no se ha comprobado su funcionamiento)
+	
+--------------	
+EJEMPLO DE USO
+--------------
+Suponiendo que en el CMS tenemos el siguiente esquema de páginas:
+	Pàgina																	Estat 		Creat per 	Darrera mdoificació
+	------																	-----		---------	-------------------
+	>Inici (/index - Pàgina HTML)											Publicat 	unknown 	Fa 34 segons
+	   |	
+	   |---Informació general (/Informacio_General - Pàgina HTML)			Publicat 	unknown	 	Fa 3 dies
+	   |
+	   |---Racó personal (/Raco_Personal - Pàgina HTML)						Publicat 	unknown	 	Fa 5 dies
+
+El siguiente ejemplo muestra cómo utilizar el tag con el caso de pasar el path y qué datos se pueden obtener:
+	<wcm:getPageAttrs path="index">
+	  ID: ${page.id}<br>
+	  TITLE: ${page.title}<br>
+	  TITLE MENU: ${page.titleForMenu}<br>  
+	  ALIASURI: ${page.aliasURI}<br>
+	  ABSOLUTE URI: ${page.getAbsoluteURI()}<br>
+	</wcm:getPageAttrs>
+
+Otro ejemplo:
+	<wcm:getPageAttrs path="index/Informacio_General">
+	  ID: ${page.id}<br>
+	  TITLE: ${page.title}<br>
+	  TITLE MENU: ${page.titleForMenu}<br>  
+	  ALIASURI: ${page.aliasURI}<br>
+	  ABSOLUTE URI: ${page.getAbsoluteURI()}<br>
+	</wcm:getPageAttrs>
+	
+-----------------
+CÓDIGO DEL TAGLIB
+-----------------
+El taglib está incluido en WeceemTagLib.groovy por lo que el namespace es "wcm".
+	def getPageAttrs = { attrs, body ->
+		
+		println "<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>getPageAttrs:"+request[RenderEngine.REQUEST_ATTRIBUTE_NODE]
+		println "ID:    "+request[RenderEngine.REQUEST_ATTRIBUTE_NODE].id
+		println "TITLE: "+request[RenderEngine.REQUEST_ATTRIBUTE_NODE].title
+		// Se consigue el id de la página actual: request[RenderEngine.REQUEST_ATTRIBUTE_NODE]
+		
+		def params = makeFindParams(attrs)
+		def id = attrs[ATTR_ID]
+		def title = attrs[ATTR_TITLE]
+		def path = attrs[ATTR_PATH]
+		def c
+		if (id) {
+			println "busca por ID"
+			c = WcmContent.get(id)
+		} else if (title) {
+			println "busca por TITULO"
+			c = WcmContent.findByTitle(title, params)
+		} else if (path) {
+			println "busca por PATH"
+			c = wcmContentRepositoryService.findContentForPath(path,
+				request[RenderEngine.REQUEST_ATTRIBUTE_SPACE])?.content
+		} else if (request[RenderEngine.REQUEST_ATTRIBUTE_NODE].id) {
+			println "busca por ACTUAL"
+			c = WcmContent.get(request[RenderEngine.REQUEST_ATTRIBUTE_NODE].id)
+		} else throwTagError("One of [id], [title] or [path] must be specified")
+		
+		println "Datos de la página buscada: "+c.title
+		
+//		def actualNode = request[RenderEngine.REQUEST_ATTRIBUTE_NODE].id
+//		if (actualNode) {
+//			c = WcmContent.get(actualNode)
+//		}
+		
+		//Se le pasan los argumentos a la página GSP
+		def bodyargs = [
+			page: c
+		]
+				
+		out << body(bodyargs)
+	}
+
+******************************************************************************************************************************************************
+	
+	
+	
+******************************************************************************************************************************************************
+**************************************************	TAGLIBS WECEEM: DESCRIPCIÓN Y USO EN PANTALLAS GSP	**********************************************
+******************************************************************************************************************************************************
+
+*****************************************************************************************************************************************************
+------------------------------
+Creación:	03-10-2014
+
+Jesús Campos Muñoz
+jesus.campos@upc.edu
+------------------------------
