@@ -25,7 +25,7 @@ CKEDITOR.plugins.add( 'divdsp1', {
 				
 
 				// Insert the divdsp1 into the document.
-				editor.insertHtml( '<!-- T&iacute;tol -->div class=\"selectedTitol\" id=\"box_112\">  <div class=\"minus\" id=\"title_box_112\">	T&iacute;tol</div></div><!-- Contingut --><div class=\"dsplContent\" id=\"dsplContent_box_112\">Contingut </div>' );
+				editor.insertHtml( '<div> <!-- T&iacute;tol --> <div class=\"selectedTitol\" id=\"box_112\">  <div class=\"minus\" id=\"title_box_112\">	T&iacute;tol</div></div><!-- Contingut --><div class=\"dsplContent\" id=\"dsplContent_box_112\">Contingut </div></div>' );
 			}
 		});
 
