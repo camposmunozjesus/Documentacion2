@@ -31,10 +31,40 @@ Añadir en Config.js:
 En EditorFieldTagLib en void includeCKEditor() { ... añadir:
 	'Timestamp','-','Divdsp1']
 
-
+*******
+<div class="row no-scroll-bar columnas-dobles">
+  <div class="col-vxs-6 col-sm-6 col-md-6 col-lg-6 row-margin-bottom-col1">
+    
+    <!-- T&iacute;tol -->
+    <div class="selectedTitol" id="box_100">
+      <div class="minus" id="title_box_100">
+        T&iacute;tol</div>
+    </div>
+    <!-- Contingut -->
+    <div class="dsplContent" id="dsplContent_box_100">
+      Contingut
+    </div>
+    <!-- Cierre primera columna--></div>
+  <!--SEGUNDA COLUMNAS -->  
+  <div class="col-vxs-6 col-sm-6 col-md-6 col-lg-6">
+    
+    <!-- T&iacute;tol -->
+    <div class="selectedTitol" id="box_111">
+      <div class="minus" id="title_box_111">
+        T&iacute;tol</div>
+    </div>
+    <!-- Contingut -->
+    <div class="dsplContent" id="dsplContent_box_111">
+      Contingut
+    </div>
+    <!-- Cierre segunda columna--></div>
+</div>
+<p>
+  &nbsp;</p>
+******************************
 	
-	<!-- T&iacute;tol -->
-div class="selectedTitol" id="box_112">
+<!-- T&iacute;tol -->
+<div class="selectedTitol" id="box_112">
   <div class="minus" id="title_box_112">
 	T&iacute;tol</div>
 </div>
@@ -45,11 +75,11 @@ Contingut
 
 
 
-<!-- T&iacute;tol -->div class="selectedTitol" id="box_112">  <div class="minus" id="title_box_112">	T&iacute;tol</div></div><!-- Contingut --><div class="dsplContent" id="dsplContent_box_112">Contingut </div>
+<!-- T&iacute;tol --><div class="selectedTitol" id="box_112">  <div class="minus" id="title_box_112">	T&iacute;tol</div></div><!-- Contingut --><div class="dsplContent" id="dsplContent_box_112">Contingut </div>
 
 
 
-<!-- T&iacute;tol -->div class=\"selectedTitol\" id=\"box_112\">  <div class=\"minus\" id=\"title_box_112\">	T&iacute;tol</div></div><!-- Contingut --><div class=\"dsplContent\" id=\"dsplContent_box_112\">Contingut </div>
+<!-- T&iacute;tol --><div class=\"selectedTitol\" id=\"box_112\">  <div class=\"minus\" id=\"title_box_112\">	T&iacute;tol</div></div><!-- Contingut --><div class=\"dsplContent\" id=\"dsplContent_box_112\">Contingut </div>
 
 
 
