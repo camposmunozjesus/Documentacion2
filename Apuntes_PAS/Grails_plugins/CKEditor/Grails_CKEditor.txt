@@ -32,6 +32,27 @@ En EditorFieldTagLib en void includeCKEditor() { ... añadir:
 	'Timestamp','-','Divdsp1']
 
 
+	
+	<!-- T&iacute;tol -->
+div class="selectedTitol" id="box_112">
+  <div class="minus" id="title_box_112">
+	T&iacute;tol</div>
+</div>
+<!-- Contingut -->
+<div class="dsplContent" id="dsplContent_box_112">
+Contingut 
+</div>
+
+
+
+<!-- T&iacute;tol -->div class="selectedTitol" id="box_112">  <div class="minus" id="title_box_112">	T&iacute;tol</div></div><!-- Contingut --><div class="dsplContent" id="dsplContent_box_112">Contingut </div>
+
+
+
+<!-- T&iacute;tol -->div class=\"selectedTitol\" id=\"box_112\">  <div class=\"minus\" id=\"title_box_112\">	T&iacute;tol</div></div><!-- Contingut --><div class=\"dsplContent\" id=\"dsplContent_box_112\">Contingut </div>
+
+
+
 *****************************************************************************************************************************************************
 ------------------------------
 Creación:		16-11-2014
