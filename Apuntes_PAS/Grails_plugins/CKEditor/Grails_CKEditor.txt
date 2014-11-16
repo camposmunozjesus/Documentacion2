@@ -1,0 +1,41 @@
+﻿GRAILS - CKEDITOR PLUGIN
+========================
+------------------------------
+INSTALACIÓN DE CKEDITOR PLUGIN
+------------------------------
+Referencia de utilización: 
+Plugins must be declared in the grails-app/conf/BuildConfig.groovy file.
+Example:
+grails.project.dependency.resolution = {
+   ...
+   plugins {
+      compile ":ckeditor:3.6.6.1.0"
+   }
+}
+
+
+*****************************************************************************************************************************************************
+---------------
+AÑADIR UN BOTÓN
+---------------
+En /weceem-app-master/.link_to_grails_plugins/ckeditor-3.6.6.1.0/web-app/js/ckeditor/plugins/divdsp1 copiar la carpeta.
+
+Añadir en Config.js:
+	CKEDITOR.editorConfig = function( config )
+	{
+	//	config.extraPlugins = 'timestamp';
+		config.extraPlugins = 'timestamp,divdsp1';
+
+	};
+
+En EditorFieldTagLib en void includeCKEditor() { ... añadir:
+	'Timestamp','-','Divdsp1']
+
+
+*****************************************************************************************************************************************************
+------------------------------
+Creación:		16-11-2014
+				
+Jesús Campos Muñoz
+jesus.campos@upc.edu
+------------------------------
