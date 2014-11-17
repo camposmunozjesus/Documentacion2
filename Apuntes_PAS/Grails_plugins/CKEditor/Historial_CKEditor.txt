@@ -1,0 +1,29 @@
+HISTORIAL DE CKEDITOR PLUGIN
+============================
+Carpetas:
+	- timestamp (14-11-2014): añade una fecha en el editor.
+	- divdsp1	(14-11-2014): añade un divisor desplegable en el docuemnto. Pero el id se ha de cambiar a mano.
+	- divdsp3	(17-11-2014): añade un divisor desplegable y pregunta el id (extensión) con un diálogo.
+	
+CSS adaptado:
+.dsplContent+.dsplContent{
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  
+  border-left: transparent !important;
+  border-right: transparent !important;
+  border-top: transparent !important;
+  border-bottom: transparent !important;
+  
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0);
+  font: 1.0em verdana, arial, helvetica, sans-serif;
+}
+
+@media (max-width: 635px) {
+ .dsplContent+.dsplContent
+ {
+   margin-right: 0px;
+ }
+}
