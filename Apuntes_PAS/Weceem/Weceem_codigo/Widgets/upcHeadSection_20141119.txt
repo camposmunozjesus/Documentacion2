@@ -1,0 +1,33 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+<!-- <link rel="stylesheet" href="${wcm.createLink(path:'css/bootstrap.min.css')}" type="text/css"> -->
+<link rel="stylesheet" href="${wcm.createLink(path:'css/bootstrap.css')}" type="text/css">
+
+<link rel="stylesheet" href="${wcm.createLink(path:'css/main.css')}" type="text/css">
+
+<script type="text/javascript" src="${wcm.createLink(path:'js/jquery/jquery-1.11.1.min.js')}"></script>
+<script type="text/javascript" src="${wcm.createLink(path:'js/bootstrap.min.js')}"></script>
+
+<link rel="shortcut icon" href="${wcm.createLink(path:'images/favicon.ico')}" type="image/x-icon" />
+
+<link rel="stylesheet" href="${wcm.createLink(path:'css/bootstrapUPC.css')}" type="text/css">
+<link rel="stylesheet" href="${wcm.createLink(path:'css/estilsUPC.css')}" type="text/css">
+
+
+<!-- Estilos de los menús laterales y el cuadro que permite mostrar/ocultar el menú -->
+<link rel="stylesheet" href="${wcm.createLink(path:'css/menus.css')}" type="text/css">
+
+
+<!-- JS de la caja que muestra/oculta el menú lateral en modo móvil -->
+<script type="text/javascript" src="${wcm.createLink(path:'js/posicion-menu.js')}"></script>
+
+<!-- Estilos del pie de página -->
+<link rel="stylesheet" href="${wcm.createLink(path:'css/sticky-footer.css')}" type="text/css">
+
+<!-- Estilos de la página de Contacte. Aunque la página esté ubicada en el space Default, se utilizan los estilos que se cargan aquí -->
+<link rel="stylesheet" href="${wcm.createLink(path:'css/contacte.css')}" type="text/css">
+
+<!-- Temporal -->
+<link rel="stylesheet" href="${wcm.createLink(path:'css/tmp.css')}" type="text/css">
