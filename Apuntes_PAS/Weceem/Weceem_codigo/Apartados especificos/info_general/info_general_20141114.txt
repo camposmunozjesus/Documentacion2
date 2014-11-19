@@ -1,0 +1,221 @@
+<!-- Primera Fila -->
+<div class="fit-column">
+  <div class="row no-scroll-bar">
+    <div class="grup-info">
+      <div class="col-xs-12 col-info-4 col-sm-3 col-md-3 col-lg-2 row-margin-bottom-imagen row-margin-top20-imagen">
+        <div class="imagen">
+          <a href="Informacio_General/El-PAS-a-la-UPC" target="_self"><img alt="El PAS a la UPC" src="/Portal/WeceemFiles/PAS/Image/Informacio_General/PAS.png" style="width: 150px; height: 150px;" /></a>
+          <div class="contenedor_1">
+            <a href="Informacio_General/El-PAS-a-la-UPC" target="_self">&nbsp;</a></div>
+          <div class="contenedor_2">
+            <p class="blanco">
+              El PAS a la UPC</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-info-8 col-sm-3 col-md-3 col-lg-4 row-margin-bottom-descripcio row-margin-top20-descripcio col-info-height">
+        <div class="ficha_inici">
+          <p>
+            <a href="Informacio_General/El-PAS-a-la-UPC">El PAS a la UPC</a></p>
+          <p class="txt-descripcio">
+            Informaci&oacute; sobre els diferents col&middot;lectius de PAS, el Manual de Perfils, la relaci&oacute; de Llocs de Treball, el teletreball i el Manual d&#39;Acollida del PAS.</p>
+        </div>
+      </div>
+    </div>
+    <div class="grup-info">
+      <div class="col-xs-12 col-info-4 col-sm-3 col-md-3 col-lg-2 row-margin-bottom-imagen">
+        <div class="imagen">
+          <a href="Informacio_General/Sistema-retributiu" target="_self"><img alt="Sistema retributiu" src="/Portal/WeceemFiles/PAS/Image/Informacio_General/sistema-retributiu.png" style="width: 150px; height: 150px;" /></a>
+          <div class="contenedor_1">
+            <a href="Informacio_General/Sistema-retributiu" target="_self">&nbsp;</a></div>
+          <div class="contenedor_2">
+            <p class="blanco">
+              Sistema-retributiu</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-info-8 col-sm-3 col-md-3 col-lg-4 row-margin-bottom-descripcio col-info-height">
+        <div class="ficha_inici">
+          <p>
+            <a href="Informacio_General/Sistema-retributiu">Sistema Retributiu</a></p>
+          <p class="txt-descripcio">
+            Taules retributives, increments retributius, IRPF, reconeixement de serveis.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Segunda Fila -->
+<div class="fit-column">
+  <div class="row no-scroll-bar">
+    <div class="grup-info">
+      <div class="col-xs-12 col-info-4 col-sm-3 col-md-3 col-lg-2 row-margin-bottom-imagen">
+        <div class="imagen">
+          <a href="Informacio_General/El-PAS-a-la-UPC" target="_self"><img alt="Situacions administratives" src="/Portal/WeceemFiles/PAS/Image/Informacio_General/situacions_admin.jpg" style="width: 150px; height: 150px;" /></a>
+          <div class="contenedor_1">
+            <a href="Informacio_General/El-PAS-a-la-UPC" target="_self">&nbsp;</a></div>
+          <div class="contenedor_2 long-cont2">
+            <p class="blanco">
+              Situacions administratives</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-info-8 col-sm-3 col-md-3 col-lg-4 row-margin-bottom-descripcio col-info-height">
+        <div class="ficha_inici">
+          <p>
+            <a href="Informacio_General/El-PAS-a-la-UPC">Situacions administratives i r&egrave;gim d&#39;incompatibilitats</a></p>
+          <p class="txt-descripcio">
+            Llic&egrave;ncies, permisos, exced&egrave;ncies, reduccions de jornada, Concilia Universitats, compatibilitat.</p>
+        </div>
+      </div>
+    </div>
+    <div class="grup-info">
+      <div class="col-xs-12 col-info-4 col-sm-3 col-md-3 col-lg-2 row-margin-bottom-imagen">
+        <div class="imagen">
+          <a href="Informacio_General/Sistema-retributiu" target="_self"><img alt="Relacions laborals" src="/Portal/WeceemFiles/PAS/Image/Informacio_General/relacions-laborals.png" style="width: 150px; height: 150px;" /></a>
+          <div class="contenedor_1">
+            <a href="Informacio_General/Sistema-retributiu" target="_self">&nbsp;</a></div>
+          <div class="contenedor_2">
+            <p class="blanco">
+              Relacions laborals</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-info-8 col-sm-3 col-md-3 col-lg-4 row-margin-bottom-descripcio col-info-height">
+        <div class="ficha_inici">
+          <p>
+            <a href="Informacio_General/Sistema-retributiu">Relacions laborals</a></p>
+          <p class="txt-descripcio">
+            Calendari laboral, conveni col&middot;lectiu, festivitats locals i generals, representaci&oacute; sindical.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Tercera Fila -->
+<div class="fit-column">
+  <div class="row no-scroll-bar">
+    <div class="grup-info">
+      <div class="col-xs-12 col-info-4 col-sm-3 col-md-3 col-lg-2 row-margin-bottom-imagen">
+        <div class="imagen">
+          <a href="Informacio_General/El-PAS-a-la-UPC" target="_self"><img alt="Acció social" src="/Portal/WeceemFiles/PAS/Image/Informacio_General/accio-social.png" style="width: 150px; height: 150px;" /></a>
+          <div class="contenedor_1">
+            <a href="Informacio_General/El-PAS-a-la-UPC" target="_self">&nbsp;</a></div>
+          <div class="contenedor_2">
+            <p class="blanco">
+              Acci&oacute; social</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-info-8 col-sm-3 col-md-3 col-lg-4 row-margin-bottom-descripcio col-info-height">
+        <div class="ficha_inici">
+          <p>
+            <a href="Informacio_General/El-PAS-a-la-UPC">Acci&oacute; social</a></p>
+          <p class="txt-descripcio">
+            Pla de pensions, bestretes i altres.</p>
+        </div>
+      </div>
+    </div>
+    <div class="grup-info">
+      <div class="col-xs-12 col-info-4 col-sm-3 col-md-3 col-lg-2 row-margin-bottom-imagen">
+        <div class="imagen">
+          <a href="Informacio_General/Sistema-retributiu" target="_self"><img alt="Seguretat social" src="/Portal/WeceemFiles/PAS/Image/Informacio_General/seg_social.jpg" style="width: 150px; height: 150px;" /></a>
+          <div class="contenedor_1">
+            <a href="Informacio_General/Sistema-retributiu" target="_self">&nbsp;</a></div>
+          <div class="contenedor_2">
+            <p class="blanco">
+              Seguretat social</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-info-8 col-sm-3 col-md-3 col-lg-4 row-margin-bottom-descripcio col-info-height">
+        <div class="ficha_inici">
+          <p>
+            <a href="Informacio_General/Sistema-retributiu">Seguretat social</a></p>
+          <p class="txt-descripcio">
+            Perm&iacute;s maternal, incapacitat temporal, jubilacions, cotitzacions.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Cuarta Fila -->
+<div class="fit-column">
+  <div class="row no-scroll-bar">
+    <div class="grup-info">
+      <div class="col-xs-12 col-info-4 col-sm-3 col-md-3 col-lg-2 row-margin-bottom-imagen">
+        <div class="imagen">
+          <a href="https://espaipersonal.upc.edu/irj/portal/PAS_FORMACIO" target="_blank"><img alt="Formació" src="/Portal/WeceemFiles/PAS/Image/Informacio_General/formacio.png" style="width: 150px; height: 150px;" /></a>
+          <div class="contenedor_1">
+            <a href="Informacio_General/El-PAS-a-la-UPC" target="_self">&nbsp;</a></div>
+          <div class="contenedor_2">
+            <p class="blanco">
+              Formaci&oacute;</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-info-8 col-sm-3 col-md-3 col-lg-4 row-margin-bottom-descripcio col-info-height">
+        <div class="ficha_inici">
+          <p>
+            <a href="https://espaipersonal.upc.edu/irj/portal/PAS_FORMACIO" target="_blank">Formaci&oacute;</a></p>
+          <p class="txt-descripcio">
+            Desenvolupament professional i gesti&oacute; del coneixement (provisional).</p>
+        </div>
+      </div>
+    </div>
+    <div class="grup-info">
+      <div class="col-xs-12 col-info-4 col-sm-3 col-md-3 col-lg-2 row-margin-bottom-imagen">
+        <div class="imagen">
+          <a href="Informacio_General/Sistema-retributiu" target="_self"><img alt="Provisió de llocs de treball" src="/Portal/WeceemFiles/PAS/Image/Informacio_General/provisio_llocs.jpg" style="width: 150px; height: 150px;" /></a>
+          <div class="contenedor_1">
+            <a href="Informacio_General/Sistema-retributiu" target="_self">&nbsp;</a></div>
+          <div class="contenedor_2 long-cont2">
+            <p class="blanco">
+              Provisi&oacute; de llocs de treball</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-info-8 col-sm-3 col-md-3 col-lg-4 row-margin-bottom-descripcio col-info-height">
+        <div class="ficha_inici">
+          <p>
+            <a href="Informacio_General/Sistema-retributiu">Provisi&oacute; de llocs de treball</a></p>
+          <p class="txt-descripcio">
+            Previsi&oacute; de convocat&ograve;ries de places, permutes internes.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Quinta Fila -->
+<div class="fit-column">
+  <div class="row no-scroll-bar">
+    <div class="grup-info">
+      <div class="col-xs-12 col-info-4 col-sm-3 col-md-3 col-lg-2 row-margin-bottom-imagen">
+        <div class="imagen">
+          <a href="Informacio_General/El-PAS-a-la-UPC" target="_self"><img alt="Enllaços d'interès" src="/Portal/WeceemFiles/PAS/Image/Informacio_General/enllacos_interes.jpg" style="width: 150px; height: 150px;" /></a>
+          <div class="contenedor_1">
+            <a href="Informacio_General/El-PAS-a-la-UPC" target="_self">&nbsp;</a></div>
+          <div class="contenedor_2">
+            <p class="blanco">
+              Enlla&ccedil;os d&#39;inter&egrave;s</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-info-8 col-sm-3 col-md-3 col-lg-4 row-margin-bottom-descripcio col-info-height">
+        <div class="ficha_inici">
+          <p>
+            <a href="Informacio_General/El-PAS-a-la-UPC">Enlla&ccedil;os d&#39;inter&egrave;s</a></p>
+          <p class="txt-descripcio">
+            Ag&egrave;ncia Tribut&agrave;ria, Seguretat Social, Generalitat de Catalunya.</p>
+        </div>
+      </div>
+    </div>
+    <!--
+    <div class="col-xs-12 col-info-4 col-sm-3 col-md-3 col-lg-2 row-margin-bottom-imagen">
+      &nbsp;</div>
+    <div class="col-xs-12 col-info-8 col-sm-3 col-md-3 col-lg-4 row-margin-bottom-descripcio col-info-height">
+      &nbsp;</div>
+    --></div>
+</div>
+<p>
+  &nbsp;</p>

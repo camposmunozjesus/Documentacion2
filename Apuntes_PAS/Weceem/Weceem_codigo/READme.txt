@@ -24,7 +24,8 @@ ARCHIVOS GENERALES WECEEM
 WECEEM_Comandos_GGTS.txt: Describe los comandos que se deben utilizar en la aplicacción para crear un nuevo dominio (Plantilla Fitxa), para crea una nueva
 	tarea programada (Job).
 
-WECEEM_descr_funcionamiento.txt: Explicación de cómo funcionan algunas cosas, cómo se debe incluir un link en una GSP, qué ruta es la real, etc...
+WECEEM_descr_funcionamiento.txt: Explicación de cómo funcionan algunas cosas, cómo se debe incluir un link en una GSP, qué ruta es la real, etc..., dónde
+	encontrar la GSP de la pantalla que estmos visualizando ...
 
 WECEEM_Instrucciones_Groovy.txt: Cómo detectar el nombre de la aplicación en el código GRAILS, por ejemplo.
 
@@ -44,13 +45,46 @@ Instrucciones Weceem GSP_.txt: hay instrucciones que hay que extraer del código 
 DÓNDE ENCONTRAR ...
 -------------------
 Menús desplegables: además de la carpeta donde se guardan las versiones (según su funcionamiento se guardan los css, js, etc) en la carpeta JS existe un archivo relacionado con el tema.
+
 Placeholder: para que funcione el placeholder se han efectuado cambios en el código del CMS, pero además, para que funcione correctamente en IExplorer
 			 se ha tenido que incluir un pequeño JS que se puede encontrar en la carpeta JS.
 			 
+Policy_weceem: Privacidad/archivo policy.weceem. Esplica cómo hacer funcionar esta característica.			 
 			 
 Widgets/Menu_dspl_bootstrap: están los archivos necesarios para hacer el desplegable que se encuentra encima del menú izquierdo.
 
 JS/20141106_opcion_cancelar.txt: muestra cómo modificar los botones que aparecen en el menú de Crear nuevo contenido (New Content)
+
+WECEEM_Comandos_GGTS.txt:
+	- Crear una clase de dominio
+	- Crear el paquete WAR	
+	
+WECEEM_descr_funcionamiento.txt:
+	- Hacer el paquete WAR.
+	- Localización de archivos: dónde guarda Weceem los archivos que subimos.
+	- Rutas: referenciar páginas del propio Space de manera que la aplicación sirva para varios spaces/servidores.
+	- Rutas: cómo referenciar una página del Space o una imagen, qué ruta tienen las imágenes subidas con el editor CKEditor.
+	- GSP donde se encuentran los spaces y pueden ser importados/exportados (Administración -> Spaces): saber dónde hay que tocar para editarla.
+	- Pantalla del EDITOR: GSP donde se puede modificar la página de creación de contenidos.
+
+WECEEM_Modificaciones.txt:
+	- Permitir visualizar el menú lateral en determinados tipos de elementos.
+	- Permitir visualizar en el menú lateral determinados tipos de elementos.
+	- Buscador:
+		- Cambiar la ubicación de la página de resultados del buscador.
+		- Reconstruir índice del buscador.
+	- Redireccionar vistas.
+	- Paginación en la vista de Spaces (Importar/Exportar).
+	- Archivo de políticas de privacidad. (ESTÁ POR HACER!!!!!!!!!)
+	- Redirección de spaces en función del perfil.
+	- Eliminar/activar el springSecurity-CAS.
+	- Solución al cierre de sesión
+	- Modificar tamaño de los editores (GSP/Rich Edior).
+
+WECEEM_Modificaciones_CSS.txt:
+	- Tamaños de tablas responsivas personalizados (Problema jumbotron en aplicación RP).
+	- Carrusel
+
 
 
 *****************************************************************************************************************************************************

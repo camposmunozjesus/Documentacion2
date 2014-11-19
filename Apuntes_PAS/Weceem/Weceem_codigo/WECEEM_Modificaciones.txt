@@ -1,7 +1,68 @@
 MODIFICACIONES EN ELEMENTOS DEL PLUGIN/APLICACIÓN - WECEEM
 ==========================================================
-Se muestra cómo cambiar un comportamiento, por ejemplo, cómo modificar el lugar de la página de búsqueda.
+Se muestra cómo cambiar un comportamiento, por ejemplo, cómo modificar el lugar (ubicación) de la página de búsqueda.
 
+<MENÚS>************************************************************************************************************************************************
+---------------------------------------------------------------------
+PERMITIR VISUALIZAR EL MENÚ DESPLEGABLE EN ELEMENTOS QUE NO SEAN HTML
+---------------------------------------------------------------------
+El menú lateral izquierdo se visualiza únicamente en determinados tipos de páginas. Para modificar el tipo de páginas en el que se puede visualizar hay
+que modificar código Groovy/GRails.
+
+Controlador: WcmContentController (/Portal/.link_to_grails_plugins/weceem-1.2/grails-app/controllers/org/weceem/controllers/WcmContentController.groovy)
+Closure: show
+Código a añadir:
+	//REV-004-INI - Visualizar menú desplegable para determinados tipos
+	if((content.getClass().toString().equals("class org.weceem.html.WcmHTMLContent") 
+		|| content.getClass().toString().equals("class com.upc.WcmPlantillaFitxa")
+		|| content.getClass().toString().equals("class com.upc.WcmPlantillaFitxaGenerica")
+		|| content.getClass().toString().equals("class com.upc.WcmPlantillaFitxa2ColGenerica")) && !info.uri.toString().equals("")){
+		def values = info.uri.toString().split("/")
+		if(values){
+			if(values.size()>3){
+				params.tipusMenu=values[1]
+				params.desplegableSelected=values[2]
+				params.itemSelected=values[3]
+			}else if(values.size()>2){
+				params.tipusMenu=values[1]
+				params.desplegableSelected=values[2]
+			}else if(values.size()>1){ //Si hay más de 1 elem en el vector significa que NO estamos en el index, por lo que cogerá por defecto el template relaciona con la página web.
+				params.tipusMenu=values[1]
+				params.itemSelected=values[1]
+			}else{
+				//En el caso de querer indicar un template por defecto para el index se debe hacer aquí.
+				params.tipusMenu="index"
+				//params.itemSelected="item"
+			}
+		}
+	}
+	//REV-004-FIN
+
+En esta ocasión se desea que en menú lateral izquierdo aparezca en los HTML's y los personalizados.
+
+El código se añade después de:
+	// Resolve any virtual nodes
+	def content = resolveActualContent(contentInfo?.content)
+
+------------------------------------------------------------
+VISUALIZAR EN EL MENÚ DESPLEGABLE ELEMENTOS QUE NO SEAN HTML
+------------------------------------------------------------
+El menú desplegable sólo muestra elementos que son de un cierto tipo (hasta ahora HTML's y links). Si se desea que en la lista aparezacan otros
+contenidos que no sean HTML o link, se debe modificar el widget de "Menu desplegable", no hay que tocar código de la aplicación.
+
+Allí se debe abrir la restricción, un ejemplo es:
+ <g:if test="${desplegable.class.toString().size()>30 & (desplegable.class.toString().substring(0,36).equals('class org.weceem.html.WcmHTMLContent') 
+	|| desplegable.class.toString().substring(0,35).equals('class org.weceem.content.WcmContent')
+    || desplegable.class.toString().substring(0,40).equals('class org.weceem.content.WcmExternalLink')
+    || desplegable.class.toString().substring(0,43).equals('class com.upc.WcmPlantillaFitxa2ColGenerica')
+    ) && desplegable.status.description.toString().equals('published') }" > <!-- INI 35 -->
+
+El orden de  desplegable.class.toString().substring(0,43) es creciente.
+
+Realmente es una modificación hecha en el CMS y no en el código Groovy/Grails. Es en GSP.
+
+
+<BUSCADOR>*********************************************************************************************************************************************
 ---------------------------------------
 MODIFICACIONES EN LA PÁGINA DE BÚSQUEDA
 ---------------------------------------
@@ -42,6 +103,7 @@ El problema surge porque por defecto ( se suele trabajar con el war de test) en 
 es el entorno que se arranca en local, sí que los recontruye.
 
 
+<VISTAS>***********************************************************************************************************************************************
 --------------------
 REDIRECCIONAR VISTAS
 --------------------
@@ -59,10 +121,37 @@ detecte que estamos en el Space "default" carge otro. Ejemplo:
 	...
 
 
-----------------------------------------------------------
-GESTIÓN DE LOS SPACES EN FUNCIÓN DEL PERFIL: BASE DE DATOS	
-----------------------------------------------------------
+-------------------------------------------------
+VER TODOS LOS SPACES EN LA ZONA DE ADMINISTRACIÓN
+-------------------------------------------------
+Un modo simple es ir a WcmSpaceController y en la def list variar el máximo que por defecto viene a 10.
+
+Otra forma es incluir el TAG de paginación en la pantalla GSP: (en la zona de weceem-1.2 en ./links)
+En views/wcmSpace/list.gsp se añade lo siguiente:
+	<g:paginate next="Forward" prev="Back"
+            maxsteps="0" controller="wcmSpace"
+            action="list" total="${total}" />
+Y en controller WcmSpaceController, la def list debe quedar como sigue:
+    def list = {
+        if (!params.max) params.max = 5
+        [spaceList: WcmSpace.list(params), total: WcmSpace.list().size()]
+    }
+O de una manera con menos llamadas a base de datos:
+    def list = {
+        if (!params.max) params.max = 5
+		def res = WcmSpace.list(params)
+        [spaceList: res, total: res.getTotalCount()]
+    }
+	
+<ACCESO Y USUARIOS>************************************************************************************************************************************
+--------------------------------------------------------------------------------
+GESTIÓN DE LOS SPACES EN FUNCIÓN DEL PERFIL: BASE DE DATOS/REDIRECCIÓN DE SPACES	
+--------------------------------------------------------------------------------
 Dependiendo si el usuario es PAS, PDI o Becario la aplicación lo redirigirá a una zona u otra:
+
+Controlador: WcmContentController (/Portal/.link_to_grails_plugins/weceem-1.2/grails-app/controllers/org/weceem/controllers/WcmContentController.groovy)
+Closure: show (línea 75 aprox)
+Código a añadir:
 	//20140922 - En función del perfil del usuario redirige al space PAS, PDI o Becario.
 	if(space.name.equals("Default")){
 
@@ -111,7 +200,7 @@ ELIMINAR SPRINGSECURITY-CAS
 Una vez se tiene instalado y bien configurado el SpringSecurity CAS, si se desea poder acceder a la aplicación sin logearse hay que eliminarlo. Para
 ello hay que modificar los siguientes archivos:
 - Config.groovy:
-	- Línea 64 -> Comentar  aprox (y toda la definición): weceem.springsecurity.details.mapper
+	- Línea 64 -> Comentar (toda la definición): weceem.springsecurity.details.mapper
 	- Línea 85 -> Comentar toda la definición de springsecurity en: 
 		grails {
 			plugins {
@@ -129,7 +218,7 @@ ello hay que modificar los siguientes archivos:
 		//grails.plugins.springsecurity.rejectIfNoRule = false
 - Bootstrap.groovy: comentar la declaración ctx.wcmSecurityService.securityDelegate y su contenido.
 - BuildConfig.groovy: comentar compile ":spring-security-cas:1.0.5".
-- En TODOS los controladores donde @Secured(['ROLE_ADMIN']) hay que comentarlo. Los siguientes controladores (al menos hasta ahora):
+- En TODOS los controladores donde esté presente @Secured(['ROLE_ADMIN']) hay que comentarlo. Los siguientes controladores (al menos hasta ahora):
 	- WcmArchiveController
 	- WcmContentController
 	- WcmContentSubmissionController
@@ -141,7 +230,7 @@ ello hay que modificar los siguientes archivos:
 	- WcmSpaceController
 	- WcmSynchronizationController
 	- WcmWikiItemRenderController
-- En "WcmContentController" cambiar el código qu redirecciona al usuario al correspondiente Space en función de su perfil por:
+- En "WcmContentController" cambiar el código que redirecciona al usuario al correspondiente Space en función de su perfil por:
 	//20141112 - INI - Cuando se elimina el CAS forzamos la redirección del space Default al del PAS.
 	def newSpace = WcmSpace.findByAliasURI("PAS")
 	if(newSpace){
@@ -150,10 +239,54 @@ ello hay que modificar los siguientes archivos:
 	//20141112 - FIN
 
 En la carpeta NO_CAS se pueden encontrar los archivos.
-En SI_CAS se encuentran los mismo archivos preparados para el CAS (recordar de volver a poner @Secured(['ROLE_ADMIN']) en los controladores).
+En SI_CAS se encuentran los mismos archivos preparados para el CAS (recordar de volver a poner @Secured(['ROLE_ADMIN']) en los controladores).
 
 Puede que la primera vez después de volver a instalar el CAS falle el arranque con un Aplication Shutdown Context.
 
+
+----------------------------
+SOLUCIÓN AL CIERRE DE SESIÓN
+----------------------------
+La aplicación NO cierra la sesión correctamente.
+
+Página de administración:
+	views
+	  |
+	  |--- treeTable.gsp (carga el layout: weceemadmin.gsp mediante una variable)
+	  
+	  weceemadmin.gsp
+		|
+		|---> carga el template: _header.gsp 
+									
+		En este _header.gsp se encuentra el link del layout, al que hay que forzar a:
+		url="/$ {grails.Application.metadat.'app.name'}/logout/index"
+		
+
+
+
+<EDITOR>***********************************************************************************************************************************************
+----------------------------------
+MODIFICAR EL TAMAÑO DEL EDITOR GSP
+----------------------------------
+Hay que ir a la GSP: /weceem-app-master/.link_to_grails_plugins/weceem-1.2/grails-app/views/wcmEditor/_editor.gsp
+
+Y allí substituir el código que hay dentro del TAG <g:grep> (<g:grep in="${editableProperties}" var="prop" filter="${ { p -> p.group == null }}"> ...)
+por: (línea 44 aprox.)
+	<g:if test="${prop.property.equals('content')}">
+		<g:set var="editorStyle_1" value="span-24" />
+		<g:set var="editorStyle_2" value="span-24" />
+	</g:if>
+	<g:else>
+		<g:set var="editorStyle_1" value="span-4" />
+		<g:set var="editorStyle_2" value="prepend-1 span-18" />
+	</g:else>
+
+	<div class="clear ${editorStyle_1}">
+		<wcm:editorLabel bean="${content}" property="${prop.property}"/>
+	</div>
+	<div class="field ${editorStyle_2} last">
+		<% println wcm."editorField${prop.editor}"(bean:content, property:prop.property) %>
+	</div>
 
 *****************************************************************************************************************************************************
 ------------------------------

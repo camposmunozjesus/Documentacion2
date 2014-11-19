@@ -1,4 +1,4 @@
-INSTRUCCIONES DE CONFIGURACIÓN DE PRIVACIDAD (ARCHIVO POLIVY) - WECEEM
+INSTRUCCIONES DE CONFIGURACIÓN DE PRIVACIDAD (ARCHIVO POLICY) - WECEEM
 ======================================================================
 Para poder utilizar un archivo de configuración de privacidad en Eclipse se debe introducir la siguiente línea de comandos:
 run-app --verbose --stacktrace -Dserver.port=8090 -Dweceem.security.policy.path="C:/wec/portalpolicy.groovy"

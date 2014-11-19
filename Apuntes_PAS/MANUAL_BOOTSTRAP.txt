@@ -90,9 +90,130 @@ Ejemplo:
 
 <a class="sr-only" href="#contenido">Ir al contenido</a>
 
+<<ELEMENTOS>>******************************************************************************************************************************************
+<CARRUSEL (CAROUSEL)>**********************************************************************************************************************************
+-----------------------
+CARRUSEL: CÓDIGO BÁSICO
+-----------------------
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol id="slider-inici-indicators" class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li class="" data-target="#myCarousel" data-slide-to="1"></li>
+    <li class="" data-target="#myCarousel" data-slide-to="2"></li>
+    <li class="" data-target="#myCarousel" data-slide-to="3"></li>
+  </ol>
+  <div id="slider-inici-items" class="carousel-inner" role="listbox">
+    <!-- Primera imagen -->
+    <div class="item active">
+      <img class="c" src="${wcm.createLinkToFile(path:'images/sld_1.png')}" alt="First slide">
+      <div id="slide1" class="container">
+        <div class="carousel-caption">
+          <h1>El Servei de Personal t'atén</h1>
+           <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>  
+          <p><a class="btn btn-lg btn-primary" href="http://www.upc.edu/" target="_blank" role="button">Ens vols conèixer?</a></p>
+        </div>
+      </div>
+    </div>
+    <!-- Segunda imagen -->
+    <div class="item">
+      <img src="${wcm.createLinkToFile(path:'images/sld_8.jpg')}" alt="Second slide">
+      <div id="slide2" class="container">
+        <div class="carousel-caption">
+          <h1>El Servei de Personal t'atén</h1>
+          <!-- <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p> -->
+          <p><a class="btn btn-lg btn-primary" href="http://www.upc.edu/webs-upc" target="_blank" role="button">Ajuda'ns a millorar ...</a></p>
+        </div>
+      </div>
+    </div>
+    <!-- Tercera imagen -->
+    <div class="item">
+      <img src="${wcm.createLinkToFile(path:'images/sld_4.jpg')}" alt="Third slide">
+      <div id="slide3" class="container">
+        <div class="carousel-caption">
+          <h1>Nou Portal de Personal</h1>
+          <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+          <p><a class="btn btn-lg btn-primary" href="http://www.ctt.upc.edu/" role="button">Vols saber mes?</a></p>
+        </div>
+      </div>
+    </div>
+    <!-- Cuarta imagen -->
+    <div class="item">
+      <img src="${wcm.createLinkToFile(path:'images/sld_2.png')}" alt="Third slide">
+      <div id="slide4" class="container">
+        <div class="carousel-caption">
+          <h1>Nou Portal de Personal</h1>          
+          <p><a class="btn btn-sm btn-primary" href="http://www.ctt.upc.edu/" role="button">Vols saber mes?</a></p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
 
+-----------------------------
+CARRUSEL: MODIFICAR EL TAMAÑO 
+-----------------------------
+/* Regulación de la altura de la imagen del carrusel */
+.item img
+{
+  max-height: 200px !important;
+}
 
+-----------------------------------------------
+CARRUSEL: MOVER LOS PUNTOS/SELECTORES DE IMAGEN
+-----------------------------------------------
+#slider-inici-indicators.carousel-indicators li {
+  margin-bottom: -16px;
+}
 
+#slider-inici-indicators.carousel-indicators .active {
+  margin-bottom: -17px;
+}
+
+----------------------------------------
+CARRUSEL: SEPARACIÓN CON OTROS ELEMENTOS
+----------------------------------------
+.carousel{
+  margin-top: 5px;
+}
+
+-------------------------
+CARRUSEL: OTROS ELEMENTOS
+-------------------------
+/* Mover el texto */
+#slide1 h1{
+  margin-bottom: 36px;
+}
+/* Mover el botón */
+#slider-inici-items #slide4 .btn{
+  margin-bottom: -15px;
+}
+
+---------------
+CARRUSEL/SLIDER
+---------------
+- Rehacer el tamaño de una imagen: (añadir la clase)
+	.item img { ... max-height: 200px; ... }
+	
+	También se puede tocar el tamaño del contenedor del slider:
+		.carousel-inner{ ... width: 100%; max-height: 200x; ... }
+										  ==========
+										  
+- Sombreado de las flechas laterales:
+	.carousel-control.right{ ... }
+	.carousel-control.left { ... }
+	
+	
+	
 *********************************************************************************************************************************************************
 ------------------------------
 Creación:	25-09-2014
