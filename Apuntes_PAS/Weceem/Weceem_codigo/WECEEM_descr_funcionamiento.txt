@@ -1,5 +1,18 @@
 WECEEM - DESCRIPCIÓN Y FUNCIONAMIENTO
 =====================================
+--------------------
+HACER EL PAQUETE WAR
+--------------------
+WcmContentRepositoryService: en la closure "void loadConfig", comentar/descomentar la parte del "weceemHomeDir" que corresponada a cada servidor 
+(melnik/merlot). Sobre la línea 168, ya viene indicado además con comentarios qué parte se corresponde a cada servidor.
+
+Config.groovy: comentar/descomentar en el apartado que toque (generalmente test) el código del servidor que se vaya a utilizar.
+
+Entonces, después de todos estos cambios hay que escribir en la consola de comandos de Grails:
+	test war
+	
+	
+*******************************************************************************************************************************************************	
 ------------------------
 LOCALIZACIÓN DE ARCHIVOS
 ------------------------
@@ -8,7 +21,19 @@ En local, las imágenes se guardan en:
 Indicado en la parte development del archivo Config.groovy de la aplicación. Se arranca en developmant cuando se ejecuta el comando:
 	run-app --verbose --stacktrace  -Dserver.port=8090
 
-	
+
+----------------------------------------------------------------------------
+RUTAS: REFERENCIAR ENLACES SIN QUE AFECTE AL SPACE/SERVIDOR DONDE SE EJECUTA
+----------------------------------------------------------------------------
+Referenciar páginas del propio Space de manera que la aplicación sirva para varios spaces/servidores.
+
+Forma de hacer un enlace de manera que al transportar el space de un servidor a otro siga funcionando.
+Casos de Contacte y Accessibilitat:
+	href="${grails.util.Metadata.current.'app.name'}/${space?.name}/contacte
+														||				||
+														\/				\/															
+										nombre del space: PAS		nombre de la página
+
 -----
 RUTAS
 -----
@@ -40,6 +65,36 @@ Cuando se añade una imagen desde el CKEditor (rich editor, tipo MS Word), la ru
 Suponiendo que cuando se abre la ventana para seleccionar la imagen, en la parte de la izquierda, hay una carpeta llamada "Informacio_General" y dentro 
 se encuentra la imagen "sistema_retributiu.jpg".
 
+
+<VISTAS Y CONTROLADORES>******************************************************************************************************************************
+------------------------------------
+PANTALLA DE ADMINISTRACIÓN DE SPACES
+------------------------------------
+Donde se pueden ver los spaces que hay.
+
+Ruta de la vista en el navegador: http://pc24094.upc.es:8090/weceem/admin/space/list
+GSP que utiliza: /weceem-app-master/.link_to_grails_plugins/weceem-1.2/grails-app/views/wcmSpace/list.gsp
+CONTROLADOR que utiliza: /weceem-app-master/.link_to_grails_plugins/weceem-1.2/grails-app/controllers/org/weceem/controllers/WcmSpaceController.groovy
+Closure: list
+Adicionales (templates, layouts, etc...)
+
+
+------------------------------------
+PANTALLA DE ADMINISTRACIÓN DE SPACES
+------------------------------------
+Donde se editan los contenidos (contiene el editor, panel de extras, etc ...).
+
+Ruta de la vista en el navegador: http://pc24094.upc.es:8090/weceem/admin/editor/edit/8008
+GSP que utiliza: /weceem-app-master/.link_to_grails_plugins/weceem-1.2/grails-app/views/wcmEditor/_editor.gsp
+CONTROLADOR que utiliza: ???
+Closure: ???
+Adicionales (templates, layouts, etc...)
+
+Descripción:
+${prop.property}: propiedades space title status content
+
+	<% println wcm."editorField${prop.editor}"(bean:content, property:prop.property) %>
+Va llamando a los TAGs pertinentes para mostrar Título, Space, Contenido, etc ...
 
 *****************************************************************************************************************************************************
 ------------------------------

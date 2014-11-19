@@ -1,4 +1,4 @@
-En este caso separando la imgane del círculo:
+En este caso separando la imagen del círculo:
 .imagen img
 {
   width: 149px; 

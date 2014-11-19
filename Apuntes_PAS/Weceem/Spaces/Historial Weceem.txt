@@ -190,6 +190,12 @@ PAS_20141107_1320_merlot: Space PAS con todas las páginas HTML (de desplegables)
 PAS_20141113_0810_merlot: CPSEG antes de intentar probar la nueva versión de Weceem (1.3M1). Contiene imágenes redondas y listas ajustadas.
 
 PDI_20141113_0810_merlot: CPSEG antes de intentar probar la nueva versión de Weceem (1.3M1). Probablemente sea igual que la última CPSEG.
+
+PAS_20141118_0905_merlot: Space con el menú del móvil funcionando correctamente con los nuevos tipos de fichas. En las CPSEG del PAS NO funcionaba
+						  correctamente. Hay un carrusel de banners en la parte inferior. Realmente son dos, uno para web y otro para dispositivo
+						  móvil.
+PAS_20141118_1210_merlot: Racó Personal con Banners en slider (Carrusel).
+PAS_20141118_1220_merlot: Banners arreglados.
 							
 ----------------------
 ARREGLOS CÓDIGO GROOVY

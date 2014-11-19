@@ -7,6 +7,18 @@ Para crear una clase del dominio (se creará en la aplicación, no en los plugin
 	create-content-class com.upc.WcmPlantillaFitxaGenerica2
 	create-content-class package.Nombre_de_la_Clase
 
+--------------------
+CREAR EL PAQUETE WAR
+--------------------
+El paquete WAR se crea escribiendo la siguiente instrucción en la consola de comandos de Grails:
+	test war
+Antes, debe haberse seguido este protocolo:
+1)WcmContentRepositoryService: en la closure "void loadConfig", comentar/descomentar la parte del "weceemHomeDir" que corresponada a cada servidor 
+  (melnik/merlot). Sobre la línea 168, ya viene indicado además con comentarios qué parte se corresponde a cada servidor.
+
+2)Config.groovy: comentar/descomentar en el apartado que toque (generalmente test) el código del servidor que se vaya a utilizar.
+
+
 *****************************************************************************************************************************************************
 ------------------------------
 Creación:	06-11-2014

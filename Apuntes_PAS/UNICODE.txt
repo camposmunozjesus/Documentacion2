@@ -7,7 +7,8 @@ UNICODE
 è -> \u00e8
 È -> \u00c8
 í -> \u00ed
-ó -> \u00f2
+ï -> \u00cf
+ò -> \u00f2
 ó -> \u00f3
 ú -> \u00fa
 ü -> \u00fc
@@ -21,6 +22,8 @@ UNICODE
 
 
 · -> \u00b7 (middle dot)
+
+' -> se escribe tal cual
 
 
 

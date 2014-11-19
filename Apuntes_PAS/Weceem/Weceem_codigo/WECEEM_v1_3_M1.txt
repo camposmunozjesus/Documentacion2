@@ -822,9 +822,9 @@ El contenido del CSS es el siguiente:
 
 	
 <CONTROLADORES>****************************************************************************************************************************************
---------------------------------------------------
-VISUALIZACIÓN DE FICHAS EN EL MENÚ DE LA IZQUIERDA
---------------------------------------------------
+------------------------------------------------
+VISUALIZACIÓN DEL MENÚ DE LA IZQUIERDA EN FICHAS
+------------------------------------------------
 Permite la visualización en el menú izquierdo de diferentes tipos de fichas.
 Controlador: WcmContentController: 
 Línea: 96 justo después del código que hay con el comentario // Resolve any virtual nodes

@@ -63,6 +63,24 @@ La solución es cambiar la clase ".table-responsive" por ".table-responsive-UPC"
 Se considera que para más de 1200px la tabla cabe entera, si no es así, hay que ajustar esta cifra.
 
 
+---------------
+CARRUSEL/SLIDER
+---------------
+- Para incrustar el título de la página dentro de la imagen:
+	h1.firstHeading { ... margin-top: -30px; ... }
+	
+- Rehacer el tamaño de una imagen: (añadir la clase)
+	.item img { ... max-height: 200px; ... }
+	
+	También se puede tocar el tamaño del contenedor del slider:
+		.carousel-inner{ ... width: 100%; max-height: 200x; ... }
+										  ==========
+										  
+- Sombreado de las flechas laterales:
+	.carousel-control.right{ ... }
+	.carousel-control.left { ... }
+	
+
 *****************************************************************************************************************************************************
 ------------------------------
 Creación:	11-11-2014
