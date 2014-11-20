@@ -1,0 +1,44 @@
+GRAILS - ELIMINAR EL CAS DE UNA APLICACIÓN
+==========================================
+---------------------------
+ELIMINAR SPRINGSECURITY-CAS
+---------------------------
+Una vez se tiene instalado y bien configurado el SpringSecurity CAS, si se desea poder acceder a la aplicación sin logearse hay que eliminarlo. Para
+ello hay que modificar los siguientes archivos:
+- Config.groovy:
+	- En los respectivos entornos, comentar todas las instrucciones:
+		- grails.plugins.springsecurity.cas.[ALGO]
+	- Comentar las siguientes líneas al final del archivo:
+		//// Added by the Spring Security Core plugin:
+		//grails.plugins.springsecurity.userLookup.userDomainClassName = 'Security.SecUser'
+		//grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'Security.SecUserSecRole'
+		//grails.plugins.springsecurity.authority.className = 'Security.SecRole'
+		//grails.plugins.springsecurity.securityConfigType = 'Annotation'
+		//grails.plugins.springsecurity.rejectIfNoRule = false
+		
+- BuildConfig.groovy: comentar compile ":spring-security-cas:1.0.5".
+  En el caso de aplicaciones que funcionen con Grails 2.1.1 hay que desinstalar el plugin del Plugin Manager, o en su defecto borrar la línea del
+  archivo application.properties donde indica plugins.spring-security-cas=1.0.5.
+  
+- En TODOS los controladores donde esté presente @Secured(['ROLE_ADMIN']) o el rol que sea hay que comentarlo. 
+
+- Hay que modificar el BaseControler.groovy (/RLG/src/groovy/utils/BaseControler.groovy) para harcodear los datos, debido a que se necesita el PERNR del
+  usuario y su nombre para poder utilizarla.
+  
+  Los métodos a modificar quedan como:
+	def populateUserName()
+	{
+			session["user"] = 	"jesus.campos"						
+	}
+	
+	Y añadir al principio del doSecurityCheck()
+		session.user="jesus.campos"
+
+
+*****************************************************************************************************************************************************
+------------------------------
+Creación:	20-11-2014
+
+Jesús Campos Muñoz
+jesus.campos@upc.edu
+------------------------------
