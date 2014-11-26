@@ -1,0 +1,16 @@
+<g:if test="${params.menu}"> <!-- 1 INI -->
+  <div id="quadreMenu_main" class="quadreMenu"> <!-- 2 INI -->
+    <g:each var="titulo" in="${params.menu}"> <!-- 3 INI -->
+      <div id="Menu${i}" name="Menu${i}" title="Menú" class="dijitTitlePane"> <!-- 4 INI -->
+		<g:if test="${params.desplegableSelected.toString().equals(titulo.aliasURI)}">
+			<div id="Menu" name="Menu${i}" class="dijitTitlePaneTitleSelected" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/${params.tipusMenu}/${titulo.aliasURI}'" ><!-- 5 INI -->
+		</g:if>
+		<g:else>
+			<div id="Menu" name="Menu${i}" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/${params.tipusMenu}/${titulo.aliasURI}'" ><!-- 5 INI -->
+		</g:else>        
+          <span class="dijitTitlePaneTextNode"><a href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/${params.tipusMenu}/${titulo.aliasURI}">${titulo.title}</a></span>          
+        </div> <!-- 5 FIN -->
+      </div> <!-- 4 FIN -->
+    </g:each> <!-- 3 FIN -->
+  </div> <!-- 2 FIN -->
+</g:if> <!-- 1 FIN -->

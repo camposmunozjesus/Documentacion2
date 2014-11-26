@@ -1,0 +1,74 @@
+<div id="quadreMenu_main" class="quadreMenu">   
+	<div id="Menu0" name="Menu0" title="Menú" class="dijitTitlePane">
+		<div id="Menu" name="Menu${i}" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/El-PAS-a-la-UPC'" >			
+			<span class="dijitTitlePaneTextNode">
+				<a href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/El-PAS-a-la-UPC">El PAS a la UPC
+				</a>
+			</span>		
+		</div>
+	</div>
+	
+	<div id="Menu1" name="Menu1" title="Menú" class="dijitTitlePane">
+		<div id="Menu" name="Menu${i}" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/Sistema-retributiu'" >			
+			<span class="dijitTitlePaneTextNode">
+				<a href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/Sistema-retributiu">Sistema Retributiu
+				</a>
+			</span>		
+		</div>
+	</div>
+	
+	<div id="Menu2" name="Menu2" title="Menú" class="dijitTitlePane">
+		<div id="Menu" name="Menu${i}" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/Permisos'" >			
+			<span class="dijitTitlePaneTextNode">
+				<a href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/Permisos">Permisos, llicències, reduccions jornada i excedències
+				</a>
+			</span>		
+		</div>
+	</div>
+	
+	<div id="Menu3" name="Menu3" title="Menú" class="dijitTitlePane">
+		<div id="Menu" name="Menu${i}" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/Calendari-laboral-jornada'" >			
+			<span class="dijitTitlePaneTextNode">
+				<a href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/Calendari-laboral-jornada">Calendari laboral, jornada i horaris
+				</a>
+			</span>		
+		</div>
+	</div>
+	
+	<div id="Menu4" name="Menu4" title="Menú" class="dijitTitlePane">
+		<div id="Menu" name="Menu${i}" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/Relacions-laborals'" >			
+			<span class="dijitTitlePaneTextNode">
+				<a href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/Relacions-laborals">Relacions laborals
+				</a>
+			</span>		
+		</div>
+	</div>
+	
+		<div id="Menu5" name="Menu5" title="Menú" class="dijitTitlePane">
+		<div id="Menu" name="Menu${i}" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/Seguretat-social'" >			
+			<span class="dijitTitlePaneTextNode">
+				<a href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/Seguretat-social">Seguretat social
+				</a>
+			</span>		
+		</div>
+	</div>
+	
+	<div id="Menu6" name="Menu6" title="Menú" class="dijitTitlePane">
+		<div id="Menu" name="Menu${i}" class="dijitTitlePaneTitle" onclick="parent.location='https://espaipersonal.upc.edu/irj/portal/PAS_FORMACIO'" >			
+			<span class="dijitTitlePaneTextNode">
+				<a href="https://espaipersonal.upc.edu/irj/portal/PAS_FORMACIO">Formació
+				</a>
+			</span>		
+		</div>
+	</div>
+	
+	<div id="Menu7" name="Menu7" title="Menú" class="dijitTitlePane">
+		<div id="Menu" name="Menu${i}" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/Mobilitat'" >			
+			<span class="dijitTitlePaneTextNode">
+				<a href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/Mobilitat">Mobilitat
+				</a>
+			</span>		
+		</div>
+	</div>
+	
+</div>

@@ -1,0 +1,109 @@
+WECEEM - PRUEBAS DE ESTRÉS/CARGA
+================================
+Para tener una compartiva entre entornos:
+Ya se ha navegado previamente en este space en el navegador
+Se abre navegador (F12)
+	* merlot: 
+		- https://merlot.upc.edu/Portal/PAS/index/Informacio_General						1,53s 37 solicitudes
+		- https://merlot.upc.edu/Portal/PAS/index/Informacio_General/El-PAS-a-la-UPC		1,99s 29 solicitudes
+																	resto de recargas		0,45s (haciendo click en el menú)
+		- https://merlot.upc.edu/Portal/PAS/index/Informacio_General/Sistema-retributiu		0,68s
+
+No se ha navegado previamente en este space en el navegador		
+Se cierra navegador, se abre navegador (F12)
+	* localhost: 
+		- http://pc24094.upc.es:8090/weceem/TestNormal/index/Informacio_General				4,23s 45 solicitudes
+		- http://pc24094.upc.es:8090/weceem/TestNormal/index/Informacio_General/El-PAS-a-la-UPC		6,02s 29 solicitudes
+																	resto de recargas		3,00s y el resto sobre 2,5 (haciendo click en el menú)
+		- http://pc24094.upc.es:8090/weceem/TestNormal/index/Informacio_General/Sistema-retributiu		7,61s
+		
+Se cierra navegador, se abre navegador (F12)
+	* localhost: 
+		- http://pc24094.upc.es:8090/weceem/TestNormal/index/Informacio_General				2,24s 45 solicitudes
+		- http://pc24094.upc.es:8090/weceem/TestNormal/index/Informacio_General/El-PAS-a-la-UPC		2,64s 29 solicitudes
+																	resto de recargas		2,75s (haciendo click en el menú)
+		- http://pc24094.upc.es:8090/weceem/TestNormal/index/Informacio_General/Sistema-retributiu		2,56s	
+
+
+		
+<WIDGETS>**********************************************************************************************************************************************
+---------------------------
+SIN CACHE ACTIVADA EN LOCAL
+---------------------------
+Aplicación: weceem-app-master
+
+Consideraciones:
+	- space normal: a fecha de 25-11-2014 se restaura el space PAS de merlot (TestNormal)
+	- space rápido: el mismo, pero la plantilla Inici no carga widgets (TestRapido)
+	
+Se prueba la página de Inici
+
+space normal ---> 1era carga 3,03s
+				  2da  carga 2,47s
+					   carga 2,45s
+					   carga 3,09s
+					   crtl+F5 2,74s
+
+space rápido ---> 1era después de un cambio (4,97s)
+			      1era carga 2,23s
+				  2da  carga 2,02s
+					   carga 2,54s
+					   carga 2,53s
+					   ctrl+F5 2,85s
+			
+Después de un periodo sin recargar la página
+space normal ---> 1era recarga 4,05s (incluso la segunda se puede ir sobre los 3s casi 4s)
+				  
+
+space rápido ---> 1era después de un cambio (3s)		
+
+Lo normal es un segundo de diferencia
+
+	
+Recargas contínuas:
+space normal: entre los 3s y 3,5s (suele estar entre los 3,2s)
+space rápido: entre los 2,7s y 3s (siendo habitual que roce los 3s, y aveces tienes picos malos -> 4s y otros bueno -> menos de 2,5s)
+
+
+CONCLUSIÓN: 
+	- Importa si se incluyen widgets o no, aunque después de la primera recarga hay poca diferencia.
+	- Los banners que cargan imágenes de la página de la UPC ralentizan -> Descargar las imágenes y subirlas al CMS.
+
+Algunas imágenes:
+	- Imagenes/Pruebas_estres_1: space normal.
+	- Imagenes/Pruebas_estres_2: space rápido.
+	
+
+<TAGS>*************************************************************************************************************************************************
+----------------
+LLAMADA A UN TAG
+----------------
+El test pretende comprobar el retardo provocado por la llamada a un TAG. Primero se llamará a un TAG vacío y luego a uno que simplemente hace un println.
+
+Aplicación: weceem-app-master
+Space: TestNormal
+Página: en blanco que carga un template vacío de JS y CSS, que únicamente carga el contenido de la página y el TAG.
+
+Sin cargar TAG:
+//Recargas contínues de 60 a 80ms. A veces se sale hasta 150ms y otras llega a hacer 42 o 55ms.
+Sobre los 30ms (a veces 70), si se sobrecarga con un F5 sin soltar el botón puede llegar a los 115 o 150ms. Se pueden llegar a los 6 segundos.
+Dejando descanso de 5 segundos entre F5 y F5 siempre da 64ms aprox.
+
+Cargando TAG son Sysout: (no se imprime siempre)
+La primera vez 286ms y a partir de ahí sobre los 30ms.
+
+Si el Sysout va acompañado de new Date()
+La primera vez sobre los 300ms (aunque esto ocurre también aunque no se cargue ningún TAG)
+Hasta 265ms
+De 78 a 200ms
+Sobresaturaión (F5 continuo) hasta 2,2ms
+Dejando descanso de 5 segundos entre F5 y F5 siempre da 64ms aprox aunque alguna vez se dispara a 79ms.
+
+	
+*****************************************************************************************************************************************************
+------------------------------
+Creación:	25-11-2014
+
+Jesús Campos Muñoz
+jesus.campos@upc.edu
+------------------------------
