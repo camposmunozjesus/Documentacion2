@@ -1,0 +1,51 @@
+<!-- Reconoce el título de la página de Inici-->
+<!-- Static navbar  -->
+
+  <div class="navbar navbar-default navbar-UPC" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed navbar-toggle-home" data-target="#navbar-collapse-menu" data-toggle="collapse" type="button">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand home" href="${wcm.createLink(path:'index')}">
+          <wcm:menu levels="1"  custom="true" types="[org.weceem.html.WcmHTMLContent]">
+            <g:if test="${menuNode.aliasURI.encodeAsHTML().equals('index')}"> <!-- 0 INI -->
+              ${menuNode.title.encodeAsHTML()}
+            </g:if>     <!-- 0 FIN -->
+          </wcm:menu>
+            </a>
+      </div>
+      <div id="navbar-collapse-menu" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+      <wcm:menu levels="1" custom="true" types="[org.weceem.html.WcmHTMLContent]">
+      <g:if test="${menuNode.aliasURI.encodeAsHTML().equals(rootContent)}">
+        <g:each var="seccion" in="${menuNode.children}">
+        <!-- Nivel 1: Desplegables info_general, etc ... Debe ser un HTML -->
+        <g:if test="${seccion.class.toString().equals('class org.weceem.html.WcmHTMLContent') && seccion.status.description.toString().equals('published')}">
+          <li>
+          <a class="${seccion.aliasURI}" href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/${menuNode.aliasURI}/${seccion.aliasURI}">${seccion.titleForMenu.encodeAsHTML()}</a>
+          </li>
+        </g:if>
+        </g:each>
+      </g:if>     
+      </wcm:menu>
+    </ul>
+        <ul class="nav navbar-nav navbar-right format-lletra-upc">
+          <li class="active">
+             <g:if test="${wcm.loggedInUserName().encodeAsHTML()}">            
+               <span class="login-UPC"> ${wcm.loggedInUserName().encodeAsHTML()} </span>
+            </g:if>
+          </li>
+          <li>
+            <span class="logout-UPC"> <g:link controller="logout">Desconnecta</g:link></span>
+          </li>
+        </ul>
+      </div>
+      <!-- /.nav-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+  </div>
+  <!-- Main component for a primary marketing message or… -->

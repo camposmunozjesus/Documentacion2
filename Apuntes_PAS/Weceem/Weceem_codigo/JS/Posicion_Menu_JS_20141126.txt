@@ -1,0 +1,20 @@
+$(document).ready(function(){
+    
+  $('.menuPosicio').click(function(event) {
+    
+    var id = $(this).attr("id");
+  
+      //Mostrar el menú con las opciones: hace un toggle con slideUp y slideDown.
+      if ($("#quadreMenu_"+id).is(':visible')){
+        $("#quadreMenu_"+id).slideUp("fast");     
+        document.getElementById(id).className = "menuPosicio";
+      }
+      else{
+        $("#quadreMenu_"+id).slideDown("fast");    
+        document.getElementById(id).className = "menuPosicio open";
+      }  
+
+    });
+  
+   
+});

@@ -1,0 +1,63 @@
+<!-- Migas de pan estáticas pero varian en función de Informacio_General/Raco_Personal --> 
+<wcm:widget path="widgets/doctype-bootstrap"/>
+<html>
+  
+  <head>
+    <wcm:widget path="widgets/upc-head"/>
+    <link rel="stylesheet" href="${wcm.createLink(path:'css/menus.css')}" type="text/css">
+    <script type="text/javascript" src="${wcm.createLink(path:'js/posicion-menu.js')}"></script>
+    <wcm:widget path="widgets/columnas-desplegables"/>
+  </head>
+  
+  <body>
+    <div class="container">
+      <div class="container-UPC">
+        <wcm:widget path="widgets/top-nav"/>      
+
+        <!-- Migas de pan -->
+        <div class="breadCrumb">
+          <!-- Migas de pan de Informació General -->
+          <g:if test="${params.tipusMenu.toString().equals('Informacio_General')}">
+            <div> <b>Sou a <span class="breadCrumbSeparator firstSeparator">&raquo;</span> </b><a href="/Portal/PAS/index"><span class="breadCrumbItem">Inici</span></a> <span class="breadCrumbSeparator">&rsaquo;</span><a href="/Portal/PAS/index/Informacio_General"><span class="breadCrumbItem">Informació General </span></a> <span class="breadCrumbSeparator">&rsaquo;</span><span class="breadCrumbLastItem">${node.title.encodeAsHTML()}</span></div>  
+          </g:if>      
+          <!-- Migas de pan de Racó Personal -->
+          <g:if test="${params.tipusMenu.toString().equals('Raco_Personal')}">
+            <div> <b>Sou a <span class="breadCrumbSeparator firstSeparator">&raquo;</span> </b><a href="/Portal/PAS/index"><span class="breadCrumbItem">Inici</span></a> <span class="breadCrumbSeparator">&rsaquo;</span><a href="/Portal/PAS/index/Raco_Personal"><span class="breadCrumbItem">Racó Personal</span></a> <span class="breadCrumbSeparator">&rsaquo;</span><span class="breadCrumbLastItem">${node.title.encodeAsHTML()}</span></div>          
+          </g:if>         
+          
+          <!-- Título de la página -->
+          <h1 class="firstHeading"><span></span>
+            ${node.title.encodeAsHTML()}
+          </h1>
+        </div><!-- Migas de pan -->
+        
+      </div>
+      
+      
+      <!-- Rejilla con el contenido principal -->
+      <div class="fit-column weceem-tmpl">
+        <div class="row no-scroll-bar">          
+        
+            <div class="col-xs-12 col-vxs-4 col-sm-4 col-md-4 col-lg-3 row-margin-bottom40" >
+           
+            <wcm:widget path="widgets/posicio-menu-dspl" model="[rootContent:'index']"/>
+           <wcm:widget path="widgets/menu-desplegable" model="[rootContent:'index']"/>           
+ 
+          </div>   
+
+        
+          
+          <div class="col-xs-12 col-vxs-8 col-sm-8 col-md-8 col-lg-9 row-margin-top-col">
+            <div id="paginaDesplegable" class="fit-column2left fit-column content-movil">
+              <wcm:content />
+            </div>
+          </div>          
+        </div>          
+      </div>
+    
+    </div>
+    <!-- Pie de página -->
+    <wcm:widget path="widgets/bottom-nav"/>  
+  </body>
+  
+</html>

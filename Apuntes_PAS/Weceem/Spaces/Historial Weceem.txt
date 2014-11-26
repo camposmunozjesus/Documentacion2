@@ -196,6 +196,9 @@ PAS_20141118_0905_merlot: Space con el menú del móvil funcionando correctamente 
 						  móvil.
 PAS_20141118_1210_merlot: Racó Personal con Banners en slider (Carrusel).
 PAS_20141118_1220_merlot: Banners arreglados.
+PAS_20141124_0840_merlot: CPSEG antes de cambiar el menú de la izquierda. Para pruebas de estrés se decide dejar el menú de la izquierda como un menú
+						  estático.
+PAS_20141126_1255_merlot: Se procede a eliminar todas las cargas de widgets.
 							
 ----------------------
 ARREGLOS CÓDIGO GROOVY
