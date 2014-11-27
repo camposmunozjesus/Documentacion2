@@ -79,12 +79,16 @@ En la def show del WcmContentController hay que utilizar:
 //							eq("aliasURI", "Informacio_General")
 							eq("aliasURI", params.tipusMenu)
 							eq('space', space)
+							eq("class", "org.weceem.html.WcmHTMLContent")
 						}
 					}
 					
 					def padre = WcmContent.createCriteria().list(query)
 					if(padre!=null){
 						println "RESULTLIST - padre: "+padre
+					}
+					for(val in padre){
+						println "RESULTLIST - padre: "+val+"--"+val.title
 					}
 					
 					def p = padre[0]
