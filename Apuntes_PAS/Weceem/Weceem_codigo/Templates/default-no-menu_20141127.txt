@@ -1,0 +1,45 @@
+<!-- Template utilizado en Informació General/Racó Personal -->
+<wcm:widget path="widgets/doctype-bootstrap"/>
+<html>
+  <head>
+    <wcm:widget path="widgets/upc-head"/>
+  </head>
+  
+  <body>
+    <div class="container">
+      <div class="container-UPC tmpl-no-menu">
+        <wcm:widget path="widgets/top-nav"/>
+        
+        <!-- Migas de pan -->
+        <div class="breadCrumb">
+          <div> <b>Sou a <span class="breadCrumbSeparator firstSeparator">&raquo;</span> </b><a href="/Portal/PAS/index"><span class="breadCrumbItem">Inici</span></a><span class="breadCrumbSeparator">&rsaquo;</span><span class="breadCrumbLastItem">${node.title.encodeAsHTML()}</span>  </div>
+          
+          <h1 class="firstHeading"><span></span>
+            ${node.title.encodeAsHTML()}
+          </h1>
+        </div>
+        <!-- Migas de pan -->
+        
+      </div>
+      <!-- Contenido principal -->
+      <wcm:content />
+      
+      <!-- Banners de Informació General -->
+      <g:if test="${params.tipusMenu.toString().equals('Informacio_General')}">
+        <wcm:widget path="widgets/Informacio_General/slider-banners"/>
+        <wcm:widget path="widgets/Informacio_General/slider-banners-mvl"/>
+      </g:if>
+      
+      <!-- Banners de Racó Personal -->
+      <g:if test="${params.tipusMenu.toString().equals('Raco_Personal')}">
+        <wcm:widget path="widgets/Raco_Personal/slider-banners"/>
+        <wcm:widget path="widgets/Raco_Personal/slider-banners-mvl"/>
+      </g:if>
+      
+    </div>
+    
+    <!-- Pie de página -->
+    <wcm:widget path="widgets/bottom-nav"/>  
+  </body>
+  
+</html>
