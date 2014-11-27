@@ -1,0 +1,141 @@
+WECEEM - MENÚ AUTÓMATICO EN LA PÁGINA GSP CREANDO LA LISTA EN GRAILS
+====================================================================
+En la def show del WcmContentController hay que utilizar:
+
+				if((content.getClass().toString().equals("class org.weceem.html.WcmHTMLContent") 
+					|| content.getClass().toString().equals("class com.upc.WcmPlantillaFitxa")
+					|| content.getClass().toString().equals("class com.upc.WcmPlantillaFitxa2ColGenerica")
+					|| content.getClass().toString().equals("class com.upc.WcmPlantillaFitxaGenerica")) && !info.uri.toString().equals("")){
+					println "HABRA MENUS DESPLEGABLE !!!- "
+					SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yy hh:mm:ss:SSS ", new Locale("es", "ES"))
+					println "XXXXXXXXXXXXXXXXXXX - INI 1: "+sdf.format(new Date())
+					def values = info.uri.toString().split("/")
+					if(values){
+						if(values.size()>3){
+							params.tipusMenu=values[1]
+							params.desplegableSelected=values[2]
+							params.itemSelected=values[3]
+						}else if(values.size()>2){
+							params.tipusMenu=values[1]
+							params.desplegableSelected=values[2]
+						}else if(values.size()>1){ //Si hay más de 1 elem en el vector significa que NO estamos en el index, por lo que cogerá por defecto el template relaciona con la página web.
+							params.tipusMenu=values[1]
+							params.itemSelected=values[1]
+						}else{
+							//En el caso de querer indicar un template por defecto para el index se debe hacer aquí.
+							params.tipusMenu="index"
+							//params.itemSelected="item"
+						}
+					}
+
+					println "TIPUSMENU: "+params.tipusMenu
+					println "XXXXXXXXXXXXXXXXXXX - FIN 1: "+sdf.format(new Date())
+					
+					println "XXXXXXXXXXXXXXXXXXX - INI 2: "+sdf.format(new Date())+" Consulta del menu: "
+					println "SPACE ID: "+space
+					
+					//Las siguientes consultas son equivalentes:
+//					def contingut = WcmContent.findAllByAliasURIAndCreatedBy('Raco_Personal', 'jesus.campos')
+//					if(contingut!=null){
+//						println "CONTINGUT: "+contingut
+//					}
+//					
+//					def query = {
+//						and{
+//							eq("aliasURI", "Raco_Personal")
+//							eq("createdBy", 'jesus.campos')
+//						}
+//					}
+//				
+//					def resultList = WcmContent.createCriteria().list(query)
+//					if(resultList!=null){
+//						println "RESULTLIST:"+resultList
+//					}
+					
+//					//Las siguientes consultas son equivalentes:
+//					def contingut = WcmContent.findAllByAliasURIAndSpace('Raco_Personal', space)
+//					if(contingut!=null){
+//						println "CONTINGUT: "+contingut
+//					}
+//					
+//					println space
+//					def query = {
+//						and{
+//							eq("aliasURI", "Raco_Personal")
+//							eq('space', space)
+//						}
+//					}
+//
+//					def resultList = WcmContent.createCriteria().list(query)
+//					if(resultList!=null){
+//						println "RESULTLIST:"+resultList
+//					}
+
+
+					//A seguir con esto					
+					//Se obtine el La Info_General o el Raco_Personal del Space que toque
+					def query = {
+						and{
+//							eq("aliasURI", "Informacio_General")
+							eq("aliasURI", params.tipusMenu)
+							eq('space', space)
+						}
+					}
+					
+					def padre = WcmContent.createCriteria().list(query)
+					if(padre!=null){
+						println "RESULTLIST - padre: "+padre
+					}
+					
+					def p = padre[0]
+					 
+					//Se obtienen los hijos directos, los que tengan como parent_id el id del Info_General/Raco_Personal
+					query = {
+						and{
+							eq('parent', p)
+							
+							eq('space', space)
+							
+							//Restringir el tipo de documentos que pueden aparecer o no en el menú
+							eq("class", "org.weceem.html.WcmHTMLContent")
+							
+						}
+						//Ordenación: la misma que en el gestor de contenidos
+						order("orderIndex", "asc")
+					}
+
+					def resultList = WcmContent.createCriteria().list(query)
+					if(resultList!=null){
+						println "RESULTLIST:"+resultList
+						params.menu=resultList
+						
+						for(val in resultList){
+							println "val"+val
+						}
+						
+					}
+					
+					println "XXXXXXXXXXXXXXXXXXX - FIN 2: "+sdf.format(new Date())
+					
+					
+				}
+				//REV-004-FIN
+				
+				
+Y en la GSP para coger los valores hay que utilizar: (WIDGET MENÚ DESPLEGABLE)
+<g:if test="${params.menu}"> <!-- 1 INI -->
+  <div id="quadreMenu_main" class="quadreMenu"> <!-- 2 INI -->
+    <g:each var="titulo" in="${params.menu}"> <!-- 3 INI -->
+      <div id="Menu${i}" name="Menu${i}" title="Menú" class="dijitTitlePane"> <!-- 4 INI -->
+    <g:if test="${params.desplegableSelected.toString().equals(titulo.aliasURI)}">
+      <div id="Menu" name="Menu${i}" class="dijitTitlePaneTitleSelected" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/${params.tipusMenu}/${titulo.aliasURI}'" ><!-- 5 INI -->
+    </g:if>
+    <g:else>
+      <div id="Menu" name="Menu${i}" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/${params.tipusMenu}/${titulo.aliasURI}'" ><!-- 5 INI -->
+    </g:else>        
+          <span class="dijitTitlePaneTextNode"><a href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/${params.tipusMenu}/${titulo.aliasURI}">${titulo.title}</a></span>          
+        </div> <!-- 5 FIN -->
+      </div> <!-- 4 FIN -->
+    </g:each> <!-- 3 FIN -->
+  </div> <!-- 2 FIN -->
+</g:if> <!-- 1 FIN -->
