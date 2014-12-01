@@ -1,0 +1,29 @@
+APACHE TOMCAT - JAVA OPTS
+=========================
+
+-Xms and -Xmx
+These settings are used to define the size of the heap used by the JVM. 
+-Xms defines the initial size of the heap and -Xmx defines the maximum size of the heap. 
+Specific values for these options will depend on the number of applications and the requirements of each application deployed to a Tomcat instance.
+
+-XX:PermSize<size> - Set initial PermGen Size.
+-XX:MaxPermSize<size> - Set the maximum PermGen Size.
+
+PAY ATTENTION : Your total memory usage will be:Heap size + Perm Size
+
+-----------------
+ENLACE DE INTERÉS
+-----------------
+Sobre memoria y garbage collector:	http://www.tomcatexpert.com/blog/2011/11/22/performance-tuning-jvm-running-tomcat
+Java OPTS:							http://indrayanblog.blogspot.com.es/2011/03/cxv.html
+									http://stackoverflow.com/questions/6412153/grails-permgem-error
+									http://www.mkyong.com/tomcat/tomcat-javalangoutofmemoryerror-permgen-space/
+
+									
+*****************************************************************************************************************************************************
+------------------------------
+Creación:	01-12-2014
+
+Jesús Campos Muñoz
+jesus.campos@upc.edu
+------------------------------
