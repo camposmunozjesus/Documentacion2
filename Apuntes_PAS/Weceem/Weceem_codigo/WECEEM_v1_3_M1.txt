@@ -826,6 +826,8 @@ El contenido del CSS es el siguiente:
 VISUALIZACIÓN DEL MENÚ DE LA IZQUIERDA EN FICHAS
 ------------------------------------------------
 Permite la visualización en el menú izquierdo de diferentes tipos de fichas.
+Nota: el menú se visualizaría igual, pero habría un problema
+- Se visualizarían en todo tipo de elementos.
 Controlador: WcmContentController: 
 Línea: 96 justo después del código que hay con el comentario // Resolve any virtual nodes
 Pegar el siguiente código:

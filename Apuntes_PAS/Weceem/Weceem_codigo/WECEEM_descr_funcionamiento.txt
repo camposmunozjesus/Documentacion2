@@ -66,6 +66,31 @@ Suponiendo que cuando se abre la ventana para seleccionar la imagen, en la parte
 se encuentra la imagen "sistema_retributiu.jpg".
 
 
+-----------------------------------------------
+MODIFICAR LAS RUTAS DEL CONTENIDO DE LOS SPACES
+-----------------------------------------------
+Las rutas donde se guardan los archivos pueden ser modificadas. Bien modificando el fichero Config.groovy (con la directiva  weceem.upload.dir = 'file:/var/www/weceem.org/uploads/')
+o bien en el servicio WcmContentRepositoryService en el apartado de if (!uploadDirConf.startsWith('file:')) {...
+
+En el Config.groovy: weceem.upload.dir = 'file:/jcm/espacios/'
+Crea la carpeta: C:\jcm\espacios
+Y dentro de ella una carpeta con el nombre de cada espacio y su contenido
+
+
+Si la rua se establece en el servicio WcmContentRepositoryService de la siguiente manera:
+        if (!uploadDirConf.startsWith('file:')) { //Se entra aquí cuando no se ha establecido en el Config.grrovy weceem.upload.dir para dicho entorno
+			...
+//          def homeDir = new File(System.getProperty("user.home"))
+//          def weceemHomeDir = new File(homeDir, 'weceem-uploads')
+			
+			def weceemHomeDir = new File('/jcmCampos/', 'espacios')
+			...
+			
+se crea la carpeta: C:\jcmCampos\espacios\WeceemFiles
+Y dentro de ella una carpeta con el nombre de cada espacio y su contenido
+
+
+
 <VISTAS Y CONTROLADORES>******************************************************************************************************************************
 ------------------------------------
 PANTALLA DE ADMINISTRACIÓN DE SPACES

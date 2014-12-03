@@ -199,6 +199,7 @@ PAS_20141118_1220_merlot: Banners arreglados.
 PAS_20141124_0840_merlot: CPSEG antes de cambiar el menú de la izquierda. Para pruebas de estrés se decide dejar el menú de la izquierda como un menú
 						  estático.
 PAS_20141126_1255_merlot: Se procede a eliminar todas las cargas de widgets.
+PAS_20141203_0900_merlot: CPSEG.
 							
 ----------------------
 ARREGLOS CÓDIGO GROOVY
