@@ -1,0 +1,64 @@
+APACHE JMETER - REALIZACIÓN DE PRUEBAS DE ESTRÉS
+================================================
+-----------
+INSTALACIÓN
+-----------
+Descomprimir el archivo.
+
+Imprescindible tener bien configurado el JRE y JDK en las variables de entorno de Windows.
+
+Para ejecutar el programa: directorioJmeter/bin/jemeter.bat
+
+--------------------
+REALIZACIÓN DEL TEST
+--------------------
+Para crear un nuevo Plan hay que dar al segundo botón empezando por la izquierda (Templates..)
+
+Select Template: Building a Web Test Plan -> Create
+
+Se visualiza en pantalla:
+* build-web-test-plan
+	* Jmeter Users
+		- HTTP Request Defaults
+		- Home Page
+		- Changes
+		- Graph Results
+* Workbench
+
+Para añadir las vistas de los resultados hay que hacer botón derecho sobre "Jmeter Users":
+- Add -> Listener -> Summary Report
+- Add -> Listener -> View Results Tree
+
+Si se desea atacar a las siguientes páginas:
+http://pc24094.upc.es:8090/weceem/modelo/index
+http://pc24094.upc.es:8090/weceem/modelo/index/Informacio_General/El-PAS-a-la-UPC
+http://pc24094.upc.es:8090/weceem/modelo/index/Informacio_General/El-PAS-a-la-UPC/Personal-Eventual
+
+En "HTTP Request Defaults" hay que modificar:
+- Web Server -> Server Name or IP: pc24094
+- Web Server -> Port Number: 8090
+
+"Home Page" y "Changes" son las páginas a las que se atacan, para añadir más (HTTP Request) hay que hacer botón derecho sobre "Jmeter Users" -> Sampler
+-> HTTP Request.
+
+En "Home Page":
+- Path: /weceem/modelo/index
+
+En "Changes":
+- Path: /weceem/modelo/index/Informacio_General/El-PAS-a-la-UPC
+
+Crear una nueva HTTP Rquest:
+- Path: /weceem/modelo/index/Informacio_General/El-PAS-a-la-UPC/Personal-Eventual
+
+En "Jmeter Users" hay que poner "Number of Threads" y "Ram-Up Period"
+
+Para arrancar el test hay que dar al botón de PLAY. (Color verde)
+
+
+*****************************************************************************************************************************************************
+------------------------------
+Creación:	02-12-2014
+
+Jesús Campos Muñoz
+jesus.campos@upc.edu
+------------------------------

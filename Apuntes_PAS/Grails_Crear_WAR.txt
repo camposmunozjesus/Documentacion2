@@ -5,7 +5,7 @@ CREAR UN WAR
 ------------
 Hay que ir a la línea de comandos y escribir:
 	test war
-y lo crea e la carpeta "target".
+y lo crea en la carpeta "target".
 
 ---------------------------------------------
 CREAR UN WAR PARA UN ENTORNO ESPECÍFICO/NUEVO
@@ -30,7 +30,8 @@ grails.project.fork = [
 
 También se debería añadir el entorno??????????? Seguramente NO, porque no se reflejan los entornos en este apartado, sino las acciones.
 
-En el caso del Weceem se debe retocar el Searchable.groovy,
+En el caso del Weceem se debe retocar el Searchable.groovy, añadiendo el entorno que toque. Replicar el caso del test, que es del que generalmente se
+realiza el WAR.
 
 *****************************************************************************************************************************************************
 ------------------------------

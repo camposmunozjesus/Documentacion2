@@ -41,7 +41,7 @@ Se utiliza con una base de datos de PostgreSQL: usuario propietario de la base d
 
 Modificar el tamaño de la aplicación en el fichero \webapps\manager\WEB-INF\web.xml.
 
-Archivo de configuración llamado "weceem.properties" que se ubica en "D:\wec".
+Archivo de configuración llamado "weceem.properties" que se ubica en "D:\wec". (A ESTE ARCHIVO NO SE LE HACE CASO)
 	 # Control whether or not connection pooling is enabled
 	dataSource.pooled=true
 	# Set the JDBC driver class name - class must be on classpath
