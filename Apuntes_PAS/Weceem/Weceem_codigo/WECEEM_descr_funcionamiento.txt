@@ -1,5 +1,7 @@
 WECEEM - DESCRIPCIÓN Y FUNCIONAMIENTO
 =====================================
+(Qx) tiene su respuesta/solución en (Rx)
+
 --------------------
 HACER EL PAQUETE WAR
 --------------------
@@ -65,6 +67,13 @@ Cuando se añade una imagen desde el CKEditor (rich editor, tipo MS Word), la ru
 Suponiendo que cuando se abre la ventana para seleccionar la imagen, en la parte de la izquierda, hay una carpeta llamada "Informacio_General" y dentro 
 se encuentra la imagen "sistema_retributiu.jpg".
 
+(Q1)
+En esta ocasión, la aplicación (original, sin modificar código) ha arrancado sin la opción "weceem.upload.dir = 'file:/directorio/.../directorio/'"
+en el Config.groovy. Si se indica, por ejemeplo:
+weceem.upload.dir = 'file:...'
+En el editor se verá:
+	/Portal/uploads/PAS/Image/Informacio_General/sistema_retributiu.jpg	
+
 
 -----------------------------------------------
 MODIFICAR LAS RUTAS DEL CONTENIDO DE LOS SPACES
@@ -88,6 +97,11 @@ Si la rua se establece en el servicio WcmContentRepositoryService de la siguient
 			
 se crea la carpeta: C:\jcmCampos\espacios\WeceemFiles
 Y dentro de ella una carpeta con el nombre de cada espacio y su contenido
+
+(R1)
+Cuando se pone la instrución weceem.upload.dir = 'file:/dir1/dir2/' se crea, por ejemplo:
+	C:\dir1\dir2 			-> Dentro de ella se crean los espacios (una carpeta con el nombre del espacio).
+	C:\dir1\dir2\uploads\
 
 
 

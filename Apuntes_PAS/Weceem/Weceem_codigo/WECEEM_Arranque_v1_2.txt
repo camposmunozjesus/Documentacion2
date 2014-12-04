@@ -1,0 +1,156 @@
+Arranque correcto Weceem 1.2 con Oracle
+
+Base Directory: D:\WecWorkspace\Portal
+|Loading Grails 2.3.7
+|Configuring classpath
+.
+|Environment set to development
+.................................
+|Packaging Grails application
+..............................................................................2014-12-04 08:53:12,963 [main] INFO  webxml.WebxmlGrailsPlugin  - Loading default config file: class DefaultWebXmlConfig
+2014-12-04 08:53:12,982 [main] WARN  webxml.WebxmlGrailsPlugin  - Did not find application config file: WebXmlConfig
+2014-12-04 08:53:13,933 [main] INFO  webxml.WebxmlGrailsPlugin  - Loading default config file: class DefaultWebXmlConfig
+2014-12-04 08:53:13,937 [main] WARN  webxml.WebxmlGrailsPlugin  - Did not find application config file: WebXmlConfig
+|Running Grails application
+2014-12-04 08:53:18,836 [localhost-startStop-1] INFO  [localhost].[/Portal]  - Initializing Spring root WebApplicationContext
+2014-12-04 08:53:27,383 [localhost-startStop-1] WARN  util.GrailsUtil  - [DEPRECATED] Method ConfigurationHolder.getConfig() is deprecated and will be removed in a future version of Grails.
+Setting searchable index path to: /app/weceem/search-indexes
+Weceem: Initializing ehcache with default weceem ehcache.xml from plugin resource: class path resource [weceem-default-ehcache.xml]
+2014-12-04 08:53:32,343 [localhost-startStop-1] WARN  util.GrailsUtil  - [DEPRECATED] Method ConfigurationHolder.getConfig() is deprecated and will be removed in a future version of Grails.
+2014-12-04 08:53:32,397 [localhost-startStop-1] WARN  util.GrailsUtil  - [DEPRECATED] Method ConfigurationHolder.getConfig() is deprecated and will be removed in a future version of Grails.
+2014-12-04 08:53:32,497 [localhost-startStop-1] INFO  hibernate3.HibernatePluginSupport  - Set db generation strategy to '' for datasource DEFAULT
+2014-12-04 08:53:32,970 [localhost-startStop-1] WARN  util.GrailsUtil  - [DEPRECATED] Method ConfigurationHolder.getConfig() is deprecated and will be removed in a future version of Grails.
+Configuring Spring Security Core ...
+... finished configuring Spring Security Core
+2014-12-04 08:53:35,448 [localhost-startStop-1] INFO  cache.CacheBeanPostProcessor  - postProcessBeanDefinitionRegistry start
+2014-12-04 08:53:35,466 [localhost-startStop-1] INFO  cache.CacheBeanPostProcessor  - postProcessBeanFactory
+2014-12-04 08:53:36,426 [localhost-startStop-1] WARN  util.GrailsUtil  - [DEPRECATED] Method ConfigurationHolder.getConfig() is deprecated and will be removed in a future version of Grails.
+2014-12-04 08:53:36,443 [localhost-startStop-1] WARN  util.GrailsUtil  - [DEPRECATED] Method ConfigurationHolder.getConfig() is deprecated and will be removed in a future version of Grails.
+2014-12-04 08:53:36,455 [localhost-startStop-1] WARN  util.GrailsUtil  - [DEPRECATED] Method ConfigurationHolder.getConfig() is deprecated and will be removed in a future version of Grails.
+2014-12-04 08:53:36,596 [localhost-startStop-1] WARN  util.GrailsUtil  - [DEPRECATED] Method ConfigurationHolder.getConfig() is deprecated and will be removed in a future version of Grails.
+2014-12-04 08:53:36,783 [localhost-startStop-1] WARN  util.GrailsUtil  - [WARNING] Property [pernr] of domain class bdp.Usuari has type [int] and doesn't support constraint [blank]. This constraint will not be checked during validation.
+2014-12-04 08:53:36,783 [localhost-startStop-1] WARN  util.GrailsUtil  - [WARNING] Property [pernr] of domain class bdp.Usuari has type [int] and doesn't support constraint [nullable]. This constraint will not be checked during validation.
+2014-12-04 08:53:36,783 [localhost-startStop-1] WARN  util.GrailsUtil  - [WARNING] Property [pernr] of domain class bdp.Usuari has type [int] and doesn't support constraint [size]. This constraint will not be checked during validation.
+2014-12-04 08:53:36,800 [localhost-startStop-1] WARN  util.GrailsUtil  - [WARNING] Property [data] of domain class bdp.MissatgesLog has type [java.util.Date] and doesn't support constraint [blank]. This constraint will not be checked during validation.
+2014-12-04 08:53:37,478 [localhost-startStop-1] WARN  config.ConfigurationFactory  - No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/C:/Users/Jesus%20Campos/.m2/repository/net/sf/ehcache/ehcache-core/2.4.8/ehcache-core-2.4.8.jar!/ehcache-failsafe.xml
+2014-12-04 08:53:38,616 [localhost-startStop-1] WARN  hibernate.AbstractEhcacheRegionFactory  - Couldn't find a specific ehcache configuration for cache named [org.weceem.content.WcmContent]; using defaults.
+2014-12-04 08:53:39,092 [localhost-startStop-1] WARN  hibernate.AbstractEhcacheRegionFactory  - Couldn't find a specific ehcache configuration for cache named [Security.SecRole]; using defaults.
+2014-12-04 08:53:40,044 [localhost-startStop-1] WARN  hibernate.AbstractEhcacheRegionFactory  - Couldn't find a specific ehcache configuration for cache named [org.weceem.content.WcmSpace]; using defaults.
+2014-12-04 08:53:40,383 [localhost-startStop-1] WARN  hibernate.AbstractEhcacheRegionFactory  - Couldn't find a specific ehcache configuration for cache named [org.grails.taggable.Tag]; using defaults.
+2014-12-04 08:53:40,416 [localhost-startStop-1] WARN  hibernate.AbstractEhcacheRegionFactory  - Couldn't find a specific ehcache configuration for cache named [org.weceem.content.WcmRelatedContent]; using defaults.
+2014-12-04 08:53:41,880 [localhost-startStop-1] WARN  hibernate.AbstractEhcacheRegionFactory  - Couldn't find a specific ehcache configuration for cache named [org.weceem.content.WcmStatus]; using defaults.
+2014-12-04 08:53:43,492 [localhost-startStop-1] WARN  hibernate.AbstractEhcacheRegionFactory  - Couldn't find a specific ehcache configuration for cache named [org.grails.taggable.TagLink]; using defaults.
+2014-12-04 08:53:44,177 [localhost-startStop-1] WARN  hibernate.AbstractEhcacheRegionFactory  - Couldn't find a specific ehcache configuration for cache named [org.hibernate.cache.UpdateTimestampsCache]; using defaults.
+2014-12-04 08:53:44,181 [localhost-startStop-1] WARN  hibernate.AbstractEhcacheRegionFactory  - Couldn't find a specific ehcache configuration for cache named [org.hibernate.cache.StandardQueryCache]; using defaults.
+2014-12-04 08:53:44,653 [localhost-startStop-1] WARN  util.GrailsUtil  - [DEPRECATED] Method ApplicationHolder.getApplication() is deprecated and will be removed in a future version of Grails.
+2014-12-04 08:53:44,767 [localhost-startStop-1] INFO  impl.StdSchedulerFactory  - Using default implementation for ThreadExecutor
+2014-12-04 08:53:44,787 [localhost-startStop-1] INFO  core.SchedulerSignalerImpl  - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2014-12-04 08:53:44,787 [localhost-startStop-1] INFO  core.QuartzScheduler  - Quartz Scheduler v.2.1.5 created.
+2014-12-04 08:53:44,788 [localhost-startStop-1] INFO  simpl.RAMJobStore  - RAMJobStore initialized.
+2014-12-04 08:53:44,789 [localhost-startStop-1] INFO  core.QuartzScheduler  - Scheduler meta-data: Quartz Scheduler (v2.1.5) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+2014-12-04 08:53:44,789 [localhost-startStop-1] INFO  impl.StdSchedulerFactory  - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2014-12-04 08:53:44,789 [localhost-startStop-1] INFO  impl.StdSchedulerFactory  - Quartz scheduler version: 2.1.5
+2014-12-04 08:53:44,789 [localhost-startStop-1] INFO  core.QuartzScheduler  - JobFactory set to: grails.plugins.quartz.GrailsJobFactory@624409
+2014-12-04 08:53:44,861 [localhost-startStop-1] WARN  util.GrailsUtil  - [DEPRECATED] Method ApplicationHolder.getApplication() is deprecated and will be removed in a future version of Grails.
+2014-12-04 08:53:45,659 [localhost-startStop-1] WARN  util.GrailsUtil  - [DEPRECATED] Method ConfigurationHolder.getConfig() is deprecated and will be removed in a future version of Grails.
+2014-12-04 08:53:45,699 [localhost-startStop-1] WARN  util.GrailsUtil  - [DEPRECATED] Method ConfigurationHolder.getConfig() is deprecated and will be removed in a future version of Grails.
+2014-12-04 08:53:46,692 [localhost-startStop-1] INFO  scaffolding.AbstractGrailsTemplateGenerator  - Scaffolding template generator set to use resource loader [org.codehaus.groovy.grails.commons.spring.GrailsWebApplicationContext@bfa1d3: startup date [Thu Dec 04 08:53:34 CET 2014]; parent: Root WebApplicationContext]
+2014-12-04 08:53:47,917 [localhost-startStop-1] INFO  services.WcmCacheService  - Caches configured: [weceem.eternalCache, weceem.gspCache, weceem.contentCache, weceem.dataFeeds, weceem.contentTreeFingerprintCache, weceem.contentFingerprintCache, weceem.uriToContentCache]
+2014-12-04 08:53:48,763 [localhost-startStop-1] INFO  config.EnvironmentSearchableCompassConfigurator  - Setting Compass connection to [D:\app\weceem\search-indexes]
+2014-12-04 08:53:50,050 [localhost-startStop-1] INFO  config.CompassConfiguration  - Mapping InputStream [com/upc/WcmPlantillaFitxa.cpm.xml]
+2014-12-04 08:53:50,062 [localhost-startStop-1] INFO  config.CompassConfiguration  - Mapping InputStream [org/weceem/content/WcmFolder.cpm.xml]
+2014-12-04 08:53:50,076 [localhost-startStop-1] INFO  config.CompassConfiguration  - Mapping InputStream [org/weceem/js/WcmJavaScript.cpm.xml]
+2014-12-04 08:53:50,082 [localhost-startStop-1] INFO  config.CompassConfiguration  - Mapping InputStream [org/grails/taggable/Tag.cpm.xml]
+2014-12-04 08:53:50,092 [localhost-startStop-1] INFO  config.CompassConfiguration  - Mapping InputStream [org/weceem/content/WcmComment.cpm.xml]
+2014-12-04 08:53:50,103 [localhost-startStop-1] INFO  config.CompassConfiguration  - Mapping InputStream [com/upc/WcmPlantillaFitxaGenerica.cpm.xml]
+2014-12-04 08:53:50,113 [localhost-startStop-1] INFO  config.CompassConfiguration  - Mapping InputStream [org/weceem/content/WcmStatus.cpm.xml]
+2014-12-04 08:53:50,124 [localhost-startStop-1] INFO  config.CompassConfiguration  - Mapping InputStream [org/weceem/html/WcmHTMLContent.cpm.xml]
+2014-12-04 08:53:50,131 [localhost-startStop-1] INFO  config.CompassConfiguration  - Mapping InputStream [org/weceem/css/WcmStyleSheet.cpm.xml]
+2014-12-04 08:53:50,139 [localhost-startStop-1] INFO  config.CompassConfiguration  - Mapping InputStream [com/upc/WcmPlantillaFitxa2ColGenerica.cpm.xml]
+2014-12-04 08:53:50,143 [localhost-startStop-1] INFO  config.CompassConfiguration  - Mapping InputStream [org/weceem/content/WcmSpace.cpm.xml]
+2014-12-04 08:53:50,149 [localhost-startStop-1] INFO  config.CompassConfiguration  - Mapping InputStream [org/weceem/content/WcmContent.cpm.xml]
+2014-12-04 08:53:50,155 [localhost-startStop-1] INFO  config.CompassConfiguration  - Mapping InputStream [org/weceem/wiki/WcmWikiItem.cpm.xml]
+2014-12-04 08:53:50,161 [localhost-startStop-1] INFO  config.CompassConfiguration  - Mapping InputStream [org/weceem/script/WcmAction.cpm.xml]
+2014-12-04 08:53:50,168 [localhost-startStop-1] INFO  config.CompassConfiguration  - Mapping InputStream [org/weceem/blog/WcmBlogEntry.cpm.xml]
+2014-12-04 08:53:50,176 [localhost-startStop-1] INFO  config.CompassConfiguration  - Mapping InputStream [org/weceem/script/WcmScript.cpm.xml]
+2014-12-04 08:53:50,181 [localhost-startStop-1] INFO  config.CompassConfiguration  - Mapping InputStream [org/weceem/blog/WcmBlog.cpm.xml]
+2014-12-04 08:53:50,187 [localhost-startStop-1] INFO  config.CompassConfiguration  - Mapping InputStream [org/weceem/files/WcmContentDirectory.cpm.xml]
+2014-12-04 08:53:50,193 [localhost-startStop-1] INFO  config.CompassConfiguration  - Mapping InputStream [org/weceem/content/WcmTemplate.cpm.xml]
+2014-12-04 08:53:50,199 [localhost-startStop-1] INFO  config.CompassConfiguration  - Mapping InputStream [org/weceem/content/WcmWidget.cpm.xml]
+2014-12-04 08:53:50,205 [localhost-startStop-1] INFO  config.CompassConfiguration  - Mapping InputStream [org/weceem/files/WcmContentFile.cpm.xml]
+2014-12-04 08:53:50,210 [localhost-startStop-1] INFO  config.CompassConfiguration  - Mapping InputStream [org/weceem/content/WcmVirtualContent.cpm.xml]
+2014-12-04 08:53:50,216 [localhost-startStop-1] INFO  config.CompassConfiguration  - Mapping InputStream [org/weceem/content/WcmExternalLink.cpm.xml]
+2014-12-04 08:53:50,222 [localhost-startStop-1] INFO  config.CompassConfiguration  - Mapping InputStream [org/weceem/files/WcmContentFileDB.cpm.xml]
+2014-12-04 08:53:50,567 [localhost-startStop-1] INFO  analyzer.LuceneAnalyzerManager  - Building analyzer [searchableplugin_simple]
+2014-12-04 08:53:50,582 [localhost-startStop-1] INFO  analyzer.LuceneAnalyzerManager  - Building analyzer [searchableplugin_whitespace]
+2014-12-04 08:53:50,648 [localhost-startStop-1] INFO  engine.LuceneSearchEngineFactory  - Not using highlighter - no highlighter jar included.
+2014-12-04 08:53:50,714 [localhost-startStop-1] INFO  optimizer.LuceneSearchEngineOptimizerManager  - Starting scheduled optimizer [class org.compass.core.lucene.engine.optimizer.DefaultLuceneSearchEngineOptimizer] with period [10000ms]
+2014-12-04 08:53:50,715 [localhost-startStop-1] INFO  manager.DefaultLuceneSearchEngineIndexManager  - Starting scheduled index manager with period [60000ms]
+2014-12-04 08:53:50,716 [localhost-startStop-1] INFO  manager.IndexHoldersCache  - Starting scheduled refresh cache with period [5000ms]
+2014-12-04 08:53:50,884 [localhost-startStop-1] INFO  security.WeceemSecurityPolicy  - Initializing default security policy
+2014-12-04 08:53:50,927 [localhost-startStop-1] INFO  services.WcmContentRepositoryService  - Weceem will use [\var\www\weceem.org\uploads] as the directory for static uploaded files, and the url [/uploads/] to serve them
+2014-12-04 08:53:57,453 [localhost-startStop-1] WARN  injection.Injection  - Could not inject method displayMessage(java.util.Map) in to [org.grails.plugin.platform.UiExtensionsTagLib], a method with that name and argument list already exists
+2014-12-04 08:53:57,888 [localhost-startStop-1] INFO  events.EventsImpl  - Reloading events listeners
+2014-12-04 08:53:59,103 [localhost-startStop-1] WARN  util.GrailsUtil  - [DEPRECATED] Method ConfigurationHolder.getConfig() is deprecated and will be removed in a future version of Grails.
+2014-12-04 08:53:59,189 [localhost-startStop-1] INFO  services.NavigationService  - Navigation items updated: [*:[]]
+2014-12-04 08:53:59,628 [localhost-startStop-1] WARN  util.GrailsUtil  - [DEPRECATED] Method ConfigurationHolder.getConfig() is deprecated and will be removed in a future version of Grails.
+2014-12-04 08:53:59,631 [localhost-startStop-1] WARN  util.GrailsUtil  - [DEPRECATED] Method ConfigurationHolder.getConfig() is deprecated and will be removed in a future version of Grails.
+2014-12-04 08:54:01,810 [localhost-startStop-1] INFO  databasemigration.MigrationRunner  - updateOnStart disabled for dataSource; not running migrations
+2014-12-04 08:54:01,845 [localhost-startStop-1] INFO  compass.CompassGpsUtils  - Starting Searchable Plugin bulk index
+2014-12-04 08:54:01,850 [localhost-startStop-1] INFO  analyzer.LuceneAnalyzerManager  - Building analyzer [searchableplugin_simple]
+2014-12-04 08:54:01,850 [localhost-startStop-1] INFO  analyzer.LuceneAnalyzerManager  - Building analyzer [searchableplugin_whitespace]
+2014-12-04 08:54:01,851 [localhost-startStop-1] INFO  engine.LuceneSearchEngineFactory  - Not using highlighter - no highlighter jar included.
+2014-12-04 08:54:06,072 [localhost-startStop-1] INFO  impl.DefaultCompass  - Closing Compass [default]
+2014-12-04 08:54:06,073 [localhost-startStop-1] INFO  impl.DefaultCompass  - Closed Compass [default]
+2014-12-04 08:54:06,073 [localhost-startStop-1] INFO  optimizer.LuceneSearchEngineOptimizerManager  - Starting scheduled optimizer [class org.compass.core.lucene.engine.optimizer.DefaultLuceneSearchEngineOptimizer] with period [10000ms]
+2014-12-04 08:54:06,073 [localhost-startStop-1] INFO  manager.DefaultLuceneSearchEngineIndexManager  - Starting scheduled index manager with period [60000ms]
+2014-12-04 08:54:06,073 [localhost-startStop-1] INFO  manager.IndexHoldersCache  - Starting scheduled refresh cache with period [5000ms]
+2014-12-04 08:54:06,090 [localhost-startStop-1] INFO  compass.CompassGpsUtils  - Finished Searchable Plugin bulk index, 4 secs, 228 ms
+2014-12-04 08:54:06,091 [localhost-startStop-1] INFO  weceem.WeceemGrailsPlugin  - Weceem plugin running with data source <org.springframework.jdbc.datasource.TransactionAwareDataSourceProxy@21fc09 reobtainTransactionalConnections=false targetDataSource=org.springframework.jdbc.datasource.LazyConnectionDataSourceProxy@133a96e>
+2014-12-04 08:54:06,092 [localhost-startStop-1] INFO  weceem.WeceemGrailsPlugin  - Weceem plugin running with grails configuration [grails:[resources:[adhoc:[excludes:[/plugins/weceem-1.2, **/WEB-INF/**, **/META-INF/**, **/*.class, **/*.jar, **/*.properties, **/*.groovy, **/*.gsp, **/*.java]]], mime:[file:[extensions:false], use:[accept:[header:false]], types:[html:[text/html, application/xhtml+xml], xml:[text/xml, application/xml], text:text/plain, js:text/javascript, rss:application/rss+xml, atom:application/atom+xml, css:text/css, csv:text/csv, all:*/*, json:[application/json, text/json], form:application/x-www-form-urlencoded, multipartForm:multipart/form-data]], views:[default:[codec:none], gsp:[encoding:UTF-8], enable:[jsessionid:[:]]], converters:[encoding:UTF-8, json:[date:javascript]], enable:[native2ascii:true], validateable:[packages:[org.weceem], classes:[:]], serverURL:http://localhost:8090/Portal, path:D:\gpr\users\fich\, config:[defaults:[locations:[:], skipResourcesAdhocExcludes:[:]], locations:[:]], gorm:[default:[constraints:[:], mapping:[:]]], taggable:[preserve:[case:[:]], tagLink:[table:[:], autoImport:[:]], tag:[table:[:], autoImport:[:]]], logging:[jul:[usebridge:[:]]], plugin:[platform:[initialized:true], databasemigration:[changelogLocation:[:], databaseChangeLogTableName:[:], databaseChangeLogLockTableName:[:], forceAutoMigrate:[:], autoMigrateScripts:[:], updateOnStart:[:]]], spring:[disable:[aspectj:[autoweaving:[:]]], bean:[packages:[:]]], web:[url:[converter:[:]], linkGenerator:[useCache:[:]], xhr:[identifier:[:]]], databinding:[autoGrowCollectionLimit:[:], trimStrings:[:], convertEmptyStringsToNull:[:], dateFormats:[:], enableSpringEventAdapter:[:]], mail:[jndiName:[:], host:[:], encoding:[:], port:[:], username:[:], password:[:], protocol:[:], props:[:]], disableCommonsMultipart:[:], controllers:[defaultScope:[:]], gsp:[view:[dir:[:]]], cache:[enabled:[:], proxyTargetClass:[:], aopOrder:[:], keyGenerator:[:]], plugins:[springsecurity:[active:true, ajaxHeader:X-Requested-With, registerLoggerListener:false, rejectIfNoRule:false, roleHierarchy:, ipRestrictions:[:], voterNames:[], providerNames:[], useHttpSessionEventPublisher:false, useSecurityEventListener:false, cacheUsers:false, userLookup:[userDomainClassName:Person, usernamePropertyName:username, enabledPropertyName:enabled, passwordPropertyName:password, authoritiesPropertyName:authorities, accountExpiredPropertyName:accountExpired, accountLockedPropertyName:accountLocked, passwordExpiredPropertyName:passwordExpired, authorityJoinClassName:PersonAuthority], authority:[className:Authority, nameField:authority], apf:[filterProcessesUrl:/j_spring_security_check, usernameParameter:j_username, passwordParameter:j_password, continueChainBeforeSuccessfulAuthentication:false, allowSessionCreation:true, postOnly:true], failureHandler:[defaultFailureUrl:/login/authfail?login_error=1, ajaxAuthFailUrl:/login/authfail?ajax=true, exceptionMappings:[:], useForward:false], successHandler:[defaultTargetUrl:/, alwaysUseDefault:false, targetUrlParameter:spring-security-redirect, useReferer:false, ajaxSuccessUrl:/login/ajaxSuccess], requestCache:[onlyOnGet:false, createSession:true], redirectStrategy:[contextRelative:false], authenticationDetails:[authClass:class org.springframework.security.web.authentication.WebAuthenticationDetails], useSessionFixationPrevention:false, sessionFixationPrevention:[migrate:true, alwaysCreateSession:false], dao:[reflectionSaltSourceProperty:null, hideUserNotFoundExceptions:true], anon:[key:foo, userAttribute:anonymousUser,ROLE_ANONYMOUS], auth:[loginFormUrl:/login/auth, forceHttps:false, ajaxLoginFormUrl:/login/authAjax, useForward:false], logout:[afterLogoutUrl:/, filterProcessesUrl:/j_spring_security_logout, handlerNames:[]], adh:[errorPage:/login/denied, ajaxErrorPage:/login/ajaxDenied], password:[algorithm:SHA-256, encodeHashAsBase64:false, bcrypt:[logrounds:10]], rememberMe:[cookieName:grails_remember_me, alwaysRemember:false, tokenValiditySeconds:1209600, parameter:_spring_security_remember_me, key:grailsRocks, persistent:false, persistentToken:[domainClassName:PersistentLogin, seriesLength:16, tokenLength:16], useSecureCookie:false], securityConfigType:Annotation, requestMap:[className:Requestmap, urlField:url, configAttributeField:configAttribute], controllerAnnotations:[matcher:ant, lowercase:true, staticRules:[:]], interceptUrlMap:[:], useBasicAuth:false, basic:[realmName:Grails Realm], useDigestAuth:false, digest:[realmName:Grails Realm, key:changeme, nonceValiditySeconds:300, passwordAlreadyEncoded:false, createAuthenticatedToken:false, useCleartextPasswords:false], useSwitchUserFilter:false, switchUser:[switchUserUrl:/j_spring_security_switch_user, exitUserUrl:/j_spring_security_exit_user, targetUrl:null, switchFailureUrl:null], filterChain:[stripQueryStringFromUrls:true], portMapper:[httpPort:8080, httpsPort:8443], secureChannel:[definition:[:], useHeaderCheckChannelSecurity:false, secureHeaderName:X-Forwarded-Proto, secureHeaderValue:http, insecureHeaderName:X-Forwarded-Proto, insecureHeaderValue:https], useX509:false, x509:[continueFilterChainOnUnsuccessfulAuthentication:true, subjectDnRegex:CN=(.*?),, checkForPrincipalChanges:false, invalidateSessionOnPrincipalChange:true, throwExceptionWhenTokenRejected:false], atr:[anonymousClass:class org.springframework.security.authentication.AnonymousAuthenticationToken, rememberMeClass:class org.springframework.security.authentication.RememberMeAuthenticationToken], providerManager:[eraseCredentialsAfterAuthentication:false]]]], weceem:[content:[prefix:], admin:[prefix:admin], tools:[prefix:cms/tools], space:[templates:[default:classpath:/org/weceem/resources/default-space-template.zip, basic:classpath:/org/weceem/resources/basic-space-template.zip]], upload:[dir:file:/var/www/weceem.org/uploads/], page404:[:], security:[policy:[path:[:]]], archived:[status:[:]], umoderated:[status:[:]]], log4j:Config$_run_closure2_closure5_closure8@abacbd, dataSource:[pooled:true, autoReconnect:true, driverClassName:oracle.jdbc.driver.OracleDriver, dialect:org.hibernate.dialect.Oracle10gDialect, logSql:false, properties:[maxActive:50, maxIdle:25, minIdle:5, initialSize:5, minEvictableIdleTimeMillis:60000, timeBetweenEvictionRunsMillis:60000, maxWait:10000, testOnBorrow:true, testWhileIdle:true, testOnReturn:true, validationQuery:SELECT * FROM DUAL], url:jdbc:oracle:thin:@ribier.upc.edu:1521:rh, username:cs, password:hola, jndiName:[:], readOnly:[:], passwordEncryptionCodec:[:], configClass:[:], loggingSql:[:], formatSql:[:], dbCreate:[:]], hibernate:[cache:[use_second_level_cache:true, use_query_cache:true, useCacheProvider:[:], region:[factory_class:net.sf.ehcache.hibernate.EhCacheRegionFactory], provider_configuration_file_resource_path:[:]], naming_strategy:[:], config:[location:[:]], flush:[mode:[:]]], plugin:[platformCore:[organization:[name:My Corp (set plugin.platformCore.organization.name)], site:[name:Our App (set plugin.platformCore.site.name), url:null], show:[startup:[info:true]], navigation:[disabled:false], events:[disabled:false, poolSize:10, catchFlushExceptions:true, gorm:[disabled:false]], security:[disabled:false], ui:[disabled:false], config:[disabled:[:]]], weceem:[:], ckeditor:[:], beanFields:[:], cacheHeaders:[:], cache:[:], jquery:[:], blueprint:[:], feeds:[:], springSecurityCore:[:], searchable:[:], jqueryUi:[:], databaseMigration:[:], taggable:[:], quartz:[:], mail:[:], navigation:[:]], searchable:[config:[searchable:[index:[path:[:]]]], out:[:], compassConnection:D:\app\weceem\search-indexes, compassSettings:[:], defaultExcludedProperties:[password], defaultFormats:[:], defaultMethodOptions:[search:[reload:false, escape:false, offset:0, max:10, defaultOperator:and], suggestQuery:[userFriendly:true]], mirrorChanges:false, bulkIndexOnStartup:true, releaseLocksOnStartup:true, fetchCount:[:], domain:[:]], quartz:[autoStartup:true, jdbcStore:false, waitForJobsToCompleteOnShutdown:true, exposeSchedulerInRepository:false, props:[scheduler:[skipUpdateCheck:true]], _properties:[org.quartz.scheduler.skipUpdateCheck:true]], beans:[:], ckeditor:[connectors:[prefix:[:]], upload:[baseurl:[:]]], navigation:[:]]
+2014-12-04 08:54:06,165 [localhost-startStop-1] INFO  services.WcmContentRepositoryService  - Weceem will use [\var\www\weceem.org\uploads] as the directory for static uploaded files, and the url [/uploads/] to serve them
+2014-12-04 08:54:08,883 [localhost-startStop-1] WARN  util.GrailsUtil  - [DEPRECATED] Method ApplicationHolder.getApplication() is deprecated and will be removed in a future version of Grails.
+2014-12-04 08:54:09,035 [localhost-startStop-1] WARN  util.GrailsUtil  - [DEPRECATED] Method ConfigurationHolder.getConfig() is deprecated and will be removed in a future version of Grails.
+2014-12-04 08:54:09,036 [localhost-startStop-1] INFO  CacheHeadersGrailsPlugin  - Caching enabled in Config: true
+2014-12-04 08:54:09,134 [localhost-startStop-1] INFO  ScaffoldingGrailsPlugin  - configuring scaffolding...
+2014-12-04 08:54:09,141 [localhost-startStop-1] INFO  ScaffoldingGrailsPlugin  - done configuring scaffolding.
+2014-12-04 08:54:09,278 [localhost-startStop-1] WARN  util.GrailsUtil  - [WARNING] Property [data] of domain class bdp.MissatgesLog has type [java.util.Date] and doesn't support constraint [blank]. This constraint will not be checked during validation.
+2014-12-04 08:54:09,282 [localhost-startStop-1] WARN  util.GrailsUtil  - [WARNING] Property [pernr] of domain class bdp.Usuari has type [int] and doesn't support constraint [blank]. This constraint will not be checked during validation.
+2014-12-04 08:54:09,282 [localhost-startStop-1] WARN  util.GrailsUtil  - [WARNING] Property [pernr] of domain class bdp.Usuari has type [int] and doesn't support constraint [nullable]. This constraint will not be checked during validation.
+2014-12-04 08:54:09,282 [localhost-startStop-1] WARN  util.GrailsUtil  - [WARNING] Property [pernr] of domain class bdp.Usuari has type [int] and doesn't support constraint [size]. This constraint will not be checked during validation.
+2014-12-04 08:54:09,297 [localhost-startStop-1] INFO  context.GrailsConfigUtils  - [GrailsContextLoader] Grails application loaded.
+2014-12-04 08:54:09,323 [localhost-startStop-1] WARN  util.GrailsUtil  - [DEPRECATED] Method ConfigurationHolder.getConfig() is deprecated and will be removed in a future version of Grails.
+2014-12-04 08:54:09,324 [localhost-startStop-1] INFO  core.QuartzScheduler  - Scheduler quartzScheduler_$_NON_CLUSTERED started.
+======================================================================
+                         Application: Portal                          
+                         -------------------                          
+  Environment: DEVELOPMENT
+  Database configuration: 
+    Hibernate DDL mode: [:]
+    URL: jdbc:oracle:thin:@ribier.upc.edu:1521:rh
+    Driver: oracle.jdbc.driver.OracleDriver
+    User: cs
+======================================================================
+2014-12-04 08:54:09,350 [localhost-startStop-1] INFO  navigation.NavigationImpl  - Reloading navigation structure
+2014-12-04 08:54:09,538 [localhost-startStop-1] WARN  util.GrailsUtil  - [DEPRECATED] Method ApplicationHolder.getApplication() is deprecated and will be removed in a future version of Grails.
+Bootstrapping Weceem - there are 4 spaces
+2014-12-04 08:54:10,034 [localhost-startStop-1] INFO  compass.CompassGpsUtils  - Starting Searchable Plugin bulk index
+2014-12-04 08:54:10,034 [localhost-startStop-1] INFO  analyzer.LuceneAnalyzerManager  - Building analyzer [searchableplugin_simple]
+2014-12-04 08:54:10,034 [localhost-startStop-1] INFO  analyzer.LuceneAnalyzerManager  - Building analyzer [searchableplugin_whitespace]
+2014-12-04 08:54:10,038 [localhost-startStop-1] INFO  engine.LuceneSearchEngineFactory  - Not using highlighter - no highlighter jar included.
+2014-12-04 08:54:13,920 [localhost-startStop-1] INFO  impl.DefaultCompass  - Closing Compass [default]
+2014-12-04 08:54:13,921 [localhost-startStop-1] INFO  impl.DefaultCompass  - Closed Compass [default]
+2014-12-04 08:54:13,921 [localhost-startStop-1] INFO  optimizer.LuceneSearchEngineOptimizerManager  - Starting scheduled optimizer [class org.compass.core.lucene.engine.optimizer.DefaultLuceneSearchEngineOptimizer] with period [10000ms]
+2014-12-04 08:54:13,921 [localhost-startStop-1] INFO  manager.DefaultLuceneSearchEngineIndexManager  - Starting scheduled index manager with period [60000ms]
+2014-12-04 08:54:13,921 [localhost-startStop-1] INFO  manager.IndexHoldersCache  - Starting scheduled refresh cache with period [5000ms]
+2014-12-04 08:54:13,921 [localhost-startStop-1] INFO  compass.CompassGpsUtils  - Finished Searchable Plugin bulk index, 3 secs, 887 ms
+Starting mirror service
+2014-12-04 08:54:15,056 [localhost-startStop-1] INFO  [localhost].[/Portal]  - Initializing Spring FrameworkServlet 'grails'
+2014-12-04 08:54:16,593 [main] INFO  http11.Http11Protocol  - Starting ProtocolHandler ["http-bio-8090"]
+|Server running. Browse to http://localhost:8090/Portal

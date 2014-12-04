@@ -7,12 +7,24 @@ Hay que ir a la línea de comandos y escribir:
 	test war
 y lo crea e la carpeta "target".
 
+Si el entorno es creado (que no es test, production ni development)
+Comando: -Dgrails.env=nombre_del_nuevo_entorno war
+
+
+-------------------------------
+EJECUTAR UN ENTORNO DETERMINADO
+-------------------------------
+Si el entorno es creado (que no es test, production ni development):
+run-app -Dgrails.env=nombre_del_nuevo_entorno -Dserver.port=8090
+
+
 -------------------------------------
 CREAR UN NUEVO JOB (TAREA PROGRAMADA)
 -------------------------------------
 Escribir en la línea de comandos:
 	create-job nombre del JOB
 Hay que haber instalado previamente el plugin QUARTZ, sin el plugin el comando NO funciona.
+
 
 *****************************************************************************************************************************************************
 ------------------------------
