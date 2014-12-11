@@ -30,7 +30,9 @@ servicio: rh (La base de datos)
 			dataSource {
 				//dbCreate = "update" // one of 'create', 'create-drop', 'update', 'validate', ''
 	//            url = "jdbc:h2:mem:devDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE"
-				url = "jdbc:oracle:thin:@aaaa.bbb.ccc:1521:rh"
+				url = "jdbc:oracle:thin:@aaaa.bbb.ccc:puerto:servicio"
+				//url = "jdbc:oracle:thin:@aaaa.bbb.ccc:1521:rh"
+				//Ejemplo: url = "jdbc:oracle:thin:@192.168.56.101:1521:orcl"
 		...
 		
 Ahora ya se conecta correctamente a la base de datos.
@@ -453,9 +455,9 @@ class Alumno {
 }
 
 <ASPECTOS BÁSICOS>*************************************************************************************************************************************
----------------------------------------------------------------------
-TEORÍA SOBRE LO QUE SE RECUPERA EN UNA CONSULTA - RECUPERAR NULL O NO
----------------------------------------------------------------------
+------------------------------------------------------------------------------------
+TEORÍA SOBRE LO QUE SE RECUPERA EN UNA CONSULTA - RECUPERAR NULL O NO - (BD: ORACLE)
+------------------------------------------------------------------------------------
 Se recuperan los NULL?
 
 En el siguiente ejemplo:

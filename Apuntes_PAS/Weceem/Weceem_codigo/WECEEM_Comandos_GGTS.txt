@@ -18,6 +18,11 @@ Antes, debe haberse seguido este protocolo:
 
 2)Config.groovy: comentar/descomentar en el apartado que toque (generalmente test) el código del servidor que se vaya a utilizar.
 
+Con las últimas modificaiones estos dos pasos no son necesarios y basta con indicar el comando:
+	-Dgrails.env=nombre_del_servidor war
+Por ejemplo:
+	-Dgrails.env=melnik war
+
 
 *****************************************************************************************************************************************************
 ------------------------------

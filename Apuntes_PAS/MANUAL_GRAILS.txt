@@ -53,6 +53,47 @@ class LibroController {
 - El controlador y el dominio se han de llamar igual sólo en el caso de quere utilizar scaffold.
 
 
+<GROOVY/GRAILS>***************************************************************************************************************************************
+Resumen de los apuntes de la Universidad de Alicante sobre Groovy/Grails.
+
+--------
+SESIÓN 1
+--------
+Al declarar una clase Groovy -> sus métodos son públicos por defecto.
+
+Los métodos getters/setters NO hace falta generarlos, se generan automáticamente. Se pueden sobreescribir.
+
+En Groovy los números se tratan como objetos y no como tipos primitivos:
+	def x = 1
+				-> se puede hacer x+y ó bien x.plus(y)
+	def y = 2
+
+Estructuras de control:
+	- null es tratado como false
+	- not-null es tratdo como true
+	
+
+--------
+SESIÓN 2
+--------
+Tipo de dato primitivo a una referencia -> boxing
+Tipo de dato referencia a uno primitivo -> unboxing
+
+¿Y qué pasa cuando en métodos Java se espera un dato de tipo int(primitivo)? Por ejemplo: indexOf(int)
+	'Hola mundo'.indexOf(111)
+						 | |
+						 | |---> espera el valor del carácter a buscar (en ASCII) => el autobxing de Groovy convierte el objeto en un valor int
+						 |
+						 |-----> Esto en Groovy es un objeto, NO es un int
+						 
+1+2 -> NO se realiza autoboxing, son dos objetos y Groovy realiza 1.plus(2) => NO se necesitan conversiones para realizar esta operación.
+
+TIPADO DINÁMICO
+---------------
+Groovy especifica el tipo de datos utilizado en lugar de tener que hacerlo nosotros:
+	def nombre_de_la_variable => Groovy decide el tipo de variable a utilizar (Tipo de referencia realmente)
+						 
+******************************************************************************************************************************************************
 <LISTAS>**********************************************************************************************************************************************
 -------------------------------------------------------------------------------------
 INSTRUCCIONES PARA CONSULTAR TAMAÑO DE VECTORES, LISTS, ETC .../MOSTRAR SUS ELEMENTOS

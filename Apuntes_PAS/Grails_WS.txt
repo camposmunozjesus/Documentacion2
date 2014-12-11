@@ -22,6 +22,101 @@ Es necesario importar los jars
 ---------------------------------------
 CLIENTE PARA WEB SERVICE CON CXF PLUGIN
 ---------------------------------------
+Pasos a seguir para conseguir realizar un cliente:
+
+1) Crear un proyecto Grails.
+
+2) Agregar en el archivo BuildConfig.groovy los plugins necesarios: (antes se hacía con el plugin manager, ahora desde Grails 2.3 no es posible)
+	plugins {
+		...
+        //plugins for the compile step
+        ...
+		compile ":cxf:1.1.1"
+        ...
+    }
+
+3)  Botón derecho sobre el proyecto -> Grails Tools -> Refresh Dependencies ... (Alt+G,R) y se obtiene la TRAZA 3 aproximadamente.
+
+4) Modificar el archivo Config.groovy: (añadir el web service sin el clientinterface)
+	cxf {
+		client {
+			//Another example real service to use against wsd2java script
+			colomaClient {
+				wsdl = "http://195.235.66.115:10001/WSApp/WSApp/AppColoma.asmx?WSDL"
+				//clientInterface = net.gramene.appcoloma.Service1Soap
+				serviceEndpointAddress = "http://195.235.66.115:10001/WSApp/WSApp/AppColoma.asmx"
+			}
+			
+			//Another example real service to use against wsd2java script
+			tiempoClient {
+				wsdl = "http://www.imn.ac.cr/MeteorologicoWS/MeteorologicoWS.asmx?WSDL"
+				//clientInterface = org.tempuri.WSMeteorologicoSoap
+				serviceEndpointAddress = "http://www.imn.ac.cr/MeteorologicoWS/MeteorologicoWS.asmx"
+			}
+		}
+	} 
+
+5) En "Command Grails History" ejecutar "wsdl2java" con el nombre del proyecto seleccionado. Se obtiene la TRAZA 2.
+
+6) Añadir el clientinterface en el archivo Config.groovy. Descomentar las líneas del clientinterface y el archivo Config.groovy quedará de la siguiente manera.
+	cxf {
+		client {
+			//Another example real service to use against wsd2java script
+			//WS1
+			colomaClient {
+				wsdl = "http://195.235.66.115:10001/WSApp/WSApp/AppColoma.asmx?WSDL"
+				clientInterface = net.gramene.appcoloma.Service1Soap
+				serviceEndpointAddress = "http://195.235.66.115:10001/WSApp/WSApp/AppColoma.asmx"
+			}
+			
+			//Another example real service to use against wsd2java script
+			//WS2
+			tiempoClient {
+				wsdl = "http://www.imn.ac.cr/MeteorologicoWS/MeteorologicoWS.asmx?WSDL"
+				clientInterface = org.tempuri.WSMeteorologicoSoap
+				serviceEndpointAddress = "http://www.imn.ac.cr/MeteorologicoWS/MeteorologicoWS.asmx"
+			}
+		}
+	}
+	
+	Para saber más de dónde se obtiene el cliente interface, leer >CÓMO OBTENER CLIENTINTERFACE<.
+
+7) Generar el controlador y dentro de él utilizar los la interfaz del web service como sigue:
+	package webserviceclientsoapcxf
+													\
+	import net.gramene.appcoloma.BeanRespostaTipus1 |
+	import net.gramene.appcoloma.CodiEstat			 > Referente al WS1
+	import net.gramene.appcoloma.Service1Soap		|
+													/
+													
+	import org.tempuri.Hora							\	Referente al WS2
+	import org.tempuri.WSMeteorologicoSoap			/
+
+
+	class TestController {
+
+		//El nombre de la variable debe coincidir con el del apartado/nodo cxf - client
+		//del archivo Config.groovy. NO puede ser un nombre de variable cualquiera.
+		//Interface cxf_nodo
+		Service1Soap colomaClient 
+		WSMeteorologicoSoap tiempoClient
+
+		def index (){
+			CodiEstat ce
+			try{
+				def var = colomaClient.metodoALlamar()
+				def var = tiempoClient.metodoALlamar()
+
+			}catch(Exception e){
+				println e.message()
+			}
+		}
+	}
+	
+8) Ejecutar el programa.
+
+	
+Forma antigua:
 En la página https://github.com/Grails-Plugin-Consortium/grails-cxf-client#Introduction se puede encontrar un repositorio git con un proyecto 
 descargable y con instrucciones útiles sobre cómo realizar un cliente con la librería CXF.
 En https://github.com/Grails-Plugin-Consortium/grails-cxf#Introduction está descrito cómo realizar el servicio.
@@ -349,6 +444,24 @@ Loading Grails 2.3.4
 .
 |Completed wsdl2java
 
+
+TRAZA 3
+*******
+Starting process on PC24094/147.83.168.49
+Loading Grails 2.3.7
+|Configuring classpath
+.
+|Environment set to development
+......
+|Installing zip cxf-1.1.1.zip...
+...
+|Installed plugin cxf-1.1.1
+....................
+|Compiling 153 source files
+Note: C:\Users\Jesus Campos\Desktop\ggts-bundle\workspace\srv\target\work\plugins\cxf-1.1.1\src\java\org\grails\cxf\artefact\DefaultGrailsEndpointClass.java uses unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+.......
+|Compiling 161 source files
 
 ******************************************************************************************************************************************************
 --------
