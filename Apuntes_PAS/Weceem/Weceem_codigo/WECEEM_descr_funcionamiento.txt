@@ -58,21 +58,25 @@ Las dos instrucciones siguientes deberían ser equivalentes:
 	src="/Portal/WeceemFiles/PAS/Image/Informacio_General/sistema_retributiu.jpg" 
 
 
-----------------
-RUTAS E IMÁGENES
-----------------
-Cuando se añade una imagen desde el CKEditor (rich editor, tipo MS Word), la ruta en la que se encuentra la imagen es:
+---------------------------------------------------
+RUTAS E IMÁGENES - AÑADIDAS/SUBIDAS DESDE EL EDITOR
+---------------------------------------------------
+Cuando se añade una imagen desde el CKEditor (rich editor, tipo MS Word con la opción de subir al servidor), la ruta en la que se encuentra la imagen es:
 	/Portal/WeceemFiles/PAS/Image/Informacio_General/sistema_retributiu.jpg
 
 Suponiendo que cuando se abre la ventana para seleccionar la imagen, en la parte de la izquierda, hay una carpeta llamada "Informacio_General" y dentro 
 se encuentra la imagen "sistema_retributiu.jpg".
 
-(Q1)
+(Q1) -> Modificar esta ruta
 En esta ocasión, la aplicación (original, sin modificar código) ha arrancado sin la opción "weceem.upload.dir = 'file:/directorio/.../directorio/'"
 en el Config.groovy. Si se indica, por ejemeplo:
 weceem.upload.dir = 'file:...'
 En el editor se verá:
 	/Portal/uploads/PAS/Image/Informacio_General/sistema_retributiu.jpg	
+(Q1) -> FIN
+
+Las imágenes subidas se guardan en la carpeta "Images" que viene por defecto, ya sea en un modo u otro (con el "file:..." o sin él). Las carpetas
+creadas para subir imágenes también se crean dentro de "Images".
 
 
 -----------------------------------------------
@@ -98,11 +102,37 @@ Si la rua se establece en el servicio WcmContentRepositoryService de la siguient
 se crea la carpeta: C:\jcmCampos\espacios\WeceemFiles
 Y dentro de ella una carpeta con el nombre de cada espacio y su contenido
 
+Por defecto, en Windows 7, si no se indica "file:..." en el Config.groovy, la carpeta con el nombre del espacio será creada en:
+	C:\Users\Nombre_del_Usuario\weceem-uploads\WeceemFiles\
+Y las imágenes subidas con el editor estrán en:
+	C:\Users\Nombre_del_Usuario\weceem-uploads\WeceemFiles\Nombre_del_Space\Image
+
 (R1)
 Cuando se pone la instrución weceem.upload.dir = 'file:/dir1/dir2/' se crea, por ejemplo:
 	C:\dir1\dir2 			-> Dentro de ella se crean los espacios (una carpeta con el nombre del espacio).
-	C:\dir1\dir2\uploads\
+	
+Para modificar el directorio de las imágenes que se suben mediante el editor y puedan coincidir con una aplicación donde la ruta no esté indicada
+con "file: ... " (contando que no se ha modificado el comportamiento original de esta parte) hay que ir al archivo WcmContentRepositoryService.groovy:
+(Esto permite que un space creado para merlot, sea compatible con uno creado en la aplicación en local forzando los directorios mediante la 
+directiva "file: ..." en el archivo Config.groovy, y copiando los directorios de las imágenes manualmente)
+	static getUploadUrlFromConfig(configObject) {
+        def uploadDirConf = getUploadDirFromConfig(configObject)
 
+        if (!uploadDirConf.startsWith('file:')) {
+            if (!uploadDirConf.startsWith('/')) uploadDirConf = '/'+uploadDirConf
+            if (!uploadDirConf.endsWith('/')) uploadDirConf += '/'      
+            return uploadDirConf
+        } else {
+            return '/uploads/'
+	//    return '/WeceemFiles/' --->ACTIVAR ESTE COMENTARIO!!!!!!!!!!
+        }
+    }
+	
+Este cambio provocará que la imagen en lugar de ir a buscarla a:
+	/Portal/uploads/PAS/Image/Informacio_General/sistema_retributiu.jpg	
+Irá a buscarla a:
+	/Portal/WeceemFiles/PAS/Image/Informacio_General/sistema_retributiu.jpg	
+(R1) ---> FIN
 
 
 <VISTAS Y CONTROLADORES>******************************************************************************************************************************
