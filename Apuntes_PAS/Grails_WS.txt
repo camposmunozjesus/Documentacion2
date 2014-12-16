@@ -534,3 +534,24 @@ class WebService {
 }
 
 
+-------------------
+WS PDF REBUT NOMINA
+-------------------
+Para poder crear los métodos hay que utilizar cxf en el BuildConfig.groovy (y comentado el siguiente paso):
+    plugins {
+		...
+		compile ":cxf:1.1.1"
+		compile ":cxf-client:1.6.0"
+		...
+	}
+	
+Para poder utilizar en los controladores las llamadas al webservice realizado en Java se ha de tener en el BuildConfig.groovy comentado lo anterior y 
+añadir:
+    dependencies {
+        // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes e.g.
+        // runtime 'mysql:mysql-connector-java:5.1.27'
+        // runtime 'org.postgresql:postgresql:9.3-1100-jdbc41'
+		test "org.grails:grails-datastore-test-support:1.0-grails-2.4"
+		runtime('com.sun.xml.ws:jaxws-rt:2.1.4')		
+    }
+
