@@ -1,0 +1,46 @@
+GRAILS - REDIRECCIONAR LA PÁGINA DE INICIO DE LA APLICACIÓN
+===========================================================
+Cuando se entra en una aplicación Grails habitualmente se muestra el index con los controladores. Si queremos que en lugar de esta página aparezca otra
+se puede conseguir de la siguiente manera:
+
+1) Eliminar la página index.gsp
+
+2) Crear una página llamada FileNotFound.gsp ubicada en "views" (al mismo nivel que index.gsp) con el siguiente contenido:
+	<html>
+		<head>
+			<title>TITULO</title>
+			<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		</head>
+		<body>
+			
+			<g:if env="development">
+				<% response.sendRedirect("http://"+request.getServerName()+":8090/Nombre_Aplicacion/Nombre_Controlador/index"); %>
+			</g:if>
+			<g:if env="test">
+				<% response.sendRedirect("http://"+request.getServerName()+"/Nombre_Aplicacion/Nombre_Controlador/index"); %>
+			</g:if>
+			<g:if env="rrhh6">
+				<% response.sendRedirect("http://"+request.getServerName()+"/Nombre_Aplicacion/Nombre_Controlador/index"); %>
+			</g:if>
+			<g:else>
+				<% response.sendRedirect("https://"+request.getServerName()+"/Nombre_Aplicacion/Nombre_Controlador/index/"); %>
+			</g:else>
+		
+		</body>
+	</html>
+	
+3) En UrlMappings.groovy hay que incluir fuera de static mappings:
+	"404"(view:'/fileNotFound')
+	
+	
+Con esto se consigue que en caso de error (no encontrar una determinada página) se redirecciona automáticamente a la página indicada en FileNotFoun.gsp,
+por este motivo se elimina 
+	
+
+*****************************************************************************************************************************************************
+------------------------------
+Creación:		19-12-2014
+				
+Jesús Campos Muñoz
+jesus.campos@upc.edu
+------------------------------
