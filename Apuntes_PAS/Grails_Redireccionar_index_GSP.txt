@@ -34,7 +34,7 @@ se puede conseguir de la siguiente manera:
 	
 	
 Con esto se consigue que en caso de error (no encontrar una determinada página) se redirecciona automáticamente a la página indicada en FileNotFoun.gsp,
-por este motivo se elimina 
+por este motivo se elimina la página index.gsp.
 	
 
 *****************************************************************************************************************************************************
