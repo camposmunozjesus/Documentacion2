@@ -1,0 +1,26 @@
+DOCUMENTACIÓN SOBRE LA APLICACIÓN TEMPUS (RLG)
+==============================================
+------------------------------------------
+UBICACIÓN DE LOS ARCHIVOS DE LA APLICACIÓN
+------------------------------------------
+D:\GrailsWorkspace\Proyectos\APLICACIONES\RLG
+
+
+--------------------
+WORKSPACE DE TRABAJO
+--------------------
+D:\workspaceTMP
+
+
+--------------
+BASES DE DATOS
+--------------
+Conexión con comaloforno.upc.edu.
+
+
+------
+TABLAS
+------
+YHORPER01: Tabla donde se guardan los horarios de las personas.
+		   Cuando se crea un nuevo horario para una persona, en esta tabla se guarda dicho horario. El modo de saber a quién pertenece cada horario es
+		   que en cada registro se guarda el PERNR del usuario.
