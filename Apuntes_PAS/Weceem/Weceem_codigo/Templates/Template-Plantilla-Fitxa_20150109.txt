@@ -1,0 +1,39 @@
+<wcm:widget path="widgets/doctype-bootstrap"/>
+<html>
+  
+  <head>
+    <wcm:widget path="widgets/upc-head"/>
+    <link rel="stylesheet" href="${wcm.createLink(path:'css/menus.css')}" type="text/css">
+    <link rel="stylesheet" href="${wcm.createLink(path:'css/desplegables-fitxa.css')}" type="text/css">
+    <script type="text/javascript" src="${wcm.createLink(path:'js/desplegables-fitxa.js')}"></script>
+  </head>
+  
+  <body>
+    <div class="container">
+      <div class="container-UPC">
+        <wcm:widget path="widgets/top-nav"/>      
+        <wcm:widget path="widgets/breadCrumb-bar"/>       
+      </div>     
+      
+      <!-- Rejilla con el contenido principal -->
+      <div class="fit-column weceem-tmpl">
+        <div class="row no-scroll-bar">         
+          <div class="col-xs-12 col-vxs-4 col-sm-4 col-md-4 col-lg-3 row-margin-bottom40" >
+            <wcm:widget path="widgets/posicio-menu-dspl" model="[rootContent:'index']"/>
+            <wcm:widget path="widgets/menu-desplegable" model="[rootContent:'index']"/>           
+          </div>       
+          
+          <div class="col-xs-12 col-vxs-8 col-sm-8 col-md-8 col-lg-9 row-margin-top-col">
+            <div id="paginaDesplegable" class="fit-column2left fit-column content-movil">
+              <wcm:content />
+            </div>
+          </div>          
+        </div>          
+      </div>
+    
+    </div>
+    <!-- Pie de página -->
+    <wcm:widget path="widgets/bottom-nav"/>  
+  </body>
+  
+</html>
