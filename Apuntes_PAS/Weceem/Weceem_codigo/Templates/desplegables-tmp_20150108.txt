@@ -1,0 +1,318 @@
+<wcm:widget path="widgets/doctype-bootstrap"/>
+<html>
+  
+  <head>
+    <wcm:widget path="widgets/upc-head"/>
+    <link rel="stylesheet" href="${wcm.createLink(path:'css/menus.css')}" type="text/css">
+    <link rel="stylesheet" href="${wcm.createLink(path:'css/desplegables-fitxa.css')}" type="text/css">
+    <script type="text/javascript" src="${wcm.createLink(path:'js/desplegables-fitxa.js')}"></script>
+  </head>
+  
+  <body>
+    <div class="container">
+      <div class="container-UPC">
+        <!-- ************ INI top-nav ************ -->
+        <div id="spinner" class="spinner" style="display: none;">
+          <img alt="Carregant..." src="${wcm.createLinkToFile(path:'images/spinner.gif')}" />
+        </div>
+        
+        <div class="row no-scroll-bar">
+          <div class="col-xs-12 col-vxs-12 col-sm-7 col-md-7 col-lg-8 row-margin-bottom-header">
+            <h1 class="pull-left logo-portal">
+              <img usemap = "#upc_link" class="img-responsive" alt="Universitat Politècnica de Catalunya" src="${wcm.createLinkToFile(path:'images/logo_upc_portal_pas_2.png')}" style="border:0;"/>
+              <map name="upc_link">
+                <area shape=Rect Coords=0,0,50,60 href="http://www.upc.edu" target="_blank">
+              </map>
+            </h1>  
+          </div>
+          <div class="col-xs-12 col-vxs-12 col-sm-5 col-md-5 col-lg-4 row-margin-bottom-header">
+            <div class="navbar navbar-default navbar-Info" role="navigation">
+              <div class="navbar-container-UPC">
+                <div class="navbar-header">
+                  <div class="columna-centrada-header">
+                    
+                    
+                    <button class="navbar-toggle collapsed navbar-toggle-header btn-header" data-target="#navbar-collapse-search" data-toggle="collapse" type="button">
+                      <span class="sr-only">Cercar</span>
+                      <span class="glyphicon glyphicon-search"></span>
+                    </button>
+                    <button class="navbar-toggle collapsed navbar-toggle-header btn-header" data-target="#navbar-collapse-info" data-toggle="collapse" type="button">
+                      <span class="sr-only">Contacte i directori</span>
+                      <span class="glyphicon glyphicon-info-sign"></span>
+                    </button>
+                    <button class="navbar-toggle collapsed navbar-toggle-header btn-header" data-target="#navbar-collapse-portal" data-toggle="collapse" type="button">
+                      <span class="sr-only">Altres portals</span>
+                      <span class="glyphicon glyphicon-new-window"></span>
+                    </button>      
+                    
+                    
+                  </div>      
+                </div>
+                <div class="columna-centrada">
+                  <div id="navbar-collapse-search" class="navbar-collapse collapse">        
+                    <ul class="nav navbar-nav navbar-right search-position">          
+                      <li>
+                        <div class="clearfix pull-right buscador">
+                          
+                          <upc:search max="15" erasePlaceHolder="no" placeHolder="Cercar..." types="com.upc.WcmPlantillaFitxa"></upc:search>
+                          
+                        </div>
+                      </li>
+                    </ul>        
+                  </div>
+                </div>
+                
+                <div id="navbar-collapse-info" class="navbar-collapse collapse navbar-info format-lletra-upc">        
+                  <ul class="nav navbar-nav navbar-right info-position">          
+                    <li>
+                      <span class="contacte">
+                        <a href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/contacte" target="_blank" onclick="window.open(this.href,this.target,'width=750,height=950,resizable=yes,scrollbars=yes');return false">Contacte</a>
+                      </span>
+                    </li>
+                    <li>
+                      <span class="enllacPortal">
+                        <a href="http://directori.upc.edu/directori/" target="_blank" onclick="window.open(this.href,this.target,'width=750,height=550,resizable=yes');return false">Directori UPC</a>
+                      </span>
+                    </li>
+                  </ul>    
+                </div>        
+                <!-- /.nav-collapse -->
+              </div>
+              <!-- /.container-fluid -->
+            </div>
+          </div>
+        </div>
+        
+        <div class="row no-scroll-bar">
+          <div class="col-vxs-12 col-sm-7 col-md-7 col-lg-8">
+            <div id="navbar-collapse-portal" class="navbar-collapse collapse navbar-portal format-lletra-upc">        
+              <ul class="nav navbar-nav">
+                <li>
+                  <span class="enllacPortalFirst portal-UPC">
+                    <a href="/Portal/PDI/">Portal PDI</a>
+                  </span>
+                  
+                </li>
+                <li>
+                  <span class="enllacPortal">  
+                    <a href="/Portal/Gestor/">Portal gestor/a</a>
+                  </span>
+                </li>  
+                <li>
+                  <span class="enllacPortal enllacPortalLast">
+                    <a href="/Portal/BEC/">Portal beques grau/màster</a>
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>  
+        </div>
+        
+        <!-- STATUS BAR ESTÁTICA -->
+        <div class="navbar navbar-default navbar-UPC" role="navigation">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <button class="navbar-toggle collapsed navbar-toggle-home" data-target="#navbar-collapse-menu" data-toggle="collapse" type="button">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand home" href="${wcm.createLink(path:'index')}">Inici</a>
+            </div>
+            <div id="navbar-collapse-menu" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li>                    
+                  <a class="Informacio_General" href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General">Informació General</a>
+                </li>
+                <li>                    
+                  <a class="Raco_Personal" href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Raco_Personal">Racó Personal</a>
+                </li>
+              </ul>   
+              <!-- Part dreta: usuari, desconnexió -->
+              <ul class="nav navbar-nav navbar-right format-lletra-upc">
+                <li class="active">
+                  <g:if test="${wcm.loggedInUserName().encodeAsHTML()}">            
+                    <span class="login-UPC"> ${wcm.loggedInUserName().encodeAsHTML()} </span>
+                  </g:if>
+                </li>
+                <li>
+                  <span class="logout-UPC"> <g:link controller="logout">Desconnecta</g:link></span>
+                </li>
+              </ul>
+            </div>
+            <!-- /.nav-collapse -->
+          </div>
+          <!-- /.container-fluid -->
+        </div>
+        <!-- ************ FIN top-nav ************ -->      
+
+        <!-- ************ INI breadCrumb-slider-bar ************ -->           
+        <div class="breadCrumb">   
+          <!-- Migas de pan -->    
+          <div> <b>Sou a <span class="breadCrumbSeparator firstSeparator">&raquo;</span> </b><a href="/Portal/PAS/index"><span class="breadCrumbItem">Inici</span></a> <span class="breadCrumbSeparator">&rsaquo;</span><a href="/Portal/PAS/index/Informacio_General"><span class="breadCrumbItem">Informació General </span></a> <span class="breadCrumbSeparator">&rsaquo;</span><span class="breadCrumbLastItem">${node.title.encodeAsHTML()}</span></div>            
+          <!-- Título de la página -->
+          <h1 class="firstHeading"><span></span>
+            ${node.title.encodeAsHTML()}
+          </h1>
+        </div>
+        <!-- ************ FIN breadCrumb-slider-bar ************ -->
+        
+      </div>    
+      
+      <!-- Rejilla con el contenido principal -->
+      <div class="fit-column weceem-tmpl">
+        <div class="row no-scroll-bar">    
+          
+          <div class="col-xs-12 col-vxs-4 col-sm-4 col-md-4 col-lg-3 row-margin-bottom40" >
+            <!-- Título de la opción de menú seleccionada -->
+            <div id="main" class="menuPosicio">
+              <div >${node.title.encodeAsHTML()}</div>
+            </div>
+            <!-- Menú lateral -->
+            <div id="quadreMenu_main" class="quadreMenu">   
+              <div id="Menu0" name="Menu0" title="Menú" class="dijitTitlePane">
+                <g:if test="${params.desplegableSelected.toString().equals('El-PAS-a-la-UPC')}">
+                  <div id="Menu" name="Menu0" class="dijitTitlePaneTitleSelected" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/El-PAS-a-la-UPC'" >      
+                </g:if>
+                <g:else>
+                   <div id="Menu" name="Menu0" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/El-PAS-a-la-UPC'" >      
+                </g:else>     
+                     <span class="dijitTitlePaneTextNode">
+                       <a href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/El-PAS-a-la-UPC">El PAS a la UPC
+                       </a>
+                     </span>    
+                  </div>
+              </div>
+                      
+              <div id="Menu1" name="Menu1" title="Menú" class="dijitTitlePane">
+                <g:if test="${params.desplegableSelected.toString().equals('Sistema-retributiu')}">
+                  <div id="Menu" name="Menu1" class="dijitTitlePaneTitleSelected" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/Sistema-retributiu'" >      
+                </g:if>
+                <g:else>
+                  <div id="Menu" name="Menu1" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/Sistema-retributiu'" >      
+                </g:else>  
+                    <span class="dijitTitlePaneTextNode">
+                      <a href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/Sistema-retributiu">Sistema Retributiu
+                      </a>
+                    </span>    
+                  </div>
+              </div>
+                              
+              <div id="Menu2" name="Menu2" title="Menú" class="dijitTitlePane">
+                <g:if test="${params.desplegableSelected.toString().equals('Permisos')}">
+                  <div id="Menu" name="Menu2" class="dijitTitlePaneTitleSelected" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/Permisos'" >      
+                </g:if>
+                <g:else>
+                  <div id="Menu" name="Menu2" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/Permisos'" >      
+                  </g:else>  
+                    <span class="dijitTitlePaneTextNode">
+                      <a href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/Permisos">Permisos, llicències, reduccions jornada i excedències
+                      </a>
+                    </span>    
+                  </div>
+              </div>                  
+                  
+              <div id="Menu3" name="Menu3" title="Menú" class="dijitTitlePane">
+                <g:if test="${params.desplegableSelected.toString().equals('Calendari-laboral-jornada')}">
+                  <div id="Menu" name="Menu3" class="dijitTitlePaneTitleSelected" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/Calendari-laboral-jornada'" >      
+                </g:if>
+                <g:else>
+                  <div id="Menu" name="Menu3" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/Calendari-laboral-jornada'" >      
+                </g:else>  
+                    <span class="dijitTitlePaneTextNode">
+                      <a href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/Calendari-laboral-jornada">Calendari laboral, jornada i horaris
+                      </a>
+                    </span>    
+                  </div>
+              </div>
+                                              
+              <div id="Menu4" name="Menu4" title="Menú" class="dijitTitlePane">
+                <g:if test="${params.desplegableSelected.toString().equals('Relacions-laborals')}">
+                  <div id="Menu" name="Menu4" class="dijitTitlePaneTitleSelected" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/Relacions-laborals'" >      
+                  </g:if>
+                  <g:else>
+                    <div id="Menu" name="Menu4" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/Relacions-laborals'" >      
+                  </g:else>  
+                      <span class="dijitTitlePaneTextNode">
+                        <a href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/Relacions-laborals">Relacions laborals
+                        </a>
+                      </span>    
+                    </div>
+              </div>
+                                                      
+              <div id="Menu5" name="Menu5" title="Menú" class="dijitTitlePane">
+                <g:if test="${params.desplegableSelected.toString().equals('Seguretat-social')}">
+                  <div id="Menu" name="Menu5" class="dijitTitlePaneTitleSelected" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/Seguretat-social'" >      
+                </g:if>
+                <g:else>
+                  <div id="Menu" name="Menu5" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/Seguretat-social'" >      
+                </g:else>  
+                    <span class="dijitTitlePaneTextNode">
+                      <a href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/Seguretat-social">Seguretat social
+                      </a>
+                    </span>    
+                  </div>
+              </div>
+                                                              
+              <div id="Menu6" name="Menu6" title="Menú" class="dijitTitlePane">
+                <div id="Menu" name="Menu${i}" class="dijitTitlePaneTitle" onclick="parent.location='https://espaipersonal.upc.edu/irj/portal/PAS_FORMACIO'" >      
+                  <span class="dijitTitlePaneTextNode">
+                    <a href="https://espaipersonal.upc.edu/irj/portal/PAS_FORMACIO">Formació
+                    </a>
+                  </span>    
+                </div>
+              </div>
+                                                              
+              <div id="Menu7" name="Menu7" title="Menú" class="dijitTitlePane">
+                <g:if test="${params.desplegableSelected.toString().equals('Mobilitat')}">
+                  <div id="Menu" name="Menu7" class="dijitTitlePaneTitleSelected" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/Mobilitat'" >      
+                </g:if>
+                <g:else>
+                  <div id="Menu" name="Menu7" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/Mobilitat'" >      
+                </g:else>
+                    <span class="dijitTitlePaneTextNode">  
+                      <a href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/Mobilitat">Mobilitat
+                      </a>
+                    </span>    
+                  </div>
+              </div>
+                          
+            </div>
+            <!-- Fin Menú lateral -->
+          </div>         
+          
+          <div class="col-xs-12 col-vxs-8 col-sm-8 col-md-8 col-lg-9 row-margin-top-col">
+            <div id="paginaDesplegable" class="fit-column2left fit-column content-movil">
+              <wcm:content />
+            </div>
+          </div>          
+        </div>  
+        
+      </div>
+    
+    </div>
+    <!-- Pie de página -->
+    <!-- ************ INI bottom-nav ************ -->
+    <div class="footer">
+      <div class="container">
+        <div class="fit2container">      
+          <div class="row no-scroll-bar">          
+            <div class="col-xs-12 col-footer-9 col-vxs-9 col-sm-9 col-md-9 col-lg-9" >
+              <p class="footer-text">Vicegerència de Personal i Organització</p>
+              <p class="footer-text">&copy; <a href="http://www.upc.edu">UPC</a>. Universitat Politècnica de Catalunya <span>●</span> BarcelonaTech</p>           
+            </div>        
+            <div class="col-xs-12 col-footer-3 col-vxs-3 col-sm-3 col-md-3 col-lg-3 row-margin-top-peu">
+              <div class="accessibilitat-container">
+                <a class="footer-text" href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/accessibilitat" target="_blank" onclick="window.open(this.href,this.target,'width=1100,height=950,resizable=yes,scrollbars=yes');return false">Accessibilitat</a>
+                <a class="footer-text" href="#top"><img alt="Amunt" src="${wcm.createLinkToFile(path:'images/icons/amunt.gif')}" /></a>                        
+              </div>
+            </div>
+          </div>     
+        </div>    
+      </div>
+    </div>    
+    <!-- ************ FIN bottom-nav ************ -->    
+  </body>
+  
+</html>
