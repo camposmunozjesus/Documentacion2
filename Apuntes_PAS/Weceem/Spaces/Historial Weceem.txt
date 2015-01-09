@@ -200,6 +200,8 @@ PAS_20141124_0840_merlot: CPSEG antes de cambiar el menú de la izquierda. Para p
 						  estático.
 PAS_20141126_1255_merlot: Se procede a eliminar todas las cargas de widgets.
 PAS_20141203_0900_merlot: CPSEG.
+
+PAS_20150109_1430_merlot: No es bueno lo que hay dentro, pero los templates están adaptados para funcionar con la aplicación IniciPDIPAS.
 							
 ----------------------
 ARREGLOS CÓDIGO GROOVY
