@@ -542,6 +542,28 @@ Referencia: http://groovy.codehaus.org/Operators
 
 
 <LIST>************************************************************************************************************************************************
+------
+LISTAS
+------
+Cuando nos salimos del rango de la lista nos devuelve como elemento el NULL, no hace como Java que nos da un java.lang.ArrayIndexOutOfBoundsException.
+
+Cuando le ponemos un índice negativo empieza a retroceder, es decir, el elemento -1 es el último, el -2 el penúltimo.
+
+Ejemplo:
+	def listPAS = ['A1','A2','A3','A4','B1','B2','B3','B4']
+	
+	def index = 0
+	
+	//Dará el último elemento
+	println listPAS[index-1]	---> B4
+	
+	//Dará el penúltimo elemento
+	println listPAS[index-2]	---> B3
+	
+	//No fallará peró dará un null
+	println listPAS[11]			---> null (Pero NO da Excepción)
+
+
 -------------------------
 MÉTODO FIND() / FINDALL()
 -------------------------
