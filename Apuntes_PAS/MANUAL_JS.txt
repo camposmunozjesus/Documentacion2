@@ -21,6 +21,13 @@ Para evitar sobrecargar la memoria, lo más normal es meter estos métodos en pr
 por lo tanto no hace falta tener uno para cada objeto.
 
 
+------------------------------------
+CONSEGUIR PROPIEDADES (URL, ETC ...)
+------------------------------------
+var pathname = window.location.pathname; // Returns path only
+var url      = window.location.href;     // Returns full URL 
+
+
 ---------------------------------------------------
 LLAMADAS A PROPIEDADES DE OBJETOS QUE SON FUNCIONES
 ---------------------------------------------------

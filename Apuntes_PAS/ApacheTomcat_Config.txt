@@ -1,0 +1,38 @@
+APACHE TOMCAT - CONFIGURACIÓN
+=============================
+<WINDOWS>************************************************************************************************************************************************
+--------------
+CAMBIAR PUERTO
+--------------
+"D:\apache-tomcat-7.0.57\conf" archivo "server.xml"
+
+    <Connector port="8080" protocol="HTTP/1.1"   ---> Cambiar el puerto 8080 por el que toque.
+               connectionTimeout="20000"
+               redirectPort="8443" />
+-------------------
+GESTIÓN DE USUARIOS
+-------------------
+Para la gestión de usuarios hay que ir a la carpeta "D:\apache-tomcat-7.0.57\conf" y modificar el archivo "tomcat-users.xml".
+
+Un ejemplo sería:
+	<role rolename="manager-gui"/>
+	<role rolename="role1"/>
+	<user username="tomcat" password="tomcat" roles="admin,manager-gui"/>
+	<user username="both" password="tomcat" roles="tomcat,role1"/>
+	<user username="role1" password="tomcat" roles="role1"/>
+	
+Donde el usuario "tomcat" sería administrador.
+
+<LINUX>**************************************************************************************************************************************************
+--------------
+
+-------------------------------------------------------
+
+
+*********************************************************************************************************************************************************
+------------------------------
+Creación:	14-01-2015
+
+Jesús Campos Muñoz
+jesus.campos@upc.edu
+------------------------------

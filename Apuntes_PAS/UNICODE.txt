@@ -2,15 +2,15 @@ UNICODE
 =======
 
 à -> \u00e0
-á -> \u00e1
-é -> \u00e9
+á -> \u00e1	&aacute;
+é -> \u00e9	&eacute;
 è -> \u00e8
 È -> \u00c8
-í -> \u00ed
+í -> \u00ed	&iacute;
 ï -> \u00cf
 ò -> \u00f2
-ó -> \u00f3
-ú -> \u00fa
+ó -> \u00f3 &oacute;
+ú -> \u00fa ¬uacute;
 ü -> \u00fc
 
 Í -> \u00cd

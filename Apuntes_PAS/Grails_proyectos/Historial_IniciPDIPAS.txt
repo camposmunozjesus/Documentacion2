@@ -1,0 +1,4 @@
+HISTORIAL INICIPDIPAS
+=====================
+IniciPDIPAS_20150115_1000:
+IniciPDIPAS_20150115_1415: Funciona bien. Es una cpseg antes de modificar los dominios.

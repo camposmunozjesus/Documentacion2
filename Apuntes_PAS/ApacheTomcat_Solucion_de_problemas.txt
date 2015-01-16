@@ -14,7 +14,7 @@ Hay que ir al fichero ubicado en \webapps\manager\WEB-INF\web.xml y modificar:
     </multipart-config>
 	
 	
-******************************************************************************************************************************************************
+*******************************************************************************************************************************************************
 ---------------------------------------------
 SUBIR APLICACIÓN GRAILS (WAR) A APACHE TOMCAT
 ---------------------------------------------
@@ -33,7 +33,7 @@ Para entrar en la direción, si el archivo WAR se llama "prueba-0.1.war", la tra
 para acceder manualmente a donde se desee.
 
 	
-******************************************************************************************************************************************************
+*******************************************************************************************************************************************************
 ---------------
 INSTALAR WECEEM
 ---------------
@@ -83,6 +83,34 @@ Si al crear el WAR hay una base de datos indicada diferente a la de weceem.prope
 A veces si el PgAdmin de PostgreSQL está siendo usado, o bien la base de datos no ha sido arrancada el mensaje más habitual será problema con el TransactionManager.
 
 
-
-
+*******************************************************************************************************************************************************
+-------------------------------------------------------
+PROBLEMAS CON java.lang.OutOfMemoryError: PermGen space
+-------------------------------------------------------
+Generalmente este problema se soluciona añadiendo a la variable JAVA_OPTS (líneas 179 y 184 aprox.) lo siguiente:
+	-Xmx512m -XX:MaxPermSize=125m
 	
+Quedando más o menos:
+	set "JAVA_OPTS=%JAVA_OPTS% %LOGGING_CONFIG%" -Xmx512m -XX:MaxPermSize=125m
+
+	if not "%LOGGING_MANAGER%" == "" goto noJuliManager
+	set LOGGING_MANAGER=-Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager 
+	:noJuliManager
+	set "JAVA_OPTS=%JAVA_OPTS% %LOGGING_MANAGER%" -Xmx512m -XX:MaxPermSize=125m
+
+Esto debe zanjar el tema. Pero si sigue fallando, en la ejecución, por ejemplo, en lugar del despliegue, cuando se dio esta situación el problema fue
+debido a que se estab utilizando un JDK y un JRE de 64 bits. Al pasar a un JDK y JRE de 32 bits todo se solucionó. Seguramente con el JRE basta.
+	
+
+*******************************************************************************************************************************************************
+----------------------------------------------------------------------------------------------------
+PROBLEMAS CON javax.xml.ws.soap.SOAPFaultException: None of the policy alternatives can be satisfied
+----------------------------------------------------------------------------------------------------
+Problema sucedido con la aplicación RP. En el momento de conectarse con el web service y perdir el archivo daba el siguiente error:
+	2015-01-14 12:25:46,589 [http-bio-8090-exec-2] ERROR rp.RebutNominaController  - javax.xml.ws.soap.SOAPFaultException: None of the policy alternatives can be satisfied.
+
+Este problema sucedía en un Tomcat desplegado pero no en el entorno de Grails.
+
+SOLUCIÓN:
+---------
+Copiar en la carpeta "lib" del Tomcat el archivo jar "jaxws-rt-2.1.4.jar" contenido en "D:\apache-tomcat-7.0.57\webapps\RP\WEB-INF\lib".

@@ -345,6 +345,12 @@ Ejemplo:
 Se puede encontrar más información en: http://docs.oracle.com/javase/tutorial/essential/environment/sysprop.html
 
 
+----------------------------------
+CONOCER EL NOMBRE DE LA APLICACIÓN
+----------------------------------
+appName = grails.util.Metadata.current.'app.name'
+
+
 ******************************************************************************************************************************************************
 --------------------------------
 TRADUCIR CÓDIGOS A DESCRIPCIONES

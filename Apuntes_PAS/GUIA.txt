@@ -1,0 +1,8 @@
+GUÍA PARA ENCONTRAR PROYECTOS Y SOLUCIONES
+==========================================
+
+Utilizar templates con texto en formato HTML: PruebasBasicas2 (C:\Grails). View: enviarMailTestA.
+
+Cambiar puero Apache Tomcat: ApacheTomcat_Config
+
+Gestionar cuentas de usuarios Apache Tomcat: ApacheTomcat_Config

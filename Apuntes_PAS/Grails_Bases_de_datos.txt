@@ -767,3 +767,40 @@ Para ejecutarla directamente:
 	def resultList2 = DataTestOne.where {
 		nom == 'Carlos'
 	}.find()
+
+******************************************************************************************************************************************************
+----------------------------
+CONTAR EL TOTAL DE ELEMENTOS
+----------------------------
+Para poder utilizarlo hay que declarar params.max:
+		def resultList 
+		params.max=2
+		
+		def query = {
+			and{
+				eq("space", spaceId)
+				ilike("aliasuri", "%"+ params.query +"%")
+				'in'("type", allowedTypes)	
+			}
+			
+		}
+		
+		//Carga de las coincidencias de la búsqueda
+		resultList = WcmContent.createCriteria().list(params,query)
+		def results = resultList.getTotalCount()
+		
+El siguiente código fallará:
+		def resultList 
+		
+		def query = {
+			and{
+				eq("space", spaceId)
+				ilike("aliasuri", "%"+ params.query +"%")
+				'in'("type", allowedTypes)	
+			}
+			maxResults(2)
+		}
+		
+		//Carga de las coincidencias de la búsqueda
+		resultList = WcmContent.createCriteria().list(query)
+		def results = resultList.getTotalCount()
