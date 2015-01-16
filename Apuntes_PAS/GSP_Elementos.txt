@@ -168,7 +168,8 @@ Barra que se incluye al final de la tabla y permite paginar. Si queremos paginar
 	
 	Donde "funcioTotal" es el total de elemento de la consulta, que se podría lograr con: (código groovy) def funcioTotal =  Lloc.countByNomAndPrimerCognomAndSegonCognom( params.idNom,params.idCognom1,params.idCognom2 )
 
-	
+NOTA:
+* Si el método al que redirige el TAG g:paginate tiene la restricción de POST o GET, NO FUNCIONARÁ !!! <-----------------------------------------------
 	
 ---------------------------------------
 COLUMNA REORDENABLE - G:SORTABLE COLUNM
@@ -298,3 +299,16 @@ Listar únicamente el nombre del controlador:
 	<li class="controller"><g:link controller="${c.logicalPropertyName}">${c.name}</g:link></li>
 </g:each>	
 ******************************************************************************************************************************************************
+--------------------
+FORMULARIOS - G:FORM
+--------------------
+La traducción de un g:form a HTML para poder ser utilizado en render es:
+	<g:form name="myForm" action="index2">
+		<g:actionSubmit  action="index2" value="index2" />
+	</g:form>
+	
+Equivale a:
+					APP		Controller	Closure
+	<form action="/IniciPDIPAS/test01/index2" method="post" name="myForm" id="myForm">
+		<input name="_action_index2" value="Nombre_del_botón" type="submit">
+	</form>

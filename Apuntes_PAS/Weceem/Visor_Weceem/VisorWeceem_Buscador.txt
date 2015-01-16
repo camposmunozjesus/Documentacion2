@@ -1,0 +1,34 @@
+VISOR WECEEM - BUSCADOR
+=======================
+Instrucción para capturar el buscador del template del CMS Weceem y reemplazarlo por su equivalente para ser utilizado en render:
+	if(webPage.contains("<upc:search max=\"15\" eraseplaceholder=\"no\" placeholder=\"Cercar...\" types=\"com.upc.WcmPlantillaFitxa\"></upc:search>")){
+		webPage = webPage.replace("<upc:search max=\"15\" eraseplaceholder=\"no\" placeholder=\"Cercar...\" types=\"com.upc.WcmPlantillaFitxa\"></upc:search>", "<form action=\"/IniciPDIPAS/searcher/search\" method=\"post\"><input name=\"query\" class=\"customSearchField\" placeholder=\"Cercar...\" onfocus=\"\" value=\"\" id=\"query\" type=\"text\"><input name=\"_action_search\" class=\"customSearchButton\" value=\"Cerca\" type=\"submit\"></form>")
+	}
+Cómo se traduce el buscador original para poder utilizarlo con el render.
+
+Buscador original que redirecciona a melnik: (código para la instrucción render)
+	"<form action=\"searcher\" method=\"post\"><input name=\"query\" class=\"customSearchField\" placeholder=\"Cercar...\" onfocus=\"\" value=\"\" id=\"query\" type=\"text\"><input name=\"submit\" class=\"customSearchButton\" value=\"Cerca\" id=\"submit\" type=\"submit\"></form>"
+
+Traducido, debido  que render NO interpreta g:form, etc:
+	"<form action=\"/IniciPDIPAS/searcher/search\" method=\"post\"><input name=\"query\" class=\"customSearchField\" placeholder=\"Cercar...\" onfocus=\"\" value=\"\" id=\"query\" type=\"text\"><input name=\"_action_search\" class=\"customSearchButton\" value=\"Cerca\" type=\"submit\"></form>"
+
+En un futuro se debe introducir el comentario <!--Buscador--> en el template en lugar de introducir la etiqueta wcm. Si se hace así, entonces cuando se
+utilice el visor original de Weceem no tendremos buscador.
+
+--------------------------------------------
+DESARROLLO DEL BUSACDOR PROPIO GROOVY/GRAILS
+--------------------------------------------
+Si buscamos: "index" ó "InDex" y tenemos como instrucció (además de restingir el espacio y el tipo)
+* ilike("aliasuri", "%"+ params.query +"%") dará las siguientes coincidencias:
+	[index, index2, index_noboot, index_nowidgets]
+	
+* ilike("aliasuri", "%"+ params.query +"%") dará las siguientes coincidencias:
+	[index]
+	
+*********************************************************************************************************************************************************
+------------------------------
+Creación:		15-01-2015
+				
+Jesús Campos Muñoz
+jesus.campos@upc.edu
+------------------------------

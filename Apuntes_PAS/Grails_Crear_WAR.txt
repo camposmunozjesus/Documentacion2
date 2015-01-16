@@ -7,6 +7,10 @@ Hay que ir a la línea de comandos y escribir:
 	test war
 y lo crea en la carpeta "target".
 
+Otras opciones son:
+	dev war
+	prod war
+
 ---------------------------------------------
 CREAR UN WAR PARA UN ENTORNO ESPECÍFICO/NUEVO
 ---------------------------------------------
