@@ -157,7 +157,7 @@ Matcher				Método groupCount()		Método size()
 
 
 ----------------------------------------
-NÚSQUEDA DE ELEMENTOS DENTRO DE UNA LIST
+BÚSQUEDA DE ELEMENTOS DENTRO DE UNA LIST
 ----------------------------------------
 Se utliza nombreLista.contains(String). 
 
@@ -637,3 +637,72 @@ Para Groovy:
 	
 Para más información sobre este tipo de situaciones consultar: Grails_Bases_de_datos.txt -> <ASPECTOS BÁSICOS>TEORÍA SOBRE LO QUE SE RECUPERA EN UNA CONSULTA - RECUPERAR NULL O NO
 Donde se puede ver qué es lo que se devuelve en una consulta a la base de datos.
+
+
+---------------------------------------------------
+ACCESO A CAMPOS DE UNA CLASE DE MANERA AUTOMATIZADA
+---------------------------------------------------
+En el caso de que una clase tenga un número elevado de campos y se deseen asignar de manera automática (con un bucle) se puede hacer lo siguiente:
+
+1er caso: Que los campos se llamen campo1, campo2, campos3, ... o nombreCampos1, nombreCampos2, nombreCampo3, ... es decir, que sean el mismo pero
+		  pero con un índice se puede utilizar un bucle for.
+		  
+		  Ejemplo de clase:
+			class ClaseEjemplo{
+				public int campo1, campo2, campo3, campo4
+			}
+			
+		  Código para acceder a los campos:
+			ClaseEjemplo c = new ClaseEjemplo()
+			for(int i=1; i=<4; i++){
+				c['campo'+i]=i*6
+			}
+			
+2do caso: Que los campos se llamen de maneras completamente diferentes. Primero se creará una lista con el nombre de los campos y luesgo se utilizará
+		  diche lista para recorrer los campos de la clase
+		  
+		  Ejemplo de clase:
+			class ClaseEjemplo{
+				public String nombre, dni
+				public int edad
+			}
+			
+		  Código para acceder a los campos:
+		    def l = ['edad', 'nombre', 'dni']
+			ClaseEjemplo c = new ClaseEjemplonew Persona(edad: 19, nombre: "jcm", dni: "45678980T")
+			l.each{
+				println c[it]
+						
+			
+-----------------
+CONSTRUIR OBJETOS
+-----------------
+Si tenemos la siguiente clase:
+	class Persona {
+		public String dni, nombre
+		public int edad
+		int serial
+	}
+	
+def p = new Persona(edad:12, nombre:"jesus", dni:"56342125R")
+
+
+Si hemos declarado la clase como:
+	class Persona {
+		public String dni, nombre
+		public int edad
+		int serial
+		
+	 (*)Persona(edad , dni, nombre){
+			this.edad = edad
+			this.dni = dni
+			this.nombre = nombre
+		}
+	}
+
+Se puede utilizar la manera tradicionalo bien:
+	def p = [  12, "jesus", "56342125R"] as Persona
+o bien:
+	Persona c = [edad:14, dni:"56342125R" , nombre:"jesus"]
+	
+Estas listas deben seguir el orden marcado en el constructor(*)
