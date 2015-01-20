@@ -2,3 +2,5 @@ HISTORIAL INICIPDIPAS
 =====================
 IniciPDIPAS_20150115_1000:
 IniciPDIPAS_20150115_1415: Funciona bien. Es una cpseg antes de modificar los dominios.
+IniciPDIPAS_20150116_1340: Tiene un buscador funcionando, en el que si la búsqueda únicamente se encuentra en los enlaces no muestra la página.
+IniciPDIPAS_20150119_1000: Funciona el buscador pero la imágenes NO las carga. Es la última antes de llamarse rrhh.
