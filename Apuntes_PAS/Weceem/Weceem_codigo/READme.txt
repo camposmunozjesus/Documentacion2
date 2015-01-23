@@ -85,6 +85,8 @@ WECEEM_Modificaciones_CSS.txt:
 	- Tamaños de tablas responsivas personalizados (Problema jumbotron en aplicación RP).
 	- Carrusel
 
+WECEEM_Solucion_problemas.txt:
+    - Access denied al entrar en cualquier pantalla de la aplicación.
 
 
 *****************************************************************************************************************************************************

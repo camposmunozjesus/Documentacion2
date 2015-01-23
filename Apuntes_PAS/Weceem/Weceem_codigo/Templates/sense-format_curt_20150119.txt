@@ -1,0 +1,13 @@
+<wcm:widget path="widgets/doctype-bootstrap"/>
+<html>  
+  <head>
+    <wcm:widget path="widgets/upc-head"/>
+    <!-- Actualment aquest Template es fa servir nomès pel Contacte i Accessibilitat -->
+    <link rel="stylesheet" href="${wcm.createLink(path:'css/contacte.css')}" type="text/css">
+  </head>
+  
+  <body>
+    <!-- Rejilla con el contenido principal -->
+    <wcm:content />
+  </body>  
+</html>
