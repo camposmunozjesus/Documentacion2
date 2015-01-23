@@ -1,0 +1,48 @@
+WECEEM - SOLUCIÓN DE PROBLEMAS
+==============================
+
+Al entrar a una determinada página:
+
+Access denied
+
+User [null] with roles [[ROLE_ANONYMOUS, USER_null]] does not have the permissions [[view]] to access content at [index] in space [Default]
+
+
+
+Faltaba descomentar del BootStrap.groovy:
+	//		ctx.wcmSecurityService.securityDelegate = [			
+//			getUserName : { ->
+//				def princ = springSecurityService.getPrincipal()
+//				if (princ instanceof String) {
+//					return null
+//				} else {
+//					return springSecurityService.getPrincipal()?.username
+//				}				
+//			},
+//			//com el principal no té email definit, posem username
+//			getUserEmail : { ->
+//				def princ = springSecurityService.getPrincipal()
+//				if (princ instanceof String) {
+//					return null
+//				} else {
+//					return springSecurityService.getPrincipal()?.username
+//				}	
+//			},
+//			getUserRoles : { ->
+//				springSecurityService.getAuthentication().getAuthorities() ?: ['ROLE_GUEST']				
+//			},
+//			getUserPrincipal : { ->
+//				springSecurityService.getPrincipal()						
+//			}
+//		]
+
+*****************************************************************************************************************************************************
+
+	
+*****************************************************************************************************************************************************
+------------------------------
+Creación:	21-01-2015
+
+Jesús Campos Muñoz
+jesus.campos@upc.edu
+------------------------------
