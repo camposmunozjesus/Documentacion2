@@ -15,8 +15,9 @@ class EditorController {
 	private static final log = LogFactory.getLog(this)
 	boolean debug = false
 	
-    def index() { 
-		redirect(action: "arbreContinguts")
+	def index(){
+		println "Entrando en index: "+new Date()
+		redirect(action: "edit")
 	}
 	
 	def arbreContinguts() {
@@ -131,11 +132,28 @@ class EditorController {
 	}
 	
 	def edit(){
-		println "EDITANDO CONTENIDO"
+		println "EDITANDO CONTENIDO"+new Date()+" "+params
+		try{
+			//Se recupera el archivo por su ID(único)
+			def archivo = WcmContent.findByIdentity(params.id.toLong())
+			
+			if(archivo){
+				//Llamar al editor
+				[initialValue: archivo.content]
+			}
+		}
+		catch(Exception e){
+			log.error("ERROR [controller:editor --- action:edit]:" +e)
+			println "ERROR [controller:editor --- action:edit]: "+e
+		}
+	}
+	
+	def save(){
+		println "Entrando en save: "+new Date()
 	}
 	
 	def delete(){
-		println "BORRANDO CONTENIDO "+new Date()+params
+//		println "BORRANDO CONTENIDO "+new Date()+params
 		try{
 			//Siempre habrá params.id (hasta el momento)
 			def children = WcmContent.findAllByParent(params.id.toLong())
