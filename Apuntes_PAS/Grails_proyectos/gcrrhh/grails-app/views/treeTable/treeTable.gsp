@@ -52,9 +52,9 @@
 			<thead>
 				<tr>
 					<th width="60%">Pàgina</th>
-					<th width="16%">Modificat per</th>
-					<th width="16%">Últim canvi</th>
-					<th width="8%">Accions</th>
+					<th width="17%">Modificat per</th>
+					<th width="17%">Últim canvi</th>
+					<th width="6%">Accions</th>
 				</tr>
 			</thead>
 			<tbody>

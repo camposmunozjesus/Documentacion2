@@ -21,8 +21,8 @@ class TreeTableController {
 //		ArrayList<WcmContent> allContent = new ArrayList<WcmContent>()
 		
 		def allContent = WcmContent.findAllBySpace(SPACE_ID)
-		println "TOTAL RESULTDOS: "+allContent.size()
-		println allContent.title
+//		println "TOTAL RESULTDOS: "+allContent.size()
+//		println allContent.title
 		
 		//Cada elemento que tenga parent = null siginifica que cuelga del árbol principal.
 		//Par cada uno de ellos buscamos sus descendientes (elementos que cuelgan de él).
