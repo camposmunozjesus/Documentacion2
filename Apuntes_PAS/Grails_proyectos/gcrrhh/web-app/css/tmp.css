@@ -1,0 +1,66 @@
+/* Separción del carrusel con respecto de las migas de pan */
+.breadCrumb .carousel{
+  margin-top: 5px;
+}
+
+#slide1 h1{
+  margin-bottom: 36px;
+}
+
+#slide2 h1{
+  margin-bottom: 130px;
+}
+
+#slide4 h1{
+  margin-bottom: 135px;
+}
+
+/* ************ Banners en el carrusel web ************ */
+.grup-banner{
+  margin-top: 15px;
+  margin-bottom: 0px;
+  text-align: center;
+
+}
+#myBannerWebCarousel{
+  display: none;    
+}
+@media(min-width: 680px){
+ #myBannerWebCarousel{
+  display: inherit;    
+  }
+  
+ .banner-carousel .grup-banner img{
+  padding-left: 15px;
+  padding-right: 15px;
+  max-width: 250px;
+  max-height: 65px;
+  margin:auto; /* Centra los elementos dentro de la columna */
+ }
+}
+
+.banner-carousel .carousel-control{
+  background-image: none;
+  width: 0%;
+  color: #007BC0;
+}
+@media(min-width: 700px){
+ .banner-carousel .carousel-control{
+  width: 5%;
+ }  
+}
+
+.banner-carousel .grup-banner a{
+  display: inline-block;
+}
+
+
+/* ************ Banners en el carrusel móvil ************ */
+#myBannerMovilCarousel{
+  display: inherit;    
+}
+@media(min-width: 680px){
+ #myBannerMovilCarousel{
+  display: none;    
+  }
+}

@@ -1,0 +1,1080 @@
+/* NAVBARs UPC */
+@media (min-width: 768px) {
+ .info-position{
+   margin-top:-57px;
+ }
+
+ .search-position{
+   margin-top: 33px;
+ }
+}
+
+.navbar-toggle-header
+{
+  float: none;
+}
+
+.logo-portal
+{
+  margin-top: 8px;
+}
+
+/* *** FORMATOS DE LETRA *** */
+ul.format-lletra-upc > li{
+  font: 0.9em verdana,arial,helvetica,sans-serif;
+}
+ul.format-lletra-upc > li > span > a:hover{
+  color: #428BCA;
+}
+
+.format-lletra-upc > ul > li{
+  font: 0.9em verdana,arial,helvetica,sans-serif;
+}
+.format-lletra-upc > ul > li > span > a:hover{
+  color: #428BCA;
+}
+
+/* *********************************************************************************** */
+/* *** LISTAS *** */
+/* Para que Informaci� general se ajuste a Inici en modo m�vil. */
+@media (max-width: 767px) {
+ .navbar-UPC ul li:first-child{
+   margin-top: -8px;
+ }
+}
+
+/* Elimina la sangr�a de la lista en las p�ginas con una o dos columnas desplegables */
+/* .columnas-dobles ul*/
+#paginaDesplegable ul
+{
+  margin-left: -27px;
+  margin-bottom: 8px;
+}
+/* Cuando estamos en la ficha de dos columnas en modo m�vil queremos letras m�s grandes y m�s espacios */
+@media (max-width: 768px){
+ /* .columnas-dobles ul > li */
+ #paginaDesplegable ul > li
+ {
+  font-size: 1.2em;
+  /* Espacios entre los elementos de la lista */
+  padding-top: 5px;
+  padding-bottom: 5px;
+ }
+}
+/* Lista de segundo nivel */
+@media (max-width: 768px){
+ /* .columnas-dobles ul > li > ul > li */
+ #paginaDesplegable ul > li > ul > li
+ {
+  font-size: 1em;
+  padding-top: 5px;
+  padding-bottom: 5px;
+ }
+}
+
+/* Referente a las p�ginas Info general Rac� pers */
+.ficha_inici ul
+{
+  margin-left: -25px;
+  
+}
+
+/* COL's HEIGHT */
+@media (min-width: 500px) {
+ .col-info-height
+ {
+   min-height: 180px;
+ }
+}
+
+/* *********************************************************************************** */
+/* *** ICONOS BARRA DE ESTADO *** */
+.home {
+  background: url(../images/icons/home_5.png) center left no-repeat;   
+  background-size: 30px 25px;
+  background-position: 6px center;
+  color: #333 !important;
+  padding-top: 7px !important;
+  padding-left: 40px !important;  
+  font: 1.1em "Trebuchet MS", arial, helvetica, sans-serif; /*11px*/
+  font-weight:bold;
+  opacity: 0.6;
+}
+@media (max-width: 767px){
+  .home{
+    /* margin-top: -10px; */
+    background-position: 0px 5px;
+    padding-left: 32px !important;
+    padding-top: 8px !important;
+  }
+}
+
+.Informacio_General {
+  background: url(../images/icons/info_general_3.png) center left no-repeat;
+  background-size: Auto Auto;
+  color: #333 !important;
+  padding-left: 32px !important;  
+  font: 1.1em "Trebuchet MS", arial, helvetica, sans-serif; /*11px*/
+  font-weight:bold;
+  opacity: 0.6;
+  margin-left: 25px;
+}
+@media (max-width: 767px) {
+  .Informacio_General {
+   
+    /* margin-top: -15px;*/
+      margin-left: 0px;
+  /* border-color: #DDD; */
+  border-top-style: solid;
+  border-width: 1px;
+  border-color: #DDD;
+border-top: 2px solid #DDD; /* porque si es un p�xel, en m�vil no s ve */
+  }
+}
+
+.Raco_Personal {
+  background: url(../images/icons/raco_personal.png) center left no-repeat;
+  background-size: 32px Auto;
+  color: #333 !important;
+  padding-left: 32px !important;  
+  font: 1.1em "Trebuchet MS", arial, helvetica, sans-serif; /*11px*/
+  
+  font-weight:bold;
+  opacity: 0.6;
+  /* color: #636363; */
+  margin-left: 25px;
+}
+@media (max-width: 767px) {
+  .Raco_Personal {
+      margin-left: 0px;
+  border-color: #DDD;
+  border-top-style: solid;
+  border-width: 1px;
+  }
+}
+
+.login-UPC {
+  /* background: url(../images/icons/login.png) center left no-repeat; */
+  background-size:  23px 23px;
+  position: relative;
+  display: block;
+
+  color: #007BBF;
+  padding-left: 25px !important;
+  font-size: 0.85em;
+  
+  padding-bottom: 9px;
+  padding-right: 15px;
+  padding-right-value: 15px;
+  padding-top: 10px;
+}
+@media (max-width: 767px) {
+  .login-UPC {
+  margin-top: -8px; /* Para que no se separe tanto de Raco_Personal */
+  border-color: #DDD;
+  border-top-style: solid;
+  border-width: 1px;
+  }
+}
+
+.logout-UPC {
+  background: url(../images/icons/logout.png) center left no-repeat;
+  background-size:  20px 20px
+  color: #007BBF;
+  padding-left: 25px !important;  
+  font-size: 0.85em;
+  position: relative;
+  display: block;
+  padding-bottom: 9px;  
+  /* padding-right: 50px; */ /* Desplaza los iconos a la izquierda */
+  padding-right-value: 15px;
+  padding-top: 10px;
+}
+
+@media (max-width: 767px) {
+  .logout-UPC {
+  border-color: #DDD;
+  border-top-style: solid;
+  border-width: 1px;
+  /* Corregir margen izquierdo del icono */
+  background-position: 2px;
+  }
+}
+
+/* *** ICONOS DE LA CABECERA *** */
+/* Podr�a ser el mismo que enllacPortal, pero se debe ajustar la distancia con el men� del Portal en modo m�vil */
+.enllacDirectori {
+    background-image: url(../images/icons/separador_2.png), url(../images/icons/icon_blank.gif);
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: left center, right center;
+    background-clip: border-box;
+    background-size: auto auto;
+    background-origin: padding-box;
+    display: block;
+    font-size: 0.85em;
+    padding: 4px 15px 0px 10px;
+    position: relative;  
+    margin-left: 10px;
+}
+@media (max-width: 767px) {
+  .enllacDirectori {
+      background: url(../images/icons/icon_blank.gif) no-repeat left center rgba(0, 0, 0, 0) !important;
+      padding: 4px 10px 0 25px !important;
+      border-color: #DDD;
+      border-top-style: solid;
+      border-width: 1px;  
+      margin-left: 0px;
+    /* para que en modo m�vil sea de un tama�o aceptable */
+  padding-bottom: 12px !important;
+  padding-top: 12px !important;
+  font-size: 1em;
+
+  }
+}
+
+.contacte {
+    background: url(../images/icons/help.png);
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: left 2px;
+    background-clip: border-box;
+    background-size: auto auto;
+    background-origin: padding-box;
+  
+    display: block;
+    font-size: 0.85em;
+    padding: 4px 0px 5px 25px;
+    position: relative;   
+}
+@media (max-width: 767px) {
+  .contacte {
+      background-position: left center;
+      border-color: #DDD;
+      border-top-style: solid;
+      border-width: 2px;
+      /* para que en modo m�vil sea de un tama�o aceptable */
+  padding-bottom: 12px !important;
+  padding-top: 12px !important;
+  font-size: 1em;
+  }
+}
+
+@media (max-width: 767px) {
+ .portal-UPC {
+    /* margin-top: -10px; */
+    border-color: #DDD;
+    border-top: 1px solid #DDD;
+    border-width: 1px;
+
+ }
+}
+
+.enllacPortal {
+    background-image: url(../images/icons/separador_2.png), url(../images/icons/icon_blank.gif);
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: left center, right center;
+    background-clip: border-box;
+    background-size: auto auto;
+    background-origin: padding-box;
+    display: block;
+    font-size: 0.85em;
+    padding: 4px 15px 0px 10px;
+    position: relative;  
+    margin-left: 10px;
+}
+@media (max-width: 767px) {
+  .enllacPortal {
+      background: url(../images/icons/icon_blank.gif) no-repeat left center rgba(0, 0, 0, 0) !important;
+      padding: 4px 10px 0 25px !important;
+      border-color: #DDD;
+      border-top-style: solid;
+      border-width: 1px;  
+      margin-left: 0px;
+    /* para que en modo m�vil sea de un tama�o aceptable */
+  padding-bottom: 12px !important;
+  padding-top: 12px !important;
+  font-size: 1em;
+
+  }
+}
+
+.enllacPortalFirst {
+    background: url(../images/icons/icon_blank.gif) no-repeat right center rgba(0, 0, 0, 0);
+    display: block;
+    font-size: 0.85em;
+    padding: 4px 15px 0px 0px !important;
+    position: relative;  
+    margin-left: -11px;  
+}
+@media (max-width: 767px) {
+  .enllacPortalFirst {
+      background: url(../images/icons/icon_blank.gif) no-repeat left center rgba(0, 0, 0, 0) !important;
+      padding: 4px 10px 0 25px !important;
+      border-color: #CCC;
+      border-top-style: solid;
+      border-width: 3px !important;
+      margin-left: 0px;   
+      margin-top: -8px;
+  /* para que en modo m�vil sea de un tama�o aceptable */
+  padding-bottom: 12px !important;
+  padding-top: 12px !important;
+  font-size: 1em;
+  }
+}
+
+/* *********************************************************************************** */
+/* *** ROW's MARGIN *** */
+/* *** TOP *** */
+/* Margen superior que se utiliza en los desplegables para separarlos del t�tulo/men�. */
+@media (max-width: 635px) {
+ .row-margin-top-col{
+  margin-top: -25px;
+ }
+}
+
+@media (max-width: 635px) {
+  .row-margin-top10
+  {
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 635px) {
+  .row-margin-top20-imagen
+  {
+    margin-top: 20px;
+  }
+  .row-margin-top20-descripcio
+  {
+    margin-top: 20px;
+  }
+}
+@media (max-width: 499px) {
+  .row-margin-top20-descripcio
+  {
+    margin-top: -5px;
+  }
+}
+
+/* *** BOTTOM *** */
+/* Margen inferior que se utiliza en la primera columna de desplegables en la ficha con dos columnas desplegables. Antes se usaba row-margin-bottom2 */
+.row-margin-bottom-col1{
+  margin-bottom: 10px
+}
+
+@media (max-width: 768px) {
+ .row-margin-bottom40 {
+     margin-bottom: 40px;
+  }
+}
+@media (max-width: 636px) {
+ .row-margin-bottom40
+ {
+   margin-bottom: 40px;
+ }
+}
+
+.row-margin-bottom-imagen
+{
+  margin-bottom: 20px;
+}
+@media (max-width: 450px)  {
+  .row-margin-bottom-imagen
+  {
+    margin-bottom: 10px;
+  }
+}
+
+.row-margin-bottom-descripcio
+{
+  margin-bottom: 20px;
+}
+@media (max-width: 450px)  {
+  .row-margin-bottom-descripcio
+  {
+   margin-bottom: 20px;
+  }
+}
+@media (min-width: 450px) and (max-width: 540px) {
+  .row-margin-bottom-descripcio
+  {
+   margin-bottom: 30px;
+  }
+}
+
+.row-margin-bottom-header{
+  margin-bottom: -12px;
+}
+@media (max-width: 768px) {
+ .row-margin-bottom-header{
+  margin-bottom: -20px;
+ }
+}
+
+/* Espacioes entre las filas que describen las noticias de la p�gina de Inici */
+.row-margin-bottom-descripcio-inici
+{
+  margin-bottom: 20px;
+}
+@media (max-width: 635px){
+ .row .row-margin-bottom-descripcio-inici:first-child
+ {
+   margin-top: -10px;
+ }
+  
+ .row-margin-bottom-descripcio-inici
+ {
+   margin-bottom: 30px;
+ }
+}
+
+/* Para ajustar el espacio entre la fila que contiene la imagen y el resto */
+.container-UPC .row .row-margin-bottom-header:first-child
+{
+    /* background-color: antiquewhite; */
+  margin-bottom: -12px;
+}
+@media (max-width: 768px) {
+ .container-UPC .row .row-margin-bottom-header:first-child{
+    /* background-color: antiquewhite; */
+  margin-bottom: -10px;
+ }
+}
+
+/* *********************************************************************************** */
+/* AJUSTES COLUMNAS Y CONTAINERS */
+/* Ajustar el contenido de la informaci�n (columna central) del men� de inici. Evitar una separaci�n excesiva entre men�s y contenido. */
+.fit-content{
+  margin-left: 15px;
+  margin-right: 5px;
+}
+@media (min-width: 636px) {
+ .fit-content{
+   margin-right: -30px;
+   margin-left: -15px;
+ }
+}
+
+/* Para la cabecera */
+@media (min-width: 768px) {
+ .fit-column-header
+ {
+  margin-right: -15px;
+ }
+}
+
+/* Hace desaparecer la barra de scroll horizontal */
+.no-scroll-bar{
+  margin-right: 0px !important;
+}
+
+@media (max-width: 636px) {
+ .no-scroll-bar{
+   margin-right: 0px;
+ }
+}
+
+/* Para ajustarse a la derechade la columna en la rejilla */
+.fit-column2right{
+  margin-right: -15px;
+}
+
+@media (min-width: 636px) {
+/* Para ajustarse a la derechade la columna en la rejilla */
+/* .fit-column2right{
+   margin-right: -15px;
+ } */
+/* Para ajustarse a la izquierda de la columna en la rejilla */
+ .fit-column2left{
+   margin-left: -15px;
+ }
+/* Para ajustarse a la derecha de la columna en la rejilla */
+ .fit-column
+ {
+  /* background-color: red; */
+   margin: 0 -15px;
+ }
+}
+
+/* Cuando estamos en modo m�vil para poder ajustarse a los m�rgenes derecho e izquierdo. Se usa en plantilla fitxa. */
+@media (max-width: 636px) {
+/* Para ajustarse a la izquierda de la columna en la rejilla */
+ .fit-column2left{
+   margin-left: -12px;
+ }
+/* Para ajustarse a la derecha de la columna en la rejilla */
+ .fit-column
+ {
+  /* background-color: red; */
+   margin-right: -15px;
+ }
+}
+
+@media (max-width: 635px) {
+ .content-movil{
+    margin-left: -8px !important;
+    margin-right: -12px !important;
+ }
+}
+
+/* *********************************************************************************** */
+/* *** T�TULO *** */
+/* Ajustar el t�tulo (el que est� con las migas de pan) a los laterales en modo m�vil */
+@media (max-width: 635px) {
+  .breadCrumb{
+  margin-right: 15px;
+  margin-left: 15px;
+ }
+}
+
+/* Muestra el t�tulo siempre en plantillas como Inici y Default sense men� */
+.tmpl-no-menu .breadCrumb h1.firstHeading {
+ display: block !important;  
+}
+
+/* Hace desaparecer el t�tulo que hay en las migas de pan */
+@media (max-width: 635px) {
+ .breadCrumb h1.firstHeading{
+    display: none;
+ }
+}
+
+/* Fichas de nivel 4 */
+/* Ajustar el t�tulo (el que est� debajo del men� desplegable) a los laterales en modo m�vil */
+.titulo-fitxa{
+  margin-top: 20px;
+  margin-bottom: -15px;
+  margin-right: -8px;
+  margin-left: -5px;
+}
+@media (min-width: 636px) {
+ .titulo-fitxa{
+   display: none;
+ }
+}
+
+/* General */
+/* T�tulo de la p�gina con degradado */
+h1.firstHeading {  
+  //border-color: #D9D9D9 !important;  
+  width: 100% !important;  
+  color: #4D4D4D !important;  
+  border-bottom: 1px solid #b2b2b2;
+  box-shadow: 0 6px 4px -4px rgba(0, 0, 0, 0.1);  
+  padding-bottom: 1px;  
+  font-family: Helvetica,Arial,Verdana,sans-serif;
+  font-size: 2.3em !important;  
+  font-weight: normal !important;  
+  position: relative !important;  
+  margin-right:152px !important;  
+  margin-top: 9px !important;
+  margin-bottom: 17px;
+}
+@media (max-width: 635px) {
+ h1.firstHeading{
+   font-size: 1.5em !important;
+ }
+}
+ 
+h1.firstHeading span{  
+  background: url(../images/gradient.png) repeat-x !important;  
+  position: absolute !important;  
+  display: block !important;  
+  width: 100% !important;  
+  height: 30px !important;
+}
+
+/* *** MIGAS DE PAN - BREADCRUMB *** */
+/* Hace desaparecer las migas de pan */
+@media (max-width: 635px) {
+ .breadCrumb > div{
+   display: none;
+ }
+}
+
+.breadCrumb{
+    margin-top: -3px;
+    font: 0.8em verdana,arial,helvetica,sans-serif;
+}
+@media (max-width: 767px) {
+  .breadCrumb{
+    font: 1em verdana,arial,helvetica,sans-serif !important;
+  }
+}
+
+.breadCrumbSeparator{
+  font-family: Arial,Helvetica,sans-serif !important;
+  font-variant: normal;
+  font-weight: normal;
+  font-size: 2.5em;
+  line-height: 1em;
+  font-size-adjust: none;
+  font-stretch: normal;
+  -moz-font-feature-settings: normal;
+  -moz-font-language-override: normal;
+  
+  font-style: normal;
+  color: #CCC;
+  position: relative;
+  top: 4px;
+  margin: 0px 5px;    
+}
+
+.firstSeparator
+{
+  margin-left: 0px;  
+}
+
+.breadCrumbItem
+{
+  color: #007BC0;
+   
+}
+
+.breadCrumbLastItem
+{
+  /* color: #E47D03; */
+}
+
+/* *********************************************************************************** */
+/* *** BUSCADOR *** */
+/* Elemento de b�squeda: cuadro de texto + bot�n */
+.customSearchButton{
+  color: #333;
+  background-color: #efefef;  
+  background-image: url(../images/standardGradient.png);  
+  background-repeat: repeat-x;  
+  border: 1px solid #b5bcc7;  
+  height: 23px;  
+  background: url(../images/icons/shadow.jpg) repeat-x scroll center bottom #FFFFFF;  
+  cursor: pointer;  
+  padding-left: 10px;
+  padding-right: 10px;
+  vertical-align: middle;  
+  border-radius:25px;
+  font: 0.8em verdana,arial,helvetica,sans-serif;
+  font-weight:bold;
+  opacity: 0.6;
+}
+@media (max-width: 767px) {
+  .customSearchButton{
+    border-radius: 8px;
+    height: 35px;
+    padding-left: 12px;
+    padding-right: 12px;
+    font: 0.9em verdana,arial,helvetica,sans-serif;
+  }
+}
+
+.customSearchField:focus {
+  /* min-width: 225px; */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  font: 0.8em verdana,arial,helvetica,sans-serif;
+}
+
+.customSearchField{
+  border: 1px solid #CCC;
+  margin: 3px 0px;
+  padding: 2px 5px 2px 2px;
+  font: 1em verdana,arial,helvetica,sans-serif;
+  background-color: #FCFCFC;
+  
+  margin-right: 5px;
+  height: 23px;
+  min-width: 180px;
+  vertical-align: middle;
+  padding-left: 10px;
+  border-radius: 8px;
+  font: 0.8em verdana,arial,helvetica,sans-serif;
+}
+@media (max-width: 767px) {
+  .customSearchField{
+    min-width: 230px;
+    height: 35px;
+    font: 0.9em verdana,arial,helvetica,sans-serif;
+  }
+
+  .columna-centrada{
+  /*background-color: red; */
+  width: 310px;
+  margin:auto; /* Eliminando esto �nicamente, se alinea o se centra la imagen */
+  /* border: 4px solid #DCDCDC; */
+  }
+  .columna-centrada-header{
+  /*background-color: red; */
+  width: 175px;
+  margin:auto; /* Eliminando esto �nicamente, se alinea o se centra la imagen */
+
+  }
+}
+@media (max-width: 315px) {
+  .customSearchField{
+    min-width: 200px;
+    height: 35px;
+    font: 0.9em verdana,arial,helvetica,sans-serif;
+  }
+  .columna-centrada{
+  /*background-color: red; */
+  width: 280px;
+  margin:auto; /* Eliminando esto �nicamente, se alinea o se centra la imagen */
+  /* border: 4px solid #DCDCDC; */
+  }
+}
+
+/* Eliminaci�n del buscador */
+/* Estilos para el widget sin buscador */
+@media (min-width: 768px){
+  .info-position-no-cercar {
+    margin-top: 5px;
+  }
+}
+
+@media (max-width: 767px){
+  .navbar-portal-no-cercar{
+    margin-right: -15px;
+  }
+}
+
+@media (min-width: 768px){
+  .navbar-portal-no-cercar{
+    margin-top: 6px;
+  }
+}
+
+@media (max-width: 767px) {
+  .columna-centrada-header-no-cercar{
+    /*background-color: red; */
+    width: 115px;
+    margin:auto; /* Eliminando esto �nicamente, se alinea o se centra la imagen */
+  }
+}
+
+/* P�gina de resultados del buscador: SIN UTILIZAR */
+.paginaBuscador{
+  margin-top: 15px;
+}
+@media (max-width: 767px){
+ .paginaBuscador{
+  margin-left: 5px;
+  margin-right: 5px;
+}
+}
+
+.tituloBuscador{  
+  margin-bottom: 5px;
+  font: 1.7em verdana, arial, helvetica, sans-serif;
+}
+
+.urlBuscador{  
+  margin-bottom: 10px;
+  color: #6D7D00;
+}
+
+.descripcionBuscador{  
+}
+
+.separadorBuscador{    
+  border: 1px solid #d9d9d9;
+  margin-bottom: -4px;
+  margin-top: -4px;
+}
+
+/* El primer resultado tenga borde superior */
+.resultadosBuscador:first-of-type{
+   border-top: 1px solid #d9d9d9;
+}
+
+.resultadosBuscador{
+  border-left: 1px solid #fff;   
+  border-right: 1px solid #fff;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  margin-top: 2px;
+  margin-bottom: 2px;  
+  padding-left: 10px;  
+  padding-top: 8px;  
+  padding-bottom: 8px;  
+  border-radius:0px;  
+}
+
+.resultadosBuscador:hover{
+  border-left: 1px solid #d9d9d9;   
+  border-right: 1px solid #d9d9d9;
+  border-top: 1px solid #d9d9d9;
+  border-bottom: 1px solid #d9d9d9;
+  background: #fcfcfc;  
+  border-radius:1px;
+}
+
+.resultadosBuscador a:hover{
+  /* text-decoration: none; */
+  color: #4e86b9!important;  
+}
+
+.resultadosBuscador a:link{
+  /* Link no visitado: OK #7bd8f6 */
+  color: #3a7bc0;  
+}
+
+.resultadosBuscador a:visited{
+ /* Link visitado: OK */
+  color: #5abbee;  
+}
+
+.resultadosBuscador a:active{
+  color: #c00092;  
+}
+
+/* PAGINATION */
+.paginateButtons {
+    padding-top:50px;
+    text-align: center; /* Eliminando esto aparecer� en la izquierda */
+}
+
+.paginateButtons a.nextLink{
+  margin-right: 0px;
+}
+
+.paginateButtons a {   
+  margin-right: 8px;
+    color: #007BC0 !important;
+    padding: 8px 16px;
+    border: 1px solid #D9D9D9 !important;
+    border-radius: 3px !important;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05) !important;
+    
+    font-size: 1.2em;
+    color: #333;
+    line-height: 1.5em;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+}
+@media (min-width: 768px){
+ .paginateButtons a {  
+    font-size: 1em;
+    padding: 4px 8px;
+ }  
+}
+
+.paginateButtons span {  
+    margin-right: 8px;
+
+    border: 1px solid #D9D9D9 !important;
+    border-radius: 3px !important;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05) !important;    
+    
+    background-color: #E5E5E5 !important;
+    color: #666 !important;    
+    
+    padding: 8px 16px;  
+    
+    font-size: 1.2em;
+    color: #333;
+    line-height: 1.5em;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+}
+@media (min-width: 768px){
+ .paginateButtons span {
+    font-size: 1em;
+    padding: 4px 8px;
+ }  
+}
+
+/* Controla la separaci�n de los botones de paginaci�n de una tabla */
+.table-responsive + .paginateButtons {
+   padding-top:0px !important;
+    padding-bottom: 15px !important;
+}
+
+/* *********************************************************************************** */
+
+/* P�GINAS SIN MEN� LATERAL: IMAGEN + DESCRIPCI�N */
+/* ********************************************************** */
+/* Estilos heredados y modificados */
+/* Descripci�n columnas p�gina Inici */
+/* En la p�gina de Inci �nicamente se aplicar� este tama�o de fuente */
+.fit-column2right .ficha_inici p{
+   font: 1em verdana,arial,helvetica,sans-serif;
+  margin-bottom: 7px; /* separa el la descripc�n de la barra de color */
+}
+
+.ficha_inici p {
+  border-bottom: 4px solid #dcdcdc;
+  padding-bottom: 3px; /* separa el t�tulo de la barra de color */
+  /* Fuente del t�tulo */
+  /* font: 1em verdana,arial,helvetica,sans-serif; */
+  font: 1.1em verdana,arial,helvetica,sans-serif;
+  margin-bottom: 3px; /* separa el la descripc�n de la barra de color */
+}
+
+.ficha_inici:hover p {
+  border-bottom-color: #007bc0;
+}
+.ficha_inici a {
+  color: #007bc0;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1.05em;
+}
+
+.ficha_inici a:hover {
+  color: #007bc0;
+  text-decoration: underline;
+}
+
+/* Texto descriptivo: texto de descripci�n de la p�gina Informaci� Genreal y Rac� Personal */
+.txt-descripcio
+{
+  /* text-align: justify; */
+  font-size:0.9em !important;  
+  border-bottom: medium none !important;
+  padding-top: 0px;
+  font-size: 11px;
+  /* Fuente de la descripci�n */
+  font: 0.65em verdana,arial,helvetica,sans-serif;
+  font-size: 11px;  
+}
+
+/* Justificar el texto de la p�gina de Inici */
+.weceem-tmpl .txt-descripcio
+{
+  text-align: justify;
+}
+
+/* Para centrar verticalmente el texto que est� sobre la imagen y que ocupa dos l�neas */
+@media (min-width: 500px) {
+ .long-cont2 {
+   top: 118px !important;
+ }
+}
+
+.recuadro{
+  width: 158px;
+  height: 158px;
+  margin:auto; /* Eliminando esto �nicamente, se alinea o se centra la imagen */
+  border: 4px solid #DCDCDC;
+}
+@media (max-width: 499px) {
+  .recuadro{
+    min-width: 258px;
+    min-height: 258px;
+   }
+
+   .imagen{
+    min-width: 258px;
+    min-height: 258px;
+   }
+  
+  .recuadro img{
+    min-height: 250px;
+    min-width: 250px;
+  }
+
+  .imagen img{
+    min-height: 250px;
+    min-width: 250px;
+  }
+  
+  .contenedor_1{
+    min-width: 250px;
+  }
+  
+  .contenedor_2 {
+    top: 225px !important;
+    min-width: 250px;
+  }
+}
+
+.recuadro img:hover {
+  border-color: #007bc0;
+  opacity: 0.6;
+}
+
+
+.imagen{
+  border-radius: 2000px;
+}
+
+.imagen{
+  /*background-color: red; */
+  width: 158px;
+  height: 158px;
+  margin:auto; /* Eliminando esto �nicamente, se alinea o se centra la imagen */
+  border: 4px solid #DCDCDC;
+}
+
+.imagen img {
+  border-radius: 200px;
+}
+
+.imagen img:hover {
+  border-color: #007bc0;
+  opacity: 0.6;
+}
+
+/* Texto y banda inferior superpuesta a la imagen */
+.contenedor_1{
+  height: 40px;
+  top: -40px;
+  background-color: #000;
+  position: relative;
+  opacity: 0.5;
+  margin-bottom: -40px;
+  width: 150px;  
+  display: none;
+}
+
+.contenedor_2 {
+    position: absolute;
+    top: 125px;
+    width: 150px;
+    text-align: center;
+    font: 1em verdana,arial,helvetica,sans-serif;
+  display: none;
+}
+
+/* Letra blanca que hay sobre el fondo negro */
+p.blanco {
+    font-size: 12px;
+    font-weight: bold;
+    color: #FFF;
+}
+@media (max-width: 499px) {
+ p.blanco {
+   font-size: 15px;
+ }
+}
+
+th {
+    background: url(../images/icons/shadow.jpg) repeat-x scroll center bottom #fff !important;
+}
+
+.imagen:hover
+{
+  border-color: #007BC0;
+}
+
+/* Iluminar borde de la imagen */
+.grup-info:hover .imagen
+{  
+  border-color: #007BC0;
+}
+/* Oscurecer imagen */
+.grup-info:hover .imagen img
+{
+  opacity: 0.6;
+}
+/* Iluminar la barra de la descripci�n */
+.grup-info:hover p {
+  border-bottom-color: #007bc0;
+}
+
+/* En la p�gina Rac� Personal, para ocultar las im�genes en modo m�vil cuando son muy grandes. */
+@media(max-width: 499px)
+{
+  #informacio_general_page .grup-info > div:first-child
+  {
+    display:none;
+  }
+}
