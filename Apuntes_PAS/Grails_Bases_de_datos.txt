@@ -495,7 +495,30 @@ Esto significa:
 		Es decir, el AND tiene dos condiciones, debe cumplirse "unitatOrganitzativa"=lista[i].codigo.toString() y luego, una de las dos situaciones
 		siguientes, o bien "formaOcupacio"!="CA" o "formaOcupacio"==NULL.
 
+		
+----------------------------------------------------------------------------------------
+TEORÍA SOBRE LO QUE SE RECUPERA EN UNA CONSULTA - RECUPERAR NULL O NO - (BD: POSTGRESQL)
+----------------------------------------------------------------------------------------
+			def children = WcmContent.findAllByParent(98568547) //esto NO existe en BD
+			if(children){
+				println "S"	
+			}else{
+			println "N" ---------->Se cumple
+			}
+			if(children==null){
+				println "Snull"
+			}else{
+			println "Nnull" ---------->Se cumple
+			}
+			
+Si se realiza un query y ...
+Si no encuentra nada:
+	N
+	Nnull
 
+Si encuentra algo:
+	S 
+	Nnull
 -----------------------------------------------
 RECUPERAR DATOS Y COMPROBAR SI SON NULOS/VACIOS
 -----------------------------------------------
