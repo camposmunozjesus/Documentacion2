@@ -139,7 +139,7 @@ class EditorController {
 			
 			if(archivo){
 				//Llamar al editor
-				[initialValue: archivo.content]
+				[initialValue: archivo.content, id: params.id]
 			}
 		}
 		catch(Exception e){
@@ -149,7 +149,23 @@ class EditorController {
 	}
 	
 	def save(){
-		println "Entrando en save: "+new Date()
+		println "Entrando en save: "+new Date()+params
+		try{
+			//Se recupera el archivo por su ID(único)
+			def archivo = WcmContent.findByIdentity(params.identifier.toLong())
+			
+			if(archivo){
+				//Llamar al editor
+				println "[controller:editor --- action:save]"+archivo.title
+				println params.myeditor
+				archivo.content = params.myeditor
+				archivo.save()
+			}
+		}
+		catch(Exception e){
+			log.error("ERROR [controller:editor --- action:save]:" +e)
+			println "ERROR [controller:editor --- action:save]: "+e
+		}
 	}
 	
 	def delete(){
