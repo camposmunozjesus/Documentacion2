@@ -1,0 +1,13 @@
+GSP - SELECT (COMBOBOX)
+=======================
+<g:select name="filtreTipusEspai" id="filtreTipusEspai" from="${tipusEspais.keySet()}" keys="${tipusEspais.values()}" value="${espaiId?:2711}" onChange="canviEspai()"/>
+
+	
+
+*****************************************************************************************************************************************************
+------------------------------
+Creación:		27-12-2014
+				
+Jesús Campos Muñoz
+jesus.campos@upc.edu
+------------------------------

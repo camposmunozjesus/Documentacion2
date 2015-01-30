@@ -1,0 +1,94 @@
+GRAILS - INSTALACIÓN Y CONFIGURACIÓN DE CAS SECURITY SPRING
+===========================================================
+ARCHIVO: BUILDCONFIG.GROOVY
+---------------------------
+Añadir en plugins{...}:
+	compile ":spring-security-core:1.2.7.3"
+Y hacer botón derecho -> Grails Tools -> Refresh depencies (Alt+G,R) para refrescar dependencias.
+
+Cuando se haya bajado este plugin incluir en el mismo apartado:
+	compile ':spring-security-cas:1.0.5'
+Y refrescar dependencias nuevamente.
+
+
+ARCHIVO: CONFIG.GROOVY
+----------------------
+Al final del archivo incluir:
+	// Added by the Spring Security Core plugin:
+	grails.plugins.springsecurity.userLookup.userDomainClassName = 'Security.SecUser'
+	grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'Security.SecUserSecRole'
+	grails.plugins.springsecurity.authority.className = 'Security.SecRole'
+	grails.plugins.springsecurity.securityConfigType = 'Annotation'
+	grails.plugins.springsecurity.rejectIfNoRule = false
+	grails.plugins.springsecurity.cas.active = true
+	grails.plugins.springsecurity.cas.sendRenew = false
+	grails.plugins.springsecurity.cas.serverUrlEncoding = 'UTF-8'
+	grails.plugins.springsecurity.cas.key = 'grails-spring-security-cas'
+	grails.plugins.springsecurity.cas.artifactParameter = 'ticket'
+	grails.plugins.springsecurity.cas.serviceParameter = 'service'
+	grails.plugins.springsecurity.cas.filterProcessesUrl = '/j_spring_cas_security_check'
+	
+Y luego para cada entorno (dev, test, prod) incluir:
+	grails.plugins.springsecurity.cas.loginUri = '/login'
+	grails.plugins.springsecurity.cas.serviceUrl = "http://localhost:8090/${grails.util.Metadata.current.'app.name'}/j_spring_cas_security_check"
+	grails.plugins.springsecurity.cas.serverUrlPrefix = 'https://cas.upc.edu/'
+	grails.plugins.springsecurity.cas.proxyCallbackUrl = "http://localhost:8090/${grails.util.Metadata.current.'app.name'}/secure/receptor"
+	grails.plugins.springsecurity.cas.proxyReceptorUrl = '/secure/receptor'
+	grails.plugins.springsecurity.cas.useSingleSignOut = 'true'
+	grails.plugins.springsecurity.logout.afterLogoutUrl ="https://cas.upc.edu/logout?url=http://localhost:8090/${grails.util.Metadata.current.'app.name'}"
+
+Suponiendo que tenemos antes de esto:
+	grails.serverURL = "http://localhost:8090/${grails.util.Metadata.current.'app.name'}"
+	
+Para los entornos hay que tener cuidado, ya que dev suele ser http y test y prod suelen ser https, por lo que podría darse el siguiente error:(en local)
+	grails.plugins.springsecurity.cas.loginUri = '/login'
+ (*)grails.plugins.springsecurity.cas.serviceUrl = "https://localhost:8090/${grails.util.Metadata.current.'app.name'}/j_spring_cas_security_check"
+	grails.plugins.springsecurity.cas.serverUrlPrefix = 'https://cas.upc.edu/'
+ (*)grails.plugins.springsecurity.cas.proxyCallbackUrl = "https://localhost:8090/${grails.util.Metadata.current.'app.name'}/secure/receptor"
+	grails.plugins.springsecurity.cas.proxyReceptorUrl = '/secure/receptor'
+	grails.plugins.springsecurity.cas.useSingleSignOut = 'true'
+ (*)grails.plugins.springsecurity.logout.afterLogoutUrl ="https://cas.upc.edu/logout?url=https://localhost:8090/${grails.util.Metadata.current.'app.name'}"
+Las líneas asteriscadas tiene error porque intentan acceder a localhost con https.
+
+
+OTRAS ACCIONES
+--------------
+Hay que incluir el dominio "Security" (SecRole, SecUser, SecUserSecRoles) y los controladores de "Security".
+
+Hay que copiar src/groovy/utils (BaseControler, Crypt, Database, FileUploader, Validation).
+
+Cogerlos de otros proyecto.
+
+Para que un controlador vigile el rol del usuario:
+* Debe extender de BaseControler
+* Debe tener:
+	import utils.BaseControler
+	import grails.plugins.springsecurity.Secured
+	@Secured(['ROLE_USER'])
+* En el action en el que se accede al controlador deben ejecutarse las siguientes instrucciones:
+	this.populateUserName()
+	this.doSecurityCheck()
+
+
+A TENER EN CUENTA
+-----------------
+Hay que tener en cuenta que la conexión con la base de datosse la correcta y no con PostgreSQL.
+
+
+PROBLEMAS:
+----------
+* Problema con una redirección, en la que es curioso que aparece el nombre de la aplicación RP. Hay que comentar en Basecontroler.groovy (action
+  doSecuritycheck):
+	if(this.getRealId()==0)
+	{
+		redirect (uri: '/redirectRP', params:[controller:params.controller])
+	}
+	
+	
+*********************************************************************************************************************************************************
+------------------------------
+Creación:	27-01-2015
+
+Jesús Campos Muñoz
+jesus.campos@upc.edu
+------------------------------
