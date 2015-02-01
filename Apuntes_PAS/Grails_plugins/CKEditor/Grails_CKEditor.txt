@@ -1,5 +1,19 @@
 ﻿GRAILS - CKEDITOR PLUGIN
 ========================
+----------------
+LINKS DE INTERÉS
+----------------
+Siempre se habla de la versión 4.4.1.0, excepto cuando se indique lo contrario.
+Sitio web de la versión 4 del plugin, con:		http://docs.ckeditor.com/#!/guide/dev_dialog_add_file_browser
+Trata los estilos del CKEditor:					http://get-simple.info/wiki/how_to:editor_configuration_custom_files
+ejemplos. Muy completo e interesnate.
+*Links que tratan cómo subir las imágenes des el editor.Con el segundo link se soluciona todo. 
+Configuración básica para poder subir imágenes:	http://docs.cksource.com/CKEditor_3.x/Developers_Guide/File_Browser_%28Uploader%29#Basic_Configuration
+Cómo permitir la subida de imágenes desde el:	http://ckeditor.com/forums/Support/Having-problems-integrating-Filemanager
+CKEditor
+
+
+*****************************************************************************************************************************************************
 ------------------------------
 INSTALACIÓN DE CKEDITOR PLUGIN
 ------------------------------
@@ -14,10 +28,98 @@ grails.project.dependency.resolution = {
 }
 
 
+<CONFIGURACIÓN>**************************************************************************************************************************************
+------
+INICIO
+------
+Para poder utilizar el CKEditor hay que poner en la página GSP el siguiente código:
+	<head>
+    <	ckeditor:resources/>
+	</head>
+	<body>
+		<form action="texto2">
+			<ckeditor:editor name="myeditor" height="400px" width="80%">
+				${initialValue}
+			</ckeditor:editor>
+			<button>Enviar</button>
+		</form>
+	</body>
+	
+${initialValue}: es el contenido que queremos mostrar en el editor.	
+Para recuperar el valor de la modificación en el controlador al dar a enviar hay que recuperar "params.myeditor".
+
+Con esto, ya podemos utilizar el editor, no hace falta nada más, sólo descargar el plugin e incluir este código en la página GSP.	
+	
+-------------------------------------
+ARCHIVOS DE CONFIGURACIÓN - CONFIG.JS
+-------------------------------------
+Para configurar las opciones del editor se puede tocar directamente el archivo "config.js" ubicado en:
+	E:\Grails\workspace_bundle\CKEditor4_G243\target\work\plugins\ckeditor-4.4.1.0\web-app\js\ckeditor\config.js
+Es decir, que para poder editarlo desde Eclipse/GGTS hay que ir a la perstaña "Navigator" (Window -> Show view -> Other ... -> Navigator) y acceder al 
+archivo en cuestión a través de .link_to_grails_plugins/ckeditor-4.4.1.0/web-app/js/ckeditor/config.js
+
+Para probar el funcionamiento de este archivo basta con poner el siguiente contenido en su interior:
+CKEDITOR.editorConfig = function( config ) {
+	// Define changes to default configuration here. For example:
+	config.language = 'ca';
+	config.uiColor = 'red';
+	
+
+	config.toolbar = [
+     { name: 'document', items: [ 'Image','Source', '-', 'NewPage', 'Preview' ]},
+     { name: 'clipboard', items: [ 'Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo' ] },
+     '/',
+     { name: 'basicstyles', items: [ 'Bold', 'Italic' ] }
+ ];
+};
+
+Y se podrá comprobar como el color de la barra es rojo en lugar del gris por defecto y como en lugar de tres filas repletas de botones tan sólo aprecen
+dos filas y muy pocos botones, en concreto los indicados.
+
+En el caso de tener en el Config.groovy del proyecto (no del plugin) el siguiente código:
+	ckeditor {
+		config = "/js/myckconfig.js"
+		...
+	}
+El archivo de configuración será el indicado en esta sección y no el "config.js", por lo que todo lo que se escriba en "config.js" no tendrá efecta.
+
+-----------------------------------------------
+ARCHIVOS DE CONFIGURACIÓN DISTINTO DE CONFIG.JS
+-----------------------------------------------
+Existe la opción de utilizar un fichero con extensión .js distinto al "config.js" ubicado dentro del plugin. Para ello hay que indicarlo en el archivo
+Config.groovy del proyecto de la siguiente manera:
+	ckeditor {
+		config = "/js/myckconfig.js"
+		...
+	}
+	
+Donde el archivo "myckconfig.js" pasará a realiazr las funciones de "config.js" dejando éste último de tener validez.
+
+El archivo "myckconfig.js" estará ubicado en "web-app/js/myckconfig.js" del proyecto.
+
+	
+----------------------------
+PROBLEMAS CON EL PAQUETE WAR
+----------------------------
+Problema detectado en Grails 2.4.3 debido a que usa el plugin assets para comprimir los archivos en el momento de crear el WAR.
+
+Al intentar crear el paquete WAR de un proyecto en Grails 2.4.3 que haya importado el plugin CKEditor 4 puede que no lo consigamos. La razón es que 
+cuando el plugin "assets" intenta comprimir los archivos del ckeditor se obtiene una traza de error.
+
+La solución es bien sencilla, comentar en el archivo BuilConfig.groovy la siguiente línea:
+    plugins {
+		...
+        compile ":asset-pipeline:1.9.6"
+		...
+    }
+
+
 *****************************************************************************************************************************************************
----------------
-AÑADIR UN BOTÓN
----------------
+-----------------------------------------------------------
+AÑADIR UN BOTÓN PERSONALIZADO A LA BARRA DE TAREAS - WECEEM
+-----------------------------------------------------------
+Versión 3.6.6.1.0 para Weceem.
+
 En /weceem-app-master/.link_to_grails_plugins/ckeditor-3.6.6.1.0/web-app/js/ckeditor/plugins/divdsp1 copiar la carpeta.
 
 Añadir en Config.js:
@@ -83,6 +185,70 @@ Contingut
 
 
 
+<SUBIR FICHEROS AL SERVIDOR>*************************************************************************************************************************
+--------------
+SUBIR IMÁGENES
+--------------
+Para poder subir imágenes desde el botón "imagen" (es decir que aparesca el tab "Upload" y en el tab "link" la opción de "Browse server") hay que 
+configurar CKEditor expresamente para ello ya que por defecto no vienen estas opciones.
+
+Para ello basta con poner en el Config.groovy del proyecto que importa el plugin CKEditor:
+	ckeditor {
+		config = "/js/myckconfig.js"
+			skipAllowedItemsCheck = false
+		defaultFileBrowser = "ofm"
+		upload {
+			basedir = "/uploads/"
+				overwrite = false
+				link {
+					browser = true
+					upload = false
+					allowed = []
+					denied = ['html', 'htm', 'php', 'php2', 'php3', 'php4', 'php5',
+							  'phtml', 'pwml', 'inc', 'asp', 'aspx', 'ascx', 'jsp',
+							  'cfm', 'cfc', 'pl', 'bat', 'exe', 'com', 'dll', 'vbs', 'js', 'reg',
+							  'cgi', 'htaccess', 'asis', 'sh', 'shtml', 'shtm', 'phtm']
+				}
+				image {
+					browser = true
+					upload = true
+					allowed = ['jpg', 'gif', 'jpeg', 'png']
+					denied = []
+				}
+				flash {
+					browser = false
+					upload = false
+					allowed = ['swf']
+					denied = []
+				}
+		}
+	}
+
+	
+Si con esto no fuera suficiente habría que indicar lo siguiente en el config.js (o su equivalente, que en este caso es "myconfig.js" y está ubicado en la carpeta "web-app")
+del proyecto, no en la del plugin):
+	config.filebrowserBrowseUrl = '/ck/ofm';
+	config.filebrowserUploadUrl = '/ck/ofm';
+
+Información útil extraída de:
+	http://ckeditor.com/forums/Support/Having-problems-integrating-Filemanager
+	
+El directorio "uploads" que es donde se guardarán los ficheros subidos al servidor se ubicará dentro de "web-app".
+-----------------------------------------------------------------
+CAMBIAR LA UBICACIÓN DEL DIRECTORIO DONDE SE GUARDAN LOS FICHEROS
+-----------------------------------------------------------------
+	ckeditor {
+		config = "/js/myckconfig.js"
+			skipAllowedItemsCheck = false
+		defaultFileBrowser = "ofm"
+		upload {
+			basedir = "../uploads/"
+		...
+	}
+
+En este ejemplo en lugar ubicar "uploads" dentro de "web-app", lo pondría en el mismo nivel.
+
+	
 *****************************************************************************************************************************************************
 ------------------------------
 Creación:		16-11-2014
