@@ -76,7 +76,7 @@ CAMBIAR LA UBICACIÓN DEL DIRECTORIO DONDE SE GUARDAN LOS FICHEROS
 	
 *****************************************************************************************************************************************************
 ------------------------------
-Creación:		16-11-2014
+Creación:		04-02-2015
 				
 Jesús Campos Muñoz
 jesus.campos@upc.edu
