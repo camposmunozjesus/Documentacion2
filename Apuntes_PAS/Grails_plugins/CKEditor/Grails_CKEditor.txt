@@ -49,7 +49,36 @@ ${initialValue}: es el contenido que queremos mostrar en el editor.
 Para recuperar el valor de la modificación en el controlador al dar a enviar hay que recuperar "params.myeditor".
 
 Con esto, ya podemos utilizar el editor, no hace falta nada más, sólo descargar el plugin e incluir este código en la página GSP.	
+
+
+-----------------
+INCLUIR EL EDITOR
+-----------------
+Esta forma de incluir el editor permite cambiar el color desde la propia página HTML.
+<html>
+	<head>
+		<ckeditor:resources/>
+	</head>	
+	<body>	
+		<textarea cols="80" id="editor1" name="editor1" rows="10">&lt;p&gt;This is some &lt;strong&gt;sample text&lt;/strong&gt;. You are using &lt;a href="http://ckeditor.com/"&gt;CKEditor&lt;/a&gt;.&lt;/p&gt;</textarea>
+		<script>
+
+			// Replace the <textarea id="editor"> with an CKEditor
+			// instance, using default configurations.
+			CKEDITOR.replace( 'editor1', {
+				uiColor: '#14B8C4',
+				toolbar: [
+					[ 'Bold', 'Italic', '-', 'NumberedList', 'BulletedList', '-', 'Link', 'Unlink' ],
+					[ 'FontSize', 'TextColor', 'BGColor' ]
+				]
+			});
+		</script>
+	</body>
+</html>
 	
+Cómo se recupera el texto?
+
+
 -------------------------------------
 ARCHIVOS DE CONFIGURACIÓN - CONFIG.JS
 -------------------------------------
