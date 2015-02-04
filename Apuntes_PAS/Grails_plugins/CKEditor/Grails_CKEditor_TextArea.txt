@@ -1,0 +1,83 @@
+﻿GRAILS - CKEDITOR PLUGIN - FORMA ALTERNATIVA DE INCLUIR EL CKEDITOR
+===================================================================
+----------------
+LINKS DE INTERÉS
+----------------
+*****************************************************************************************************************************************************
+------------------------------
+INSTALACIÓN DE CKEDITOR PLUGIN
+------------------------------
+Referencia de utilización: 
+Plugins must be declared in the grails-app/conf/BuildConfig.groovy file.
+Example:
+grails.project.dependency.resolution = {
+   ...
+   plugins {
+      compile ":ckeditor:3.6.6.1.0"
+   }
+}
+
+
+<CONFIGURACIÓN>**************************************************************************************************************************************
+-----------------
+INCLUIR EL EDITOR
+-----------------
+Esta forma de incluir el editor permite cambiar el color desde la propia página HTML.
+<html>
+	<head>
+		<ckeditor:resources/>
+	</head>	
+	<body>	
+		<textarea cols="80" id="editor1" name="editor1" rows="10">&lt;p&gt;This is some &lt;strong&gt;sample text&lt;/strong&gt;. You are using &lt;a href="http://ckeditor.com/"&gt;CKEditor&lt;/a&gt;.&lt;/p&gt;</textarea>
+		<script>
+
+			// Replace the <textarea id="editor"> with an CKEditor
+			// instance, using default configurations.
+			CKEDITOR.replace( 'editor1', {
+				uiColor: '#14B8C4',
+				toolbar: [
+					[ 'Bold', 'Italic', '-', 'NumberedList', 'BulletedList', '-', 'Link', 'Unlink' ],
+					[ 'FontSize', 'TextColor', 'BGColor' ]
+				]
+			});
+		</script>
+	</body>
+</html>
+	
+Cómo se recupera el texto?
+
+
+<SUBIR FICHEROS AL SERVIDOR>*************************************************************************************************************************
+--------------
+SUBIR IMÁGENES
+--------------
+Para poder subir imágenes desde el botón "imagen" (es decir que aparesca el tab "Upload" y en el tab "link" la opción de "Browse server") hay que 
+configurar CKEditor expresamente para ello ya que por defecto no vienen estas opciones.
+
+Para ello basta con poner en el Config.groovy del proyecto que importa el plugin CKEditor:
+		<textarea cols="80" id="editor1" name="editor1" rows="10">${params?.arxiuContingut?:arxiu?.contingut}</textarea>
+		<script>
+			// Replace the <textarea id="editor"> with an CKEditor
+			// instance, using default configurations.
+			CKEDITOR.replace( 'editor1', {
+				uiColor: '#14B8C4',
+	            filebrowserBrowseUrl: '/ck/ofm',
+	            filebrowserUploadUrl: '/ck/ofm'
+			});
+		</script>
+
+Pero al ver servidor flla, habrá que configuar el directorio.
+
+-----------------------------------------------------------------
+CAMBIAR LA UBICACIÓN DEL DIRECTORIO DONDE SE GUARDAN LOS FICHEROS
+-----------------------------------------------------------------
+
+
+	
+*****************************************************************************************************************************************************
+------------------------------
+Creación:		16-11-2014
+				
+Jesús Campos Muñoz
+jesus.campos@upc.edu
+------------------------------
