@@ -1,0 +1,288 @@
+SQL - CREACIÓN DE TABLAS, MAPEO, Y RELACIONES ENTRE ELLAS
+=========================================================
+
+Para qcrear una tabla (por ejemplo la POR_CCONTEN01) se coge el DDL de Oracle y:
+	- Las mayúsculas se pasan a minúsculas quitando las comas.
+	- Los NUMBER(2,0) se substituyen por integer
+	- Los VARCHAR() se substituyen por character varying
+	- Los DATE por date
+	- Los CLOB por text
+	
+--------------------------------
+TABLA DE CONTENIDOS ó CONTINGUTS
+--------------------------------
+
+CREATE TABLE por_cconten01
+(	
+	identi integer, 
+	aliuri character varying, 
+	fecact date, 
+	feccam date, 
+	usucam character varying, 
+	feccre date, 
+	usucre character varying, 
+	descri character varying, 
+	idioma character varying, 
+	ordind integer, 
+	padre integer, 
+	fecipu date, 
+	fecfpu date, 
+	espaci integer, 
+	estado integer, 
+	titulo character varying, 
+	tipo character varying, 
+	conten text, 
+	templa integer, 
+	pergsp integer, 
+	tithtm character varying, 
+	palcla character varying, 
+	observ character varying
+)
+
+WITH (
+	OIDS=FALSE
+);
+ALTER TABLE template
+	OWNER TO jesus;
+
+Establecer el owner con el botón derecho en propiedades.
+	
+Luego hay que crear las restricciones en el pgAdmin de manera manual con botón derecho sobre la tabla en la pestaña de "constraints".
+PRIMARY_KEY: identi
+
+En el pgAdmin se podrá visualizar:
+	Constraint name			Definition
+	---------------			----------
+	por_cconten01_pkey		(identi)
+	
+Para mapear esta tabla en Grails hay que tener en cuenta que todo está en minúscula. Si los nombres se hubierean puesto en mayúsculas, en el dominio
+de Grails no se podrían poner en minúsculas.
+
+El mapeo de la tabla anterior en Grails es:
+	import java.util.Date;
+	class Contingut{
+
+		String aliesUri
+		Date dataActualitzacio
+		Date dataDarrerCanvi
+		String usuariDarrerCanvi
+		Date dataCreacio
+		String usuariCreacio
+		String descripcio
+		String idioma
+		Integer ordre
+		Integer pare
+		Date dataIniciPublicacio
+		Date dataFiPublicacio
+		Integer espai
+		Integer estat
+		String titol
+		String tipusContingut
+		String contingut
+		Integer template
+		Integer permetreGSP
+		String titolHTML
+		String paraulesClau
+		String observacions
+
+		static mapping = {
+				
+			table 'por_cconten01'  //puede ser también POR_CCONTEN01
+			id name:'id'
+			id generator:'assigned'
+			version false
+			id column: 'identi'
+			
+			aliesUri column: 'aliuri'
+			dataActualitzacio column: 'fecact'
+			dataDarrerCanvi column: 'feccam'
+			usuariDarrerCanvi column: 'usucam'
+			dataCreacio column: 'feccre'
+			usuariCreacio column: 'usucre'
+			descripcio column: 'descri'
+			idioma column: 'idioma'
+			ordre column: 'ordind'
+			pare column: 'padre'
+			dataIniciPublicacio column: 'fecipu'
+			dataFiPublicacio column: 'fecfpu'
+			espai column: 'espaci'
+			estat column: 'estado'
+			titol column: 'titulo'
+			tipusContingut column: 'tipo'
+			contingut column: 'conten'
+			template column: 'templa'
+			permetreGSP column: 'pergsp'
+			titolHTML column: 'tithtm'
+			paraulesClau column: 'palcla'
+			observacions column: 'observ'
+		}
+		
+		static constraints = {
+			descripcio(blank:true, nullable:true)
+			idioma(blank:true, nullable:true)
+			pare(blank:true, nullable:true)
+			dataIniciPublicacio(blank:true, nullable:true)
+			dataFiPublicacio(blank:true, nullable:true)
+			contingut(blank:true, nullable:true)
+			template(blank:true, nullable:true)
+			permetreGSP(blank:true, nullable:true)
+			titolHTML(blank:true, nullable:true)
+			paraulesClau(blank:true, nullable:true)
+			observacions(blank:true, nullable:true)
+		}
+
+	}
+		
+
+------------------
+TABLA DE TEMPLATES
+------------------
+CREATE TABLE por_ctempla01
+(	
+	identi integer, 
+	aliuri character varying, 
+	descri character varying, 
+	idioma character varying, 
+	ordind integer, 
+	espaci integer, 
+	titulo character varying, 
+	conten text, 
+	pergsp integer, 
+	observ character varying
+)
+
+WITH (
+	OIDS=FALSE
+);
+ALTER TABLE template
+	OWNER TO jesus;
+
+Establecer el owner con el botón derecho en propiedades.
+
+Luego hay que crear las restricciones en el pgAdmin de manera manual con botón derecho sobre la tabla en la pestaña de "constraints".
+PRIMARY_KEY: identi
+
+En el pgAdmin se podrá visualizar:
+	Constraint name			Definition
+	---------------			----------
+	por_cconten01_pkey		(identi)
+
+Mapeado  Grails:
+class Tmpl{
+	
+	String aliesUri
+	String descripcio
+	String idioma
+	Integer ordre
+	Integer espai
+	String titol
+	String contingut
+	Integer permetreGSP
+	String observacions
+	
+	static mapping = {
+			
+		table 'por_ctempla01'
+		id name:'id'
+		id generator:'sequence'
+		version false
+		id column: 'identi'
+		
+		aliesUri column: 'aliuri'
+		descripcio column: 'descri'
+		idioma column: 'idioma'
+		ordre column: 'ordind'
+		espai column: 'espaci'
+		titol column: 'titulo'
+		contingut column: 'conten'
+		permetreGSP column: 'pergsp'
+		observacions column: 'observ'
+	}
+	
+	static constraints = {
+		descripcio(blank:true, nullable:true)
+		idioma(blank:true, nullable:true)
+		contingut(blank:true, nullable:true)
+		permetreGSP(blank:true, nullable:true)
+		observacions(blank:true, nullable:true)
+	}
+}
+	
+	
+*****************************************************************************************************************************************************
+<RESTRICCIONES Y MAPEO EN DOMINIO DE GRAILS DE LAS RELACIONES>***************************************************************************************
+------------------------------------
+RELACIONES DENTRO DE LA PROPIA TABLA
+------------------------------------
+Para poder mapear en el dominio Grails las relaciones uno-a-muchos, etc hay que definirlas primero en la base de datos.
+
+Queremos que un "Contingut" (objeto de la clase de dominio "Contingut") pueda tener muchos elementos relacionados con él. Para ejemplificarlo, sería
+como decir que un directorio (que sería un objeto de la clase "Contingut") puede contener muchos archivos HTML (los cuales serían también objetos
+de la clase "Contingut").
+
+En este caso queremos que un elemento de la tabla por_cconten01 (tabla de los contenidos) tenga un único padre, el cual pertenecerá a la tabla por_cconten01. 
+También queremos que a su vez un elemento pueda tener muchos hijos, los cuales serán registros de la misma tabla por_cconten01.
+
+Eso se representa de la siguiente manera:
+	- Añadiendo:
+			static hasMany = [children: Contingut]
+			static hasOne = [pare: Contingut]
+	- Y comentando :
+			Integer pare
+			
+Con esto lo que hcemos es decirle que el elemento (registro de la tabla por_cconten01) tiene un único padre:
+	static hasOne = [pare: Contingut]
+y que lo podrá encontrar utilizando el campo "pare" que está mapeado de la siguiente manera:
+	pare column: 'padre'
+por lo que la variable o atributo "pare" a partir de ahora ya no será un Integer, si no un objeto de la clase Contingut. Por este motivo se elimina
+la línea que dice:
+	Integer pare
+De esta maner cuando recuperemos un elemento de la BD, automáticamente tendremos en el atributo "pare" los datos del elemento padre: titol, aliesUri, etc ...
+sin necesidad de realizar una nueva consulta.
+
+Esto requiere poner una restricción en la base de datos. Para ello hay que ir con el botón derecho sobre la tabla "por_cconten01" y dar a "properties".
+Pestaña de "Constraints", seleccionar "Foreign Key" y "Add". Ir a la pestaña de "Columns" 
+	References:		por_cconten01	(tabla en la que se encuentra la columna que se utilizará para nuestra foreign_key)
+	Local column:	pare			(columna de la tabla que será la foreign_key)
+	Referencig:		identi			(columna que se utilizará como clave para la relación entre los elementos, es de la tabla indicada en References)
+
+Ahora viene la parte de indicar que un elemento puede tener muchos hijos:
+	static hasMany = [children: Contingut]
+
+Con esto se consigue que en el campo "children" se guarden en forma de lista todos los objetos de la clase "contingut" que tiene en el campo "pare"
+un número que coincide con el valor de la columna "identi" del elemento que consultamos. Es decir, si consultamos el elemnto cuyo "identi" vale 3,
+éste en su atributo "children" tendrá almacenados en forma de objeto de la clase "Contingut" todos los registros cuya columna "pare" valga 3.
+	
+Debido a esto, se creará una tabla adicional en el espcaio llamada "por_cconten01_porcconten01" con columnas de tipo bigint cuyos nombre son:
+	- contingut_children_id
+	- contingut_id
+
+	
+---------------------------
+RELACIONES CON OTRAS TABLAS
+---------------------------
+Ahora queremos que cada objeto de tipo "Contingut" pueda cargar un único template, objeto de la tabla por_ctempla01. Cada elemento de la tabla 
+por_ctempla01 puede estar relacionado con muchos elementos de la tabla por_cconten01, debido a que una páginaHTML sólo puede cargar un template, pero
+un template puede ser utilizado por muchos HTML's. Esta relación es uno-a-muchos visto desde la parte de los templates, o bien de muchos-a-uno visto
+desde la parte de la tabla "Continguts".
+
+Modificaciones en los dominios:
+	- (1) Dominio Contingut:
+		Añadir static hasOne = [pare: Contingut, template: Tmpl]
+		y comentar: Integer template
+	- (2) Dominio Tmpl:
+		Añadir static hasMany = [continguts: Contingut]
+		
+Los cambios repercuten en la base de datos como una constraint en la tabla por_cconten01:
+	References:		por_ctempla01
+	Local column:	templa			
+	Referencig:		identi		
+		
+		
+*****************************************************************************************************************************************************
+------------------------------
+Creación:		07-02-2015
+				
+Jesús Campos Muñoz
+jesus.campos@upc.edu
+------------------------------
