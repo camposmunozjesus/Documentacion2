@@ -34,7 +34,7 @@ INICIO
 ------
 Para poder utilizar el CKEditor hay que poner en la página GSP el siguiente código:
 	<head>
-    <	ckeditor:resources/>
+		<ckeditor:resources/>
 	</head>
 	<body>
 		<form action="texto2">
