@@ -143,7 +143,7 @@ La solución es bien sencilla, comentar en el archivo BuilConfig.groovy la sigui
     }
 
 
-*****************************************************************************************************************************************************
+<PERSONALIZACIÓN>************************************************************************************************************************************
 -----------------------------------------------------------
 AÑADIR UN BOTÓN PERSONALIZADO A LA BARRA DE TAREAS - WECEEM
 -----------------------------------------------------------
@@ -277,6 +277,28 @@ CAMBIAR LA UBICACIÓN DEL DIRECTORIO DONDE SE GUARDAN LOS FICHEROS
 
 En este ejemplo en lugar ubicar "uploads" dentro de "web-app", lo pondría en el mismo nivel.
 
+El problema con esto es el permiso para borrar/editar el nombre de una imagen. Debido al controlador OpenMagerFileController del propio plugin y al
+PathUtils, para dejar realizar estas acciones comprueba el path, y si hay ".." los elimna por lo que las rutas NO coinciden.
+
+
+
+<PROBLEMAS>******************************************************************************************************************************************
+----------------------------------------------------
+EL RICH EDITOR ELIMINA LOS CLASS="" DE LOS ELEMENTOS
+----------------------------------------------------
+En la parte GSP se guardan elementos con estilos, como podría ser:
+	<p class="txt-descripcio">Informaci&oacute; relacionada amb l&#39;acc&eacute;s a la Universitat (acollida, declaraci&oacute; d&#39;activitats), 
+	classificaci&oacute; dels col&middot;lectius PAS i PR, Relaci&oacute; de Llocs de Treball (descripci&oacute; i perfils) i 
+	desvinculaci&oacute; (ren&uacute;ncia).</p>
+
+Este class="txt-descripcio" al ser guardado desde la parte rich editor se perderá para siempre.
+
+La solución es poner en el config.js (o el que toque) lo siguiente:
+	config.allowedContent=true
+	config.extraAllowedContent = '*(*)';
+	
+Referencias:
+http://stackoverflow.com/questions/15659390/ckeditor-automatically-strips-classes-from-div
 	
 *****************************************************************************************************************************************************
 ------------------------------
