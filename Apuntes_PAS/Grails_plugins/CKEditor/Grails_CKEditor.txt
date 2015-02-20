@@ -282,6 +282,19 @@ PathUtils, para dejar realizar estas acciones comprueba el path, y si hay ".." l
 
 
 
+<ESTILOS>********************************************************************************************************************************************
+-------------------------------
+CAMBIAR ESTILOS DEL RICH EDITOR
+-------------------------------
+Para cambiar los estilos que se utilizan en el Rich Editor hay que incluir en el archivo de configuración (ckeditorconfig.js, que e el que se está
+utilizando en todos los ejemeplos) hay que incluir:
+	config.contentsCss = "/gcrrhh/css/contents.css"
+	
+El archivo se encuentra en la carpeta "web-app" de la aplicación "gcrrhh".
+
+NO se puede utilizar ${grails.util.Metadata.current.'app.name'}.
+
+	
 <PROBLEMAS>******************************************************************************************************************************************
 ----------------------------------------------------
 EL RICH EDITOR ELIMINA LOS CLASS="" DE LOS ELEMENTOS
