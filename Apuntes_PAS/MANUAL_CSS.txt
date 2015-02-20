@@ -35,6 +35,17 @@ Esto produce que el background-color del elemento con la clase container vale #0
 Esto es útil por ejemplo para los estilos de las plantillas ficha, en las que se desea asignar el mismo tipo de letra para los 5 ó 6 estilos existentes.
 De este modo se puede varia el estilo de letra de todos los elementos a la vez.
 
+
+------------------------------------
+PÁGINA CSS QUE CARGA OTRA PÁGINA CSS
+------------------------------------
+Para incluir todos los estilos de una página CSS en otra se utiliza:
+	@import url("bootstrap.css");
+
+En el ejemplo, la página donde se aplica la instrucción está situada en "web-app" y la página "bootstrap.css" también, por lo que hay que tener en cuenta
+que es la ruta relativa.
+
+
 *********************************************************************************************************************************************************
 ------------------------------
 Creación:	16-10-2014
