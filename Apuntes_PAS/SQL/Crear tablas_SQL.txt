@@ -208,8 +208,7 @@ class Tmpl{
 	}
 }
 	
-	
-*****************************************************************************************************************************************************
+
 <RESTRICCIONES Y MAPEO EN DOMINIO DE GRAILS DE LAS RELACIONES>***************************************************************************************
 ------------------------------------
 RELACIONES DENTRO DE LA PROPIA TABLA
@@ -279,6 +278,69 @@ Los cambios repercuten en la base de datos como una constraint en la tabla por_c
 	Referencig:		identi		
 		
 		
+	
+*****************************************************************************************************************************************************		
+<ORACLE>*********************************************************************************************************************************************
+------------------
+CREACIÓN DE TABLAS
+------------------
+Teniendo en cuenta que se utiliza el usuario CS con TABLRSPACE USER y TMP:
+
+A partir de la DDL:		
+---------------------------------------------------------------------
+-- TABLA POR_CPLANTI01 - Plantillas del portal
+---------------------------------------------------------------------
+DROP TABLE CS.POR_CPLANTI01
+          CASCADE CONSTRAINTS
+;
+
+CREATE TABLE CS.POR_CPLANTI01
+        (     IDENTI         NUMBER                  NOT NULL , /* ID único */
+              ALIURI         VARCHAR2       (0100)   NOT NULL , /* Alias URI */
+              DESCRI         VARCHAR2       (0500)            , /* Descripción */
+              IDIOMA         VARCHAR2       (0003)            , /* Idioma */
+              ORDIND         NUMBER                  NOT NULL , /* Orden índice */
+              ESPACI         NUMBER         (0002)   NOT NULL , /* ID Espacio */
+              TITULO         VARCHAR2       (0100)   NOT NULL , /* Título */
+              CONTEN         CLOB                             , /* Contenido */
+              PERGSP         NUMBER         (0001)            , /* Indicador permitir GSP */
+              OBSERV         VARCHAR2       (0500)            , /* Observaciones */
+        PRIMARY KEY (IDENTI)
+            USING INDEX TABLESPACE       USERS,
+        CONSTRAINT POR_CPLANTI01 UNIQUE(ALIURI,ESPACI)
+        )
+        TABLESPACE       USERS
+;
+EXIT;
+
+O bien poniendo el usuario entre comillas:
+---------------------------------------------------------------------
+-- TABLA POR_CTEMPLA01 - Templates del portal
+---------------------------------------------------------------------
+DROP TABLE CS.POR_CTEMPLA01
+          CASCADE CONSTRAINTS
+;
+
+CREATE TABLE CS.POR_CTEMPLA01
+        (     IDENTI         NUMBER                  NOT NULL , /* ID único */
+              ALIURI         VARCHAR2       (0100)   NOT NULL , /* Alias URI */
+              DESCRI         VARCHAR2       (0500)            , /* Descripción */
+              IDIOMA         VARCHAR2       (0003)            , /* Idioma */
+              ORDIND         NUMBER                  NOT NULL , /* Orden índice */
+              ESPACI         NUMBER         (0002)   NOT NULL , /* ID Espacio */
+              TITULO         VARCHAR2       (0100)   NOT NULL , /* Título */
+              CONTEN         CLOB                             , /* Contenido */
+              PERGSP         NUMBER         (0001)            , /* Indicador permitir GSP */
+              OBSERV         VARCHAR2       (0500)            , /* Observaciones */
+        PRIMARY KEY (IDENTI)
+            USING INDEX TABLESPACE       "USERS",
+        CONSTRAINT POR_CTEMPLA01 UNIQUE(ALIURI,ESPACI)
+        )
+        TABLESPACE       "USERS"
+;
+EXIT;
+
+
 *****************************************************************************************************************************************************
 ------------------------------
 Creación:		07-02-2015
