@@ -1,0 +1,105 @@
+---------------------------------------------------------------------
+-- TABLA POR_CCONTEN01 - Contenidos HTML del portal
+---------------------------------------------------------------------
+DROP   TABLE CS.POR_CCONTEN01
+          CASCADE CONSTRAINTS
+;
+
+CREATE TABLE CS.POR_CCONTEN01
+        (     IDENTI         NUMBER                  NOT NULL , /* ID único */
+              ALIURI         VARCHAR2       (0100)   NOT NULL , /* Alias URI */
+              FECACT         DATE                    NOT NULL , /* Fecha actualización */
+              FECCAM         DATE                    NOT NULL , /* Fecha último cambio */
+              USUCAM         VARCHAR2       (0075)   NOT NULL , /* Usuario último cambio */
+              FECCRE         DATE                    NOT NULL , /* Fecha creación */
+              USUCRE         VARCHAR2       (0075)   NOT NULL , /* Usuario creación */
+              DESCRI         VARCHAR2       (0500)            , /* Descripción */
+              IDIOMA         VARCHAR2       (0003)            , /* Idioma */
+              ORDIND         NUMBER                  NOT NULL , /* Orden índice */
+              PADRE          NUMBER                           , /* ID Padre */
+              FECIPU         DATE                             , /* Fecha inicio publiación (desde) */
+              FECFPU         DATE                             , /* Fecha fin publiación (hasta) */
+              ESPACI         NUMBER         (0002)   NOT NULL , /* ID Espacio */
+              ESTADO         NUMBER         (0002)   NOT NULL , /* ID Estado */
+              TITULO         VARCHAR2       (0100)   NOT NULL , /* Título */
+              TIPO           VARCHAR2       (0005)   NOT NULL , /* Tipo de contenido */
+              CONTEN         CLOB                             , /* Contenido */
+              TEMPLA         NUMBER                           , /* ID Template */
+              PERGSP         NUMBER         (0001)            , /* Indicador permitir GSP */
+              TITHTM         VARCHAR2       (0100)            , /* Título HTML (head) */
+              PALCLA         VARCHAR2       (0200)            , /* Palabras clave */
+              OBSERV         VARCHAR2       (0500)            , /* Observaciones */
+        PRIMARY KEY (IDENTI)
+            USING INDEX TABLESPACE       CSCSI,
+        CONSTRAINT POR_CCONTEN01 UNIQUE(ALIURI,ESPACI),
+        CONSTRAINT FKPOR_CCONTEN01_POR_CCONTEN01
+            FOREIGN KEY (PADRE) REFERENCES       CS.POR_CCONTEN01(IDENTI),
+        CONSTRAINT FKPOR_CCONTEN01_POR_CTEMPLA01
+            FOREIGN KEY (TEMPLA) REFERENCES       CS.POR_CTEMPLA01(IDENTI)
+        )
+        TABLESPACE       CSCS
+;
+EXIT;
+
+
+
+
+
+
+
+
+
+---------------------------------------------------------------------
+-- TABLA POR_CPLANTI01 - Plantillas del portal
+---------------------------------------------------------------------
+DROP TABLE CS.POR_CPLANTI01
+          CASCADE CONSTRAINTS
+;
+
+CREATE TABLE CS.POR_CPLANTI01
+        (     IDENTI         NUMBER                  NOT NULL , /* ID único */
+              ALIURI         VARCHAR2       (0100)   NOT NULL , /* Alias URI */
+              DESCRI         VARCHAR2       (0500)            , /* Descripción */
+              IDIOMA         VARCHAR2       (0003)            , /* Idioma */
+              ORDIND         NUMBER                  NOT NULL , /* Orden índice */
+              ESPACI         NUMBER         (0002)   NOT NULL , /* ID Espacio */
+              TITULO         VARCHAR2       (0100)   NOT NULL , /* Título */
+              CONTEN         CLOB                             , /* Contenido */
+              PERGSP         NUMBER         (0001)            , /* Indicador permitir GSP */
+              OBSERV         VARCHAR2       (0500)            , /* Observaciones */
+        PRIMARY KEY (IDENTI)
+            USING INDEX TABLESPACE       CSCSI,
+        CONSTRAINT POR_CPLANTI01 UNIQUE(ALIURI,ESPACI)
+        )
+        TABLESPACE       CSCS
+;
+EXIT;
+
+
+
+
+---------------------------------------------------------------------
+-- TABLA POR_CTEMPLA01 - Templates del portal
+---------------------------------------------------------------------
+DROP TABLE CS.POR_CTEMPLA01
+          CASCADE CONSTRAINTS
+;
+
+CREATE TABLE CS.POR_CTEMPLA01
+        (     IDENTI         NUMBER                  NOT NULL , /* ID único */
+              ALIURI         VARCHAR2       (0100)   NOT NULL , /* Alias URI */
+              DESCRI         VARCHAR2       (0500)            , /* Descripción */
+              IDIOMA         VARCHAR2       (0003)            , /* Idioma */
+              ORDIND         NUMBER                  NOT NULL , /* Orden índice */
+              ESPACI         NUMBER         (0002)   NOT NULL , /* ID Espacio */
+              TITULO         VARCHAR2       (0100)   NOT NULL , /* Título */
+              CONTEN         CLOB                             , /* Contenido */
+              PERGSP         NUMBER         (0001)            , /* Indicador permitir GSP */
+              OBSERV         VARCHAR2       (0500)            , /* Observaciones */
+        PRIMARY KEY (IDENTI)
+            USING INDEX TABLESPACE       CSCSI,
+        CONSTRAINT POR_CTEMPLA01 UNIQUE(ALIURI,ESPACI)
+        )
+        TABLESPACE       CSCS
+;
+EXIT;
