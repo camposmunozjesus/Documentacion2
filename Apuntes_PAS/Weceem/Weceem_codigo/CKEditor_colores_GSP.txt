@@ -1,0 +1,66 @@
+Para editar los estilos del editor GSP:
+
+Se puede añadir en xmlcolorsficha.css
+/* Hace que cada span que contiene un comentario se muestre en una línea separada. */
+span.xml-comment {
+    color: #A70;
+    display: block;
+}
+
+/* Hace que no se muestre el salto de línea en HTML <br> cuando se sitúa detrás de un xml-comment. Evita dobles espacios. */
+span.xml-comment + br{
+  display: none;
+}
+
+/* Reduce el margen que tienen los comentarios con la línea superior. */
+.whitespace + .xml-comment {
+  margin-top: -12px;
+}
+
+y para variar el editor utilizado al editar una ficha:
+En EditorFieldTagLib.groovy:
+	- Se modifica: para que cuando se edite una plantilla se carguen las características particualres del editor que se necesita:
+		def editorFieldHTMLContent = { attrs ->
+        if (pageScope.content.metaClass.hasProperty(pageScope.content, 'allowGSP') && pageScope.content.allowGSP) {
+           String res = attrs.bean.class
+		   println res
+           if(res.equals("class com.upc.WcmPlantillaFitxa") || res.equals("class com.upc.WcmPlantillaFitxaGenerica") || res.equals("class com.upc.WcmPlantillaFitxaGenerica2")){
+               println "YES"
+			   out << editorFieldFichaCode(attrs)
+           }
+           else{
+			   println  "NO"
+                out << editorFieldHtmlCode(attrs)
+           }
+
+        } else {
+            out << editorFieldRichHTML(attrs)
+        }
+    }
+	
+	-Se añade: el editor en particular
+	def editorFieldFichaCode = { attrs ->
+		println "editorFieldFichaCode"
+		// Workaround for Grails 1.1.x bug invoking tags with body as method - have to use a template instead
+		out << g.render(template:'/editors/codemirror', plugin:'weceem',
+			model:[name:attrs.property, value:pageScope.content[attrs.property]])
+		
+		out << """
+        <script language="javascript" type="text/javascript">
+        var editor_${attrs.property} = CodeMirror.fromTextArea("editor_${attrs.property.encodeAsJavaScript()}", {
+          parserfile: ["parsexml.js"],
+          path: "${g.resource(plugin:'weceem', dir:'_weceem/codemirror/js/').encodeAsJavaScript()}",
+          stylesheet: "${g.resource(plugin:'weceem', dir:'_weceem/codemirror/css', file:'xmlcolorsficha.css').encodeAsJavaScript()}",
+          textWrapping: false
+        });
+        </script>
+        """
+	}
+
+*****************************************************************************************************************************************************
+------------------------------
+Creación:	16-09-2014
+
+Jesús Campos Muñoz
+jesus.campos@upc.edu
+------------------------------
