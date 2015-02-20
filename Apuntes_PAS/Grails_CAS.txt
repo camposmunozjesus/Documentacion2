@@ -72,7 +72,7 @@ Para que un controlador vigile el rol del usuario:
 
 A TENER EN CUENTA
 -----------------
-Hay que tener en cuenta que la conexión con la base de datosse la correcta y no con PostgreSQL.
+Hay que tener en cuenta que la conexión con la base de datos sea la correcta y no con PostgreSQL.
 
 
 PROBLEMAS:

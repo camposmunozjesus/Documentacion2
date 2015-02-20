@@ -310,6 +310,116 @@ class SearcherController {
 }
 
 
+*********************************************************************************************************************************************************
+<VERSIÓN #3>*********************************************************************************************************************************************
+16-02-2015
+Es la última con paginación manual. El buscar por keywords hace que sea más fácil paginar.
+
+package rrhh.tools
+
+import org.weceem.content.WcmContent
+
+import rrhh.Contingut
+
+
+/**
+ * 
+ */
+class SearcherController {
+
+	def static allowedTypes = ['SHTML', 'NHTML']
+	static llistaEspais = ["Default":1, "PAS":2, "PDI":3, "BEC":4, "GES":5]
+//	def espaiId = 2		//Conseguir el space a partir del perfil del usuario !!!
+//	def espaiNom = "PAS"
+
+	def index() {
+		
+		def espaiNom
+		def espaiId
+		
+		espaiNom = params.espai
+		espaiId  = llistaEspais[espaiNom]
+		
+		if(params.query.equals("")){
+			return [resultList:null, total:0, espaiNom:espaiNom]
+		}
+
+		def query = {
+			and{
+				eq("espai", espaiId)
+				'in'("tipusContingut", allowedTypes)
+				ilike("paraulesClau", "%"+ params.query +"%")
+			}
+			order("titol", "asc")
+		}
+		
+		//Carga de las coincidencias de la búsqueda
+		def resultList = []
+		resultList = Contingut.createCriteria().list(params, query)
+		
+		if(resultList.size()>0)
+		{
+			println "---> " + resultList.getTotalCount()
+			//Para buscar algo del tipo href="/IniciPDIPAS/..../${params.query}/...." -> Si la página tiene sólo estas coincidencias
+			//será descartada para mostrarla en el buscador. Puede darse el caso de buscar la palabra "PAS" en el y que entren
+			//en la lista de resultados todas las palabras que contengan enlaces a archivos y fichas, ejemplo:
+			// <a href="/IniciPDIPAS/PAS/index/Sistema-retributiu">Sistema retributiu</a>
+			//(?i): para hacer búsquedas case-insensitive.
+//			def regexp = /(?i)href=.*${params.query}.*\"/
+	
+//			def listaDefinitiva = []
+			//Conseguir la url completa para los resultados que se mostrarán en pantalla. No se tendrán en cuenta las páginas en
+			//las que la coincidencia esté únicamente en enlaces.
+			resultList.each {
+//				if((it.contingut =~ /(?i)${params.query}/).size()!=(it.contingut =~ regexp).size()
+//				||it.titol=~ /(?i)${params.query}/
+//				||it.aliesUri=~ /(?i)${params.query}/){
+//					listaDefinitiva << it
+					it.absoluteURI=getAbsoluteURI(it, espaiNom)
+//				}
+					
+			}
+			
+//			def ini = params.offset ? params.offset.toInteger() : 0
+////			def max = params.max ? params.max.toInteger() : 5
+//			def fin = (ini + max) > listaDefinitiva.size() ? listaDefinitiva.size() : (ini + max)
+//			if(!(fin==0)){
+//				return [resultList:resultList, total:resultList.getTotalCount(), espaiNom:espaiNom]
+//			}
+//			else{
+//				return [resultList:null, total:0, espaiNom:espaiNom]
+//			}
+			
+			return [resultList:resultList, total:resultList.getTotalCount(), espaiNom:espaiNom]
+			
+		}		
+		else{
+			[resultList:null, total:0, espaiNom:espaiNom]
+		}
+		
+	}
+	
+	/**
+	 * 
+	 */
+	private String getAbsoluteURI(Contingut contingut, espaiNom){
+		def path = "/${grails.util.Metadata.current.'app.name'}/${espaiNom}/"
+		return path+getParentURI(contingut)
+	}
+	
+	private getParentURI(Contingut contingut){
+		if(contingut.pare!=null){
+			if(!contingut.tipusContingut.equals("FOLD")){
+				return getParentURI(contingut.pare).toString()+"/"+contingut.aliesUri
+			}else{
+				return getParentURI(contingut.pare).toString()
+			}
+		}else{
+			return contingut.aliesUri
+		}		
+	}
+}
+
 ------------------------------
 Creación:		15-01-2015
 				

@@ -165,7 +165,20 @@ ${prop.property}: propiedades space title status content
 	<% println wcm."editorField${prop.editor}"(bean:content, property:prop.property) %>
 Va llamando a los TAGs pertinentes para mostrar Título, Space, Contenido, etc ...
 
-*****************************************************************************************************************************************************
+
+******************************************************************************************************************************************************
+<OTRAS ACCIONES>**************************************************************************************************************************************
+----------------------------
+COPIA DE SEGURIDAD DE SPACES
+----------------------------
+WcmRepositoryController::beforeInterceptorMon Feb 16 13:46:13 CET 2015
+WcmRepositoryController::findSelectedSpace
+WcmRepositoryController::treeTable
+WcmPortalController::administration
+getExporters - ini
+
+wcmSpace/exportSpace.gsp
+
 ------------------------------
 Creación:	10-11-2014
 
