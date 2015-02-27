@@ -724,3 +724,13 @@ Otro ejemplo del uso de este operador:
 		
 	De la BD recupero un listado de todos los librros y posteriormente se los paso todos (de uno en uno) al método delete() para borrarlos.
 																						le paso todos los elementos de la lista devuelta
+
+																						
+------------------------------------------
+ENCONTRAR UNA KEY A PARTIR DEL VALUE (MAP)
+------------------------------------------
+Ejemplo: tenemos un MAP y a partir de uno de los valores queremos encontrar su clave correspondiente.
+	static tipusEspais = ["Tots":0, "Per defecte":1, "PAS":2, "PDI":3, "Becari":4, "Gestor":5]
+	tipusEspais.find{ it.value == espaiId.toInteger() }?.key
+	
+Donde espaiId puede valer 0, 1, 2, 3, 4 ó 5.
