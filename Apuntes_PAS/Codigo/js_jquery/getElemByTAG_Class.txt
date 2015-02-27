@@ -1,0 +1,88 @@
+//function imprimir(){
+//	$('.row-contingut').addClass('col-lg-12');
+//	$('.row-contingut').removeClass('col-xs-12 col-vxs-8 col-sm-8 col-md-8 col-lg-9');
+//	window.print();
+//	$('.row-contingut').addClass('col-xs-12 col-vxs-8 col-sm-8 col-md-8 col-lg-9');
+//}
+
+function imprimir(){
+//	$('.row-contingut').addClass('col-lg-12');
+//	$('.row-contingut').removeClass('col-xs-12 col-vxs-8 col-sm-8 col-md-8 col-lg-9');
+	window.print();
+//	$('.row-contingut').addClass('col-xs-12 col-vxs-8 col-sm-8 col-md-8 col-lg-9');
+}
+
+$(document).ready(function(){
+//	var x = document.getElementById("t2").offsetWidth;
+	var initialFontSize = 20;
+	var z = document.getElementById("paginaDesplegable").offsetWidth;
+	
+//	document.getElementById("paginaDesplegable").style.width="600px"; //Funciona si es más de lo que debe, meno NO.
+	
+	
+//	var testElements = document.getElementsByClassName('taula-scroll');
+//	var testDivs = Array.prototype.filter.call(testElements, function(testElement){
+//	    alert("className: "+testElement.offsetWidth);
+//	});
+	
+
+	
+//	var testElements = document.getElementsByClassName('taula-scroll');
+//	var testDivs = Array.prototype.filter.call(testElements, function(testElement){
+//		testElement.style.fontSize = "14px";
+//	});
+//	
+//	$(window).resize(function(){
+//		var testElements = document.getElementsByClassName('taula-scroll');
+//		var testDivs = Array.prototype.filter.call(testElements, function(testElement){
+////		    alert("width: "+testElement.offsetWidth + "\nfont-size" +testElement.style.fontSize+"\nelem:"+testElement.id+"\nclassName: "+testElement.className);
+////			alert(testElement.offsetWidth);
+//			if(testElement.offsetWidth>z){
+//				testElement.style.fontSize = "12px";
+//			}
+//		});
+//	}); 
+	
+	
+	var testElements = document.getElementsByTagName('table');
+	var testDivs = Array.prototype.filter.call(testElements, function(testElement){
+			testElement.style.fontSize = initialFontSize+"px";
+	});
+	
+	$(window).resize(function(){
+		var testElements = document.getElementsByTagName('table');
+		var testDivs = Array.prototype.filter.call(testElements, function(testElement){
+//		    alert("className: "+testElement.offsetWidth);
+//			alert("font-size" +testElement.style.fontSize+"\nelem:"+testElement.id+"\nclassName: "+testElement.className);
+//			alert("className: "+testElement.className);
+//			alert("className: "+testElement.id);
+			if(testElement.offsetWidth>z){
+				testElement.style.fontSize = "12px";
+			}
+		    
+//		    testElement.style.color ="red";
+		});
+	}); 
+	
+
+	
+//	$(window).resize(function(){
+//		var testElements = document.getElementsByClassName('taula-scroll');
+//		var testDivs = Array.prototype.filter.call(testElements, function(testElement){
+//		    alert("className: "+testElement.offsetWidth);
+//		});
+//	}); 
+	
+//	var testElements = document.getElementsByTagName('table');
+//	var testDivs = Array.prototype.filter.call(testElements, function(testElement){
+//	    alert("className: "+testElement.offsetWidth);
+//		if(testElement.offsetWidth>z){
+//			testElement.style.fontSize = "12px";
+//		}
+//	    
+////	    testElement.style.color ="red";
+//	});
+	
+	alert(x);
+});
+	
