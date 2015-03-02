@@ -74,6 +74,19 @@ A TENER EN CUENTA
 -----------------
 Hay que tener en cuenta que la conexión con la base de datos sea la correcta y no con PostgreSQL.
 
+En Grails 2.4.3:
+Substituir:
+	import org.codehaus.groovy.grails.commons.ApplicationHolder
+por:
+	import grails.util.Holders
+
+Substituir:
+	application = ApplicationHolder.application
+por:
+	application = Holders.grailsApplication
+
+En src/groovy/org/codehaus/groovy/grails/plugins/springsecurity/ReflectionUtils.groovy
+Perteneciente al  plugin spring-security –core 1.2.7.3 
 
 PROBLEMAS:
 ----------
