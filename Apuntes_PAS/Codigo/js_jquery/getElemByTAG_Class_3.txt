@@ -1,0 +1,173 @@
+var lastSize = 0;
+var initialFontSize = 12; 	//(en px)
+//var minFontSize = 12;		//(en px)
+var minFontSize = 9;		//(en px)
+
+
+//function imprimir(){
+//	$('.row-contingut').addClass('col-lg-12');
+//	$('.row-contingut').removeClass('col-xs-12 col-vxs-8 col-sm-8 col-md-8 col-lg-9');
+//	window.print();
+//	$('.row-contingut').addClass('col-xs-12 col-vxs-8 col-sm-8 col-md-8 col-lg-9');
+//}
+
+function imprimir(){
+//	$('.row-contingut').addClass('col-lg-12');
+//	$('.row-contingut').removeClass('col-xs-12 col-vxs-8 col-sm-8 col-md-8 col-lg-9');
+	window.print();
+//	$('.row-contingut').addClass('col-xs-12 col-vxs-8 col-sm-8 col-md-8 col-lg-9');
+}
+
+function getFontSize(fontSize){
+	if(fontSize.length==3){
+		return fontSize.substring(0, 1);
+	}
+	if(fontSize.length==4){
+		return fontSize.substring(0, 2);
+	}
+	
+}
+
+function getParentSize(element){
+//	if((element.parentNode.id=="paginaDesplegable") || (element.parentNode.className=="dsplContent")){
+//	if(element.parentNode.className=="dsplContent"){
+//		console.log("elemento padre: paginaDesplegable");
+//		console.log("clase: "+element.parentNode.className);
+//		console.log("*********************************");
+//	}
+//	else{
+//		getParentSize(element)
+//	}
+	
+	if((element.parentNode.id=="paginaDesplegable") || (element.parentNode.className=="taula-scroll")){
+//		console.log("elemento padre: paginaDesplegable");
+//		console.log("clase: "+element.parentNode.className);
+		return element.parentNode.offsetWidth;
+		console.log("SI*********************************");
+	}
+	else{
+//		console.log("elemento padre: paginaDesplegable");
+//		console.log("clase: "+element.parentNode.className);
+		console.log("NO*********************************");
+		return getParentSize(element.parentNode)
+	}
+	
+//	if(element.parentNode.parentNode.parentNode.className=="dsplContent"){
+//		console.log("*********************************");
+//	}
+
+//	console.log("elemento padre: "+element.parentNode.id);
+//	console.log("elemento padre padre: "+element.parentNode.parentNode.id);
+//	console.log("elemento padre padre padre: "+element.parentNode.parentNode.parentNode.id);
+//	console.log("elemento padre padre padre: "+element.parentNode.parentNode.parentNode.className);
+
+}
+
+//function getParent(element){
+////	if((element.parentNode.id=="paginaDesplegable") || (element.parentNode.className=="taula-scroll")){
+//	if(element.parentNode.className=="taula-scroll"){
+//		return element.parentNode;
+//	}
+//	else{
+//		return getParent(element.parentNode)
+//	}
+//}
+
+function getParent(element){
+//	if((element.parentNode.id=="paginaDesplegable") || (element.parentNode.className=="taula-scroll")){
+//	if(element.parentNode.className.indexOf("taula-scroll")>-1){
+	if((element.parentNode.id.indexOf("paginaDesplegable")>-1) || (element.parentNode.className.indexOf("taula-scroll")>-1)){
+		return element.parentNode;
+	}
+	else{
+		return getParent(element.parentNode)
+	}
+}
+
+//function resizeTable(){
+//	
+//	var testElements = document.getElementsByTagName('table');
+//	var testDivs = Array.prototype.filter.call(testElements, function(testElement){
+////		console.log("ancho: "+testElement.offsetWidth);
+//		//Anchura del elemento padre
+//		var parent = getParent(testElement);
+//		//console.log("ancho del padre : "+parent.offsetWidth);
+//		//Si se agranda la pantalla
+//
+////		alert("actual:   "+parent.offsetWidth+"\nanterior: "+lastSize)
+////		console.log("actual:   "+parent.offsetWidth);
+////		console.log("anterior: "+lastSize);
+////		console.log("*****************************");
+//		
+//		//Si actual<anterior -> encoger  letra
+//		//Si actual>anterior -> agrandar letra
+////		if(parent.offsetWidth<lastSize){
+////			console.log("voy creciendo");
+////		}
+////		else{
+////			console.log("decreciendo")
+////		}
+////		
+//		lastSize=parent.offsetWidth;
+//		while(testElement.offsetWidth>parent.offsetWidth){
+//			if(getFontSize(testElement.style.fontSize)>minFontSize){
+//				testElement.style.fontSize = (getFontSize(testElement.style.fontSize)-1) + "px";
+//			}
+//			else{
+////				parent.className=parent.className+" taula-xxx"
+//				return false;
+//			}
+////				testElement.style.fontSize = "9px";
+//		}
+//		
+//		if((lastSize==0) || (testElement.offsetWidth>lastSize)){
+//		}
+//		else{
+//		}
+//
+//		return true;
+//	});	
+//}
+
+function getClearClassName(parentClassName){
+	if(parentClassName.indexOf("taula-resized")>-1){
+		var str = parentClassName.split(" ");
+		var len = str.length - 1;
+		var className = "";
+		for (i=0; i< len; i++) {
+			i == 0 ? (className = className + str[i]) : (className = className +" "+ str[i]);	;
+		}
+		return className;
+	}
+	else{
+		return parentClassName;
+	}
+}
+
+function resizeTable(){
+	var testElements = document.getElementsByTagName('table');
+	var testDivs = Array.prototype.filter.call(testElements, function(testElement){
+		var parent = getParent(testElement);
+		parent.className=getClearClassName(parent.className);
+		if(testElement.offsetWidth>parent.offsetWidth){
+			parent.className=parent.className+" taula-resized";
+			return true;
+		}
+		return true;
+	});	
+}
+
+$(document).ready(function(){
+	//Se establece el tamaño original de la fuente de la tabla.
+	var testElements = document.getElementsByTagName('table');
+	var testDivs = Array.prototype.filter.call(testElements, function(testElement){
+			testElement.style.fontSize = initialFontSize+"px";
+	});
+	
+	resizeTable();
+	$(window).resize(function(){
+		resizeTable();
+	});	
+	
+});
+	

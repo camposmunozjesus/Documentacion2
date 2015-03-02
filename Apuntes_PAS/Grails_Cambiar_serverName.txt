@@ -1,0 +1,20 @@
+CAMBIAR EL LOCALHOST POR OTRO NOMBRE - GRAILS
+=============================================
+Para acceder a la aplicación arrancada en local desde Eclipse/GGTS hay que añadir la siguiente línea en el archivo Config.groovy
+	grails.serverURL = "http://pc24094.upc.es:8090/${grails.util.Metadata.current.'app.name'}"
+
+para el entorno que corresponda (development, test o production).
+
+En el caso de Grails 2.4.3 esto NO es suficiente, hay que comentar en el archivo BuildConfig.groovy en el apartado grails.project.fork las siguientes
+líneas:
+	//configure settings for the run-app JVM
+	run: [maxMemory: 768, minMemory: 64, debug: false, maxPerm: 256],
+
+
+*****************************************************************************************************************************************************
+------------------------------
+Creación:		02-03-2015
+				
+Jesús Campos Muñoz
+jesus.campos@upc.edu
+------------------------------
