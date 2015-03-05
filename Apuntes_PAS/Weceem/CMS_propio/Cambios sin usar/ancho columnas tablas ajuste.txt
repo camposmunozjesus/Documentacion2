@@ -1,0 +1,75 @@
+/* Ajustes de tablas */
+.taula-scroll .table.ample-100 >thead>tr>td,
+.taula-scroll .table.ample-100 >tbody>tr>td{
+   min-width: 100px !important;
+}
+
+.taula-scroll .table.ample-125 >thead>tr>td,
+.taula-scroll .table.ample-125 >tbody>tr>td{
+   min-width: 125px !important;
+}
+
+.taula-scroll .table.ample-150 >thead>tr>td,
+.taula-scroll .table.ample-150 >tbody>tr>td{
+   min-width: 150px !important;
+}
+
+.taula-scroll .table.ample-175 >thead>tr>td,
+.taula-scroll .table.ample-175 >tbody>tr>td{
+   min-width: 175px !important;
+}
+
+.taula-scroll .table.ample-200 >thead>tr>td,
+.taula-scroll .table.ample-200 >tbody>tr>td{
+   min-width: 200px !important;
+}
+
+.taula-scroll .table.ample-225 >thead>tr>td,
+.taula-scroll .table.ample-225 >tbody>tr>td{
+   min-width: 225px !important;
+}
+
+.taula-scroll .table.ample-250 >thead>tr>td,
+.taula-scroll .table.ample-250 >tbody>tr>td{
+   min-width: 250px !important;
+}
+
+.taula-scroll .table.ample-275 >thead>tr>td,
+.taula-scroll .table.ample-275 >tbody>tr>td{
+   min-width: 275px !important;
+}
+
+.taula-scroll .table.ample-300 >thead>tr>td,
+.taula-scroll .table.ample-300 >tbody>tr>td{
+   min-width: 300px !important;
+}
+
+.taula-scroll .table.ample-325 >thead>tr>td,
+.taula-scroll .table.ample-325 >tbody>tr>td{
+   min-width: 125px !important;
+}
+
+.taula-scroll .table.ample-350 >thead>tr>td,
+.taula-scroll .table.ample-350 >tbody>tr>td{
+   min-width: 350px !important;
+}
+
+.taula-scroll .table.ample-375 >thead>tr>td,
+.taula-scroll .table.ample-375 >tbody>tr>td{
+   min-width: 375px !important;
+}
+
+.taula-scroll .table.ample-400 >thead>tr>td,
+.taula-scroll .table.ample-400 >tbody>tr>td{
+   min-width: 400px !important;
+}
+
+.taula-scroll .table.ample-425 >thead>tr>td,
+.taula-scroll .table.ample-425 >tbody>tr>td{
+   min-width: 425px !important;
+}
+
+.taula-scroll .table.ample-450 >thead>tr>td,
+.taula-scroll .table.ample-450 >tbody>tr>td{
+   min-width: 450px !important;
+}
