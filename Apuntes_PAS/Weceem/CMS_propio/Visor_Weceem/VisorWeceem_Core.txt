@@ -1,0 +1,154 @@
+package inicipdipas
+
+import org.weceem.content.WcmContent
+
+/**
+ * 
+ * @author Jesus Campos
+ * <br>Ahora las im&aacute;genes se cargan del servidor y es capaz de cargar correctamente la p&aacute;gina Informacio_General.<br>
+ * Migas de pan: s&oacute;lo se consultan en las fichas, en el resto de lugares ya vienen los nombres y enlces correctos (hardcode).<br>
+ * Cuando una URL no existe redirige a la p&aacute;gina de inicio /IniciPDIPAS/index.
+ * 
+ */
+class Test11Controller {
+
+	def static allowedTypes = ['org.weceem.html.WcmHTMLContent', 'com.upc.WcmPlantillaFitxa', 'com.upc.WcmPlantillaFitxa2ColGenerica', 'com.upc.WcmPlantillaFitxaGenerica']
+	def spaceId = 2711
+	def spaceName = "PAS"
+
+	def index() {
+		def template
+		def webPage
+		
+		def values = request.forwardURI.toString().split("/")
+		
+		//Captura el aliasuri de la página visitada.
+		def page = values[values.size()-1]
+		
+		def query = {
+			and{
+				eq("space", spaceId)
+				eq("aliasuri", page)
+				'in'("type", allowedTypes)	
+			}
+		}
+		
+		//Carga de la página Inici
+		def pageContent = WcmContent.createCriteria().list(query)
+		
+		//Si la página buscada no existe nos redirecciona al /IniciPDIPAS/PAS/index/, y esta página sí existirá.
+		if(!pageContent){
+			println "Pagina inexistente"+new Date()+" "+values
+			query = {
+				and{
+					eq("space", spaceId)
+					eq("aliasuri", "index")
+					'in'("type", allowedTypes)	
+				}
+			}
+			
+			//Carga de la página Inici
+			pageContent = WcmContent.createCriteria().list(query)
+			
+			//Ej: "/IniciPDIPAS/PAS/index/"
+			values = "/${grails.util.Metadata.current.'app.name'}/${spaceName}/index/".split("/")
+		}
+
+		pageContent = pageContent[0]	
+		
+		//Weceem no deja guardar una página, template, widget, etc sin contenido.
+		//Se quieren mantener los enlaces href="/Portal/WeceemFiles/PAS/File/... pero los href="/Portal/PAS/index/...
+		//se quieren cambiar por href="/IniciPDIPAS/PAS/index/		
+//		def pageContentStr = pageContent.content.replace("<a href=\"/Portal/PAS/index/", "<a href=\"/IniciPDIPAS/PAS/index/")
+		//pageContent.content = pageContent.content.replace("<a href=\"/Portal/PAS/in... -> Machaca la base de datos.
+		
+		if(pageContent.tmpl)
+		{
+			template= pageContent.tmpl
+			//Carga del template
+			def pageTemplate = WcmContent.findByIdentityAndSpace(template, spaceId)
+			
+			//Poner el contenido de la página donde toca
+			webPage = pageTemplate.content.replace("<wcm:content />", pageContent.content)
+		}
+		else{
+			webPage = pageContent.content
+		}
+		
+		//Para Grails 2.4.3
+		webPage = webPage.replace("/Portal/${spaceName}/index", "/${grails.util.Metadata.current.'app.name'}/${spaceName}/index")
+	    webPage = webPage.replace("/Portal/${spaceName}/css", "/${grails.util.Metadata.current.'app.name'}/css")
+		webPage = webPage.replace("/Portal/${spaceName}/js", "/${grails.util.Metadata.current.'app.name'}/js")
+		//Las tres líneas anteriores se solucionan con regexp si en el template se tiene ${wcm.Link ...
+		
+		webPage = webPage.replace("\${wcm.loggedInUserName().encodeAsHTML()}", "")
+   
+		webPage = webPage.replace("\${node.title.encodeAsHTML()}", pageContent.title)
+   
+		 //Redirección de la página
+		 //${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General
+		 webPage = webPage.replace("\${grails.util.Metadata.current.'app.name'}", "${grails.util.Metadata.current.'app.name'}") // => En el contenido de la página NO se puede linkar con ${grails.util.Metadata.current.'app.name'}
+		 webPage = webPage.replace("\${space?.name}", spaceName) 
+		   
+		 //Sólo consulto las migas de pan si estoy en una ficha.
+		 if(pageContent.type == "com.upc.WcmPlantillaFitxa" || pageContent.type == "com.upc.WcmPlantillaFitxaGenerica"){
+			 webPage = webPage.replace("<!--breadCrumb-->", getBreadCrumb( values[3..(values.size()-1)], pageContent.title))
+		 }
+		   
+		//Buscador
+//		if(webPage.contains("<upc:search max=\"15\" eraseplaceholder=\"no\" placeholder=\"Cercar...\" types=\"com.upc.WcmPlantillaFitxa\"></upc:search>")){
+//			webPage = webPage.replace("<upc:search max=\"15\" eraseplaceholder=\"no\" placeholder=\"Cercar...\" types=\"com.upc.WcmPlantillaFitxa\"></upc:search>", "<form action=\"/IniciPDIPAS/searcher/index\" method=\"get\"><input type=\"hidden\" name=\"max\" value=\"5\"><input name=\"query\" class=\"customSearchField\" placeholder=\"Cercar...\" onfocus=\"\" value=\"\" id=\"query\" type=\"text\"><input name=\"_action_index\" class=\"customSearchButton\" value=\"Cerca\" type=\"submit\"></form>")
+//		}
+		if(webPage.contains("<!--buscadorUPC-->")){
+			webPage = webPage.replace("<!--buscadorUPC-->", "<form action=\"/IniciPDIPAS/searcher/index\" method=\"get\"><input type=\"hidden\" name=\"max\" value=\"5\"><input name=\"query\" class=\"customSearchField\" placeholder=\"Cercar...\" onfocus=\"\" value=\"\" id=\"query\" type=\"text\"><input name=\"_action_index\" class=\"customSearchButton\" value=\"Cerca\" type=\"submit\"></form>")
+		}
+		
+		  
+		render(text: webPage, contentType: "text/html", encoding: "UTF-8")
+	}
+	
+	/**
+	 * Migas de Pan<br>
+	 * Est&aacute;n hardcoded en las p&aacute;ginas de Inici, Informaci&oacute; General y Fichas Desplegables con dos columnas. Por lo tanto s&oacute;lo se 
+	 * utilizar&aacute; este m&eacute;todo para las fichas.
+	 * El String devuelto substituir&aacute; al comentario <!--breadCrumb--> en la p&aacute;gina.
+	 * @param	urlList Sirve para formar la URL a la que enlaza cada miga de pan y para los t&iacute;tulos que se ver&aacute;n. Se usa values[3..(values.size()-1)] debido a que los primeros valores de este vector son "", "PAS", y no hacen falta
+	 * @param	pageTitle Es el t&iacute;tulo de la p&aacute;gina actual
+	 * @return 	Devuelve un String, con el correspondiente formato HTML, para las migas de pan del InciciPDIPAS.
+	 */
+	private String getBreadCrumb( urlList, pageTitle){
+		def mdpAddr = "/${grails.util.Metadata.current.'app.name'}/${spaceName}"
+		def mdpStr = "<b>Sou a <span class=\"breadCrumbSeparator firstSeparator\">&raquo;</span></b>"
+		def mdpAliasuri = urlList[0..(urlList.size()-1)]
+		def mdpTitle = urlList[0..(urlList.size()-1)]
+
+				//TITLE: Los dos primeros valores son siempre los mismos.
+		mdpTitle[0]="Inici"
+		mdpTitle[1]="Informaci\u00f3 General"
+		if(mdpTitle.size()>3){
+			//Si estamos en una ficha, se consulta el nombre en la BD del apartado del menú izquierdo.
+			def fitxa = WcmContent.findByAliasuriAndSpace(mdpAliasuri[2], spaceId)
+			mdpTitle[2] = fitxa.title
+			
+		}
+		mdpTitle[mdpTitle.size()-1]=pageTitle
+
+		//Generación del mapa key(aliasuri):value(title)
+		def pairs = [mdpAliasuri, mdpTitle].transpose()
+		def breadMap = [:]
+		pairs.each{ k, v -> breadMap[k] = v }
+
+		//Generación del String con key(aliasuri):value(title).
+		breadMap.each{
+			 mdpAddr += "/"+it.key
+			 if (!(it.key==urlList.last())){
+				 mdpStr += "<a href=\"$mdpAddr\"><span class=\"breadCrumbItem\">"+it.value+"</span></a><span class=\"breadCrumbSeparator\">&rsaquo;</span>"
+			 }
+			 else{
+				 mdpStr += "<span class=\"breadCrumbLastItem\">"+it.value+"</span>"
+			 }
+		}
+		
+		return mdpStr
+	}
+}

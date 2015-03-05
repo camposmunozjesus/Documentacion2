@@ -1,0 +1,51 @@
+function getParent(element){
+	if((element.parentNode.id.indexOf("paginaDesplegable")>-1) || (element.parentNode.className.indexOf("taula-scroll")>-1)){
+		return element.parentNode;
+	}
+	else{
+		return getParent(element.parentNode)
+	}
+}
+
+function getClearClassName(parentClassName){
+	if(parentClassName.indexOf("taula-resized")>-1){
+		var str = parentClassName.split(" ");
+		var len = str.length - 1;
+		var className = "";
+		for (i=0; i< len; i++) {
+			i == 0 ? (className = className + str[i]) : (className = className +" "+ str[i]);
+		}
+		return className;
+	}
+	else{
+		return parentClassName;
+	}
+}
+
+function resizeTable(){
+	var testElements = document.getElementsByTagName('table');
+	var testDivs = Array.prototype.filter.call(testElements, function(testElement){
+		var parent = getParent(testElement);
+		parent.className=getClearClassName(parent.className);
+		if(testElement.offsetWidth>parent.offsetWidth){
+			parent.className=parent.className+" taula-resized";
+		}
+	});	
+}
+
+$(document).ready(function(){
+	var initialFontSize = 12; 	//(en px)
+	
+	//Se establece el tamaño original de la fuente de la tabla.
+	var testElements = document.getElementsByTagName('table');
+	var testDivs = Array.prototype.filter.call(testElements, function(testElement){
+			testElement.style.fontSize = initialFontSize+"px";
+	});
+	
+	resizeTable();
+	$(window).resize(function(){
+		resizeTable();
+	});	
+	
+});
+	
