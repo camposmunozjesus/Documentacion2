@@ -1,0 +1,198 @@
+				<div id="informacio_general_page"><!-- Primera Fila -->
+<div class="fit-column">
+<div class="row no-scroll-bar">
+<div class="grup-info">
+<div class="col-xs-12 col-info-4 col-sm-3 col-md-3 col-lg-2 row-margin-bottom-imagen row-margin-top20-imagen">
+<div class="imagen"><img alt="Dades generals" src="/gcrrhh/../rrhh_resources/PDI/Raco_personal/dades-generals.png" style="width: 150px; height: 150px;" />
+<div class="contenedor_1"><a href="Informacio_General/El-PDI-a-la-UPC" target="_self">&nbsp;</a></div>
+
+<div class="contenedor_2">
+<p class="blanco">Dades generals</p>
+</div>
+</div>
+</div>
+
+<div class="col-xs-12 col-info-8 col-sm-3 col-md-3 col-lg-4 row-margin-bottom-descripcio row-margin-top20-descripcio col-info-height">
+<div class="ficha_inici">
+<p><a href="/rrhh/PDI/index/Raco_Personal">Dades personals</a></p>
+
+<ul>
+	<li><a href="/RPPDI/dadesPersonals">Dades personals</a></li>
+	<li><a href="/RPPDI/adrecaParticular">Adre&ccedil;a particular</a></li>
+	<li><a href="/RPPDI/comunicacions/list">Tel&egrave;fons i adreces electr&ograve;niques</a></li>
+	<li><a href="/RPPDI/dadesBancaries/list">Domiciliaci&oacute; banc&agrave;ria</a></li>
+	<li><a href="/RPPDI/titulacions">Titulaci&oacute;</a></li>
+	<li><a href="/RPPDI/familiars/list">Familiars</a></li>
+	<li><a href="/RPPDI/numSeguretatSocial/list">N&uacute;mero seguretat social</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div class="grup-info">
+<div class="col-xs-12 col-info-4 col-sm-3 col-md-3 col-lg-2 row-margin-bottom-imagen">
+<div class="imagen"><img alt="Dades econòmiques" src="/gcrrhh/../rrhh_resources/PDI/Raco_personal/dades-economiques(1).png" style="width: 150px; height: 150px;" />
+<div class="contenedor_1"><a href="Informacio_General/Sistema-retributiu" target="_self">&nbsp;</a></div>
+
+<div class="contenedor_2">
+<p class="blanco">Dades econ&ograve;miques</p>
+</div>
+</div>
+</div>
+
+<div class="col-xs-12 col-info-8 col-sm-3 col-md-3 col-lg-4 row-margin-bottom-descripcio col-info-height">
+<div class="ficha_inici">
+<p><span id="novedad"><a href="/rrhh/PDI/index/Raco_Personal">Dades econ&ograve;miques</a></span></p>
+
+<ul>
+	<li><a href="/RPPDI/rebutNomina/list">Rebut de n&ograve;mina</a></li>
+	<li><a href="/gcrrhh/../rrhh_resources/PDI/Raco_personal/MOD_145_2015.pdf" target="_blank">Dades IRPF (Mod. 145) </a></li>
+	<li><a href="/RPPDI/bestretes/list">Bestretes</a></li>
+	<li>Pla de pensions</li>
+	<li><a href="/RPPDI/retencionsJudicials/list">Retencions judicials</a></li>
+	<li><a href="https://millot.upc.edu/CERT">Certificats de renda</a></li>
+	<li>Campanya 0,7
+	<ul>
+		<li><a href="/RPPDI/campanya07/list">Aportac&iacute;&oacute;</a></li>
+		<li><a href="https://millot.upc.edu/CERT/certificatCampanya07/index" target="_blank">Certificat</a></li>
+	</ul>
+	</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Segunda Fila -->
+
+<div class="fit-column">
+<div class="row no-scroll-bar">
+<div class="grup-info">
+<div class="col-xs-12 col-info-4 col-sm-3 col-md-3 col-lg-2 row-margin-bottom-imagen">
+<div class="imagen"><img alt="Vinculació a la UPC" src="/gcrrhh/../rrhh_resources/PDI/Raco_personal/vinculacio(1).png" style="width: 150px; height: 150px;" />
+<div class="contenedor_1"><a href="Informacio_General/El-PDI-a-la-UPC" target="_self">&nbsp;</a></div>
+
+<div class="contenedor_2 long-cont2">
+<p class="blanco">Vinculaci&oacute;</p>
+</div>
+</div>
+</div>
+
+<div class="col-xs-12 col-info-8 col-sm-3 col-md-3 col-lg-4 row-margin-bottom-descripcio col-info-height">
+<div class="ficha_inici">
+<p><span id="novedad"><a href="/rrhh/PDI/index/Raco_Personal">Dades de vinculaci&oacute;</a></span></p>
+
+<ul>
+	<li class="desc">Certificats de vinculaci&oacute;
+	<ul>
+		<li class="desc"><a href="/RPPDI/vinculacioActual">Vinculaci&oacute; actual</a></li>
+		<li class="desc"><a href="/RPPDI/vinculacioDadesBanc">Vinculaci&oacute; amb dades banc&agrave;ries</a></li>
+		<li class="desc"><a href="/RPPDI/vinculacioDadesLab">Vinculaci&oacute; amb dades laborals</a></li>
+		<li class="desc"><a href="/RPPDI/vinculacionsUPC/list">Hist&ograve;ric de vinculacions a la UPC</a><span id="cke_bm_83E" style="display: none;">&nbsp;</span></li>
+	</ul>
+	</li>
+	<li class="desc"><a href="/RPPDI/antiguitat/list">Antiguitat / Triennis</a></li>
+	<li class="desc"><a href="/RPPDI/compatibilitats/list">Compatibilitat</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div class="grup-info">
+<div class="col-xs-12 col-info-4 col-sm-3 col-md-3 col-lg-2 row-margin-bottom-imagen">
+<div class="imagen"><img alt="Lloc de treball" src="/gcrrhh/../rrhh_resources/PDI/Raco_personal/provisio-treball2(1).png" style="width: 150px; height: 150px;" />
+<div class="contenedor_1"><a href="Informacio_General/Sistema-retributiu" target="_self">&nbsp;</a></div>
+
+<div class="contenedor_2">
+<p class="blanco">Lloc de treball</p>
+</div>
+</div>
+</div>
+
+<div class="col-xs-12 col-info-8 col-sm-3 col-md-3 col-lg-4 row-margin-bottom-descripcio col-info-height">
+<div class="ficha_inici">
+<p><span id="novedad"><a href="/rrhh/PDI/index/Raco_Personal">Dades del lloc de treball</a></span></p>
+
+<ul>
+	<li><a href="/RPPDI/dadesLloc/list">Dades del lloc</a></li>
+	<li><a href="/RPPDI/adrecaLloc/list">Adre&ccedil;a del lloc</a></li>
+	<li>C&agrave;rrecs acad&egrave;mics</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Tercera Fila -->
+
+<div class="fit-column">
+<div class="row no-scroll-bar">
+<div class="grup-info">
+<div class="col-xs-12 col-info-4 col-sm-3 col-md-3 col-lg-2 row-margin-bottom-imagen">
+<div class="imagen"><img alt="Consulta els mèrits" src="/gcrrhh/../rrhh_resources/PDI/Raco_personal/recerca.png" style="width: 150px; height: 150px;" />
+<div class="contenedor_1"><a href="Informacio_General/El-PDI-a-la-UPC" target="_self">&nbsp;</a></div>
+
+<div class="contenedor_2 long-cont2">
+<p class="blanco">Planificaci&oacute; i Avaluaci&oacute; del PDI</p>
+</div>
+</div>
+</div>
+
+<div class="col-xs-12 col-info-8 col-sm-3 col-md-3 col-lg-4 row-margin-bottom-descripcio col-info-height">
+<div class="ficha_inici">
+<p><span id="novedad"><a href="/rrhh/PDI/index/Raco_Personal">Avaluaci&oacute; i r&egrave;gim de dedicaci&oacute;</a></span></p>
+
+<ul>
+	<li class="desc">Activitat docent, recerca, direcci&oacute; i coord. I processos d&#39;avaluaci&oacute;. <a href="http://www.upc.edu/infopdi" target="_blank">InfoPDI</a></li>
+	<li class="desc"><a href="http://www.upc.edu/meritsdocents/" target="_blank">Avaluaci&oacute; m&egrave;rits docents</a></li>
+	<li class="desc"><a href="http://www.upc.edu/meritsgestio" target="_blank">Avaluaci&oacute; m&egrave;rits gesti&oacute;</a></li>
+	<li class="desc">Consultar els m&egrave;rits que es perceben a la n&ograve;mina:
+	<ul>
+		<li><a href="/RPPDI/meritsRecerca">M&egrave;rits de recerca</a></li>
+		<li><a href="/RPPDI/meritsGestio">M&egrave;rits de gesti&oacute;</a></li>
+		<li><a href="/RPPDI/meritsDocents">M&egrave;rits docents</a></li>
+	</ul>
+	</li>
+	<li>Resolucions m&egrave;rits:
+	<ul>
+		<li>Complement b&agrave;sic docent</li>
+		<li>Complement b&agrave;sic de recerca</li>
+		<li>Complement addicional docent</li>
+		<li>Complement addicional de gesti&oacute;</li>
+	</ul>
+	</li>
+	<li><a href="https://www.upc.edu/regimdedicacio/" target="_blank">R&egrave;gim de dedicaci&oacute; del PDI</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div class="grup-info">
+<div class="col-xs-12 col-info-4 col-sm-3 col-md-3 col-lg-2 row-margin-bottom-imagen">
+<div class="imagen"><img alt="Resolucions de mèrits" src="/gcrrhh/../rrhh_resources/PDI/Raco_personal/solicitud-revisions.png" style="width: 150px; height: 150px;" />
+<div class="contenedor_1"><a href="Informacio_General/Sistema-retributiu" target="_self">&nbsp;</a></div>
+
+<div class="contenedor_2">
+<p class="blanco">Avaluaci&oacute; de m&egrave;rits</p>
+</div>
+</div>
+</div>
+
+<div class="col-xs-12 col-info-8 col-sm-3 col-md-3 col-lg-4 row-margin-bottom-descripcio col-info-height">
+<div class="ficha_inici">
+<p><span id="novedad"><a href="/rrhh/PDI/index/Raco_Personal">Salut</a></span></p>
+
+<ul>
+	<li><a href="https://millot.upc.edu/COM" target="_blank">Comunicacions baixes m&egrave;diques (Seg. Social)</a></li>
+	<li><a href="https://www.upc.edu/revisions_mediques/treballador" target="_blank">Sol&middot;licitud revisions m&egrave;diques</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Cuarta  Fila --><!-- Fin Fila --></div>
+
+<p>&nbsp;</p>
+
+			
