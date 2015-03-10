@@ -1,0 +1,15 @@
+&lt; <
+&gt; >
+
+&amp;agrave; à
+&amp;egrave; è
+&amp;eacute; é
+&amp;iacute; í
+&amp;ograve; ò
+&amp;oacute; ó
+&amp;uacute; ú
+&amp;uuml; ü
+
+&amp;#39; '
+&amp; &
+

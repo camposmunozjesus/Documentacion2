@@ -596,6 +596,17 @@ SAVE
 Permite crear el registro en la tabla, y si existe, lo actualiza.
 
 
+<CONSULTAS AVANZADAS>**********************************************************************************************************************************
+--------------
+SQLRESTRICTION
+--------------
+Ejemplos de sqlRestriction:
+	sqlRestriction("upper(translate(palcla, 'áàâéèêíìîóòôúùûü', 'aaaeeeiiiooouuuu')) like upper(translate('%permís%', 'áàâéèêíìîóòôúùûü', 'aaaeeeiiiooouuuu'))")
+	sqlRestriction "aliuri='Permisos'"
+	sqlRestriction("aliuri='Permisos'") 
+	sqlRestriction("titulo='${it.toString()}'") 
+
+						
 <ORDENACIÓN>*******************************************************************************************************************************************
 -------------------------------------------------
 ORDENAR UN VECTOR RECUPERADO DE UNA BASE DE DATOS
@@ -774,6 +785,36 @@ persona, por lo que al listar toda la tabla de los trabajadores de la empresa, e
 	def listaUnidades = (totalPuestos*.codigoDepartamento).unique()
 	
 De esta manera conseguimos quedarnos únicamente con una lista de códigos de departamento, y el resto de campos de la clase del dominio Lloc se obvian.
+
+
+******************************************************************************************************************************************************
+-----------------------------------------------------
+REALIZAR UNA CONSULTA SIN TENER EN CUENTA LOS ACENTOS
+-----------------------------------------------------
+OJO!!! con la codificación: el controlador debe estar en UTF-8. Al igual que siqueremos utilizar stripAccents().
+
+Se utilizará:
+	sqlRestriction("upper(translate(palcla, 'áàâéèêíìîïóòôúùûü', 'aaaeeeiiiiooouuuu')) like upper(translate('%${it.toString()}%', 'áàâéèêíìîïóòôúùûü', 'aaaeeeiiiiooouuuu'))")
+	
+Donde "palcla" es el campo utilizado en la BD, mientras que en el dominio se utiliza paraulesClau.
+
+El ejemplo completo:
+	def paraulesClau = params.query.toString().replaceAll("'", " ")
+	paraulesClau =paraulesClau.split(" ")
+
+	def query = {
+		and{
+			eq("espai", espaiId)
+			'in'("tipusContingut", allowedTypes)
+			paraulesClau.each{
+				sqlRestriction("upper(translate(palcla, 'áàâéèêíìîïóòôúùûü', 'aaaeeeiiiiooouuuu')) like upper(translate('%${it.toString()}%', 'áàâéèêíìîïóòôúùûü', 'aaaeeeiiiiooouuuu'))")
+			}					
+		}
+		order("titol", "asc")
+	}
+	//Carga de las coincidencias de la busqueda
+	def resultList = Contingut.createCriteria().list(params, query)
+	
 
 
 <CLOSURE>*********************************************************************************************************************************************

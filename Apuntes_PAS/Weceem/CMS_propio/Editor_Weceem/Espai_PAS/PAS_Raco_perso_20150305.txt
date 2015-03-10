@@ -1,0 +1,157 @@
+				<div id="informacio_general_page"><!-- Primera Fila -->
+<div class="fit-column">
+<div class="row no-scroll-bar">
+<div class="grup-info">
+<div class="col-xs-12 col-info-4 col-sm-3 col-md-3 col-lg-2 row-margin-bottom-imagen row-margin-top20-imagen">
+<div class="imagen"><img alt="Dades generals" src="/gcrrhh/../rrhh_resources/PAS/Raco_personal/dades-generals.png" style="width: 150px; height: 150px;" />
+<div class="contenedor_1"><a href="Informacio_General/El-PAS-a-la-UPC" target="_self">&nbsp;</a></div>
+
+<div class="contenedor_2">
+<p class="blanco">Dades generals</p>
+</div>
+</div>
+</div>
+
+<div class="col-xs-12 col-info-8 col-sm-3 col-md-3 col-lg-4 row-margin-bottom-descripcio row-margin-top20-descripcio col-info-height">
+<div class="ficha_inici">
+<p><a href="/rrhh/PAS/index/Raco_Personal">Dades personals</a></p>
+
+<ul>
+	<li><a href="/RPPAS/dadesPersonals">Dades personals</a></li>
+	<li><a href="/RPPAS/adrecaParticular">Adre&ccedil;a particular</a></li>
+	<li><a href="/RPPAS/comunicacions/list">Tel&egrave;fons i adreces electr&ograve;niques</a></li>
+	<li><a href="/RPPAS/dadesBancaries/list">Domiciliaci&oacute; banc&agrave;ria</a></li>
+	<li><a href="/RPPAS/titulacions">Titulaci&oacute;</a></li>
+	<li><a href="/RPPAS/familiars/list">Familiars</a></li>
+	<li><a href="/RPPAS/numSeguretatSocial/list">N&uacute;mero seguretat social</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div class="grup-info">
+<div class="col-xs-12 col-info-4 col-sm-3 col-md-3 col-lg-2 row-margin-bottom-imagen">
+<div class="imagen"><img alt="Dades econòmiques" src="/gcrrhh/../rrhh_resources/PAS/Raco_personal/dades-economiques(1).png" style="width: 150px; height: 150px;" />
+<div class="contenedor_1"><a href="Informacio_General/Sistema-retributiu" target="_self">&nbsp;</a></div>
+
+<div class="contenedor_2">
+<p class="blanco">Dades econ&ograve;miques</p>
+</div>
+</div>
+</div>
+
+<div class="col-xs-12 col-info-8 col-sm-3 col-md-3 col-lg-4 row-margin-bottom-descripcio col-info-height">
+<div class="ficha_inici">
+<p><a href="/rrhh/PAS/index/Raco_Personal"><span id="novedad">Dades econ&ograve;miques</span></a></p>
+
+<ul>
+	<li><a href="/RPPAS/rebutNomina/list">Rebut de n&ograve;mina</a></li>
+	<li><a href="/gcrrhh/../rrhh_resources/PAS/Raco_personal/MOD_145_2015.pdf" target="_blank">Dades IRPF (Mod. 145)</a></li>
+	<li><a href="/RPPAS/bestretes/list">Bestretes</a></li>
+	<li>Pla de pensions</li>
+	<li><a href="/RPPAS/retencionsJudicials/list">Retencions judicials</a></li>
+	<li><a href="https://millot.upc.edu/CERT">Certificats de renda</a></li>
+	<li><a href="/RPPAS/campanya07/list">Campanya 0,7</a>
+	<ul>
+		<li><a href="/RPPAS/campanya07/list">Aportac&iacute;&oacute;</a></li>
+		<li><a href="https://millot.upc.edu/CERT/certificatCampanya07/index" target="_blank">Certificat</a></li>
+	</ul>
+	</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Segunda Fila -->
+
+<div class="fit-column">
+<div class="row no-scroll-bar">
+<div class="grup-info">
+<div class="col-xs-12 col-info-4 col-sm-3 col-md-3 col-lg-2 row-margin-bottom-imagen">
+<div class="imagen"><img alt="Vinculació a la UPC" src="/gcrrhh/../rrhh_resources/PAS/Raco_personal/vinculacio(1).png" style="width: 150px; height: 150px;" />
+<div class="contenedor_1"><a href="Informacio_General/El-PAS-a-la-UPC" target="_self">&nbsp;</a></div>
+
+<div class="contenedor_2 long-cont2">
+<p class="blanco">Vinculaci&oacute;</p>
+</div>
+</div>
+</div>
+
+<div class="col-xs-12 col-info-8 col-sm-3 col-md-3 col-lg-4 row-margin-bottom-descripcio col-info-height">
+<div class="ficha_inici">
+<p><span id="novedad"><a href="/rrhh/PAS/index/Raco_Personal">Dades de vinculaci&oacute;</a></span></p>
+
+<ul>
+	<li class="desc">Certificats de vinculaci&oacute;
+	<ul>
+		<li class="desc"><a href="/RPPAS/vinculacioActual/list">Vinculaci&oacute; actual</a></li>
+		<li class="desc"><a href="/RPPAS/vinculacioDadesBanc/list">Vinculaci&oacute; amb dades banc&agrave;ries</a></li>
+		<li class="desc"><a href="/RPPAS/vinculacioDadesLab/list">Vinculaci&oacute; amb dades laborals</a></li>
+		<li class="desc"><a href="/RPPAS/vinculacionsUPC/list">Hist&ograve;ric de vinculacions a la UPC</a><span id="cke_bm_83E" style="display: none;">&nbsp;</span></li>
+	</ul>
+	</li>
+	<li class="desc"><a href="/RPPAS/antiguitat/list">Antiguitat / Triennis</a></li>
+	<li class="desc"><a href="/RPPAS/compatibilitats/list">Compatibilitat</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div class="grup-info">
+<div class="col-xs-12 col-info-4 col-sm-3 col-md-3 col-lg-2 row-margin-bottom-imagen">
+<div class="imagen"><img alt="Lloc de treball" src="/gcrrhh/../rrhh_resources/PAS/Raco_personal/provisio-treball2.png" style="width: 150px; height: 150px;" />
+<div class="contenedor_1"><a href="Informacio_General/Sistema-retributiu" target="_self">&nbsp;</a></div>
+
+<div class="contenedor_2">
+<p class="blanco">Lloc de treball</p>
+</div>
+</div>
+</div>
+
+<div class="col-xs-12 col-info-8 col-sm-3 col-md-3 col-lg-4 row-margin-bottom-descripcio col-info-height">
+<div class="ficha_inici">
+<p><span id="novedad"><a href="/rrhh/PAS/index/Raco_Personal">Dades del lloc de treball</a></span></p>
+
+<ul>
+	<li><a href="/RPPAS/dadesLloc/list">Dades del lloc</a></li>
+	<li><a href="/RPPAS/adrecaLloc/list">Adre&ccedil;a del lloc</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Tercera Fila -->
+
+<div class="fit-column">
+<div class="row no-scroll-bar">
+<div class="grup-info">
+<div class="col-xs-12 col-info-4 col-sm-3 col-md-3 col-lg-2 row-margin-bottom-imagen">
+<div class="imagen"><a href="https://espaipersonal.upc.edu/irj/portal/RESUM_FORMACIO_PAS"><img alt="Formació" src="/gcrrhh/../rrhh_resources/PAS/Raco_personal/formacio(1).png" style="width: 150px; height: 150px;" /></a>
+
+<div class="contenedor_1"><a href="Informacio_General/El-PAS-a-la-UPC" target="_self">&nbsp;</a></div>
+
+<div class="contenedor_2">
+<p class="blanco">Formaci&oacute;</p>
+</div>
+</div>
+</div>
+
+<div class="col-xs-12 col-info-8 col-sm-3 col-md-3 col-lg-4 row-margin-bottom-descripcio col-info-height">
+<div class="ficha_inici">
+<p><span id="novedad"><a href="https://espaipersonal.upc.edu/irj/portal/RESUM_FORMACIO_PAS">Formaci&oacute;</a></span></p>
+
+<ul>
+	<li>V&iacute;deos tutorials i manuals de suport</li>
+	<li>Formaci&oacute; interna</li>
+	<li>Expedient formaci&oacute;</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Fin Fila --></div>
+
+			
