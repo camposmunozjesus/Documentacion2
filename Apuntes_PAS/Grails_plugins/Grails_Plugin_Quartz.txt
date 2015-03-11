@@ -1,0 +1,57 @@
+GRAILS - PROGRAMACIÓN DE TAREAS
+===============================
+Plugin Quartz permite que una tarea se ejecute de manera programada, como si de un CRONTAB de Linux se tratase. Una vez iniciada la aplicación de manera
+automática se inicairá el proceso sin necesidad que el usuario interactúe.
+
+--------------------------
+INSTALACIÓN DE MAIL PLUGIN
+--------------------------
+Referencia de utilización: http://grails.org/plugin/quartz
+Plugins must be declared in the grails-app/conf/BuildConfig.groovy file.
+Example:
+grails.project.dependency.resolution = {
+   ...
+   plugins {
+      compile ":quartz:1.0.2"
+   }
+}
+
+
+*****************************************************************************************************************************************************
+-------------------------------------
+CREAR UN NUEVO JOB (TAREA PROGRAMADA)
+-------------------------------------
+Escribir en la línea de comandos:
+	create-job nombre_del_JOB
+Hay que haber instalado previamente el plugin QUARTZ, sin el plugin el comando NO funciona.
+
+
+*****************************************************************************************************************************************************
+--------------------------
+CÓDIGO DE EJEMPLO - BÁSICO
+--------------------------
+Nos vamos a la carpeta "grails-app/jobs" del proyecto, que es donde se habrá creado la clase generada con el comando anterior.
+
+	class nombre_del_JOB {
+
+		static triggers = {
+			simple name: 'mySimpleTrigger2', startDelay: 2000, repeatInterval: 1000
+		  }
+		  def group = "MyGroup2"
+		  def description = "Example job with Simple Trigger2"
+		
+		def execute(){ print "Job 222222 run!"+new Date() }
+		
+	}
+	
+En esta ocasión, a los 2 segundos de haber arrancado la aplicación se imprime un mensaje por pantalla, y a partir de ahí cada segundo se vuelve a printar
+un nuevo mensaje.
+
+
+*****************************************************************************************************************************************************
+------------------------------
+Creación:		04-11-2014
+				
+Jesús Campos Muñoz
+jesus.campos@upc.edu
+------------------------------
