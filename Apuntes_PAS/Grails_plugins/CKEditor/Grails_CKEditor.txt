@@ -294,7 +294,87 @@ El archivo se encuentra en la carpeta "web-app" de la aplicación "gcrrhh".
 
 NO se puede utilizar ${grails.util.Metadata.current.'app.name'}.
 
-	
+
+<CONFIG.JS>******************************************************************************************************************************************
+-------------------------------
+CAMBIAR INDENTADO DE LA SANGRÍA
+-------------------------------
+El botón de añadir sangría/quitar sangría (out/indent) es un plugin!!. Por lo que NO se puede modificar.
+Para variar el valor del indentado de la sangría (40px por defecto) hay que poner lo siguiente en el archivo config.js (myckconfig.js):
+	CKEDITOR.editorConfig = function( config ) {
+		...
+		config.indentOffset = 20;
+		...
+	};
+
+Con esto se variará a 20px por defecto.
+
+Esto está extraído de una página (http://docs.cksource.com/ckeditor_api/symbols/CKEDITOR.config.html#.indentOffset) que habla de configuraciones para 
+CKEditor a partir de la versión 3, al menos en la indentación.
+
+Otras cosas interesantes relacionadas con la indentación son:
+	<static> {Array} CKEDITOR.config.indentClasses					Since: 3.0
+		List of classes to use for indenting the contents. If it's null, no classes will be used and instead the #indentUnit and #indentOffset properties 
+		will be used.
+		Defined in: plugins/indent/plugin.js.
+		Código:
+		-----------------------------------------------------------
+		|// Use the classes 'Indent1', 'Indent2', 'Indent3'		  |
+		|config.indentClasses = ['Indent1', 'Indent2', 'Indent3'];|
+		-----------------------------------------------------------
+		Default Value:
+			null 
+	-------------------------------------------------------------------------------------------------------------------------------------------------
+	<static> {Number} CKEDITOR.config.indentOffset					Since: 3.0
+		Size of each indentation step
+		Defined in: plugins/indent/plugin.js.
+		Código:
+		--------------------------
+		|config.indentOffset = 4;|
+		--------------------------
+		Default Value:
+			40 
+	-------------------------------------------------------------------------------------------------------------------------------------------------
+	<static> {String} CKEDITOR.config.indentUnit					Since: 3.0
+		Unit for the indentation style
+		Defined in: plugins/indent/plugin.js.
+		Código
+		---------------------------
+		|config.indentUnit = 'em';|
+		---------------------------
+		Default Value:
+			'px' 
+
+
+-----------------------
+BARRA DE TAREAS/TOOLBAR
+-----------------------
+Barra de tareas completa:
+	 config.toolbar = 'Editor';
+	 
+	 config.toolbar_Editor = [
+//		 config.toolbar =  [
+	         { name: 'document', items : [ 'Source','-','Save','NewPage','DocProps','Print'] },
+  		 	 { name: 'clipboard', items : [ 'Cut','Copy','Paste','PasteText','PasteFromWord','-','Undo','Redo' ] },
+ 		 	 { name: 'editing', items : [ 'Find','Replace','-','SelectAll','-','SpellChecker', 'Scayt' ] },
+ 		 	 { name: 'forms', items : [ 'Form', 'Checkbox', 'Radio', 'TextField', 'Textarea', 'Select', 'Button', 'ImageButton', 
+ 		         'HiddenField' ] },
+ 		 	 '/',
+ 		 	 { name: 'basicstyles', items : [ 'Bold','Italic','Underline','Strike','Subscript','Superscript','-','RemoveFormat' ] },
+ 		 	 { name: 'paragraph', items : [ 'NumberedList','BulletedList','-','Outdent','Indent','-','Blockquote','CreateDiv',
+ 		 	 '-','JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock','-','BidiLtr','BidiRtl' ] },
+ 		 	 { name: 'links', items : [ 'Link','Unlink','Anchor' ] },
+ 		 	 { name: 'insert', items : [ 'Image','Flash','Table','HorizontalRule','Smiley','SpecialChar','PageBreak','Iframe' ] },
+ 		 	 '/',
+ 		 	 { name: 'styles', items : [ 'Styles','Format','Font','FontSize' ] },
+ 		 	 { name: 'colors', items : [ 'TextColor','BGColor' ] },
+ 		 	 { name: 'tools', items : [ 'Maximize', 'ShowBlocks'] },
+ 		 	 { name: 'tools', items : [ 'About'] },
+ 		 	 //'/',
+ 		 	 //{ name: 'fitxes', items : [ 'DivDspl', '-', 'ListInDspl'] }
+	];
+
+			
 <PROBLEMAS>******************************************************************************************************************************************
 ----------------------------------------------------
 EL RICH EDITOR ELIMINA LOS CLASS="" DE LOS ELEMENTOS
