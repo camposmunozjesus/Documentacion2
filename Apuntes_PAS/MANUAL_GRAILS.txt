@@ -308,6 +308,13 @@ O bien para pasar todos los parámetros:
 	redirect(action: "list", params: params)
 	
 
+---------------------------------
+PARAMS Y LLAMADAS A OTROS MÉTODOS
+---------------------------------
+Cuando desde una GSP se llama o se va a una action, por ejemplo list(), y dentro de ella se llama a un método privado, por ejemplo exportContingut(),
+en exportContingut se pueden consultar los params.(id, filtreTipus... ) como si estuviéramos dentro de la action list().
+
+
 ----------------------
 PARAMS SORT PÁGINA GSP
 ----------------------

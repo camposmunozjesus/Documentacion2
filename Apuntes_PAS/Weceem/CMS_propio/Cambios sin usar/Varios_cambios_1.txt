@@ -1,0 +1,1638 @@
+CAMBIOS A MOSTRAR: TABLAS QUE REHACEN SU TAMAÑO, FECHA+IMPRIMIR ANCLADO AL PIE DE PÁGINA Y IMÁGENES RESPONSIVAS PREPARADAS PARA LAS FICHAS
+==========================================================================================================================================
+=========
+TEMPLATES
+=========
+--------------
+FECHA+IMPRIMIR
+--------------
+Template que contiene la fecha+imprimir anclado al pie de página.
+
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"><!--<![endif]-->
+<html>
+  
+   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <link rel="stylesheet" href="/${grails.util.Metadata.current.'app.name'}/css/bootstrap.css" type="text/css">
+    <script type="text/javascript" src="/${grails.util.Metadata.current.'app.name'}/js/jquery/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="/${grails.util.Metadata.current.'app.name'}/js/bootstrap.min.js"></script>
+    
+    <link rel="shortcut icon" href="/${grails.util.Metadata.current.'app.name'}/images/favicon.ico" type="image/x-icon" />
+    
+    <link rel="stylesheet" href="/${grails.util.Metadata.current.'app.name'}/css/main.css" type="text/css">
+    <link rel="stylesheet" href="/${grails.util.Metadata.current.'app.name'}/css/bootstrapUPC.css" type="text/css">
+    <link rel="stylesheet" href="/${grails.util.Metadata.current.'app.name'}/css/estilsUPC.css" type="text/css">
+    <link rel="stylesheet" href="/${grails.util.Metadata.current.'app.name'}/css/sticky-footer.css" type="text/css">
+    <link rel="stylesheet" href="/${grails.util.Metadata.current.'app.name'}/css/tmp.css" type="text/css">
+    
+    <link rel="stylesheet" href="/${grails.util.Metadata.current.'app.name'}/css/menus.css" type="text/css">
+    <link rel="stylesheet" href="/${grails.util.Metadata.current.'app.name'}/css/desplegables-fitxa.css" type="text/css"> 
+    <script type="text/javascript" src="/${grails.util.Metadata.current.'app.name'}/js/desplegables-fitxa.js"></script>
+    <script type="text/javascript" src="/${grails.util.Metadata.current.'app.name'}/js/light-menu-1.js"></script>
+
+       <style>
+        /* Tamaño de los enlaces en modo móvil */
+.footer.footerDate a{
+  font-size: 12px !important;
+}
+@media(max-width: 635px){
+  .footerDate .content-movil {
+      margin-left: 7px !important;
+      margin-right: -12px !important;
+  }
+}
+        
+.footer.footerDate footer-text-date{
+  font-size: 12px !important;
+}
+        
+
+        .footer.footerDate > .container {
+     border-top: none !important; 
+       /* border-top: 24px solid green; */
+}
+        
+        .separador{
+  border-top: 4px solid #D9D9D9;
+        margin-top: 15px;
+}
+        
+        .separador2{
+  border-top: 6px solid red;
+}
+        .footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;  
+  /* Set the fixed height of the footer here */
+  height: 40px;
+  background-color: #f5f5f5;
+  background-color: #FFF;
+}
+ 
+         .date-print{
+  display: none;
+}
+
+@media print
+{    
+  .date-print{
+  display: inline;
+}
+}
+         
+ html {
+  position: relative;
+  min-height: 96%;
+}       
+      </style>
+      
+  </head>
+  
+  <body>
+    <div class="container">
+      <div class="container-UPC">
+        <!-- ************ INI top-nav ************ -->
+        <div id="spinner" class="spinner" style="display: none;">
+          <img alt="Carregant..." src="/rrhh_resources/tecnic/spinner.gif" />
+        </div>
+        
+        <div class="row no-scroll-bar">
+          <div class="col-xs-12 col-vxs-12 col-sm-7 col-md-7 col-lg-8 row-margin-bottom-header">
+            <h1 class="pull-left logo-portal">
+              <img usemap = "#upc_link" class="img-responsive" alt="Universitat Politècnica de Catalunya" src="/rrhh_resources/tecnic/logo_upc_portal_pas_2.png" style="border:0;"/>
+              <map name="upc_link">
+                <area shape=Rect Coords=0,0,50,60 href="http://www.upc.edu" target="_blank">
+              </map>
+            </h1>  
+          </div>
+          <div class="col-xs-12 col-vxs-12 col-sm-5 col-md-5 col-lg-4 row-margin-bottom-header">
+            <div class="navbar navbar-default navbar-Info" role="navigation">
+              <div class="navbar-container-UPC">
+                <div class="navbar-header">
+                  <div class="columna-centrada-header">
+                    
+                    
+                    <button class="navbar-toggle collapsed navbar-toggle-header btn-header" data-target="#navbar-collapse-search" data-toggle="collapse" type="button">
+                      <span class="sr-only">Cercar</span>
+                      <span class="glyphicon glyphicon-search"></span>
+                    </button>
+                    <button class="navbar-toggle collapsed navbar-toggle-header btn-header" data-target="#navbar-collapse-info" data-toggle="collapse" type="button">
+                      <span class="sr-only">Contacte i directori</span>
+                      <span class="glyphicon glyphicon-info-sign"></span>
+                    </button>
+                    <button class="navbar-toggle collapsed navbar-toggle-header btn-header" data-target="#navbar-collapse-portal" data-toggle="collapse" type="button">
+                      <span class="sr-only">Altres portals</span>
+                      <span class="glyphicon glyphicon-new-window"></span>
+                    </button>      
+                    
+                    
+                  </div>      
+                </div>
+                <div class="columna-centrada">
+                  <div id="navbar-collapse-search" class="navbar-collapse collapse">        
+                    <ul class="nav navbar-nav navbar-right search-position">          
+                      <li>
+                        <div class="clearfix pull-right buscador">
+                            <!-- Buscador -->    
+          					<!--buscadorUPC-->  
+                        </div>
+                      </li>
+                    </ul>        
+                  </div>
+                </div>
+                
+                <div id="navbar-collapse-info" class="navbar-collapse collapse navbar-info format-lletra-upc">        
+                  <ul class="nav navbar-nav navbar-right info-position">          
+                    <li>
+                      <span class="contacte">
+                        <a href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/contacte" target="_blank" onclick="window.open(this.href,this.target,'width=750,height=950,resizable=yes,scrollbars=yes');return false">Contacte</a>
+                      </span>
+                    </li>
+                    <li>
+                      <span class="enllacPortal">
+                        <a href="http://directori.upc.edu/directori/" target="_blank" onclick="window.open(this.href,this.target,'width=750,height=550,resizable=yes');return false">Directori UPC</a>
+                      </span>
+                    </li>
+                  </ul>    
+                </div>        
+                <!-- /.nav-collapse -->
+              </div>
+              <!-- /.container-fluid -->
+            </div>
+          </div>
+        </div>
+        
+        <div class="row no-scroll-bar">
+          <div class="col-vxs-12 col-sm-7 col-md-7 col-lg-8">
+            <div id="navbar-collapse-portal" class="navbar-collapse collapse navbar-portal format-lletra-upc">        
+              <ul class="nav navbar-nav">
+                <li>
+                  <span class="enllacPortalFirst portal-UPC">
+                    <a href="/${grails.util.Metadata.current.'app.name'}/PDI/">Portal PDI</a>
+                  </span>
+                  
+                </li>
+                <li>
+                  <span class="enllacPortal">  
+                    <a href="/${grails.util.Metadata.current.'app.name'}/Gestor/">Portal gestor/a</a>
+                  </span>
+                </li>  
+                <li>
+                  <span class="enllacPortal enllacPortalLast">
+                    <a href="/${grails.util.Metadata.current.'app.name'}/BEC/">Portal beques grau/màster</a>
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>  
+        </div>
+        
+        <!-- STATUS BAR ESTÁTICA -->
+        <div class="navbar navbar-default navbar-UPC" role="navigation">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <button class="navbar-toggle collapsed navbar-toggle-home" data-target="#navbar-collapse-menu" data-toggle="collapse" type="button">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand home" href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index">Inici</a>
+            </div>
+            <div id="navbar-collapse-menu" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li>                    
+                  <a class="Informacio_General" href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General">Informació general</a>
+                </li>
+                <li>                    
+                  <a class="Raco_Personal" href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Raco_Personal">Racó personal</a>
+                </li>
+              </ul>   
+              <!-- Part dreta: usuari, desconnexió -->
+              <ul class="nav navbar-nav navbar-right format-lletra-upc">
+                <li class="active">
+                  <!--userName-->
+                </li>
+                <li>
+                  <span class="logout-UPC"> <a href="/${grails.util.Metadata.current.'app.name'}/logout/index">Desconnecta</a></span>
+                </li>
+              </ul>
+            </div>
+            <!-- /.nav-collapse -->
+          </div>
+          <!-- /.container-fluid -->
+        </div>
+        <!-- ************ FIN top-nav ************ -->     
+          
+          <!-- ************ INI breadCrumb-slider-bar ************ -->           
+        <div class="breadCrumb">   
+          <!-- Migas de pan -->    
+          <div><!--breadCrumb--></div>
+          <!-- Título de la página -->
+          <h1 class="firstHeading"><span></span>
+          	<!--titolContent-->
+          </h1>
+        </div>
+        <!-- ************ FIN breadCrumb-slider-bar ************ -->       
+        
+      </div>      
+      
+      <!-- Rejilla con el contenido principal -->
+      <div class="fit-column weceem-tmpl">
+        <div class="row no-scroll-bar"> 
+          <div class="col-xs-12 col-vxs-4 col-sm-4 col-md-4 col-lg-3 row-margin-bottom40 no-print" >
+            <!-- Título de la opción de menú seleccionada -->
+            <div id="main" class="menuPosicio">
+              <div ><!--titolContent--></div>
+            </div>
+            <!-- Menú lateral -->
+            <div id="quadreMenu_main" class="quadreMenu">   
+              <div id="Menu0" name="Menu0" title="Menú" class="dijitTitlePane">                                
+                <div id="El-PAS-a-la-UPC" name="Menu0" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/El-PAS-a-la-UPC'" >      
+                  <span class="dijitTitlePaneTextNode">
+                    <a href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/El-PAS-a-la-UPC">El PAS a la UPC
+                    </a>
+                  </span>    
+                </div>                
+              </div>
+              
+              <div id="Menu1" name="Menu1" title="Menú" class="dijitTitlePane">
+                <div id="Sistema-retributiu" name="Menu1" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/Sistema-retributiu'" >      
+                  <span class="dijitTitlePaneTextNode">
+                    <a href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/Sistema-retributiu">Sistema retributiu
+                    </a>
+                  </span>    
+                </div>
+                
+                
+              </div>
+              
+              <div id="Menu2" name="Menu2" title="Menú" class="dijitTitlePane">
+                <div id="Permisos" name="Menu2" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/Permisos'" >      
+                  <span class="dijitTitlePaneTextNode">
+                    <a href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/Permisos">Permisos, llicències, reduccions jornada i excedències
+                    </a>
+                  </span>    
+                </div>
+              </div>                  
+              
+              <div id="Menu3" name="Menu3" title="Menú" class="dijitTitlePane">
+                <div id="Calendari-laboral-jornada" name="Menu3" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/Calendari-laboral-jornada'" >      
+                  <span class="dijitTitlePaneTextNode">
+                    <a href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/Calendari-laboral-jornada">Calendari laboral, jornada i horaris
+                    </a>
+                  </span>    
+                </div>
+              </div>
+              
+              <div id="Menu4" name="Menu4" title="Menú" class="dijitTitlePane">
+                <div id="Relacions-laborals" name="Menu4" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/Relacions-laborals'" >      
+                  <span class="dijitTitlePaneTextNode">
+                    <a href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/Relacions-laborals">Relacions laborals
+                    </a>
+                  </span>    
+                </div>
+              </div>
+              
+              <div id="Menu5" name="Menu5" title="Menú" class="dijitTitlePane">
+                <div id="Seguretat-social" name="Menu5" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/Seguretat-social'" >      
+                  <span class="dijitTitlePaneTextNode">
+                    <a href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/Seguretat-social">Seguretat social
+                    </a>
+                  </span>    
+                </div>
+              </div>
+              
+              <div id="Menu6" name="Menu6" title="Menú" class="dijitTitlePane">
+                <div id="PAS_FORMACIO" name="Menu${i}" class="dijitTitlePaneTitle" onclick="parent.location='https://espaipersonal.upc.edu/irj/portal/PAS_FORMACIO'" >      
+                  <span class="dijitTitlePaneTextNode">
+                    <a href="https://espaipersonal.upc.edu/irj/portal/PAS_FORMACIO">Formació
+                    </a>
+                  </span>    
+                </div>
+              </div>
+              
+              <div id="Menu7" name="Menu7" title="Menú" class="dijitTitlePane">
+                <div id="Mobilitat" name="Menu7" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/Mobilitat'" >      
+                  <span class="dijitTitlePaneTextNode">  
+                    <a href="https://espaipersonal.upc.edu/irj/portal/PAS_PROVISIO_LLOC_TREBALL">Mobilitat
+                    </a>
+                  </span>    
+                </div>
+              </div>
+            </div>
+            <!-- Fin Menú lateral -->
+            
+          </div>       
+          
+          <div class="col-xs-12 col-vxs-8 col-sm-8 col-md-8 col-lg-9 row-contingut row-margin-top-col">
+            <div id="paginaDesplegable" class="fit-column2left fit-column content-movil">
+              <!--pageContent-->
+            </div>
+          </div>
+          
+          <!-- Fecha de actualización -->
+          <div class="date-print col-xs-12 col-vxs-4 col-sm-4 col-md-4 col-lg-3">
+          </div>
+          <div class="date-print col-xs-12 col-vxs-7 col-sm-7 col-md-7 col-lg-8 row-margin-top-col-data">
+            <div id="paginaDesplegable" class="fit-column2left fit-column content-movil">
+            	Servei de Personal. Data d'actualització: <!--dataActualitzacioFitxa-->
+            </div>
+          </div>
+          <div class="date-print col-xs-12 col-vxs-1 col-sm-1 col-md-1 col-lg-1 row-margin-top-col-data">
+            <div id="imprmir-fitxa" class="fit-column2left fit-column content-movil no-print text-right" style="cursor:pointer">
+            	<a onclick="window.print()"><img src="/rrhh_resources/tecnic/print_icon.gif" border="0"/>Imprimir</a>
+            </div>
+          </div>
+          
+        </div>          
+      </div>
+    
+    </div>
+  <!-- Pie de página -->
+    <!-- ************ INI bottom-nav ************ -->
+    <div class="footer footerDate">
+      <div class="container">
+        <div class="fit2container">      
+          <div class="row no-scroll-bar">
+            <!-- Fecha de actualización e impresión -->
+            <div class="col-xs-12 col-vxs-4 col-sm-4 col-md-4 col-lg-3">
+            </div>
+            <div class="col-xs-12 col-vxs-7 col-sm-7 col-md-7 col-lg-8 row-margin-top-col-data">
+              <div id="paginaDesplegable" class="fit-column2left fit-column content-movil">
+                  Servei de Personal. Data d'actualització: <!--dataActualitzacioFitxa-->
+              </div>
+            </div>
+            <div class="col-xs-12 col-vxs-1 col-sm-1 col-md-1 col-lg-1 row-margin-top-col-data">
+              <div id="imprmir-fitxa" class="fit-column2left fit-column content-movil no-print text-right" style="cursor:pointer">
+                  <a onclick="window.print()"><img src="/rrhh_resources/tecnic/print_icon.gif" border="0"/>Imprimir</a>
+              </div>
+            </div>
+            <!-- FIN Fecha de actualización e impresión -->
+            <!-- -->
+            <div class="col-xs-12 col-footer-12 col-vxs-12 col-sm-12 col-md-12 col-lg-12" >
+              <div class="separador fit-column2right">
+                  
+              </div>
+            </div>
+              
+            <!-- -->
+            <div class="col-xs-12 col-footer-9 col-vxs-9 col-sm-9 col-md-9 col-lg-9" >
+              <p class="footer-text">Àrea de Personal i Organització</p>
+              <p class="footer-text">&copy; <a href="http://www.upc.edu">UPC</a>. Universitat Politècnica de Catalunya <span>●</span> BarcelonaTech</p>           
+            </div>        
+            <div class="col-xs-12 col-footer-3 col-vxs-3 col-sm-3 col-md-3 col-lg-3 row-margin-top-peu">
+              <div class="accessibilitat-container">
+                <a class="footer-text" href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/accessibilitat" target="_blank" onclick="window.open(this.href,this.target,'width=1100,height=950,resizable=yes,scrollbars=yes');return false">Accessibilitat</a>
+                <a class="footer-text" href="#top"><img alt="Amunt" src="/rrhh_resources/tecnic/amunt.gif" /></a>                        
+              </div>
+            </div>
+          </div>     
+        </div>    
+      </div>
+    </div>    
+    <!-- ************ FIN bottom-nav ************ -->    
+  </body>
+  
+</html>
+	
+	
+==================
+PÁGINAS DE EJEMPLO
+==================
+-----------------
+IMAGEN RESPONSIVA
+-----------------
+Contiene el CSS inline para mostrar correctamente la imagen:
+<style type="text/css">#paginaDesplegable .img-responsive{
+  margin-left: 5%;
+  width: 90% !important;
+}
+</style>
+<!-- ************ INICI 1er DESPLEGABLE ************ -->
+<div class="selectedTitol" id="box_101"><!-- Títol Desplegable 1 -->
+<div class="minus" id="title_box_101">T&Iacute;TOL 1</div>
+</div>
+
+<div class="dsplContent" id="dsplContent_box_101"><!-- Contingut Desplegable 1 -->
+<div>Contingut <a href="/RPPAS/dadesPersonals/list">enlace a RPPAS</a></div>
+</div>
+<!-- ************ FINAL 1er DESPLEGABLE ************ --><!-- ************ INICI 2on DESPLEGABLE ************ -->
+
+<div class="selectedTitol" id="box_102"><!-- Títol Desplegable 2 -->
+<div class="minus" id="title_box_102">T&Iacute;TOL 2</div>
+</div>
+
+<div class="dsplContent" id="dsplContent_box_102"><!-- Contingut Desplegable 2 -->
+<div>Contingut</div>
+
+<div><img alt="" class="img-responsive" src="/gcrrhh/../rrhh_resources/BEC/augments_retributius_PAS.jpg" style="height: 372px;" /></div>
+</div>
+<!-- ************ FINAL 2on DESPLEGABLE ************ -->
+
+
+
+
+
+------------
+IMAGEN + PIE
+------------
+Utilizando el template anterior:
+<!-- ************ INICI 1er DESPLEGABLE ************ -->
+<div class="selectedTitol" id="box_101"><!-- Títol Desplegable 1 -->
+<div class="minus" id="title_box_101">T&Iacute;TOL 1</div>
+</div>
+
+<div class="dsplContent" id="dsplContent_box_101"><!-- Contingut Desplegable 1 -->
+<div>Contingut</div>
+
+<div><img alt="" class="img-responsive sss" src="/gcrrhh/../rrhh_resources/BEC/augments_retributius_PAS.jpg" /></div>
+</div>
+<!-- ************ FINAL 1er DESPLEGABLE ************ --><!-- ************ INICI 2on DESPLEGABLE ************ -->
+
+<div class="selectedTitol" id="box_102"><!-- Títol Desplegable 2 -->
+<div class="minus" id="title_box_102">T&Iacute;TOL 2</div>
+</div>
+
+<div class="dsplContent" id="dsplContent_box_102"><!-- Contingut Desplegable 2 -->
+<div>Contingut</div>
+</div>
+<!-- ************ FINAL 2on DESPLEGABLE ************ --><!-- ************ INICI 3ER DESPLEGABLE ************ -->
+
+<div class="selectedTitol" id="box_103"><!-- Títol Desplegable 3 -->
+<div class="minus" id="title_box_103">T&Iacute;TOL 3</div>
+</div>
+
+<div class="dsplContent" id="dsplContent_box_103"><!-- Contingut Desplegable 3 -->
+<div>Contingut</div>
+</div>
+<!-- ************ FINAL 3er DESPLEGABLE ************ --><!-- ************ INICI 4rt DESPLEGABLE ************ -->
+
+<div class="selectedTitol" id="box_104"><!-- Títol Desplegable 4 -->
+<div class="minus" id="title_box_104">T&Iacute;TOL 4</div>
+</div>
+
+<div class="dsplContent" id="dsplContent_box_104"><!-- Contingut Desplegable 4 -->
+<div>Contingut</div>
+</div>
+<!-- ************ FINAL 4rt DESPLEGABLE ************ --><!-- ************ INICI 5é DESPLEGABLE ************ -->
+
+<div class="selectedTitol" id="box_105"><!-- Títol Desplegable 5 -->
+<div class="minus" id="title_box_105">T&Iacute;TOL 5</div>
+</div>
+
+<div class="dsplContent" id="dsplContent_box_105"><!-- Contingut Desplegable 5 -->
+<div>Contingut</div>
+</div>
+<!-- ************ FINAL 5é DESPLEGABLE ************ --><!-- ************ INICI 6é DESPLEGABLE ************ -->
+
+<div class="selectedTitol" id="box_106"><!-- Títol Desplegable 6 -->
+<div class="minus" id="title_box_106">T&Iacute;TOL 6</div>
+</div>
+
+<div class="dsplContent" id="dsplContent_box_106"><!-- Contingut Desplegable 6 -->
+<div>Contingut</div>
+</div>
+<!-- ************ FINAL 6é DESPLEGABLE ************ --><!-- ************ INICI 7é DESPLEGABLE ************ -->
+
+<div class="selectedTitol" id="box_107"><!-- Títol Desplegable 7 -->
+<div class="minus" id="title_box_107">T&Iacute;TOL 7</div>
+</div>
+
+<div class="dsplContent" id="dsplContent_box_107"><!-- Contingut Desplegable 7 -->
+<div>Contingut</div>
+</div>
+<!-- ************ FINAL 7é DESPLEGABLE ************ --><!-- Per afegir un desplegable seleccionar el codi comprés entre INICI 1ER              --><!-- DESPLEGABLE i FINAL 1ER DESPLEGABLE i canviar, en els atributs id dels             --><!-- divisors DIV, el nombre que segueix a box_, title_box_ y dsplContent_box_ per      --><!-- un altre que no existeixi. En el cas de voler posar icones en la part esquerra del --><!-- desplegable existeix l'opció de substituir el nombre per una de les sigüents       --><!-- paraules: solicitud, descripcio, tramitar, adjuntar, compte, enllacos, normativa   --><!-- i consulta.                                                                        --><!-- Exemple:                                                                           --><!--   <div class="selectedTitol" id="box_consulta">                                    --><!--     <div class="minus" id="title_box_consulta">                                    --><!--       TÍTOL 1                                                                      --><!--     </div>                                                                         --><!--   </div>                                                                           --><!--   <div class="dsplContent" id="dsplContent_box_consulta">                          --><!--     <div>                                                                          --><!--       Contingut                                                                    --><!--     </div>                                                                         --><!--   </div>                                                                           --><!-- De la mateixa manera que el nombre que acompanya als id: box_, title_box_          --><!-- i dsplContent_box_ no es pot repetir en una fitxa o pàgina HTML, no és             --><!-- possible repetir les paraules de la llista anterior en una fitxa o  pàgina.        -->
+
+
+-----------------
+TABLAS DE MUESTRA
+-----------------
+Primer ejemplo:
+												<div class="taula-scroll taula-ordre-1" id="t1">
+<table border="1" cellpadding="1" cellspacing="1" class="table" id="t2">
+	<thead>
+		<tr>
+			<th scope="row">Permis TEMPUS</th>
+			<th scope="col">Perm&iacute;s a la intranet</th>
+			<th scope="col">Descripci&oacute;</th>
+			<th scope="col">Computa saldo</th>
+			<th scope="col">Documentaci&oacute; justificativa</th>
+			<th scope="col">Autoritzaci&oacute;</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th scope="row"><a href="https://tempus.upc.edu/RLG/permisHores/list" target="_blank">Acompanyament fills i/o familiars al metge</a></th>
+			<td>&nbsp;</td>
+			<td><span id="1363778867330">Per acompanyament al metge de familiars ascendents/descentdents</span></td>
+			<td>NO</td>
+			<td><span id="1363778867330">Comprovant d&#39;assist&egrave;ncia expedit pel metge on indiqui l&#39;hora d&#39;entrada i de sortida.</span></td>
+			<td>Descentralitzada</td>
+		</tr>
+		<tr>
+			<th scope="row"><a href="https://tempus.upc.edu/RLG/permisHores/list" target="_blank">Alliberament sindical</a></th>
+			<td>&nbsp;</td>
+			<td><span id="1363778867330">Els membres de les juntes de personal i els delegats de les seccions sindicals disposen, en l&#39;exercici de les seves funcions representatives, d&#39;un cr&egrave;dit d&#39;hores mensuals dins de la jornada de treball retribu&iuml;des com a hores de treball efectiu.</span></td>
+			<td>S&iacute;</td>
+			<td>No es obligatori adjuntar documentaci&oacute;.</td>
+			<td>Descentralitzada</td>
+		</tr>
+		<tr>
+			<th scope="row"><a href="https://tempus.upc.edu/RLG/permisHores/list" target="_blank">Altres permisos</a></th>
+			<td><a href="https://melnik.upc.edu/rrhh/PAS/index/Informacio_General/Permisos/permis_fertilitat">Perm&iacute;s per a tractaments de fertilitat</a></td>
+			<td><span id="1363778867330">Perm&iacute;s per exercir el dret a absentar-se del lloc&nbsp;treball durant el temps necessari per a dur a terme tractaments de fertilitat. S&#39;ha de sol&middot;licitar a Tempus com a &quot;Altres permisos&quot;.</span></td>
+			<td>S&iacute;</td>
+			<td>Justificant d&#39;assist&egrave;ncia i justificant on consti la necessitat de fer-ho en horari laboral.</td>
+			<td>Centralitzada</td>
+		</tr>
+		<tr>
+			<th scope="row"><a href="https://tempus.upc.edu/RLG/permisHores/list" target="_blank">Altres permisos</a></th>
+			<td><span id="1363778867330"><a href="https://melnik.upc.edu/rrhh/PAS/index/Informacio_General/Permisos/permis_fills_discap" id="htmlb_hed_link201410211718110" target="_self">Perm&iacute;s per atendre fills/es discapacitats/des</a></span></td>
+			<td><span id="1363778867330">L&#39;empleat o l&#39;empleada que tingui un fill amb discapacitat ps&iacute;quica, f&iacute;sica o sensorial, pot gaudir de major flexibilitat hor&agrave;ria de fins a 2 hores di&agrave;ries per tal de conciliar els horaris dels centres d&#39;educaci&oacute; especial, o altres centres en qu&egrave; la persona discapacitada rebi atenci&oacute; amb els horaris dels propis llocs de treball, tenint en compte la situaci&oacute; del domicili familiar.<br />
+			<br />
+			D&#39;altra banda, es pot atorgar tamb&eacute; als empleats amb fills discapacitats un perm&iacute;s retribu&iuml;t per al temps indispensable per assistir a reunions de coordinaci&oacute; ordin&agrave;ria amb finalitats psicopedag&ograve;giques en el centre d&#39;educaci&oacute; especial o d&#39;atenci&oacute; preco&ccedil; on el fill rebi tractament o b&eacute; per a acompanyar-lo si ha de rebre suport addicional en l&#39;&agrave;mbit sanitari quan hi hagi coincid&egrave;ncia amb l&#39;horari habitual de treball. &Eacute;s en aquest &uacute;ltim cas, que s&rsquo;haur&agrave; de demanar el perm&iacute;s per Tempus com a &quot;Altres permisos&quot;.</span></td>
+			<td>S&iacute;</td>
+			<td><span id="1363778867330">Document justificatiu de l&#39;assit&egrave;ncia a les reunions. Resoluci&oacute; de la qualificaci&oacute; de la disminuci&oacute; (nom&eacute;s necess&agrave;ria la primera vegada que es sol&middot;licita el perm&iacute;s). Caldr&agrave; que el centre on es realitzin les reunions o el tractament acrediti la impossibilitat de realitzar-les fora de l&#39;horari.</span></td>
+			<td>Centralitzada</td>
+		</tr>
+		<tr>
+			<th scope="row"><a href="https://tempus.upc.edu/RLG/permisHores/list" target="_blank">Altres permisos</a></th>
+			<td><span id="1363778867330">Perm&iacute;s per situaci&oacute; de viol&egrave;ncia de g&egrave;nere</span></td>
+			<td><span id="1363778867330">Perm&iacute;s per exercir del dret a absentar-se del lloc de treball per situacions de viol&egrave;ncia de g&egrave;nere. S&#39;ha de sol&middot;licitar a tempus com a &quot;Altres permisos&quot;.</span></td>
+			<td>S&iacute;</td>
+			<td><span id="1363778867330">Justificaci&oacute; expedida pels serveis socials, policials o de salut corresponents.</span></td>
+			<td>Centralitzada</td>
+		</tr>
+		<tr>
+			<th scope="row"><span id="1363778867330"><a href="https://tempus.upc.edu/RLG/permisHores/list" id="htmlb_hed_link201410211625466" target="_blank">Assist&egrave;ncia a assemblees</a></span></th>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th scope="row"><span id="1363778867330"><a href="https://tempus.upc.edu/RLG/permisHores/list" id="htmlb_hed_link2014102116262867" target="_blank">Candidatura campanya electoral </a></span></th>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th scope="row">
+			<p><span id="1363778867330"><a href="https://tempus.upc.edu/RLG/permisHores/list" id="htmlb_hed_link2014102116274968" target="_blank">Curs de formaci&oacute; de treball</a></span><br />
+			<br />
+			<span><a href="https://tempus.upc.edu/RLG/permisHores/list" target="_blank">Curs de formaci&oacute; per al lloc de treball fora d&rsquo;horari </a></span><br />
+			<br />
+			<span id="1363778867330"><a href="https://tempus.upc.edu/RLG/permisHores/list" id="htmlb_hed_link2014102116293070" target="_blank">Compensaci&oacute; d&rsquo;hores per curs de formaci&oacute; per al lloc de treball fora d&rsquo;horari</a>&nbsp;</span></p>
+			</th>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th scope="row"><span id="1363778867330"><a href="https://tempus.upc.edu/RLG/permisHores/list" id="htmlb_hed_link2014102116304371" target="_blank">Curs de formaci&oacute; desenvolupament professional </a></span></th>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th scope="row"><span id="1363778867330"><a href="https://tempus.upc.edu/RLG/permisHores/list" id="htmlb_hed_link2014102116315373" target="_blank">Dedicaci&oacute; institucional</a></span></th>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th scope="row"><span id="1363778867330"><a href="https://tempus.upc.edu/RLG/permisHores/list" id="htmlb_hed_link2014102116342874" target="_blank">Defunci&oacute; parent 2n grau </a></span></th>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th scope="row"><span id="1363778867330"><a href="https://tempus.upc.edu/RLG/permisHores/list" id="htmlb_hed_link2014102116353675" target="_blank">Deures d&rsquo;inexcusable compliment</a></span></th>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th scope="row"><span id="1363778867330"><a href="https://tempus.upc.edu/RLG/permisHores/list" id="htmlb_hed_link2014102116392279" target="_blank">Ex&agrave;mens prenatal i t&egrave;cniques de preparaci&oacute; al part</a></span></th>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th scope="row"><span id="1363778867330"><a href="https://tempus.upc.edu/RLG/permisHores/list" id="htmlb_hed_link2014102116395880" target="_blank">Hores extraordin&agrave;ries compensables autoritzades</a></span></th>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th scope="row"><span id="1363778867330"><a href="https://tempus.upc.edu/RLG/permisHores/list" id="htmlb_hed_link2014102116414481" target="_blank">Hores treballades fora d&rsquo;horari</a></span></th>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th scope="row"><span id="1363778867330"><a href="https://tempus.upc.edu/RLG/permisHores/list" id="htmlb_hed_link2014102116423282" target="_blank">Indisposici&oacute; parcial </a></span></th>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th scope="row"><a href="https://tempus.upc.edu/RLG/permisHores/list" target="_blank">Participaci&oacute; en concursos/<br />
+			oposicions convocades per la UPC</a></th>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th scope="row"><span id="1363778867330"><a href="https://tempus.upc.edu/RLG/permisHores/list" id="htmlb_hed_link2014102116454684" target="_blank">Participaci&oacute; mesa electoral del R&egrave;gim Electoral General</a></span></th>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th scope="row"><span id="1363778867330"><a href="https://tempus.upc.edu/RLG/permisHores/list" id="htmlb_hed_link201410211648330" target="_blank">Perm&iacute;s gaudiment hores de desenvolupament professional 2015</a></span></th>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th scope="row"><span id="1363778867330"><a href="https://tempus.upc.edu/RLG/permisHores/list" id="htmlb_hed_link201410211649421" target="_blank">Perm&iacute;s gaudiment hores promoci&oacute; de salut 2015</a></span></th>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th scope="row"><span id="1363778867330"><a href="https://tempus.upc.edu/RLG/permisHores/list" id="htmlb_hed_link201410211651242" target="_blank">Perm&iacute;s recuperable</a></span></th>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th scope="row"><span id="1363778867330"><a href="https://tempus.upc.edu/RLG/permisHores/list" id="htmlb_hed_link201410211652473" target="_blank">Rehabilitaci&oacute; malaltia professional</a></span></th>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th scope="row"><span id="1363778867330"><a href="https://tempus.upc.edu/RLG/permisHores/list" id="htmlb_hed_link201410211653224" target="_blank">Reunions tutoria fill/es</a></span></th>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th scope="row"><span id="1363778867330"><a href="https://tempus.upc.edu/RLG/permisHores/list" id="htmlb_hed_link20141021165485" target="_blank">Revisi&oacute; m&egrave;dica laboral</a></span></th>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th scope="row"><span id="1363778867330"><a href="https://tempus.upc.edu/RLG/permisHores/list" id="htmlb_hed_link201410211654496" target="_blank">Tasques article 83 LOU</a></span></th>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th scope="row"><span id="1363778867330"><a href="https://tempus.upc.edu/RLG/permisHores/list" id="htmlb_hed_link201410211656387" target="_blank">Visita de treball </a></span></th>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th scope="row">&nbsp;</th>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>&nbsp;</p>
+</div>
+
+
+<div class="taula-scroll" id="t1">
+<table border="1" cellpadding="1" cellspacing="1" class="table" id="t2">
+	<thead>
+		<tr>
+			<th scope="row">Permis TEMPUS</th>
+			<th scope="col">Perm&iacute;s a la intranet</th>
+			<th scope="col">Descripci&oacute;</th>
+			<th scope="col">Computa saldo</th>
+			<th scope="col">Documentaci&oacute; justificativa</th>
+			<th scope="col">Autoritzaci&oacute;</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th scope="row"><a href="https://tempus.upc.edu/RLG/permisHores/list" target="_blank">Acompanyament fills i/o familiars al metge</a></th>
+			<td>&nbsp;</td>
+			<td><span id="1363778867330">Per acompanyament al metge de familiars ascendents/descentdents</span></td>
+			<td>NO</td>
+			<td><span id="1363778867330">Comprovant d&#39;assist&egrave;ncia expedit pel metge on indiqui l&#39;hora d&#39;entrada i de sortida.</span></td>
+			<td>Descentralitzada</td>
+		</tr>
+		<tr>
+			<th scope="row"><a href="https://tempus.upc.edu/RLG/permisHores/list" target="_blank">Alliberament sindical</a></th>
+			<td>&nbsp;</td>
+			<td><span id="1363778867330">Els membres de les juntes de personal i els delegats de les seccions sindicals disposen, en l&#39;exercici de les seves funcions representatives, d&#39;un cr&egrave;dit d&#39;hores mensuals dins de la jornada de treball retribu&iuml;des com a hores de treball efectiu.</span></td>
+			<td>S&iacute;</td>
+			<td>No es obligatori adjuntar documentaci&oacute;.</td>
+			<td>Descentralitzada</td>
+		</tr>
+		<tr>
+			<th scope="row"><a href="https://tempus.upc.edu/RLG/permisHores/list" target="_blank">Altres permisos</a></th>
+			<td><a href="https://melnik.upc.edu/rrhh/PAS/index/Informacio_General/Permisos/permis_fertilitat">Perm&iacute;s per a tractaments de fertilitat</a></td>
+			<td><span id="1363778867330">Perm&iacute;s per exercir el dret a absentar-se del lloc&nbsp;treball durant el temps necessari per a dur a terme tractaments de fertilitat. S&#39;ha de sol&middot;licitar a Tempus com a &quot;Altres permisos&quot;.</span></td>
+			<td>S&iacute;</td>
+			<td>Justificant d&#39;assist&egrave;ncia i justificant on consti la necessitat de fer-ho en horari laboral.</td>
+			<td>Centralitzada</td>
+		</tr>
+		<tr>
+			<th scope="row"><a href="https://tempus.upc.edu/RLG/permisHores/list" target="_blank">Altres permisos</a></th>
+			<td><span id="1363778867330"><a href="https://melnik.upc.edu/rrhh/PAS/index/Informacio_General/Permisos/permis_fills_discap" id="htmlb_hed_link201410211718110" target="_self">Perm&iacute;s per atendre fills/es discapacitats/des</a></span></td>
+			<td><span id="1363778867330">L&#39;empleat o l&#39;empleada que tingui un fill amb discapacitat ps&iacute;quica, f&iacute;sica o sensorial, pot gaudir de major flexibilitat hor&agrave;ria de fins a 2 hores di&agrave;ries per tal de conciliar els horaris dels centres d&#39;educaci&oacute; especial, o altres centres en qu&egrave; la persona discapacitada rebi atenci&oacute; amb els horaris dels propis llocs de treball, tenint en compte la situaci&oacute; del domicili familiar.<br />
+			<br />
+			D&#39;altra banda, es pot atorgar tamb&eacute; als empleats amb fills discapacitats un perm&iacute;s retribu&iuml;t per al temps indispensable per assistir a reunions de coordinaci&oacute; ordin&agrave;ria amb finalitats psicopedag&ograve;giques en el centre d&#39;educaci&oacute; especial o d&#39;atenci&oacute; preco&ccedil; on el fill rebi tractament o b&eacute; per a acompanyar-lo si ha de rebre suport addicional en l&#39;&agrave;mbit sanitari quan hi hagi coincid&egrave;ncia amb l&#39;horari habitual de treball. &Eacute;s en aquest &uacute;ltim cas, que s&rsquo;haur&agrave; de demanar el perm&iacute;s per Tempus com a &quot;Altres permisos&quot;.</span></td>
+			<td>S&iacute;</td>
+			<td><span id="1363778867330">Document justificatiu de l&#39;assit&egrave;ncia a les reunions. Resoluci&oacute; de la qualificaci&oacute; de la disminuci&oacute; (nom&eacute;s necess&agrave;ria la primera vegada que es sol&middot;licita el perm&iacute;s). Caldr&agrave; que el centre on es realitzin les reunions o el tractament acrediti la impossibilitat de realitzar-les fora de l&#39;horari.</span></td>
+			<td>Centralitzada</td>
+		</tr>
+		<tr>
+			<th scope="row"><a href="https://tempus.upc.edu/RLG/permisHores/list" target="_blank">Altres permisos</a></th>
+			<td><span id="1363778867330">Perm&iacute;s per situaci&oacute; de viol&egrave;ncia de g&egrave;nere</span></td>
+			<td><span id="1363778867330">Perm&iacute;s per exercir del dret a absentar-se del lloc de treball per situacions de viol&egrave;ncia de g&egrave;nere. S&#39;ha de sol&middot;licitar a tempus com a &quot;Altres permisos&quot;.</span></td>
+			<td>S&iacute;</td>
+			<td><span id="1363778867330">Justificaci&oacute; expedida pels serveis socials, policials o de salut corresponents.</span></td>
+			<td>Centralitzada</td>
+		</tr>
+		<tr>
+			<th scope="row"><span id="1363778867330"><a href="https://tempus.upc.edu/RLG/permisHores/list" id="htmlb_hed_link201410211625466" target="_blank">Assist&egrave;ncia a assemblees</a></span></th>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th scope="row"><span id="1363778867330"><a href="https://tempus.upc.edu/RLG/permisHores/list" id="htmlb_hed_link2014102116262867" target="_blank">Candidatura campanya electoral </a></span></th>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th scope="row">
+			<p><span id="1363778867330"><a href="https://tempus.upc.edu/RLG/permisHores/list" id="htmlb_hed_link2014102116274968" target="_blank">Curs de formaci&oacute; de treball</a></span><br />
+			<br />
+			<span><a href="https://tempus.upc.edu/RLG/permisHores/list" target="_blank">Curs de formaci&oacute; per al lloc de treball fora d&rsquo;horari </a></span><br />
+			<br />
+			<span id="1363778867330"><a href="https://tempus.upc.edu/RLG/permisHores/list" id="htmlb_hed_link2014102116293070" target="_blank">Compensaci&oacute; d&rsquo;hores per curs de formaci&oacute; per al lloc de treball fora d&rsquo;horari</a>&nbsp;</span></p>
+			</th>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th scope="row"><span id="1363778867330"><a href="https://tempus.upc.edu/RLG/permisHores/list" id="htmlb_hed_link2014102116304371" target="_blank">Curs de formaci&oacute; desenvolupament professional </a></span></th>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th scope="row"><span id="1363778867330"><a href="https://tempus.upc.edu/RLG/permisHores/list" id="htmlb_hed_link2014102116315373" target="_blank">Dedicaci&oacute; institucional</a></span></th>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th scope="row"><span id="1363778867330"><a href="https://tempus.upc.edu/RLG/permisHores/list" id="htmlb_hed_link2014102116342874" target="_blank">Defunci&oacute; parent 2n grau </a></span></th>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th scope="row"><span id="1363778867330"><a href="https://tempus.upc.edu/RLG/permisHores/list" id="htmlb_hed_link2014102116353675" target="_blank">Deures d&rsquo;inexcusable compliment</a></span></th>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th scope="row"><span id="1363778867330"><a href="https://tempus.upc.edu/RLG/permisHores/list" id="htmlb_hed_link2014102116392279" target="_blank">Ex&agrave;mens prenatal i t&egrave;cniques de preparaci&oacute; al part</a></span></th>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th scope="row"><span id="1363778867330"><a href="https://tempus.upc.edu/RLG/permisHores/list" id="htmlb_hed_link2014102116395880" target="_blank">Hores extraordin&agrave;ries compensables autoritzades</a></span></th>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th scope="row"><span id="1363778867330"><a href="https://tempus.upc.edu/RLG/permisHores/list" id="htmlb_hed_link2014102116414481" target="_blank">Hores treballades fora d&rsquo;horari</a></span></th>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th scope="row"><span id="1363778867330"><a href="https://tempus.upc.edu/RLG/permisHores/list" id="htmlb_hed_link2014102116423282" target="_blank">Indisposici&oacute; parcial </a></span></th>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th scope="row"><a href="https://tempus.upc.edu/RLG/permisHores/list" target="_blank">Participaci&oacute; en concursos/<br />
+			oposicions convocades per la UPC</a></th>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th scope="row"><span id="1363778867330"><a href="https://tempus.upc.edu/RLG/permisHores/list" id="htmlb_hed_link2014102116454684" target="_blank">Participaci&oacute; mesa electoral del R&egrave;gim Electoral General</a></span></th>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th scope="row"><span id="1363778867330"><a href="https://tempus.upc.edu/RLG/permisHores/list" id="htmlb_hed_link201410211648330" target="_blank">Perm&iacute;s gaudiment hores de desenvolupament professional 2015</a></span></th>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th scope="row"><span id="1363778867330"><a href="https://tempus.upc.edu/RLG/permisHores/list" id="htmlb_hed_link201410211649421" target="_blank">Perm&iacute;s gaudiment hores promoci&oacute; de salut 2015</a></span></th>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th scope="row"><span id="1363778867330"><a href="https://tempus.upc.edu/RLG/permisHores/list" id="htmlb_hed_link201410211651242" target="_blank">Perm&iacute;s recuperable</a></span></th>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th scope="row"><span id="1363778867330"><a href="https://tempus.upc.edu/RLG/permisHores/list" id="htmlb_hed_link201410211652473" target="_blank">Rehabilitaci&oacute; malaltia professional</a></span></th>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th scope="row"><span id="1363778867330"><a href="https://tempus.upc.edu/RLG/permisHores/list" id="htmlb_hed_link201410211653224" target="_blank">Reunions tutoria fill/es</a></span></th>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th scope="row"><span id="1363778867330"><a href="https://tempus.upc.edu/RLG/permisHores/list" id="htmlb_hed_link20141021165485" target="_blank">Revisi&oacute; m&egrave;dica laboral</a></span></th>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th scope="row"><span id="1363778867330"><a href="https://tempus.upc.edu/RLG/permisHores/list" id="htmlb_hed_link201410211654496" target="_blank">Tasques article 83 LOU</a></span></th>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th scope="row"><span id="1363778867330"><a href="https://tempus.upc.edu/RLG/permisHores/list" id="htmlb_hed_link201410211656387" target="_blank">Visita de treball </a></span></th>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th scope="row">&nbsp;</th>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>&nbsp;</p>
+</div>
+
+<div class="taula-scroll" id="t3">
+<table border="1" cellpadding="1" cellspacing="1" class="table" id="t4">
+	<thead>
+		<tr>
+			<th scope="col">hola</th>
+			<th scope="col">adios</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th scope="row">fila1</th>
+			<td>fila1</td>
+		</tr>
+		<tr>
+			<th scope="row">fila2</th>
+			<td>fila2</td>
+		</tr>
+		<tr>
+			<th scope="row">&nbsp;</th>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th scope="row">&nbsp;</th>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th scope="row">&nbsp;</th>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th scope="row">&nbsp;</th>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th scope="row">&nbsp;</th>
+			<td>&nbsp;</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>&nbsp;</p>
+</div>
+
+<div class="selectedTitol" id="box_105"><!-- Títol Desplegable 5 -->
+<div class="minus" id="title_box_105">Situaci&oacute; laboral del treballador jubilat parcialment</div>
+</div>
+
+<div class="dsplContent" id="dsplContent_box_105">
+<div>La realitzaci&oacute; de la prestaci&oacute; del tant per cent del servei podr&agrave; dur-se a terme anualment de la seg&uuml;ent manera:
+<ul style="margin-left: 40px;">
+	<li>Compactada: 37 h i 30 minuts setmanals durant 48 dies laborables consecutius</li>
+	<li>Gradual: 9h i 23 minuts setmanals durant tot l&rsquo;any</li>
+</ul>
+
+<p>De manera general es realitzar&agrave; en forma compactada i continuada.</p>
+
+<div class="taula-scroll">
+<table border="1" cellpadding="1" cellspacing="1" class="table">
+	<thead>
+		<tr>
+			<th colspan="2" scope="row" style="text-align: center;"><span style="font-size:12px;"><span style="font-family: arial,helvetica,sans-serif;">Compactada</span></span></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th scope="row"><span style="font-family:arial,helvetica,sans-serif;"><span style="font-size: 12px;">Dies de treball anual</span></span></th>
+			<td><span style="font-family:arial,helvetica,sans-serif;"><span style="font-size: 12px;">48 dies laborables anuals</span></span></td>
+		</tr>
+		<tr>
+			<th scope="row"><span style="font-family:arial,helvetica,sans-serif;"><span style="font-size: 12px;">Preav&iacute;s d&#39;incorporaci&oacute;</span></span></th>
+			<td><span style="font-family:arial,helvetica,sans-serif;"><span style="font-size: 12px;">La unitat haur&agrave; de donar un preav&iacute;s d&#39;incorporaci&oacute; amb 1 mes d&#39;antelaci&oacute; que </span><span style="font-size: 12px;">podr&agrave; ser inferior per acord entre la Unitat i la persona interessada</span></span></td>
+		</tr>
+		<tr>
+			<th scope="row"><span style="font-family:arial,helvetica,sans-serif;"><span style="font-size: 12px;"><strong>Inici de prestaci&oacute; de serveis</strong></span></span></th>
+			<td><span style="font-family:arial,helvetica,sans-serif;"><span style="font-size: 12px;">Aquests dies es faran efectius a partir del 6&egrave; mes de treball del rellevista i podran fer-se amb anterioritat al 6&egrave; mes per acord de les parts.</span></span></td>
+		</tr>
+		<tr>
+			<th scope="row"><span style="font-family:arial,helvetica,sans-serif;"><span style="font-size: 12px;"><strong>Prestaci&oacute; de serveis l&#39;&uacute;ltim any de jubilaci&oacute; parcial</strong></span></span></th>
+			<td><span style="font-family:arial,helvetica,sans-serif;"><span style="font-size: 12px;">Els dies de prestaci&oacute; de serveis seran els proporcionals al per&iacute;ode a realitzar. Per exemple si es va jubilar parcialment amb efectes del dia 01/02/2012 i esjubila definitivament el dia 31/10/2013 els dies a realitzar l&#39;&uacute;ltim any seran elsproporcionals tenint en compte el per&iacute;ode 01/02/2013-31/10/2013</span></span></td>
+		</tr>
+		<tr>
+			<th scope="row"><span style="font-family:arial,helvetica,sans-serif;"><span style="font-size: 12px;"><strong>Prestaci&oacute; de serveis l&#39;&uacute;ltim any de jubilaci&oacute; parcial</strong></span></span></th>
+			<td><span style="font-family:arial,helvetica,sans-serif;"><span style="font-size: 12px;">Els dies de prestaci&oacute; de serveis seran els proporcionals al per&iacute;ode a realitzar. Per exemple si es va jubilar parcialment amb efectes del dia 01/02/2012 i esjubila definitivament el dia 31/10/2013 els dies a realitzar l&#39;&uacute;ltim any seran elsproporcionals tenint en compte el per&iacute;ode 01/02/2013-31/10/2013Els dies de prestaci&oacute; de serveis seran els proporcionals al per&iacute;ode a realitzar. Per exemple si es va jubilar parcialment amb efectes del dia 01/02/2012 i esjubila definitivament el dia 31/10/2013 els dies a realitzar l&#39;&uacute;ltim any seran elsproporcionals tenint en compte el per&iacute;ode 01/02/2013-31/10/2013</span></span></td>
+		</tr>
+		<tr>
+			<th scope="row"><span style="font-family:arial,helvetica,sans-serif;"><span style="font-size: 12px;"><strong>Prestaci&oacute; de serveis l&#39;&uacute;ltim any de jubilaci&oacute; parcial</strong></span></span></th>
+			<td><span style="font-family:arial,helvetica,sans-serif;"><span style="font-size: 12px;">Els dies de prestaci&oacute; de serveis seran els proporcionals al per&iacute;ode a realitzar. Per exemple si es va jubilar parcialment amb efectes del dia 01/02/2012 i esjubila definitivament el dia 31/10/2013 els dies a realitzar l&#39;&uacute;ltim any seran elsproporcionals tenint en compte el per&iacute;ode 01/02/2013-31/10/2013</span></span></td>
+		</tr>
+		<tr>
+			<th scope="row"><span style="font-family:arial,helvetica,sans-serif;"><span style="font-size: 12px;"><strong>Prestaci&oacute; de serveis l&#39;&uacute;ltim any de jubilaci&oacute; parcial</strong></span></span></th>
+			<td><span style="font-family:arial,helvetica,sans-serif;"><span style="font-size: 12px;">Els dies de prestaci&oacute; de serveis seran els proporcionals al per&iacute;ode a realitzar. Per exemple si es va jubilar parcialment amb efectes del dia 01/02/2012 i esjubila definitivament el dia 31/10/2013 els dies a realitzar l&#39;&uacute;ltim any seran elsproporcionals tenint en compte el per&iacute;ode 01/02/2013-31/10/2013</span></span></td>
+		</tr>
+		<tr>
+			<th scope="row"><span style="font-family:arial,helvetica,sans-serif;"><span style="font-size: 12px;"><strong>Prestaci&oacute; de serveis l&#39;&uacute;ltim any de jubilaci&oacute; parcial</strong></span></span></th>
+			<td><span style="font-family:arial,helvetica,sans-serif;"><span style="font-size: 12px;">Els dies de prestaci&oacute; de serveis seran els proporcionals al per&iacute;ode a realitzar. Per exemple si es va jubilar parcialment amb efectes del dia 01/02/2012 i esjubila definitivament el dia 31/10/2013 els dies a realitzar l&#39;&uacute;ltim any seran elsproporcionals tenint en compte el per&iacute;ode 01/02/2013-31/10/2013</span></span></td>
+		</tr>
+		<tr>
+			<th scope="row"><span style="font-family:arial,helvetica,sans-serif;"><span style="font-size: 12px;"><strong>Prestaci&oacute; de serveis l&#39;&uacute;ltim any de jubilaci&oacute; parcial</strong></span></span></th>
+			<td><span style="font-family:arial,helvetica,sans-serif;"><span style="font-size: 12px;">Els dies de prestaci&oacute; de serveis seran els proporcionals al per&iacute;ode a realitzar. Per exemple si es va jubilar parcialment amb efectes del dia 01/02/2012 i esjubila definitivament el dia 31/10/2013 els dies a realitzar l&#39;&uacute;ltim any seran elsproporcionals tenint en compte el per&iacute;ode 01/02/2013-31/10/2013</span></span></td>
+		</tr>
+	</tbody>
+</table>
+
+<p>&nbsp;</p>
+</div>
+
+  
+  				<div class="taula-scroll taula-ordre-1 tauling" id="t1">
+<table border="1" cellpadding="1" cellspacing="1" class="table" id="t2">
+	<thead>
+		<tr>
+			<th scope="row">Permis TEMPUS</th>
+			<th scope="col">Perm&iacute;s a la intranet</th>
+			<th scope="col">Descripci&oacute;</th>
+			<th scope="col">Computa saldo</th>
+			<th scope="col">Documentaci&oacute; justificativa</th>
+			<th scope="col">Autoritzaci&oacute;</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th scope="row"><a href="https://tempus.upc.edu/RLG/permisHores/list" target="_blank">Acompanyament fills i/o familiars al metge</a></th>
+			<td>&nbsp;</td>
+			<td><span id="1363778867330">Per acompanyament al metge de familiars ascendents/descentdents</span></td>
+			<td>NO</td>
+			<td><span id="1363778867330">Comprovant d&#39;assist&egrave;ncia expedit pel metge on indiqui l&#39;hora d&#39;entrada i de sortida.</span></td>
+			<td>Descentralitzada</td>
+		</tr>
+		<tr>
+			<th scope="row"><a href="https://tempus.upc.edu/RLG/permisHores/list" target="_blank">Alliberament sindical</a></th>
+			<td>&nbsp;</td>
+			<td><span id="1363778867330">Els membres de les juntes de personal i els delegats de les seccions sindicals disposen, en l&#39;exercici de les seves funcions representatives, d&#39;un cr&egrave;dit d&#39;hores mensuals dins de la jornada de treball retribu&iuml;des com a hores de treball efectiu.</span></td>
+			<td>S&iacute;</td>
+			<td>No es obligatori adjuntar documentaci&oacute;.</td>
+			<td>Descentralitzada</td>
+		</tr>
+		<tr>
+			<th scope="row"><a href="https://tempus.upc.edu/RLG/permisHores/list" target="_blank">Altres permisos</a></th>
+			<td><a href="https://melnik.upc.edu/rrhh/PAS/index/Informacio_General/Permisos/permis_fertilitat">Perm&iacute;s per a tractaments de fertilitat</a></td>
+			<td><span id="1363778867330">Perm&iacute;s per exercir el dret a absentar-se del lloc&nbsp;treball durant el temps necessari per a dur a terme tractaments de fertilitat. S&#39;ha de sol&middot;licitar a Tempus com a &quot;Altres permisos&quot;.</span></td>
+			<td>S&iacute;</td>
+			<td>Justificant d&#39;assist&egrave;ncia i justificant on consti la necessitat de fer-ho en horari laboral.</td>
+			<td>Centralitzada</td>
+		</tr>
+		<tr>
+			<th scope="row"><a href="https://tempus.upc.edu/RLG/permisHores/list" target="_blank">Altres permisos</a></th>
+			<td><span id="1363778867330"><a href="https://melnik.upc.edu/rrhh/PAS/index/Informacio_General/Permisos/permis_fills_discap" id="htmlb_hed_link201410211718110" target="_self">Perm&iacute;s per atendre fills/es discapacitats/des</a></span></td>
+			<td><span id="1363778867330">L&#39;empleat o l&#39;empleada que tingui un fill amb discapacitat ps&iacute;quica, f&iacute;sica o sensorial, pot gaudir de major flexibilitat hor&agrave;ria de fins a 2 hores di&agrave;ries per tal de conciliar els horaris dels centres d&#39;educaci&oacute; especial, o altres centres en qu&egrave; la persona discapacitada rebi atenci&oacute; amb els horaris dels propis llocs de treball, tenint en compte la situaci&oacute; del domicili familiar.<br />
+			<br />
+			D&#39;altra banda, es pot atorgar tamb&eacute; als empleats amb fills discapacitats un perm&iacute;s retribu&iuml;t per al temps indispensable per assistir a reunions de coordinaci&oacute; ordin&agrave;ria amb finalitats psicopedag&ograve;giques en el centre d&#39;educaci&oacute; especial o d&#39;atenci&oacute; preco&ccedil; on el fill rebi tractament o b&eacute; per a acompanyar-lo si ha de rebre suport addicional en l&#39;&agrave;mbit sanitari quan hi hagi coincid&egrave;ncia amb l&#39;horari habitual de treball. &Eacute;s en aquest &uacute;ltim cas, que s&rsquo;haur&agrave; de demanar el perm&iacute;s per Tempus com a &quot;Altres permisos&quot;.</span></td>
+			<td>S&iacute;</td>
+			<td><span id="1363778867330">Document justificatiu de l&#39;assit&egrave;ncia a les reunions. Resoluci&oacute; de la qualificaci&oacute; de la disminuci&oacute; (nom&eacute;s necess&agrave;ria la primera vegada que es sol&middot;licita el perm&iacute;s). Caldr&agrave; que el centre on es realitzin les reunions o el tractament acrediti la impossibilitat de realitzar-les fora de l&#39;horari.</span></td>
+			<td>Centralitzada</td>
+		</tr>
+		<tr>
+			<th scope="row"><a href="https://tempus.upc.edu/RLG/permisHores/list" target="_blank">Altres permisos</a></th>
+			<td><span id="1363778867330">Perm&iacute;s per situaci&oacute; de viol&egrave;ncia de g&egrave;nere</span></td>
+			<td><span id="1363778867330">Perm&iacute;s per exercir del dret a absentar-se del lloc de treball per situacions de viol&egrave;ncia de g&egrave;nere. S&#39;ha de sol&middot;licitar a tempus com a &quot;Altres permisos&quot;.</span></td>
+			<td>S&iacute;</td>
+			<td><span id="1363778867330">Justificaci&oacute; expedida pels serveis socials, policials o de salut corresponents.</span></td>
+			<td>Centralitzada</td>
+		</tr>
+		<tr>
+			<th scope="row"><span id="1363778867330"><a href="https://tempus.upc.edu/RLG/permisHores/list" id="htmlb_hed_link201410211625466" target="_blank">Assist&egrave;ncia a assemblees</a></span></th>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th scope="row"><span id="1363778867330"><a href="https://tempus.upc.edu/RLG/permisHores/list" id="htmlb_hed_link2014102116262867" target="_blank">Candidatura campanya electoral </a></span></th>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th scope="row">
+			<p><span id="1363778867330"><a href="https://tempus.upc.edu/RLG/permisHores/list" id="htmlb_hed_link2014102116274968" target="_blank">Curs de formaci&oacute; de treball</a></span><br />
+			<br />
+			<span><a href="https://tempus.upc.edu/RLG/permisHores/list" target="_blank">Curs de formaci&oacute; per al lloc de treball fora d&rsquo;horari </a></span><br />
+			<br />
+			<span id="1363778867330"><a href="https://tempus.upc.edu/RLG/permisHores/list" id="htmlb_hed_link2014102116293070" target="_blank">Compensaci&oacute; d&rsquo;hores per curs de formaci&oacute; per al lloc de treball fora d&rsquo;horari</a>&nbsp;</span></p>
+			</th>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th scope="row"><span id="1363778867330"><a href="https://tempus.upc.edu/RLG/permisHores/list" id="htmlb_hed_link2014102116304371" target="_blank">Curs de formaci&oacute; desenvolupament professional </a></span></th>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th scope="row"><span id="1363778867330"><a href="https://tempus.upc.edu/RLG/permisHores/list" id="htmlb_hed_link2014102116315373" target="_blank">Dedicaci&oacute; institucional</a></span></th>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th scope="row"><span id="1363778867330"><a href="https://tempus.upc.edu/RLG/permisHores/list" id="htmlb_hed_link2014102116342874" target="_blank">Defunci&oacute; parent 2n grau </a></span></th>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th scope="row"><span id="1363778867330"><a href="https://tempus.upc.edu/RLG/permisHores/list" id="htmlb_hed_link2014102116353675" target="_blank">Deures d&rsquo;inexcusable compliment</a></span></th>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th scope="row"><span id="1363778867330"><a href="https://tempus.upc.edu/RLG/permisHores/list" id="htmlb_hed_link2014102116392279" target="_blank">Ex&agrave;mens prenatal i t&egrave;cniques de preparaci&oacute; al part</a></span></th>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th scope="row"><span id="1363778867330"><a href="https://tempus.upc.edu/RLG/permisHores/list" id="htmlb_hed_link2014102116395880" target="_blank">Hores extraordin&agrave;ries compensables autoritzades</a></span></th>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th scope="row"><span id="1363778867330"><a href="https://tempus.upc.edu/RLG/permisHores/list" id="htmlb_hed_link2014102116414481" target="_blank">Hores treballades fora d&rsquo;horari</a></span></th>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th scope="row"><span id="1363778867330"><a href="https://tempus.upc.edu/RLG/permisHores/list" id="htmlb_hed_link2014102116423282" target="_blank">Indisposici&oacute; parcial </a></span></th>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th scope="row"><a href="https://tempus.upc.edu/RLG/permisHores/list" target="_blank">Participaci&oacute; en concursos/<br />
+			oposicions convocades per la UPC</a></th>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th scope="row"><span id="1363778867330"><a href="https://tempus.upc.edu/RLG/permisHores/list" id="htmlb_hed_link2014102116454684" target="_blank">Participaci&oacute; mesa electoral del R&egrave;gim Electoral General</a></span></th>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th scope="row"><span id="1363778867330"><a href="https://tempus.upc.edu/RLG/permisHores/list" id="htmlb_hed_link201410211648330" target="_blank">Perm&iacute;s gaudiment hores de desenvolupament professional 2015</a></span></th>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th scope="row"><span id="1363778867330"><a href="https://tempus.upc.edu/RLG/permisHores/list" id="htmlb_hed_link201410211649421" target="_blank">Perm&iacute;s gaudiment hores promoci&oacute; de salut 2015</a></span></th>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th scope="row"><span id="1363778867330"><a href="https://tempus.upc.edu/RLG/permisHores/list" id="htmlb_hed_link201410211651242" target="_blank">Perm&iacute;s recuperable</a></span></th>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th scope="row"><span id="1363778867330"><a href="https://tempus.upc.edu/RLG/permisHores/list" id="htmlb_hed_link201410211652473" target="_blank">Rehabilitaci&oacute; malaltia professional</a></span></th>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th scope="row"><span id="1363778867330"><a href="https://tempus.upc.edu/RLG/permisHores/list" id="htmlb_hed_link201410211653224" target="_blank">Reunions tutoria fill/es</a></span></th>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th scope="row"><span id="1363778867330"><a href="https://tempus.upc.edu/RLG/permisHores/list" id="htmlb_hed_link20141021165485" target="_blank">Revisi&oacute; m&egrave;dica laboral</a></span></th>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th scope="row"><span id="1363778867330"><a href="https://tempus.upc.edu/RLG/permisHores/list" id="htmlb_hed_link201410211654496" target="_blank">Tasques article 83 LOU</a></span></th>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th scope="row"><span id="1363778867330"><a href="https://tempus.upc.edu/RLG/permisHores/list" id="htmlb_hed_link201410211656387" target="_blank">Visita de treball </a></span></th>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th scope="row">&nbsp;</th>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>&nbsp;</p>
+</div>
+
+</div>
+</div>
+<!-- ************ 
+FINAL 5E DESPLEGABLE 
+************ -->
+			
+
+Segundo ejemplo:			
+<div class="selectedTitol" id="box_105"><!-- Títol Desplegable 5 -->
+<div class="minus" id="title_box_105">Situaci&oacute; laboral del treballador jubilat parcialment</div>
+</div>
+
+<div class="dsplContent" id="dsplContent_box_105">
+<div>La realitzaci&oacute; de la prestaci&oacute; del tant per cent del servei podr&agrave; dur-se a terme anualment de la seg&uuml;ent manera:
+<ul style="margin-left: 40px;">
+	<li>Compactada: 37 h i 30 minuts setmanals durant 48 dies laborables consecutius</li>
+	<li>Gradual: 9h i 23 minuts setmanals durant tot l&rsquo;any</li>
+</ul>
+
+<p>De manera general es realitzar&agrave; en forma compactada i continuada.</p>
+
+<div class="taula-scroll" id="t1">
+<table border="1" cellpadding="1" cellspacing="1" class="table" id="t2">
+	<thead>
+		<tr>
+			<th scope="row">Permis TEMPUS</th>
+			<th scope="col">Perm&iacute;s a la intranet</th>
+			<th scope="col">Descripci&oacute;</th>
+			<th scope="col">Computa saldo</th>
+			<th scope="col">Documentaci&oacute; justificativa</th>
+			<th scope="col">Autoritzaci&oacute;</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th scope="row"><a href="https://tempus.upc.edu/RLG/permisHores/list" target="_blank">Acompanyament fills i/o familiars al metge</a></th>
+			<td>&nbsp;</td>
+			<td><span id="1363778867330">Per acompanyament al metge de familiars ascendents/descentdents</span></td>
+			<td>NO</td>
+			<td><span id="1363778867330">Comprovant d&#39;assist&egrave;ncia expedit pel metge on indiqui l&#39;hora d&#39;entrada i de sortida.</span></td>
+			<td>Descentralitzada</td>
+		</tr>
+		<tr>
+			<th scope="row"><a href="https://tempus.upc.edu/RLG/permisHores/list" target="_blank">Alliberament sindical</a></th>
+			<td>&nbsp;</td>
+			<td><span id="1363778867330">Els membres de les juntes de personal i els delegats de les seccions sindicals disposen, en l&#39;exercici de les seves funcions representatives, d&#39;un cr&egrave;dit d&#39;hores mensuals dins de la jornada de treball retribu&iuml;des com a hores de treball efectiu.</span></td>
+			<td>S&iacute;</td>
+			<td>No es obligatori adjuntar documentaci&oacute;.</td>
+			<td>Descentralitzada</td>
+		</tr>
+		<tr>
+			<th scope="row"><a href="https://tempus.upc.edu/RLG/permisHores/list" target="_blank">Altres permisos</a></th>
+			<td><a href="https://melnik.upc.edu/rrhh/PAS/index/Informacio_General/Permisos/permis_fertilitat">Perm&iacute;s per a tractaments de fertilitat</a></td>
+			<td><span id="1363778867330">Perm&iacute;s per exercir el dret a absentar-se del lloc&nbsp;treball durant el temps necessari per a dur a terme tractaments de fertilitat. S&#39;ha de sol&middot;licitar a Tempus com a &quot;Altres permisos&quot;.</span></td>
+			<td>S&iacute;</td>
+			<td>Justificant d&#39;assist&egrave;ncia i justificant on consti la necessitat de fer-ho en horari laboral.</td>
+			<td>Centralitzada</td>
+		</tr>
+		<tr>
+			<th scope="row"><a href="https://tempus.upc.edu/RLG/permisHores/list" target="_blank">Altres permisos</a></th>
+			<td><span id="1363778867330"><a href="https://melnik.upc.edu/rrhh/PAS/index/Informacio_General/Permisos/permis_fills_discap" id="htmlb_hed_link201410211718110" target="_self">Perm&iacute;s per atendre fills/es discapacitats/des</a></span></td>
+			<td><span id="1363778867330">L&#39;empleat o l&#39;empleada que tingui un fill amb discapacitat ps&iacute;quica, f&iacute;sica o sensorial, pot gaudir de major flexibilitat hor&agrave;ria de fins a 2 hores di&agrave;ries per tal de conciliar els horaris dels centres d&#39;educaci&oacute; especial, o altres centres en qu&egrave; la persona discapacitada rebi atenci&oacute; amb els horaris dels propis llocs de treball, tenint en compte la situaci&oacute; del domicili familiar.<br />
+			<br />
+			D&#39;altra banda, es pot atorgar tamb&eacute; als empleats amb fills discapacitats un perm&iacute;s retribu&iuml;t per al temps indispensable per assistir a reunions de coordinaci&oacute; ordin&agrave;ria amb finalitats psicopedag&ograve;giques en el centre d&#39;educaci&oacute; especial o d&#39;atenci&oacute; preco&ccedil; on el fill rebi tractament o b&eacute; per a acompanyar-lo si ha de rebre suport addicional en l&#39;&agrave;mbit sanitari quan hi hagi coincid&egrave;ncia amb l&#39;horari habitual de treball. &Eacute;s en aquest &uacute;ltim cas, que s&rsquo;haur&agrave; de demanar el perm&iacute;s per Tempus com a &quot;Altres permisos&quot;.</span></td>
+			<td>S&iacute;</td>
+			<td><span id="1363778867330">Document justificatiu de l&#39;assit&egrave;ncia a les reunions. Resoluci&oacute; de la qualificaci&oacute; de la disminuci&oacute; (nom&eacute;s necess&agrave;ria la primera vegada que es sol&middot;licita el perm&iacute;s). Caldr&agrave; que el centre on es realitzin les reunions o el tractament acrediti la impossibilitat de realitzar-les fora de l&#39;horari.</span></td>
+			<td>Centralitzada</td>
+		</tr>
+		<tr>
+			<th scope="row"><a href="https://tempus.upc.edu/RLG/permisHores/list" target="_blank">Altres permisos</a></th>
+			<td><span id="1363778867330">Perm&iacute;s per situaci&oacute; de viol&egrave;ncia de g&egrave;nere</span></td>
+			<td><span id="1363778867330">Perm&iacute;s per exercir del dret a absentar-se del lloc de treball per situacions de viol&egrave;ncia de g&egrave;nere. S&#39;ha de sol&middot;licitar a tempus com a &quot;Altres permisos&quot;.</span></td>
+			<td>S&iacute;</td>
+			<td><span id="1363778867330">Justificaci&oacute; expedida pels serveis socials, policials o de salut corresponents.</span></td>
+			<td>Centralitzada</td>
+		</tr>
+		<tr>
+			<th scope="row"><span id="1363778867330"><a href="https://tempus.upc.edu/RLG/permisHores/list" id="htmlb_hed_link201410211625466" target="_blank">Assist&egrave;ncia a assemblees</a></span></th>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th scope="row"><span id="1363778867330"><a href="https://tempus.upc.edu/RLG/permisHores/list" id="htmlb_hed_link2014102116262867" target="_blank">Candidatura campanya electoral </a></span></th>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th scope="row">
+			<p><span id="1363778867330"><a href="https://tempus.upc.edu/RLG/permisHores/list" id="htmlb_hed_link2014102116274968" target="_blank">Curs de formaci&oacute; de treball</a></span><br />
+			<br />
+			<span><a href="https://tempus.upc.edu/RLG/permisHores/list" target="_blank">Curs de formaci&oacute; per al lloc de treball fora d&rsquo;horari </a></span><br />
+			<br />
+			<span id="1363778867330"><a href="https://tempus.upc.edu/RLG/permisHores/list" id="htmlb_hed_link2014102116293070" target="_blank">Compensaci&oacute; d&rsquo;hores per curs de formaci&oacute; per al lloc de treball fora d&rsquo;horari</a>&nbsp;</span></p>
+			</th>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th scope="row"><span id="1363778867330"><a href="https://tempus.upc.edu/RLG/permisHores/list" id="htmlb_hed_link2014102116304371" target="_blank">Curs de formaci&oacute; desenvolupament professional </a></span></th>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th scope="row"><span id="1363778867330"><a href="https://tempus.upc.edu/RLG/permisHores/list" id="htmlb_hed_link2014102116315373" target="_blank">Dedicaci&oacute; institucional</a></span></th>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th scope="row"><span id="1363778867330"><a href="https://tempus.upc.edu/RLG/permisHores/list" id="htmlb_hed_link2014102116342874" target="_blank">Defunci&oacute; parent 2n grau </a></span></th>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th scope="row"><span id="1363778867330"><a href="https://tempus.upc.edu/RLG/permisHores/list" id="htmlb_hed_link2014102116353675" target="_blank">Deures d&rsquo;inexcusable compliment</a></span></th>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th scope="row"><span id="1363778867330"><a href="https://tempus.upc.edu/RLG/permisHores/list" id="htmlb_hed_link2014102116392279" target="_blank">Ex&agrave;mens prenatal i t&egrave;cniques de preparaci&oacute; al part</a></span></th>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th scope="row"><span id="1363778867330"><a href="https://tempus.upc.edu/RLG/permisHores/list" id="htmlb_hed_link2014102116395880" target="_blank">Hores extraordin&agrave;ries compensables autoritzades</a></span></th>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th scope="row"><span id="1363778867330"><a href="https://tempus.upc.edu/RLG/permisHores/list" id="htmlb_hed_link2014102116414481" target="_blank">Hores treballades fora d&rsquo;horari</a></span></th>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th scope="row"><span id="1363778867330"><a href="https://tempus.upc.edu/RLG/permisHores/list" id="htmlb_hed_link2014102116423282" target="_blank">Indisposici&oacute; parcial </a></span></th>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th scope="row"><a href="https://tempus.upc.edu/RLG/permisHores/list" target="_blank">Participaci&oacute; en concursos/<br />
+			oposicions convocades per la UPC</a></th>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th scope="row"><span id="1363778867330"><a href="https://tempus.upc.edu/RLG/permisHores/list" id="htmlb_hed_link2014102116454684" target="_blank">Participaci&oacute; mesa electoral del R&egrave;gim Electoral General</a></span></th>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th scope="row"><span id="1363778867330"><a href="https://tempus.upc.edu/RLG/permisHores/list" id="htmlb_hed_link201410211648330" target="_blank">Perm&iacute;s gaudiment hores de desenvolupament professional 2015</a></span></th>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th scope="row"><span id="1363778867330"><a href="https://tempus.upc.edu/RLG/permisHores/list" id="htmlb_hed_link201410211649421" target="_blank">Perm&iacute;s gaudiment hores promoci&oacute; de salut 2015</a></span></th>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th scope="row"><span id="1363778867330"><a href="https://tempus.upc.edu/RLG/permisHores/list" id="htmlb_hed_link201410211651242" target="_blank">Perm&iacute;s recuperable</a></span></th>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th scope="row"><span id="1363778867330"><a href="https://tempus.upc.edu/RLG/permisHores/list" id="htmlb_hed_link201410211652473" target="_blank">Rehabilitaci&oacute; malaltia professional</a></span></th>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th scope="row"><span id="1363778867330"><a href="https://tempus.upc.edu/RLG/permisHores/list" id="htmlb_hed_link201410211653224" target="_blank">Reunions tutoria fill/es</a></span></th>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th scope="row"><span id="1363778867330"><a href="https://tempus.upc.edu/RLG/permisHores/list" id="htmlb_hed_link20141021165485" target="_blank">Revisi&oacute; m&egrave;dica laboral</a></span></th>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th scope="row"><span id="1363778867330"><a href="https://tempus.upc.edu/RLG/permisHores/list" id="htmlb_hed_link201410211654496" target="_blank">Tasques article 83 LOU</a></span></th>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th scope="row"><span id="1363778867330"><a href="https://tempus.upc.edu/RLG/permisHores/list" id="htmlb_hed_link201410211656387" target="_blank">Visita de treball </a></span></th>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<th scope="row">&nbsp;</th>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>&nbsp;</p>
+</div>
+</div>
+</div>
+<!-- ************ 
+FINAL 5E DESPLEGABLE 
+************ -->
+
+
+*********************************************************************************************************************************************************
+------------------------------
+Creación:	12-04-2015
+
+Jesús Campos Muñoz
+jesus.campos@upc.edu
+------------------------------
