@@ -1,0 +1,172 @@
+GRAILS - INSTALACIÓN Y CONFIGURACIÓN DE SPRING SECURITY CORE
+============================================================
+Instalarlo desde cero en una aplicación NO UPC.
+
+Spring Security Core es el plugin que hace el login/logout en una aplicación.
+
+El problema de esto es que si hay varias aplicaciones, cada vez que se entre en una de ellas hay que poner el user/password. Para evitar esto, hay que
+utilizar un servidor de CAS (Central Authentication Service), que no es más que un LDAP o similar, y lo que hace es que una vez logeado allí, ya sirve
+para todas las aplicaciones.
+
+En este documento únicamente se cubre la parte del Spring Security Core.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+****************************************************************	SPRING SECURITY CORE	**********************************************************
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Referencias: http://spring.io/blog/2010/08/11/simplified-spring-security-with-grails/
+Cosas a cambiar para que funcione:
+	- En el momento de crear el usuario no codificar el password debido a que la clase del dominio ya lo realiza (*).
+	- import grails.plugins.springsecurity.Secured por import grails.plugin.springsecurity.annotation.Secured
+Sirven de ayuda:	http://www.bahmanm.com/blogs/grails-howto-secure-app-using-spring-security-core (Para entender el Config.groovy)
+					http://stackoverflow.com/questions/19397159/grails-spring-security-login-logout-controllers-not-generated Problema login/logut
+Versión de Grails: 2.4.3
+
+BuildConfig.groovy: 
+	    plugins {
+			compile ":spring-security-core:2.0-RC4"
+		}
+		
+	
+1) 	Ejecutar el comando: s2-quickstart com.jesuscampos.security SecUser SecRole
+	Se obtiene la TRAZA 1
+	Se generan 3 clases
+		- SecUser
+		- SecRole
+		- SecUserSecRole -> Une Users y Roles
+	Se añade al Config.groovy:
+	// Added by the Spring Security Core plugin:
+	grails.plugin.springsecurity.userLookup.userDomainClassName = 'com.jesuscampos.security.SecUser'
+	grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'com.jesuscampos.security.SecUserSecRole'
+	grails.plugin.springsecurity.authority.className = 'com.jesuscampos.security.SecRole'
+	grails.plugin.springsecurity.controllerAnnotations.staticRules = [
+		'/':                              ['permitAll'],
+		'/index':                         ['permitAll'],
+		'/index.gsp':                     ['permitAll'],
+		'/assets/**':                     ['permitAll'],
+		'/**/js/**':                      ['permitAll'],
+		'/**/css/**':                     ['permitAll'],
+		'/**/images/**':                  ['permitAll'],
+		'/**/favicon.ico':                ['permitAll']
+	]
+	Se generan 2 clases: NO SE HAN CREADO!!!
+		- LoginController
+		- LogoutController
+	Pero se encuentran ubicadas en:
+	/CAS/.link_to_grails_plugins/spring-security-core-2.0-RC4/grails-app/controllers/grails/plugin/springsecurity/LoginController.groovy
+	/CAS/.link_to_grails_plugins/spring-security-core-2.0-RC4/grails-app/controllers/grails/plugin/springsecurity/LogoutController.groovy
+	La solución es:
+		- Crear la clase com.jesuscampos.security.LogoutController.groovy
+		- Copiar el contenido de LogoutController del plugin haciendo Ctrl+Shift+O
+		- Igual para Login
+		- En LogoutController cambiar su index por:
+			def index = {
+				// TODO put any pre-logout code here
+				session.user = "";
+				redirect uri: '/j_spring_security_logout' // '/j_spring_security_logout'
+			}
+			
+2) Añadir en UrlMappings.groovy:
+	"/login/$action?"(controller: "login")
+	"/logout/$action?"(controller: "logout")
+	Si no se realiza esta operación, se obtendrá un error 404 en login/logout.
+	
+3) //Poner a mano los roles en la tabla de role (sec_role). -> Deshacer este paso -> se substituye por código en el Bootstrap.groovy
+	Con el siguiente código se crearán los roles, si es que no existen:
+	import com.jesuscampos.security.SecRole
+
+	class BootStrap {
+		def init = {
+			...
+			def userRole = SecRole.findByAuthority('ROLE_USER') ?: new SecRole(authority: 'ROLE_USER').save(failOnError: true)
+			def adminRole = SecRole.findByAuthority('ROLE_ADMIN') ?: new SecRole(authority: 'ROLE_ADMIN').save(failOnError: true)
+			...
+		}
+	}
+
+4) 	Con el siguiente código se crearán los usuarios, si es que no existen:
+	import org.example.*
+	
+	class BootStrap {
+    def springSecurityService
+
+    def init = {
+        ...
+        def adminUser = SecUser.findByUsername('admin') ?: new SecUser(
+                username: 'admin',
+                password: springSecurityService.encodePassword('admin'),
+                enabled: true).save(failOnError: true)
+
+        if (!adminUser.authorities.contains(adminRole)) {
+            SecUserSecRole.create adminUser, adminRole
+        }
+        ...
+    }
+	
+	Hay que tener en cuenta que el código del apartado 3) debe fusionarse con éste, quedando lo siguiente:
+	def init = {
+		def userRole = SecRole.findByAuthority('ROLE_USER') ?: new SecRole(authority: 'ROLE_USER').save(failOnError: true)
+		def adminRole = SecRole.findByAuthority('ROLE_ADMIN') ?: new SecRole(authority: 'ROLE_ADMIN').save(failOnError: true)
+		
+		def adminUser = SecUser.findByUsername('admin') ?: new SecUser(
+			username: 'admin',
+			//password: springSecurityService.encodePassword('admin'), (*)
+			password: 'admin',
+			enabled: true).save(failOnError: true)
+
+		if (!adminUser.authorities.contains(adminRole)) {
+			SecUserSecRole.create adminUser, adminRole
+		}
+	}
+	
+	Ahora al arrancar la aplicación en las tablas ya existen tanto los roles como los usuarios con sus contraseñas.
+	
+	(*) A partir de la versión 1.2 de Spring Security Core plugin la clase User (SecUer) generada automáticamente codifica el password, por lo que la
+	línea comentada provocaba una doble encriptación y no se podía validar al usuario.
+	
+5)	En los controladores hay que incluir lo siguiente para que puedan ser utilizados:
+	Caso de querer ser utilizado sólo por perfil ROLE_ADMIN:
+		import grails.plugin.springsecurity.annotation.Secured
+		@Secured(['ROLE_ADMIN'])
+	Caso de querer que entre todo el mundo, sin necesidad de autenticación:
+		import grails.plugin.springsecurity.annotation.Secured
+		@Secured(['IS_AUTHENTICATED_ANONYMOUSLY'])
+		
+	En la web utilizan "import grails.plugins.springsecurity.Secured" pero es de una versión antigua.
+
+A paritr de aquí la aplicación ya funciona con logeo. Ahora se crearán algunos elementos adicionales, como por ejemplo, identificar a un usuario.
+
+*********************************************************************************************************************************************************
+-------
+TRAZA 1
+-------
+Loading Grails 2.4.3
+.
+|Environment set to development
+................................
+|Packaging Grails application
+.......................................
+..
+|Creating User class SecUser and Role class SecRole in package com.jesuscampos.security
+.
+|generated D:\WecWorkspace\CAS\grails-app\domain\com\jesuscampos\security\SecUser.groovy
+.
+|generated D:\WecWorkspace\CAS\grails-app\domain\com\jesuscampos\security\SecRole.groovy
+.
+|generated D:\WecWorkspace\CAS\grails-app\domain\com\jesuscampos\security\SecUserSecRole.groovy
+|
+*******************************************************
+* Created security-related domain classes. Your       *
+* grails-app/conf/Config.groovy has been updated with *
+* the class names of the configured domain classes;   *
+* please verify that the values are correct.          *
+*******************************************************
+
+
+*********************************************************************************************************************************************************
+------------------------------
+Creación:	17-03-2015
+
+Jesús Campos Muñoz
+jesus.campos@upc.edu
+------------------------------
