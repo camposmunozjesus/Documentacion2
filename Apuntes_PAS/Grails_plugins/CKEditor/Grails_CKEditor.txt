@@ -346,6 +346,40 @@ Otras cosas interesantes relacionadas con la indentación son:
 			'px' 
 
 
+--------------------------------
+COMPORTAMIENTO DE LA TECLA ENTER
+--------------------------------
+Por defecto, cuando se pulsa la tecla enter se produce un nuevo tag <p></p>. Para cambiar este comportamiento hay que escribir en el archivo config.js
+(myckconfig.js):
+	CKEDITOR.editorConfig = function( config ) {
+		...
+		config.enterMode = 2;
+		...
+	};
+
+Con esto se consigue que al apretar la tecla Enter se produzca un nuevo <br>.
+
+Referencia: (http://docs.cksource.com/ckeditor_api/symbols/CKEDITOR.config.html#.enterMode)
+
+	-------------------------------------------------------------------------------------------------------------------------------------------------
+	<static> {Number} CKEDITOR.config.enterMode					Since: 3.0
+		Sets the behavior of the Enter key. It also determines other behavior rules of the editor, like whether the <br> element is to be used as a 
+		paragraph separator when indenting text. The allowed values are the following constants that cause the behavior outlined below:
+			CKEDITOR.ENTER_P (1) – new <p> paragraphs are created;
+			CKEDITOR.ENTER_BR (2) – lines are broken with <br> elements;
+			CKEDITOR.ENTER_DIV (3) – new <div> blocks are created.
+
+		Note: It is recommended to use the CKEDITOR.ENTER_P setting because of its semantic value and correctness. The editor is optimized for this 
+		setting.
+		Código
+		---------------------------------------
+		|// Not recommended.				  |
+		|config.enterMode = CKEDITOR.ENTER_BR;|
+		---------------------------------------
+		Default Value:
+			CKEDITOR.ENTER_P 
+		
+		
 -----------------------
 BARRA DE TAREAS/TOOLBAR
 -----------------------
