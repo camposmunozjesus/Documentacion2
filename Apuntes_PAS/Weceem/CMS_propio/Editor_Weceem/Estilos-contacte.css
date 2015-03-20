@@ -1,0 +1,56 @@
+/* Estilos del contacte puestos en el propio template */  
+	    <style>
+        .titol-estatic p{
+        	margin: 0px 0px 0px;
+        }
+        
+        .titol-estatic {
+          background: #fff url(../images/icons/shadow.jpg) bottom repeat-x;  
+
+          border: 1px solid #ccc;
+          border-style: solid solid solid solid;
+          border-top: 1px solid #b2b2b2;
+          border-bottom: 1px solid #b2b2b2;
+          border-left: 1px solid #b2b2b2;
+          border-right: 1px solid #b2b2b2;  
+          border-radius: 3px;
+
+          margin-top: 10px;
+          /* margin-right: 10px; */
+
+          padding-right: 4px;
+          padding-left: 15px;
+          padding-top: 6px;
+          padding-bottom: 6px;
+
+          color: #007bc0;
+
+          box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+          font: 0.9em verdana, arial, helvetica, sans-serif;
+
+            /* padding-left: 25px; */
+          padding-right: 23px;
+
+          color: #007BBF;
+
+          font: bold 1.1em "Trebuchet MS",arial,helvetica,sans-serif;
+          min-height: 21px; /* Para que el icono de la derecha encaje bien */
+          padding-top: 1px; /* Centrar texto */
+        
+          margin-left: 5px;
+          margin-right: 5px;
+
+        }
+
+        body#pagina-contacte .dsplContent{
+          margin-left: 5px;
+          margin-right: 5px;
+          font: 0.9em verdana,arial,helvetica,sans-serif;
+        }
+
+        body#pagina-contacte .dsplTitol, body#pagina-contacte .selectedTitol{
+          margin-left: 5px;
+          margin-right: 5px;
+        }
+        
+      </style>

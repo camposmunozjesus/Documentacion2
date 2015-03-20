@@ -26,6 +26,39 @@ A partir de aquí Checkout para descargar Import para subir.
 
 
 
+---------------------------------------------------
+SUBIR UN PROYECTO MANTENIENDO SUBCARPETAS EXCLUÍDAS
+---------------------------------------------------
+En el siguiente ejemplo, en el repositorio habrá una carpte llamada CKEditor que contendrá diferentes aplicaciones (ed decir, diferentes sucarpetas): 
+CKEditorCAS, CKEditorCodeMirror, etc... por lo que cada subcarpeta tendrá los directorios propios de una aplicación de Grails (grails-app, lib, scripts ...)
+
+Tenemos un proyecto en la carpeta: D:\WecWorkspace\CKEditorCodeMirror y dentro de él se ubican las carpetas grails-app, lib, scripts, etc ...
+
+1) Creamos en el repositorio (Ej: https://grails-ejemplos-basicos.googlecode.com/svn/trunk/CKEditor/) una carpeta llamada CKEditorCodeMirror.
+
+2) Botón derecho sobre el nombre de la carpeta (CKEditorCodeMirror) y "SVN Checkout ...". 
+   Aparecerá un diálogo en el que los datos deben ser como sigue:
+	URL of repository: https://grails-ejemplos-basicos.googlecode.com/svn/trunk/CKEditor/CKEditorCodemirror
+	Checkout directory: D:\WecWorkspace\grails-navigation-master\CKEditorCodemirror	
+   Se le da "OK". Aunque diga que sobreescribirá los datos continuar, debido a que no sobreescribirá nada porque la carpeta del repo está vacía.
+   
+   También se puede hacer dentro de la carpeta del PC que 
+   contiene el proyecto: D:\WecWorkspace\CKEditorCodeMirror y podremos ver que contiene las carpetas grails-app, lib, scripts, etc ... Entonces hay 
+   que hacer botón derecho sobre algo que no sea una de estas subcarpetas "SVN Checkout ...".
+   
+   Lo que estamos haciendo es sincronizar con nuestros datos algo que está vacío, por lo que no descargará nada, sólamente creará una carpeta llamada
+   .svn que será la que utilizará para sincronizar archivos.
+   
+   La carpeta se ha sincronizado con el repositorio. Falta subir los datos al repositorio.
+   
+3) Para ellos hacemos sobre la carpeta CKEditorCodeMirror botón derecho "Tortoise SVN" -> "Add ..." y aquí agregamos todas las carpetas que nos 
+   interese subir al repositorio.
+   Las que no se deseen subir nunca (como pueden ser "target" o "targe-eclipse") hay que seleccionarlas, hacer botón derecho "SVN Tortoise" ->
+   "Unversion and add to ignore list" -> "Delete and ignore 2 items by extension(recursively)".
+   
+4) Subir los datos al repositorio -> Botón derecho sobre la carpeta CKEditorCodeMirror -> "SVN Commit ..."
+
+
 ----------------------------------------------------------------
 PARA SUBIR UN PROYECTO DEL PC A UNA CARPETA VACÍA DE GOOGLE CODE
 ----------------------------------------------------------------

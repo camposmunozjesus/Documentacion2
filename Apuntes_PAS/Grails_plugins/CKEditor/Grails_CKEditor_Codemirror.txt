@@ -1,0 +1,64 @@
+﻿GRAILS - CKEDITOR PLUGIN - COMBINAR CKEDITOR CON CODEMIRROR
+===========================================================
+-----------
+DESCRIPCIÓN
+-----------
+Consiste en que en el momento en que se presione la tecla "Código HTML" el texto se vea indentado de manera correcta, aunque en la BD esté guardado sin
+indentar.
+
+Referencia:
+Sitio web de descarga:	http://ckeditor.com/addon/codemirror
+Página específica:		http://w8tcha.github.io/CKEditor-CodeMirror-Plugin/
+
+
+-------------------
+DESCARGAR EL PLUGIN
+-------------------
+Ir al sitio: http://ckeditor.com/addon/codemirror
+
+
+-----------
+INSTALACIÓN
+-----------
+Descomprimir la carpeta y copiarla en:
+	/{nombre_de_la_aplicación}/.link_to_grails_plugins/ckeditor-4.4.1.0/web-app/js/ckeditor/plugins
+
+En el archivo de configuración del editor (config.js o su equivalente, en los ejemplos es "myconfig.js" ver Grails_CKEditor.txt):
+	CKEDITOR.editorConfig = function( config ) {
+		...
+		config.extraPlugins = 'codemirror';
+	//	config.extraPlugins = 'sourcedialog,codemirror'; ---> El sourcedialog parece no ser necesario
+		
+		config.codemirror = {
+				theme: 'default',
+				lineNumbers: true,
+				lineWrapping: true,
+				matchBrackets: true,
+				autoCloseTags: true,
+				autoCloseBrackets: true,
+				enableSearchTools: true, // Whether or not to enable search tools, CTRL+F (Find), CTRL+SHIFT+F (Replace), CTRL+SHIFT+R (Replace All), CTRL+G (Find Next), CTRL+SHIFT+G (Find Previous)
+				enableCodeFolding: true,
+				enableCodeFormatting: true,
+				autoFormatOnStart: true,
+				autoFormatOnUncomment: true,
+				highlightActiveLine: true,
+				highlightMatches: true,
+				showFormatButton: true,
+				showCommentButton: true,
+				showUncommentButton: true
+		};
+		...
+	};
+
+
+--------------
+COMPORTAMIENTO
+--------------
+	
+*****************************************************************************************************************************************************
+------------------------------
+Creación:		18-03-2015
+				
+Jesús Campos Muñoz
+jesus.campos@upc.edu
+------------------------------
