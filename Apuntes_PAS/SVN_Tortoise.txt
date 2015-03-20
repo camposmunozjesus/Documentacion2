@@ -38,8 +38,8 @@ Tenemos un proyecto en la carpeta: D:\WecWorkspace\CKEditorCodeMirror y dentro d
 
 2) Botón derecho sobre el nombre de la carpeta (CKEditorCodeMirror) y "SVN Checkout ...". 
    Aparecerá un diálogo en el que los datos deben ser como sigue:
-	URL of repository: https://grails-ejemplos-basicos.googlecode.com/svn/trunk/CKEditor/CKEditorCodemirror
-	Checkout directory: D:\WecWorkspace\grails-navigation-master\CKEditorCodemirror	
+	URL of repository: https://grails-ejemplos-basicos.googlecode.com/svn/trunk/CKEditor/CKEditorCodeMirror
+	Checkout directory: D:\WecWorkspace\grails-navigation-master\CKEditorCodeMirror	
    Se le da "OK". Aunque diga que sobreescribirá los datos continuar, debido a que no sobreescribirá nada porque la carpeta del repo está vacía.
    
    También se puede hacer dentro de la carpeta del PC que 
