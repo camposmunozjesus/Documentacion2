@@ -414,6 +414,8 @@ Barra de tareas completa:
  		 	 { name: 'tools', items : [ 'About'] },
  		 	 //'/',
  		 	 //{ name: 'fitxes', items : [ 'DivDspl', '-', 'ListInDspl'] }
+			 //En el caso de tener instalado el plugin Codemirror para CKEditor:
+			 { name: 'editCode', items : [ 'autoFormat', 'CommentSelectedRange', 'UncommentSelectedRange', 'AutoComplete'] }
 	];
 
 			
