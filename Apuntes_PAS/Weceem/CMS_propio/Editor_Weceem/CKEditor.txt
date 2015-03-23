@@ -1,0 +1,217 @@
+GCRRHH - MODIFICACIONES EN EL PLUGIN CKEDITOR
+=============================================
+Primero se muestra cómo instalar y configurar CKEditor para la aplicación de edición de contenidos (gcrrhh).
+
+Luego se muestran las modificacioens sufridas por el plugin CKEditor para adaptarlo a nuestra conveniencia. Éstas han sido las siguientes:
+	- Ruta donde se guardan los archivos
+	- Incluir Codemirror en el rich editor (NO IMPLANTADA)
+	
+	
+<INSTALACIÓN Y CONFIGURACIÓN>****************************************************************************************************************************
+--------------------------
+ARCHIVO BUILDCONFIG.GROOVY
+--------------------------
+    plugins {
+		...
+		compile ":ckeditor:4.4.1.0"
+		...
+    }
+	
+Hacer botón derecho sobre el proyecto -> "Grails Tools" -> "Refresh Dependencies".
+
+
+---------------------
+ARCHIVO CONFIG.GROOVY
+---------------------
+ckeditor {
+	config = "/js/ckeditor/ckeditorconfig.js"
+//		skipAllowedItemsCheck = false
+	defaultFileBrowser = "ofm"
+	upload {
+		basedir = "/app/rrhh_resources/"
+		baseurl ="/${grails.util.Metadata.current.'app.name'}/../rrhh_resources/"
+			overwrite = false
+			link {
+				browser = true
+				upload = false
+				allowed = ['pdf', 'doc', 'docx']
+				denied = []
+			}
+			image {
+				browser = true
+				upload = true
+				allowed = ['jpg', 'gif', 'jpeg', 'png']
+				denied = []
+			}
+			flash {
+				browser = false
+				upload = false
+				allowed = ['swf']
+				denied = []
+			}
+	}
+}
+
+
+-------------------------------------
+ARCHIVO CONFIG.JS (ckeditorconfig.js)
+-------------------------------------
+En la carpeta "web-app" de la aplicación se crea la siguiente estructura:
+	js (carpeta)
+	 |---ckeditor (carpeta)
+	       |-------ckeditorconfig.js
+		   
+Y en el archivo ckeditorconfig.js se pone lo siguiente:
+/**
+ * @license Copyright (c) 2003-2013, CKSource - Frederico Knabben. All rights reserved.
+ * For licensing, see LICENSE.html or http://ckeditor.com/license
+ */
+
+CKEDITOR.editorConfig = function( config ) {
+	// Define changes to default configuration here. For example:
+	 config.language = 'ca';
+//	 config.uiColor = '#AADC6E';
+//	 config.uiColor="red";
+//	 config.uploadBasedir = "../rrhh_resources/jesus/";
+	 config.allowedContent=true
+	 config.extraAllowedContent = '*(*)';
+	 
+	 config.contentsCss = "/gcrrhh/css/contents.css"
+	 
+	 //config.extraPlugins = 'divDspl,listInDspl';
+	 
+	 config.toolbar = 'Editor';
+	 
+	 config.toolbar_Editor = [
+//		 config.toolbar =  [
+	         { name: 'document', items : [ 'Source','-','Save','NewPage','DocProps','Print'] },
+  		 	 { name: 'clipboard', items : [ 'Cut','Copy','Paste','PasteText','PasteFromWord','-','Undo','Redo' ] },
+ 		 	 { name: 'editing', items : [ 'Find','Replace','-','SelectAll','-','SpellChecker', 'Scayt' ] },
+ 		 	 { name: 'forms', items : [ 'Form', 'Checkbox', 'Radio', 'TextField', 'Textarea', 'Select', 'Button', 'ImageButton', 
+ 		         'HiddenField' ] },
+ 		 	 '/',
+ 		 	 { name: 'basicstyles', items : [ 'Bold','Italic','Underline','Strike','Subscript','Superscript','-','RemoveFormat' ] },
+ 		 	 { name: 'paragraph', items : [ 'NumberedList','BulletedList','-','Outdent','Indent','-','Blockquote','CreateDiv',
+ 		 	 '-','JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock','-','BidiLtr','BidiRtl' ] },
+ 		 	 { name: 'links', items : [ 'Link','Unlink','Anchor' ] },
+ 		 	 { name: 'insert', items : [ 'Image','Flash','Table','HorizontalRule','Smiley','SpecialChar','PageBreak','Iframe' ] },
+ 		 	 '/',
+ 		 	 { name: 'styles', items : [ 'Styles','Format','Font','FontSize' ] },
+ 		 	 { name: 'colors', items : [ 'TextColor','BGColor' ] },
+ 		 	 { name: 'tools', items : [ 'Maximize', 'ShowBlocks'] },
+ 		 	 { name: 'tools', items : [ 'About'] },
+ 		 	 //'/',
+ 		 	 //{ name: 'fitxes', items : [ 'DivDspl', '-', 'ListInDspl'] }
+	];
+		
+
+	config.indentOffset = 5;
+};
+
+
+-----------
+PÁGINAS GSP
+-----------
+Para incluir el editor hay que poner en la página GSP lo siguiente:
+	<head>
+		<ckeditor:resources/>
+	</head>
+	<body>
+		<ckeditor:editor id="arxiuContingut" name="arxiuContingut" height="400px" width="100%" userSpace="${space}">${params?.arxiuContingut?:arxiu?.contingut}</ckeditor:editor>
+	</body>
+
+Cuando se desee que el editor rich funcione como un text área para el editor de código GSP/HTML no se deberá cargar <ckeditor:resources/>, por lo que 
+esta parte suele ir acompañada de una condición similar a:
+	<head>
+		<g:if test="${arxiu?.permetreGSP==0 || arxiu?.permetreGSP==null}">
+			<ckeditor:resources/>
+		</g:if>
+	</head>
+	
+El utilizar:
+	<ckeditor:editor id="arxiuContingut" name="arxiuContingut" height="400px" width="100%" userSpace="${space}">
+		${params?.arxiuContingut?:arxiu?.contingut}
+	</ckeditor:editor>
+Provocará que cuando no se cargue la librería <ckeditor:resources/>, el TextArea que sale por defecto añada espacio/tabulaciones en blanco por defecto.
+
+
+-----------
+CONTROLADOR
+-----------
+En la action en la que se llama al controlador que carga el editor hay que enviar una variable llamada "space", que será la que utilice para almacenar
+las imágenes en el espacio correspondiente. Por ejemplo: [ param1: "asda", param2: "ewe", space: "PAS"].
+
+Para recuperar los datos del editor en el controlador hay que leer: params.arxiuContingut.
+
+
+
+<MODIFICACIONES>*****************************************************************************************************************************************
+----------------------------------------------------------------
+MODIFICAR LA RUTA DONDE SE ALMACENAN LOS ARCHIVOS EN EL SERVIDOR
+----------------------------------------------------------------
+Esta modificación permite eliminar la carpeta "File" o "Image" que se crea automáticamente al subir un fichero o imagen al servidor.
+
+Para ello hay que ir al archivo que se encuentra dentro del plugin descargado:
+	/gcrrhh/.link_to_grails_plugins/ckeditor-4.4.1.0/src/groovy/org/gualdi/grails/plugins/ckeditor/utils/PathUtils.groovy
+	%Direcotiro_Workspace%\gcrrhh\target\work\plugins\ckeditor-4.4.1.0\src\groovy\org\gualdi\grails\plugins\ckeditor\utils\PathUtils.groovy
+
+En este archivo hay que comentar la línea 49, para que el último if del método static getBaseUrl quede de la siguiente manera:
+        def typeName = PathUtils.sanitizePath(params.type?.toLowerCase())
+        if (typeName) {
+            typeName = WordUtils.capitalize(typeName)
+//            baseUrl += "/" + typeName
+        }
+
+		
+---------------------------
+CODEMIRROR PARA RICH EDITOR
+---------------------------
+Cuando se hace click en el botón de "Código fuente", se ve el código HTML, por defecto se ve sin colores y sin indentación.
+
+Para poder verlo con colores, indentación e incluso highlight (es decir, que cuando seleccionas un TAG además marque el de cierre) hay que:
+1) Ir al sitio: http://ckeditor.com/addon/codemirror y descargar el plugin.
+
+2) Descomprimir la carpeta y copiarla en:
+	/{nombre_de_la_aplicación}/.link_to_grails_plugins/ckeditor-4.4.1.0/web-app/js/ckeditor/plugins
+
+3) En el archivo de configuración del editor (ckeditorconfig.js) añadir:
+	CKEDITOR.editorConfig = function( config ) {
+		...
+		config.extraPlugins = 'codemirror';
+	//	config.extraPlugins = 'sourcedialog,codemirror'; ---> El sourcedialog parece no ser necesario
+		
+		config.codemirror = {
+				theme: 'default',
+				lineNumbers: true,
+				lineWrapping: true,
+				matchBrackets: true,
+				autoCloseTags: true,
+				autoCloseBrackets: true,
+				enableSearchTools: true, // Whether or not to enable search tools, CTRL+F (Find), CTRL+SHIFT+F (Replace), CTRL+SHIFT+R (Replace All), CTRL+G (Find Next), CTRL+SHIFT+G (Find Previous)
+				enableCodeFolding: true,
+				enableCodeFormatting: true,
+				autoFormatOnStart: true,
+				autoFormatOnUncomment: true,
+				highlightActiveLine: true,
+				highlightMatches: true,
+				showFormatButton: true,
+				showCommentButton: true,
+				showUncommentButton: true
+		};
+		...
+	};
+	
+Esto lo que permite es en página como "Informació Genereal" ó "Racó Personal" se pueda editar el código de manera fácil, debido a que ahora el rich
+editor se carga las indentaciones y es difícil ver en el TextArea los bloques separados.
+
+Además, si se selecciona "código fuente" y se escribe un espacio donde sea, y se guarda con la opción de visualización de código GSP (opción del gcrrhh)
+se verá el código bien indentado en el TextArea.
+
+
+*********************************************************************************************************************************************************
+------------------------------
+Creación:	23-03-2015
+
+Jesús Campos Muñoz
+jesus.campos@upc.edu
+------------------------------
