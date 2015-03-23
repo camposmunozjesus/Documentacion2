@@ -1,0 +1,73 @@
+GCRRHH - CODEMIRROR PARA TEXTAREA (NO RICH EDITOR)
+==================================================
+Cómo instalar "Codemirror" para un TextArea o un CKeditor cuando no carga los <ckeditor:resources/> (es decir, un TextArea).
+
+Para saber como utilizar Codemirror en la opción de "Código Fuente" en modo Rich Editor ver el archivo CKEditor.txt (MODIFICACIONES EN EL PLUGIN CKEDITOR)
+Primero se muestra cómo instalar y configurar CKEditor para la aplicación de edición de contenidos (gcrrhh).
+
+1) Descargar el código de https://codemirror.net/
+   Descomprimirlo y cambiar el nombre de la carpeta "codemirror-5.0" por "codemirror".
+
+2) Copiar la carpeta en el "wep-app" de la aplicación
+
+3) En la GSP incluir las librerías:
+	<script src="/${grails.util.Metadata.current.'app.name'}/codemirror/lib/codemirror.js"></script>
+	<link rel="stylesheet" href="/${grails.util.Metadata.current.'app.name'}/codemirror/lib/codemirror.css">
+	<!--  <script src="/${grails.util.Metadata.current.'app.name'}/codemirror/mode/javascript/javascript.js"></script> -->
+	<script src="/${grails.util.Metadata.current.'app.name'}/codemirror/mode/xml/xml.js"></script>
+
+	
+Ejemplo de GSP:
+<html>
+	<head>
+		<script src="/${grails.util.Metadata.current.'app.name'}/codemirror/lib/codemirror.js"></script>
+		<link rel="stylesheet" href="/${grails.util.Metadata.current.'app.name'}/codemirror/lib/codemirror.css">
+		<!--  <script src="/${grails.util.Metadata.current.'app.name'}/codemirror/mode/javascript/javascript.js"></script> -->
+		      <script src="/${grails.util.Metadata.current.'app.name'}/codemirror/mode/xml/xml.js"></script>
+		<!-- Para incluir un tema en especial -->
+		<link rel="stylesheet" href="/${grails.util.Metadata.current.'app.name'}/codemirror/theme/monokai.css">
+	</head>
+	<body>
+		<g:if test="${flash.message}">
+			<div class="message">
+				<p>${flash.message}</p>
+			</div>
+		</g:if>
+		<form id="ckeditor" action="saveAndContinue" method="post" enctype="multipart/form-data">
+		          
+			<!--  Edición del título de la página -->
+			<div class="input-group">
+			  <span class="input-group-addon">Títol</span>
+			  <input id="arxiuTitol" name="arxiuTitol" type="text" class="form-control" value="${doc?.titulo}">
+			</div>
+			<br>
+			<!--  Edición del contenido  -->
+		   	My Editor:<br>
+		          <textarea name="arxiuContingut" id="arxiuContingut">${doc?.contenido}</textarea>
+			<br>	
+			<div class="row no-scroll-bar">
+		 	    <div class="col-xs-12 col-sm-6 col-md-7 col-lg-7">
+					<!-- Botones -->
+					<g:actionSubmit action="save" method="post" value="Desar" class="btn btn-primary btn-sm"/>
+				</div>
+			</div>
+		  </form>
+
+		<script>
+				var editor = CodeMirror.fromTextArea(document.getElementById('arxiuContingut'), {
+					theme: 'default',
+				  	lineNumbers: true
+				});
+		</script>
+
+	</body>
+
+</html>
+
+*********************************************************************************************************************************************************
+------------------------------
+Creación:	23-03-2015
+
+Jesús Campos Muñoz
+jesus.campos@upc.edu
+------------------------------

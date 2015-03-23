@@ -7,10 +7,18 @@ Siempre se habla de la versión 4.4.1.0, excepto cuando se indique lo contrario.
 Sitio web de la versión 4 del plugin, con:		http://docs.ckeditor.com/#!/guide/dev_dialog_add_file_browser
 Trata los estilos del CKEditor:					http://get-simple.info/wiki/how_to:editor_configuration_custom_files
 ejemplos. Muy completo e interesnate.
+Docs sobre métodos								http://docs.cksource.com/ckeditor_api/symbols/CKEDITOR.config.html
 *Links que tratan cómo subir las imágenes des el editor.Con el segundo link se soluciona todo. 
 Configuración básica para poder subir imágenes:	http://docs.cksource.com/CKEditor_3.x/Developers_Guide/File_Browser_%28Uploader%29#Basic_Configuration
 Cómo permitir la subida de imágenes desde el:	http://ckeditor.com/forums/Support/Having-problems-integrating-Filemanager
 CKEditor
+
+
+-----------------------
+LIMITACIONES DEL PLUGIN
+-----------------------
+Por defecto elmina los tags <html>, <head>, y <body>. Hay una opción que permite que se mantengan, pero NO sirve para bootstrap, porque el código con
+comentarios que hay que incluir para que funcione Bootstrap desaparece.
 
 
 *****************************************************************************************************************************************************
