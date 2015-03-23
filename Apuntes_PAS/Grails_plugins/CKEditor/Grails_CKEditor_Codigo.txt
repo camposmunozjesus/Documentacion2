@@ -1,0 +1,78 @@
+﻿GRAILS - CKEDITOR EDICIÓN DE CÓDIGO
+===================================
+En la versión del CKEDitor 3.6.6.1.0 cuando se envía el código se hace de la siguiente manera por defecto:
+<div class="cls sss ccc">
+	<p>
+		<span style="display: none;">&nbsp;</span>sdasdas</p>
+	<p>
+		asd</p>
+	<p>
+		asda</p>
+	<p>
+		sd</p>
+	<div class="dicer2">
+		texto DVI</div>
+</div>
+<p>
+	&nbsp;</p>
+	
+
+
+Es decir, con indentaciones.
+
+En la versión 4.4.1.0, por defecto se envía de la siguiente manera:
+<div class="cls sss ccc">
+<p><span style="display: none;">&nbsp;</span>sdasdas</p>
+<p>asd</p>
+<p>asda</p>
+<p>sd</p>
+<div class="dicer2">texto DVI</div>
+</div>
+<p>&nbsp;</p>
+
+Es decir, sin indentaciones.
+
+¿PROBLEMA?
+SÍ. Que luego el TextArea que hace las veces de editor GSP no indenta correctamente.
+Solución: Incluir en el código del config.js los siguiente ...
+	CKEDITOR.editorConfig = function( config ) {
+		...
+		
+	};
+
+	CKEDITOR.on( 'instanceReady', function( ev ) {
+		
+		var blockTags = ['p', 'div']; //Aquí se deben incluir todos los tags que queremos que mantengan indentaciones: 'div','h1','h2','h3','h4','h5','h6','p','pre','ul','li' ???
+		
+		var rules = {
+			indent : true,
+			breakBeforeOpen : true,
+			breakAfterOpen : false,
+			breakBeforeClose : false,
+			breakAfterClose : true
+		};
+		
+		for (var i=0; i<blockTags.length; i++) {
+			ev.editor.dataProcessor.writer.setRules( blockTags[i], rules );
+		}
+		//alert("78");
+	});
+	
+	
+Y el código pasará a enviarse en el siguiente formato:
+<div class="cls sss ccc">
+	<p><span style="display: none;">&nbsp;</span>sdasdas</p>
+	<p>asd</p>
+	<p>asda</p>
+	<p>sd</p>
+	<div class="dicer2">texto DVI</div>
+</div>
+<p>&nbsp;</p>
+	
+*****************************************************************************************************************************************************
+------------------------------
+Creación:		23-03-2014
+				
+Jesús Campos Muñoz
+jesus.campos@upc.edu
+------------------------------

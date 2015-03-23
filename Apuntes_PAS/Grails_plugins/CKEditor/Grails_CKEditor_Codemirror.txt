@@ -54,6 +54,12 @@ En el archivo de configuración del editor (config.js o su equivalente, en los e
 --------------
 COMPORTAMIENTO
 --------------
+
+---------------
+BARRA DE TAREAS
+---------------
+Con el plugin vienen una serie de botones adicionales:
+	{ name: 'editCode', items : [ 'autoFormat', 'CommentSelectedRange', 'UncommentSelectedRange', 'AutoComplete'] }
 	
 *****************************************************************************************************************************************************
 ------------------------------
