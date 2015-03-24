@@ -1,0 +1,65 @@
+<html>
+	<head>
+	
+	
+		 <!-- <link href="css/ui-lightness/jquery-ui-1.10.4.custom.css" rel="stylesheet"> -->
+		<link href="http://code.jquery.com/ui/1.9.1/themes/base/jquery-ui.css" rel="stylesheet">
+	 
+		<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+		<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+		
+		<script>
+			function personalizedGreet(name){
+				var hello = "Hello";
+				
+				function greet()
+				{
+					return hello + name;
+				}
+				
+				return greet;
+			}
+			
+			//En otra parte del código...
+			var sayHello = personalizedGreet("Jesus");
+						   /* Se almacena en la variable sayHello el código:
+								function greet() {
+									return hello + name;
+								}
+						   */
+			alert(sayHello());  // Se ejecuta el código anterior y
+								// se muestra en pantalla: Hello Jesus
+								
+						alert(sayHello());  // Se ejecuta el código anterior y
+								// se muestra en pantalla: Hello Jesus
+			
+		</script>
+		
+		
+		<p>Counting with a local variable.</p>
+
+<button type="button" onclick="myFunction()">Count!</button>
+
+<p id="demo">8</p>
+
+<script>
+var add2 = (
+ function () {
+    var counter = 0;
+    return function () {
+			var counter = 8;
+            return counter += 1;
+    }
+ }
+)();
+
+function myFunction(){
+    document.getElementById("demo").innerHTML = add2();
+}
+</script>
+
+
+	</head>
+	<body>
+	</body>
+</html>
