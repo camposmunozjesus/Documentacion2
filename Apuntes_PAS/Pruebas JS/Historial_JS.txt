@@ -16,3 +16,6 @@ JS_007.html: Se extienden las propiedades de Array. En principio no existe el m�
 			 Webs de ayuda:
 				- Ejemplo obtenido de: http://librosweb.es/ajax/capitulo_3/clases.html.
 				- Corrección (Cambiar el Object por $) obtenido de: http://api.jquery.com/jquery.extend/.
+JS_008.html: Prueba con closures según los ejemplos de http://www.variablenotfound.com/2012/10/closures-en-javascript-entiendelos-de.html.
+JS_009.html: Prueba con closures según los ejemplos de W3SCHOOLS.
+JS_010.html: Prueba con closures según los ejemplos de W3SCHOOLS.

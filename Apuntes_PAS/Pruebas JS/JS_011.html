@@ -1,0 +1,71 @@
+<html>
+	<head>
+		<!-- <link href="css/ui-lightness/jquery-ui-1.10.4.custom.css" rel="stylesheet"> -->
+		<link href="http://code.jquery.com/ui/1.9.1/themes/base/jquery-ui.css" rel="stylesheet">
+	 
+		<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+		<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+		
+		<script>
+			function tokenizer(state) {
+			  // Newlines are always a separate token.
+			  function isWhiteSpace(ch) {
+				// The messy regexp is because IE's regexp matcher is of the
+				// opinion that non-breaking spaces are no whitespace.
+				return ch != "\n" && /^[\s\u00a0]*$/.test(ch);
+			  }
+
+			  var tokenizer = {
+				state: state,
+
+				take: function(type) {
+				  alert("TAKE"+"\nestate: "+state+"\ntype: "+type);
+				},
+
+				next: function () {
+				  alert("NEXT");
+				}
+			  };
+			  return tokenizer;
+			}
+			
+			var tokenizeXML = (function() {
+				function inText(source) {
+					alert("inText"+source);
+				}
+
+				function inTag(source, setState) {
+					alert("inTag");
+				}
+
+				function inAttribute(quote) {
+					alert("inAttribute");
+				}
+
+				function inBlock(style, terminator) {
+					alert("inBlock");
+				}
+
+				return function(source, startState) {
+					inText("dentro");
+					return tokenizer(19);
+				};
+			})();
+  
+			
+			var tk = tokenizer(7);
+			alert(tk.state);
+			tk.take();
+			
+			var tdk = tokenizeXML();
+			tdk.take(789);
+			tokenizeXML(78).inText(78);
+			alert("FIN");
+			
+		</script>
+
+
+	</head>
+	<body>
+	</body>
+</html>
