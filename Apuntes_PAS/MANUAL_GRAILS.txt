@@ -103,6 +103,11 @@ Test unitarios: test sin dependencias de ningún tipo.
 
 Test de integración: acceso completo al entorno de Grails, incluído base de datos.
 
+Comandos útiles:
+	generate-controller biblioteca.Usuario
+	generate-views biblioteca.Usuario
+	
+	
 --------
 SESIÓN 7
 --------
