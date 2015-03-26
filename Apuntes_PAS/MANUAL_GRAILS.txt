@@ -92,7 +92,30 @@ TIPADO DINÁMICO
 ---------------
 Groovy especifica el tipo de datos utilizado en lugar de tener que hacerlo nosotros:
 	def nombre_de_la_variable => Groovy decide el tipo de variable a utilizar (Tipo de referencia realmente)
-						 
+	
+
+--------
+SESIÓN 5
+--------	
+El fichero Bootstrap.groovy sirve para posibilitar el realizar acciones al arrancar y finalizar nuestra aplicación.
+
+Test unitarios: test sin dependencias de ningún tipo.
+
+Test de integración: acceso completo al entorno de Grails, incluído base de datos.
+
+--------
+SESIÓN 7
+--------
+Configurar log4j.
+
+Intercptadores: sirven para ejecutar algo antes de que se ejecute la accción (beforeInterceptor) o bien después de que se ejecute la acción (afterInterceptor). 
+Se escriben dentro del controlador, son una acción más.
+
+Filtros: sirven para lo mismo que los interceptadores pero son aplicacbles a diversos controladores. En este caso son archivos generados, que acaban
+con la palabra Filters y se ubican en "grails-app/conf/". Debe definirse ámbito de aplicación, y si es antes(before), después(after) o después de la
+vista renderizada(afterView). Pág 13 el ejemplo explica muy bien cómo configurar  bien un filtro.
+
+
 ******************************************************************************************************************************************************
 <LISTAS>**********************************************************************************************************************************************
 -------------------------------------------------------------------------------------
@@ -472,6 +495,13 @@ Si en el controlador hago:
 	}else{
 		//Entro aquí.
 	}
+
+	
+------------------
+CONDICIONAL - G:IF
+------------------
+Mira si la variable está ya definida:	
+	<g:if test="${session.usuario}">
 	
 	
 <VALORES>**********************************************************************************************************************************************
