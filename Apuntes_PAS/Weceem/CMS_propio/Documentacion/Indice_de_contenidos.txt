@@ -1,0 +1,98 @@
+1.	CMS
+	Explicar qué es y en que partes se divide (Editor y Visor).											X En principio acabado
+	
+2	Cambios comunes (Editor y Visor)																	X En principio acabado
+2.1	Incluir BootStrap en una aplicación Grails															X En principio acabado
+2.2	Incluir CAS + Spring Security Core en una aplicación Grails  										X En principio acabado
+2.2.1	Arxiu BuildConfig.groovy						-----------------------------------------	X En principio acabado
+2.2.2	Modificacions al plugin							-----------------------------------------	X En principio acabado
+2.2.3	Arxiu Config.groovy								-----------------------------------------	X En principio acabado
+2.2.4	Dominis i controladors							-----------------------------------------	X En principio acabado
+2.2.5	Com fer servir els plugins de seguretat			-----------------------------------------	X En principio acabado
+2.3	Eliminar CAS + Spring Security Core en una aplicación Grails										X En principio acabado
+2.3.1	Arxiu Config.grrovy								-----------------------------------------	X En principio acabado
+2.3.2	Arxiu BuildConfig.groovy						-----------------------------------------	X En principio acabado
+2.3.3	Controladors									-----------------------------------------	X En principio acabado
+2.4 Cambiar el nombre del servidor de una aplicación Grails (problemas que suceden en Grails 2.4.3)		X En principio acabado
+
+3	Aplicación Editor (gcrrhh)
+3.1	TreeTable
+3.1.1	Instalación del plugin
+3.1.1
+3.2	CKeditor
+3.2.1	Instalación del plugin
+3.2.2	Configuración del plugin (archivo config.js)
+3.2.2.1	Configuraciones especiales
+			Cosas que se modifican en el config.js: Indentaciones al guardar, cambiar hojas de estilos de lo que se visualiza en la parte rich, etc ...
+3.2.3	Codemirror en non-rich editor
+3.2.4	Codemirror en rich editor
+3.2.4	
+
+4	Aplicación Visor (rrhh)
+4.1	Mapeado del dominio
+		Explicar qué mejoras tiene este mapeado y por qué no se utiliza en el Editor.
+4.2 Controladores de visualización
+4.3 Controladores de búsqueda
+4.4 Taglib's utilizadas para incluir código HTML con formato en una vista GSP.
+
+5	Millores realitzades a implantar
+
+6	Annexos
+6.1 Pestanya Markers
+6.2 Pestanya Nvigation
+
+Colores:
+Azul: 			0, 0, 192 (Groovy)
+Grnate/rojo:	151, 44, 120
+Verde:			63, 127, 95 (comentarios)
+Rosa:			255, 0, 204
+
+
+*********************************************************************************************************************************************************
+2	Cambios comunes (Editor y Visor)
+====================================
+2.1	Incluir BootStrap en una aplicación Grails
+----------------------------------------------
+Descargar de http://getbootstrap.com/getting-started/#download
+
+Bootstrap: Compiled and minified CSS, JavaScript, and fonts. No docs or original source files are included.
+
+Descomprimir el archivo y copiar los archivos en:
+	web-app/css/bootstrap.css
+	web-app/js/bootstrap.min.js
+y para poder utilizar los glyphicons
+	web-app/fonts/archivos glyphicons
+	
+Para incluirlos, en los layouts:
+	<link rel="stylesheet" href="/${grails.util.Metadata.current.'app.name'}/css/bootstrap.css" type="text/css">
+    <script type="text/javascript" src="/${grails.util.Metadata.current.'app.name'}/js/bootstrap.min.js"></script>
+	
+Ej: para ver que funciona poner en la GSP: (suponiendo que en main se han añadido las dos líneas anteriores
+<html>
+	<head>
+		<meta name="layout" content="main" />
+		<title>Proba Bootstrap</title>
+	</head>
+	<body> 
+		<p>
+			<button type="button" class="btn btn-lg btn-default">Default</button>
+			<button type="button" class="btn btn-lg btn-primary">Primary</button>
+			<button type="button" class="btn btn-lg btn-success">Success</button>
+			<button type="button" class="btn btn-lg btn-info">Info</button>
+			<button type="button" class="btn btn-lg btn-warning">Warning</button>
+			<button type="button" class="btn btn-lg btn-danger">Danger</button>
+			<button type="button" class="btn btn-lg btn-link">Link</button>
+		</p>
+	</body>
+</html>
+
+
+
+
+*********************************************************************************************************************************************************
+------------------------------
+Creación:	08-04-2015
+
+Jesús Campos Muñoz
+jesus.campos@upc.edu
+------------------------------
