@@ -94,6 +94,10 @@ Ej: para ver que funciona poner en la GSP: (suponiendo que en main se han añadi
 -------------
 3.1.1	Instalació del plugin TreeTable
 ---------------------------------------
+Descargar de: https://plugins.jquery.com/treetable/
+Los CSS de la carpeta /css extraerlos en css/treetable.
+El JS de la raíz extraerlo en /js/treetable.
+
 
 *********************************************************************************************************************************************************
 ------------------------------
