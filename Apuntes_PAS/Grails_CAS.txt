@@ -53,7 +53,7 @@ Las líneas asteriscadas tiene error porque intentan acceder a localhost con htt
 
 OTRAS ACCIONES
 --------------
-Hay que incluir el dominio "Security" (SecRole, SecUser, SecUserSecRoles) y los controladores del package "Security" (necesarios para hacer el logout).
+Hay que incluir el dominio "Security" (SecRole, SecUser, SecUserSecRole) y los controladores del package "Security" (necesarios para hacer el logout).
 
 Hay que copiar src/groovy/utils (BaseControler, Crypt, Database, FileUploader, Validation).
 
