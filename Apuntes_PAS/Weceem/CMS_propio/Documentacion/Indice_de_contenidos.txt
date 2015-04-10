@@ -46,7 +46,7 @@ Azul: 			0, 0, 192 (Groovy)
 Grnate/rojo:	151, 44, 120
 Verde:			63, 127, 95 (comentarios)
 Rosa:			255, 0, 204
-
+Verde:			0, 128, 128 (tags)
 
 *********************************************************************************************************************************************************
 2	Cambios comunes (Editor y Visor)
@@ -95,8 +95,8 @@ Ej: para ver que funciona poner en la GSP: (suponiendo que en main se han añadi
 3.1.1	Instalació del plugin TreeTable
 ---------------------------------------
 Descargar de: https://plugins.jquery.com/treetable/
-Los CSS de la carpeta /css extraerlos en css/treetable.
-El JS de la raíz extraerlo en /js/treetable.
+Los CSS de la carpeta /css extraerlos en web-app/css/treetable.
+El JS de la raíz extraerlo en web-app/js/treetable.
 
 
 *********************************************************************************************************************************************************
