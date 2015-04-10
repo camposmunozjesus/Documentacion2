@@ -17,8 +17,8 @@
 
 3	Aplicación Editor (gcrrhh)
 3.1	TreeTable
-3.1.1	Instalación del plugin
-3.1.1
+3.1.1	Instalació del plugin TreeTable
+3.1.2	Ús del plugin TreeTable
 3.2	CKeditor
 3.2.1	Instalación del plugin
 3.2.2	Configuración del plugin (archivo config.js)
@@ -87,7 +87,13 @@ Ej: para ver que funciona poner en la GSP: (suponiendo que en main se han añadi
 </html>
 
 
+3	Aplicación Editor (gcrrhh)
+==============================
 
+3.1	TreeTable
+-------------
+3.1.1	Instalació del plugin TreeTable
+---------------------------------------
 
 *********************************************************************************************************************************************************
 ------------------------------
