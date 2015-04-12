@@ -26,4 +26,9 @@ UNICODE
 ' -> se escribe tal cual
 
 
+JAVA
+----
+FF -> \u000c
+
+
 
