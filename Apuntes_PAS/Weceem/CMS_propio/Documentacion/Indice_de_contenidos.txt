@@ -16,17 +16,22 @@
 2.4 Cambiar el nombre del servidor de una aplicación Grails (problemas que suceden en Grails 2.4.3)		X En principio acabado
 
 3	Aplicación Editor (gcrrhh)
-3.1	TreeTable
-3.1.1	Instalació del plugin TreeTable
-3.1.2	Ús del plugin TreeTable
+3.1	TreeTable																							X En principio acabado
+3.1.1	Instal·lació del plugin TreeTable				-----------------------------------------	X En principio acabado
+3.1.2	Ús del plugin TreeTable							-----------------------------------------	X En principio acabado
+3.1.2.1	Exemple bàsic									-----------------------------------------	X En principio acabado
+3.1.2.2	Exemple complex									-----------------------------------------	X En principio acabado
 3.2	CKeditor
-3.2.1	Instalación del plugin
-3.2.2	Configuración del plugin (archivo config.js)
+3.2.1	Instal·lació i configuració del plugin CKEditor	-----------------------------------------	X En principio acabado
+3.2.2	Arxiu de configuració config.js (archivo config.js)	
 3.2.2.1	Configuraciones especiales
 			Cosas que se modifican en el config.js: Indentaciones al guardar, cambiar hojas de estilos de lo que se visualiza en la parte rich, etc ...
 3.2.3	Codemirror en non-rich editor
 3.2.4	Codemirror en rich editor
-3.2.4	
+3.2.5	Resolució de problemes							-----------------------------------------	X En principio acabado
+3.2.5.1	Generació de l’arxiu WAR						-----------------------------------------	X En principio acabado
+3.2.5.2	CKEditor esborra les propietats i estils dels elements HTML	-----------------------------	X En principio acabado
+
 
 4	Aplicación Visor (rrhh)
 4.1	Mapeado del dominio
@@ -39,11 +44,11 @@
 
 6	Annexos
 6.1 Pestanya Markers
-6.2 Pestanya Nvigation
+6.2 Pestanya Navigation
 
 Colores:
 Azul: 			0, 0, 192 (Groovy)
-Grnate/rojo:	151, 44, 120
+Granate/rojo:	151, 44, 120
 Verde:			63, 127, 95 (comentarios)
 Rosa:			255, 0, 204
 Verde:			0, 128, 128 (tags)
@@ -100,6 +105,11 @@ El JS de la raíz extraerlo en web-app/js/treetable.
 
 
 *********************************************************************************************************************************************************
+
+Crear BOTONES:
+fins ara hem vist que es pot modificar la barra d'eines afegint i treient botons. Peró, i si volem un botó que faci unes determinades coses i no existex?
+El podem crear de manera fàcil ...
+
 ------------------------------
 Creación:	08-04-2015
 
