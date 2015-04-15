@@ -25,16 +25,25 @@
 3.2.1	Instal·lació i configuració del plugin CKEditor	-----------------------------------------	X En principio acabado
 3.2.2	Arxiu de configuració config.js (archivo config.js)	-------------------------------------	X En principio acabado
 3.2.3	Arxiu Config.groovy								-----------------------------------------	X En principio acabado
-3.2.4	Pujar arxius al servidor amb CKEditor			-----------------------------------------	X En principio acabado
-3.2.5	Resolució de problemes							-----------------------------------------	X En principio acabado
-3.2.5.1	Generació de l’arxiu WAR						-----------------------------------------	X En principio acabado
-3.2.5.2	CKEditor esborra les propietats i estils dels elements HTML	-----------------------------	X En principio acabado
-Altres coses interessants: una vegada configurat l'editor CKEditor, es mostren més opcions per continuar personalitzant-lo.
-3.2.6	Configuraciones especiales
-			Cosas que se modifican en el config.js: Indentaciones al guardar, cambiar hojas de estilos de lo que se visualiza en la parte rich, etc ...
-3.2.7	Codemirror en non-rich editor
-3.2.8	Codemirror en rich editor
+3.2.3.1	Personalitzar l'idioma							-----------------------------------------	X En principio acabado
+3.2.3.2	Personalitzar barra d'eines						-----------------------------------------	X En principio acabado
+3.2.3.3	Indentaciones									-----------------------------------------	X En principio acabado
+3.2.3.4	Fulles d'estils									-----------------------------------------	X En principio acabado
+3.2.3.5	Indentació del codi HTML a l'enviar les dades	-----------------------------------------	X En principio acabado
+3.2.3.6	Estils i atribs que desapareixen				-----------------------------------------	X En principio acabado
 
+3.2.4	Pujar arxius al servidor amb CKEditor			-----------------------------------------	X En principio acabado
+3.2.4.1	Modificació al plugin de la ruta de pujada d’arxius al servidor	-------------------------	X En principio acabado
+3.2.5	Codemirror per a rich editor					-----------------------------------------	X En principio acabado
+3.2.6	Codemirror en non-rich editor
+3.2.7	Resolució de problemes							-----------------------------------------	X En principio NO acabado
+3.2.7.1	Generació de l’arxiu WAR						-----------------------------------------	X En principio acabado
+3.2.7.2	CKEditor esborra les propietats i estils dels elements HTML	-----------------------------	X En principio acabado
+3.2.7.3	CKEditor/TextArea afegeix espais i tabulacions	--->per fer
+3.2.7.4	No apareix l’editor								--->per fer
+Altres coses interessants: una vegada configurat l'editor CKEditor, es mostren més opcions per continuar personalitzant-lo.
+3.2.8	Configuraciones especiales
+			Cosas que se modifican en el config.js: Indentaciones al guardar, cambiar hojas de estilos de lo que se visualiza en la parte rich, etc ...
 
 4	Aplicación Visor (rrhh)
 4.1	Mapeado del dominio
@@ -54,10 +63,19 @@ Altres coses interessants: una vegada configurat l'editor CKEditor, es mostren m
 5.3.1.4	Pàgines GSP										-----------------------------------------	X En principio acabado
 5.3.1.5	Controladors									-----------------------------------------	X En principio acabado
 5.3.2	Modificacions									-----------------------------------------	X En principio acabado
-5.3.2.1	Modificació de la ruta de pujada d’arxius al servidor	---------------------------------	X En principio acabado
-5.3.2.2	Codemirror per a rich editor (no implantada)	-----------------------------------------	X En principio acabado
+5.3.2.1	Modificació de la ruta de pujada d’arxius al servidor	---------------------------------	X En principio acabado	Anulada el día 15-4-2015
+5.3.2.2	Codemirror per a rich editor (no implantada)	-----------------------------------------	X En principio acabado  Anulada el día 15-4-2015
 5.4	Arxiu config.js (CKEditor) de l’aplicació Editor (gcrrhh)										Por explicar
 5.5	CKEditor: configuració del plugin al Config.groovy del gcrrhh									Por explicar
+
+
+
+3.2.5	Codemirror per a rich editor	33
+3.2.6	Resolució de problemes	34
+3.2.6.1	Generació de l’arxiu WAR	34
+3.2.6.2	CKEditor esborra les propietats i estils dels elements HTML	35
+3.2.6.3	CKEditor/TextArea afegeix espais i tabulacions	35
+3.2.6.4	No apareix l’editor	35
 
 
 
