@@ -13,7 +13,10 @@
 2.3.1	Arxiu Config.grrovy								-----------------------------------------	X En principio acabado
 2.3.2	Arxiu BuildConfig.groovy						-----------------------------------------	X En principio acabado
 2.3.3	Controladors									-----------------------------------------	X En principio acabado
+2.3.4	Desfer els canvis (re-instal·lar CAS)			-----------------------------------------	X En principio acabado
 2.4 Cambiar el nombre del servidor de una aplicación Grails (problemas que suceden en Grails 2.4.3)		X En principio acabado
+
+---> CORREGIDO HASTA AQUÍ
 
 3	Aplicación Editor (gcrrhh)
 3.1	TreeTable																							X En principio acabado
@@ -31,18 +34,23 @@
 3.2.3.4	Fulles d'estils									-----------------------------------------	X En principio acabado
 3.2.3.5	Indentació del codi HTML a l'enviar les dades	-----------------------------------------	X En principio acabado
 3.2.3.6	Estils i atribs que desapareixen				-----------------------------------------	X En principio acabado
-
 3.2.4	Pujar arxius al servidor amb CKEditor			-----------------------------------------	X En principio acabado
 3.2.4.1	Modificació al plugin de la ruta de pujada d’arxius al servidor	-------------------------	X En principio acabado
 3.2.5	Codemirror per a rich editor					-----------------------------------------	X En principio acabado
-3.2.6	Codemirror en non-rich editor
+3.2.6	Codemirror per a non-rich editor				-----------------------------------------	X En principio acabado
+3.2.6.1	Instal·lació de Codemirror per a non-rich editor	-------------------------------------	X En principio acabado
+3.2.6.2	Exemple bàsic de Codemirror per a non-rich editor	-------------------------------------	X En principio acabado
+3.2.6.3	Ús de Codemirror per a non-rich editor en l’aplicació Editor	-------------------------	X En principio acabado
 3.2.7	Resolució de problemes							-----------------------------------------	X En principio NO acabado
 3.2.7.1	Generació de l’arxiu WAR						-----------------------------------------	X En principio acabado
+
+---> Revisado hasta 3.2.7.1
+
 3.2.7.2	CKEditor esborra les propietats i estils dels elements HTML	-----------------------------	X En principio acabado
-3.2.7.3	CKEditor/TextArea afegeix espais i tabulacions	--->per fer
-3.2.7.4	No apareix l’editor								--->per fer
+3.2.7.3	CKEditor/Text Area afegeix espais i tabulacions	--->per fer
+3.2.7.4	No apareix l’editor								-----------------------------------------	X En principio acabado pero siempre se pueden anyadir cosas
 Altres coses interessants: una vegada configurat l'editor CKEditor, es mostren més opcions per continuar personalitzant-lo.
-3.2.8	Configuraciones especiales
+3.2.8	Configuraciones especiales (adicionales)
 			Cosas que se modifican en el config.js: Indentaciones al guardar, cambiar hojas de estilos de lo que se visualiza en la parte rich, etc ...
 
 4	Aplicación Visor (rrhh)

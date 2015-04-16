@@ -16,6 +16,7 @@ Primero se muestra cómo instalar y configurar CKEditor para la aplicación de e
 	<!--  <script src="/${grails.util.Metadata.current.'app.name'}/codemirror/mode/javascript/javascript.js"></script> -->
 	<script src="/${grails.util.Metadata.current.'app.name'}/codemirror/mode/xml/xml.js"></script>
 
+4) Añadir el JS
 	
 Ejemplo de GSP:
 <html>
