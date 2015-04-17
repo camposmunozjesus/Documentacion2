@@ -24,7 +24,7 @@
 3.1.2	Ús del plugin TreeTable							-----------------------------------------	X En principio acabado
 3.1.2.1	Exemple bàsic									-----------------------------------------	X En principio acabado
 3.1.2.2	Exemple complex									-----------------------------------------	X En principio acabado
-3.2	CKeditor
+3.2	CKeditor																							X En principio acabado
 3.2.1	Instal·lació i configuració del plugin CKEditor	-----------------------------------------	X En principio acabado
 3.2.2	Arxiu de configuració config.js (archivo config.js)	-------------------------------------	X En principio acabado
 3.2.3	Arxiu Config.groovy								-----------------------------------------	X En principio acabado
@@ -43,8 +43,10 @@
 3.2.6.3	Ús de Codemirror per a non-rich editor en l’aplicació Editor	-------------------------	X En principio acabado
 3.2.7	Resolució de problemes							-----------------------------------------	X En principio NO acabado
 3.2.7.1	Generació de l’arxiu WAR						-----------------------------------------	X En principio acabado
-
----> Revisado hasta 3.2.7.1
+3.2.6.2	CKEditor esborra les propietats i estils dels elements HTML	-----------------------------	X En principio acabado
+3.2.6.3	CKEditor/TextArea afegeix espais i tabulacions	-----------------------------------------	X En principio acabado
+3.2.6.4	No apareix l’editor								-----------------------------------------	X En principio acabado
+---> CORREGIDO hasta 3.2.7.1	16-04-2015
 
 3.2.7.2	CKEditor esborra les propietats i estils dels elements HTML	-----------------------------	X En principio acabado
 3.2.7.3	CKEditor/Text Area afegeix espais i tabulacions	--->per fer
@@ -54,36 +56,39 @@ Altres coses interessants: una vegada configurat l'editor CKEditor, es mostren m
 			Cosas que se modifican en el config.js: Indentaciones al guardar, cambiar hojas de estilos de lo que se visualiza en la parte rich, etc ...
 
 4	Aplicación Visor (rrhh)
-4.1	Mapeado del dominio
+4.1	Mapejat del domini									-----------------------------------------	X En principio acabado
 		Explicar qué mejoras tiene este mapeado y por qué no se utiliza en el Editor.
-4.2 Controladores de visualización
-4.3 Controladores de búsqueda
-4.4 Taglib's utilizadas para incluir código HTML con formato en una vista GSP.
+4.2 Controladors de visualització						-----------------------------------------	X En principio acabado
+4.2.1	Redirecció										-----------------------------------------	X En principio acabado
+4.2.2	Mètode render									-----------------------------------------	X En principio acabado
+4.3 Controladors de cerca								-----------------------------------------	X En principio acabado
+4.4	TAGs del CMS propi									-----------------------------------------	X En principio acabado
+
+---> CORREGIDO HASTA AQUÍ		17-04-2015
 
 5	Annexos
-5.1	Activar pestanya Markers																			X En principio acabado
-5.2	Activar pestanya Navigator																			X En principio acabado
-5.3	Configuració ràpida del plugin CKEditor per a l’aplicació Editor									X En principio acabado
-5.3.1	Instal·lació i configuració						-----------------------------------------	X En principio acabado
-5.3.1.1	Arxiu BuildConfig.groovy						-----------------------------------------	X En principio acabado
-5.3.1.2	Arxiu Config.groovy								-----------------------------------------	X En principio acabado
-5.3.1.3	Arxiu config.js  (ckeditorconfig.js)			-----------------------------------------	X En principio acabado
-5.3.1.4	Pàgines GSP										-----------------------------------------	X En principio acabado
-5.3.1.5	Controladors									-----------------------------------------	X En principio acabado
-5.3.2	Modificacions									-----------------------------------------	X En principio acabado
-5.3.2.1	Modificació de la ruta de pujada d’arxius al servidor	---------------------------------	X En principio acabado	Anulada el día 15-4-2015
-5.3.2.2	Codemirror per a rich editor (no implantada)	-----------------------------------------	X En principio acabado  Anulada el día 15-4-2015
-5.4	Arxiu config.js (CKEditor) de l’aplicació Editor (gcrrhh)										Por explicar
-5.5	CKEditor: configuració del plugin al Config.groovy del gcrrhh									Por explicar
+5.1	Activar pestanya Markers							-----------------------------------------	X En principio acabado
+5.2	Activar pestanya Navigator							-----------------------------------------	X En principio acabado
+5.3 Crear un Taglib personalitzat						-----------------------------------------	X En principio acabado
+5.4	Configuració ràpida del plugin CKEditor per a l’aplicació Editor	-------------------------	X En principio acabado
+5.4.1	Instal·lació i configuració						-----------------------------------------	X En principio acabado
+5.4.1.1	Arxiu BuildConfig.groovy						-----------------------------------------	X En principio acabado
+5.4.1.2	Arxiu Config.groovy								-----------------------------------------	X En principio acabado
+5.4.1.3	Arxiu config.js  (ckeditorconfig.js)			-----------------------------------------	X En principio acabado
+5.4.1.4	Pàgines GSP										-----------------------------------------	X En principio acabado
+5.4.1.5	Controladors									-----------------------------------------	X En principio acabado
+5.4.2	Modificacions									-----------------------------------------	X En principio acabado
+5.4.2.1	Modificació de la ruta de pujada d’arxius al servidor	---------------------------------	X En principio acabado	Anulada el día 15-4-2015
+5.4.2.2	Codemirror per a rich editor (no implantada)	-----------------------------------------	X En principio acabado  Anulada el día 15-4-2015
+5.5	Arxiu config.js (CKEditor) de l’aplicació Editor (gcrrhh)										Por explicar
+5.6	CKEditor: configuració del plugin al Config.groovy del gcrrhh									Por explicar
+5.7 Taglib's utilizadas para incluir código HTML con formato en una vista GSP.	-----------------	X En principio acabado
 
 
+CORREGIDO HASTA AQUÍ	TODO	17-04-2015
 
-3.2.5	Codemirror per a rich editor	33
-3.2.6	Resolució de problemes	34
-3.2.6.1	Generació de l’arxiu WAR	34
-3.2.6.2	CKEditor esborra les propietats i estils dels elements HTML	35
-3.2.6.3	CKEditor/TextArea afegeix espais i tabulacions	35
-3.2.6.4	No apareix l’editor	35
+Faltará por corregir las ecplicaciones del config.js y del Config.groovy y los apartados del WebService de RPPAS, RPPDI y RPBEC.
+
 
 
 
