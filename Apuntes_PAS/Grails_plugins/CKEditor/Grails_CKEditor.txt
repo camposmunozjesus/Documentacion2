@@ -420,6 +420,22 @@ Barra de tareas completa:
 
 			
 <PROBLEMAS>******************************************************************************************************************************************
+----------------------------
+PROBLEMAS CON EL PAQUETE WAR
+----------------------------
+Problema detectado en Grails 2.4.3 debido a que usa el plugin assets para comprimir los archivos en el momento de crear el WAR.
+
+Al intentar crear el paquete WAR de un proyecto en Grails 2.4.3 que haya importado el plugin CKEditor 4 puede que no lo consigamos. La razón es que 
+cuando el plugin "assets" intenta comprimir los archivos del ckeditor se obtiene una traza de error.
+
+La solución es bien sencilla, comentar en el archivo BuilConfig.groovy la siguiente línea:
+    plugins {
+		...
+        compile ":asset-pipeline:1.9.6"
+		...
+    }
+
+
 ----------------------------------------------------
 EL RICH EDITOR ELIMINA LOS CLASS="" DE LOS ELEMENTOS
 ----------------------------------------------------
