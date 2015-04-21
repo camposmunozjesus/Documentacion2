@@ -121,6 +121,40 @@ con la palabra Filters y se ubican en "grails-app/conf/". Debe definirse ámbito
 vista renderizada(afterView). Pág 13 el ejemplo explica muy bien cómo configurar  bien un filtro.
 
 
+--------
+SESIÓN 9
+--------
+Bien explicado la relación uno-a-uno.
+
+Eventos GROM: beforeInsert, beforeUpdate.
+
+Crear restricciones propias: validator.
+
+
+---------
+SESIÓN 12
+---------
+GrailsUtil.environment nos dice el entorno de ejecución actual.
+
+Quartz: progrmación de tareas (scheduling).
+
+
+---------
+SESIÓN 13
+---------
+Cómo incluir (ser un emisor) RSS en una aplicación.
+
+
+
+---------
+SESIÓN 14
+---------
+Cómo utilizar etiquetas AJAX. Muy útiles para ejecutar un método sin recargar la vista. Ej: si un usuario que quiere registrarse en una web escribe el
+login que quiere tener, no hace falta que rellene el formulario y una vez aceptado le indique que el login que ha elegido ya existe, se le puede indicar
+a medida que lo vaya escribiendo.
+
+
+
 ******************************************************************************************************************************************************
 <LISTAS>**********************************************************************************************************************************************
 -------------------------------------------------------------------------------------
@@ -481,7 +515,28 @@ Funcio solo contiene el código de riesgo por lo que debe obtener otros datos y 
 	literalsDisciplinaRisc = TDisciplinaRisc.getElementList(literalsDisciplinaRisc, "descripcio")
 	literalsGrupRisc = TGrupRisc.getElementList(literalsGrupRisc, "descripcio")
 	
+
+******************************************************************************************************************************************************
+-------
+RESPOND
+-------
+Sirve para poder utilizar los parámetros en la GSP de la siguiente manera.
+En el controlador tenemos:
+    def index() {
+//		def doc = new Documento(id: "78", nombre: "tipDocUment")
+		respond new Documento(id:45, nombre: "tipDocUment")
+	}
+
+En la GSP se puede utilizar:
+	-- ${documentoInstance}
+	<br>
+	-- id    : ${documentoInstance.id}
+	<br>
+	-- nombre: ${documentoInstance.nombre}
 	
+En ningún momento se ha especificado que documentoInstance se pase a la GSP, únicamente se ha realizado un respond new Documento().
+
+
 <INTERACCIÓN ELEMENTOS GSP>****************************************************************************************************************************
 -----------------------
 TEXTFIELD - G:TEXTFIELD
@@ -501,7 +556,12 @@ Si en el controlador hago:
 		//Entro aquí.
 	}
 
-	
+Opciones GSP:
+	<g:textField name="edad" maxlength="3" required=""/>
+El atributo required provocará que cuando se haga submit, no se pueda realizar si este textfield está vacío.
+NO se puede modificar el mensaje que muestra porque es una validación propia de HTML5.
+
+
 ------------------
 CONDICIONAL - G:IF
 ------------------
@@ -776,3 +836,10 @@ Ejemplo: tenemos un MAP y a partir de uno de los valores queremos encontrar su c
 	tipusEspais.find{ it.value == espaiId.toInteger() }?.key
 	
 Donde espaiId puede valer 0, 1, 2, 3, 4 ó 5.
+
+
+<CURIOSIDADES>***************************************************************************************************************************************
+----------------------
+CONSEGUIR DIRECCIÓN IP
+----------------------
+def ipAddress = request.getRemoteAddr();

@@ -20,7 +20,7 @@ Ir al sitio: http://ckeditor.com/addon/codemirror
 -----------
 INSTALACIÓN
 -----------
-Descomprimir la carpeta y copiarla en:
+Descomprimir y copiar la carpeta "codemirror" en:
 	/{nombre_de_la_aplicación}/.link_to_grails_plugins/ckeditor-4.4.1.0/web-app/js/ckeditor/plugins
 
 En el archivo de configuración del editor (config.js o su equivalente, en los ejemplos es "myconfig.js" ver Grails_CKEditor.txt):
