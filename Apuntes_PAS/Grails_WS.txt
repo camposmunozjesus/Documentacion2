@@ -555,3 +555,63 @@ añadir:
 		runtime('com.sun.xml.ws:jaxws-rt:2.1.4')		
     }
 
+
+---------
+PROBLEMAS
+---------
+Error al descarregar plugins
+Si en el moment de refrescar les dependències per tal d’actualitzar els plugins es produeix un error similar al que es mostra a continuació:
+	Starting process on PC24094/147.83.168.49
+	Loading Grails 2.4.3
+	|Configuring classpath
+	.
+	|Environment set to development
+	......
+	|Installing zip cxf-1.1.1.zip...
+	...
+	|Installed plugin cxf-1.1.1
+	....................
+	|Compiling 116 source files
+	Note: D:\WecWorkspace\gpwebservice\target\work\plugins\cxf-1.1.1\src\java\org\grails\cxf\artefact\DefaultGrailsEndpointClass.java uses unchecked or unsafe operations.
+	Note: Recompile with -Xlint:unchecked for details.  [groovyc] org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+	  [groovyc] D:\WecWorkspace\gpwebservice\target\work\plugins\cxf-1.1.1\src\groovy\org\grails\cxf\utils\CxfConfigHandler.groovy: 3: unable to resolve class org.codehaus.groovy.grails.commons.ConfigurationHolder
+	  [groovyc]  @ line 3, column 1.
+	  [groovyc]    import org.codehaus.groovy.grails.commons.ConfigurationHolder as CH
+	  [groovyc]    ^
+	  [groovyc] 
+	  [groovyc] 1 error
+
+	.Error 
+	|
+	Compilation error: startup failed:
+	D:\WecWorkspace\gpwebservice\target\work\plugins\cxf-1.1.1\src\groovy\org\grails\cxf\utils\CxfConfigHandler.groovy: 3: unable to resolve class org.codehaus.groovy.grails.commons.ConfigurationHolder
+	 @ line 3, column 1.
+	   import org.codehaus.groovy.grails.commons.ConfigurationHolder as CH
+	   ^
+	1 error
+	Error |
+	org.codehaus.groovy.grails.cli.ScriptExitException
+	Error |
+		at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	<la traça d’error s’exten a 655 línies més>
+	Error |
+		at gant.Gant$_dispatch_closure5.doCall(Gant.groovy:381)
+	Error |
+		... 76 more
+
+És degut a que no es troba la versió indicada del plugin per poder-la descarregar del repositori. Una opció seria buscar un repositori que la tingués 
+i afegir-lo als repositoris del BuildConfig.groovy. Una altra és executar al Grails Command History ( ) la instrucció “install-plugin cxf” i s’obtindrà 
+un resultat similar a:
+	Since Grails 2.3, it is no longer possible to install plugins using the install-plugin command.
+	Plugins must be declared in the grails-app/conf/BuildConfig.groovy file.
+	Example:
+	grails.project.dependency.resolution = {
+	   ...
+	   plugins {
+		  compile ":cxf:2.0.1"
+	   }
+	}
+
+Aixó indica que l’última versió disponible del plugin cxf és la 2.0.1, i que per afegir-la al nostre projecte no es pot fer servir mitjançant la línia
+ de comandes (desde Grails 2.3), si no que s’ha d’afgir al BuilConfig.groovy.
+Llavors la solució és canviar la versió a l’arxiu BuildConfig.groovy del plugin cxf.
