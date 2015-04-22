@@ -81,13 +81,22 @@ Altres coses interessants: una vegada configurat l'editor CKEditor, es mostren m
 5.4.2.1	Modificació de la ruta de pujada d’arxius al servidor	---------------------------------	X En principio acabado	Anulada el día 15-4-2015
 5.4.2.2	Codemirror per a rich editor (no implantada)	-----------------------------------------	X En principio acabado  Anulada el día 15-4-2015
 5.5	Arxiu config.js (CKEditor) de l’aplicació Editor (gcrrhh)										Por explicar
-5.6	CKEditor: configuració del plugin al Config.groovy del gcrrhh									Por explicar
+5.6	CKEditor: configuració del plugin al Config.groovy del gcrrhh	-----------------------------	X En principio acabado
 5.7 Taglib's utilizadas para incluir código HTML con formato en una vista GSP.	-----------------	X En principio acabado
 
 
 CORREGIDO HASTA AQUÍ	TODO	17-04-2015
 
 Faltará por corregir las ecplicaciones del config.js y del Config.groovy y los apartados del WebService de RPPAS, RPPDI y RPBEC.
+Corregido el apartado de los WS
+
+22-04-2015
+Añadido:
+	6.8	Modificar la versió de Java
+	6.8.1	Modificar la versió Java de tot el workspace
+	6.8.2	Modificar la versió Java d’un projecte
+	6.9	Incompatibilitats amb versions Java
+
 
 
 
