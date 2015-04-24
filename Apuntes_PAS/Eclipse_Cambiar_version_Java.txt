@@ -1,0 +1,17 @@
+ECLIPSE - CAMBIAR LA VERSIÓN JAVA DE UN PROYECTO
+================================================
+
+Seguramente hay que bajar e instalar la versión de Java deseada e incluirla en el PATH.
+
+Cambiar en Java Buid Path la versión de Java.
+
+Si hay errores cambiar el Java Compiler.
+
+
+*****************************************************************************************************************************************************
+------------------------------
+Creación:	21-04-2015
+
+Jesús Campos Muñoz
+jesus.campos@upc.edu
+------------------------------
