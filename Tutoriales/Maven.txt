@@ -1,0 +1,22 @@
+MAVEN - CONFIGURACIÓN Y USO DE MAVEN
+====================================
+Referencia: http://stackoverflow.com/questions/14059685/eclipse-maven-search-dependencies-doesnt-work
+
+Para que Maven descargue artefactos: hay que ponerse sobre "Maven Repositories" ("Window" -> "Show View" -> "Other...").
+Allí, en "Global Repositories" se abre el desplegable y aparece "central(http://...)". Esta carpeta debe de poder abrirse. En caso de no abrirse NO
+descargará nada.
+Para solucionarlo (si no se abre) hay que ponerse sobre "central" -> botón derecho -> "Full Index Enabled" y en "Window" -> "preferences" -> "Maven"
+-> señalar las siguientes opciones:
+	- Do not automatically update dependencies from remote repositories
+	- Download repository index updates on startup
+Luego intentar "Rebuid Index" o bien "Update Index".
+
+ESTO TARDARÁ BASTANTE, MEJOR IR A TOMAR UN CAFÉ O LO QUE SEA!!!
+
+*********************************************************************************************************************************************************
+------------------------------
+Creación:	12-04-2015
+
+Jesús Campos Muñoz
+jesus.campos@upc.edu
+------------------------------
