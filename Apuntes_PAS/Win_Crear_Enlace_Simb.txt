@@ -1,0 +1,68 @@
+WINDOWS - CREAR UN ENLACE SIMBÓLICO
+===================================
+--------
+UTILIDAD
+--------
+Se puede conseguir en Apache-Tomcat una carpeta dentro de "webapps" que apunte a la raíz o a cualquier otro lugar fuera de "webapps" y al que las
+aplicaciones pueden acceder a través de la carpeta con el enlace.
+
+
+--------
+CREACIÓN
+--------
+Página web de donde se extrae la información: http://www.vicente-navarro.com/blog/2010/10/28/unidades-montadas-y-enlaces-simbolicos-en-windows/
+
+Instrucción de ejemplo:
+mklink /D e:\apache-tomcat-8.0.17\webapps\coches e:\bmw
+
+El directorio coches NO puede existir previamente.
+
+
+******************************************************************************************************************************************************
+Otros ejemplos utilizados:
+Folder en webapps de Apache-Tomcat: 
+
+D:\apache-tomcat-7.0.57\webapps>mklink /D d:\apache-tomcat-7.0.57\webapps\jesus d:\app\rrhh_resources\PAS
+vínculo simbólico creado para d:\apache-tomcat-7.0.57\webapps\jesus <<===>> d:\app\rrhh_resources\PAS
+
+D:\apache-tomcat-7.0.57\webapps>dir
+ El volumen de la unidad D es Dades
+ El número de serie del volumen es: 6250-286E
+
+ Directorio de D:\apache-tomcat-7.0.57\webapps
+
+27/04/2015  12:42    <DIR>          .
+27/04/2015  12:42    <DIR>          ..
+27/04/2015  11:58    <DIR>          Crea una carpeta
+14/01/2015  12:45    <DIR>          docs
+14/01/2015  12:45    <DIR>          examples
+14/01/2015  12:45    <DIR>          host-manager
+27/04/2015  12:42    <SYMLINKD>     jesus [d:\app\rrhh_resources\PAS]
+14/01/2015  12:45    <DIR>          manager
+27/04/2015  07:54    <DIR>          r
+24/04/2015  10:46    <DIR>          resources
+27/04/2015  12:32    <DIR>          rh_resources
+27/04/2015  12:25        41.493.463 rh_resources.war
+14/01/2015  12:45    <DIR>          ROOT
+20/01/2015  18:17    <SYMLINKD>     rrhh_resources [D:\app\rrhh_resources]
+               1 archivos     41.493.463 bytes
+              13 dirs  239.020.679.168 bytes libres
+
+Más ejemplos:
+D:\apache-tomcat-7.0.57\webapps>mklink /D d:\apache-tomcat-7.0.57\webapps\rh_resources\rrhh_resources d:\app\rrhh_resources
+vínculo simbólico creado para d:\apache-tomcat-7.0.57\webapps\rh_resources\rrhh_resources <<===>> d:\app\rrhh_resources
+
+D:\apache-tomcat-7.0.57\webapps>mklink /D d:\apache-tomcat-7.0.57\webapps\rh_resources\rrhh_resources d:\app\rrhh_resources
+vínculo simbólico creado para d:\apache-tomcat-7.0.57\webapps\rh_resources\rrhh_resources <<===>> d:\app\rrhh_resources
+
+D:\apache-tomcat-7.0.57\webapps>mklink /D d:\apache-tomcat-7.0.57\webapps\rh_resources\rrhh_resources2 d:\app\rrhh_resources
+vínculo simbólico creado para d:\apache-tomcat-7.0.57\webapps\rh_resources\rrhh_resources2 <<===>> d:\app\rrhh_resources
+
+
+*****************************************************************************************************************************************************
+------------------------------
+Creación:		27-04-2015
+				
+Jesús Campos Muñoz
+jesus.campos@upc.edu
+------------------------------
