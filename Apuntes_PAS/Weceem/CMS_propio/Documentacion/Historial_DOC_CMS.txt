@@ -1,8 +1,12 @@
 HISTORIAL DOCUMENTACIÓN
 =======================
 Codi_CMS_4.docx: se cambia la parte del rebut nómina por la de la chuletilla del mail.
+Codi_CMS_5.docx: después de las complicaciones para proteger la carpeta que contiene imágenes/archivos (que al final se han resuelto con la creación de
+				 una aplicación para protegerla y con un archivo context.xml en el META-INF de la aplicación) hay apartados relacionados, como pueden
+				 ser el del CKEditor sufren modificaciones.
 
 
+				 
 ------------------------------
 Creación:	23-04-2015
 
