@@ -1,0 +1,114 @@
+APACHE TOMCAT - MANUAL DE USUARIO
+=================================
+Se describen situaciones y cómo solucionarlas.
+
+--------------
+CAMBIAR PUERTO
+--------------
+"D:\apache-tomcat-7.0.57\conf" archivo "server.xml"
+
+    <Connector port="8080" protocol="HTTP/1.1"   ---> Cambiar el puerto 8080 por el que toque.
+               connectionTimeout="20000"
+               redirectPort="8443" />
+-------------------
+GESTIÓN DE USUARIOS
+-------------------
+Para la gestión de usuarios hay que ir a la carpeta "D:\apache-tomcat-7.0.57\conf" y modificar el archivo "tomcat-users.xml".
+
+Un ejemplo sería:
+	<role rolename="manager-gui"/>
+	<role rolename="role1"/>
+	<user username="tomcat" password="tomcat" roles="admin,manager-gui"/>
+	<user username="both" password="tomcat" roles="tomcat,role1"/>
+	<user username="role1" password="tomcat" roles="role1"/>
+	
+Donde el usuario "tomcat" sería administrador.
+
+
+--------------------------------
+ENLAZAR CARPETA FUERA DE WEBAPPS
+--------------------------------
+Generalmente no es posible que una aplicación acceda a una carpeta fuera del directorio webapps (donde se despliegan las aplicaciones). Por ejemplo,
+se desea que la aplicación lea imágenes de /app/rrhh_resources.
+
+Para lograrlo hay dos formas:
+	- Crear un enlace simbólico dentro de webapps
+	- Usar un context.xml específico con aliase de Tomcat 7 para una aplicación intermedia en lugar de una carpeta.
+	
+El enlace simbólico está desaconsejado y es mejor utilizar aliases de Tomcat 7. (Ref: http://www.tomcatexpert.com/blog/2011/11/02/best-practices-securing-apache-tomcat-7)
+
+Problemas ocurridos: 
+- En el caso de que el enlacesimbólico se genere dentro de la carpeta de la propia aplicación (al mismo nivel que las carpetas css, js, etc...),
+  el enlace simbólico en Windows 7 y Linux en el momento de replegar la aplicación borra el directorio al que apuntan. Esto no debería
+  ser así, pero es un fallo de Tomcat y además la respuesta en los foros es "el enlace simbólico no debería utilizarse, así que no haremos nada para
+  arreglarlo".
+- El enlace simbólico funciona bien en webapps en Windows 7 dentro de webapps y dentro de una aplicación, pero en Linux puede dar problemas cuando
+  la carpeta se crea dentro de la carpeta de la propia aplicación (al mismo nivel que las carpetas css, js, etc...).
+
+
+----------------
+ENLACE SIMBÓLICO
+----------------
+En Windows los enlaces simbólicos se crean con:
+	D:\apache-tomcat-7.0.57\webapps>mklink /D d:\apache-tomcat-7.0.57\webapps\rh_resources\rrhh_resources d:\app\rrhh_resources
+	vínculo simbólico creado para d:\apache-tomcat-7.0.57\webapps\rh_resources\rrhh_resources <<===>> d:\app\rrhh_resources
+En Linux con:
+	ln -s target enlace
+	
+Probablemente en Linux, para poder acceder al enlace simbólico de dentro de una aplicación haya que configurar algún aspecto extra como allowLinking.
+Ref: http://stackoverflow.com/questions/315093/configure-symlinks-for-single-directory-in-tomcat
+
+De todos modos esto es desaconsejado, tanto usar un enlace simbólico (a modo de carpeta) en webapps como dentro de la carpeta de una aplicación.
+
+Además, a este enlace simbólico puede accederse escribiendo en el navegador:
+	http://servidor/{nombre_enlace_simbolico}/{ruta_a_la_que_apunta_el_enlace}/{nombre_del_recurso}
+sin necesidad de logearse, es decir serían totalmente públicos.
+
+Para evitar poner CAS a nivel de Tomcat se opta por la solución -> SERVIDOR DE RECURSOS.
+
+
+--------------------
+SERVIDOR DE RECURSOS
+--------------------
+Consiste en crear una aplicación en lugar de un enlace simbólico a modo de carpeta. Entonces en dicha aplicación (en Grails) se crea un archivo llamado
+context.xml en la carpeta META-INF de la aplicación.
+
+En el context.xml de la aplicación debe ponerse:
+	<Context aliases="/files=/app/rrhh_resources"></Context>
+
+En este ejemplo si la aplicación se llama myapp, sería como tener dentro de la carpeta con su nombre que se desplega en webapps del servidor un enlace
+simbólico llamado files que apunta a /app/rrhh_resources. Esto funcona tanto para Windows como para Linux.
+
+Otras formas de utilizar esta técnica es crear en en directorio tomcat_dir/conf/Catalina/loaclhost un archivo con el nombre de la aplicación y con 
+extensión xml con el contenido anterior. ---> Problema: al replegar la aplicación el xml desaparece.
+
+Otra es añadir el código al server.xml de la carpeta conf de Tomcat como se indica en http://stackoverflow.com/questions/13010043/how-to-use-tomcat-7-new-aliases-properly.
+Es decir entre los tags Host y añadiendo el atributo path para indicar nombre de la aplicación:
+	<Host>
+		...
+		...
+		<Context aliases="/nombre_del_enlace=/app/rrhh_resources" path="/myapp"/>
+		...
+		...
+	</Host>
+
+	
+------
+VALVES
+------
+Sirven para restringir accesos, generar logs, etc.
+
+Se crea una archivo .xml con el nombre de la aplicación en tomcat_dir/conf/Catalina/localhost y se añade:
+	<Context debug="0" crossContext="true"> 
+		<Valve className="org.apache.catalina.valves.RemoteAddrValve" allow="147.83.98.209"/> 
+	</Context>
+	
+	
+	
+*********************************************************************************************************************************************************
+------------------------------
+Creación:	29-04-2015
+
+Jesús Campos Muñoz
+jesus.campos@upc.edu
+------------------------------
