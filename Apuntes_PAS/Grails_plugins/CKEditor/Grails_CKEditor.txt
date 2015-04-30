@@ -20,6 +20,9 @@ LIMITACIONES DEL PLUGIN
 Por defecto elmina los tags <html>, <head>, y <body>. Hay una opción que permite que se mantengan, pero NO sirve para bootstrap, porque el código con
 comentarios que hay que incluir para que funcione Bootstrap desaparece.
 
+Con Grails 2.4.3 no se puede realizar el WAR debido a que no es compatible con el plugin assets. Para ello hay que comentar el plugin assets en el
+BuildConfig.groovy y hacer Grails Tools -> Refresh dependencies.
+
 
 *****************************************************************************************************************************************************
 ------------------------------
