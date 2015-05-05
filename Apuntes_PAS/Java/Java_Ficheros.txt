@@ -1,0 +1,56 @@
+JAVA - FICHEROS
+===============
+<CREAR LINK SIMBÓLICOS>**********************************************************************************************************************************
+------------
+ADVERTENCIAS
+------------
+Al crear link simbólicos se obtiene el siguiente error:
+	Error |
+	java.nio.file.FileSystemException: {target_link}: El cliente no dispone de un privilegio requerido.
+Esto no es un problema del Java, sino de los permisos de Windows 7. Para solucionarlo (aunque no funciona) debería ser:
+	Ejecutar secpol.msc -> "Security Settings|Local Policies|User Rights Assignment|Create symbolic links"
+tal y como se habla en: http://stackoverflow.com/questions/8228030/getting-filesystemexception-a-required-privilege-is-not-held-by-the-client-usi (https://www.google.es/search?q=java.nio.file.File+System+Exception::+El+cliente+no+dispone+de+un+privilegio+requerido.&spell=1&ei=qJpIVbDRBob4Uva3gaAG)
+
+Una solución es ejecutar el GGTS/Apache-Tomcat como administrador.
+
+
+------
+CÓDIGO
+------
+package scriptdemo
+
+import java.nio.file.Files
+import java.nio.file.Path
+import java.nio.file.Paths
+
+class TestController {
+
+    def index() {
+		Path target = Paths.get("D:\\app\\rrhh_resources\\PAS");
+		Path newLink = Paths.get("D:\\FOLDER_NEW");
+		try {
+			Files.createSymbolicLink(newLink, target);
+		} catch (IOException x) {
+			System.err.println(x);
+		} catch (UnsupportedOperationException x) {
+			// Some file systems do not support symbolic links.
+			System.err.println(x.detailMessage);
+		}
+	}
+}
+
+Ejemplo de usor de Path: http://jakubstas.com/links-nio-2/
+
+<FICHEROS>***********************************************************************************************************************************************
+Crear un directorio: 			File("D:\\JJJnew_folderJJJ").mkdir()
+Crear un fichero: 				File("D:\\JJJnew_folderJJJ").createNewFile()
+Brorrar un directorio/fichero: 	File("D:\\JJJnew_folderJJJ").delete()
+
+
+*********************************************************************************************************************************************************
+------------------------------
+Creación:	05-05-2015
+
+Jesús Campos Muñoz
+jesus.campos@upc.edu
+------------------------------
