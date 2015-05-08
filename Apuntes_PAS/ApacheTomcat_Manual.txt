@@ -103,8 +103,60 @@ Se crea una archivo .xml con el nombre de la aplicación en tomcat_dir/conf/Cata
 		<Valve className="org.apache.catalina.valves.RemoteAddrValve" allow="147.83.98.209"/> 
 	</Context>
 	
-	
-	
+
+----------------------------------
+OTROS: ALIASES EN TOMCAT 8 ETC ...	
+----------------------------------
+Funciona bien en tomcat 8 en un rh_resources.xml:
+<Context>
+  <Resources allowLinking="true" >
+    <PreResources className="org.apache.catalina.webresources.DirResourceSet" base="/app/rrhh_resources" webAppMount="/files" />
+  </Resources>
+</Context>
+
+
+Funciona bien en tomcat 8 en un rh_resources.xml:
+<Context>
+  <Resources>
+    <PreResources className="org.apache.catalina.webresources.DirResourceSet" base="/app/rrhh_resources" webAppMount="/files" />
+  </Resources>
+</Context>
+
+NO borran dir original pero sí el xml de conf/cCatalina/loclaho
+
+En tomcat 7:
+<Context>
+        <Resources className="org.apache.naming.resources.VirtualDirContext" extraResourcePaths="/files=/app/rrhh_resources"/>
+</Context>
+sigue fallando igual que el aliases
+
+ALIASES
+*******
+Originalment els recursos web, imatges i documents de text, s’emmagatzemaven en una carpeta ubicada en qualsevol part del servidor. Per tal que les aplicacions rrhh i gcrrhh poguéssin accedir a un directori que es trobés fora de la carpta webapps es feia servir un enllaç simbòlic com es mostra a la següent imatge:
+ 
+Imatge 12: Carpeta del servidor amb enllaç simbólic
+Dintre del directori webapps del servidor Tomcat es trobava un enllaç simbòlic al que sí podien accedir les aplicacions, i aquest les portava cap a carpetes innaccessibles en un principi.
+El principal problema d’aquest mètode és la seguretat, donat que es podia accedir als recursos que hi havia dintre de la carpeta mitjançant la següent URL al navegador i sense necessitat d’autenticació:
+https://{nom_servidor}/rrhh_resources/{path_recurs}/{nom_recurs}
+Figura 72: Accés als recursos sense protecció
+Per solucionar-ho es substitueix l’enllaç simbòlic per una aplicació Grails del mateix nom, rrhh_resources. Aquesta aplicació haurà de tenir un arxiu anomenat context.xml dintre de la ruta (GGTS) web-app/META-INF amb el següent contingut:
+<Context aliases="/files=/app/rrhh_resources"></Context>
+Figura 73: Arxiu context.xml amb l’àlias necessari per substituir l’enllaç simbòlic
+A més, a l’arxiu Config.groovy s’ha d’afegir el codi per protegir els recursos:
+grails.plugins.springsecurity.controllerAnnotations.staticRules = [
+	'/files/**':  ['ROLE_USER']
+]
+Figura 74: Instrucció Spring Security per protegir els recursos web
+
+
+------------------------------------
+EJECUTAR ACCIONES EN DEPLOY/UNDEPLOY
+------------------------------------
+En Grails modificar el archivo conf/Bootstrap.groovy la closure def destroy.
+
+En Java utilizar ServletContextListener (además de añadir cosas seguramente al Apache-Tomcat): http://stackoverflow.com/questions/5336243/can-some-code-run-when-we-first-deploy-a-war-file
+
+
 *********************************************************************************************************************************************************
 ------------------------------
 Creación:	29-04-2015

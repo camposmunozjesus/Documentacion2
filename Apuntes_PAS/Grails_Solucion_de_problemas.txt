@@ -462,3 +462,18 @@ o bien:
 	Map parameters = ["header.enabled":1,"separator":";","quoteCharacter":"\u0000","lineEnd":"\r\n","encoding":"ISO-8859-1"]
 	
 ISO-8859-1 es la codificación correcta a utilizar.
+
+
+******************************************************************************************************************************************************
+------------
+Problema 15: (WEB SERVICES) L'script wsdl2java dòna errors amb java 1.8
+------------
+L’única versió de Java 1.8 en la que pot funcionar un projecte Grails amb CXF és la 1.8.0_31. Tot i així aquesta versió no és capaç de generar les 
+classes amb la instrucció “wsdl2java”.
+
+Solución 15:
+------------
+Per solucionar-ho s’ha de crear un arxiu (si no existeix) anomenat jaxp.properties a la següent ruta 
+%JAVA_HOME%/jre/lib (generalment C:\Program Files (x86)\Java\jdk1.8.0_31\jre\lib) i escriure/afegir: javax.xml.accessExternalSchema = all.
+  
+Referència: http://stackoverflow.com/questions/23011547/webservice-client-generation-error-with-jdk8

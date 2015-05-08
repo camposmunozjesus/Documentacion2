@@ -137,7 +137,76 @@ Donde el archivo "myckconfig.js" pasará a realiazr las funciones de "config.js"
 
 El archivo "myckconfig.js" estará ubicado en "web-app/js/myckconfig.js" del proyecto.
 
-	
+
+--------------------------------------------------------------------
+ARCHIVOS DE CONFIGURACIÓN DISTINTO DE CONFIG.JS - INDICADO EN LA GSP
+--------------------------------------------------------------------
+También se puede cambiar la ubicación del fichero o indicar un confi.js diferente en la propia pantalla GSP. Para ello el archivo config.js debe ubicarse
+en /CKEditorDemo/.link_to_grails_plugins/ckeditor-4.4.1.0/web-app/js/ckeditor y si la ruta comienza en la GSP por "/" entonces se refiere a 
+/CKEditorDemo/.link_to_grails_plugins/ckeditor-4.4.1.0/web-app.
+
+Esto permite que cada GSP tenga un archivo config.js distinto y tener diferentes configuraciones para diferentes perfiles. Pero también hay que recordar
+que los archivos que están en las ubicaciones indicadas se borrarán al desisntalar el plugin. NO he conseguido cargar desde la GSP un config.js que 
+esté ubicado en el web-app de la aplicación -> estaría bien conseguirlo.
+
+Para indicar el archivo config.js desde la GSP debe utilizarse un Text Area y no un CKEditor tag. Posteriormente debe utilizarse el JS necesario para
+indicarle qué archivo utilizar. Ejemplo de código:
+
+	<head>
+		<ckeditor:resources/>
+	</head>
+	<body>
+		<form>
+			<textarea name="text" id="text" rows="10" cols="80">
+				This is my textarea to be replaced with CKEditor.
+			</textarea>
+			<g:actionSubmit action="save" value="Desar" />
+			<script>
+				// Replace the <textarea id="text"> with a CKEditor
+				// instance, using default configuration.
+				CKEDITOR.replace( 'text', {
+					//Para que esto funcione puede estar la closure del Config.groovy ckeditor.config
+					customConfig: 'custom/ckeditor_config.js'	//Funciona con el archivo ubicado en: /CKEditorDemo/.link_to_grails_plugins/ckeditor-4.4.1.0/web-app/js/ckeditor/custom/ckeditor_config.js
+					//Si está configurada la closure del Config.groovy ckeditor.config cargará ésta por defecto y aquí sobrescribiremos lo que esté en este archivo. 
+					//Los archivos de configuración que se apuntan desde aquí únicamente pueden ubicarse en: /CKEditorDemo/.link_to_grails_plugins/ckeditor-4.4.1.0/web-app
+					//y cuando en la ruta se pone de manera realiva, que no empieza por /, se refiere a la carpeta: /CKEditorDemo/.link_to_grails_plugins/ckeditor-4.4.1.0/web-app/js/ckeditor
+				});
+				
+			</script>
+		</form>
+	</body>
+
+
+-----------------------------------------------
+CÓDIGO DEL CONFIG.JS EN LA PROPIA GSP - In-Page
+-----------------------------------------------
+Aquí sucede que se carga el archivo config.js ubicado en el plugin /CKEditorDemo/.link_to_grails_plugins/ckeditor-4.4.1.0/web-app/js/ckeditor . Por lo
+que se cargan los valores del config.js y en la GSP se sobreescriben. es decir si hay una toolbar en el config.js, se carga ésta, y luego sy hay otra
+diferente en la vista GSP se carga la de la GSP.
+
+En lugar de utilizar un archivo de configuración, lo que se desea poner en el config.js se pone en la vista GSP. Para ello debe utilizarse un Text Area
+y JS. Ejemplo de código:
+	<head>
+		<ckeditor:resources/>
+	</head>
+	<body>
+		<form>
+			<textarea name="text" id="text" rows="10" cols="80">
+				This is my textarea to be replaced with CKEditor.
+			</textarea>
+			<g:actionSubmit action="save" value="Desar" />
+			<script>
+				// Replace the <textarea id="text"> with a CKEditor
+				// instance, using default configuration.
+				CKEDITOR.replace( 'text', {
+					language: 'fr',
+					uiColor: '#9AB8F3'
+				});
+			</script>
+		</form>
+	</body>
+
+
 ----------------------------
 PROBLEMAS CON EL PAQUETE WAR
 ----------------------------
@@ -155,9 +224,9 @@ La solución es bien sencilla, comentar en el archivo BuilConfig.groovy la sigui
 
 
 <PERSONALIZACIÓN>************************************************************************************************************************************
------------------------------------------------------------
-AÑADIR UN BOTÓN PERSONALIZADO A LA BARRA DE TAREAS - WECEEM
------------------------------------------------------------
+--------------------------------------------------------------------
+AÑADIR UN BOTÓN PERSONALIZADO A LA BARRA DE TAREAS (TOOLBAR)- WECEEM
+--------------------------------------------------------------------
 Versión 3.6.6.1.0 para Weceem.
 
 En /weceem-app-master/.link_to_grails_plugins/ckeditor-3.6.6.1.0/web-app/js/ckeditor/plugins/divdsp1 copiar la carpeta.
@@ -224,7 +293,54 @@ Contingut
 <!-- T&iacute;tol --><div class=\"selectedTitol\" id=\"box_112\">  <div class=\"minus\" id=\"title_box_112\">	T&iacute;tol</div></div><!-- Contingut --><div class=\"dsplContent\" id=\"dsplContent_box_112\">Contingut </div>
 
 
+-----------------------------------------
+BARRA DE TAREAS (TOOLBAR) EN MODO IN-PAGE
+-----------------------------------------
+Es necesario tener CKEditor en un Text Area porque estamos editando el config.js desde la GSP.
+Cambiar la barra entera:
+	<script>
+		// Replace the <textarea id="text"> with a CKEditor
+		// instance, using default configuration.
+		CKEDITOR.replace( 'text', {
+			language: 'ca',
+			uiColor: '#9AB8F3',
+			toolbar: 'ToolBarComplete'
+			
+		});
+	</script>
+	
+Personalizar incluyendo botones:
+	<script>
+		// Replace the <textarea id="text"> with a CKEditor
+		// instance, using default configuration.
+		CKEDITOR.replace( 'text', {
+			language: 'ca',
+			uiColor: '#9AB8F3',
+			toolbar: [ { name: 'document', items: [ 'Image','Source', '-', 'NewPage', 'Preview' ]} ]
+			
+		});
+	</script>
 
+Otra barra diferente:
+	<script>
+		// Replace the <textarea id="text"> with a CKEditor
+		// instance, using default configuration.
+		CKEDITOR.replace( 'text', {
+			language: 'ca',
+			uiColor: '#9AB8F3',
+				            toolbar: [
+	             	     { name: 'document', items: [ 'Image','Source', '-', 'NewPage', 'Preview' ]},
+	            	     { name: 'clipboard', items: [ 'Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo' ] },
+	            	     '/',
+	            	     { name: 'basicstyles', items: [ 'Bold', 'Italic' ] }
+	            	 ]
+		});
+	</script>
+
+En esencia hay que coger lo del config.js y quitarle el punto y coma (;) final.
+	
+	
+		
 <SUBIR FICHEROS AL SERVIDOR>*************************************************************************************************************************
 --------------
 SUBIR IMÁGENES
