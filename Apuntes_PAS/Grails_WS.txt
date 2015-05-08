@@ -556,11 +556,12 @@ añadir:
     }
 
 
----------
-PROBLEMAS
----------
+<PROBLEMAS>*******************************************************************************************************************************************
+-----------------
+ERROR CON PLUGINS
+-----------------
 Error al descarregar plugins
-Si en el moment de refrescar les dependències per tal d’actualitzar els plugins es produeix un error similar al que es mostra a continuació:
+Si en el momento de refrescar les dependències per tal d’actualitzar els plugins es produeix un error similar al que es mostra a continuació:
 	Starting process on PC24094/147.83.168.49
 	Loading Grails 2.4.3
 	|Configuring classpath
@@ -615,3 +616,13 @@ un resultat similar a:
 Aixó indica que l’última versió disponible del plugin cxf és la 2.0.1, i que per afegir-la al nostre projecte no es pot fer servir mitjançant la línia
  de comandes (desde Grails 2.3), si no que s’ha d’afgir al BuilConfig.groovy.
 Llavors la solució és canviar la versió a l’arxiu BuildConfig.groovy del plugin cxf.
+
+
+---------------
+ÚS AMB JAVA 1.8
+---------------
+L’única versió de Java 1.8 en la que pot funcionar un projecte Grails amb CXF és la 1.8.0_31. Tot i així aquesta versió no és capaç de generar les 
+classes amb la instrucció “wsdl2java”. Per solucionar-ho s’ha de crear un arxiu (si no existeix) anomenat jaxp.properties a la següent ruta 
+%JAVA_HOME%/jre/lib (generalment C:\Program Files (x86)\Java\jdk1.8.0_31\jre\lib) i escriure/afegir: javax.xml.accessExternalSchema = all.
+  
+Referència: http://stackoverflow.com/questions/23011547/webservice-client-generation-error-with-jdk8

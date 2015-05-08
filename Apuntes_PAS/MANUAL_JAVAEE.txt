@@ -1,0 +1,13 @@
+JAVA EE - MANUAL
+================
+Java EE está hecho para prover la lógica de negocio a una empresa.
+
+Se pretende que el programador programe más rápido. Utiliza anotaciones en substitución de los XML.
+	
+*********************************************************************************************************************************************************
+------------------------------
+Creación:	06-05-2015
+
+Jesús Campos Muñoz
+jesus.campos@upc.edu
+------------------------------

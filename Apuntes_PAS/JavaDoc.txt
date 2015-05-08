@@ -1,0 +1,38 @@
+JAVADOC - UTILIZACIÓN
+=====================
+---------------------
+GENERACIÓN DE JAVADOC
+---------------------
+Para generar los JavaDocs en Grails hay que ejecutar el comando "doc" en el Grails Command History.
+
+
+------------------------------
+LOCALIZACIÓN DE LOS DOCUMENTOS
+------------------------------
+En Grails se pueden encontrar en {nombre_proyecto}/target/docs.
+
+
+<INSTRUCCIONES>****************************************************************************************************************************************
+-------------
+CREAR UN LINK
+-------------
+Ejemplo: En el proyecto gcrrhhImporter tenemos el siguiente controlador - > gcrrhh.Eraser.DeleteController.groovy, el cual tiene una dirección en el 
+navegador para acceder a su JavaDoc tal que así -> file:///D:/WecWorkspace/gcrrhhImporter/target/docs/gapi/gcrrhh/Eraser/DeleteController.html
+
+Si desde el JavaDoc del controlador gcrrhh.PaneldeGestio.PanelGestioController.groovy (file:///D:/WecWorkspace/gcrrhhImporter/target/docs/gapi/gcrrhh/PaneldeGestio/PanelGestioController.html)
+se desea linkar con el controlador anterior hay que utilizar:
+	<a href="../Eraser/DeleteController.html">Delete</a> -> para borrar datos</li>
+
+Un <a href="/">test</a> nos enviaría a: 
+
+Para utilizar un método dentro del mismo controlador:
+	{@link #exportPlantilla()}
+
+*******************************************************************************************************************************************************
+
+------------------------------
+Creación:	07-05-2015
+
+Jesús Campos Muñoz
+jesus.campos@upc.edu
+------------------------------

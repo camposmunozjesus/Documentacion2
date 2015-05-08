@@ -5,7 +5,8 @@ CREAR UN WAR
 ------------
 Hay que ir a la línea de comandos y escribir:
 	test war
-y lo crea e la carpeta "target".
+	dev war
+y lo crea en la carpeta "target".
 
 Si el entorno es creado (que no es test, production ni development)
 Comando: -Dgrails.env=nombre_del_nuevo_entorno war
@@ -14,16 +15,43 @@ Comando: -Dgrails.env=nombre_del_nuevo_entorno war
 -------------------------------
 EJECUTAR UN ENTORNO DETERMINADO
 -------------------------------
+run-app --verbose --stacktrace  -Dserver.port=8099
+Este comando se ejecuta en development.
+
 Si el entorno es creado (que no es test, production ni development):
 run-app -Dgrails.env=nombre_del_nuevo_entorno -Dserver.port=8090
+
+Si el entorno es de los típicos (test o  prod):
+	test run-app
+o bien de una manera más completa:
+	test run-app --verbose --stacktrace  -Dserver.port=8099
+
+
+-------
+LIMPIAR 
+-------
+Borrar del directorio target/ el paquete WAR existente y los .class.
+
+Comando: clean
 
 
 -------------------------------------
 CREAR UN NUEVO JOB (TAREA PROGRAMADA)
 -------------------------------------
 Escribir en la línea de comandos:
-	create-job nombre del JOB
+	create-job nombre_del_JOB
 Hay que haber instalado previamente el plugin QUARTZ, sin el plugin el comando NO funciona.
+
+
+---------------
+CREAR UN SCRIPT
+---------------
+create-script my-script
+
+------------------
+EJECUTAR UN SCRIPT
+------------------
+my-script (es el nombre del script)
 
 
 *****************************************************************************************************************************************************
