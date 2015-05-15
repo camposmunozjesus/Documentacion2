@@ -1,0 +1,45 @@
+CONFIGURACIÓN DE OUTLOOK Y THUNDERBIRD PARA EL CORREO
+=====================================================
+<CALENDARIO/AGENDA>**************************************************************************************************************************************
+Sobre la agenda que queramos hacer click sobre el icono en forma de lápiz -> pestaña de suscripción.
+URL de suscripción CalDAV — Suscribirse a esta agenda desde otro programa de agenda
+Usar la dirección: https://correu.upc.edu/horde/rpc.php/calendars/jesus.campos/calendar~p0MBZarVkQFa37egk6y8qNe/
+
+-----------
+THUNDERBIRD
+-----------
+Nuevo -> Calendario -> En red -> Siguiente
+Seleccionar CalDAV
+Lugar: https://correu.upc.edu/horde/rpc.php/calendars/jesus.campos/calendar~p0MBZarVkQFa37egk6y8qNe/
+Luego pide usuario y contraseña:
+user: jesus.campos (dejarla guardada)
+Luego dar a sincronizar
+
+-------
+OUTLOOK
+-------
+NO SE PUEDE
+
+<CARPETAS>***********************************************************************************************************************************************
+-----------
+THUNDERBIRD
+-----------
+Hacer click sobre el nombre de la cuenta (jesus.campos@upc.edu). Aparecerá en el centro de la aplicación un panel con opciones. Buscar "Suscripciones a
+carpetas".
+Allí seleccionar las carpetas del servidor que se desean sincronizar con el programa Thunderbird.
+
+-------
+OUTLOOK
+-------
+Casualmente ha funcionado después de hacerlo en Thunderbird.
+Pero haciendo Fitxer -> Configuració del compte... -> Configuració del compte -> Correu electrònic -> Sobre la cuenta -> Canvia ... -> Més opcions de
+configuració
+
+
+*********************************************************************************************************************************************************
+------------------------------
+Creación:	14-05-2015
+
+Jesús Campos Muñoz
+jesus.campos@upc.edu
+------------------------------

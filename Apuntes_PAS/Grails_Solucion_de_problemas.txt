@@ -477,3 +477,114 @@ Per solucionar-ho s’ha de crear un arxiu (si no existeix) anomenat jaxp.proper
 %JAVA_HOME%/jre/lib (generalment C:\Program Files (x86)\Java\jdk1.8.0_31\jre\lib) i escriure/afegir: javax.xml.accessExternalSchema = all.
   
 Referència: http://stackoverflow.com/questions/23011547/webservice-client-generation-error-with-jdk8
+
+
+******************************************************************************************************************************************************
+------------
+Problema 16: (GENERAL)
+------------
+Description	Resource	Path	Location	Type
+Unknown	gcrrhh	Unknown	Unknown	org.eclipse.core.internal.resources.Marker@ab5e7160 is not of a displayable type
+
+Solución 16:
+------------
+Eliminando el directorio classes de la carpeta target del proyecto se soluciona este error
+
+
+******************************************************************************************************************************************************
+------------
+Problema 17: (PLUGIN MANAGER) Error en el RPPDI, RPPAS con plugin manager.
+------------
+El mensaje de error mostrado es:
+plugin manager y nullpointer
+
+Solución 17:
+------------
+Comentar un plugin del buildconfig.groovy y descomentarlos.
+
+
+******************************************************************************************************************************************************
+------------
+Problema 18: (PLUGINS) Error al descargar el plugin export.
+------------
+|Loading Grails 2.3.4
+|Configuring classpath
+Error |
+Resolve error obtaining dependencies: Could not find artifact org.odftoolkit:odfdom-java:jar:0.8.5 in grailsCentral (http://repo.grails.org/grails/plugins) (Use --stacktrace to see the full trace)
+Error |
+Resolve error obtaining dependencies: Could not find artifact org.odftoolkit:odfdom-java:jar:0.8.5 in grailsCentral (http://repo.grails.org/grails/plugins) (Use --stacktrace to see the full trace)
+Error |
+Resolve error obtaining dependencies: Could not find artifact org.odftoolkit:odfdom-java:jar:0.8.5 in grailsCentral (http://repo.grails.org/grails/plugins) (Use --stacktrace to see the full trace)
+Error |
+Could not find artifact org.odftoolkit:odfdom-java:jar:0.8.5 in grailsCentral (http://repo.grails.org/grails/plugins)
+|Run 'grails dependency-report' for further information.
+
+Solución 18:
+------------
+https://jira.grails.org/browse/GPEXPORT-28
+http://stackoverflow.com/questions/24411420/grails-export-plugin-errors
+
+Añadir al BuildConfig.groovy:
+	repositories {
+	   ...
+	   mavenRepo "http://repo.grails.org/grails/core"
+	}
+
+	dependencies { 
+	   ...
+	   compile 'commons-beanutils:commons-beanutils:1.8.3'
+	}
+
+
+******************************************************************************************************************************************************
+------------
+Problema 19: (CONTEXT LOADER)
+------------
+El mensaje de error mostrado es:
+ERROR context.GrailsContextLoader  - Error executing bootstraps: IOException parsing XML document from ServletContext resource [/WEB-INF/applicationContext.xml]; nested exception is java.io.FileNotFoundException: Could not open ServletContext resource [/WEB-INF/applicationContext.xml]
+
+Solución 19:
+------------
+http://www.icodeya.com/2012/02/grails-javaiofilenotfoundexception.html
+grails> upgrade
+
+
+------------
+Problema 20: (CONTEXT LOADER)
+------------
+El mensaje de error mostrado es:
+|Running Grails application
+Error |
+2015-01-22 13:13:25,766 [localhost-startStop-1] ERROR context.ContextLoader  - Context initialization failed
+Message: IOException parsing XML document from ServletContext resource [/WEB-INF/applicationContext.xml]; nested exception is java.io.FileNotFoundException: Could not open ServletContext resource [/WEB-INF/applicationContext.xml]
+    Line | Method
+->>  262 | run       in java.util.concurrent.FutureTask
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+|   1145 | runWorker in java.util.concurrent.ThreadPoolExecutor
+|    615 | run . . . in java.util.concurrent.ThreadPoolExecutor$Worker
+^    744 | run       in java.lang.Thread
+Caused by FileNotFoundException: Could not open ServletContext resource [/WEB-INF/applicationContext.xml]
+->>  262 | run       in java.util.concurrent.FutureTask
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+|   1145 | runWorker in java.util.concurrent.ThreadPoolExecutor
+|    615 | run . . . in java.util.concurrent.ThreadPoolExecutor$Worker
+^    744 | run       in java.lang.Thread
+Error |
+2015-01-22 13:13:25,883 [localhost-startStop-1] ERROR context.GrailsContextLoader  - Error initializing the application: IOException parsing XML document from ServletContext resource [/WEB-INF/applicationContext.xml]; nested exception is java.io.FileNotFoundException: Could not open ServletContext resource [/WEB-INF/applicationContext.xml]
+Message: IOException parsing XML document from ServletContext resource [/WEB-INF/applicationContext.xml]; nested exception is java.io.FileNotFoundException: Could not open ServletContext resource [/WEB-INF/applicationContext.xml]
+    Line | Method
+->>  262 | run       in java.util.concurrent.FutureTask
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+|   1145 | runWorker in java.util.concurrent.ThreadPoolExecutor
+|    615 | run . . . in java.util.concurrent.ThreadPoolExecutor$Worker
+^    744 | run       in java.lang.Thread
+Caused by FileNotFoundException: Could not open ServletContext resource [/WEB-INF/applicationContext.xml]
+->>  262 | run       in java.util.concurrent.FutureTask
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+|   1145 | runWorker in java.util.concurrent.ThreadPoolExecutor
+|    615 | run . . . in java.util.concurrent.ThreadPoolExecutor$Worker
+^    744 | run       in java.lang.Thread
+
+Solución 20:
+------------
+grails> upgrade
