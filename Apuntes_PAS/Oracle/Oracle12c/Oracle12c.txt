@@ -1,0 +1,12 @@
+https://PC24094.upcxxi.upc.es:5500/em
+
+global database name: orcl.upcxxi.upc.es
+
+CONTRASEÑAS
+===========
+pass root: jesus
+
+pass SYS: VMOracle12c
+pass SYSTEM: VMOracle12c
+
+Crear usuario CS con tablespaces: USERS y TMP

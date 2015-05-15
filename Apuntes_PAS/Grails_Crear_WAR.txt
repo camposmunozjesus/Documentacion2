@@ -11,6 +11,7 @@ Otras opciones son:
 	dev war
 	prod war
 
+	
 ---------------------------------------------
 CREAR UN WAR PARA UN ENTORNO ESPECÍFICO/NUEVO
 ---------------------------------------------
@@ -36,6 +37,56 @@ También se debería añadir el entorno??????????? Seguramente NO, porque no se 
 
 En el caso del Weceem se debe retocar el Searchable.groovy, añadiendo el entorno que toque. Replicar el caso del test, que es del que generalmente se
 realiza el WAR.
+
+
+---------------
+ACCIONES - ANT?
+---------------
+Se pueden realizar acciones en el momento de crear el paquete WAR. 
+
+Una de ellas es eliminar un directorio de la carpeta "web-app". Situando el siguiente código en el archivo BuildConfig.groovy:
+	grails.war.resources = { stagingDir ->
+		delete { fileset dir: "${stagingDir}/rrhh_resources/" }
+		delete(dir: "${stagingDir}/rrhh_resources/")
+	}
+
+Otra de ellas es incluir el directorio donde se encuentran los Javadocs en el paquete WAR para poder acceder a ellos una vez está desplegada la aplicación
+web:
+	//Copiar un directorio entero
+	grails.war.resources = { stagingDir, args ->
+		
+		def copyFolder
+		copyFolder = {basePath, path ->
+			String fullPath = basePath+path
+			
+			File file = new File(fullPath)
+			
+			String[] directorios = file.list()
+			
+			for (String string : directorios) {
+				if(new File(fullPath+"/"+string).isDirectory())
+				{
+					copyFolder(basePath, path+string+"/")
+				}
+				else{
+					copy(file: fullPath+"/"+string,
+						todir: "${stagingDir}/${path}/")
+				}
+			}
+		}
+		
+		copyFolder("target/", "docs/gapi/")
+		println "Javadocs in WAR"
+		
+	}
+
+
+Otras instrucciones válidas son:
+	grails.war.resources = { stagingDir ->
+		copy(file: "target/docs/all-docs.html", Funciona bien
+			tofile: "${stagingDir}/docs/all-docs.html")
+	}
+
 
 *****************************************************************************************************************************************************
 ------------------------------

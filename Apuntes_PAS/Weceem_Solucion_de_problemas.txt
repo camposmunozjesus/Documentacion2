@@ -47,3 +47,39 @@ Página de administración:
 									
 		En este _header.gsp se encuentra el link del layout, al que hay que forzar a:
 		url="/$ {grails.Application.metadat.'app.name'}/logout/index"
+		
+	
+-----------
+Problema 4: (SPRINGSECURITY-CAS) Problema al entrar en cualquier página HTML.
+-----------
+Se visualiza el siguiente mensaje:
+	User [null] with roles [[ROLE_ANONYMOUS, USER_null]] does not have the permissions [[view]] to access content at [index] in space [Default]
+
+Solución 4:
+-----------
+Hay que descomentar del BootStrap.groovy:
+//		ctx.wcmSecurityService.securityDelegate = [			
+//			getUserName : { ->
+//				def princ = springSecurityService.getPrincipal()
+//				if (princ instanceof String) {
+//					return null
+//				} else {
+//					return springSecurityService.getPrincipal()?.username
+//				}				
+//			},
+//			//com el principal no té email definit, posem username
+//			getUserEmail : { ->
+//				def princ = springSecurityService.getPrincipal()
+//				if (princ instanceof String) {
+//					return null
+//				} else {
+//					return springSecurityService.getPrincipal()?.username
+//				}	
+//			},
+//			getUserRoles : { ->
+//				springSecurityService.getAuthentication().getAuthorities() ?: ['ROLE_GUEST']				
+//			},
+//			getUserPrincipal : { ->
+//				springSecurityService.getPrincipal()						
+//			}
+//		]

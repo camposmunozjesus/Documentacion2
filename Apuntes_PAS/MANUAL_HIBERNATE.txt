@@ -1,0 +1,76 @@
+HIBERNATE - MANUAL
+==================
+Ref: http://www.javatutoriales.com/2009/05/hibernate-parte-2-persistiendo-objetos.html
+
+<ANOTACIONES>********************************************************************************************************************************************
+-------
+@ENTITY
+-------
+@Entity (javax.persistence.Entity)
+Indica que la clase es una entidad. Hibernate generará una tabla para esta entidad. Se coloca justo antes de la definición de la clase:
+
+Ejemplo:
+	@Entity
+	public class Persona implements Serializable { ... }
+	
+Se generará una tabla con el nombre de la clase: persona.
+
+
+------
+@TABLE
+------
+@Table (javax.persistence.Table)
+En el caso de querer especificar un nombre de la tabla que sea diferente del de la clase se utiliza @Table.
+Se indica el nombre de la tabla generada o si ya está creada, cuál utilizar.
+
+Ejemplo:
+	@Entity
+	@Table(name="personasoficina")
+	public class Persona implements Serializable { ... }
+	
+	
+----------------------------
+CLAVE PRIMARIA/IDENTIFICADOR
+----------------------------
+@Id (javax.persistence.Id)
+Para indicar qué campo será la clave primari se utiliza @Id justo antes del atributo o bien justo antes de su método getter. NO se pueden mezclar estas
+dos formas de actuar, o se ponen anotaciones siempre antes del atributo, o se ponen siempre antes de su método getter.
+
+@GeneratedValue (javax.peristance.GeneratedValue)
+Para personalizar la forma en que se generará el identificador. Hay cuatro estrategias posibles:
+- Auto		-> Estrategia por defecto de la base de datos
+- Identity	-> Genera los identificadores en orden: 1, 2, 3, ...
+- Sequence	-> Ref: http://www.concretepage.com/hibernate/generatedvalue-strategy-generationtype-sequence-hibernate NO se ha conseguido nada!!!
+- Table
+
+Ejemplo:
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private long id;
+	
+
+<TEORÍA>*************************************************************************************************************************************************
+Hasta aquí todo lo necesario para persistir una clase.
+Se persistirán todos los objetos que no estén marcados como "transient" o con la anotación "javax.persistence.Transient" 
+
+
+*******************************************************************************************************************************************************
+-------
+@COLUMN
+-------
+@Column javax.persistance.Column
+Sirve para cambiar indicar el nombre de la columna que tendrá dicho atributo en la tabla de la base de datos.
+
+Ejemplo: en lugar de que la tabla tenga una columna llamada "email", tendrá una columna llamada "e_mail"
+	@Column(name="e_mail")
+	private String email;
+	
+	
+	
+*********************************************************************************************************************************************************
+------------------------------
+Creación:	13-05-2015
+
+Jesús Campos Muñoz
+jesus.campos@upc.edu
+------------------------------
