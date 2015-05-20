@@ -1,0 +1,105 @@
+AÑADIR ELEMENTOS A LA PÁGINA DE NOVETATS
+========================================
+-------------------
+ESQUELETO DE LA WEB
+-------------------
+Página con un desplegable con dos filas en su interior, cada fila tiene dos columnas:
+
+<!-- ************ INICI DESPLEGABLE - XXX ************ -->
+  <div class="selectedTitol" id="box_103"><!-- Títol Desplegable  -->
+    <div class="minus" id="title_box_103"><strong>XXX</strong>
+    </div>
+  </div>
+  <div class="dsplContent" id="dsplContent_box_103"> <!-- Contingut Desplegable  -->
+    <div class="row no-scroll-bar columnas-dobles"> <!-- div row -->
+	<!-- 1F 1C -->
+      <div class="col-vxs-6 col-sm-6 col-md-6 col-lg-6 row-margin-bottom-col1">
+        <div>XXX
+        </div>
+        
+      </div> <!-- Cierre primera columna: div anterior -->
+      <!-- 1F 2C -->
+      <div class="col-vxs-6 col-sm-6 col-md-6 col-lg-6">
+        <div>XXX
+        </div>
+       
+      </div> <!-- Cierre segunda columna: div anterior -->
+    </div> <!-- div row -->
+    <div class="row no-scroll-bar columnas-dobles"><!-- SEPARADOR -->
+      <div class="col-xs-12 col-vxs-12 col-sm-12 col-md-12 col-lg-12" style="height:20px;">&nbsp;
+      </div>
+    </div><!-- FIN SEPARADOR -->
+    <div class="row no-scroll-bar columnas-dobles"> <!-- div row -->
+	<!-- 2F 1C -->
+      <div class="col-vxs-6 col-sm-6 col-md-6 col-lg-6 row-margin-bottom-col1">
+        <div>XXX
+        </div>
+        
+      </div> <!-- Cierre primera columna: div anterior -->
+      <!-- 2F 2C -->
+      <div class="col-vxs-6 col-sm-6 col-md-6 col-lg-6">
+        <div>XXX
+        </div>
+       
+      </div> <!-- Cierre segunda columna: div anterior -->
+    </div> <!-- div row -->
+  </div> <!-- Contingut Desplegable  -->
+<!-- ************ FINAL DESPLEGABLE - XXX  ************ -->
+
+
+-----------------
+AGREGAR SEPARADOR
+-----------------
+    <div class="row no-scroll-bar columnas-dobles"><!-- SEPARADOR -->
+      <div class="col-xs-12 col-vxs-12 col-sm-12 col-md-12 col-lg-12" style="height:20px;">&nbsp;
+      </div>
+    </div><!-- FIN SEPARADOR -->
+	
+--------------------------------------------
+AGREGAR FILA CON DOS COLUMNAS AL DESPLEGABLE
+--------------------------------------------
+    <div class="row no-scroll-bar columnas-dobles"> <!-- div row -->
+	<!-- 2F 1C -->
+      <div class="col-vxs-6 col-sm-6 col-md-6 col-lg-6 row-margin-bottom-col1">
+        <div>XXX
+        </div>
+        
+      </div> <!-- Cierre primera columna: div anterior -->
+      <!-- 2F 2C -->
+      <div class="col-vxs-6 col-sm-6 col-md-6 col-lg-6">
+        <div>XXX
+        </div>
+       
+      </div> <!-- Cierre segunda columna: div anterior -->
+    </div> <!-- div row -->
+	
+	
+--------------------
+GRUPO SEPARADOR+FILA
+--------------------
+    <div class="row no-scroll-bar columnas-dobles"><!-- SEPARADOR -->
+      <div class="col-xs-12 col-vxs-12 col-sm-12 col-md-12 col-lg-12" style="height:20px;">&nbsp;
+      </div>
+    </div><!-- FIN SEPARADOR -->
+
+    <div class="row no-scroll-bar columnas-dobles"> <!-- div row -->
+	<!-- 2F 1C -->
+      <div class="col-vxs-6 col-sm-6 col-md-6 col-lg-6 row-margin-bottom-col1">
+        <div>XXX
+        </div>
+        
+      </div> <!-- Cierre primera columna: div anterior -->
+      <!-- 2F 2C -->
+      <div class="col-vxs-6 col-sm-6 col-md-6 col-lg-6">
+        <div>XXX
+        </div>
+       
+      </div> <!-- Cierre segunda columna: div anterior -->
+    </div> <!-- div row -->
+*********************************************************************************************************************************************************
+------------------------------
+Creación:	20-05-2015
+
+Jesús Campos Muñoz
+jesus.campos@upc.edu
+------------------------------	

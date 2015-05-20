@@ -1,0 +1,44 @@
+POSTGRESQL - CONECTAR AL SERVIDOR DESDE OTRO PC
+===============================================
+Primero de todo abrir los puertos. En Windows una solución es echar abajo todos los firewalls. O bien añadir la regla con el puerto. NO es necesario reiniciar
+pc.
+En Linux no parece que haya que abrir puertos.
+
+Luego hay que añadir una regla en el archivo %directorio_postgresql%/data/pg_hba.conf (windows).
+	host 	all 			all 			192.168.0.0/24 			md5
+Para que se pueda acceder a la base de datos desde el exterior. Es necesario reiniciar Pc para reinicar servidor.
+
+
+
+Mensaje error 1: Error por no abrir puertos firewall
+----------------
+	Server doesn't listen
+	The server doesn't accept connections: the connection library reports 
+	could not connect to server: Connection timed out (0x0000274C/10060) Is the server running on host "192.168.56.101" and accepting TCP/IP connections on port 5438? 
+	If you encounter this message, please check if the server you're trying to contact is actually running PostgreSQL on the given port. Test if you have network connectivity from your client to the server host using ping or equivalent tools. Is your network / VPN / SSH tunnel / firewall configured correctly? 
+	For security reasons, PostgreSQL does not listen on all available IP addresses on the server machine initially. In order to access the server over the network, you need to enable listening on the address first. 
+	For PostgreSQL servers starting with version 8.0, this is controlled using the "listen_addresses" parameter in the postgresql.conf file. Here, you can enter a list of IP addresses the server should listen on, or simply use '*' to listen on all available IP addresses. For earlier servers (Version 7.3 or 7.4), you'll need to set the "tcpip_socket" parameter to 'true'. 
+	You can use the postgresql.conf editor that is built into pgAdmin III to edit the postgresql.conf configuration file. After changing this file, you need to restart the server process to make the setting effective. 
+	If you double-checked your configuration but still get this error message, it's still unlikely that you encounter a fatal PostgreSQL misbehaviour. You probably have some low level network connectivity problems (e.g. firewall configuration). Please check this thoroughly before reporting a bug to the PostgreSQL community. 
+	
+	
+Mensaje error 2: Error de conexió remota
+----------------
+	Access to database denied
+	The server doesn't grant access to the database: the server reports 
+	FATAL: no pg_hba.conf entry for host "192.168.56.1", user "postgres", database "postgres", SSL off 
+	To access a database on a PostgreSQL server, you first have to grant primary access to the server for your client (Host Based Authentication). PostgreSQL will check the pg_hba.conf file if a pattern that matches your client address / username / database is present and enabled before any SQL GRANT access control lists are evaluated. 
+	The initial settings in pg_hba.conf are quite restrictive, in order to avoid unwanted security holes caused by unreviewed but mandatory system settings. You'll probably want to add something like 
+	host all all 192.168.0.0/24 md5 
+	This example grants MD5 encrypted password access to all databases to all users on the private network 192.168.0.0/24. 
+	You can use the pg_hba.conf editor that is built into pgAdmin III to edit the pg_hba.conf configuration file. After changing pg_hba.conf, you need to trigger a server configuration reload using pg_ctl or by stopping and restarting the server process.
+
+	
+	
+*********************************************************************************************************************************************************
+------------------------------
+Creación:	18-05-2015
+
+Jesús Campos Muñoz
+jesus.campos@upc.edu
+------------------------------
