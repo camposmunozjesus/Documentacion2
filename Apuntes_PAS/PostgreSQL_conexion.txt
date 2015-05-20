@@ -8,6 +8,9 @@ Luego hay que añadir una regla en el archivo %directorio_postgresql%/data/pg_hb
 	host 	all 			all 			192.168.0.0/24 			md5
 Para que se pueda acceder a la base de datos desde el exterior. Es necesario reiniciar Pc para reinicar servidor.
 
+En Linux es: 
+	Para cambiar el archivo de configuración: >gedit  /opt/PostgreSQL/9.4/data/pg_hba.conf
+	Para reiniciar el servicio: >/etc/init.d/postgresql-9.4 restart (o primero stop y luego start)
 
 
 Mensaje error 1: Error por no abrir puertos firewall
@@ -34,7 +37,16 @@ Mensaje error 2: Error de conexió remota
 	You can use the pg_hba.conf editor that is built into pgAdmin III to edit the pg_hba.conf configuration file. After changing pg_hba.conf, you need to trigger a server configuration reload using pg_ctl or by stopping and restarting the server process.
 
 	
-	
+Referencias (encender servicio): http://hsphere.parallels.com/docs/3.1/sysadmin/html/pgsql_restart.html
+To start PostgreSQL server, run:
+# /etc/rc.d/init.d/postgresql start
+To stop PostgreSQL, run:
+# /etc/rc.d/init.d/postgresql stop
+To restart PostgreSQL, run:
+# /etc/rc.d/init.d/postgresql restart
+
+
+
 *********************************************************************************************************************************************************
 ------------------------------
 Creación:	18-05-2015
