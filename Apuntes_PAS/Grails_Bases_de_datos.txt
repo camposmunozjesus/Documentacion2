@@ -115,6 +115,23 @@ caso postgresql-9.0-801.jdbc4.jar. Se evita el error "No se pudo arrancar la apl
 
 
 ******************************************************************************************************************************************************
+-------------------------------------
+CONECTAR A UNA BASE DE DATOS EMBEDDED
+-------------------------------------
+Al crear un proyecto nuevo se crea un archivo DataSource.groovy por defecto. A este archivo únicamente hay que cambiarle l siguiente línea:
+	url = "jdbc:h2:mem:devDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE"
+por esta otra:
+	url = "jdbc:h2:devDb;MVCC=TRUE"
+	
+Para poder entrar a l base de datos hay que escribir en el navegador:
+	http://localhost:8080/nombre_del_proyecto/dbconsole/
+	
+Opciones:
+	 dbCreate = "update" 		-> provoca que los cambios se guarden de manera permanente.
+	 dbCreate = "create-drop"	-> provoca que cuando se cierre la aplicación se pierda la base de datos.
+
+
+******************************************************************************************************************************************************
 -----------------------------
 RECUPERAR DE LA BASE DE DATOS
 -----------------------------
