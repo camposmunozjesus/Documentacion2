@@ -1,0 +1,472 @@
+JAVA - CONFIGURACIÓN Y USO DE HIBERNATE
+=======================================
+El ejemplo se muestra descargando los paquetes necesarios con Maven. Por lo tanto, lo primero es crear un proyecto Maven. Luego, en la base de datos, en
+esta ocasión se elige PostgreSQL, se cre una bas de datos nueva llamada "hibjava".
+
+---------------------------
+DESCARGAR PAQUETES EN MAVEN
+---------------------------
+Abrir el archivo pom.xml con el "Maven POM Editor", y hacer click en la pestaña "Dependencies".
+
+Dependencies -> Add...
+
+En "Enter groupId, artifacteId ..." escribir "persistence-api" y esperar un rato (en la parte inferior derecha se puede ver "Repository search").
+En "Search Results" aparece:
+	javax.persistence persistence-api ---> SI SE PONE ESTA LIBRERÍA PUEDE SER NO SE PODRÁN RECUPERAR LOS DATOS. Al principio dió problemas pero luego funcionó bien. Puede ser necesario primero de todo no incluirla.
+Seleccionar esta opción.
+Luego buscar "cglib" y seleccionar "cglib cglib".
+Luego buscar "hibernate-entity" y seleccionar "org.hibernate hibernate-entitymanager".
+Luego buscar "javassist" y seleccionar "javassist javassist".
+Luego buscar "postgresql" y selecionar "postgresql postgresql"
+
+Mirar que no haya ninguna versión en pruebas (BETA). Mejor que sean FINAL.
+
+Con las versiones que se puede escribir/leer:
+	javassist: 3.12.1.GA
+	cglib: 3.1
+	hibernate-entitymanager: 4.3.10.Final
+	persistence-api: 1.0.2
+
+
+-------------
+CONFIGURACIÓN
+-------------
+Crear una carpeta llamada "META-INF" en "src/main/resources/, y allí dentro meter el archivo "persistence.xml" con el siguiente contenido:
+	<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+		http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
+	   version="1.0">
+
+		<persistence-unit name="data">
+			<properties>
+				<property name="hibernate.archive.autodetection" value="class, hbm"/>
+
+				<property name="hibernate.connection.driver_class" value="org.postgresql.Driver" />
+				<property name="hibernate.connection.url" value="jdbc:postgresql://localhost:5432/hibconn"/>
+				<property name="hibernate.connection.username" value="jesus"/>
+				<property name="hibernate.connection.password" value="jesus" />
+			  
+			
+			<!-- JDBC connection pool (use the built-in) -->
+				<property name="hibernate.connection.pool_size" value="1"/>
+
+			<!-- SQL dialect -->
+				<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
+
+			<!-- Enable Hibernate's automatic session context management -->
+				<property name="hibernate.current_session_context_class" value="thread"/>
+
+			<!-- Disable the second-level cache  -->
+				<property name="hibernate.cache.provider_class" value="org.hibernate.cache.NoCacheProvider"/>
+
+			<!-- Echo all executed SQL to stdout -->
+				<property name="hibernate.show_sql" value="true"/>
+				<property name="hibernate.format_sql" value="false"/>
+				<property name="hibernate.use_sql_comments" value="true"/>
+
+
+			<!-- Drop and re-create the database schema on startup -->
+			<!-- Te cre la base de datos, te crea la estructura y el diseño -->
+			<!-- Si dejamos create-drop en la línea de abajo BORRARÁ la tabla. Si abajo ponemos value="validate", para que valide que la estructura ( esquema) sea correcto -->
+			<!-- value="create" te la crea y la deja creada, none no hace nada - <property name="hibernate.hbm2ddl.auto" value="none"/> -->
+				<property name="hibernate.hbm2ddl.auto" value="create"/>
+
+			</properties>
+		</persistence-unit>
+
+	</persistence>
+
+Este ejemplo es para PostgreSQL.
+
+
+--------------------
+GENERACIÓN DE TABLAS
+--------------------
+Para que nos genere la tabla en la base de datos hay que tener en el src/main/resources/META-INF/persistence.xml:
+	<property name="hibernate.hbm2ddl.auto" value="create"/>
+Si tenemos update dirá que no encuentra la tabla.
+
+
+<EJEMPLO 1>********************************************************************************************************************************************
+-------
+DOMINIO
+-------
+La clase de dominio a persistir en base de datos debe estar anotada con @Entity (import javax.persistence.Entity;).
+Debe tener un constructor vacío.
+
+Para generar el id de la base de datos:
+	@Id
+	@GeneratedValue(strategy=GenerationType.TABLE)
+	private int id;
+Con los siguientes imports:
+	import javax.persistence.GeneratedValue;
+	import javax.persistence.GenerationType;
+	import javax.persistence.Id;
+
+La clase a persistir debe tener un hashCode y un equals que no estén determinados por algo que sea similar a un autogenerado de la base de datos.
+
+Puede ser que la clase tenga que implementar la interface Serializable.
+
+Ejemplo de clase de dominio:
+	package test.hibernate.dominio;
+
+	import javax.persistence.Entity;
+	import javax.persistence.GeneratedValue;
+	import javax.persistence.GenerationType;
+	import javax.persistence.Id;
+
+	@Entity
+	public class PersonaBasica {
+
+		@Id
+		@GeneratedValue(strategy=GenerationType.TABLE)
+		private int id;
+		
+		private int edad;
+		private String nombre;
+		private String dni;
+		
+		public PersonaBasica() {
+			// TODO Auto-generated constructor stub
+		}
+
+		public int getId() {
+			return id;
+		}
+
+		public void setId(int id) {
+			this.id = id;
+		}
+
+		public int getEdad() {
+			return edad;
+		}
+
+		public void setEdad(int edad) {
+			this.edad = edad;
+		}
+
+		public String getNombre() {
+			return nombre;
+		}
+
+		public void setNombre(String nombre) {
+			this.nombre = nombre;
+		}
+
+		public String getDni() {
+			return dni;
+		}
+
+		public void setDni(String dni) {
+			this.dni = dni;
+		}
+
+		@Override
+		public int hashCode() {
+			final int prime = 31;
+			int result = 1;
+			result = prime * result + ((dni == null) ? 0 : dni.hashCode());
+			return result;
+		}
+
+		@Override
+		public boolean equals(Object obj) {
+			if (this == obj)
+				return true;
+			if (obj == null)
+				return false;
+			if (getClass() != obj.getClass())
+				return false;
+			PersonaBasica other = (PersonaBasica) obj;
+			if (dni == null) {
+				if (other.dni != null)
+					return false;
+			} else if (!dni.equals(other.dni))
+				return false;
+			return true;
+		}
+		
+		
+	}
+	
+	
+----
+MAIN
+----
+Utilizar:
+	EntityManagerFactory factory = Persistence.createEntityManagerFactory("data");//Debe coincidir con el name del <persistance-unit ... > del persistance.xml
+	//este data va relacionado con el: <persistence-unit name="data"> del persistance.xml
+
+	EntityManager em = factory.createEntityManager();
+
+	EntityTransaction tx = em.getTransaction();
+	
+Ejemplo de main:
+	import java.math.BigDecimal;
+	import java.util.Date;
+
+	import javax.persistence.EntityManager;
+	import javax.persistence.EntityManagerFactory;
+	import javax.persistence.EntityTransaction;
+	import javax.persistence.Persistence;
+
+	import test.hibernate.dominio.PersonaBasica;
+	
+	public class App {
+		public static void main(String[] args) {
+			EntityManagerFactory factory = Persistence.createEntityManagerFactory("data");
+			//este data va relacionado con el: <persistence-unit name="data"> del persistance.xml
+			
+			EntityManager em = factory.createEntityManager();
+			
+			EntityTransaction tx = em.getTransaction();
+			
+			tx.begin();
+			
+			PersonaBasica p1 = new PersonaBasica();
+			p1.setDni("345666786T");
+			p1.setEdad(83);
+			p1.setNombre("jesus");
+						
+			//Con persist hacemos que se guarde en la base d datos. No podemos hacer persist de objetos que ya existen.
+			//Le decimos que se acuerde de guardar tal cosa en memoria.
+			em.persist(p1);
+			
+			tx.commit();	//Consolidar datos en la Base de Datos.
+			//Commit sincroniza bd con memoria.
+			em.close();
+			
+		}
+	}
+
+
+	
+<EJEMPLO 2>********************************************************************************************************************************************
+-------
+DOMINIO
+-------
+package test.hibernate.dominio;
+
+import java.io.Serializable;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Parameter;
+
+@Entity
+public class PersonaBasica implements Serializable{
+
+//    @GenericGenerator(name = "generator", strategy = "sequence-identity", parameters = @Parameter(name = "sequence", value = "USER_SEQ"))
+//    @Id
+//    @GeneratedValue(generator = "generator")
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//	@SequenceGenerator(
+//		    name="sequence_personality",
+//		    allocationSize=75,
+//		    initialValue=3
+//		)
+	private int id;
+	
+	private int edad;
+	private String nombre;
+	private String dni;
+	
+	public PersonaBasica() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public int getEdad() {
+		return edad;
+	}
+
+	public void setEdad(int edad) {
+		this.edad = edad;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public String getDni() {
+		return dni;
+	}
+
+	public void setDni(String dni) {
+		this.dni = dni;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((dni == null) ? 0 : dni.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		PersonaBasica other = (PersonaBasica) obj;
+		if (dni == null) {
+			if (other.dni != null)
+				return false;
+		} else if (!dni.equals(other.dni))
+			return false;
+		return true;
+	}
+	
+	
+}	
+
+
+----------------------
+MAIN - ESCRITURA EN BD
+----------------------
+package test.hibernate.app;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityTransaction;
+import javax.persistence.Persistence;
+
+import test.hibernate.dominio.PersonaBasica;
+
+public class GenerateData {
+	public static void main(String[] args) {
+		EntityManagerFactory factory = Persistence.createEntityManagerFactory("data");
+		//este data va relacionado con el: <persistence-unit name="data"> del persistance.xml
+		
+		EntityManager em = factory.createEntityManager();
+		
+		EntityTransaction tx = em.getTransaction();
+		
+		tx.begin();
+		
+		PersonaBasica p1 = new PersonaBasica();
+		p1.setDni("345666786T");
+		p1.setEdad(83);
+		p1.setNombre("Jesus");
+		
+		PersonaBasica p2 = new PersonaBasica();
+		p2.setDni("345662286T");
+		p2.setEdad(22);
+		p2.setNombre("carlos gomez");
+		
+		PersonaBasica p3 = new PersonaBasica();
+		p3.setDni("345663386T");
+		p3.setEdad(33);
+		p3.setNombre("jesús");
+		
+		PersonaBasica p4 = new PersonaBasica();
+		p4.setDni("345234254Y");
+		p4.setEdad(33);
+		p4.setNombre("laura garcía");
+		
+					
+		//Con persist hacemos que se guarde en la base d datos. No podemos hacer persist de objetos que ya existen.
+		//Le decimos que se acuerde de guardar tal cosa en memoria.
+		em.persist(p1);
+		em.persist(p2);
+		em.persist(p3);
+		em.persist(p4);
+		
+		tx.commit();	//Consolidar datos en la Base de Datos.
+		//Commit sincroniza bd con memoria.
+		em.close();
+		
+	}
+}
+
+
+-----------------
+MAIN - LECTURA BD
+-----------------
+package test.hibernate.app;
+
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+import test.hibernate.dominio.PersonaBasica;
+import test.hibernate.dominio.Vuelo;
+
+
+public class RecoverData {
+	public static void main(String[] args) {
+		EntityManagerFactory factory = Persistence.createEntityManagerFactory("data");
+		//El EntityManager es un recurso, equivale a una conexión a BD.
+		
+		//Ahora, aunque la tabla se llame vuelos, aviones o como sea, lo que busca son objetos que cumplan con estas características.
+		
+		String jpql = "select p "
+				+"from PersonaBasica as p "
+				+"where p.nombre = :n"; //:origen es como los interrogante de JDBC.
+//				+"	and v.partida <= :dia"	//Uso de fechas
+//				+"	and v.llegada > :diaPosterior";
+		
+		EntityManager em = null;
+		try{
+			em = factory.createEntityManager();
+//			List<PersonaBasica> personas = em.createQuery(jpql).getResultList(); //Para conseguir todos.
+			List<PersonaBasica> personas = em.createQuery(jpql)
+					.setParameter("n", "jesús")
+					.getResultList();
+			
+			Set<PersonaBasica> personasSet = new HashSet<PersonaBasica>();
+			personasSet.addAll(personas);
+			
+			System.out.println("-----------------------------------------------");
+			for (PersonaBasica pers : personasSet) {
+				System.out.print(pers.getNombre().toString());
+				System.out.print("	"+pers.getEdad());
+				System.out.println("	"+pers.getDni());
+				System.out.println("********************************************");
+			}
+			
+			System.out.println("-----------------------------------------------");
+			
+		}finally{
+			//Nos asegura que si la parte del try va bien se cierra, y si no también.
+			if(em != null){
+				em.close();
+			}
+		}
+	}
+}
+
+
+*********************************************************************************************************************************************************
+------------------------------
+Creación:	12-04-2015
+
+Jesús Campos Muñoz
+jesus.campos@upc.edu
+------------------------------

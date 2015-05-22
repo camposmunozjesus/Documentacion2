@@ -2,6 +2,12 @@ HIBERNATE - MANUAL
 ==================
 Ref: http://www.javatutoriales.com/2009/05/hibernate-parte-2-persistiendo-objetos.html
 
+Para que nos genere la tabla en la base de datos hay que tener en el src/main/resources/META-INF/persistence.xml:
+	<property name="hibernate.hbm2ddl.auto" value="create"/>
+Si tenemos update dirá que no encuentra la tabla.
+
+
+
 <ANOTACIONES>********************************************************************************************************************************************
 -------
 @ENTITY
