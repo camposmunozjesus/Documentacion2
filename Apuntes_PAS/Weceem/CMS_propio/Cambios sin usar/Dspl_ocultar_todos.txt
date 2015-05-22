@@ -1,0 +1,174 @@
+JQUERY/JS - CUANDO SE HACE CLICK EN UN DESPLEGABLE OCULTAR EL RESTO
+===================================================================
+---------
+VERSIÓN 1
+---------
+Funciona bien.
+La idea para no recorrer elementos, es cambiar la clase del elemento activo, ocultar el resto y volver a recuperar el estado del elemento sobre el
+que se ha hecho click.
+
+  $('.selectedTitol').click(function(event) {
+       
+    var id = $(this).attr("id");
+
+    //Mostrar elemento: hace un toggle con slideUp y slideDown.
+    if ($("#dsplContent_"+id).is(':visible')){
+      $("#dsplContent_"+id).slideUp("fast");
+      document.getElementById(id).className = "dsplTitol";      
+      document.getElementById("title_"+id).className = "plus";
+    }
+    else{
+      $("#dsplContent_"+id).slideDown("fast");
+      document.getElementById(id).className = "selectedTitol";      
+      document.getElementById("title_"+id).className = "minus";
+    } 
+    
+   //Oculta el resto de elementos
+    //dsplContent inicial
+    document.getElementById("dsplContent_"+id).className = "";    
+    $(".dsplContent").slideUp("fast");
+    document.getElementById("dsplContent_"+id).className = "dsplContent";
+    
+    //Cambio de la caja de título
+    var claseTitle = document.getElementById(id).className;
+    document.getElementById(id).className = "";
+    $('.selectedTitol').addClass('dsplTitol');
+    $('.selectedTitol').removeClass('selectedTitol');
+    document.getElementById(id).className = claseTitle;
+    
+    //Cambio del icono +/-
+    var clase = document.getElementById("title_"+id).className;
+    document.getElementById("title_"+id).className = "";  
+    $('.minus').addClass('plus');
+    $('.minus').removeClass('minus');
+    document.getElementById("title_"+id).className = clase;
+    
+  });
+  
+---------
+VERSIÓN 2
+---------
+Igual que la anterior pero pone en una función lo de ocultar todos los elementos.
+No funciona bien del todo porque al ocultar de inicio los elementos luego el JQuery no los reconoce en el click .dsplTitol.
+
+	function ocultaDesplegables(id){
+		//Oculta el resto de elementos que no son el id indicado
+	    //dsplContent inicial
+	    document.getElementById("dsplContent_"+id).className = "";    
+	    $(".dsplContent").slideUp("fast");
+	    document.getElementById("dsplContent_"+id).className = "dsplContent";
+	    
+	    //Cambio de la caja de título
+	    var claseTitle = document.getElementById(id).className;
+	    document.getElementById(id).className = "";
+	    $('.selectedTitol').addClass('dsplTitol');
+	    $('.selectedTitol').removeClass('selectedTitol');
+	    document.getElementById(id).className = claseTitle;
+	    
+	    //Cambio del icono +/-
+	    var clase = document.getElementById("title_"+id).className;
+	    document.getElementById("title_"+id).className = "";  
+	    $('.minus').addClass('plus');
+	    $('.minus').removeClass('minus');
+	    document.getElementById("title_"+id).className = clase;
+	}
+	
+	ocultaDesplegables("box_1");
+	
+  $('.dsplTitol').click(function(event) {
+       
+    var id = $(this).attr("id");
+
+    //Mostrar elemento: hace un toggle con slideUp y slideDown.
+    if ($("#dsplContent_"+id).is(':visible')){
+      $("#dsplContent_"+id).slideUp("fast");
+      document.getElementById(id).className = "dsplTitol";      
+      document.getElementById("title_"+id).className = "plus";
+    }
+    else{
+      $("#dsplContent_"+id).slideDown("fast");
+      document.getElementById(id).className = "selectedTitol";      
+      document.getElementById("title_"+id).className = "minus";
+    } 
+    
+    ocultaDesplegables(id);
+    
+  });
+  
+---------
+VERSIÓN 3
+---------
+Esta funciona bien:
+	$(document).ready(function(){
+	  
+		function ocultaDesplegables(id){
+			//Oculta el resto de elementos que no son el id indicado
+			//dsplContent inicial
+			document.getElementById("dsplContent_"+id).className = "";    
+			$(".dsplContent").slideUp("fast");
+			document.getElementById("dsplContent_"+id).className = "dsplContent";
+			
+			//Cambio de la caja de título
+			var claseTitle = document.getElementById(id).className;
+			document.getElementById(id).className = "";
+			$('.selectedTitol').addClass('dsplTitol');
+			$('.selectedTitol').removeClass('selectedTitol');
+			document.getElementById(id).className = claseTitle;
+			
+			//Cambio del icono +/-
+			var clase = document.getElementById("title_"+id).className;
+			document.getElementById("title_"+id).className = "";  
+			$('.minus').addClass('plus');
+			$('.minus').removeClass('minus');
+			document.getElementById("title_"+id).className = clase;
+		}
+		
+		ocultaDesplegables("box_1");
+		
+	  $('.dsplTitol').click(function(event) {
+		   
+		var id = $(this).attr("id");
+
+		//Mostrar elemento: hace un toggle con slideUp y slideDown.
+		if ($("#dsplContent_"+id).is(':visible')){
+		  $("#dsplContent_"+id).slideUp("fast");
+		  document.getElementById(id).className = "dsplTitol";      
+		  document.getElementById("title_"+id).className = "plus";
+		}
+		else{
+		  $("#dsplContent_"+id).slideDown("fast");
+		  document.getElementById(id).className = "selectedTitol";      
+		  document.getElementById("title_"+id).className = "minus";
+		} 
+		
+		ocultaDesplegables(id);
+		
+	  });  
+
+	});
+
+Con los siguientes elementos desplegables:
+  <!-- ************ INICI DESPLEGABLE - NAVEGACIO MULTIPLATAFORMA ************ -->
+  <div class="dsplTitol" id="box_1"><!-- Títol Desplegable 1 -->
+    <div class="plus" id="title_box_1" tipo="title_box"><strong>NAVEGACI&Oacute; MULTIPLATAFORMA</strong>
+    </div>
+  </div>
+  <div class="dsplContent" id="dsplContent_box_1"><!-- Contingut Desplegable 1 -->
+    <div class="row no-scroll-bar columnas-dobles"><!-- 1F 1C -->
+      <div class="col-vxs-6 col-sm-6 col-md-6 col-lg-6">
+        <div><img alt="" height="240" src="/gcrrhh/../rrhh/files/PAS/Novetats/Novetats_1.png" width="495" />
+        </div>
+      </div>
+      <!-- Cierre primera columna: div anterior --><!-- 1F 2C -->
+      <div class="col-vxs-6 col-sm-6 col-md-6 col-lg-6">
+        <ul>
+          <li>Hem adaptat el disseny del portal per a que els continguts puguin ser consultat des de <strong>qualsevol dispositiu</strong> prenent el disseny web adaptatiu.</li>
+        </ul>
+      </div>
+      <!-- Cierre segunda columna: div anterior -->
+    </div>
+  </div>
+  <!-- ************ FINAL DESPLEGABLE - NAVEGACIO MULTIPLATAFORMA  ************ -->
+
+Se cambian los "selectedTitol" por "dsplTitol" y los "minus" por los "plus". En este caso el elemento que se desea mantener abierto se le debe poner
+el "minus".
