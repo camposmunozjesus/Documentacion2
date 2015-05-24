@@ -46,6 +46,20 @@ To restart PostgreSQL, run:
 # /etc/rc.d/init.d/postgresql restart
 
 
+--------------------------
+INSTALACIÓN DESDE TERMINAL
+--------------------------
+Ref: http://wildraspy.blogspot.com.es/2014/01/the-pi-as-postgresql-database-server.html
+Para cambiar el password al instalar desde terminal:
+	Cambiar
+		local   all   postgres   peer
+	por
+		local   all   postgres   trust
+	Después ejecutar:
+		$ sudo -u postgres psql postgres
+		[sudo] password for user: psql (9.3.2)Type "help" for help.
+		postgres=# \password postgres Enter new password: Enter it again: postgres=# \q
+		
 
 *********************************************************************************************************************************************************
 ------------------------------
