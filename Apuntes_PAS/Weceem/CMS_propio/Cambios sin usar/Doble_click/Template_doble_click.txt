@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"><!--<![endif]-->
+<html>
+
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    
+    <link rel="stylesheet" href="/${grails.util.Metadata.current.'app.name'}/css/bootstrap.css" type="text/css" />
+    <script type="text/javascript" src="/${grails.util.Metadata.current.'app.name'}/js/jquery/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="/${grails.util.Metadata.current.'app.name'}/js/bootstrap.min.js"></script>
+    
+    <link rel="shortcut icon" href="/${grails.util.Metadata.current.'app.name'}/images/favicon.ico" type="image/x-icon" />
+    
+    <link rel="stylesheet" href="/${grails.util.Metadata.current.'app.name'}/css/main.css" type="text/css" />
+    <link rel="stylesheet" href="/${grails.util.Metadata.current.'app.name'}/css/bootstrapUPC.css" type="text/css" />
+    <link rel="stylesheet" href="/${grails.util.Metadata.current.'app.name'}/css/estilsUPC.css" type="text/css" />
+    <link rel="stylesheet" href="/${grails.util.Metadata.current.'app.name'}/css/sticky-footer.css" type="text/css" />
+    <link rel="stylesheet" href="/${grails.util.Metadata.current.'app.name'}/css/tmp.css" type="text/css" />
+    <link rel="stylesheet" href="/${grails.util.Metadata.current.'app.name'}/css/menus.css" type="text/css" />
+    
+    <link rel="stylesheet" href="/${grails.util.Metadata.current.'app.name'}/css/desplegables-fitxa.css" type="text/css" /> 
+   
+    
+    <script type="text/javascript" src="/${grails.util.Metadata.current.'app.name'}/js/light-menu-1.js"></script>
+        <style>
+      .novetats ul {
+        list-style-type: none;
+        padding-left: 25px;
+      }
+
+      .novetats ul li {
+        background-image: url('/rrhh/files/tecnic/fletxa_groga.png');
+        background-repeat: no-repeat;
+        background-position: 0px 2px;
+        padding-left: 25px; 
+        padding-bottom: 5px;
+      }
+
+      .novetats ul ul {
+        padding-top: 10px;	
+      }
+
+      .novetats  ul  ul li{
+        background-image: none;
+        list-style-type: disc;
+        margin-left: -8px;
+        padding-left: 10px;
+        padding-bottom: 5px;
+      }
+
+      .novetats #dsplContent_box_101{
+        /* background-color: red; */
+      }
+
+      .novetats .columnas-dobles img{
+        max-width: 100%;
+        height: auto;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.15); 
+        /* Las dos líneas siguientes sirven para centrar la imagen */
+        margin:auto;
+        display:block;
+      }
+
+      .h-fila-125 tr{
+        height: 125px;
+      }
+
+      .h-fila-130 tr{
+        height: 130px;
+      }
+
+      .h-fila-135 tr{
+      	height: 135px;
+      }
+      .h-fila-135 tr:last-child{
+      	height: 0px;
+      }      
+      .h-fila-140 tr{
+      	height: 140px;
+      }
+      .h-fila-145 tr{
+      	height: 145px;
+      }
+      .h-fila-150 tr{
+      	height: 150px;
+      }
+      .h-fila-175 tr{
+      	height: 175px;
+      }
+      .h-fila-200 tr{
+      	height: 200px;
+      }
+      .h-fila-225 tr{
+      	height: 225px;
+      }
+      .h-fila-250 tr{
+      	height: 250px;
+      }
+
+      .novetats table td{
+      	vertical-align: top;
+      width: 50%;
+      }
+
+      .row-margin-bottom-col2{
+      	margin-bottom: 20px;     
+      }
+    </style>
+  </head>
+  
+  <body>
+    <div class="container">
+      <div class="container-UPC tmpl-no-menu">
+        <!-- ************ INI top-nav ************ -->
+        <div id="spinner" class="spinner" style="display: none;">
+          <img alt="Carregant..." src="/rrhh/files/tecnic/spinner.gif" />
+        </div>
+        
+        <div class="row no-scroll-bar">
+          <div class="col-xs-12 col-vxs-12 col-sm-6 col-md-7 col-lg-8 row-margin-bottom-header">
+            <h1 class="pull-left logo-portal">
+              <img usemap = "#upc_link" class="img-responsive" alt="Universitat Politècnica de Catalunya" src="/rrhh/files/tecnic/logo_upc_portal_pdi_2.png" style="border:0;"/>
+              <map name="upc_link">
+                <area shape=Rect Coords=0,0,50,60 href="http://www.upc.edu" target="_blank" />
+              </map>
+            </h1>  
+          </div>
+          <div class="col-xs-12 col-vxs-12 col-sm-6 col-md-5 col-lg-4 row-margin-bottom-header">
+            <div class="navbar navbar-default navbar-Info" role="navigation">
+              <div class="navbar-container-UPC">
+                <div class="navbar-header">
+                  <div class="columna-centrada-header">
+                    
+                    
+                    <button class="navbar-toggle collapsed navbar-toggle-header btn-header" data-target="#navbar-collapse-search" data-toggle="collapse" type="button">
+                      <span class="sr-only">Cercar</span>
+                      <span class="glyphicon glyphicon-search"></span>
+                    </button>
+                    <button class="navbar-toggle collapsed navbar-toggle-header btn-header" data-target="#navbar-collapse-info" data-toggle="collapse" type="button">
+                      <span class="sr-only">Contacte i directori</span>
+                      <span class="glyphicon glyphicon-info-sign"></span>
+                    </button>
+                    <button class="navbar-toggle collapsed navbar-toggle-header btn-header" data-target="#navbar-collapse-portal" data-toggle="collapse" type="button">
+                      <span class="sr-only">Altres portals</span>
+                      <span class="glyphicon glyphicon-new-window"></span>
+                    </button>      
+                    
+                    
+                  </div>      
+                </div>
+                <div class="columna-centrada">
+                  <div id="navbar-collapse-search" class="navbar-collapse collapse">        
+                    <ul class="nav navbar-nav navbar-right search-position">          
+                      <li>
+                        <div class="clearfix pull-right buscador">
+                          <!-- Buscador -->    
+                          <!--buscadorUPC-->                                                                   
+                        </div>
+                      </li>
+                    </ul>        
+                  </div>
+                </div>
+                
+                <div id="navbar-collapse-info" class="navbar-collapse collapse navbar-info format-lletra-upc">        
+                  <ul class="nav navbar-nav navbar-right info-position">          
+                    <li>
+                      <span class="contacte">
+                        <a href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/contacte" target="_blank" onclick="window.open(this.href,this.target,'width=750,height=950,resizable=yes,scrollbars=yes');return false" alt="Contacte" title="Contacte">Contacte</a>
+                      </span>
+                    </li>
+                    <li>
+                      <span class="enllacSuggeriment">
+                        <a href="/${grails.util.Metadata.current.'app.name'}/suggeriments" target="_blank" onclick="window.open(this.href,this.target,'width=750,height=550,resizable=yes,scrollbars=yes');return false" alt="Suggeriments" title="Suggeriments">Suggeriments</a>
+                      </span>
+                    </li>
+                    <li>
+                      <span class="enllacPortal">
+                        <a href="http://directori.upc.edu/directori/" target="_blank" onclick="window.open(this.href,this.target,'width=750,height=550,resizable=yes');return false" alt="Directori UPC" title="Directori UPC">Directori UPC</a>
+                      </span>
+                    </li>
+                  </ul>    
+                </div>        
+                <!-- /.nav-collapse -->
+              </div>
+              <!-- /.container-fluid -->
+            </div>
+          </div>
+        </div>
+        
+        <div class="row no-scroll-bar">
+          <div class="col-vxs-12 col-sm-7 col-md-7 col-lg-8">
+            <div id="navbar-collapse-portal" class="navbar-collapse collapse navbar-portal format-lletra-upc">        
+              <ul class="nav navbar-nav">
+                <li>
+                  <span class="enllacPortalFirst portal-UPC">
+                    <a href="/${grails.util.Metadata.current.'app.name'}/PAS/" alt="Portal PAS" title="Portal PAS">Portal PAS</a>
+                  </span>
+                  
+                </li>
+                <li>
+                  <span class="enllacPortal">  
+                    <a href="/${grails.util.Metadata.current.'app.name'}/GES/" alt="Portal gestor/a" title="Portal gestor/a">Portal gestor/a</a>
+                  </span>
+                </li>  
+                <li>
+                  <span class="enllacPortal enllacPortalLast">
+                    <a href="/${grails.util.Metadata.current.'app.name'}/BEC/" alt="Portal beques grau/màster" title="Portal beques grau/màster">Portal beques grau/màster</a>
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>  
+        </div>
+        
+        <!-- STATUS BAR ESTÁTICA -->
+        <div class="navbar navbar-default navbar-UPC" role="navigation">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <button class="navbar-toggle collapsed navbar-toggle-home" data-target="#navbar-collapse-menu" data-toggle="collapse" type="button">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand home" href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index" alt="Inici" title="Inici">Inici</a>
+            </div>
+            <div id="navbar-collapse-menu" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li>                    
+                  <a class="Informacio_General" href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General" alt="Informació general" title="Informació general">Informació general</a>
+                </li>
+                <li>                    
+                  <a class="Raco_Personal" href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Raco_Personal" alt="Racó personal" title="Racó personal">Racó personal</a>
+                </li>
+              </ul>   
+              <!-- Part dreta: usuari, desconnexió -->
+              <ul class="nav navbar-nav navbar-right format-lletra-upc">
+                <li class="active">
+					<!--userName-->
+                </li>
+                <li>
+                  <span class="logout-UPC"> <a href="/${grails.util.Metadata.current.'app.name'}/logout/index" alt="Desconnecta" title="Desconnecta">Desconnecta</a></span>
+                </li>
+              </ul>
+            </div>
+            <!-- /.nav-collapse -->
+          </div>
+          <!-- /.container-fluid -->
+        </div>
+        <!-- ************ FIN top-nav ************ -->
+        <!-- ************ INI breadCrumb-slider-bar ************ -->      
+        <div class="breadCrumb">
+          <!-- Migas de pan -->
+          <div> <b>Sou a <span class="breadCrumbSeparator firstSeparator">&raquo;</span> </b><span class="breadCrumbLastItem">Inici</span>  </div>
+          
+          <!-- ************ INI slider  ************ -->     
+          <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+              <li class="" data-target="#myCarousel" data-slide-to="1"></li>
+              <li class="" data-target="#myCarousel" data-slide-to="2"></li>
+              <li class="" data-target="#myCarousel" data-slide-to="3"></li>
+            </ol>
+            <div class="carousel-inner" role="listbox">
+              <!-- Primera imagen -->
+              <div class="item active">
+                <img class="c" src="/rrhh/files/tecnic/slider5_text_v2.jpg" alt="First slide" />
+                <div id="slide1" class="container">
+                  <div class="carousel-caption">
+                    <!--<h1>El Servei de Personal t'atén</h1>
+                    <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>  
+                    <p><a class="btn btn-lg btn-primary" href="http://www.upc.edu/" target="_blank" role="button">Ens vols conèixer?</a></p>
+                    -->
+                  </div>
+                </div>
+              </div>
+              <!-- Segunda imagen -->
+              <div class="item">
+                <img src="/rrhh/files/tecnic/slider_A.jpg" alt="Second slide" />
+                <div id="slide2" class="container">
+                  <div class="carousel-caption">
+                    <!-- <h1>El Servei de Personal t'atén</h1> -->
+                    <!-- <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p> -->
+                    <!-- <p><a class="btn btn-lg btn-primary" href="http://www.upc.edu/webs-upc" target="_blank" role="button">Ajuda'ns a millorar ...</a></p>
+                    -->
+                  </div>
+                </div>
+              </div>
+              <!-- Tercera imagen -->
+              <div class="item">
+                <img src="/rrhh/files/tecnic/slider3.jpg" alt="Third slide" />
+                <div class="container">
+                  <div class="carousel-caption">
+                    <!-- <h1>Nou Portal de Personal</h1>
+                    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                    <p><a class="btn btn-lg btn-primary" href="http://www.ctt.upc.edu/" role="button">Vols saber més?</a></p>
+                    -->
+                  </div>
+                </div>
+              </div>
+              <!-- Cuarta imagen -->
+              <div class="item">
+                <img src="/rrhh/files/tecnic/slider_B.jpg" alt="Fourth slide" />
+                <div id="slide4" class="container">
+                  <div class="carousel-caption">
+                    <!-- <h1>Nou Portal de Personal</h1>  -->
+                    <!-- <p><a class="btn btn-lg btn-primary" href="http://www.ctt.upc.edu/" role="button">Vols saber més?</a></p>
+                    -->
+                  </div>
+                </div>
+              </div>
+			  <!-- FIN imagen -->
+            </div>
+            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-left"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-right"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+          <!-- ************ FIN slider  ************ -->
+          
+          <!-- Título página -->
+          <h1 class="firstHeading"><span></span>
+            <!--titolContent-->
+          </h1>
+        </div>
+        <!-- ************ FIN breadCrumb-slider-bar ************ -->      
+      </div>
+      
+      <!-- Rejilla con el contenido principal -->
+      <div class="fit-column2left fit-column-inici weceem-tmpl">
+        <div class="row">
+          <div class="col-vxs-6 col-vxs-push-3 col-sm-6 col-sm-push-3 col-md-6 col-md-push-3 col-lg-6 col-lg-push-3 row-margin-top10">
+            <div class="fit-content">
+              <!--pageContent-->
+            </div>
+          </div>
+          <div class="col-vxs-3 col-vxs-pull-6 col-sm-3 col-sm-pull-6 col-md-3 col-md-pull-6 col-lg-3 col-lg-pull-6">
+            <!-- ************ INI menu-inici-esq ************ -->
+            <div class="quadreMenuEsq">   
+              <div id="Menu0" name="Menu0" class="dijitTitlePane">
+                <div id="Menu_click" name="Menu0" class="dijitTitlePaneTitleCap" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index" >
+                  <span class="dijitTitlePaneTextNode">A un click</span>
+                </div>
+                <div id="Menu" name="Menu1" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index'" >
+                  <span class="dijitTitlePaneTextNode"><a href="https://tempus.upc.edu/" target="_blank" alt="Tempus Control de presència" title="Tempus Control de presència">Tempus</a></span>
+                </div>
+                <div id="Menu" name="Menu2" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index'" >
+                  <span class="dijitTitlePaneTextNode"><a href="/RP${space?.name}/rebutNomina/list" alt="Rebut de nòmina" title="Rebut de nòmina">Rebut de nòmina</a></span>
+                </div>
+                <div id="Menu" name="Menu3" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index'" >
+                  <span class="dijitTitlePaneTextNode"><a href="https://gn6.upc.edu/pucpersonal/" target="_blank" alt="PUC Personal" title="PUC Personal">PUC-Personal</a></span>
+                </div> 
+                <div id="Menu" name="Menu4" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index'" >
+                  <span class="dijitTitlePaneTextNode"><a href="/RP${space?.name}/adrecaParticular/list" alt="Modificació adreça particular" title="Modificació adreça particular">Modificació adreça particular</a></span>
+                </div>
+                <div id="Menu" name="Menu5" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index'" >
+                  <span class="dijitTitlePaneTextNode"><a href="/RP${space?.name}/comunicacions/list" alt="Modificació telèfons i adreces electròniques" title="Modificació telèfons i adreces electròniques">Modificació telèfons i adreces electròniques</a></span>
+                </div>
+                <div id="Menu" name="Menu6" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index'" >
+                  <span class="dijitTitlePaneTextNode"><a href="/RP${space?.name}/dadesBancaries/list" alt="Modificació domiciliació bancària" title="Modificació domiciliació bancària">Modificació domiciliació bancària</a></span>
+                </div>
+                <div id="Menu" name="Menu7" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index'" >
+                  <span class="dijitTitlePaneTextNode"><a href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/Calendari-laboral-jornada" alt="Calendari laboral" title="Calendari laboral">Calendari laboral</a></span>
+                </div>
+                <div id="Menu" name="Menu8" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index'" >
+                  <span class="dijitTitlePaneTextNode"><a href="https://millot.upc.edu/COM" target="_blank" alt="Baixes mèdiques seguretat social" title="Baixes mèdiques seguretat social">Baixes mèdiques seg. social</a></span>
+                </div>
+                <div id="Menu" name="Menu9" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index'" >
+                  <span class="dijitTitlePaneTextNode"><a href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/Sistema-retributiu" alt="Taules retributives" title="Taules retributives">Taules retributives</a></span>
+                </div>                
+              </div>
+            </div>   
+            
+            <div id="lastQuadreMenuEsq" class="quadreMenuEsq">   
+              <div id="Menu0" name="Menu0" class="dijitTitlePane">
+                <div id="Menu_info_gen" name="Menu0" class="dijitTitlePaneTitleCap" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index" >
+                  <span class="dijitTitlePaneTextNode">Informació general</span>
+                </div>
+                <div id="Menu1" name="Menu1" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/El-PDI-a-la-UPC'" >
+                  <span class="dijitTitlePaneTextNode"><a href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/El-PDI-a-la-UPC" alt="El PDI a la UPC" title="El PDI a la UPC">El PDI a la UPC</a></span>
+                </div>
+                <div id="Menu2" name="Menu2" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/Dedicacio_avaluacio'" >
+                  <span class="dijitTitlePaneTextNode"><a href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/Dedicacio_avaluacio" alt="Dedicació, avaluació i carrera acadèmica" title="Dedicació, avaluació i carrera acadèmica">Dedicació, avaluació i carrera acadèmica</a></span>
+                </div>
+                <div id="Menu3" name="Menu2" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Permisos'" >
+                  <span class="dijitTitlePaneTextNode"><a href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/Permisos" alt="Permisos i llicències - personals" title="Permisos i llicències - personals">Permisos i llicències - personals</a></span>
+                </div>
+                <div id="Menu4" name="Menu2" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Permisos_act'" >
+                  <span class="dijitTitlePaneTextNode"><a href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/Permisos_act" alt="Permisos i llicències - activitat acadèmica" title="Permisos i llicències - activitat acadèmica">Permisos i llicències - activitat acadèmica</a></span>
+                </div>
+                <div id="Menu5" name="Menu2" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Relacions-laborals'" >
+                  <span class="dijitTitlePaneTextNode"><a href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/Relacions-laborals" alt="Relacions laborals" title="Relacions laborals">Relacions laborals</a></span>
+                </div>
+                <div id="Menu6" name="Menu2" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Sistema-retributiu'" >
+                  <span class="dijitTitlePaneTextNode"><a href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/Sistema-retributiu" alt="Sistema retributiu" title="Sistema retributiu">Sistema retributiu</a></span>
+                </div>
+                <div id="Menu7" name="Menu3" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index" >
+                  <span class="dijitTitlePaneTextNode"><a href="http://www.upc.edu/ice/" alt="Formació" title="Formació" target="_blank">Formació</a></span>
+                </div>
+                <div id="Menu8" name="Menu3" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Seguretat-social-MUFACE'" >
+                  <span class="dijitTitlePaneTextNode"><a href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/Seguretat-social-MUFACE" alt="Seguretat social" title="Seguretat social">Seguretat social</a></span>
+                </div>
+              </div>
+            </div>
+            
+
+            
+            <br/>
+            <!-- ************ FIN menu-inici-esq ************ -->
+          </div>
+          <div class="col-vxs-3 col-vxs-pull-0 col-sm-3 col-sm-pull-0 col-md-3 col-md-pull-0 col-lg-3 col-lg-pull-0 row-margin-bottom40">
+            <!-- ************ INI menu-inici-dret ************ -->
+         	<div class="quadreMenuDret">   
+              <div id="Menu0" name="Menu0" class="dijitTitlePane">
+                <div id="Menu_informat" name="Menu0" class="dijitTitlePaneTitleCap" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index" >
+                  <span class="dijitTitlePaneTextNode">Subscripció</span>
+                </div>
+                <div id="Menu" name="Menu1" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index'" >
+                  <span class="dijitTitlePaneTextNode"><a href="https://gauss.upc.edu/gauss/portalllistes/grupDadesSimplePublicServlet?id_grup=84617&origen=llistesPubliques" target="_blank" alt="Subscripció a novetats ${space?.name}" title="Subscripció a novetats ${space?.name}">Subscripció a novetats ${space?.name}</a></span>
+                </div>
+                <div id="Menu" name="Menu2" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index'" >
+                  <span class="dijitTitlePaneTextNode"><a href="https://gauss.upc.edu/gauss/portalllistes/grupDadesSimpleMembre.jsp?id_grup=84617&origen=llistesMembre" target="_blank" alt="Baixa subscripció a novetats" title="Baixa subscripció a novetats">Baixa subscripció a novetats</a></span>
+                </div>
+                
+                
+              </div>
+            </div> 
+            <div class="quadreMenuDret">   
+              <div id="Menu1" name="Menu0" class="dijitTitlePane">
+                <div id="Menu_actualitat" name="Menu0" class="dijitTitlePaneTitleCap" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index" >
+                  <span class="dijitTitlePaneTextNode">Per seguir l'actualitat</span>
+                </div>
+                 <div id="Menu" name="Menu10" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index'" >
+                  <span class="dijitTitlePaneTextNode"><a href="/${grails.util.Metadata.current.'app.name'}/actualitzacions?espai=${space?.name}" alt="Darreres actualitzacions d'informació" title="Darreres actualitzacions d'informació">Darreres actualitzacions d'informació</a></span>
+                </div>
+              </div>
+            </div> 
+            
+            <div class="quadreMenuDret">   
+              <div id="Menu0" name="Menu0" class="dijitTitlePane">
+                <div id="Menu_raco_pers" name="Menu0" class="dijitTitlePaneTitleCap" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index" >
+                  <span class="dijitTitlePaneTextNode">Racó personal</span>
+                </div>
+                <div id="Menu" name="Menu1" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index'" >
+                  <span class="dijitTitlePaneTextNode"><a href="/RP${space?.name}/dadesPersonals/list" alt="Dades generals" title="Dades generals">Dades generals</a></span>
+                </div>
+                <div id="Menu" name="Menu2" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index'" >
+                  <span class="dijitTitlePaneTextNode"><a href="/RP${space?.name}/antiguitat/list" alt="Vinculació i altres dades" title="Vinculació i altres dades">Vinculació i altres dades</a></span>
+                </div>
+                <div id="Menu" name="Menu2" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index'" >
+                  <span class="dijitTitlePaneTextNode"><a href="/RP${space?.name}/rebutNomina/list" alt="Dades econòmiques" title="Dades econòmiques">Dades econòmiques</a></span>
+                </div>
+                <div id="Menu" name="Menu2" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index'" >
+                  <span class="dijitTitlePaneTextNode"><a href="/RP${space?.name}/dadesLloc/list" alt="Lloc de treball" title="Lloc de treball">Lloc de treball</a></span>
+                </div>               
+              </div>
+            </div>
+              
+            <div class="quadreBannersDret">
+              <a href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/contacte" target="_blank" title="Contacta amb nosaltres" onclick="window.open(this.href,this.target,'width=750,height=950,resizable=yes,scrollbars=yes');return false">              
+                <img class="img-responsive" src="/rrhh/files/tecnic/banner_contacta.png" alt="Contacta amb nosaltres" title="Contacta amb nosaltres" />
+              </a>
+              <a href="https://gn6.upc.edu/pucpersonal" target="_blank" title="PUC Personal">            
+                <img class="img-responsive"  src="/rrhh/files/tecnic/banner_puc.png" alt="PUC Personal" title="PUC Personal" />
+              </a>
+              <a href="https://tempus.upc.edu" title="Tempus Control de presència" target="_blank">            
+                <img class="img-responsive" src="/rrhh/files/tecnic/banner_tempus.png" alt="Tempus Control de presència" title="Tempus Control de presència" />
+              </a>
+              <a href="/RP${space?.name}/rebutNomina" title="Rebut de nòmina">            
+                <img class="img-responsive" src="/rrhh/files/tecnic/banner_nomina.png" alt="Rebut de nòmina" title="Rebut de nòmina" />
+              </a>
+               <a href="http://futur.upc.edu/" target="_blank" title="Futur Portal de producció científica">  
+                <img class="img-responsive" src="/rrhh/files/tecnic/banner_futur.jpg" alt="Futur Portal de producció científica" title="Futur Portal de producció científica" />
+              </a>
+              <a href="http://www.upc.edu/ccd/participa/campanya-07-si" target="_blank" title="Campanya 0,7%">               
+                <img class="img-responsive" src="/rrhh/files/tecnic/campana07_gw4.PNG" alt="Campanya 0,7%" title="Campanya 0,7%" />
+              </a>
+              <a href="http://www.upc.edu/latevaupc/" target="_blank" title="La teva UPC">  
+                <img class="img-responsive" src="/rrhh/files/tecnic/banner_la_teva_upc.png" alt="La teva UPC" title="La teva UPC" />
+              </a>             
+            </div>
+            <!-- ************ FIN menu-inici-dret ************ -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Pie de página -->
+    <!-- ************ INI bottom-nav ************ -->
+    <div class="footer">
+      <div class="container">
+        <div class="fit2container">      
+          <div class="row no-scroll-bar">          
+            <div class="col-xs-12 col-footer-9 col-vxs-9 col-sm-9 col-md-9 col-lg-9" >
+              <p class="footer-text">Àrea de Personal i Organització</p>
+              <p class="footer-text">&copy; <a href="http://www.upc.edu">UPC</a>. Universitat Politècnica de Catalunya <span>●</span> BarcelonaTech</p>           
+            </div>        
+            <div class="col-xs-12 col-footer-3 col-vxs-3 col-sm-3 col-md-3 col-lg-3 row-margin-top-peu">
+              <div class="accessibilitat-container">
+                <a class="footer-text" href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/accessibilitat" target="_blank" onclick="window.open(this.href,this.target,'width=1100,height=950,resizable=yes,scrollbars=yes');return false" alt="Accessibilitat" title="Accessibilitat">Accessibilitat</a>
+                <a class="footer-text" href="#top"><img alt="Amunt" src="/rrhh/files/tecnic/amunt.gif" /></a>                        
+              </div>
+            </div>
+          </div>     
+        </div>    
+      </div>
+    </div>    
+    <!-- ************ FIN bottom-nav ************ -->
+  </body>
+  
+  <script>
+    var DELAY = 350, clicks = 0, timer = null;
+
+    function ocultaDesplegables(id){
+    //Oculta el resto de elementos que no son el id indicado
+    //dsplContent inicial
+    document.getElementById("dsplContent_"+id).className = "";    
+    $(".dsplContent").slideUp("fast");
+    document.getElementById("dsplContent_"+id).className = "dsplContent";
+
+    //Cambio de la caja de título
+    var claseTitle = document.getElementById(id).className;
+    document.getElementById(id).className = "";
+    $('.selectedTitol').addClass('dsplTitol');
+    $('.selectedTitol').removeClass('selectedTitol');
+    document.getElementById(id).className = claseTitle;
+
+    //Cambio del icono +/-
+    var clase = document.getElementById("title_"+id).className;
+    document.getElementById("title_"+id).className = "";  
+    $('.minus').addClass('plus');
+    $('.minus').removeClass('minus');
+    document.getElementById("title_"+id).className = clase;
+    }
+
+    ocultaDesplegables("box_2");
+
+    $(".selectedTitol").on("click", function(e){
+
+    var id = $(this).attr("id");
+
+    clicks++;  //count clicks
+
+    if(clicks === 1) {
+
+    timer = setTimeout(function() {//En el caso de click simple
+
+    //perform single-click action
+
+    //Mostrar elemento: hace un toggle con slideUp y slideDown.
+    if ($("#dsplContent_"+id).is(':visible')){
+    $("#dsplContent_"+id).slideUp("fast");
+    document.getElementById(id).className = "dsplTitol";      
+    document.getElementById("title_"+id).className = "plus";
+    }
+    else{
+    $("#dsplContent_"+id).slideDown("fast");
+    document.getElementById(id).className = "selectedTitol";      
+    document.getElementById("title_"+id).className = "minus";
+    } 
+
+    ocultaDesplegables(id);
+
+    clicks = 0;             //after action performed, reset counter
+
+    }, DELAY);
+
+    } else {//En el caso de doble click
+
+    clearTimeout(timer);    //prevent single-click action
+    //Mostrar elemento: hace un toggle con slideUp y slideDown.
+    if ($("#dsplContent_"+id).is(':visible')){
+    $("#dsplContent_"+id).slideUp("fast");
+    document.getElementById(id).className = "dsplTitol";      
+    document.getElementById("title_"+id).className = "plus";
+    }
+    else{
+    $("#dsplContent_"+id).slideDown("fast");
+    document.getElementById(id).className = "selectedTitol";      
+    document.getElementById("title_"+id).className = "minus";
+    } 
+
+
+    clicks = 0;             //after action performed, reset counter
+    }
+
+    })
+    .on("dblclick", function(e){
+    e.preventDefault();  //cancel system double-click event
+    });
+
+    $(".dsplTitol").on("click", function(e){
+
+    var id = $(this).attr("id");
+
+    clicks++;  //count clicks
+
+    if(clicks === 1) {
+
+    timer = setTimeout(function() {//En el caso de click simple
+
+    //perform single-click action
+
+    //Mostrar elemento: hace un toggle con slideUp y slideDown.
+    if ($("#dsplContent_"+id).is(':visible')){
+    $("#dsplContent_"+id).slideUp("fast");
+    document.getElementById(id).className = "dsplTitol";      
+    document.getElementById("title_"+id).className = "plus";
+    }
+    else{
+    $("#dsplContent_"+id).slideDown("fast");
+    document.getElementById(id).className = "selectedTitol";      
+    document.getElementById("title_"+id).className = "minus";
+    } 
+
+    ocultaDesplegables(id);
+
+    clicks = 0;             //after action performed, reset counter
+
+    }, DELAY);
+
+    } else {//En el caso de doble click
+
+    clearTimeout(timer);    //prevent single-click action
+    //Mostrar elemento: hace un toggle con slideUp y slideDown.
+    if ($("#dsplContent_"+id).is(':visible')){
+    $("#dsplContent_"+id).slideUp("fast");
+    document.getElementById(id).className = "dsplTitol";      
+    document.getElementById("title_"+id).className = "plus";
+    }
+    else{
+    $("#dsplContent_"+id).slideDown("fast");
+    document.getElementById(id).className = "selectedTitol";      
+    document.getElementById("title_"+id).className = "minus";
+    } 
+
+
+    clicks = 0;             //after action performed, reset counter
+    }
+
+    })
+    .on("dblclick", function(e){
+    e.preventDefault();  //cancel system double-click event
+    });
+
+  </script>
+  
+</html>
