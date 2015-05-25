@@ -1,0 +1,492 @@
+<div class="novetats"><!-- 1er DESPLEGABLE --><!-- ************ INICI DESPLEGABLE - INFORMACIO PER ESTAR AL DIA ************ -->
+  <div class="selectedTitol" id="box_2"><!-- Títol Desplegable 1 -->
+    <div class="plus" id="title_box_2"><strong>INFORMACI&Oacute; PER ESTAR AL DIA</strong>
+    </div>
+  </div>
+  <div class="dsplContent" id="dsplContent_box_2"><!-- Contingut Desplegable 1 -->
+    <div class="row no-scroll-bar columnas-dobles"><!-- 1F 1C -->
+      <div class="col-vxs-6 col-sm-6 col-md-6 col-lg-6">
+        <p><img alt="" src="/gcrrhh/../rrhh/files/PDI/Novetats/info_dia_1.png" style="width: 213px; height: 87px;" />
+        </p>
+        <!-- Cierre primera columna-->
+      </div>
+      <!-- 1F 2C -->
+      <div class="col-vxs-6 col-sm-6 col-md-6 col-lg-6">
+        <ul>
+          <li>Nou servei de &ldquo;<strong>Subscripci&oacute; a novetats</strong>&rdquo; amb el que rebr&agrave;s un correu electr&ograve;nic cada vegada que s&rsquo;incorpori informaci&oacute; a l&rsquo;apartat de novetats del PAS o del PDI.</li>
+        </ul>
+        <!-- Cierre segunda columna-->
+      </div>
+    </div>
+    <div class="row no-scroll-bar columnas-dobles"><!-- SEPARADOR -->
+      <div class="col-xs-12 col-vxs-12 col-sm-12 col-md-12 col-lg-12" style="height:20px;">&nbsp;
+      </div>
+    </div>
+    <div class="row no-scroll-bar columnas-dobles"><!-- 2F 1C -->
+      <div class="col-vxs-6 col-sm-6 col-md-6 col-lg-6 row-margin-bottom-col1">
+        <p><img alt="" src="/gcrrhh/../rrhh/files/PDI/Novetats/info_dia_1.png" style="width: 213px; height: 87px;" />
+        </p>
+        <!-- Cierre primera columna-->
+      </div>
+      <!-- 2F 2C -->
+      <div class="col-vxs-6 col-sm-6 col-md-6 col-lg-6">
+        <ul>
+          <li>Acc&eacute;s a les &uacute;ltimes modificacions d&rsquo;informaci&oacute; a trav&eacute;s de l&rsquo;apartat &ldquo;<strong>Per seguir l&rsquo;actualitat</strong>&rdquo;.</li>
+        </ul>
+        <!-- Cierre segunda columna-->
+      </div>
+    </div>
+  </div>
+  <!-- ************ FINAL DESPLEGABLE - INFORMACIO PER ESTAR AL DIA  ************ --><!-- 2on DESPLEGABLE --><!-- ************ INICI DESPLEGABLE - INFORMACIÓ AGRUPADA ************ -->
+  <div class="dsplTitol" id="box_4"><!-- Títol Desplegable 1 -->
+    <div class="plus" id="title_box_4">TOT AL TEU ABAST
+    </div>
+  </div>
+  <div class="dsplContent" id="dsplContent_box_4"><!-- Contingut Desplegable 1 -->
+    <div class="row no-scroll-bar columnas-dobles"><!-- 1F 1C -->
+      <div class="col-vxs-6 col-sm-6 col-md-6 col-lg-6">
+        <ul>
+          <li><strong>A un click.</strong>&nbsp; Hem agrupat en un mateix apartat aquella informaci&oacute; que rep m&eacute;s consultes per tal de facilitar-t&rsquo;hi l&rsquo;acc&eacute;s.</li>
+        </ul>
+        <!-- Cierre primera columna-->
+      </div>
+      <!-- 1F 2C -->
+      <div class="col-vxs-6 col-sm-6 col-md-6 col-lg-6">
+        <div><img alt="" src="/gcrrhh/../rrhh/files/PDI/Novetats/Info_agrup_1b.png" style="width: 212px; height: 318px;" />
+        </div>
+        <!-- Cierre segunda columna-->
+      </div>
+    </div>
+    <div class="row no-scroll-bar columnas-dobles"><!-- SEPARADOR -->
+      <div class="col-xs-12 col-vxs-12 col-sm-12 col-md-12 col-lg-12" style="height:20px;">&nbsp;
+      </div>
+    </div>
+    <div class="row no-scroll-bar columnas-dobles"><!-- 2F 1C -->
+      <div class="col-vxs-6 col-sm-6 col-md-6 col-lg-6 row-margin-bottom-col1">
+        <ul>
+          <li><strong>Tot a simple vista.</strong> Des de la p&agrave;gina principal del portal podr&agrave;s accedir a tots els seus apartats.</li>
+        </ul>
+        <!-- Cierre primera columna-->
+      </div>
+      <!-- 2F 2C -->
+      <div class="col-vxs-6 col-sm-6 col-md-6 col-lg-6">
+        <div><img alt="" height="188" src="/gcrrhh/../rrhh/files/PAS/Novetats/Info_agrup_2.png" width="872" />
+        </div>
+        <!-- Cierre segunda columna-->
+      </div>
+    </div>
+  </div>
+  <!-- ************ FINAL DESPLEGABLE - INFORMACIÓ AGRUPADA  ************ --><!-- 3er DESPLEGABLE --><!-- ************ INICI DESPLEGABLE - ROLS D’ACCÉS I ORGANITZACIÓ  DEL CONTINGUT DE LA INFORMACIÓ ************ -->
+  <div class="dsplTitol" id="box_3"><!-- Títol Desplegable  -->
+    <div class="plus" id="title_box_3">INFORMACI&Oacute; MILLOR ORGANITZADA I M&Eacute;S ACCESSIBLE
+    </div>
+  </div>
+  <div class="dsplContent" id="dsplContent_box_3"><!-- Contingut Desplegable  -->
+    <div class="row no-scroll-bar columnas-dobles"><!-- div row --><!-- 1F 1C -->
+      <div class="col-vxs-6 col-sm-6 col-md-6 col-lg-6 row-margin-bottom-col1">
+        <div><img alt="" src="/gcrrhh/../rrhh/files/PAS/Novetats/ROLS_ORG_1.png" style="width: 380px; height: 47px;" />
+        </div>
+      </div>
+      <!-- Cierre primera columna: div anterior --><!-- 1F 2C -->
+      <div class="col-vxs-6 col-sm-6 col-md-6 col-lg-6">
+        <div>
+          <ul>
+            <li><strong>Rols segons el col&middot;lectiu.</strong> Accedir&agrave;s directament al portal corresponent.</li>
+            <li>Els continguts i els <strong>men&uacute;s </strong>del portal s&rsquo;han <strong>personalitzat </strong>per a cada col&middot;lectiu.</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Cierre segunda columna: div anterior -->
+    </div>
+    <!-- div row -->
+    <div class="row no-scroll-bar columnas-dobles"><!-- SEPARADOR -->
+      <div class="col-xs-12 col-vxs-12 col-sm-12 col-md-12 col-lg-12" style="height:20px;">&nbsp;
+      </div>
+    </div>
+    <!-- FIN SEPARADOR -->
+    <div class="row no-scroll-bar columnas-dobles"><!-- div row --><!-- 2F 1C -->
+      <div class="col-vxs-6 col-sm-6 col-md-6 col-lg-6 row-margin-bottom-col1">
+        <div><img alt="" src="/gcrrhh/../rrhh/files/PAS/Novetats/ROLS_ORG_2.png" style="width: 392px; height: 28px;" />
+        </div>
+      </div>
+      <!-- Cierre primera columna: div anterior --><!-- 2F 2C -->
+      <div class="col-vxs-6 col-sm-6 col-md-6 col-lg-6">
+        <ul>
+          <li><strong>Facilitat per canviar de portal.</strong> Es pot consultar la informaci&oacute; dels altres portals nom&eacute;s clicant a l&rsquo;apartat corresponent.</li>
+        </ul>
+      </div>
+      <!-- Cierre segunda columna: div anterior -->
+    </div>
+    <!-- div row -->
+    <div class="row no-scroll-bar columnas-dobles"><!-- SEPARADOR -->
+      <div class="col-xs-12 col-vxs-12 col-sm-12 col-md-12 col-lg-12" style="height:20px;">&nbsp;
+      </div>
+    </div>
+    <!-- FIN SEPARADOR -->
+    <div class="row no-scroll-bar columnas-dobles"><!-- div row --><!-- 3F 1C -->
+      <div class="col-vxs-6 col-sm-6 col-md-6 col-lg-6 row-margin-bottom-col1">
+        <div><img alt="" height="140" src="/gcrrhh/../rrhh/files/PAS/Novetats/ROLS_ORG_3.png" width="736" />
+        </div>
+      </div>
+      <!-- Cierre primera columna: div anterior --><!-- 3F 2C -->
+      <div class="col-vxs-6 col-sm-6 col-md-6 col-lg-6">
+        <ul>
+          <li>Tota la informaci&oacute; del teu <strong>Rac&oacute; personal</strong> est&agrave; integrada en un &uacute;nic espai organitzat per &agrave;rees tem&agrave;tiques.</li>
+        </ul>
+      </div>
+      <!-- Cierre segunda columna: div anterior -->
+    </div>
+    <!-- div row -->
+    <div class="row no-scroll-bar columnas-dobles"><!-- SEPARADOR -->
+      <div class="col-xs-12 col-vxs-12 col-sm-12 col-md-12 col-lg-12" style="height:20px;">&nbsp;
+      </div>
+    </div>
+    <!-- FIN SEPARADOR -->
+    <div class="row no-scroll-bar columnas-dobles"><!-- div row --><!-- 4F 1C -->
+      <div class="col-vxs-6 col-sm-6 col-md-6 col-lg-6 row-margin-bottom-col1">
+        <div><img alt="" height="250" src="/gcrrhh/../rrhh/files/PAS/Novetats/ROLS_ORG_4.png" width="1004" />
+        </div>
+      </div>
+      <!-- Cierre primera columna: div anterior --><!-- 4F 2C -->
+      <div class="col-vxs-6 col-sm-6 col-md-6 col-lg-6">
+        <ul>
+          <li><strong>Informaci&oacute; general.</strong> S&rsquo;han reestructurat els apartat i s&rsquo;han creat de nous&nbsp; per agrupar continguts considerats importants per als nostres usuaris i usu&agrave;ries.</li>
+        </ul>
+      </div>
+      <!-- Cierre segunda columna: div anterior -->
+    </div>
+    <!-- div row -->
+  </div>
+  <!-- Contingut Desplegable  --><!-- ************ FINAL DESPLEGABLE - ROLS D’ACCÉS I ORGANITZACIÓ  DEL CONTINGUT DE LA INFORMACIÓ  ************ --><!-- 4art DESPLEGABLE --><!-- ************ INICI DESPLEGABLE - AFEGIR AL RACÓ DEL GESTOR/A ************ -->
+  <div class="dsplTitol" id="box_10"><!-- Títol Desplegable  -->
+    <div class="plus" id="title_box_10">MILLORANT EL SERVEI ALS GESTORS I GESTORES
+    </div>
+  </div>
+  <div class="dsplContent" id="dsplContent_box_10"><!-- Contingut Desplegable  -->
+    <div class="row no-scroll-bar columnas-dobles"><!-- div row --><!-- 1F 1C -->
+      <div class="col-vxs-6 col-sm-6 col-md-6 col-lg-6 row-margin-bottom-col1">
+        <ul>
+          <li>Hem elaborat m&eacute;s la informaci&oacute; per facilitar la tasca dels gestors i gestores.</li>
+        </ul>
+      </div>
+      <!-- Cierre primera columna: div anterior --><!-- 1F 2C -->
+      <div class="col-vxs-6 col-sm-6 col-md-6 col-lg-6">
+        <div><img alt="" height="140" src="/gcrrhh/../rrhh/files/PAS/Novetats/raco_ges_1.png" width="435" />
+        </div>
+      </div>
+      <!-- Cierre segunda columna: div anterior -->
+    </div>
+    <!-- div row -->
+    <div class="row no-scroll-bar columnas-dobles"><!-- SEPARADOR -->
+      <div class="col-xs-12 col-vxs-12 col-sm-12 col-md-12 col-lg-12" style="height:20px;">&nbsp;
+      </div>
+    </div>
+    <!-- FIN SEPARADOR -->
+    <div class="row no-scroll-bar columnas-dobles"><!-- div row --><!-- 2F 1C -->
+      <div class="col-vxs-6 col-sm-6 col-md-6 col-lg-6 row-margin-bottom-col1">
+        <ul>
+          <li>Agrupaci&oacute; dels contingut en un &uacute;nic espai diferenciat per &agrave;rees tem&agrave;tiques.</li>
+        </ul>
+      </div>
+      <!-- Cierre primera columna: div anterior --><!-- 2F 2C -->
+      <div class="col-vxs-6 col-sm-6 col-md-6 col-lg-6">
+        <div><img alt="" height="140" src="/gcrrhh/../rrhh/files/PAS/Novetats/raco_ges_3.png" width="438" />
+        </div>
+      </div>
+      <!-- Cierre segunda columna: div anterior -->
+    </div>
+    <!-- div row -->
+  </div>
+  <!-- Contingut Desplegable  --><!-- ************ FINAL DESPLEGABLE - AFEGIR AL RACÓ DEL GESTOR/A  ************ --><!-- 5e DESPLEGABLE --><!-- ************ INICI DESPLEGABLE - NAVEGACIO MULTIPLATAFORMA ************ -->
+  <div class="dsplTitol" id="box_1"><!-- Títol Desplegable 1 -->
+    <div class="plus" id="title_box_1"><strong>NAVEGACI&Oacute; MULTIPLATAFORMA</strong>
+    </div>
+  </div>
+  <div class="dsplContent" id="dsplContent_box_1"><!-- Contingut Desplegable 1 -->
+    <div class="row no-scroll-bar columnas-dobles"><!-- 1F 1C -->
+      <div class="col-vxs-6 col-sm-6 col-md-6 col-lg-6">
+        <div><img alt="" height="358" src="/gcrrhh/../rrhh/files/PAS/Novetats/nav_multi_2.png" width="348" />
+        </div>
+      </div>
+      <!-- Cierre primera columna: div anterior --><!-- 1F 2C -->
+      <div class="col-vxs-6 col-sm-6 col-md-6 col-lg-6">
+        <ul>
+          <li>Hem adaptat el disseny del portal per a que els continguts puguin ser consultats des de <strong>qualsevol dispositiu</strong>.</li>
+        </ul>
+      </div>
+      <!-- Cierre segunda columna: div anterior -->
+    </div>
+  </div>
+  <!-- ************ FINAL DESPLEGABLE - NAVEGACIO MULTIPLATAFORMA  ************ --><!-- 6e DESPLEGABLE --><!-- ************ FINAL DESPLEGABLE - DISSENY  ************ --><!-- ************ INICI DESPLEGABLE - CERCA DE LA INFORMACIÓ ************ -->
+  <div class="dsplTitol" id="box_5"><!-- Títol Desplegable  -->
+    <div class="plus" id="title_box_5">FACILITANT LES CERQUES
+    </div>
+  </div>
+  <div class="dsplContent" id="dsplContent_box_5"><!-- Contingut Desplegable  -->
+    <div class="row no-scroll-bar columnas-dobles"><!-- div row --><!-- 1F 1C -->
+      <div class="col-vxs-6 col-sm-6 col-md-6 col-lg-6 row-margin-bottom-col1">
+        <ul>
+          <li>Hem incorporat un <strong>cercador </strong>per a que sigui m&eacute;s f&agrave;cil trobar la informaci&oacute; que busques a partir d&rsquo;una paraula clau.</li>
+        </ul>
+      </div>
+      <!-- Cierre primera columna: div anterior --><!-- 1F 2C -->
+      <div class="col-vxs-6 col-sm-6 col-md-6 col-lg-6">
+        <p><img alt="" height="67" src="/gcrrhh/../rrhh/files/PAS/Novetats/cerca_info_1.png" width="325" />
+        </p>
+      </div>
+      <!-- Cierre segunda columna: div anterior -->
+    </div>
+    <!-- div row -->
+    <div class="row no-scroll-bar columnas-dobles"><!-- SEPARADOR -->
+      <div class="col-xs-12 col-vxs-12 col-sm-12 col-md-12 col-lg-12" style="height:20px;">&nbsp;
+      </div>
+    </div>
+    <!-- FIN SEPARADOR -->
+    <div class="row no-scroll-bar columnas-dobles"><!-- div row --><!-- 2F 1C -->
+      <div class="col-vxs-6 col-sm-6 col-md-6 col-lg-6 row-margin-bottom-col1">
+        <ul>
+          <li><strong>El resultat</strong> de la cerca mostra el nombre de resultats trobats, la ruta on es troba el document, el t&iacute;tol de la fitxa que cont&eacute; l&rsquo;enlla&ccedil; a la mateixa i la data de la darrera actualitzaci&oacute; de la informaci&oacute;.</li>
+        </ul>
+      </div>
+      <!-- Cierre primera columna: div anterior --><!-- 2F 2C -->
+      <div class="col-vxs-6 col-sm-6 col-md-6 col-lg-6">
+        <p><img alt="" height="91" src="/gcrrhh/../rrhh/files/PAS/Novetats/cerca_info_2.png" width="627" />
+        </p>
+      </div>
+      <!-- Cierre segunda columna: div anterior -->
+    </div>
+    <!-- div row -->
+  </div>
+  <!-- Contingut Desplegable  --><!-- ************ FINAL DESPLEGABLE - CERCA DE LA INFORMACIÓ ************ --><!-- 7e DESPLEGABLE --><!-- ************ INICI DESPLEGABLE - SISTEMA DE NAVEGACIÓ ************ -->
+  <div class="dsplTitol" id="box_7"><!-- Títol Desplegable  -->
+    <div class="plus" id="title_box_7">NAVEGACI&Oacute; M&Eacute;S &Agrave;GIL
+    </div>
+  </div>
+  <div class="dsplContent" id="dsplContent_box_7"><!-- Contingut Desplegable  -->
+    <div class="row no-scroll-bar columnas-dobles"><!-- div row --><!-- 1F 1C -->
+      <div class="col-vxs-6 col-sm-6 col-md-6 col-lg-6 row-margin-bottom-col1">
+        <div><img alt="" height="140" src="/gcrrhh/../rrhh/files/PAS/Novetats/ROLS_ORG_3.png" width="736" />
+        </div>
+      </div>
+      <!-- Cierre primera columna: div anterior --><!-- 1F 2C -->
+      <div class="col-vxs-6 col-sm-6 col-md-6 col-lg-6">
+        <ul>
+          <li><strong>Navegaci&oacute;.</strong> Els continguts s&rsquo;han estructurat de forma que arribis a tota la informaci&oacute; en un sol <strong>click</strong>.</li>
+        </ul>
+      </div>
+      <!-- Cierre segunda columna: div anterior -->
+    </div>
+    <!-- div row -->
+    <div class="row no-scroll-bar columnas-dobles"><!-- SEPARADOR -->
+      <div class="col-xs-12 col-vxs-12 col-sm-12 col-md-12 col-lg-12" style="height:20px;">&nbsp;
+      </div>
+    </div>
+    <!-- FIN SEPARADOR -->
+    <div class="row no-scroll-bar columnas-dobles"><!-- div row --><!-- 2F 1C -->
+      <div class="col-vxs-6 col-sm-6 col-md-6 col-lg-6 row-margin-bottom-col1">
+        <div><img alt="" height="55" src="/gcrrhh/../rrhh/files/PAS/Novetats/sist_nav_2.png" width="720" />
+        </div>
+      </div>
+      <!-- Cierre primera columna: div anterior --><!-- 2F 2C -->
+      <div class="col-vxs-6 col-sm-6 col-md-6 col-lg-6">
+        <ul>
+          <li>Fil d&rsquo;Ariadna. S&rsquo;han incorporat recursos de contextualitzaci&oacute;:
+            <ul>
+              <li>Indiquen el recorregut seguit.</li>
+              <li>Permeten a l&rsquo;usuari saber on es troba.</li>
+              <li>Permet linkar a les diferents parts del recorregut.</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <!-- Cierre segunda columna: div anterior -->
+    </div>
+    <!-- div row -->
+    <div class="row no-scroll-bar columnas-dobles"><!-- SEPARADOR -->
+      <div class="col-xs-12 col-vxs-12 col-sm-12 col-md-12 col-lg-12" style="height:20px;">&nbsp;
+      </div>
+    </div>
+    <!-- FIN SEPARADOR -->
+    <div class="row no-scroll-bar columnas-dobles"><!-- div row --><!-- 3F 1C -->
+      <div class="col-vxs-6 col-sm-6 col-md-6 col-lg-6 row-margin-bottom-col1">
+        <div><img alt="" src="/gcrrhh/../rrhh/files/PAS/Novetats/sist_nav_3.png" style="width: 500px; height: 39px;" />
+        </div>
+      </div>
+      <!-- Cierre primera columna: div anterior --><!-- 3F 2C -->
+      <div class="col-vxs-6 col-sm-6 col-md-6 col-lg-6">
+        <ul>
+          <li>Consist&egrave;ncia amb el navegador:
+            <ul>
+              <li>Els continguts s&rsquo;obren en una pestanya nova.</li>
+              <li>Es pot accedir a cada p&agrave;gina a trav&eacute;s de la seva URL.</li>
+              <li>La p&agrave;gina es pot guardar als preferits del navegador.</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <!-- Cierre segunda columna: div anterior -->
+    </div>
+    <!-- div row -->
+  </div>
+  <!-- Contingut Desplegable  --><!-- ************ FINAL DESPLEGABLE - SISTEMA DE NAVEGACIÓ  ************ --><!-- 8e DESPLEGABLE --><!-- ************ INICI DESPLEGABLE - SISTEMA D’ETIQUETATGE ************ -->
+  <div class="dsplTitol" id="box_6"><!-- Títol Desplegable  -->
+    <div class="plus" id="title_box_6">ETIQUETES QUE T&rsquo;AJUDEN
+    </div>
+  </div>
+  <div class="dsplContent" id="dsplContent_box_6"><!-- Contingut Desplegable  -->
+    <div class="row no-scroll-bar columnas-dobles"><!-- div row --><!-- 1F 1C -->
+      <div class="col-vxs-6 col-sm-6 col-md-6 col-lg-6 row-margin-bottom-col1">
+        <ul>
+          <li>S&rsquo;ha revisat tot el <strong>sistema d&rsquo;etiquetatge</strong> per intentar clarificar i acotar el significat d&rsquo;alguns apartats buscant termes que siguin f&agrave;cilment reconeguts pels usuaris.</li>
+        </ul>
+      </div>
+      <!-- Cierre primera columna: div anterior --><!-- 1F 2C -->
+      <div class="col-vxs-6 col-sm-6 col-md-6 col-lg-6">
+        <p><img alt="" src="/gcrrhh/../rrhh/files/PAS/Novetats/sist_etiquetatge_1.png" style="width: 304px; height: 47px;" />
+        </p>
+      </div>
+      <!-- Cierre segunda columna: div anterior -->
+    </div>
+    <!-- div row -->
+    <div class="row no-scroll-bar columnas-dobles"><!-- SEPARADOR -->
+      <div class="col-xs-12 col-vxs-12 col-sm-12 col-md-12 col-lg-12" style="height:20px;">&nbsp;
+      </div>
+    </div>
+    <!-- FIN SEPARADOR -->
+    <div class="row no-scroll-bar columnas-dobles"><!-- div row --><!-- 2F 1C -->
+      <div class="col-vxs-6 col-sm-6 col-md-6 col-lg-6 row-margin-bottom-col1">
+        <ul>
+          <li>L&rsquo;etiquetatge textual s&rsquo;ha complementat amb un <strong>etiquetatge ic&ograve;nic</strong> per facilitar la relaci&oacute; dels continguts. Aix&iacute;, per exemple, en el cas de les fitxes informatives un mateix t&iacute;tol sempre t&eacute; associada una mateixa icona.</li>
+        </ul>
+      </div>
+      <!-- Cierre primera columna: div anterior --><!-- 2F 2C -->
+      <div class="col-vxs-6 col-sm-6 col-md-6 col-lg-6">
+        <p><img alt="" src="/gcrrhh/../rrhh/files/PAS/Novetats/sist_etiquetatge_2.png" style="width: 242px; height: 235px;" />
+        </p>
+      </div>
+      <!-- Cierre segunda columna: div anterior -->
+    </div>
+    <!-- div row -->
+  </div>
+  <!-- Contingut Desplegable  --><!-- ************ FINAL DESPLEGABLE - SISTEMA D’ETIQUETATGE ************ --><!-- 9e DESPLEGABLE --><!-- ************ INICI DESPLEGABLE - USABILITAT ************ -->
+  <div class="dsplTitol" id="box_9"><!-- Títol Desplegable  -->
+    <div class="plus" id="title_box_9"><strong>USABILITAT</strong>
+    </div>
+  </div>
+  <div class="dsplContent" id="dsplContent_box_9"><!-- Contingut Desplegable  -->
+    <div class="row no-scroll-bar columnas-dobles"><!-- div row --><!-- 1F 1C -->
+      <div class="col-vxs-6 col-sm-6 col-md-6 col-lg-6 row-margin-bottom-col1">
+        <div><img alt="" src="/gcrrhh/../rrhh/files/PAS/Novetats/usabilitat_1.png" style="width: 298px; height: 192px;" />
+        </div>
+      </div>
+      <!-- Cierre primera columna: div anterior --><!-- 1F 2C -->
+      <div class="col-vxs-6 col-sm-6 col-md-6 col-lg-6">
+        <ul>
+          <li>El punt de partida per dissenyar el nou portal van ser les <strong>propostes </strong>recollides de diferents grups d&rsquo;<strong>usuaris</strong>.</li>
+        </ul>
+      </div>
+      <!-- Cierre segunda columna: div anterior -->
+    </div>
+    <!-- div row -->
+    <div class="row no-scroll-bar columnas-dobles"><!-- SEPARADOR -->
+      <div class="col-xs-12 col-vxs-12 col-sm-12 col-md-12 col-lg-12" style="height:20px;">&nbsp;
+      </div>
+    </div>
+    <!-- FIN SEPARADOR -->
+    <div class="row no-scroll-bar columnas-dobles"><!-- div row --><!-- 2F 1C -->
+      <div class="col-vxs-6 col-sm-6 col-md-6 col-lg-6 row-margin-bottom-col1">
+        <div><img alt="" src="/gcrrhh/../rrhh/files/PAS/Novetats/usabilitat_2.png" style="width: 264px; height: 210px;" />
+        </div>
+      </div>
+      <!-- Cierre primera columna: div anterior --><!-- 2F 2C -->
+      <div class="col-vxs-6 col-sm-6 col-md-6 col-lg-6">
+        <ul>
+          <li>Hem dissenyat el nou portal amb la intenci&oacute; de satisfer les <strong>necessitats </strong>dels usuaris.</li>
+        </ul>
+      </div>
+      <!-- Cierre segunda columna: div anterior -->
+    </div>
+    <!-- div row -->
+    <div class="row no-scroll-bar columnas-dobles"><!-- SEPARADOR -->
+      <div class="col-xs-12 col-vxs-12 col-sm-12 col-md-12 col-lg-12" style="height:20px;">&nbsp;
+      </div>
+    </div>
+    <!-- FIN SEPARADOR -->
+    <div class="row no-scroll-bar columnas-dobles"><!-- div row --><!-- 3F 1C -->
+      <div class="col-vxs-6 col-sm-6 col-md-6 col-lg-6 row-margin-bottom-col1">
+        <div><img alt="" src="/gcrrhh/../rrhh/files/PAS/Novetats/usabilitat_3.png" style="width: 266px; height: 283px;" />
+        </div>
+      </div>
+      <strong><!-- Cierre primera columna: div anterior --><!-- 3F 2C --></strong>
+      <div class="col-vxs-6 col-sm-6 col-md-6 col-lg-6">
+        <ul>
+          <li><strong>Tens un suggeriment?</strong> Ens agradaria rebre les teves opinions per anar fent de la millora un proc&eacute;s continu.</li>
+        </ul>
+      </div>
+    </div>
+    <!-- div row -->
+  </div>
+  <!-- Contingut Desplegable  --><!-- ************ FINAL DESPLEGABLE - USABILITAT  ************ --><!-- 10e DESPLEGABLE --><!-- ************ INICI DESPLEGABLE - DISSENY ************ -->
+  <div class="dsplTitol" id="box_8"><!-- Títol Desplegable  -->
+    <div class="plus" id="title_box_8">DISSENY M&Eacute;S ATRACTIU
+    </div>
+  </div>
+  <div class="dsplContent" id="dsplContent_box_8"><!-- Contingut Desplegable  -->
+    <div class="row no-scroll-bar columnas-dobles"><!-- div row --><!-- 1F 1C -->
+      <div class="col-vxs-6 col-sm-6 col-md-6 col-lg-6 row-margin-bottom-col1">
+        <ul>
+          <li>Aspecte renovat i disseny m&eacute;s clar.
+            <br />
+            &nbsp;</li>
+        </ul>
+      </div>
+      <!-- Cierre primera columna: div anterior --><!-- 1F 2C -->
+      <div class="col-vxs-6 col-sm-6 col-md-6 col-lg-6">
+        <div><img alt="" height="156" src="/gcrrhh/../rrhh/files/PAS/Novetats/disseny_1.png" width="1013" />
+        </div>
+      </div>
+      <!-- Cierre segunda columna: div anterior -->
+    </div>
+    <!-- div row -->
+    <div class="row no-scroll-bar columnas-dobles"><!-- SEPARADOR -->
+      <div class="col-xs-12 col-vxs-12 col-sm-12 col-md-12 col-lg-12" style="height:20px;">&nbsp;
+      </div>
+    </div>
+    <!-- FIN SEPARADOR -->
+    <div class="row no-scroll-bar columnas-dobles"><!-- div row --><!-- 2F 1C -->
+      <div class="col-vxs-6 col-sm-6 col-md-6 col-lg-6 row-margin-bottom-col1">
+        <ul>
+          <li><strong>Gr&agrave;fica.</strong> Hem utilitzat una tipologia de lletra m&eacute;s clara i s&rsquo;han ressaltat el t&iacute;tols dels diferents apartats.</li>
+        </ul>
+      </div>
+      <!-- Cierre primera columna: div anterior --><!-- 2F 2C -->
+      <div class="col-vxs-6 col-sm-6 col-md-6 col-lg-6">
+        <div><img alt="" src="/gcrrhh/../rrhh/files/PAS/Novetats/disseny_2.png" style="width: 469px; height: 62px;" />
+        </div>
+      </div>
+      <!-- Cierre segunda columna: div anterior -->
+    </div>
+    <!-- div row -->
+    <div class="row no-scroll-bar columnas-dobles"><!-- SEPARADOR -->
+      <div class="col-xs-12 col-vxs-12 col-sm-12 col-md-12 col-lg-12" style="height:20px;">&nbsp;
+      </div>
+    </div>
+    <!-- FIN SEPARADOR -->
+    <div class="row no-scroll-bar columnas-dobles"><!-- div row --><!-- 3F 1C -->
+      <div class="col-vxs-6 col-sm-6 col-md-6 col-lg-6 row-margin-bottom-col1">
+        <ul>
+          <li>S&rsquo;han utilitzat <strong>pictogrames </strong>per clarificar i sintetitzar el missatge dels t&iacute;tols.</li>
+        </ul>
+      </div>
+      <!-- Cierre primera columna: div anterior --><!-- 3F 2C -->
+      <div class="col-vxs-6 col-sm-6 col-md-6 col-lg-6">
+        <div><img alt="" src="/gcrrhh/../rrhh/files/PDI/Novetats/disseny_3b.png" style="width: 150px; height: 98px;" />
+        </div>
+      </div>
+      <!-- Cierre segunda columna: div anterior -->
+    </div>
+    <!-- div row -->
+  </div>
+  <!-- Contingut Desplegable  -->
+</div>
+<!-- NOVETATS -->
