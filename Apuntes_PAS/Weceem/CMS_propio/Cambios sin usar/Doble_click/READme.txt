@@ -3,7 +3,7 @@ como están y se abara/cierre sobre el que se hace doble click). Y cuando sean s
 
 El template tiene el JS y los CSS.
 
-Lo otro es una web de ejemplo.
+Lo otro es una web de ejemplo. 
 
 
 05-25-2015

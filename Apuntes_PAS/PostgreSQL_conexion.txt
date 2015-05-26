@@ -5,7 +5,9 @@ pc.
 En Linux no parece que haya que abrir puertos.
 
 Luego hay que añadir una regla en el archivo %directorio_postgresql%/data/pg_hba.conf (windows).
-	host 	all 			all 			192.168.0.0/24 			md5
+	host 	all 			all 			192.168.0.0/24 			md5	(algo similar a esto)
+	host 	all 		all 		192.168.0.0/16 		md5 (Ésta funciona bien en Linux, ya que para acceder a un Tomcat en el host desde dentro de la 
+														    máquina virtual hay que marcar 192.168.56.1) (*)
 Para que se pueda acceder a la base de datos desde el exterior. Es necesario reiniciar Pc para reinicar servidor.
 
 En Linux es: 
@@ -36,7 +38,45 @@ Mensaje error 2: Error de conexió remota
 	This example grants MD5 encrypted password access to all databases to all users on the private network 192.168.0.0/24. 
 	You can use the pg_hba.conf editor that is built into pgAdmin III to edit the pg_hba.conf configuration file. After changing pg_hba.conf, you need to trigger a server configuration reload using pg_ctl or by stopping and restarting the server process.
 
-	
+8*) Sobre la red:
+	Configuración IP de Windows
+
+
+	Adaptador de Ethernet Conexión de área local:
+
+	   Sufijo DNS específico para la conexión. . : lan
+	   Dirección IPv6 . . . . . . . . . . : fd00:1714:1714:1193::f0e
+	   Dirección IPv6 . . . . . . . . . . : fd00:1714:1714:1193:3c0f:c97d:d65a:fc22
+	   Dirección IPv6 temporal. . . . . . : fd00:1714:1714:1193:a188:bf53:fb8a:9c10
+	   Vínculo: dirección IPv6 local. . . : fe80::3c0f:c97d:d65a:fc22%13
+	   Dirección IPv4. . . . . . . . . . . . . . : 147.83.168.49
+	   Máscara de subred . . . . . . . . . . . . : 255.255.255.0
+	   Puerta de enlace predeterminada . . . . . : 147.83.168.1
+
+	Adaptador de Ethernet VirtualBox Host-Only Network:
+
+	   Sufijo DNS específico para la conexión. . :
+	   Vínculo: dirección IPv6 local. . . : fe80::1dad:b81a:3a09:a5df%17
+	   Dirección IPv4. . . . . . . . . . . . . . : 192.168.56.1			----------------------------------------> Ésta es la dirección a introducir en
+	   Máscara de subred . . . . . . . . . . . . : 255.255.255.0		la máquina virtual para acceder al host.
+	   Puerta de enlace predeterminada . . . . . :
+
+	Adaptador de túnel isatap.{C1E0B54D-03DB-4A2A-B32A-20FAA6B133BA}:
+
+	   Estado de los medios. . . . . . . . . . . : medios desconectados
+	   Sufijo DNS específico para la conexión. . : lan
+
+	Adaptador de túnel Conexión de área local* 11:
+
+	   Estado de los medios. . . . . . . . . . . : medios desconectados
+	   Sufijo DNS específico para la conexión. . :
+
+	Adaptador de túnel isatap.{5413AD25-555D-409F-BFD3-6117B0E4BF41}:
+
+	   Estado de los medios. . . . . . . . . . . : medios desconectados
+	   Sufijo DNS específico para la conexión. . :
+	   
+	   
 Referencias (encender servicio): http://hsphere.parallels.com/docs/3.1/sysadmin/html/pgsql_restart.html
 To start PostgreSQL server, run:
 # /etc/rc.d/init.d/postgresql start
