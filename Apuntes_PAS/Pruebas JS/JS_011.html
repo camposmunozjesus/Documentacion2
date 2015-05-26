@@ -11,7 +11,7 @@
 
 	</head>
 	<body>
-		<p class="cls1" id="ident1" >Parrafo 1</p>
+		<p class="cls1" id="ident1" myProperty="owned" >Parrafo 1</p>
 		<p class="cls2" >Parrafo 2</p>
 		<p class="cls3" >Parrafo 3</p>
 		<p class="cls4" >Parrafo 4</p>
@@ -30,9 +30,7 @@
 		  var parrafo = parrafos[i];
 		  		alert(parrafo.className);
 				alert(parrafo.id);
+				alert("myProperty: "+parrafo.getAttribute('myProperty'));
 		}
-
-
-
 	</script>
 </html>
