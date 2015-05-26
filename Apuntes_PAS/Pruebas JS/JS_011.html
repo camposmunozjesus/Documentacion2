@@ -6,66 +6,33 @@
 		<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
 		<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 		
-		<script>
-			function tokenizer(state) {
-			  // Newlines are always a separate token.
-			  function isWhiteSpace(ch) {
-				// The messy regexp is because IE's regexp matcher is of the
-				// opinion that non-breaking spaces are no whitespace.
-				return ch != "\n" && /^[\s\u00a0]*$/.test(ch);
-			  }
 
-			  var tokenizer = {
-				state: state,
-
-				take: function(type) {
-				  alert("TAKE"+"\nestate: "+state+"\ntype: "+type);
-				},
-
-				next: function () {
-				  alert("NEXT");
-				}
-			  };
-			  return tokenizer;
-			}
-			
-			var tokenizeXML = (function() {
-				function inText(source) {
-					alert("inText"+source);
-				}
-
-				function inTag(source, setState) {
-					alert("inTag");
-				}
-
-				function inAttribute(quote) {
-					alert("inAttribute");
-				}
-
-				function inBlock(style, terminator) {
-					alert("inBlock");
-				}
-
-				return function(source, startState) {
-					inText("dentro");
-					return tokenizer(19);
-				};
-			})();
-  
-			
-			var tk = tokenizer(7);
-			alert(tk.state);
-			tk.take();
-			
-			var tdk = tokenizeXML();
-			tdk.take(789);
-			tokenizeXML(78).inText(78);
-			alert("FIN");
-			
-		</script>
 
 
 	</head>
 	<body>
+		<p class="cls1" id="ident1" >Parrafo 1</p>
+		<p class="cls2" >Parrafo 2</p>
+		<p class="cls3" >Parrafo 3</p>
+		<p class="cls4" >Parrafo 4</p>
+		<p class="cls5" >Parrafo 5</p>
+			
 	</body>
+	
+	
+	<script>
+		alert();
+		var parrafos = document.getElementsByTagName("p");
+		alert("2");
+		
+
+		for(var i=0; i<parrafos.length; i++) {
+		  var parrafo = parrafos[i];
+		  		alert(parrafo.className);
+				alert(parrafo.id);
+		}
+
+
+
+	</script>
 </html>

@@ -19,3 +19,6 @@ JS_007.html: Se extienden las propiedades de Array. En principio no existe el m�
 JS_008.html: Prueba con closures según los ejemplos de http://www.variablenotfound.com/2012/10/closures-en-javascript-entiendelos-de.html.
 JS_009.html: Prueba con closures según los ejemplos de W3SCHOOLS.
 JS_010.html: Prueba con closures según los ejemplos de W3SCHOOLS.
+JS_011.html: Recorre elementos del DOM. Guarda en un vector todos los tags <p> para posteriormente recorrerlos y obtener su class y su id.
+			 Ref1: http://librosweb.es/libro/javascript/capitulo_5/acceso_directo_a_los_nodos.html
+			 Ref2: http://codehero.co/jquery-desde-cero-recorriendo-el-documento/
