@@ -1,4 +1,4 @@
-<div class="novetats"><!-- 1er DESPLEGABLE --><!-- ************ INICI DESPLEGABLE - INFORMACIO PER ESTAR AL DIA ************ -->
+<div class="novetats"><!-- 1er DESPLEGABLE --><!-- ************ INICI DESPLEGABLE - INFORMACIO PER ESTAR AL DIA ************ --> 
   <div class="selectedTitol" id="box_2"><!-- Títol Desplegable 1 -->
     <div class="plus" id="title_box_2"><strong>INFORMACI&Oacute; PER ESTAR AL DIA</strong>
     </div>
