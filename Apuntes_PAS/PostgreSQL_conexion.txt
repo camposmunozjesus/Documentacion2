@@ -11,7 +11,7 @@ Luego hay que añadir una regla en el archivo %directorio_postgresql%/data/pg_hb
 Para que se pueda acceder a la base de datos desde el exterior. Es necesario reiniciar Pc para reinicar servidor.
 
 En Linux es: 
-	Para cambiar el archivo de configuración: >gedit  /opt/PostgreSQL/9.4/data/pg_hba.conf
+	Para cambiar el archivo de configuración: >gedit  /opt/PostgreSQL/9.4/data/pg_hba.conf (instalacion desde consoloa: /etc/postgresql/9.1/main/postgresql.conf)
 	Para reiniciar el servicio: >/etc/init.d/postgresql-9.4 restart (o primero stop y luego start)
 
 
