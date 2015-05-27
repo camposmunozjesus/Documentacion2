@@ -5,7 +5,7 @@
 	 
 		<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
 		<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
-		<!-- Estas librerías NO harían falta -->
+		<!-- Estas librerías son necesarias -->
 
 
 
@@ -21,10 +21,7 @@
 	
 	
 	<script>
-		alert();
-		var parrafos = document.getElementsByTagName("p");
-		alert("2");
-		
+		var parrafos = $('p')
 
 		for(var i=0; i<parrafos.length; i++) {
 		  var parrafo = parrafos[i];
