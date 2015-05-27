@@ -56,7 +56,42 @@ $("ul ~ table") Selecciona todos los <table> que son siblings (están dentro) de
 Echar un vistazo a http://www.w3schools.com/Jquery/trysel.asp que hay ejemplos interesantes.
 
 
+-------------------------------------------------------------------------------------------
+RECORRER LOS ELEMENTOS DEL DOM/OBTENER LOS ELEMENTOS QUE SEAN DEL MISMO TIPO CON SELECTORES
+-------------------------------------------------------------------------------------------
+Tenemos:
+	<p class="cls1" id="ident1" myProperty="owned" >Parrafo 1</p>
+	<p class="cls2" >Parrafo 2</p>
+	<p class="cls3" >Parrafo 3</p>
+	<p class="cls4" >Parrafo 4</p>
+	<p class="cls5" >Parrafo 5</p>
+	
+Y con el siguiente código JS se consiguen todos los elementos <p> de la página web y se varían/recuperan sus datos:
+	<script>
+		var parrafos = $('p')
 
+		for(var i=0; i<parrafos.length; i++) {
+			var parrafo = parrafos[i];
+			if(parrafo.getAttribute('myProperty')==undefined){
+				parrafo.setAttribute('myProperty', "newWestValue");
+			}
+			if(parrafo.getAttribute('id')==undefined){
+				parrafo.setAttribute('id', "newWestId");
+			}
+			alert(parrafo.className);
+			alert(parrafo.id);
+			alert("myProperty: "+parrafo.getAttribute('myProperty'));
+		}
+	</script>
+	
+Y además sería necesario añadir:
+	<link href="http://code.jquery.com/ui/1.9.1/themes/base/jquery-ui.css" rel="stylesheet">
+
+	<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+	<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+	</script>
+	
+	
 <PASO DE PARÁMETROS A FUNCIONES>**********************************************************************************************************************
 -------------------------------------------
 PASAR PARÁMETROS A UN EFECTO/FUNCIÓN JQUERY
