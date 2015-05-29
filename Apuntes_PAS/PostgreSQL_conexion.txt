@@ -101,6 +101,52 @@ Para cambiar el password al instalar desde terminal:
 		postgres=# \password postgres Enter new password: Enter it again: postgres=# \q
 		
 
+--------
+COMANDOS
+--------
+Salida del comando: sudo netstat -tulpn
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
+tcp        0      0 0.0.0.0:111             0.0.0.0:*               LISTEN      1812/rpcbind    
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      3318/sshd       
+tcp        0      0 0.0.0.0:5432            0.0.0.0:*               LISTEN      3196/postgres   
+tcp        0      0 0.0.0.0:5433            0.0.0.0:*               LISTEN      3225/postgres   
+tcp        0      0 127.0.0.1:25            0.0.0.0:*               LISTEN      3159/exim4      
+tcp        0      0 0.0.0.0:41145           0.0.0.0:*               LISTEN      1847/rpc.statd  
+tcp6       0      0 :::111                  :::*                    LISTEN      1812/rpcbind    
+tcp6       0      0 :::22                   :::*                    LISTEN      3318/sshd       
+tcp6       0      0 :::5432                 :::*                    LISTEN      3196/postgres   
+tcp6       0      0 :::5433                 :::*                    LISTEN      3225/postgres   
+tcp6       0      0 ::1:25                  :::*                    LISTEN      3159/exim4      
+tcp6       0      0 :::41889                :::*                    LISTEN      1847/rpc.statd  
+udp        0      0 0.0.0.0:25135           0.0.0.0:*                           2312/dhclient   
+udp        0      0 0.0.0.0:4157            0.0.0.0:*                           2448/dhclient   
+udp        0      0 0.0.0.0:68              0.0.0.0:*                           4122/dhclient   
+udp        0      0 0.0.0.0:68              0.0.0.0:*                           2312/dhclient   
+udp        0      0 0.0.0.0:68              0.0.0.0:*                           2306/dhclient   
+udp        0      0 0.0.0.0:68              0.0.0.0:*                           2311/dhclient   
+udp        0      0 0.0.0.0:111             0.0.0.0:*                           1812/rpcbind    
+udp        0      0 0.0.0.0:17537           0.0.0.0:*                           2306/dhclient   
+udp        0      0 0.0.0.0:715             0.0.0.0:*                           1812/rpcbind    
+udp        0      0 0.0.0.0:5353            0.0.0.0:*                           2563/avahi-daemon: 
+udp        0      0 127.0.0.1:751           0.0.0.0:*                           1847/rpc.statd  
+udp        0      0 0.0.0.0:1900            0.0.0.0:*                           3406/minissdpd  
+udp        0      0 0.0.0.0:60808           0.0.0.0:*                           1847/rpc.statd  
+udp        0      0 0.0.0.0:49562           0.0.0.0:*                           2563/avahi-daemon: 
+udp        0      0 0.0.0.0:37367           0.0.0.0:*                           2311/dhclient   
+udp        0      0 0.0.0.0:19458           0.0.0.0:*                           4122/dhclient   
+udp6       0      0 :::546                  :::*                                2448/dhclient   
+udp6       0      0 :::111                  :::*                                1812/rpcbind    
+udp6       0      0 :::17537                :::*                                2312/dhclient   
+udp6       0      0 :::6330                 :::*                                2448/dhclient   
+udp6       0      0 :::715                  :::*                                1812/rpcbind    
+udp6       0      0 :::5353                 :::*                                2563/avahi-daemon: 
+udp6       0      0 :::40194                :::*                                1847/rpc.statd  
+udp6       0      0 :::41291                :::*                                2563/avahi-daemon: 
+udp6       0      0 :::55144                :::*                                2311/dhclient   
+udp6       0      0 :::36781                :::*                                4122/dhclient   
+udp6       0      0 :::37367                :::*                                2306/dhclient 
+
 *********************************************************************************************************************************************************
 ------------------------------
 Creación:	18-05-2015
