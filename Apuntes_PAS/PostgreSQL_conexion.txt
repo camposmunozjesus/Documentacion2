@@ -86,9 +86,57 @@ To restart PostgreSQL, run:
 # /etc/rc.d/init.d/postgresql restart
 
 
---------------------------
-INSTALACIÓN DESDE TERMINAL
---------------------------
+-------------------------------------------------
+INSTALACIÓN DESDE TERMINAL - LINUX Y RASPBERRY PI
+-------------------------------------------------
+En Linux se puede realizar la instalación de manera gráfica (una vez descargado el archivo aplicar chmod 777 para poder ejecutarlo). pero en entornos como el de la Raspberry PI
+no se puede ejecutar el modo gráfico, por lo que hay que hacerlo desde el gestor apt-get. La instalación gráfica y la del gestor de paquetes son diferentes.
+
+En la instalación gráfica, generalmente la contraseña del usuario root se establece en la instalación mientras que en la otra hay que seguir los pasos del apartado
+INSTALACIÓN DESDE TERMINAL (ESTABLECER CONTRASEÑA USUARIO POSTGRES POR DEFECTO).
+
+Después, los archivos en la instalación gráfica se encuentran en (generalmente) /opt/PostgreSQL/9.x/data mientras que en la del gestor de paquetes está en /etc/postgresql/9.x/main.
+
+Hay que modificar los archivos:
+	- pg_hba.conf: para añadir las ip's a las que se les permitirá conectarse al servidor de manera remota desde pgAdmin.
+	- postgresql.conf: en modo gráfico el ssl está comentado y en paquetes está a true, ponerlo a false. MUY IMPORTANTE!!! está comentada la línea listen_addresses, este
+	  es el gran quebradero de cabeza si no se ve, porque siempre estará escuchando el 127.0.0.1 (para más info apartado de TEORÍA).
+
+Hay que tener en cuenta que al instalar Debian, se da la opción de instalar una base de datos, mejor no elegir esta opción, ya que es como una instalación desde el gestor
+de paquetes, pero en la que de momento no he conseguido cambiar la IP en la que está en escucha el servidor PostgreSQL, por lo que no se puede conectar a él un pgAdmin
+remoto.
+
+LINUX
+*****
+archivo /etc/apt/sources.list.d/pgdg.list
+    deb http://apt.postgresql.org/pub/repos/apt/ wheezy-pgdg main
+
+wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc |   sudo apt-key add -
+sudo apt-get update
+sudo apt-get upgrade
+apt-get install postgresql-9.4
+
+válido para instalación en terminal (sudo apt-get)
+pg_hba.conf
+hostnossl    all        all        192.168.1.33/32        trust
+hostnossl    all        all        0.0.0.0/0        md5
+es necesario establecer el hostnossl, ya que con host no funciona
+
+postgresql.conf
+descomentar la línea listen_addresses='*'
+poner SSL a false en postgresql.conf
+ssl = false
+
+
+RASPBERRY PI
+************
+Lo mismo que para Linux pero sin especificar la versión en el gestor de paquetes:
+apt-get install postgresql
+
+
+-------------------------------------------------------------------------------
+INSTALACIÓN DESDE TERMINAL (ESTABLECER CONTRASEÑA USUARIO POSTGRES POR DEFECTO)
+-------------------------------------------------------------------------------
 Ref: http://wildraspy.blogspot.com.es/2014/01/the-pi-as-postgresql-database-server.html
 Para cambiar el password al instalar desde terminal:
 	Cambiar
@@ -162,6 +210,24 @@ The initial settings in pg_hba.conf are quite restrictive, in order to avoid unw
 host all all 192.168.0.0/24 md5 
 This example grants MD5 encrypted password access to all databases to all users on the private network 192.168.0.0/24. 
 You can use the pg_hba.conf editor that is built into pgAdmin III to edit the pg_hba.conf configuration file. After changing pg_hba.conf, you need to trigger a server configuration reload using pg_ctl or by stopping and restarting the server process. 
+
+
+------
+TEORÍA
+------
+Con listen_addresses='*' al hacer netstat -tlnp | grep 5432 se obtiene:
+	0.0.0.0:5432
+	
+Con listen_addresses='localhost' al hacer netstat -tlnp | grep 5432 se obtiene:
+	127.0.0.1:5432
+	
+Con listen_addresses='localhost,127.0.0.2' al hacer netstat -tlnp | grep 5432 se obtiene:
+	127.0.0.1:5432
+	127.0.0.2:5432
+
+Luego, que se permita o no la conexión depende del archivo pg_hba.conf, que es donde se especifican las IP's que se pueden conectar de manera remota al servidor.
+
+
 *********************************************************************************************************************************************************
 ------------------------------
 Creación:	18-05-2015
