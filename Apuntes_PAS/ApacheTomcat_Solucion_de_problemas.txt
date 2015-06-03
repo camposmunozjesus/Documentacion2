@@ -114,3 +114,16 @@ Este problema sucedía en un Tomcat desplegado pero no en el entorno de Grails.
 SOLUCIÓN:
 ---------
 Copiar en la carpeta "lib" del Tomcat el archivo jar "jaxws-rt-2.1.4.jar" contenido en "D:\apache-tomcat-7.0.57\webapps\RP\WEB-INF\lib".
+
+
+<WEB SERVICES>*****************************************************************************************************************************************
+-----------------------------------
+APACHE TOMCAT - POLICY ALTERNATIVES
+-----------------------------------
+Se produce en un servidor Apache-Tomcat, no en el entorno GGTS, al ejecutar la acción que requiere de un método que utilice un web service.
+
+La traza es la siguiente:
+2015-06-03 08:52:17,232 [http-nio-8099-exec-3] ERROR rp.VinculacioActualController  - javax.xml.ws.soap.SOAPFaultException: None of the policy alternatives
+can be satisfied.
+
+Se soluciona copiando en el directorio "lib" del Apache-Tomcat la siguiente librería: jaxws-rt.jar (Ubicado en Error_WS)
