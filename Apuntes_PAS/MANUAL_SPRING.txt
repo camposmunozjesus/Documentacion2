@@ -1,0 +1,38 @@
+SPRING - MANUAL
+===============
+---------------------
+DENPENDENCY INJECTION
+---------------------
+Es un caso particular de la Inversión de Control(Inversion of Control: IoC). 
+When  writing  a  complex  Java  application,  application  classes  should  be  as  independent  as 
+possible of other Java classes to increase the possibility to reuse these classes and to test them 
+independen
+tly  of  other  classes  while  doing  unit  testing.  Dependency  Injection  helps  in  gluing 
+these classes together and same time keeping them independent.
+What  is  dependency  injection  exactly?  Let's  look  at  these  two  words  separately.  Here  the 
+dependency  part  tran
+slates  into  an  association  between  two  classes.  For  example,  class  A  is 
+dependent on class B. Now, let's look at the second part, injection. All this means is that class B 
+will get injected into class A by the IoC.
+
+
+-----------------------------
+ASPECTED ORIENTED PROGRAMMING
+-----------------------------
+OOP -> clase
+AOP -> aspecto
+
+Mientras que DI(Dependency Injection) ayuda a desacoplar las clases entre sí.
+
+Modularizar aplicaciones y separar obligaciones.
+
+Desea encapsular los conceptos que componen una aplicación en entidades bien definidas, eliminado las dependencias entre cada uno de los módulos. 
+
+	
+*********************************************************************************************************************************************************
+------------------------------
+Creación:	03-06-2015
+
+Jesús Campos Muñoz
+jesus.campos@upc.edu
+------------------------------
