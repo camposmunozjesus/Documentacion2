@@ -129,6 +129,14 @@ Manual:								http://www.ite.educacion.es/formacion/materiales/86/cd/pdf/m6_int
 
 
 
+SPRING
+======
+Tutorial oficial sobre MVC			http://www.tutorialspoint.com/spring/spring_web_mvc_framework.htm
+con Spring:
+MVC con Spring:						http://crunchify.com/simplest-spring-mvc-hello-world-example-tutorial-spring-model-view-controller-tips/
+
+
+
 OTROS
 =====
 Electrónica:						http://electronics.stackexchange.com/questions/102393/firmware-protection-on-avr-and-pic-controllers
