@@ -1,0 +1,331 @@
+EXPANDI/CONTRAER TODOS LOS NODOS
+================================
+Expandir o contraer todos los nodos
+---------------
+PRIMERA VERSIÓN
+---------------
+Código:
+
+	......
+	<div class="row no-scroll-bar">
+
+		<div class="col-sm-12 col-md-4 col-lg-4">
+			Espais: &nbsp;
+			<g:select name="filtreTipusEspai" id="filtreTipusEspai" from="${tipusEspais.keySet()}" keys="${tipusEspais.values()}" value="${espaiId?:'2412'}" onChange="canviEspai(${espaiId})"/>
+		</div>
+		<div class="col-sm-12 col-md-5 col-lg-5">
+			<g:form name="tipusContinguts" id="tipusContinguts" action="create">
+				<g:hiddenField id="parentId" name="parentId" value="" />
+				<g:hiddenField id="espaiId" name="espaiId" value="${espaiId}" />
+				<g:select name="filtreTipusContingut" id="filtreTipusContingut" from="${tipusContinguts.tipusContingut}" keys="${tipusContinguts.codiContingut}" noSelection="['':'-Escollir un tipus-']"/>
+				&nbsp;
+				<button id="crear" type="button" class="btn btn-primary btn-sm" onClick="crearContingut()">Crear Contingut</button>
+			</g:form>
+		</div>
+		<g:if env="development">
+			<div class="col-sm-12 col-md-3 col-lg-3 text-right">
+				<button id="crear" type="button" class="btn btn-default btn-sm" onclick="jQuery('#expandable-tree-table').treetable('expandAll'); return false;">Mostrar tot</button>
+				<button id="crear" type="button" class="btn btn-default btn-sm" onClick="jQuery('#expandable-tree-table').treetable('collapseAll'); return false;">Amagar tot</button>
+			</div>
+		</g:if>
+		
+	</div>
+
+	<table id="expandable-tree-table">
+	......
+	
+---------------
+SEGUNDA VERSIÓN
+---------------
+Cuando haya un nodo seleccionado, sólo se actuará sobre él.
+
+JS:
+***
+		 	//EXPANDIR
+		 	//Expandir nodes fills
+		 	function expandChildren(ident){
+			 	//alert(ident);
+		 		$('#expandable-tree-table').treetable("expandNode", ident);
+
+		 		var children = $("[data-tt-parent-id="+ident+"]");
+		 		//alert("cantidad de hijos: "+children.length);
+		 		if(children.length>0){
+			 		//Si tiene nodos hijos, para cada uno de ellos se procederá a expandirlo.
+			 		for(var i=0; i<children.length; i++) {
+						//var children = children[i];
+						//alert("numero del hijo 0: "+children[i].getAttribute('data-tt-id'));
+						expandChildren(children[i].getAttribute('data-tt-id'));
+					}
+			 		//alert("TIENE HIJOS");
+			 	}else{
+				 	//alert("NO TIENE HIJOS");
+				}
+		 		
+			}
+		 	//Expandir tots el nodes
+		 	function expandAll(){
+		 		var nodeId = $(".selected").attr("data-tt-id");
+
+		 		
+
+		 		if(nodeId){
+		 			//$('#expandable-tree-table').treetable('expandAll');
+		 			expandChildren(nodeId);
+		 			
+			 	}else{
+			 		$('#expandable-tree-table').treetable('expandAll');
+				}
+			}
+
+		 	//AMAGAR
+		 	//Amagar nodes fills
+		 	function collapseChildren(ident){
+			 	//Contrae el nodo
+		 		$('#expandable-tree-table').treetable("collapseNode", ident);
+		 		var children = $("[data-tt-parent-id="+ident+"]");
+		 		if(children.length>0){
+			 		//Si tiene nodos hijos, para cada uno de ellos se procederá a contraerlo.
+			 		for(var i=0; i<children.length; i++) {
+			 			collapseChildren(children[i].getAttribute('data-tt-id'));
+					}
+			 	}
+		 		
+			}
+		 	//Amagar tots el nodes
+		 	function collapseAll(){
+		 		var nodeId = $(".selected").attr("data-tt-id");
+		 		if(nodeId){
+		 			collapseChildren(nodeId);
+			 	}else{
+			 		$('#expandable-tree-table').treetable('collapseAll');
+				}
+			}
+			
+			
+			
+GSP:
+****
+		........
+		<div class="row no-scroll-bar">
+			<div class="col-sm-12 col-md-4 col-lg-4">
+				Espais: &nbsp;
+				<g:select name="filtreTipusEspai" id="filtreTipusEspai" from="${tipusEspais.keySet()}" keys="${tipusEspais.values()}" value="${espaiId?:'2412'}" onChange="canviEspai(${espaiId})"/>
+			</div>
+			<div class="col-sm-12 col-md-5 col-lg-5">
+		    	<g:form name="tipusContinguts" id="tipusContinguts" action="create">
+					<g:hiddenField id="parentId" name="parentId" value="" />
+					<g:hiddenField id="espaiId" name="espaiId" value="${espaiId}" />
+					<g:select name="filtreTipusContingut" id="filtreTipusContingut" from="${tipusContinguts.tipusContingut}" keys="${tipusContinguts.codiContingut}" noSelection="['':'-Escollir un tipus-']"/>
+					&nbsp;
+					<button id="crear" type="button" class="btn btn-primary btn-sm" onClick="crearContingut()">Crear Contingut</button>
+		    	</g:form>
+			</div>
+			<g:if env="development">
+				<div class="col-sm-12 col-md-3 col-lg-3 text-right">
+					<button id="crear" type="button" class="btn btn-info btn-sm" onclick="expandAll()">Mostrar tot</button>
+					<button id="crear" type="button" class="btn btn-info btn-sm" onClick="collapseAll()">Amagar tot</button>
+				</div>
+			</g:if>
+		</div>
+		........
+
+
+
+*********************************************************************************************************************************************************
+-----------------
+CÓDIGO DE SOPORTE
+-----------------
+		 	function expandAll(){
+		 		var nodeId = $(".selected").attr("data-tt-id");
+		 		alert("pdre: "+nodeId);
+		 		var children = $("[data-tt-parent-id="+nodeId+"]");
+alert("cantidad de hijos: "+children.length);
+				for(var i=0; i<children.length; i++) {
+					//var children = children[i];
+					alert("numero del hijo 0: "+children[i].getAttribute('data-tt-id'));
+					
+				}
+
+		 		if(nodeId){
+		 			//$('#expandable-tree-table').treetable('expandAll');
+		 			$('#expandable-tree-table').treetable("expandNode", nodeId);
+			 	}else{
+			 		$('#expandable-tree-table').treetable('expandAll');
+				}
+			}	
+			
+	
+*********************************************************************************************************************************************************
+-----------------
+PÁGINA DEFINITIVA
+-----------------	
+<html>
+	<head>
+		
+		<meta name="layout" content="main" />
+		<title>Arbre de continguts</title>
+
+		<link href="/${grails.util.Metadata.current.'app.name'}/css/treeTable/jquery.treetable.css" rel="stylesheet" type="text/css" />
+		<link href="/${grails.util.Metadata.current.'app.name'}/css/treeTable/jquery.treetable.theme.default.css" rel="stylesheet" type="text/css" />
+    
+    		
+		<script type="text/javascript" src="/${grails.util.Metadata.current.'app.name'}/js/jquery/jquery.js"></script>
+		
+		<script src="/${grails.util.Metadata.current.'app.name'}/js/treeTable/jquery.treetable.js"></script>
+    
+    	<script type="text/javascript">
+		 	$(document).ready(function(){
+			 	//TreeTable JQuery Plugin
+				// Highlight selected row
+				$("#expandable-tree-table tbody").on("mousedown", "tr", function() {
+					$(".selected").not(this).removeClass("selected");
+				   	$(this).toggleClass("selected");
+				});
+
+				$("#expandable-tree-table").treetable({ expandable: true });
+				
+
+			});
+
+		 	//Cambia de espacio en función del select
+	    	function canviEspai(espaiId){
+				if(document.getElementById('filtreTipusEspai').value!=espaiId){
+					document.getElementById('espai').value = document.getElementById('filtreTipusEspai').value;
+					//alert($(".selected").attr("data-tt-id")); //Conseguir el id del seleccionado.
+					document.getElementById('treeTable').submit();
+				}	   
+			}
+
+		 	//Crea un nuevo contenido
+	    	function crearContingut(){
+		    	var parentId = $(".selected").attr("data-tt-id");
+		    	document.getElementById('parentId').value = $(".selected").attr("data-tt-id");
+		    	//document.getElementById('tipusContingut').value = document.getElementById('filtreTipusContingut').value;	 
+				//alert("CREANDO CONTENIDO: \nParent: "+parentId+"\nTipus DOC: "+document.getElementById('filtreTipusContingut').value);	 
+				document.getElementById('tipusContinguts').submit();  
+			}
+
+		 	//EXPANDIR
+		 	//Expandir nodes fills
+		 	function expandChildren(ident){
+			 	//alert(ident);
+		 		$('#expandable-tree-table').treetable("expandNode", ident);
+
+		 		var children = $("[data-tt-parent-id="+ident+"]");
+		 		//alert("cantidad de hijos: "+children.length);
+		 		if(children.length>0){
+			 		//Si tiene nodos hijos, para cada uno de ellos se procederá a expandirlo.
+			 		for(var i=0; i<children.length; i++) {
+						//var children = children[i];
+						//alert("numero del hijo 0: "+children[i].getAttribute('data-tt-id'));
+						expandChildren(children[i].getAttribute('data-tt-id'));
+					}
+			 		//alert("TIENE HIJOS");
+			 	}else{
+				 	//alert("NO TIENE HIJOS");
+				}
+		 		
+			}
+		 	//Expandir tots el nodes
+		 	function expandAll(){
+		 		var nodeId = $(".selected").attr("data-tt-id");
+
+		 		
+
+		 		if(nodeId){
+		 			//$('#expandable-tree-table').treetable('expandAll');
+		 			expandChildren(nodeId);
+		 			
+			 	}else{
+			 		$('#expandable-tree-table').treetable('expandAll');
+				}
+			}
+
+		 	//AMAGAR
+		 	//Amagar nodes fills
+		 	function collapseChildren(ident){
+			 	//Contrae el nodo
+		 		$('#expandable-tree-table').treetable("collapseNode", ident);
+		 		var children = $("[data-tt-parent-id="+ident+"]");
+		 		if(children.length>0){
+			 		//Si tiene nodos hijos, para cada uno de ellos se procederá a contraerlo.
+			 		for(var i=0; i<children.length; i++) {
+			 			collapseChildren(children[i].getAttribute('data-tt-id'));
+					}
+			 	}
+		 		
+			}
+		 	//Amagar tots el nodes
+		 	function collapseAll(){
+		 		var nodeId = $(".selected").attr("data-tt-id");
+		 		if(nodeId){
+		 			collapseChildren(nodeId);
+			 	}else{
+			 		$('#expandable-tree-table').treetable('collapseAll');
+				}
+			}
+			
+    	</script>
+    	
+	</head>
+	<body>
+		<g:if test="${flash.message}">
+			<div class="message">
+				<p>${flash.message}</p>
+			</div>
+		</g:if>
+
+		
+		<div class="row no-scroll-bar">
+			<div class="col-sm-12 col-md-4 col-lg-4">
+				Espais: &nbsp;
+				<g:select name="filtreTipusEspai" id="filtreTipusEspai" from="${tipusEspais.keySet()}" keys="${tipusEspais.values()}" value="${espaiId?:'2412'}" onChange="canviEspai(${espaiId})"/>
+			</div>
+			<div class="col-sm-12 col-md-5 col-lg-5">
+		    	<g:form name="tipusContinguts" id="tipusContinguts" action="create">
+					<g:hiddenField id="parentId" name="parentId" value="" />
+					<g:hiddenField id="espaiId" name="espaiId" value="${espaiId}" />
+					<g:select name="filtreTipusContingut" id="filtreTipusContingut" from="${tipusContinguts.tipusContingut}" keys="${tipusContinguts.codiContingut}" noSelection="['':'-Escollir un tipus-']"/>
+					&nbsp;
+					<button id="crear" type="button" class="btn btn-primary btn-sm" onClick="crearContingut()">Crear Contingut</button>
+		    	</g:form>
+			</div>
+			<g:if env="development">
+				<div class="col-sm-12 col-md-3 col-lg-3 text-right">
+					<button id="crear" type="button" class="btn btn-info btn-sm" onclick="expandAll()">Mostrar tot</button>
+					<button id="crear" type="button" class="btn btn-info btn-sm" onClick="collapseAll()">Amagar tot</button>
+				</div>
+			</g:if>
+		</div>
+
+	
+			<table id="expandable-tree-table">
+				<thead>
+					<tr>
+						<th width="89%">Pàgina</th>
+						<th ></th>
+						<th width="11%">Últim canvi</th>
+						<th ></th>
+					</tr>
+				</thead>
+				<tbody>
+					<g:each in="${content}" var="c">
+	
+							<g:render template="newTreeTableNode" model="[c:c, level:1]"/>
+	
+	 				</g:each>	
+				</tbody>
+			</table>
+			
+		<g:form name="treeTable" id="treeTable" action="list">
+			<g:hiddenField id="espai" name="espai" value="" />
+    	</g:form>
+	</body>
+</html>
+*********************************************************************************************************************************************************
+------------------------------
+Creación:	12-06-2015
+
+Jesús Campos Muñoz
+jesus.campos@upc.edu
+------------------------------
