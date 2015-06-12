@@ -292,8 +292,8 @@ PÁGINA DEFINITIVA
 			</div>
 			<g:if env="development">
 				<div class="col-sm-12 col-md-3 col-lg-3 text-right">
-					<button id="crear" type="button" class="btn btn-info btn-sm" onclick="expandAll()">Mostrar tot</button>
-					<button id="crear" type="button" class="btn btn-info btn-sm" onClick="collapseAll()">Amagar tot</button>
+					<button id="crear" type="button" class="btn btn-info btn-sm" onclick="expandAll()" title="Expandir tots els nodes de l'element seleccionat">Mostrar tot</button>
+					<button id="crear" type="button" class="btn btn-info btn-sm" onClick="collapseAll()" title="Amagar tots els nodes de l'element seleccionat">Amagar tot</button>
 				</div>
 			</g:if>
 		</div>
