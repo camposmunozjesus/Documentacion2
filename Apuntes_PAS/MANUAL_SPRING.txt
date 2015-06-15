@@ -28,7 +28,226 @@ Modularizar aplicaciones y separar obligaciones.
 
 Desea encapsular los conceptos que componen una aplicación en entidades bien definidas, eliminado las dependencias entre cada uno de los módulos. 
 
+
 	
+<EXPLICACIÓN - EJEMPLOS>*********************************************************************************************************************************
+-----------------------------------------------
+EJEMPLO BÁSICO - HOLA MUNDO / SPRING_MVC_TEST01
+-----------------------------------------------
+Ref:
+Ejemplo Hola mundo:		http://crunchify.com/simplest-spring-mvc-hello-world-example-tutorial-spring-model-view-controller-tips/
+						http://www.tutorialspoint.com/spring/spring_mvc_hello_world_example.htm (viene del link con varios ejemplos: http://www.tutorialspoint.com/spring/spring_web_mvc_framework.htm)
+
+						
+POM.XML:
+********
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>4.1.1.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aop</artifactId>
+			<version>4.1.1.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>4.1.1.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>4.1.1.RELEASE</version>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-logging</groupId>
+			<artifactId>commons-logging</artifactId>
+			<version>1.1.3</version>
+		</dependency>
+	</dependencies>
+	
+	
+WEB.XML:
+********
+	<?xml version="1.0" encoding="UTF-8"?>
+	<web-app id="WebApp_ID" version="2.4"
+	   xmlns="http://java.sun.com/xml/ns/j2ee" 
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee 
+	   http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+
+	   <display-name>Aplicación Spring MVC - Ejemplo 1</display-name>
+
+	  <welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	  </welcome-file-list>
+	  
+	   <servlet>
+		  <servlet-name>SpringSrv</servlet-name>
+		  <servlet-class>
+			 org.springframework.web.servlet.DispatcherServlet
+		  </servlet-class>
+		  <load-on-startup>1</load-on-startup>
+	   </servlet>
+
+	   <servlet-mapping>
+		  <servlet-name>SpringSrv</servlet-name>
+		  <url-pattern>/</url-pattern>
+	   </servlet-mapping>
+	 
+	</web-app>
+
+	
+Crear un archivo llamado "SpringSrv-servlet.xml" dentro de WEB-INF: (debido a <servlet-name>SpringSrv</servlet-name>)
+*******************************************************************
+	<?xml version="1.0" encoding="UTF-8"?>
+	<beans xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+		xmlns:context="http://www.springframework.org/schema/context"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans
+	 
+	http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+	http://www.springframework.org/schema/context 
+	http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+	 
+		<context:component-scan base-package="com.jesuscamposmunoz.controlador" />
+	 
+		<bean id="viewResolver"
+			class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+			<property name="viewClass"
+				value="org.springframework.web.servlet.view.JstlView" />
+			<property name="prefix" value="/WEB-INF/jsp/" />
+			<property name="suffix" value=".jsp" />
+		</bean>
+	</beans>
+
+Con el código:
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+		<property name="viewClass"
+			value="org.springframework.web.servlet.view.JstlView" />
+		<property name="prefix" value="/WEB-INF/jsp/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+del servlet nombreServlet-servlet.xml se consigue que al marcar en el navegador: http://localhost:8080/spring_mvc_test01/page1
+se cargue a página situada en el direcotio WebContent/WEB-INF/jsp. En esta ocasió coge "page1" y busca en la carpeta mencionada situando la extensión
+.jsp indicada.
+
+
+Página index.jsp dentro de WebContent:
+**************************************
+	<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+		pageEncoding="ISO-8859-1"%>
+	<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+	<html>
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<title>Insert title here</title>
+	</head>
+	<body>
+		EJEMPLO SPRING MVC<br>
+		<a href="page1.html">Ir al controlador ... </a>
+	</body>
+	</html>
+
+En el momento de hacer lick sobre el link se irá a: http://localhost:8080/spring_mvc_test01/page1.html. Aquí lo que sucederá es que se cargará la clase
+java que tiene la anotación @Controller seguida de @RequestMapping("/page1").
+
+
+Página page1.jsp dentro de WebContent/WEB-INF/jsp:
+**************************************************
+	<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+		pageEncoding="ISO-8859-1"%>
+	<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+	<html>
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<title>Insert title here</title>
+	</head>
+	<body>
+	${messageSpring}
+	</body>
+	</html>
+
+
+Clase java: (La que actuará de controlador) 
+***********
+Debe estar dentro del package indicado en "SpringSrv-servlet.xml" en <context:component-scan base-package="com.jesuscamposmunoz.controlador"/>.
+	package com.jesuscamposmunoz.controlador;
+
+	import org.springframework.stereotype.Controller;
+	import org.springframework.web.bind.annotation.RequestMapping;
+	//import org.springframework.web.bind.annotation.RequestMethod;
+	//import org.springframework.web.servlet.ModelAndView;
+	import org.springframework.ui.ModelMap;
+
+	@Controller
+	public class TestControlador {
+
+		@RequestMapping("/page1")
+		public String printHello(ModelMap model) {
+			model.addAttribute("messageSpring", "Hello Spring MVC Framework!");
+			
+			System.out.println("Ejecutando el controlador TestControlador");
+			
+			return "page2";
+		}
+	}
+
+Una vez se haya ejecutado el controlador, se cargará la vista, en este caso "page2" que es de quien se realiza el return. Por lo que en el navegador se
+cargará la página: http://localhost:8080/spring_mvc_test01/page1.html
+
+
+Para entender un poco mejor cómo funciona el conjunto vista/controlador:
+Si el link de la página "index.jsp" fuera: <a href="pageA.html">Ir al controlador ... pageA</a>
+Y el controlador (clase java) fuera:
+	package com.jesuscamposmunoz.controlador;
+
+	import org.springframework.stereotype.Controller;
+	import org.springframework.web.bind.annotation.RequestMapping;
+	//import org.springframework.web.bind.annotation.RequestMethod;
+	//import org.springframework.web.servlet.ModelAndView;
+	import org.springframework.ui.ModelMap;
+
+	@Controller
+	public class TestControlador {
+
+		@RequestMapping("/page1")
+		public String printHello(ModelMap model) {
+			model.addAttribute("messageSpring", "Hello Spring MVC Framework!");
+			
+			System.out.println("Ejecutando el controlador TestControlador");
+			
+			return "page2";
+		}
+		
+		@RequestMapping("/pageA")
+		public String printNewPage(ModelMap model) {
+			model.addAttribute("messageSpring", "Hello Spring MVC Framework!"); //En la JSP se puede consultar la variable ${messageSpring}
+			
+			System.out.println("Ejecutando el controlador TestControlador - page A");
+			
+			return "pageB";
+		}
+	}
+En el momento hacer click sobre el link, se estaría llamando a http://localhost:8080/spring_mvc_test01/pageA.html por lo que el controlador ejecutaría
+el método printNewPage ya que es el que tiene la request para esta llamada. Una vez ejecutada cargaría el código HTML/JSP de pageB. En el navegador se
+visualizaría: http://localhost:8080/spring_mvc_test01/pageA.html aunque el código que se carga sea el de "pageB". "pageA" no tiene por qué existir dentro
+de la carpeta /WebContent/WEB-INF/jsp, pero "pageB" sí. Este ejemplo no tiene sentido, lo nomral es que quien se indica en el request mapping sea la 
+jsp devuelta.
+
+	
+
 *********************************************************************************************************************************************************
 ------------------------------
 Creación:	03-06-2015
