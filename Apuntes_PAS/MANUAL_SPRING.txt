@@ -15,6 +15,8 @@ slates  into  an  association  between  two  classes.  For  example,  class  A  
 dependent on class B. Now, let's look at the second part, injection. All this means is that class B 
 will get injected into class A by the IoC.
 
+Dependency Injection helps in gluing these classes together and same time keeping them independent.
+
 
 -----------------------------
 ASPECTED ORIENTED PROGRAMMING
@@ -29,7 +31,13 @@ Modularizar aplicaciones y separar obligaciones.
 Desea encapsular los conceptos que componen una aplicación en entidades bien definidas, eliminado las dependencias entre cada uno de los módulos. 
 
 
-	
+-----------
+BEAN OBJECT
+-----------
+Bean is an object that is instantiated, assembled, and otherwise managed by a Spring IoC container
+
+
+*****************************************************************<MODEL-VIEW-CONTROLLER>*****************************************************************
 <EXPLICACIÓN - EJEMPLOS>*********************************************************************************************************************************
 -----------------------------------------------
 EJEMPLO BÁSICO - HOLA MUNDO / SPRING_MVC_TEST01
@@ -208,6 +216,8 @@ Una vez se haya ejecutado el controlador, se cargará la vista, en este caso "pa
 cargará la página: http://localhost:8080/spring_mvc_test01/page1.html
 
 
+TEORÍA EJEMPLO 1
+----------------
 Para entender un poco mejor cómo funciona el conjunto vista/controlador:
 Si el link de la página "index.jsp" fuera: <a href="pageA.html">Ir al controlador ... pageA</a>
 Y el controlador (clase java) fuera:
@@ -247,6 +257,49 @@ de la carpeta /WebContent/WEB-INF/jsp, pero "pageB" sí. Este ejemplo no tiene s
 jsp devuelta.
 
 	
+Funcionamiento relación view/controller
+---------------------------------------
+Si tengo:
+   @RequestMapping(value = "/student", method = RequestMethod.GET)
+   public ModelAndView student() {
+	  System.out.println("Creando un estudiante");
+      return new ModelAndView("student", "command", new Student());
+   }
+Cuando en el navegador marque http://localhost:8080/spring_mvc_test01/student.html ejecutará este método y luego cargará la página "student.jsp".
+
+Si tengo:
+   @RequestMapping(value = "/addStudent", method = RequestMethod.POST)
+   public void addStudent(@ModelAttribute("SpringWeb")Student student, ModelMap model) {
+	  System.out.println("Anyadiendo en BD");
+      model.addAttribute("name", student.getName());
+      model.addAttribute("age", student.getAge());
+      model.addAttribute("id", student.getId());
+      
+      System.out.println(student.getBirthDate());
+   }
+En esta ocasión desde un formulario se llama a "addStudent", y cuando se ha realizado el trabajo se dirige a "addStudent.jsp".
+
+Si tengo:
+   @RequestMapping(value = "/addStudent", method = RequestMethod.POST)
+   public String addStudent(@ModelAttribute("SpringWeb")Student student, ModelMap model) {
+	  System.out.println("Anyadiendo en BD");
+      model.addAttribute("name", student.getName());
+      model.addAttribute("age", student.getAge());
+      model.addAttribute("id", student.getId());
+      
+      System.out.println(student.getBirthDate());
+//      return "aaa";
+      return "result";
+   }
+Se accederá a ella cuando se llame a "addStudent", pero cuando se realice el trabajo irá a la jsp "result.jsp".
+
+
+--------------------------------------
+EJEMPLO FORMULARIO / SPRING_MVC_TEST02
+--------------------------------------
+
+
+
 
 *********************************************************************************************************************************************************
 ------------------------------
