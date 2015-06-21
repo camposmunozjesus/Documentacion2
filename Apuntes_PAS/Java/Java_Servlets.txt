@@ -1,0 +1,209 @@
+JAVA - SERVLETS
+===============
+<EJEMPLO BÁSICO>**************************************************************************************************************************************
+-------
+ECLIPSE
+-------
+1) Crear "New Dynamic WEb Project"
+	Elegir "Next" en lugar de "Finnish"
+	Indicar que queremos que cree el fichero "web.xml" (ruta /WebContent/WEB-INF/web.xml)
+	Con:
+		content root: nombre de la aplicación
+		content dir:  WebContent
+2) Configure -> Convert to Maven project ...
+3) web.xml
+	<?xml version="1.0" encoding="UTF-8"?>
+	<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+	  <display-name>Web_test</display-name>
+	  <welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	  </welcome-file-list>
+	  
+	 <servlet>
+		<description></description>
+		<display-name>Test</display-name>
+		<servlet-name>Test</servlet-name>
+		<servlet-class>com.jesuscampos.servlets.Test</servlet-class>
+	  </servlet>
+	  <servlet-mapping>
+		<servlet-name>Test</servlet-name>
+		<url-pattern>/Test</url-pattern>
+	  </servlet-mapping>
+	</web-app>
+4) En este paso se creará una clase que extienda de javax.servlet.http.HttpServlet (también se puede elegir crear un servlet y maperá la clase sin 
+   necesidad de realizar el paso anterior):
+   
+	package com.jesuscampos.servlets;
+
+	import java.io.IOException;
+	import java.io.PrintWriter;
+
+	import javax.servlet.ServletException;
+	import javax.servlet.http.HttpServlet;
+	import javax.servlet.http.HttpServletRequest;
+	import javax.servlet.http.HttpServletResponse;
+
+	public class Test extends HttpServlet {
+
+		/**
+		 * 
+		 */
+		private static final long serialVersionUID = -4608276382171261170L;
+
+		public Test() {
+			super();
+			// TODO Auto-generated constructor stub
+		}
+
+		/**
+		 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+		 */
+		protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+			PrintWriter out = response.getWriter();
+			out.println("<html>");
+			out.println("	<body>");
+			out.println("	<h1>Hola mundo!!!</h1>");
+			out.println("	<p>---x Nuestra segunda aplicación web x---</p>");
+			out.println("	</body>");		
+			out.println("</html>");	
+			}
+	}
+	
+5) Run as.. -> Run on server y escribir en el navegador: http://localhost:8080/Web_test/Test
+
+También se puede utilizar una página "index.jsp" ubicada en "WebContent" con el siguiente código:
+	<!DOCTYPE html>
+	<html>
+		<head>
+			<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		</head>
+		<body>
+			<form method="POST" action="TestName">
+			<input type="submit" value="Ejecutar">
+		</form>
+		</body>
+	</html>
+
+
+<SERVLETS>********************************************************************************************************************************************
+-------
+WEB.XML
+-------
+Si ponemos:
+  <servlet>
+    <description></description>
+    <display-name>Test</display-name>
+    <servlet-name>Test</servlet-name>
+    <servlet-class>com.jesuscampos.servlets.Test</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Test</servlet-name>
+    <url-pattern>/TestName</url-pattern>
+  </servlet-mapping>
+  
+Habrá que acceder meiante la URL: http://localhost:8080/Web_test/TestName
+
+El archivo "web.xml" admite más de un servlet mapeado. Ejemplo (se utiliza el servlet del siguiente apartado):
+  <!-- Servlet #1 -->
+  <servlet>
+    <description></description>
+    <display-name>Test</display-name>
+    <servlet-name>Test</servlet-name>  ---> Nombre que se utilizará para referirse en (*)
+    <servlet-class>com.jesuscampos.servlets.Test</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Test</servlet-name> ---> (*)
+    <url-pattern>/TestName</url-pattern> ---> URL de acceso: http://localhost:8080/nombre_proyecto/TestName ---> y se ejecutará el servlet com.jesuscampos.servlets.Test.java
+  </servlet-mapping>
+  
+	<!-- Servlet #2 -->
+	<servlet>
+	    <description></description>
+	    <display-name>Test2</display-name>
+	    <servlet-name>Test2</servlet-name>
+	    <servlet-class>com.jesuscampos.servlets.Test2</servlet-class>
+	 </servlet>
+	 <servlet-mapping>
+	 	<servlet-name>Test2</servlet-name>
+	    <url-pattern>/subcarpeta/TestServlet</url-pattern>
+	 </servlet-mapping>
+
+
+------------------------------
+REDIRIGIR EL SERVLET A UNA JSP
+------------------------------
+En esta ocasión, después de ejecutar la acción get/post queremos que se cargue una página JSP determnada.
+
+Config del web.xml:
+	<!-- Servlet 2 -->
+	<servlet>
+	    <description></description>
+	    <display-name>Test2</display-name>
+	    <servlet-name>Test2</servlet-name>
+	    <servlet-class>com.jesuscampos.servlets.Test2</servlet-class>
+	 </servlet>
+	 <servlet-mapping>
+	 	<servlet-name>Test2</servlet-name>
+	    <url-pattern>/subcarpeta/TestServlet</url-pattern>
+	 </servlet-mapping>
+La llamada al servlet será: http://localhost:8080/Web_test/subcarpeta/TestServlet
+La JSP que cargará será "pageTest2.jsp" y se encontrará en "WebContent/subcarpeta/" (WebContent/subcarpeta/pageTest2.jsp).
+
+El "index.jsp" que llamaría a este servle puede ser:
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	</head>
+	<body>
+		<ol>
+			<!-- /ofertas/action.do es donde está publicado -->
+			<li><a href="TestName">Test #1</a>
+			<li><a href="subcarpeta/TestServlet">Test #2</a>
+		</ol>
+	</body>
+</html>
+
+El código JAVA es:
+	package com.jesuscampos.servlets;
+
+	import java.io.IOException;
+
+	import javax.servlet.RequestDispatcher;
+	import javax.servlet.ServletException;
+	import javax.servlet.http.HttpServlet;
+	import javax.servlet.http.HttpServletRequest;
+	import javax.servlet.http.HttpServletResponse;
+
+	public class Test2 extends HttpServlet {
+
+		/**
+		 * 
+		 */
+		private static final long serialVersionUID = 1L;
+		
+		protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+			System.out.println("Ejecutado SERVELT #2");
+			
+			RequestDispatcher dispatcher = request.getRequestDispatcher("pageTest2.jsp");
+			
+			dispatcher.forward(request, response);
+		}
+		
+		protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		}
+	}
+
+******************************************************************************************************************************************************
+------------------------------
+Creación:	21-06-2015
+
+Jesús Campos Muñoz
+jesus.campos@upc.edu
+------------------------------
