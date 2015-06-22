@@ -1,0 +1,46 @@
+LINUX - MANUAL DE COMANDOS DEL TERMINAL
+=======================================
+----------------------
+LISTAR DIRECTORIO - LS
+----------------------
+Listar en columnas:
+>ls -l
+
+Listar además directorios que empiezan por '.', es decir listar todos los directorio, sean ocultos o no:
+>ls -a
+
+Listar los directorios que hay dentro de cada directorio (recursividad):
+>ls -R
+
+
+-------------------------------
+ADMINISTRADOR DE PROCESOS - TOP
+-------------------------------
+Es un programa similar al Administrador de Tareas de Windows.
+
+
+---------------
+LISTAR PROCESOS
+---------------
+Lista los procesos:
+>ps
+
+
+--------------------------------
+BUSCAR/FILTRAR EN LOS RESULTADOS
+--------------------------------
+Se utiliza la pipe juntamente con grep. Se concatenan comandos.
+
+>ps -aux | grep goa ---> Mostrará todas las líneas que contengan 'goa'.
+
+>ps -aux | grep sbin.atd ---> Mostrará todas las líneas que contenan 'sbin(cualquier caracter)atd
+
+>netstat -tulpn | grep 5432
+
+*********************************************************************************************************************************************************
+------------------------------
+Creación:	22-06-2015
+
+Jesús Campos Muñoz
+jesus.campos@upc.edu
+------------------------------
