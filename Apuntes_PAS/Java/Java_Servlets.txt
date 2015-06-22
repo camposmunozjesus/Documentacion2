@@ -1,5 +1,6 @@
 JAVA - SERVLETS
 ===============
+RES: 1280x1024
 <EJEMPLO BÁSICO>**************************************************************************************************************************************
 -------
 ECLIPSE
@@ -200,6 +201,93 @@ El código JAVA es:
 		}
 	}
 
+Si desde la página "pageTest2.jsp" se llama de nuevo al servlet, hay que hacerlo con el siguiente código:
+	<a href="TestServlet">Test #2</a>
+O bien:
+	<form method="POST" action="TestServletTwo">
+		<input type="submit" value="Ejecutar POST">
+	</form>
+
+
+------------------------------------------
+PASAR VARIABLE DEL SERVLET A LA PÁGINA JSP
+------------------------------------------
+Para pasar una variable a la página JSP, en el archivo Java (el servlet, clase que extiende/hereda de javax.servlet.http.HttpServlet) se declara:
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		RequestDispatcher dispatcher = request.getRequestDispatcher("pageTest2.jsp");
+		
+		String nombreCompleto = "Jesus Campos Muñoz";
+		request.setAttribute("variable1", nombreCompleto);
+		
+		dispatcher.forward(request, response);
+	}
+	
+Y en la JSP se recupera como: (dos formas)
+	- ${variable1}
+	- ${requestScope.variable1}
+
+
+------------------------------------------
+PASAR VARIABLE DE LA PÁGINA JSP AL SERVLET
+------------------------------------------
+Para pasar una variable de la página JSP al servlet se puede utilizar un formulario en el código HTML/JSP:
+	<form method="POST" action="TestServletTwo">
+		<input type="hidden" id="campoOculto" name="campoOcultoNombre" value="333">
+		<input type="submit" value="Ejecutar POST">
+	</form>
+
+Entonces en el servlet hay que recuperar los datos de la siguiente manera:
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String var2 = request.getParameter("campoOcultoNombre");
+		System.out.println(var2);
+	}
+Hay que utilizar el atributo "name" del elemento HIDDEN.
+
+
+Utilizando request.getSession().setAttribute():
+	<% request.getSession().setAttribute("jesus","jesuscamposmunoz"); %>
+
+	
+<TAGS JSP>********************************************************************************************************************************************
+-----------------
+UTILIZAR TAGS JSP
+-----------------
+Para poder utilizar iteraciones y demás cosas hay que importar JSTL. Añadir los imports siguientes en las páginas JSP que se desee utilizar la librería:
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  ---> para utilizar bucle forEach, etc ...
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %> ---> para formatear fechas, moneda, etc...
+
+Ir al archivo "pom.xml" e importar JSTL (para evitar la aspa de color rojo surgida al poner los imports anteriores). Escribir "jstl" y elegir:
+	"jstl jstl"
+o bien añadir los siguiente:
+  	<dependency>
+  		<groupId>jstl</groupId>
+  		<artifactId>jstl</artifactId>
+  		<version>1.2</version>
+  	</dependency>
+	
+	
+------------------
+TAGS JSP - FOREACH
+------------------
+Ejemplo de código en el servlet:
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		RequestDispatcher dispatcher = request.getRequestDispatcher("pageTest2.jsp");
+		
+		String nombreCompleto = "Jesus Campos Muñoz";
+		request.setAttribute("variable1", nombreCompleto);
+		
+		String[] listaPalabras = nombreCompleto.split("\\s+");
+		request.setAttribute("lista1", listaPalabras);
+		
+		dispatcher.forward(request, response);
+	}
+	
+Para iterar sobre la lista teniendo el índice de cada elemento se utiliza en la JSP:
+	<c:forEach var="elemento" items="${lista1}" varStatus="i">
+		Elemento #${i.index}: ${elemento}<br>
+	</c:forEach>
+	
+	
 ******************************************************************************************************************************************************
 ------------------------------
 Creación:	21-06-2015
