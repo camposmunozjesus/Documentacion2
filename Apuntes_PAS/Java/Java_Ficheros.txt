@@ -47,6 +47,115 @@ Crear un fichero: 				File("D:\\JJJnew_folderJJJ").createNewFile()
 Brorrar un directorio/fichero: 	File("D:\\JJJnew_folderJJJ").delete()
 
 
+-------------
+CREAR FICHERO
+-------------
+	File f = new File("ficheroCreadoDesdeJavaProg.txt");
+	
+	boolean boolRes = false;
+	
+	try {
+		//Con la siguiente instrucción se creará el fichero
+		boolRes = f.createNewFile();
+		
+	} catch (Exception e) {
+		// TODO: handle exception
+	}
+--------------------
+ABRIR FICHERO - LEER
+--------------------
+1era opción:
+************
+	File f = new File("ficheroNum1.txt");
+	
+	try {
+		//Escibir en el fichero
+		FileReader fr = new FileReader(f);
+		char[] in = new char[50];
+		fr.read(in);
+		System.out.println(in);
+	} catch (Exception e) {
+		// TODO: handle exception
+		System.out.println("ERROR");
+	}
+	
+	
+2da opción:
+***********
+	String cadena;
+	
+	try {
+		FileReader f = new FileReader("ficheroNum1.txt");
+		BufferedReader b = new BufferedReader(f);
+		while((cadena = b.readLine())!=null) {
+			System.out.println(cadena);
+		}
+		b.close();
+	} catch (Exception e) {
+		// TODO: handle exception
+		System.out.println("ERROR");
+	}
+	
+	
+------------------------
+ABRIR FICHERO - ESCRIBIR
+------------------------
+1era opción:
+************
+	File f = new File("ficheroCreadoDesdeJavaProg.txt");
+	
+	try {
+		//Escibir en el fichero
+		FileWriter fw = new FileWriter(f);
+		fw.write("Ejemplo de pruebas");
+		fw.close();
+	} catch (Exception e) {
+		// TODO: handle exception
+		System.out.println("ERROR");
+	}
+	
+	
+2da opción:
+***********
+	FileWriter fichero = null;
+	PrintWriter pw = null;
+	try {
+		fichero = new FileWriter("ficheroCreadoDesdeJavaProg2.txt");
+		pw = new PrintWriter(fichero);
+
+		for (int i = 0; i < 10; i++)
+		{
+			pw.println("Linea " + i);
+		}
+		fichero.close();
+	} catch (Exception e) {
+		// TODO: handle exception
+		System.out.println("ERROR");
+	}
+	
+
+--------------------
+DIRECTORIOS - LISTAR
+--------------------
+	File f = new File("dirPruebas");
+	
+	try {
+		//El siguiente vector de String's contiene la lista de directorios y archivos.
+		String[] directorios = f.list();
+		for (String string : directorios) {
+			System.out.print(string);
+			if(new File("dirPruebas"+"/"+string).isDirectory()){
+				System.out.println(" - Es un directorio");
+			}
+			else{
+				System.out.println();
+			}
+		}
+	} catch (Exception e) {
+		// TODO: handle exception
+		System.out.println("ERROR");
+	}
+
 *********************************************************************************************************************************************************
 ------------------------------
 Creación:	05-05-2015
