@@ -47,7 +47,7 @@ Otra forma (usando calendario):
 	println "Calendario: "+ sdf.format(cal.getTime())
 
 
-<DÍA>
+<DÍA>**************************************************************************************************************************************************
 ------------------------------------------------------------------------------------------
 EXPRESAR/CONSEGUIR SÓLO EL DÍA DE LA SEMANA CON ABREVIATURA EN UN IDIOMA DETERMINADO - (I)
 ------------------------------------------------------------------------------------------
@@ -131,11 +131,11 @@ Y el mes se obtiene con:
 	sdfDia.format(sdf.parse(str))
 	
 	De otra manera:
-	* fecha = sdf.parse(str): convierte en fecha el String.
+	* Date fecha = sdf.parse(str): convierte en fecha el String.
 	* sdfDia.format(fecha): el String parseado a fecha es formateado de manera que únicamente se visualizará el mes del año.
 	
 
-<MES>
+<MES>**************************************************************************************************************************************************
 -------------------------------------------------------------------------------
 EXPRESAR/CONSEGUIR SÓLO EL MES ACTUAL DE UNA FECHA ALMACENADA EN DESDE CALENDAR
 -------------------------------------------------------------------------------
@@ -173,7 +173,7 @@ Y el mes se obtiene con:
 	* sdfMes.format(fecha): el String parseado a fecha es formateado de manera que únicamente se visualizará el mes del año.
 
 	
-<AÑO>
+<AÑO>**************************************************************************************************************************************************
 -------------------------------------------------------------------------------
 EXPRESAR/CONSEGUIR SÓLO EL AÑO ACTUAL DE UNA FECHA ALMACENADA EN DESDE CALENDAR
 -------------------------------------------------------------------------------
