@@ -1,0 +1,18 @@
+GRAILS - NOMENCLATURA
+=====================
+TGT: Ticket Granting Tickets
+
+Funcionamiento del CAS:
+https://idms.rutgers.edu/cas/how_does_it_work.shtml
+https://jwall.org/AuditConsole/user-guide/ch09s03.html
+
+
+
+
+*********************************************************************************************************************************************************
+------------------------------
+Creación:	06-07-2015
+
+Jesús Campos Muñoz
+jesus.campos@upc.edu
+------------------------------
