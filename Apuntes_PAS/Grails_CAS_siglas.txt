@@ -1,10 +1,20 @@
 GRAILS - NOMENCLATURA
 =====================
 TGT: Ticket Granting Tickets
+ST: Service Ticket
+SLO: Single-Log Out
 
 Funcionamiento del CAS:
 https://idms.rutgers.edu/cas/how_does_it_work.shtml
 https://jwall.org/AuditConsole/user-guide/ch09s03.html
+
+Mailing List del CAS:
+http://jasig.github.io/cas/Mailing-Lists.html
+
+CAS+problemas con balanceo de apliaciones:
+http://jasig.275507.n4.nabble.com/Single-sign-out-in-a-loadbalancing-environment-td254825.html
+Shared Sessions:
+https://www.mail-archive.com/cas-user@lists.jasig.org/msg12839.html
 
 
 
