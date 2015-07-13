@@ -1,0 +1,46 @@
+CONFIG.GROOVY
+-------------
+Comentar las líneas del final del fichero:
+	//// Added by the Spring Security Core plugin:
+	//grails.plugins.springsecurity.userLookup.userDomainClassName = 'Security.SecUser'
+	//grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'Security.SecUserSecRole'
+	//grails.plugins.springsecurity.authority.className = 'Security.SecRole'
+	//grails.plugins.springsecurity.securityConfigType = 'Annotation'
+	//grails.plugins.springsecurity.rejectIfNoRule = false
+	//grails.plugins.springsecurity.cas.active = true
+	//grails.plugins.springsecurity.cas.sendRenew = false
+	//grails.plugins.springsecurity.cas.serverUrlEncoding = 'UTF-8'
+	//grails.plugins.springsecurity.cas.key = 'grails-spring-security-cas'
+	//grails.plugins.springsecurity.cas.artifactParameter = 'ticket'
+	//grails.plugins.springsecurity.cas.serviceParameter = 'service'
+	//grails.plugins.springsecurity.cas.filterProcessesUrl = '/j_spring_cas_security_check'
+	//grails.plugins.springsecurity.controllerAnnotations.staticRules = [
+	//	'/files/**':  ['ROLE_USER']
+	//]
+	
+También comentar en cada entorno:
+		grails.plugins.springsecurity.cas.loginUri = '/login'
+		grails.plugins.springsecurity.cas.serviceUrl = "https://portal.personal.upc.edu/${grails.util.Metadata.current.'app.name'}/j_spring_cas_security_check"
+		grails.plugins.springsecurity.cas.serverUrlPrefix = 'https://cas.upc.edu/'
+		grails.plugins.springsecurity.cas.proxyCallbackUrl = "https://portal.personal.upc.edu/${grails.util.Metadata.current.'app.name'}/secure/receptor"
+		grails.plugins.springsecurity.cas.proxyReceptorUrl = '/secure/receptor'
+		grails.plugins.springsecurity.cas.useSingleSignOut = 'true'
+		grails.plugins.springsecurity.logout.afterLogoutUrl ="https://cas.upc.edu/logout?url=https://portal.personal.upc.edu/${grails.util.Metadata.current.'app.name'}"
+		
+		
+BUILDCONFIG.GROOVY
+------------------
+Comentar dentro de la closure plugins:
+	//	compile ":spring-security-core:1.2.7.3"
+	//	compile ':spring-security-cas:1.0.5'
+
+Y hacer Grails Tools -> Refresh Dependencies
+	
+	
+CONTROLADORES:
+--------------
+1) Eliminar import grails.plugins.springsecurity.Secured.
+2) Eliminar anotaciones: @Secured(['ROLE_USER']) y similar
+3) Eliminar: extends BaseControler y comentar las líneas this.populateUserName() y this.doSecurityCheck()
+
+Puede ser necesario eliminar el package Security.

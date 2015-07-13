@@ -134,6 +134,77 @@ En el caso de tener diferentes beans con el mismo nombre para los métodos de in
 De este modo no hace falta repetir en cada bean del XMl qué método se utiliza, aquí se indica que para todos los beans es el mismo.
 
 
+-----------------
+BEANPOSTPROCESSOR
+-----------------
+Sirven para que una vez se haya inicializado se ejecuten una serie de métodos. ESTE APARTADO NO ME HA QUEDADO MUY CLARO CÓMO FUNCIONA, el cómo relaiona
+la clase del postprocessor con la clase a la que se vigila que para ejecutar los métodos o si bien el postporcessor es para todos los beans.
+
+
+---------------------------
+BEAN DEFINITION INHERITANCE
+---------------------------
+La herencia tiene el mismo concepto que en Java pero se especifica de forma completamente diferente.
+
+Ejemplo:
+	//SUPER-CLASE
+	public class HelloWorld {
+	   private String message1;
+	   private String message2;
+
+	   public void setMessage1(String message){
+		  this.message1  = message;
+	   }
+
+	   public void setMessage2(String message){
+		  this.message2  = message;
+	   }
+
+	   public void getMessage1(){
+		  System.out.println("World Message1 : " + message1);
+	   }
+
+	   public void getMessage2(){
+		  System.out.println("World Message2 : " + message2);
+	   }
+	}
+	
+	//SUB-CLASE: en la subclase los atributos message1 y message2 deben redefinirse. El XML sólo se encarga de que se hereden las configuraciones de 
+	//esos atributos.
+	public class HelloIndia {
+	   private String message1;
+	   private String message2;
+	   private String message3;
+
+	   public void setMessage1(String message){
+		  this.message1  = message;
+	   }
+
+	   public void setMessage2(String message){
+		  this.message2  = message;
+	   }
+
+	   public void setMessage3(String message){
+		  this.message3  = message;
+	   }
+
+	   public void getMessage1(){
+		  System.out.println("India Message1 : " + message1);
+	   }
+
+	   public void getMessage2(){
+		  System.out.println("India Message2 : " + message2);
+	   }
+
+	   public void getMessage3(){
+		  System.out.println("India Message3 : " + message3);
+	   }
+	}
+	
+	
+
+
+
 *****************************************************************<MODEL-VIEW-CONTROLLER>*****************************************************************
 <EXPLICACIÓN - EJEMPLOS>*********************************************************************************************************************************
 -----------------------------------------------
