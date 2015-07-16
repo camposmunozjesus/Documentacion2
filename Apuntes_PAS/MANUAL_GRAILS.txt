@@ -420,6 +420,11 @@ CONOCER EL NOMBRE DE LA APLICACIÓN
 appName = grails.util.Metadata.current.'app.name'
 
 
+-------------------------------
+CONOCER EL ENTORNO DE EJECUCIÓN
+-------------------------------
+
+
 ******************************************************************************************************************************************************
 --------------------------------
 TRADUCIR CÓDIGOS A DESCRIPCIONES
@@ -910,3 +915,11 @@ Otras instrucciones válidas son:
 		copy(file: "target/docs/all-docs.html", Funciona bien
 			tofile: "${stagingDir}/docs/all-docs.html")
 	}
+	
+Código utilizado en rrhh para limpiar el directorio de imágenes y que se eliminen del WAR: (incluir en el BuildConfig.groovy)
+	//grails.project.war.file = "target/${appName}-${appVersion}.war"
+	//En el moment de construir el WAR no s'inclourà la carpeta web-app/rrhh_resources
+	//grails.war.resources = { stagingDir ->
+	//	delete { fileset dir: "${stagingDir}/rrhh_resources/" }
+	//	delete(dir: "${stagingDir}/rrhh_resources/")
+	//}

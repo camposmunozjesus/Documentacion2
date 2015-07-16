@@ -39,7 +39,7 @@ Y hacer Grails Tools -> Refresh Dependencies
 	
 CONTROLADORES:
 --------------
-1) Eliminar import grails.plugins.springsecurity.Secured.
+1) Eliminar import grails.plugins.springsecurity.Secured y del BaseControler
 2) Eliminar anotaciones: @Secured(['ROLE_USER']) y similar
 3) Eliminar: extends BaseControler y comentar las líneas this.populateUserName() y this.doSecurityCheck()
 

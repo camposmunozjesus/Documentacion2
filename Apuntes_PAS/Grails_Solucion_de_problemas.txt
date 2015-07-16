@@ -501,6 +501,7 @@ plugin manager y nullpointer
 Solución 17:
 ------------
 Comentar un plugin del buildconfig.groovy y descomentarlos.
+Es decir, el plugin compile ":cxf-client:2.0.3", descomentarlo (refresh dependencies), comentarlo y nuevamente refresh dependencies y ya arrancará.
 
 
 ******************************************************************************************************************************************************
