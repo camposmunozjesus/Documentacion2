@@ -423,7 +423,10 @@ appName = grails.util.Metadata.current.'app.name'
 -------------------------------
 CONOCER EL ENTORNO DE EJECUCIÓN
 -------------------------------
+http://grails.github.io/grails-doc/2.4.x/api/grails/util/Environment.html
 
+println grails.util.Environment.getCurrent()
+println grails.util.Environment.isDevelopmentMode()
 
 ******************************************************************************************************************************************************
 --------------------------------
