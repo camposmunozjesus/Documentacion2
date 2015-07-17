@@ -146,6 +146,8 @@ BEAN DEFINITION INHERITANCE
 ---------------------------
 La herencia tiene el mismo concepto que en Java pero se especifica de forma completamente diferente.
 
+Siempre se habla de herencia de configuración, no de heredar estructura de datos de una clase a otra.
+
 Ejemplo:
 	//SUPER-CLASE
 	public class HelloWorld {
@@ -201,7 +203,33 @@ Ejemplo:
 	   }
 	}
 	
-	
+Y la herencia para heredar las configuraciones de los atributos se hace de la siguiente manera en el Beans.xml:
+	<?xml version="1.0" encoding="UTF-8"?>
+
+	<beans xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	   <bean id="helloWorld" class="com.tutorialspoint.HelloWorld">
+		  <property name="message1" value="Hello World!"/>
+		  <property name="message2" value="Hello Second World!"/>
+	   </bean>
+
+	   <bean id="helloIndia" class="com.tutorialspoint.HelloIndia" parent="helloWorld">
+		  <property name="message1" value="Hello India!"/>
+		  <property name="message3" value="Namaste India!"/>
+	   </bean>
+
+	</beans>	
+
+
+--------------------
+DEPENDENCY INJECTION
+--------------------
+La inyección de dependencias (DI) es como un cableado entre clases, de tal modo que las clases sean lo más independientes unas de las otras de manera 
+que sean reutilizables.
+
 
 
 
