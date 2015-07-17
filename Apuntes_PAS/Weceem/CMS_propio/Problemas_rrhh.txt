@@ -1,0 +1,40 @@
+RRHH
+====
+Problemas porque el proyecto no carga nada, parece que no hace caso a los controladores, fichero bootstrap de inicio, urlmappings, etc ...
+
+
+Solución 1:
+-----------
+Copiar el proyecto dentro de eclipse con otro nombre y cambiar:
+- fileNotFound
+- Config.groovy (URL del proyecto y el CAS)
+- Application properties
+
+
+Solución 2:
+-----------
+1) Crear una carpeta nueva y usarla de workspace
+2) Bajar el proyecto de nuevo
+
+
+Otras cosas:
+------------
+Si en un espacio que no ha funcionado el rrhh
+- Se importa el proyecto de nuevo (que préviamente ha sido descargado del SVN) -> OK
+- Se borra .metadata del workspace + proyecto nuevo (que préviamente ha sido descargado del SVN) -> OK
+
+
+SOLUCIÓN DEFINITIVA
+===================
+El problema es que la aplicación rrhh necesita un archivo llamado "context.xml" ubicado en "web-app/META-INF". Este archivo hace referencia a una carpeta
+ubicada en la raíz del sistema (en este caso la raíz donde se encuentra el workspace).
+
+Por ejemplo, si el workspace se encuentra en la unidad D, debe existir el siguiente directorio: D:\app\rrhh_resources.
+
+*********************************************************************************************************************************************************
+------------------------------
+Creación:	17-07-2015
+
+Jesús Campos Muñoz
+jesus.campos@upc.edu
+------------------------------
