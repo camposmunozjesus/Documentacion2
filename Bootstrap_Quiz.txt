@@ -1,0 +1,176 @@
+1. Bootstrap 3 is mobile-first.
+
+You answered:
+True
+
+ Correct Answer!
+
+2. Which class provides a responsive fixed width container?
+
+You answered:
+.container
+
+ Correct Answer!
+
+3. Which class provides a full width container, spanning the entire width of the viewport?
+
+You answered:
+.container-fluid
+
+ Correct Answer!
+
+4. The Bootstrap grid system is based on how many columns?
+
+You answered:
+12
+
+ Correct Answer!
+
+5. Which class adds zebra-stripes to a table?
+
+You answered:
+.table-striped
+
+ Correct Answer!
+
+6. Which class shapes an image to a circle?
+
+You answered:
+.img-round
+
+ Wrong Answer!
+
+7. Which class is used to create a big box for calling extra attention?
+
+You answered:
+.bigbox
+
+ Wrong Answer!
+
+8. Which button class is used to create a large button?
+
+You answered:
+.btn-lg
+
+ Correct Answer!
+
+9. Which class is used to create a button group?
+
+You answered:
+.group-btn
+
+ Wrong Answer!
+
+10. How can you insert a search icon?
+
+You answered:
+<span class="glyphicon glyphicon-search"></span>
+
+ Correct Answer!
+
+11. Which class is used to create a badge?
+
+You answered:
+.label
+
+ Wrong Answer!
+
+12. Which class is used to create a basic pagination?
+
+You answered:
+.pagination
+
+ Correct Answer!
+
+13. Which class is used to create a basic list group?
+
+You answered:
+.group-list
+
+ Wrong Answer!
+
+14. Which class adds a heading to a panel?
+
+You answered:
+.panel-header
+
+ Wrong Answer!
+
+15. Which class indicates a dropdown menu?
+
+You answered:
+.dropdown
+
+ Correct Answer!
+
+16. A standard navigation tab is created with:
+
+You answered:
+<ul class="nav nav-navbar">
+
+ Wrong Answer!
+
+17. A standard navigation bar is created with:
+
+You answered:
+<ul class="navbar navbar-default">
+
+ Correct Answer!
+
+18. Which class is used to create a black navigation bar?
+
+You answered:
+.navbar-default
+
+ Wrong Answer!
+
+19. Which plugin is used to cycle through elements, like a slideshow?
+
+You answered:
+Carousel
+
+ Correct Answer!
+
+20. Which plugin is used to create a modal window?
+
+You answered:
+Dialog Box
+
+ Wrong Answer!
+
+21. Which plugin is used to create a tooltip?
+
+You answered:
+Tooltip
+
+ Correct Answer!
+
+22. Which contextual class indicates a succesful or positive action?
+
+You answered:
+.text-success
+
+ Correct Answer!
+
+23. Which contextual class indicates a dangerous or potentially negative action?
+
+You answered:
+.text-danger
+
+ Correct Answer!
+
+24. Which class indicates uppercased text?
+
+You answered:
+.text-uppercase
+
+ Correct Answer!
+
+25. The Bootstrap grid system works across multiple devices.
+
+You answered:
+True
+
+ Correct Answer!
+
+By W3Schools 	Time spent: 6:23 
