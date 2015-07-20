@@ -1,0 +1,262 @@
+<plantillas>
+  <Plantilla>
+    <id type='class java.lang.Long'>4</id>
+    <aliesUri type='class java.lang.String'>plantilla-fitxa</aliesUri>
+    <descripcio type='class org.codehaus.groovy.runtime.NullObject' />
+    <idioma type='class org.codehaus.groovy.runtime.NullObject' />
+    <ordre type='class java.lang.Integer'>1</ordre>
+    <espai type='class java.lang.Integer'>1</espai>
+    <titol type='class java.lang.String'>Plantilla Fitxa</titol>
+    <contingut type='class java.lang.String'>&lt;!-- Per esborrar un desplegable: --&gt;
+&lt;!-- Seleccionar des del comentari INICI Quadre desplegable del tipus desitjat  --&gt;
+&lt;!-- fins al comentari FINAL Quadre desplegable del mateix tipus i esborrar-lo. --&gt;
+&lt;!-- ************************************************************************* --&gt;
+
+&lt;!-- ****************** INICI Quadre desplegable SOLICITUD ****************** --&gt;
+&lt;div class="selectedTitol" id="box_solicitud"&gt;
+  &lt;!-- Títol del desplegable --&gt;
+  &lt;div class="minus" id="title_box_solicitud"&gt;Qui ho pot sol&amp;middot;licitar&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- Contingut del desplegable --&gt;
+&lt;div class="dsplContent" id="dsplContent_box_solicitud"&gt;
+  &lt;div&gt;Contingut de &amp;quot;Qui ho pot sol&amp;middot;licitar&amp;quot;&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- ****************** FINAL Quadre desplegable SOLICITUD ****************** --&gt;
+
+&lt;!-- ************************************************************************* --&gt;
+
+&lt;!-- ****************** INICI Quadre desplegable DESCRIPCIO ********************* --&gt;
+
+&lt;div class="selectedTitol" id="box_descripcio"&gt;&lt;!-- Títol del desplegable --&gt;
+&lt;div class="minus" id="title_box_descripcio"&gt;Descripci&amp;oacute;&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- Contingut del desplegable --&gt;
+
+&lt;div class="dsplContent" id="dsplContent_box_descripcio"&gt;
+&lt;div&gt;Contingut de &amp;quot;Descripci&amp;oacute;&amp;quot;&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- ****************** FINAL Quadre desplegable DESCRIPCIO ********************* --&gt;
+&lt;!-- ************************************************************************* --&gt;
+&lt;!-- ****************** INICI Quadre desplegable TRAMITAR  ****************** --&gt;
+
+&lt;div class="selectedTitol" id="box_tramitar"&gt;&lt;!-- Títol del desplegable --&gt;
+&lt;div class="minus" id="title_box_tramitar"&gt;Com tramitar-ho&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- Contingut del desplegable --&gt;
+
+&lt;div class="dsplContent" id="dsplContent_box_tramitar"&gt;
+&lt;div&gt;Contingut de &amp;quot;Com tramitar-ho&amp;quot;&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- ****************** FINAL Quadre desplegable TRAMITAR  ****************** --&gt;
+&lt;!-- ************************************************************************* --&gt;
+&lt;!-- ****************** INICI Quadre desplegable ADJUNTAR  ****************** --&gt;
+
+&lt;div class="selectedTitol" id="box_adjuntar"&gt;&lt;!-- Títol del desplegable --&gt;
+&lt;div class="minus" id="title_box_adjuntar"&gt;Documentaci&amp;oacute; que cal adjuntar&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- Contingut del desplegable --&gt;
+
+&lt;div class="dsplContent" id="dsplContent_box_adjuntar"&gt;
+&lt;div&gt;Contingut de &amp;quot;Documentaci&amp;oacute; que cal adjuntar&amp;quot;&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- ****************** FINAL Quadre desplegable ADJUNTAR  ****************** --&gt;
+&lt;!-- ************************************************************************* --&gt;
+&lt;!-- ****************** INICI Quadre desplegable RECOMANACIONS  ************** --&gt;
+
+&lt;div class="selectedTitol" id="box_recomanacions"&gt;&lt;!-- Títol del desplegable --&gt;
+&lt;div class="minus" id="title_box_recomanacions"&gt;Recomanacions&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- Contingut del desplegable --&gt;
+
+&lt;div class="dsplContent" id="dsplContent_box_recomanacions"&gt;
+&lt;div&gt;Contingut de &amp;quot;Recomanacions&amp;quot;&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- ****************** FINAL Quadre desplegable RECOMANACIONS  ****************** --&gt;
+&lt;!-- ************************************************************************* --&gt;
+&lt;!-- ****************** INICI Quadre desplegable COMPTE  ****************** --&gt;
+
+&lt;div class="selectedTitol" id="box_compte"&gt;&lt;!-- Títol del desplegable --&gt;
+&lt;div class="minus" id="title_box_compte"&gt;Cal tenir en compte que...&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- Contingut del desplegable --&gt;
+
+&lt;div class="dsplContent" id="dsplContent_box_compte"&gt;
+&lt;div&gt;Contingut de &amp;quot;Cal tenir en compte que...&amp;quot;&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- ****************** FINAL Quadre desplegable COMPTE  ****************** --&gt;
+&lt;!-- ************************************************************************* --&gt;
+&lt;!-- ****************** INICI Quadre desplegable ENLLACOS  ****************** --&gt;
+
+&lt;div class="selectedTitol" id="box_enllacos"&gt;&lt;!-- Títol del desplegable --&gt;
+&lt;div class="minus" id="title_box_enllacos"&gt;Enlla&amp;ccedil;os d&amp;#39;inter&amp;egrave;s&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- Contingut del desplegable --&gt;
+
+&lt;div class="dsplContent" id="dsplContent_box_enllacos"&gt;
+&lt;div&gt;Contingut de &amp;quot;Enlla&amp;ccedil;os d&amp;#39;inter&amp;egrave;s&amp;quot;&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- ****************** FINAL Quadre desplegable ENLLACOS  ****************** --&gt;
+&lt;!-- ************************************************************************* --&gt;
+&lt;!-- ****************** INICI Quadre desplegable NORMATIVA ****************** --&gt;
+
+&lt;div class="selectedTitol" id="box_normativa"&gt;&lt;!-- Títol del desplegable --&gt;
+&lt;div class="minus" id="title_box_normativa"&gt;Normativa de refer&amp;egrave;ncia&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- Contingut del desplegable --&gt;
+
+&lt;div class="dsplContent" id="dsplContent_box_normativa"&gt;
+&lt;div&gt;Contingut de &amp;quot;Normativa de refer&amp;egrave;ncia&amp;quot;&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- ****************** FINAL Quadre desplegable NORMATIVA ****************** --&gt;
+&lt;!-- ************************************************************************* --&gt;
+&lt;!-- ****************** INICI Quadre desplegable CONSULTA  ****************** --&gt;
+
+&lt;div class="selectedTitol" id="box_consulta"&gt;&lt;!-- Títol del desplegable --&gt;
+&lt;div class="minus" id="title_box_consulta"&gt;Per fer una consulta...&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- Contingut del desplegable --&gt;
+
+&lt;div class="dsplContent" id="dsplContent_box_consulta"&gt;
+&lt;div&gt;Contingut de &amp;quot;Per fer una consulta...&amp;quot;&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- ****************** FINAL Quadre desplegable CONSULTA  ****************** --&gt;
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			</contingut>
+    <permetreGSP type='class java.lang.Integer'>1</permetreGSP>
+    <observacions type='class org.codehaus.groovy.runtime.NullObject' />
+  </Plantilla>
+  <Plantilla>
+    <id type='class java.lang.Long'>6</id>
+    <aliesUri type='class java.lang.String'>plantilla-fitxa-gen</aliesUri>
+    <descripcio type='class org.codehaus.groovy.runtime.NullObject' />
+    <idioma type='class org.codehaus.groovy.runtime.NullObject' />
+    <ordre type='class java.lang.Integer'>2</ordre>
+    <espai type='class java.lang.Integer'>1</espai>
+    <titol type='class java.lang.String'>Plantilla Fitxa Genèrica</titol>
+    <contingut type='class java.lang.String'>								&lt;!-- ************ INICI 1er DESPLEGABLE ************ --&gt;
+&lt;div class="selectedTitol" id="box_101"&gt;
+  &lt;!-- Títol Desplegable 1 --&gt;  
+  &lt;div class="minus" id="title_box_101"&gt;
+    T&amp;Iacute;TOL 1&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="dsplContent" id="dsplContent_box_101"&gt;
+  &lt;!-- Contingut Desplegable 1 --&gt;  &lt;div&gt;
+    Contingut&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- ************ FINAL 1er DESPLEGABLE ************ --&gt;
+
+&lt;!-- ************ INICI 2on DESPLEGABLE ************ --&gt;
+&lt;div class="selectedTitol" id="box_102"&gt;
+  &lt;!-- Títol Desplegable 2 --&gt;  
+  &lt;div class="minus" id="title_box_102"&gt;
+    T&amp;Iacute;TOL 2&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="dsplContent" id="dsplContent_box_102"&gt;
+  &lt;!-- Contingut Desplegable 2 --&gt;  &lt;div&gt;
+    Contingut&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- ************ FINAL 2on DESPLEGABLE ************ --&gt;
+
+&lt;!-- ************ INICI 3ER DESPLEGABLE ************ --&gt;
+&lt;div class="selectedTitol" id="box_103"&gt;
+  &lt;!-- Títol Desplegable 3 --&gt;  
+  &lt;div class="minus" id="title_box_103"&gt;
+    T&amp;Iacute;TOL 3&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="dsplContent" id="dsplContent_box_103"&gt;
+  &lt;!-- Contingut Desplegable 3 --&gt;  &lt;div&gt;
+    Contingut&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- ************ FINAL 3er DESPLEGABLE ************ --&gt;
+
+&lt;!-- ************ INICI 4rt DESPLEGABLE ************ --&gt;
+&lt;div class="selectedTitol" id="box_104"&gt;
+  &lt;!-- Títol Desplegable 4 --&gt;  
+  &lt;div class="minus" id="title_box_104"&gt;
+    T&amp;Iacute;TOL 4&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="dsplContent" id="dsplContent_box_104"&gt;
+  &lt;!-- Contingut Desplegable 4 --&gt;  &lt;div&gt;
+    Contingut&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- ************ FINAL 4rt DESPLEGABLE ************ --&gt;
+
+&lt;!-- ************ INICI 5é DESPLEGABLE ************ --&gt;
+&lt;div class="selectedTitol" id="box_105"&gt;
+  &lt;!-- Títol Desplegable 5 --&gt;  
+  &lt;div class="minus" id="title_box_105"&gt;
+    T&amp;Iacute;TOL 5&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="dsplContent" id="dsplContent_box_105"&gt;
+  &lt;!-- Contingut Desplegable 5 --&gt;  &lt;div&gt;
+    Contingut&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- ************ FINAL 5é DESPLEGABLE ************ --&gt;
+
+&lt;!-- ************ INICI 6é DESPLEGABLE ************ --&gt;
+&lt;div class="selectedTitol" id="box_106"&gt;
+  &lt;!-- Títol Desplegable 6 --&gt;  
+  &lt;div class="minus" id="title_box_106"&gt;
+    T&amp;Iacute;TOL 6&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="dsplContent" id="dsplContent_box_106"&gt;
+  &lt;!-- Contingut Desplegable 6 --&gt;  &lt;div&gt;
+    Contingut&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- ************ FINAL 6é DESPLEGABLE ************ --&gt;
+
+&lt;!-- ************ INICI 7é DESPLEGABLE ************ --&gt;
+&lt;div class="selectedTitol" id="box_107"&gt;
+  &lt;!-- Títol Desplegable 7 --&gt;  
+  &lt;div class="minus" id="title_box_107"&gt;
+    T&amp;Iacute;TOL 7&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="dsplContent" id="dsplContent_box_107"&gt;
+  &lt;!-- Contingut Desplegable 7 --&gt;  &lt;div&gt;
+    Contingut&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- ************ FINAL 7é DESPLEGABLE ************ --&gt;
+
+
+&lt;!-- Per afegir un desplegable seleccionar el codi comprés entre INICI 1ER              --&gt;
+&lt;!-- DESPLEGABLE i FINAL 1ER DESPLEGABLE i canviar, en els atributs id dels             --&gt;
+&lt;!-- divisors DIV, el nombre que segueix a box_, title_box_ y dsplContent_box_ per      --&gt;
+&lt;!-- un altre que no existeixi. En el cas de voler posar icones en la part esquerra del --&gt;
+&lt;!-- desplegable existeix l'opció de substituir el nombre per una de les sigüents       --&gt;
+&lt;!-- paraules: solicitud, descripcio, tramitar, adjuntar, compte, enllacos, normativa   --&gt;
+&lt;!-- i consulta.                                                                        --&gt;
+&lt;!-- Exemple:                                                                           --&gt;
+&lt;!--   &lt;div class="selectedTitol" id="box_consulta"&gt;                                    --&gt;
+&lt;!--     &lt;div class="minus" id="title_box_consulta"&gt;                                    --&gt;
+&lt;!--       TÍTOL 1                                                                      --&gt;
+&lt;!--     &lt;/div&gt;                                                                         --&gt;
+&lt;!--   &lt;/div&gt;                                                                           --&gt;
+&lt;!--   &lt;div class="dsplContent" id="dsplContent_box_consulta"&gt;                          --&gt;
+&lt;!--     &lt;div&gt;                                                                          --&gt;
+&lt;!--       Contingut                                                                    --&gt;
+&lt;!--     &lt;/div&gt;                                                                         --&gt;
+&lt;!--   &lt;/div&gt;                                                                           --&gt;
+&lt;!-- De la mateixa manera que el nombre que acompanya als id: box_, title_box_          --&gt;
+&lt;!-- i dsplContent_box_ no es pot repetir en una fitxa o pàgina HTML, no és             --&gt;
+&lt;!-- possible repetir les paraules de la llista anterior en una fitxa o  pàgina.        --&gt;				
+			
+			
+			
+			
+			
+			
+			</contingut>
+    <permetreGSP type='class java.lang.Integer'>1</permetreGSP>
+    <observacions type='class org.codehaus.groovy.runtime.NullObject' />
+  </Plantilla>
+</plantillas>
