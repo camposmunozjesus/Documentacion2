@@ -1,0 +1,2660 @@
+<templates>
+  <Template>
+    <id type='class java.lang.Long'>8</id>
+    <aliesUri type='class java.lang.String'>inici</aliesUri>
+    <descripcio type='class org.codehaus.groovy.runtime.NullObject' />
+    <idioma type='class org.codehaus.groovy.runtime.NullObject' />
+    <ordre type='class java.lang.Integer'>4</ordre>
+    <espai type='class java.lang.Integer'>2</espai>
+    <titol type='class java.lang.String'>Inici</titol>
+    <contingut type='class java.lang.String'>&lt;!DOCTYPE html&gt;
+&lt;!--[if lt IE 7 ]&gt; &lt;html lang="en" class="no-js ie6"&gt; &lt;![endif]--&gt;
+&lt;!--[if IE 7 ]&gt;    &lt;html lang="en" class="no-js ie7"&gt; &lt;![endif]--&gt;
+&lt;!--[if IE 8 ]&gt;    &lt;html lang="en" class="no-js ie8"&gt; &lt;![endif]--&gt;
+&lt;!--[if IE 9 ]&gt;    &lt;html lang="en" class="no-js ie9"&gt; &lt;![endif]--&gt;
+&lt;!--[if (gt IE 9)|!(IE)]&gt;&lt;!--&gt; &lt;html lang="en" class="no-js"&gt;&lt;!--&lt;![endif]--&gt;
+&lt;html&gt;
+
+  &lt;head&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1" /&gt;
+    &lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /&gt;
+    
+    &lt;link rel="stylesheet" href="/${grails.util.Metadata.current.'app.name'}/css/bootstrap.css" type="text/css" /&gt;
+    &lt;script type="text/javascript" src="/${grails.util.Metadata.current.'app.name'}/js/jquery/jquery-1.11.1.min.js"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript" src="/${grails.util.Metadata.current.'app.name'}/js/bootstrap.min.js"&gt;&lt;/script&gt;
+    
+    &lt;link rel="shortcut icon" href="/${grails.util.Metadata.current.'app.name'}/images/favicon.ico" type="image/x-icon" /&gt;
+    
+    &lt;link rel="stylesheet" href="/${grails.util.Metadata.current.'app.name'}/css/main.css" type="text/css" /&gt;
+    &lt;link rel="stylesheet" href="/${grails.util.Metadata.current.'app.name'}/css/bootstrapUPC.css" type="text/css" /&gt;
+    &lt;link rel="stylesheet" href="/${grails.util.Metadata.current.'app.name'}/css/estilsUPC.css" type="text/css" /&gt;
+    &lt;link rel="stylesheet" href="/${grails.util.Metadata.current.'app.name'}/css/sticky-footer.css" type="text/css" /&gt;
+    &lt;link rel="stylesheet" href="/${grails.util.Metadata.current.'app.name'}/css/tmp.css" type="text/css" /&gt;
+    &lt;link rel="stylesheet" href="/${grails.util.Metadata.current.'app.name'}/css/menus.css" type="text/css" /&gt;
+
+    &lt;link rel="stylesheet" href="/${grails.util.Metadata.current.'app.name'}/css/desplegables-fitxa.css" type="text/css" /&gt; 
+    &lt;script type="text/javascript" src="/${grails.util.Metadata.current.'app.name'}/js/desplegables-fitxa.js"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript" src="/${grails.util.Metadata.current.'app.name'}/js/light-menu-1.js"&gt;&lt;/script&gt;
+    &lt;style&gt;
+      .novetats ul {
+    list-style-type: none;
+    padding-left: 25px;
+}
+
+.novetats ul li {
+    background-image: url('/rrhh/files/tecnic/fletxa_groga.png');
+    background-repeat: no-repeat;
+    background-position: 0px 2px;
+    padding-left: 25px; 
+    padding-bottom: 5px;
+}
+
+.novetats #dsplContent_box_101{
+  /* background-color: red; */
+}
+
+.novetats .columnas-dobles img{
+  max-width: 100%;
+}
+      
+      .h-fila-125 tr{
+    height: 125px;
+}
+      
+      .h-fila-130 tr{
+    height: 130px;
+}
+      
+      .h-fila-135 tr{
+    height: 135px;
+}
+      
+      .h-fila-140 tr{
+    height: 140px;
+}
+      
+      .h-fila-145 tr{
+    height: 145px;
+}
+      
+      .h-fila-150 tr{
+    height: 150px;
+}
+      
+      .h-fila-175 tr{
+    height: 175px;
+}
+
+.h-fila-200 tr{
+    height: 200px;
+}
+
+.h-fila-225 tr{
+    height: 225px;
+}
+
+.h-fila-250 tr{
+    height: 250px;
+}
+
+
+.novetats table td{
+  vertical-align: top;
+}
+    &lt;/style&gt;
+  &lt;/head&gt;
+  
+  &lt;body&gt;
+    &lt;div class="container"&gt;
+      &lt;div class="container-UPC tmpl-no-menu"&gt;
+        &lt;!-- ************ INI top-nav ************ --&gt;
+        &lt;div id="spinner" class="spinner" style="display: none;"&gt;
+          &lt;img alt="Carregant..." src="/rrhh/files/tecnic/spinner.gif" /&gt;
+        &lt;/div&gt;
+        
+        &lt;div class="row no-scroll-bar"&gt;
+          &lt;div class="col-xs-12 col-vxs-12 col-sm-6 col-md-7 col-lg-8 row-margin-bottom-header"&gt;
+            &lt;h1 class="pull-left logo-portal"&gt;
+              &lt;img usemap = "#upc_link" class="img-responsive" alt="Universitat Politècnica de Catalunya" src="/rrhh/files/tecnic/logo_upc_portal_pas_2.png" style="border:0;"/&gt;
+              &lt;map name="upc_link"&gt;
+                &lt;area shape=Rect Coords=0,0,50,60 href="http://www.upc.edu" target="_blank" /&gt;
+              &lt;/map&gt;
+            &lt;/h1&gt;  
+          &lt;/div&gt;
+          &lt;div class="col-xs-12 col-vxs-12 col-sm-6 col-md-5 col-lg-4 row-margin-bottom-header"&gt;
+            &lt;div class="navbar navbar-default navbar-Info" role="navigation"&gt;
+              &lt;div class="navbar-container-UPC"&gt;
+                &lt;div class="navbar-header"&gt;
+                  &lt;div class="columna-centrada-header"&gt;
+                    
+                    &lt;button class="navbar-toggle collapsed navbar-toggle-header btn-header" data-target="#navbar-collapse-search" data-toggle="collapse" type="button"&gt;
+                      &lt;span class="sr-only"&gt;Cercar&lt;/span&gt;
+                      &lt;span class="glyphicon glyphicon-search"&gt;&lt;/span&gt;
+                    &lt;/button&gt;
+                    &lt;button class="navbar-toggle collapsed navbar-toggle-header btn-header" data-target="#navbar-collapse-info" data-toggle="collapse" type="button"&gt;
+                      &lt;span class="sr-only"&gt;Contacte i directori&lt;/span&gt;
+                      &lt;span class="glyphicon glyphicon-info-sign"&gt;&lt;/span&gt;
+                    &lt;/button&gt;
+                    &lt;button class="navbar-toggle collapsed navbar-toggle-header btn-header" data-target="#navbar-collapse-portal" data-toggle="collapse" type="button"&gt;
+                      &lt;span class="sr-only"&gt;Altres portals&lt;/span&gt;
+                      &lt;span class="glyphicon glyphicon-new-window"&gt;&lt;/span&gt;
+                    &lt;/button&gt;      
+                    
+                  &lt;/div&gt;      
+                &lt;/div&gt;
+                &lt;div class="columna-centrada"&gt;
+                  &lt;div id="navbar-collapse-search" class="navbar-collapse collapse"&gt;        
+                    &lt;ul class="nav navbar-nav navbar-right search-position"&gt;          
+                      &lt;li&gt;
+                        &lt;div class="clearfix pull-right buscador"&gt;
+                          &lt;!-- Buscador --&gt;    
+                          &lt;!--buscadorUPC--&gt;                                                                   
+                        &lt;/div&gt;
+                      &lt;/li&gt;
+                    &lt;/ul&gt;        
+                  &lt;/div&gt;
+                &lt;/div&gt;
+                
+                &lt;div id="navbar-collapse-info" class="navbar-collapse collapse navbar-info format-lletra-upc"&gt;        
+                  &lt;ul class="nav navbar-nav navbar-right info-position"&gt;          
+                    &lt;li&gt;
+                      &lt;span class="contacte"&gt;
+                        &lt;a href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/contacte" target="_blank" onclick="window.open(this.href,this.target,'width=750,height=950,resizable=yes,scrollbars=yes');return false" alt="Contacte" title="Contacte"&gt;Contacte&lt;/a&gt;
+                      &lt;/span&gt;
+                    &lt;/li&gt;
+                    &lt;li&gt;
+                      &lt;span class="enllacSuggeriment"&gt;
+                        &lt;a href="/${grails.util.Metadata.current.'app.name'}/suggeriments" target="_blank" onclick="window.open(this.href,this.target,'width=750,height=550,resizable=yes,scrollbars=yes');return false" alt="Suggeriments" title="Suggeriments"&gt;Suggeriments&lt;/a&gt;
+                      &lt;/span&gt;
+                    &lt;/li&gt;
+                    &lt;li&gt;
+                      &lt;span class="enllacPortal"&gt;
+                        &lt;a href="http://directori.upc.edu/directori/" target="_blank" onclick="window.open(this.href,this.target,'width=750,height=550,resizable=yes');return false" alt="Directori UPC" title="Directori UPC"&gt;Directori UPC&lt;/a&gt;
+                      &lt;/span&gt;
+                    &lt;/li&gt;
+                  &lt;/ul&gt;    
+                &lt;/div&gt;        
+                &lt;!-- /.nav-collapse --&gt;
+              &lt;/div&gt;
+              &lt;!-- /.container-fluid --&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        
+        &lt;div class="row no-scroll-bar"&gt;
+          &lt;div class="col-vxs-12 col-sm-7 col-md-7 col-lg-8"&gt;
+            &lt;div id="navbar-collapse-portal" class="navbar-collapse collapse navbar-portal format-lletra-upc"&gt;        
+              &lt;ul class="nav navbar-nav"&gt;
+                &lt;li&gt;
+                  &lt;span class="enllacPortalFirst portal-UPC"&gt;
+                    &lt;a href="/${grails.util.Metadata.current.'app.name'}/PDI/" alt="Portal PDI" title="Portal PDI"&gt;Portal PDI&lt;/a&gt;
+                  &lt;/span&gt;
+                  
+                &lt;/li&gt;
+                &lt;li&gt;
+                  &lt;span class="enllacPortal"&gt;  
+                    &lt;a href="/${grails.util.Metadata.current.'app.name'}/GES/" alt="Portal gestor/a" title="Portal gestor/a"&gt;Portal gestor/a&lt;/a&gt;
+                  &lt;/span&gt;
+                &lt;/li&gt;  
+                &lt;li&gt;
+                  &lt;span class="enllacPortal enllacPortalLast"&gt;
+                    &lt;a href="/${grails.util.Metadata.current.'app.name'}/BEC/" alt="Portal beques grau/màster" title="Portal beques grau/màster"&gt;Portal beques grau/màster&lt;/a&gt;
+                  &lt;/span&gt;
+                &lt;/li&gt;
+              &lt;/ul&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;  
+        &lt;/div&gt;
+        
+        &lt;!-- STATUS BAR ESTÁTICA --&gt;
+        &lt;div class="navbar navbar-default navbar-UPC" role="navigation"&gt;
+          &lt;div class="container-fluid"&gt;
+            &lt;div class="navbar-header"&gt;
+              &lt;button class="navbar-toggle collapsed navbar-toggle-home" data-target="#navbar-collapse-menu" data-toggle="collapse" type="button"&gt;
+                &lt;span class="sr-only"&gt;Toggle navigation&lt;/span&gt;
+                &lt;span class="icon-bar"&gt;&lt;/span&gt;
+                &lt;span class="icon-bar"&gt;&lt;/span&gt;
+                &lt;span class="icon-bar"&gt;&lt;/span&gt;
+              &lt;/button&gt;
+              &lt;a class="navbar-brand home" href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index" alt="Inici" title="Inici"&gt;Inici&lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div id="navbar-collapse-menu" class="navbar-collapse collapse"&gt;
+              &lt;ul class="nav navbar-nav"&gt;
+                &lt;li&gt;                    
+                  &lt;a class="Informacio_General" href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General" alt="Informació general" title="Informació general"&gt;Informació general&lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li&gt;                    
+                  &lt;a class="Raco_Personal" href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Raco_Personal" alt="Racó personal" title="Racó personal"&gt;Racó personal&lt;/a&gt;
+                &lt;/li&gt;
+              &lt;/ul&gt;   
+              &lt;!-- Part dreta: usuari, desconnexió --&gt;
+              &lt;ul class="nav navbar-nav navbar-right format-lletra-upc"&gt;
+                &lt;li class="active"&gt;
+					&lt;!--userName--&gt;
+                &lt;/li&gt;
+                &lt;li&gt;
+                  &lt;span class="logout-UPC"&gt; &lt;a href="/${grails.util.Metadata.current.'app.name'}/logout/index" alt="Desconnecta" title="Desconnecta"&gt;Desconnecta&lt;/a&gt;&lt;/span&gt;
+                &lt;/li&gt;
+              &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;!-- /.nav-collapse --&gt;
+          &lt;/div&gt;
+          &lt;!-- /.container-fluid --&gt;
+        &lt;/div&gt;
+        &lt;!-- ************ FIN top-nav ************ --&gt;
+        &lt;!-- ************ INI breadCrumb-slider-bar ************ --&gt;      
+        &lt;div class="breadCrumb"&gt;
+          &lt;!-- Migas de pan --&gt;
+          &lt;div&gt; &lt;b&gt;Sou a &lt;span class="breadCrumbSeparator firstSeparator"&gt;&amp;raquo;&lt;/span&gt; &lt;/b&gt;&lt;span class="breadCrumbLastItem"&gt;Inici&lt;/span&gt;  &lt;/div&gt;
+          
+          &lt;!-- ************ INI slider  ************ --&gt;     
+          &lt;div id="myCarousel" class="carousel slide" data-ride="carousel"&gt;
+            &lt;!-- Indicators --&gt;
+            &lt;ol class="carousel-indicators"&gt;
+              &lt;li data-target="#myCarousel" data-slide-to="0" class="active"&gt;&lt;/li&gt;
+              &lt;li class="" data-target="#myCarousel" data-slide-to="1"&gt;&lt;/li&gt;
+              &lt;li class="" data-target="#myCarousel" data-slide-to="2"&gt;&lt;/li&gt;
+              &lt;li class="" data-target="#myCarousel" data-slide-to="3"&gt;&lt;/li&gt;
+            &lt;/ol&gt;
+            &lt;div class="carousel-inner" role="listbox"&gt;
+              &lt;!-- Primera imagen --&gt;
+              &lt;div class="item active"&gt;
+                &lt;img class="c" src="/rrhh/files/tecnic/slider5_text_v2.jpg" alt="First slide" /&gt;
+                &lt;div id="slide1" class="container"&gt;
+                  &lt;div class="carousel-caption"&gt;
+                    &lt;!--&lt;h1&gt;El Servei de Personal t'atén&lt;/h1&gt;
+                    &lt;p&gt;Note: If you're viewing this page via a &lt;code&gt;file://&lt;/code&gt; URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.&lt;/p&gt;  
+                    &lt;p&gt;&lt;a class="btn btn-lg btn-primary" href="http://www.upc.edu/" target="_blank" role="button"&gt;Ens vols conèixer?&lt;/a&gt;&lt;/p&gt;
+                    --&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+              &lt;!-- Segunda imagen --&gt;
+              &lt;div class="item"&gt;
+                &lt;img src="/rrhh/files/tecnic/slider_A.jpg" alt="Second slide" /&gt;
+                &lt;div id="slide2" class="container"&gt;
+                  &lt;div class="carousel-caption"&gt;
+                    &lt;!-- &lt;h1&gt;El Servei de Personal t'atén&lt;/h1&gt; --&gt;
+                    &lt;!-- &lt;p&gt;Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.&lt;/p&gt; --&gt;
+                    &lt;!-- &lt;p&gt;&lt;a class="btn btn-lg btn-primary" href="http://www.upc.edu/webs-upc" target="_blank" role="button"&gt;Ajuda'ns a millorar ...&lt;/a&gt;&lt;/p&gt;
+                    --&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+              &lt;!-- Tercera imagen --&gt;
+              &lt;div class="item"&gt;
+                &lt;img src="/rrhh/files/tecnic/slider3.jpg" alt="Third slide" /&gt;
+                &lt;div class="container"&gt;
+                  &lt;div class="carousel-caption"&gt;
+                    &lt;!-- &lt;h1&gt;Nou Portal de Personal&lt;/h1&gt;
+                    &lt;p&gt;Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.&lt;/p&gt;
+                    &lt;p&gt;&lt;a class="btn btn-lg btn-primary" href="http://www.ctt.upc.edu/" role="button"&gt;Vols saber més?&lt;/a&gt;&lt;/p&gt;
+                    --&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+              &lt;!-- Cuarta imagen --&gt;
+              &lt;div class="item"&gt;
+                &lt;img src="/rrhh/files/tecnic/slider_B.jpg" alt="Fourth slide" /&gt;
+                &lt;div id="slide4" class="container"&gt;
+                  &lt;div class="carousel-caption"&gt;
+                    &lt;!-- &lt;h1&gt;Nou Portal de Personal&lt;/h1&gt;  --&gt;
+                    &lt;!-- &lt;p&gt;&lt;a class="btn btn-lg btn-primary" href="http://www.ctt.upc.edu/" role="button"&gt;Vols saber més?&lt;/a&gt;&lt;/p&gt;
+                    --&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+			  &lt;!-- FIN imagen --&gt;
+            &lt;/div&gt;
+            &lt;a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev"&gt;
+              &lt;span class="glyphicon glyphicon-chevron-left"&gt;&lt;/span&gt;
+              &lt;span class="sr-only"&gt;Previous&lt;/span&gt;
+            &lt;/a&gt;
+            &lt;a class="right carousel-control" href="#myCarousel" role="button" data-slide="next"&gt;
+              &lt;span class="glyphicon glyphicon-chevron-right"&gt;&lt;/span&gt;
+              &lt;span class="sr-only"&gt;Next&lt;/span&gt;
+            &lt;/a&gt;
+          &lt;/div&gt;
+          &lt;!-- ************ FIN slider  ************ --&gt;
+          
+          &lt;!-- Título página --&gt;
+          &lt;h1 class="firstHeading"&gt;&lt;span&gt;&lt;/span&gt;
+            &lt;!--titolContent--&gt;
+          &lt;/h1&gt;
+        &lt;/div&gt;
+        &lt;!-- ************ FIN breadCrumb-slider-bar ************ --&gt;      
+      &lt;/div&gt;
+      
+      &lt;!-- Rejilla con el contenido principal --&gt;
+      &lt;div class="fit-column2left fit-column-inici weceem-tmpl"&gt;
+        &lt;div class="row"&gt;
+          &lt;div class="col-vxs-6 col-vxs-push-3 col-sm-6 col-sm-push-3 col-md-6 col-md-push-3 col-lg-6 col-lg-push-3 row-margin-top10"&gt;
+            &lt;div class="fit-content"&gt;
+              &lt;!--pageContent--&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class="col-vxs-3 col-vxs-pull-6 col-sm-3 col-sm-pull-6 col-md-3 col-md-pull-6 col-lg-3 col-lg-pull-6"&gt;
+            &lt;!-- ************ INI menu-inici-esq ************ --&gt;
+            &lt;div class="quadreMenuEsq"&gt;   
+              &lt;div id="Menu01" name="Menu01" class="dijitTitlePane"&gt;
+                &lt;div id="Menu_click" name="Menu00" class="dijitTitlePaneTitleCap" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index" &gt;
+                  &lt;span class="dijitTitlePaneTextNode"&gt;A un click&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;div id="Menu01" name="Menu01" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index'" &gt;
+                  &lt;span class="dijitTitlePaneTextNode"&gt;&lt;a href="https://tempus.upc.edu/" target="_blank" alt="Tempus Control de presència" title="Tempus Control de presència"&gt;Tempus&lt;/a&gt;&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;div id="Menu02" name="Menu02" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index'" &gt;
+                  &lt;span class="dijitTitlePaneTextNode"&gt;&lt;a href="/RP${space?.name}/rebutNomina/list" alt="Rebut de nòmina" title="Rebut de nòmina"&gt;Rebut de nòmina&lt;/a&gt;&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;div id="Menu03" name="Menu03" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index'" &gt;
+                  &lt;span class="dijitTitlePaneTextNode"&gt;&lt;a href="https://gn6.upc.edu/pucpersonal/" target="_blank" alt="PUC Personal" title="PUC Personal"&gt;PUC-Personal&lt;/a&gt;&lt;/span&gt;
+                &lt;/div&gt;  
+                &lt;div id="Menu04" name="Menu04" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index'" &gt;
+                  &lt;span class="dijitTitlePaneTextNode"&gt;&lt;a href="/RP${space?.name}/adrecaParticular/list" alt="Modificació adreça particular" title="Modificació adreça particular"&gt;Modificació adreça particular&lt;/a&gt;&lt;/span&gt;
+                &lt;/div&gt;                
+                &lt;div id="Menu05" name="Menu05" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index'" &gt;
+                  &lt;span class="dijitTitlePaneTextNode"&gt;&lt;a href="/RP${space?.name}/comunicacions/list" alt="Modificació telèfons i adreces electròniques" title="Modificació telèfons i adreces electròniques"&gt;Modificació telèfons i adreces electròniques&lt;/a&gt;&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;div id="Menu06" name="Menu06" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index'" &gt;
+                  &lt;span class="dijitTitlePaneTextNode"&gt;&lt;a href="/RP${space?.name}/dadesBancaries/list" alt="Modificació domiciliació bancària" title="Modificació domiciliació bancària"&gt;Modificació domiciliació bancària&lt;/a&gt;&lt;/span&gt;
+                &lt;/div&gt;               
+                &lt;div id="Menu07" name="Menu07" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index'" &gt;
+                  &lt;span class="dijitTitlePaneTextNode"&gt;&lt;a href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/Calendari-laboral-jornada" alt="Calendari laboral" title="Calendari laboral"&gt;Calendari laboral&lt;/a&gt;&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;div id="Menu08" name="Menu08" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index'" &gt;
+                  &lt;span class="dijitTitlePaneTextNode"&gt;&lt;a href="https://millot.upc.edu/COM" target="_blank" alt="Baixes mèdiques seguretat social" title="Baixes mèdiques seguretat social"&gt;Baixes mèdiques seg. social&lt;/a&gt;&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;div id="Menu09" name="Menu09" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index'" &gt;
+                  &lt;span class="dijitTitlePaneTextNode"&gt;&lt;a href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/Sistema-retributiu" alt="Taules retributives" title="Taules retributives"&gt;Taules retributives&lt;/a&gt;&lt;/span&gt;
+                &lt;/div&gt;               
+              &lt;/div&gt;
+            &lt;/div&gt;   
+            
+            &lt;div id="lastQuadreMenuEsq" class="quadreMenuEsq"&gt;   
+              &lt;div id="Menu10" name="Menu10" class="dijitTitlePane"&gt;
+                &lt;div id="Menu_info_gen" name="Menu00" class="dijitTitlePaneTitleCap" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index" &gt;
+                  &lt;span class="dijitTitlePaneTextNode"&gt;Informació general&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;div id="Menu11" name="Menu11" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/El-PAS-a-la-UPC'" &gt;
+                  &lt;span class="dijitTitlePaneTextNode"&gt;&lt;a href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/El-PAS-a-la-UPC" alt="El PAS a la UPC" title="El PAS a la UPC"&gt;El PAS a la UPC&lt;/a&gt;&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;div id="Menu21" name="Menu21" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Calendari-laboral-jornada'" &gt;
+                  &lt;span class="dijitTitlePaneTextNode"&gt;&lt;a href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/Calendari-laboral-jornada" alt="Calendari laboral, jornada i horaris" title="Calendari laboral, jornada i horaris"&gt;Calendari laboral, jornada i horaris&lt;/a&gt;&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;div id="Menu31" name="Menu31" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Sistema-retributiu'" &gt;
+                  &lt;span class="dijitTitlePaneTextNode"&gt;&lt;a href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/Sistema-retributiu" alt="Sistema retributiu" title="Sistema retributiu"&gt;Sistema retributiu&lt;/a&gt;&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;div id="Menu41" name="Menu41" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Seguretat-social'" &gt;
+                  &lt;span class="dijitTitlePaneTextNode"&gt;&lt;a href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/Seguretat-social" alt="Seguretat social" title="Seguretat social"&gt;Seguretat social&lt;/a&gt;&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;div id="Menu51" name="Menu51" class="dijitTitlePaneTitle" onclick="parent.location='https://espaipersonal.upc.edu/irj/portal/PAS_FORMACIO'" &gt;
+                  &lt;span class="dijitTitlePaneTextNode"&gt;&lt;a href="https://espaipersonal.upc.edu/irj/portal/PAS_FORMACIO" target="_blank" alt="Formació" title="Formació"&gt;Formació&lt;/a&gt;&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;div id="Menu61" name="Menu61" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Relacions-laborals'" &gt;
+                  &lt;span class="dijitTitlePaneTextNode"&gt;&lt;a href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/Relacions-laborals" alt="Relacions laborals" title="Relacions laborals"&gt;Relacions laborals&lt;/a&gt;&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;div id="Menu71" name="Menu71" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Permisos'" &gt;
+                  &lt;span class="dijitTitlePaneTextNode"&gt;&lt;a href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/Permisos" alt="Permisos, llicències, reduccions de jornada i excedències" title="Permisos, llicències, reduccions de jornada i excedències"&gt;Permisos, llicències, red. jornada i excedències&lt;/a&gt;&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;div id="Menu81" name="Menu81" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index" &gt;
+                  &lt;span class="dijitTitlePaneTextNode"&gt;&lt;a href="https://espaipersonal.upc.edu/irj/portal/PAS_PROVISIO_LLOC_TREBALL" alt="Mobilitat" title="Mobilitat" target="_blank"&gt;Mobilitat&lt;/a&gt;&lt;/span&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+            
+
+            
+            &lt;br/&gt;
+            &lt;!-- ************ FIN menu-inici-esq ************ --&gt;
+          &lt;/div&gt;
+          &lt;div class="col-vxs-3 col-vxs-pull-0 col-sm-3 col-sm-pull-0 col-md-3 col-md-pull-0 col-lg-3 col-lg-pull-0 row-margin-bottom40"&gt;
+            &lt;!-- ************ INI menu-inici-dret ************ --&gt;
+         	&lt;div class="quadreMenuDret"&gt;   
+              &lt;div id="Menu20" name="Menu20" class="dijitTitlePane"&gt;
+                &lt;div id="Menu_informat" name="Menu00" class="dijitTitlePaneTitleCap" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index" &gt;
+                  &lt;span class="dijitTitlePaneTextNode"&gt;Subscripció&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;div id="Menu21" name="Menu21" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index'" &gt;
+                  &lt;span class="dijitTitlePaneTextNode"&gt;&lt;a href="https://gauss.upc.edu/gauss/portalllistes/grupDadesSimplePublicServlet?id_grup=82872&amp;origen=llistesPubliques" target="_blank" alt="Subscripció a novetats ${space?.name}" title="Subscripció a novetats ${space?.name}"&gt;Subscripció a novetats ${space?.name}&lt;/a&gt;&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;div id="Menu22" name="Menu22" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index'" &gt;
+                  &lt;span class="dijitTitlePaneTextNode"&gt;&lt;a href="https://gauss.upc.edu/gauss/portalllistes/grupDadesSimpleMembre.jsp?id_grup=82872&amp;origen=llistesMembre" target="_blank" alt="Baixa subscripció a novetats" title="Baixa subscripció a novetats"&gt;Baixa subscripció a novetats&lt;/a&gt;&lt;/span&gt;
+                &lt;/div&gt;
+                
+                
+              &lt;/div&gt;
+            &lt;/div&gt; 
+             &lt;div class="quadreMenuDret"&gt;   
+              &lt;div id="Menu1" name="Menu0" class="dijitTitlePane"&gt;
+                &lt;div id="Menu_actualitat" name="Menu0" class="dijitTitlePaneTitleCap" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index" &gt;
+                  &lt;span class="dijitTitlePaneTextNode"&gt;Per seguir l'actualitat&lt;/span&gt;
+                &lt;/div&gt;
+                 &lt;div id="Menu10" name="Menu10" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index'" &gt;
+                  &lt;span class="dijitTitlePaneTextNode"&gt;&lt;a href="/${grails.util.Metadata.current.'app.name'}/actualitzacions?espai=${space?.name}" alt="Darreres actualitzacions d'informació" title="Darreres actualitzacions d'informació"&gt;Darreres actualitzacions d'informació&lt;/a&gt;&lt;/span&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt; 
+            
+            &lt;div class="quadreMenuDret"&gt;   
+              &lt;div id="Menu0" name="Menu0" class="dijitTitlePane"&gt;
+                &lt;div id="Menu_raco_pers" name="Menu0" class="dijitTitlePaneTitleCap" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index" &gt;
+                  &lt;span class="dijitTitlePaneTextNode"&gt;Racó personal&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;div id="Menu" name="Menu1" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index'" &gt;
+                  &lt;span class="dijitTitlePaneTextNode"&gt;&lt;a href="/RP${space?.name}/dadesPersonals/list" alt="Dades generals" title="Dades generals"&gt;Dades generals&lt;/a&gt;&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;div id="Menu" name="Menu2" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index'" &gt;
+                  &lt;span class="dijitTitlePaneTextNode"&gt;&lt;a href="/RP${space?.name}/antiguitat/list" alt="Vinculació i altres dades" title="Vinculació i altres dades"&gt;Vinculació i altres dades&lt;/a&gt;&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;div id="Menu" name="Menu2" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index'" &gt;
+                  &lt;span class="dijitTitlePaneTextNode"&gt;&lt;a href="/RP${space?.name}/rebutNomina/list" alt="Dades econòmiques" title="Dades econòmiques"&gt;Dades econòmiques&lt;/a&gt;&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;div id="Menu" name="Menu2" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index'" &gt;
+                  &lt;span class="dijitTitlePaneTextNode"&gt;&lt;a href="/RP${space?.name}/dadesLloc/list" alt="Lloc de treball" title="Lloc de treball"&gt;Lloc de treball&lt;/a&gt;&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;div id="Menu" name="Menu3" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index'" &gt;
+                  &lt;span class="dijitTitlePaneTextNode"&gt;&lt;a href="https://espaipersonal.upc.edu/irj/portal/PAS_FORMACIO" target="_blank" alt="Formació" title="Formació"&gt;Formació&lt;/a&gt;&lt;/span&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+              
+            &lt;div class="quadreBannersDret"&gt;
+              &lt;a href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/contacte" target="_blank" title="Contacta amb nosaltres" onclick="window.open(this.href,this.target,'width=750,height=950,resizable=yes,scrollbars=yes');return false"&gt;              
+                &lt;img class="img-responsive" src="/rrhh/files/tecnic/banner_contacta.png" alt="Contacta amb nosaltres" title="Contacta amb nosaltres" /&gt;
+              &lt;/a&gt;
+              &lt;a href="https://gn6.upc.edu/pucpersonal" target="_blank" title="PUC Personal"&gt;            
+                &lt;img class="img-responsive"  src="/rrhh/files/tecnic/banner_puc.png" alt="PUC Personal" title="PUC Personal" /&gt;
+              &lt;/a&gt;
+              &lt;a href="https://tempus.upc.edu" title="Tempus Control de presència" target="_blank"&gt;            
+                &lt;img class="img-responsive" src="/rrhh/files/tecnic/banner_tempus.png" alt="Tempus Control de presència" title="Tempus Control de presència" /&gt;
+              &lt;/a&gt;
+              &lt;a href="/RP${space?.name}/rebutNomina" title="Rebut de nòmina"&gt;            
+                &lt;img class="img-responsive" src="/rrhh/files/tecnic/banner_nomina.png" alt="Rebut de nòmina" title="Rebut de nòmina" /&gt;
+              &lt;/a&gt;
+               &lt;a href="http://futur.upc.edu/" target="_blank" title="Futur Portal de producció científica"&gt;  
+                &lt;img class="img-responsive" src="/rrhh/files/tecnic/banner_futur.jpg" alt="Futur Portal de producció científica" title="Futur Portal de producció científica" /&gt;
+              &lt;/a&gt;
+              &lt;a href="http://www.upc.edu/ccd/participa/campanya-07-si" target="_blank" title="Campanya 0,7%"&gt;               
+                &lt;img class="img-responsive" src="/rrhh/files/tecnic/campana07_gw4.PNG" alt="Campanya 0,7%" title="Campanya 0,7%" /&gt;
+              &lt;/a&gt;
+              &lt;a href="http://www.upc.edu/latevaupc/" target="_blank" title="La teva UPC"&gt;  
+                &lt;img class="img-responsive" src="/rrhh/files/tecnic/banner_la_teva_upc.png" alt="La teva UPC" title="La teva UPC" /&gt;
+              &lt;/a&gt;             
+            &lt;/div&gt;
+            &lt;!-- ************ FIN menu-inici-dret ************ --&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!-- Pie de página --&gt;
+    &lt;!-- ************ INI bottom-nav ************ --&gt;
+    &lt;div class="footer"&gt;
+      &lt;div class="container"&gt;
+        &lt;div class="fit2container"&gt;      
+          &lt;div class="row no-scroll-bar"&gt;          
+            &lt;div class="col-xs-12 col-footer-9 col-vxs-9 col-sm-9 col-md-9 col-lg-9" &gt;
+              &lt;p class="footer-text"&gt;Àrea de Personal i Organització&lt;/p&gt;
+              &lt;p class="footer-text"&gt;&amp;copy; &lt;a href="http://www.upc.edu"&gt;UPC&lt;/a&gt;. Universitat Politècnica de Catalunya &lt;span&gt;●&lt;/span&gt; BarcelonaTech&lt;/p&gt;           
+            &lt;/div&gt;        
+            &lt;div class="col-xs-12 col-footer-3 col-vxs-3 col-sm-3 col-md-3 col-lg-3 row-margin-top-peu"&gt;
+              &lt;div class="accessibilitat-container"&gt;
+                &lt;a class="footer-text" href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/accessibilitat" target="_blank" onclick="window.open(this.href,this.target,'width=1100,height=950,resizable=yes,scrollbars=yes');return false" alt="Accessibilitat" title="Accessibilitat"&gt;Accessibilitat&lt;/a&gt;
+                &lt;a class="footer-text" href="#top"&gt;&lt;img alt="Amunt" src="/rrhh/files/tecnic/amunt.gif"/&gt;&lt;/a&gt;                        
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;     
+        &lt;/div&gt;    
+      &lt;/div&gt;
+    &lt;/div&gt;    
+    &lt;!-- ************ FIN bottom-nav ************ --&gt;
+  &lt;/body&gt;
+  
+&lt;/html&gt;</contingut>
+    <permetreGSP type='class java.lang.Integer'>1</permetreGSP>
+    <observacions type='class org.codehaus.groovy.runtime.NullObject' />
+  </Template>
+  <Template>
+    <id type='class java.lang.Long'>106</id>
+    <aliesUri type='class java.lang.String'>informacio_general</aliesUri>
+    <descripcio type='class org.codehaus.groovy.runtime.NullObject' />
+    <idioma type='class org.codehaus.groovy.runtime.NullObject' />
+    <ordre type='class java.lang.Integer'>6</ordre>
+    <espai type='class java.lang.Integer'>2</espai>
+    <titol type='class java.lang.String'>Informació general</titol>
+    <contingut type='class java.lang.String'>&lt;!DOCTYPE html&gt;
+&lt;!--[if lt IE 7 ]&gt; &lt;html lang="en" class="no-js ie6"&gt; &lt;![endif]--&gt;
+&lt;!--[if IE 7 ]&gt;    &lt;html lang="en" class="no-js ie7"&gt; &lt;![endif]--&gt;
+&lt;!--[if IE 8 ]&gt;    &lt;html lang="en" class="no-js ie8"&gt; &lt;![endif]--&gt;
+&lt;!--[if IE 9 ]&gt;    &lt;html lang="en" class="no-js ie9"&gt; &lt;![endif]--&gt;
+&lt;!--[if (gt IE 9)|!(IE)]&gt;&lt;!--&gt; &lt;html lang="en" class="no-js"&gt;&lt;!--&lt;![endif]--&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1" /&gt;
+    &lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /&gt;
+    
+    &lt;link rel="stylesheet" href="/${grails.util.Metadata.current.'app.name'}/css/bootstrap.css" type="text/css" /&gt;
+    &lt;script type="text/javascript" src="/${grails.util.Metadata.current.'app.name'}/js/jquery/jquery-1.11.1.min.js"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript" src="/${grails.util.Metadata.current.'app.name'}/js/bootstrap.min.js"&gt;&lt;/script&gt;
+    
+    &lt;link rel="shortcut icon" href="/${grails.util.Metadata.current.'app.name'}/images/favicon.ico" type="image/x-icon" /&gt;
+    
+    &lt;link rel="stylesheet" href="/${grails.util.Metadata.current.'app.name'}/css/main.css" type="text/css" /&gt;
+    &lt;link rel="stylesheet" href="/${grails.util.Metadata.current.'app.name'}/css/bootstrapUPC.css" type="text/css" /&gt;
+    &lt;link rel="stylesheet" href="/${grails.util.Metadata.current.'app.name'}/css/estilsUPC.css" type="text/css" /&gt;
+    &lt;link rel="stylesheet" href="/${grails.util.Metadata.current.'app.name'}/css/sticky-footer.css" type="text/css" /&gt;
+    &lt;link rel="stylesheet" href="/${grails.util.Metadata.current.'app.name'}/css/tmp.css" type="text/css" /&gt;
+  &lt;/head&gt;
+  
+  &lt;body&gt;
+    &lt;div class="container"&gt;
+      &lt;div class="container-UPC tmpl-no-menu"&gt;
+        &lt;!-- ************ INI top-nav ************ --&gt;
+        &lt;div id="spinner" class="spinner" style="display: none;"&gt;
+          &lt;img alt="Carregant..." src="/rrhh/files/tecnic/spinner.gif" /&gt;
+        &lt;/div&gt;
+        
+        &lt;div class="row no-scroll-bar"&gt;
+          &lt;div class="col-xs-12 col-vxs-12 col-sm-6 col-md-7 col-lg-8 row-margin-bottom-header"&gt;
+            &lt;h1 class="pull-left logo-portal"&gt;
+              &lt;img usemap = "#upc_link" class="img-responsive" alt="Universitat Politècnica de Catalunya" src="/rrhh/files/tecnic/logo_upc_portal_pas_2.png" style="border:0;"/&gt;
+              &lt;map name="upc_link"&gt;
+                &lt;area shape=Rect Coords=0,0,50,60 href="http://www.upc.edu" target="_blank" /&gt;
+              &lt;/map&gt;
+            &lt;/h1&gt;  
+          &lt;/div&gt;
+          &lt;div class="col-xs-12 col-vxs-12 col-sm-6 col-md-5 col-lg-4 row-margin-bottom-header"&gt;
+            &lt;div class="navbar navbar-default navbar-Info" role="navigation"&gt;
+              &lt;div class="navbar-container-UPC"&gt;
+                &lt;div class="navbar-header"&gt;
+                  &lt;div class="columna-centrada-header"&gt;
+                    
+                    
+                    &lt;button class="navbar-toggle collapsed navbar-toggle-header btn-header" data-target="#navbar-collapse-search" data-toggle="collapse" type="button"&gt;
+                      &lt;span class="sr-only"&gt;Cercar&lt;/span&gt;
+                      &lt;span class="glyphicon glyphicon-search"&gt;&lt;/span&gt;
+                    &lt;/button&gt;
+                    &lt;button class="navbar-toggle collapsed navbar-toggle-header btn-header" data-target="#navbar-collapse-info" data-toggle="collapse" type="button"&gt;
+                      &lt;span class="sr-only"&gt;Contacte i directori&lt;/span&gt;
+                      &lt;span class="glyphicon glyphicon-info-sign"&gt;&lt;/span&gt;
+                    &lt;/button&gt;
+                    &lt;button class="navbar-toggle collapsed navbar-toggle-header btn-header" data-target="#navbar-collapse-portal" data-toggle="collapse" type="button"&gt;
+                      &lt;span class="sr-only"&gt;Altres portals&lt;/span&gt;
+                      &lt;span class="glyphicon glyphicon-new-window"&gt;&lt;/span&gt;
+                    &lt;/button&gt;      
+                    
+                    
+                  &lt;/div&gt;      
+                &lt;/div&gt;
+                &lt;div class="columna-centrada"&gt;
+                  &lt;div id="navbar-collapse-search" class="navbar-collapse collapse"&gt;        
+                    &lt;ul class="nav navbar-nav navbar-right search-position"&gt;          
+                      &lt;li&gt;
+                        &lt;div class="clearfix pull-right buscador"&gt;
+                          
+                          &lt;!-- Buscador --&gt;    
+                          &lt;!--buscadorUPC--&gt;
+                          
+                        &lt;/div&gt;
+                      &lt;/li&gt;
+                    &lt;/ul&gt;        
+                  &lt;/div&gt;
+                &lt;/div&gt;
+                
+                &lt;div id="navbar-collapse-info" class="navbar-collapse collapse navbar-info format-lletra-upc"&gt;        
+                  &lt;ul class="nav navbar-nav navbar-right info-position"&gt;          
+                    &lt;li&gt;
+                      &lt;span class="contacte"&gt;
+                        &lt;a href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/contacte" target="_blank" onclick="window.open(this.href,this.target,'width=750,height=950,resizable=yes,scrollbars=yes');return false" alt="Contacte" title="Contacte"&gt;Contacte&lt;/a&gt;
+                      &lt;/span&gt;
+                    &lt;/li&gt;
+                    &lt;li&gt;
+                      &lt;span class="enllacSuggeriment"&gt;
+                        &lt;a href="/${grails.util.Metadata.current.'app.name'}/suggeriments" target="_blank" onclick="window.open(this.href,this.target,'width=750,height=550,resizable=yes,scrollbars=yes');return false" alt="Suggeriments" title="Suggeriments"&gt;Suggeriments&lt;/a&gt;
+                      &lt;/span&gt;
+                    &lt;/li&gt;
+                    &lt;li&gt;
+                      &lt;span class="enllacPortal"&gt;
+                        &lt;a href="http://directori.upc.edu/directori/" target="_blank" onclick="window.open(this.href,this.target,'width=750,height=550,resizable=yes');return false" alt="Directori UPC" title="Directori UPC"&gt;Directori UPC&lt;/a&gt;
+                      &lt;/span&gt;
+                    &lt;/li&gt;
+                  &lt;/ul&gt;    
+                &lt;/div&gt;        
+                &lt;!-- /.nav-collapse --&gt;
+              &lt;/div&gt;
+              &lt;!-- /.container-fluid --&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        
+        &lt;div class="row no-scroll-bar"&gt;
+          &lt;div class="col-vxs-12 col-sm-7 col-md-7 col-lg-8"&gt;
+            &lt;div id="navbar-collapse-portal" class="navbar-collapse collapse navbar-portal format-lletra-upc"&gt;        
+              &lt;ul class="nav navbar-nav"&gt;
+                &lt;li&gt;
+                  &lt;span class="enllacPortalFirst portal-UPC"&gt;
+                    &lt;a href="/${grails.util.Metadata.current.'app.name'}/PDI/" alt="Portal PDI" title="Portal PDI"&gt;Portal PDI&lt;/a&gt;
+                  &lt;/span&gt;
+                  
+                &lt;/li&gt;
+                &lt;li&gt;
+                  &lt;span class="enllacPortal"&gt;  
+                    &lt;a href="/${grails.util.Metadata.current.'app.name'}/GES/" alt="Portal gestor/a" title="Portal gestor/a"&gt;Portal gestor/a&lt;/a&gt;
+                  &lt;/span&gt;
+                &lt;/li&gt;  
+                &lt;li&gt;
+                  &lt;span class="enllacPortal enllacPortalLast"&gt;
+                    &lt;a href="/${grails.util.Metadata.current.'app.name'}/BEC/" alt="Portal beques grau/màster" title="Portal beques grau/màster"&gt;Portal beques grau/màster&lt;/a&gt;
+                  &lt;/span&gt;
+                &lt;/li&gt;
+              &lt;/ul&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;  
+        &lt;/div&gt;
+        
+        &lt;!-- STATUS BAR ESTÁTICA --&gt;
+        &lt;div class="navbar navbar-default navbar-UPC" role="navigation"&gt;
+          &lt;div class="container-fluid"&gt;
+            &lt;div class="navbar-header"&gt;
+              &lt;button class="navbar-toggle collapsed navbar-toggle-home" data-target="#navbar-collapse-menu" data-toggle="collapse" type="button"&gt;
+                &lt;span class="sr-only"&gt;Toggle navigation&lt;/span&gt;
+                &lt;span class="icon-bar"&gt;&lt;/span&gt;
+                &lt;span class="icon-bar"&gt;&lt;/span&gt;
+                &lt;span class="icon-bar"&gt;&lt;/span&gt;
+              &lt;/button&gt;
+              &lt;a class="navbar-brand home" href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index" alt="Inici" title="Inici"&gt;Inici&lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div id="navbar-collapse-menu" class="navbar-collapse collapse"&gt;
+              &lt;ul class="nav navbar-nav"&gt;
+                &lt;li&gt;                    
+                  &lt;a class="Informacio_General" href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General" alt="Informació general" title="Informació general"&gt;Informació general&lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li&gt;                    
+                  &lt;a class="Raco_Personal" href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Raco_Personal" alt="Racó personal" title="Racó personal"&gt;Racó personal&lt;/a&gt;
+                &lt;/li&gt;
+              &lt;/ul&gt;   
+              &lt;!-- Part dreta: usuari, desconnexió --&gt;
+              &lt;ul class="nav navbar-nav navbar-right format-lletra-upc"&gt;
+                &lt;li class="active"&gt;
+                   &lt;!--userName--&gt;
+                &lt;/li&gt;
+                &lt;li&gt;
+                  &lt;span class="logout-UPC"&gt; &lt;a href="/${grails.util.Metadata.current.'app.name'}/logout/index" alt="Desconnecta" title="Desconnecta"&gt;Desconnecta&lt;/a&gt;&lt;/span&gt;
+                &lt;/li&gt;
+              &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;!-- /.nav-collapse --&gt;
+          &lt;/div&gt;
+          &lt;!-- /.container-fluid --&gt;
+        &lt;/div&gt;
+        &lt;!-- ************ FIN top-nav ************ --&gt;
+        
+        &lt;!-- ************ INI breadCrumb-slider-bar ************ --&gt;      
+        &lt;div class="breadCrumb"&gt;
+          &lt;!-- Migas de pan --&gt;
+          &lt;div&gt; &lt;b&gt;Sou a &lt;span class="breadCrumbSeparator firstSeparator"&gt;&amp;raquo;&lt;/span&gt; &lt;/b&gt;&lt;a href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index"&gt;&lt;span class="breadCrumbItem"&gt;Inici&lt;/span&gt;&lt;/a&gt;&lt;span class="breadCrumbSeparator"&gt;&amp;rsaquo;&lt;/span&gt;&lt;span class="breadCrumbLastItem"&gt;&lt;!--titolContent--&gt;&lt;/span&gt;  &lt;/div&gt;
+          
+          &lt;!-- Título página --&gt;
+          &lt;h1 class="firstHeading"&gt;&lt;span&gt;&lt;/span&gt;
+            &lt;!--titolContent--&gt;
+          &lt;/h1&gt;
+        &lt;/div&gt;
+        &lt;!-- ************ FIN breadCrumb-slider-bar ************ --&gt;   
+        
+      &lt;/div&gt;
+      &lt;!-- Contenido principal --&gt;
+      &lt;!--pageContent--&gt;
+
+    
+     &lt;!-- ************ Banners de Racó Personal ************ --&gt;
+      
+      &lt;!-- Banners modo web   --&gt;
+      &lt;div class="banner-carousel"&gt;
+        &lt;!-- Secció de banners --&gt;
+        &lt;div id="myBannerWebCarousel" class="carousel slide" data-ride="carousel"&gt;
+          &lt;!-- Indicators --&gt;
+          &lt;!--&lt;ol class="carousel-indicators"&gt;
+          &lt;li data-target="#myCarousel" data-slide-to="0" class="active"&gt;&lt;/li&gt;
+          &lt;li class="" data-target="#myCarousel" data-slide-to="1"&gt;&lt;/li&gt;
+        &lt;/ol&gt;--&gt;
+          &lt;div class="carousel-inner" role="listbox"&gt;
+            &lt;!-- Primera slide --&gt;
+            &lt;div class="item active"&gt;
+              &lt;div class="grup-banner"&gt;        
+                &lt;!-- Banner #1 --&gt;        
+                &lt;a href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/contacte" target="_blank" title="Contacta amb nosaltres" onclick="window.open(this.href,this.target,'width=750,height=950,resizable=yes,scrollbars=yes');return false"&gt;            
+                  &lt;img class="img-responsive" src="/rrhh/files/tecnic/banner_contacta.png" alt="Contacta amb nosaltres" title="Contacta amb nosaltres" /&gt;
+                &lt;/a&gt;         
+                &lt;!-- Banner #2 --&gt;        
+                &lt;a href="https://gn6.upc.edu/pucpersonal" target="_blank" title="PUC Personal"&gt;            
+                  &lt;img class="img-responsive" src="/rrhh/files/tecnic/banner_puc.png" alt="PUC Personal" title="PUC Personal" /&gt;
+                &lt;/a&gt;         
+                &lt;!-- Banner #3 --&gt;        
+                &lt;a href="https://tempus.upc.edu" target="_blank" title="Tempus Control de presència"&gt;            
+                  &lt;img class="img-responsive" src="/rrhh/files/tecnic/banner_tempus.png" alt="Tempus Control de presència" title="Tempus Control de presència" /&gt;
+                &lt;/a&gt;          
+                &lt;!-- Banner #4 --&gt;        
+              
+              &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;!-- Segunda slide --&gt;
+            &lt;div class="item"&gt;
+              &lt;div class="grup-banner"&gt;        
+                &lt;!-- Banner #5 --&gt;        
+                &lt;a href="https://millot.upc.edu/COM" target="_blank" title="Baixes mèdiques Seguretat social"&gt;            
+                  &lt;img class="img-responsive" src="/rrhh/files/tecnic/banner_baixes.png" alt="Baixes mèdiques Seguretat social" title="Baixes mèdiques Seguretat social" /&gt;
+                &lt;/a&gt;         
+                &lt;!-- Banner #6 --&gt;        
+                &lt;a href="http://www.upc.edu/prevencio/accidents/accidents-del-pdi-l-pas-l-pas-f-i-becaris-upc-asepeyo" target="_blank" title="Què fer en cas d'accident"&gt;            
+                  &lt;img class="img-responsive" src="/rrhh/files/tecnic/banner_accident.png" alt="Què fer en cas d'accident" title="Què fer en cas d'accident" /&gt;
+                &lt;/a&gt;         
+                &lt;!-- Banner #7 --&gt;        
+                &lt;a href="https://rrmm.upc.edu/rrmm/index.jsp" target="_blank" title="Revisió mèdica"&gt;            
+                  &lt;img class="img-responsive" src="/rrhh/files/tecnic/banner_revisiomedica.png" alt="Revisió mèdica" title="Revisió mèdica" /&gt;
+                &lt;/a&gt;          
+                &lt;!-- Banner #8 --&gt;        
+              
+              &lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;!-- Tercera slide --&gt;
+            &lt;div class="item"&gt;
+              &lt;div class="grup-banner"&gt;        
+                &lt;!-- Banner #9 --&gt;        
+                &lt;a href="" title="Festivitats locals i generals"&gt;            
+                  &lt;img class="img-responsive" src="/rrhh/files/tecnic/banner_festivitats.png" alt="Festivitats locals i generals" title="Festivitats locals i generals" /&gt;
+                &lt;/a&gt;         
+                &lt;!-- Banner #10 --&gt;        
+                &lt;a href="http://www.sepe.es/" target="_blank" title="SEPE Tramitar prestació atur"&gt;            
+                  &lt;img class="img-responsive" src="/rrhh/files/tecnic/banner_SEPE.png" alt="SEPE Tramitar prestació atur" title="SEPE Tramitar prestació atur" /&gt;
+                &lt;/a&gt;         
+                &lt;!-- Banner #11 --&gt;        
+                &lt;a href="https://sede.seg-social.gob.es/Sede_1/ServiciosenLinea/Ciudadanos/231443" target="_blank" title="Informe de vida laboral"&gt;            
+                  &lt;img class="img-responsive" src="/rrhh/files/tecnic/base_vidalaboral.png" alt="Informe de vida laboral" title="Informe de vida laboral" /&gt;
+                &lt;/a&gt;          
+                &lt;!-- Banner #12 --&gt;        
+              
+              &lt;/div&gt;
+            &lt;/div&gt;
+           
+            &lt;!-- Cuarta slide--&gt;
+            &lt;div class="item"&gt;
+              &lt;div class="grup-banner"&gt;        
+                &lt;!-- Banner #13 --&gt;        
+                &lt;a href="http://www.upc.edu/ccd/participa/campanya-07-si" target="_blank" title="Campanya 0,7%"&gt;            
+                  &lt;img class="img-responsive" src="/rrhh/files/tecnic/campana07_gw4.PNG" alt="Campanya 0,7%" title="Campanya 0,7%" /&gt;
+                &lt;/a&gt;         
+                &lt;!-- Banner #14 --&gt;        
+                &lt;a href="http://www.agenciatributaria.es" target="_blank" title="Agència Tributària"&gt;            
+                  &lt;img class="img-responsive" src="/rrhh/files/tecnic/banner_AgenciaTribut.png" alt="Agència Tributària" title="Agència Tributària" /&gt;
+                &lt;/a&gt;         
+                &lt;!-- Banner #15 --&gt;        
+                    
+              
+              &lt;/div&gt;
+            &lt;/div&gt;  
+            &lt;!-- Fin imagen --&gt;     
+          &lt;/div&gt;
+          &lt;a class="left carousel-control" href="#myBannerWebCarousel" role="button" data-slide="prev"&gt;
+            &lt;span class="glyphicon glyphicon-chevron-left"&gt;&lt;/span&gt;
+            &lt;span class="sr-only"&gt;Previous&lt;/span&gt;
+          &lt;/a&gt;
+          &lt;a class="right carousel-control" href="#myBannerWebCarousel" role="button" data-slide="next"&gt;
+            &lt;span class="glyphicon glyphicon-chevron-right"&gt;&lt;/span&gt;
+            &lt;span class="sr-only"&gt;Next&lt;/span&gt;
+          &lt;/a&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      
+      &lt;!-- Banners modo móvil --&gt;
+      &lt;div class="banner-carousel"&gt;
+        &lt;!-- Secció de banners --&gt;
+        &lt;div id="myBannerMovilCarousel" class="carousel slide" data-ride="carousel"&gt;
+          &lt;!-- Indicators --&gt;
+          &lt;!--&lt;ol class="carousel-indicators"&gt;
+          &lt;li data-target="#myCarousel" data-slide-to="0" class="active"&gt;&lt;/li&gt;
+          &lt;li class="" data-target="#myCarousel" data-slide-to="1"&gt;&lt;/li&gt;
+        &lt;/ol&gt;--&gt;
+          &lt;div class="carousel-inner" role="listbox"&gt;     
+            &lt;!-- Banner #1 --&gt;
+            &lt;div class="item active"&gt;
+              &lt;div class="grup-banner"&gt;     
+                &lt;a href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/contacte" target="_blank" title="Contacta amb nosaltres" onclick="window.open(this.href,this.target,'width=750,height=950,resizable=yes,scrollbars=yes');return false"&gt;            
+                  &lt;img class="img-responsive" src="/rrhh/files/tecnic/banner_contacta.png" alt="Contacta amb nosaltres" title="Contacta amb nosaltres" /&gt;
+                &lt;/a&gt;  
+              &lt;/div&gt;    
+            &lt;/div&gt;       
+            &lt;!-- Banner #2 --&gt;  
+            &lt;div class="item"&gt;
+              &lt;div class="grup-banner"&gt;     
+                &lt;a href="https://gn6.upc.edu/pucpersonal" target="_blank" title="PUC Personal"&gt;            
+                  &lt;img class="img-responsive" src="/rrhh/files/tecnic/banner_puc.png" alt="PUC Personal" title="PUC Personal" /&gt;
+                &lt;/a&gt;
+              &lt;/div&gt;   
+            &lt;/div&gt;      
+            &lt;!-- Banner #3 --&gt;   
+            &lt;div class="item"&gt;
+              &lt;div class="grup-banner"&gt;    
+                &lt;a href="https://tempus.upc.edu" target="_blank" title="Tempus Control de presència"&gt;            
+                  &lt;img class="img-responsive" src="/rrhh/files/tecnic/banner_tempus.png" alt="Tempus Control de presència" title="Tempus Control de presència" /&gt;
+                &lt;/a&gt;
+              &lt;/div&gt;     
+            &lt;/div&gt;     
+            &lt;!-- Banner #4 --&gt;  
+            &lt;div class="item"&gt;
+              &lt;div class="grup-banner"&gt;        
+                &lt;a href="https://millot.upc.edu/COM" target="_blank" title="Baixes mèdiques Seguretat social"&gt;            
+                  &lt;img class="img-responsive" src="/rrhh/files/tecnic/banner_baixes.png" alt="Baixes mèdiques Seguretat social" title="Baixes mèdiques Seguretat social" /&gt;
+                &lt;/a&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          	&lt;!-- Banner #5 --&gt;  
+            &lt;div class="item"&gt;
+              &lt;div class="grup-banner"&gt;        
+                &lt;a href="http://www.upc.edu/prevencio/accidents/accidents-del-pdi-l-pas-l-pas-f-i-becaris-upc-asepeyo" target="_blank" title="Què fer en cas d'accident"&gt;            
+                  &lt;img class="img-responsive" src="/rrhh/files/tecnic/banner_accident.png" alt="Què fer en cas d'accident" title="Què fer en cas d'accident" /&gt;
+                &lt;/a&gt;
+              &lt;/div&gt;
+            &lt;/div&gt; 
+           	&lt;!-- Banner #6 --&gt;  
+            &lt;div class="item"&gt;
+              &lt;div class="grup-banner"&gt;        
+               &lt;a href="https://rrmm.upc.edu/rrmm/index.jsp" target="_blank" title="Revisió mèdica"&gt;            
+                  &lt;img class="img-responsive" src="/rrhh/files/tecnic/banner_revisiomedica.png" alt="Revisió mèdica" title="Revisió mèdica" /&gt;
+                &lt;/a&gt;
+              &lt;/div&gt;
+            &lt;/div&gt; 
+            &lt;!-- Banner #7 --&gt;  
+            &lt;div class="item"&gt;
+              &lt;div class="grup-banner"&gt;        
+                &lt;a href="" title="Festivitats locals i generals"&gt;            
+                  &lt;img class="img-responsive" src="/rrhh/files/tecnic/banner_festivitats.png" alt="Festivitats locals i generals" title="Festivitats locals i generals" /&gt;
+                &lt;/a&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+	   		&lt;!-- Banner #8 --&gt;  
+            &lt;div class="item"&gt;
+              &lt;div class="grup-banner"&gt;        
+                &lt;a href="http://www.sepe.es/" target="_blank" title="SEPE Tramitar prestació atur"&gt;            
+                  &lt;img class="img-responsive" src="/rrhh/files/tecnic/banner_SEPE.png" alt="SEPE Tramitar prestació atur" title="SEPE Tramitar prestació atur" /&gt;
+                &lt;/a&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;!-- Banner #9 --&gt;  
+            &lt;div class="item"&gt;
+              &lt;div class="grup-banner"&gt;        
+                &lt;a href="https://sede.seg-social.gob.es/Sede_1/ServiciosenLinea/Ciudadanos/231443" target="_blank" title="Informe de vida laboral"&gt;            
+                  &lt;img class="img-responsive" src="/rrhh/files/tecnic/base_vidalaboral.png" alt="Informe de vida laboral" title="Informe de vida laboral" /&gt;
+                &lt;/a&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;!-- Banner #10 --&gt;  
+            &lt;div class="item"&gt;
+              &lt;div class="grup-banner"&gt;        
+                &lt;a href="http://www.upc.edu/ccd/participa/campanya-07-si" target="_blank" title="Campanya 0,7%"&gt;            
+                  &lt;img class="img-responsive" src="/rrhh/files/tecnic/campana07_gw4.PNG" alt="Campanya 0,7%" title="Campanya 0,7%" /&gt;
+                &lt;/a&gt;
+              &lt;/div&gt;
+            &lt;/div&gt; 
+            &lt;!-- Banner #11 --&gt;  
+            &lt;div class="item"&gt;
+              &lt;div class="grup-banner"&gt;        
+                 &lt;a href="http://www.agenciatributaria.es" target="_blank" title="Agència Tributària"&gt;            
+                  &lt;img class="img-responsive" src="/rrhh/files/tecnic/banner_AgenciaTribut.png" alt="Agència Tributària" title="Agència Tributària" /&gt;
+                &lt;/a&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;     
+            &lt;!-- Fin Carrusel --&gt;     
+          &lt;/div&gt;
+          &lt;a class="left carousel-control" href="#myBannerMovilCarousel" role="button" data-slide="prev"&gt;
+            &lt;span class="glyphicon glyphicon-chevron-left"&gt;&lt;/span&gt;
+            &lt;span class="sr-only"&gt;Previous&lt;/span&gt;
+          &lt;/a&gt;
+          &lt;a class="right carousel-control" href="#myBannerMovilCarousel" role="button" data-slide="next"&gt;
+            &lt;span class="glyphicon glyphicon-chevron-right"&gt;&lt;/span&gt;
+            &lt;span class="sr-only"&gt;Next&lt;/span&gt;
+          &lt;/a&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+    
+    &lt;/div&gt;
+    
+    &lt;!-- Pie de página --&gt;
+    &lt;!-- ************ INI bottom-nav ************ --&gt;
+    &lt;div class="footer"&gt;
+      &lt;div class="container"&gt;
+        &lt;div class="fit2container"&gt;      
+          &lt;div class="row no-scroll-bar"&gt;          
+            &lt;div class="col-xs-12 col-footer-9 col-vxs-9 col-sm-9 col-md-9 col-lg-9" &gt;
+              &lt;p class="footer-text"&gt;Àrea de Personal i Organització&lt;/p&gt;
+              &lt;p class="footer-text"&gt;&amp;copy; &lt;a href="http://www.upc.edu"&gt;UPC&lt;/a&gt;. Universitat Politècnica de Catalunya &lt;span&gt;●&lt;/span&gt; BarcelonaTech&lt;/p&gt;           
+            &lt;/div&gt;        
+            &lt;div class="col-xs-12 col-footer-3 col-vxs-3 col-sm-3 col-md-3 col-lg-3 row-margin-top-peu"&gt;
+              &lt;div class="accessibilitat-container"&gt;
+                &lt;a class="footer-text" href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/accessibilitat" target="_blank" onclick="window.open(this.href,this.target,'width=1100,height=950,resizable=yes,scrollbars=yes');return false" alt="Accessibilitat" title="Accessibilitat"&gt;Accessibilitat&lt;/a&gt;
+                &lt;a class="footer-text" href="#top"&gt;&lt;img alt="Amunt" src="/rrhh/files/tecnic/amunt.gif" /&gt;&lt;/a&gt;                        
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;     
+        &lt;/div&gt;    
+      &lt;/div&gt;
+    &lt;/div&gt;    
+    &lt;!-- ************ FIN bottom-nav ************ --&gt;  
+  &lt;/body&gt;
+  
+&lt;/html&gt;</contingut>
+    <permetreGSP type='class java.lang.Integer'>1</permetreGSP>
+    <observacions type='class org.codehaus.groovy.runtime.NullObject' />
+  </Template>
+  <Template>
+    <id type='class java.lang.Long'>107</id>
+    <aliesUri type='class java.lang.String'>raco_personal</aliesUri>
+    <descripcio type='class org.codehaus.groovy.runtime.NullObject' />
+    <idioma type='class org.codehaus.groovy.runtime.NullObject' />
+    <ordre type='class java.lang.Integer'>7</ordre>
+    <espai type='class java.lang.Integer'>2</espai>
+    <titol type='class java.lang.String'>Racó personal</titol>
+    <contingut type='class java.lang.String'>&lt;!DOCTYPE html&gt;
+&lt;!--[if lt IE 7 ]&gt; &lt;html lang="en" class="no-js ie6"&gt; &lt;![endif]--&gt;
+&lt;!--[if IE 7 ]&gt;    &lt;html lang="en" class="no-js ie7"&gt; &lt;![endif]--&gt;
+&lt;!--[if IE 8 ]&gt;    &lt;html lang="en" class="no-js ie8"&gt; &lt;![endif]--&gt;
+&lt;!--[if IE 9 ]&gt;    &lt;html lang="en" class="no-js ie9"&gt; &lt;![endif]--&gt;
+&lt;!--[if (gt IE 9)|!(IE)]&gt;&lt;!--&gt; &lt;html lang="en" class="no-js"&gt;&lt;!--&lt;![endif]--&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1" /&gt;
+    &lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /&gt;
+    
+    &lt;link rel="stylesheet" href="/${grails.util.Metadata.current.'app.name'}/css/bootstrap.css" type="text/css" /&gt;
+    &lt;script type="text/javascript" src="/${grails.util.Metadata.current.'app.name'}/js/jquery/jquery-1.11.1.min.js"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript" src="/${grails.util.Metadata.current.'app.name'}/js/bootstrap.min.js"&gt;&lt;/script&gt;
+    
+    &lt;link rel="shortcut icon" href="/${grails.util.Metadata.current.'app.name'}/images/favicon.ico" type="image/x-icon" /&gt;
+    
+    &lt;link rel="stylesheet" href="/${grails.util.Metadata.current.'app.name'}/css/main.css" type="text/css" /&gt;
+    &lt;link rel="stylesheet" href="/${grails.util.Metadata.current.'app.name'}/css/bootstrapUPC.css" type="text/css" /&gt;
+    &lt;link rel="stylesheet" href="/${grails.util.Metadata.current.'app.name'}/css/estilsUPC.css" type="text/css" /&gt;
+    &lt;link rel="stylesheet" href="/${grails.util.Metadata.current.'app.name'}/css/sticky-footer.css" type="text/css" /&gt;
+    &lt;link rel="stylesheet" href="/${grails.util.Metadata.current.'app.name'}/css/tmp.css" type="text/css" /&gt;
+  &lt;/head&gt;
+  
+  &lt;body&gt;
+    &lt;div class="container"&gt;
+      &lt;div class="container-UPC tmpl-no-menu"&gt;
+        &lt;!-- ************ INI top-nav ************ --&gt;
+        &lt;div id="spinner" class="spinner" style="display: none;"&gt;
+          &lt;img alt="Carregant..." src="/rrhh/files/tecnic/spinner.gif" /&gt;
+        &lt;/div&gt;
+        
+        &lt;div class="row no-scroll-bar"&gt;
+          &lt;div class="col-xs-12 col-vxs-12 col-sm-6 col-md-7 col-lg-8 row-margin-bottom-header"&gt;
+            &lt;h1 class="pull-left logo-portal"&gt;
+              &lt;img usemap = "#upc_link" class="img-responsive" alt="Universitat Politècnica de Catalunya" src="/rrhh/files/tecnic/logo_upc_portal_pas_2.png" style="border:0;"/&gt;
+              &lt;map name="upc_link"&gt;
+                &lt;area shape=Rect Coords=0,0,50,60 href="http://www.upc.edu" target="_blank" /&gt;
+              &lt;/map&gt;
+            &lt;/h1&gt;  
+          &lt;/div&gt;
+          &lt;div class="col-xs-12 col-vxs-12 col-sm-6 col-md-5 col-lg-4 row-margin-bottom-header"&gt;
+            &lt;div class="navbar navbar-default navbar-Info" role="navigation"&gt;
+              &lt;div class="navbar-container-UPC"&gt;
+                &lt;div class="navbar-header"&gt;
+                  &lt;div class="columna-centrada-header"&gt;
+                    
+                    
+                    &lt;button class="navbar-toggle collapsed navbar-toggle-header btn-header" data-target="#navbar-collapse-search" data-toggle="collapse" type="button"&gt;
+                      &lt;span class="sr-only"&gt;Cercar&lt;/span&gt;
+                      &lt;span class="glyphicon glyphicon-search"&gt;&lt;/span&gt;
+                    &lt;/button&gt;
+                    &lt;button class="navbar-toggle collapsed navbar-toggle-header btn-header" data-target="#navbar-collapse-info" data-toggle="collapse" type="button"&gt;
+                      &lt;span class="sr-only"&gt;Contacte i directori&lt;/span&gt;
+                      &lt;span class="glyphicon glyphicon-info-sign"&gt;&lt;/span&gt;
+                    &lt;/button&gt;
+                    &lt;button class="navbar-toggle collapsed navbar-toggle-header btn-header" data-target="#navbar-collapse-portal" data-toggle="collapse" type="button"&gt;
+                      &lt;span class="sr-only"&gt;Altres portals&lt;/span&gt;
+                      &lt;span class="glyphicon glyphicon-new-window"&gt;&lt;/span&gt;
+                    &lt;/button&gt;      
+                    
+                    
+                  &lt;/div&gt;      
+                &lt;/div&gt;
+                &lt;div class="columna-centrada"&gt;
+                  &lt;div id="navbar-collapse-search" class="navbar-collapse collapse"&gt;        
+                    &lt;ul class="nav navbar-nav navbar-right search-position"&gt;          
+                      &lt;li&gt;
+                        &lt;div class="clearfix pull-right buscador"&gt;
+                          
+                          &lt;!-- Buscador --&gt;    
+                          &lt;!--buscadorUPC--&gt;
+                          
+                        &lt;/div&gt;
+                      &lt;/li&gt;
+                    &lt;/ul&gt;        
+                  &lt;/div&gt;
+                &lt;/div&gt;
+                
+                &lt;div id="navbar-collapse-info" class="navbar-collapse collapse navbar-info format-lletra-upc"&gt;        
+                  &lt;ul class="nav navbar-nav navbar-right info-position"&gt;          
+                    &lt;li&gt;
+                      &lt;span class="contacte"&gt;
+                        &lt;a href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/contacte" target="_blank" onclick="window.open(this.href,this.target,'width=750,height=950,resizable=yes,scrollbars=yes');return false" alt="Contacte" title="Contacte"&gt;Contacte&lt;/a&gt;
+                      &lt;/span&gt;
+                    &lt;/li&gt;
+                    &lt;li&gt;
+                      &lt;span class="enllacSuggeriment"&gt;
+                        &lt;a href="/${grails.util.Metadata.current.'app.name'}/suggeriments" target="_blank" onclick="window.open(this.href,this.target,'width=750,height=550,resizable=yes,scrollbars=yes');return false" alt="Suggeriments" title="Suggeriments"&gt;Suggeriments&lt;/a&gt;
+                      &lt;/span&gt;
+                    &lt;/li&gt;
+                    &lt;li&gt;
+                      &lt;span class="enllacPortal"&gt;
+                        &lt;a href="http://directori.upc.edu/directori/" target="_blank" onclick="window.open(this.href,this.target,'width=750,height=550,resizable=yes');return false" alt="Directori UPC" title="Directori UPC"&gt;Directori UPC&lt;/a&gt;
+                      &lt;/span&gt;
+                    &lt;/li&gt;
+                  &lt;/ul&gt;    
+                &lt;/div&gt;        
+                &lt;!-- /.nav-collapse --&gt;
+              &lt;/div&gt;
+              &lt;!-- /.container-fluid --&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        
+        &lt;div class="row no-scroll-bar"&gt;
+          &lt;div class="col-vxs-12 col-sm-7 col-md-7 col-lg-8"&gt;
+            &lt;div id="navbar-collapse-portal" class="navbar-collapse collapse navbar-portal format-lletra-upc"&gt;        
+              &lt;ul class="nav navbar-nav"&gt;
+                &lt;li&gt;
+                  &lt;span class="enllacPortalFirst portal-UPC"&gt;
+                    &lt;a href="/${grails.util.Metadata.current.'app.name'}/PDI/" alt="Portal PDI" title="Portal PDI"&gt;Portal PDI&lt;/a&gt;
+                  &lt;/span&gt;
+                  
+                &lt;/li&gt;
+                &lt;li&gt;
+                  &lt;span class="enllacPortal"&gt;  
+                    &lt;a href="/${grails.util.Metadata.current.'app.name'}/GES/" alt="Portal gestor/a" title="Portal gestor/a"&gt;Portal gestor/a&lt;/a&gt;
+                  &lt;/span&gt;
+                &lt;/li&gt;  
+                &lt;li&gt;
+                  &lt;span class="enllacPortal enllacPortalLast"&gt;
+                    &lt;a href="/${grails.util.Metadata.current.'app.name'}/BEC/" alt="Portal beques grau/màster" title="Portal beques grau/màster"&gt;Portal beques grau/màster&lt;/a&gt;
+                  &lt;/span&gt;
+                &lt;/li&gt;
+              &lt;/ul&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;  
+        &lt;/div&gt;
+        
+        &lt;!-- STATUS BAR ESTÁTICA --&gt;
+        &lt;div class="navbar navbar-default navbar-UPC" role="navigation"&gt;
+          &lt;div class="container-fluid"&gt;
+            &lt;div class="navbar-header"&gt;
+              &lt;button class="navbar-toggle collapsed navbar-toggle-home" data-target="#navbar-collapse-menu" data-toggle="collapse" type="button"&gt;
+                &lt;span class="sr-only"&gt;Toggle navigation&lt;/span&gt;
+                &lt;span class="icon-bar"&gt;&lt;/span&gt;
+                &lt;span class="icon-bar"&gt;&lt;/span&gt;
+                &lt;span class="icon-bar"&gt;&lt;/span&gt;
+              &lt;/button&gt;
+              &lt;a class="navbar-brand home" href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index" alt="Inici" title="Inici"&gt;Inici&lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div id="navbar-collapse-menu" class="navbar-collapse collapse"&gt;
+              &lt;ul class="nav navbar-nav"&gt;
+                &lt;li&gt;                    
+                  &lt;a class="Informacio_General" href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General" alt="Informació general" title="Informació general"&gt;Informació general&lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li&gt;                    
+                  &lt;a class="Raco_Personal" href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Raco_Personal" alt="Racó personal" title="Racó personal"&gt;Racó personal&lt;/a&gt;
+                &lt;/li&gt;
+              &lt;/ul&gt;   
+              &lt;!-- Part dreta: usuari, desconnexió --&gt;
+              &lt;ul class="nav navbar-nav navbar-right format-lletra-upc"&gt;
+                &lt;li class="active"&gt;
+                   &lt;!--userName--&gt;
+                &lt;/li&gt;
+                &lt;li&gt;
+                  &lt;span class="logout-UPC"&gt; &lt;a href="/${grails.util.Metadata.current.'app.name'}/logout/index" alt="Desconnecta" title="Desconnecta"&gt;Desconnecta&lt;/a&gt;&lt;/span&gt;
+                &lt;/li&gt;
+              &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;!-- /.nav-collapse --&gt;
+          &lt;/div&gt;
+          &lt;!-- /.container-fluid --&gt;
+        &lt;/div&gt;
+        &lt;!-- ************ FIN top-nav ************ --&gt;
+        
+        &lt;!-- ************ INI breadCrumb-slider-bar ************ --&gt;      
+        &lt;div class="breadCrumb"&gt;
+          &lt;!-- Migas de pan --&gt;
+          &lt;div&gt; &lt;b&gt;Sou a &lt;span class="breadCrumbSeparator firstSeparator"&gt;&amp;raquo;&lt;/span&gt; &lt;/b&gt;&lt;a href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index"&gt;&lt;span class="breadCrumbItem"&gt;Inici&lt;/span&gt;&lt;/a&gt;&lt;span class="breadCrumbSeparator"&gt;&amp;rsaquo;&lt;/span&gt;&lt;span class="breadCrumbLastItem"&gt;&lt;!--titolContent--&gt;&lt;/span&gt;  &lt;/div&gt;
+          
+          &lt;!-- Título página --&gt;
+          &lt;h1 class="firstHeading"&gt;&lt;span&gt;&lt;/span&gt;
+            &lt;!--titolContent--&gt;
+          &lt;/h1&gt;
+        &lt;/div&gt;
+        &lt;!-- ************ FIN breadCrumb-slider-bar ************ --&gt;   
+        
+      &lt;/div&gt;
+      &lt;!-- Contenido principal --&gt;
+      &lt;!--pageContent--&gt;
+
+    
+     &lt;!-- ************ Banners de Racó Personal ************ --&gt;
+      
+      &lt;!-- Banners modo web   --&gt;
+      &lt;div class="banner-carousel"&gt;
+        &lt;!-- Secció de banners --&gt;
+        &lt;div id="myBannerWebCarousel" class="carousel slide" data-ride="carousel"&gt;
+          &lt;!-- Indicators --&gt;
+          &lt;!--&lt;ol class="carousel-indicators"&gt;
+          &lt;li data-target="#myCarousel" data-slide-to="0" class="active"&gt;&lt;/li&gt;
+          &lt;li class="" data-target="#myCarousel" data-slide-to="1"&gt;&lt;/li&gt;
+        &lt;/ol&gt;--&gt;
+          &lt;div class="carousel-inner" role="listbox"&gt;
+            &lt;!-- Primera slide --&gt;
+            &lt;div class="item active"&gt;
+              &lt;div class="grup-banner"&gt;        
+                &lt;!-- Banner #1 --&gt;        
+                &lt;a href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/contacte" target="_blank" title="Contacta amb nosaltres" onclick="window.open(this.href,this.target,'width=750,height=950,resizable=yes,scrollbars=yes');return false"&gt;            
+                  &lt;img class="img-responsive" src="/rrhh/files/tecnic/banner_contacta.png" alt="Contacta amb nosaltres" title="Contacta amb nosaltres" /&gt;
+                &lt;/a&gt;         
+                &lt;!-- Banner #2 --&gt;        
+                &lt;a href="https://gn6.upc.edu/pucpersonal" target="_blank" title="PUC Personal"&gt;            
+                  &lt;img class="img-responsive" src="/rrhh/files/tecnic/banner_puc.png" alt="PUC Personal" title="PUC Personal" /&gt;
+                &lt;/a&gt;         
+                &lt;!-- Banner #3 --&gt;        
+                &lt;a href="https://tempus.upc.edu" target="_blank" title="Tempus Control de presència"&gt;            
+                  &lt;img class="img-responsive" src="/rrhh/files/tecnic/banner_tempus.png" alt="Tempus Control de presència" title="Tempus Control de presència" /&gt;
+                &lt;/a&gt;          
+                &lt;!-- Banner #4 --&gt;        
+              
+              &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;!-- Segunda slide --&gt;
+            &lt;div class="item"&gt;
+              &lt;div class="grup-banner"&gt;        
+                &lt;!-- Banner #1 --&gt;        
+                &lt;a href="/RP${space?.name}/rebutNomina" title="Rebut de nòmina"&gt;            
+                  &lt;img class="img-responsive" src="/rrhh/files/tecnic/banner_nomina.png" alt="Rebut de nòmina" title="Rebut de nòmina" /&gt;
+                &lt;/a&gt;     
+                &lt;!-- Banner #2 --&gt;        
+                &lt;a href="https://millot.upc.edu/COM" target="_blank" title="Baixes mèdiques Seguretat social"&gt;            
+                  &lt;img class="img-responsive" src="/rrhh/files/tecnic/banner_baixes.png" alt="Baixes mèdiques Seguretat social" title="Baixes mèdiques Seguretat social" /&gt;
+                &lt;/a&gt;         
+                &lt;!-- Banner #3 --&gt;        
+                &lt;a href="http://www.upc.edu/prevencio/accidents/accidents-del-pdi-l-pas-l-pas-f-i-becaris-upc-asepeyo" target="_blank" title="Què fer en cas d'accident"&gt;            
+                  &lt;img class="img-responsive" src="/rrhh/files/tecnic/banner_accident.png" alt="Què fer en cas d'accident" title="Què fer en cas d'accident" /&gt;
+                &lt;/a&gt;          
+                &lt;!-- Banner #4 --&gt;        
+              
+              &lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;!-- --&gt;       
+           
+             
+            &lt;!-- Fin Carrusel --&gt;     
+          &lt;/div&gt;
+          &lt;a class="left carousel-control" href="#myBannerWebCarousel" role="button" data-slide="prev"&gt;
+            &lt;span class="glyphicon glyphicon-chevron-left"&gt;&lt;/span&gt;
+            &lt;span class="sr-only"&gt;Previous&lt;/span&gt;
+          &lt;/a&gt;
+          &lt;a class="right carousel-control" href="#myBannerWebCarousel" role="button" data-slide="next"&gt;
+            &lt;span class="glyphicon glyphicon-chevron-right"&gt;&lt;/span&gt;
+            &lt;span class="sr-only"&gt;Next&lt;/span&gt;
+          &lt;/a&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;!-- Banners modo móvil --&gt;
+      &lt;div class="banner-carousel"&gt;
+        &lt;!-- Secció de banners --&gt;
+        &lt;div id="myBannerMovilCarousel" class="carousel slide" data-ride="carousel"&gt;
+          &lt;!-- Indicators --&gt;
+          &lt;!--&lt;ol class="carousel-indicators"&gt;
+          &lt;li data-target="#myCarousel" data-slide-to="0" class="active"&gt;&lt;/li&gt;
+          &lt;li class="" data-target="#myCarousel" data-slide-to="1"&gt;&lt;/li&gt;
+        &lt;/ol&gt;--&gt;
+          &lt;div class="carousel-inner" role="listbox"&gt;     
+            &lt;!-- Banner #1 --&gt;  
+            &lt;div class="item"&gt;
+              &lt;div class="grup-banner"&gt;     
+                &lt;a href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/contacte" target="_blank" title="Contacta amb nosaltres" onclick="window.open(this.href,this.target,'width=750,height=950,resizable=yes,scrollbars=yes');return false"&gt;            
+                  &lt;img class="img-responsive" src="/rrhh/files/tecnic/banner_contacta.png" alt="Contacta amb nosaltres" title="Contacta amb nosaltres" /&gt;
+                &lt;/a&gt;
+              &lt;/div&gt;   
+            &lt;/div&gt;  
+            
+           	&lt;!-- Banner #2 --&gt;   
+            &lt;div class="item"&gt;
+              &lt;div class="grup-banner"&gt;    
+                &lt;a href="https://gn6.upc.edu/pucpersonal" target="_blank" title="PUC Personal"&gt;            
+                  &lt;img class="img-responsive" src="/rrhh/files/tecnic/banner_puc.png" alt="PUC Personal" title="PUC Personal" /&gt;
+                &lt;/a&gt;
+              &lt;/div&gt;     
+            &lt;/div&gt;              
+            
+            &lt;!-- Banner #3 --&gt;
+            &lt;div class="item active"&gt;
+              &lt;div class="grup-banner"&gt;     
+                &lt;a href="https://tempus.upc.edu" target="_blank" title="Tempus Control de presència"&gt;            
+                  &lt;img class="img-responsive" src="/rrhh/files/tecnic/banner_tempus.png" alt="Tempus Control de presència" title="Tempus Control de presència" /&gt;
+                &lt;/a&gt;  
+              &lt;/div&gt;    
+            &lt;/div&gt;       
+       
+            &lt;!-- Banner #4 --&gt;  
+            &lt;div class="item"&gt;
+              &lt;div class="grup-banner"&gt;        
+                &lt;a href="/RP${space?.name}/rebutNomina" title="Rebut de nòmina"&gt;            
+                  &lt;img class="img-responsive" src="/rrhh/files/tecnic/banner_nomina.png" alt="Rebut de nòmina" title="Rebut de nòmina" /&gt;
+                &lt;/a&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+            
+          	&lt;!-- Banner #5 --&gt;  
+            &lt;div class="item"&gt;
+              &lt;div class="grup-banner"&gt;        
+                &lt;a href="https://millot.upc.edu/COM" target="_blank" title="Baixes mèdiques Seguretat social"&gt;            
+                  &lt;img class="img-responsive" src="/rrhh/files/tecnic/banner_baixes.png" alt="Baixes mèdiques Seguretat social" title="Baixes mèdiques Seguretat social" /&gt;
+                &lt;/a&gt;
+              &lt;/div&gt;
+            &lt;/div&gt; 
+            
+           	&lt;!-- Banner #6 --&gt;  
+            &lt;div class="item"&gt;
+              &lt;div class="grup-banner"&gt;        
+                &lt;a href="http://www.upc.edu/prevencio/accidents/accidents-del-pdi-l-pas-l-pas-f-i-becaris-upc-asepeyo" target="_blank" title="Què fer en cas d'accident"&gt;            
+                  &lt;img class="img-responsive" src="/rrhh/files/tecnic/banner_accident.png" alt="Què fer en cas d'accident" title="Què fer en cas d'accident" /&gt;
+                &lt;/a&gt;
+              &lt;/div&gt;
+            &lt;/div&gt; 
+           
+            &lt;!-- Fin Carrusel --&gt;     
+          &lt;/div&gt;
+          &lt;a class="left carousel-control" href="#myBannerMovilCarousel" role="button" data-slide="prev"&gt;
+            &lt;span class="glyphicon glyphicon-chevron-left"&gt;&lt;/span&gt;
+            &lt;span class="sr-only"&gt;Previous&lt;/span&gt;
+          &lt;/a&gt;
+          &lt;a class="right carousel-control" href="#myBannerMovilCarousel" role="button" data-slide="next"&gt;
+            &lt;span class="glyphicon glyphicon-chevron-right"&gt;&lt;/span&gt;
+            &lt;span class="sr-only"&gt;Next&lt;/span&gt;
+          &lt;/a&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    
+    &lt;/div&gt;
+    
+    &lt;!-- Pie de página --&gt;
+    &lt;!-- ************ INI bottom-nav ************ --&gt;
+    &lt;div class="footer"&gt;
+      &lt;div class="container"&gt;
+        &lt;div class="fit2container"&gt;      
+          &lt;div class="row no-scroll-bar"&gt;          
+            &lt;div class="col-xs-12 col-footer-9 col-vxs-9 col-sm-9 col-md-9 col-lg-9" &gt;
+              &lt;p class="footer-text"&gt;Àrea de Personal i Organització&lt;/p&gt;
+              &lt;p class="footer-text"&gt;&amp;copy; &lt;a href="http://www.upc.edu"&gt;UPC&lt;/a&gt;. Universitat Politècnica de Catalunya &lt;span&gt;●&lt;/span&gt; BarcelonaTech&lt;/p&gt;           
+            &lt;/div&gt;        
+            &lt;div class="col-xs-12 col-footer-3 col-vxs-3 col-sm-3 col-md-3 col-lg-3 row-margin-top-peu"&gt;
+              &lt;div class="accessibilitat-container"&gt;
+                &lt;a class="footer-text" href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/accessibilitat" target="_blank" onclick="window.open(this.href,this.target,'width=1100,height=950,resizable=yes,scrollbars=yes');return false" alt="Accessibilitat" title="Accessibilitat"&gt;Accessibilitat&lt;/a&gt;
+                &lt;a class="footer-text" href="#top"&gt;&lt;img alt="Amunt" src="/rrhh/files/tecnic/amunt.gif" /&gt;&lt;/a&gt;                        
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;     
+        &lt;/div&gt;    
+      &lt;/div&gt;
+    &lt;/div&gt;    
+    &lt;!-- ************ FIN bottom-nav ************ --&gt;  
+  &lt;/body&gt;
+  
+&lt;/html&gt;</contingut>
+    <permetreGSP type='class java.lang.Integer'>1</permetreGSP>
+    <observacions type='class org.codehaus.groovy.runtime.NullObject' />
+  </Template>
+  <Template>
+    <id type='class java.lang.Long'>108</id>
+    <aliesUri type='class java.lang.String'>sense_format</aliesUri>
+    <descripcio type='class org.codehaus.groovy.runtime.NullObject' />
+    <idioma type='class org.codehaus.groovy.runtime.NullObject' />
+    <ordre type='class java.lang.Integer'>8</ordre>
+    <espai type='class java.lang.Integer'>2</espai>
+    <titol type='class java.lang.String'>Sense format</titol>
+    <contingut type='class java.lang.String'>&lt;!DOCTYPE html&gt;
+&lt;!--[if lt IE 7 ]&gt; &lt;html lang="en" class="no-js ie6"&gt; &lt;![endif]--&gt;
+&lt;!--[if IE 7 ]&gt;    &lt;html lang="en" class="no-js ie7"&gt; &lt;![endif]--&gt;
+&lt;!--[if IE 8 ]&gt;    &lt;html lang="en" class="no-js ie8"&gt; &lt;![endif]--&gt;
+&lt;!--[if IE 9 ]&gt;    &lt;html lang="en" class="no-js ie9"&gt; &lt;![endif]--&gt;
+&lt;!--[if (gt IE 9)|!(IE)]&gt;&lt;!--&gt; &lt;html lang="en" class="no-js"&gt;&lt;!--&lt;![endif]--&gt;
+&lt;html&gt;  
+  &lt;head&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1" /&gt;
+    &lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /&gt;
+    
+    &lt;link rel="stylesheet" href="/${grails.util.Metadata.current.'app.name'}/css/bootstrap.css" type="text/css" /&gt;
+    &lt;script type="text/javascript" src="/${grails.util.Metadata.current.'app.name'}/js/jquery/jquery-1.11.1.min.js"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript" src="/${grails.util.Metadata.current.'app.name'}/js/bootstrap.min.js"&gt;&lt;/script&gt;
+    
+    &lt;link rel="shortcut icon" href="/${grails.util.Metadata.current.'app.name'}/images/favicon.ico" type="image/x-icon" /&gt;
+    
+    &lt;link rel="stylesheet" href="/${grails.util.Metadata.current.'app.name'}/css/main.css" type="text/css" /&gt;
+    &lt;link rel="stylesheet" href="/${grails.util.Metadata.current.'app.name'}/css/bootstrapUPC.css" type="text/css" /&gt;
+    &lt;link rel="stylesheet" href="/${grails.util.Metadata.current.'app.name'}/css/estilsUPC.css" type="text/css" /&gt;
+    &lt;link rel="stylesheet" href="/${grails.util.Metadata.current.'app.name'}/css/sticky-footer.css" type="text/css" /&gt;
+    &lt;link rel="stylesheet" href="/${grails.util.Metadata.current.'app.name'}/css/tmp.css" type="text/css" /&gt;
+    &lt;link rel="stylesheet" href="/${grails.util.Metadata.current.'app.name'}/css/menus.css" type="text/css" /&gt;
+    &lt;!-- Actualment aquest Template es fa servir nomès pel Contacte i Accessibilitat --&gt;
+    &lt;link rel="stylesheet" href="/${grails.util.Metadata.current.'app.name'}/css/contacte.css" type="text/css" /&gt;
+  &lt;/head&gt;
+  
+  &lt;body&gt;
+    &lt;!-- Rejilla con el contenido principal --&gt;
+    &lt;!--pageContent--&gt;
+  &lt;/body&gt;  
+&lt;/html&gt;</contingut>
+    <permetreGSP type='class java.lang.Integer'>1</permetreGSP>
+    <observacions type='class org.codehaus.groovy.runtime.NullObject' />
+  </Template>
+  <Template>
+    <id type='class java.lang.Long'>109</id>
+    <aliesUri type='class java.lang.String'>quadres_desplegables</aliesUri>
+    <descripcio type='class org.codehaus.groovy.runtime.NullObject' />
+    <idioma type='class org.codehaus.groovy.runtime.NullObject' />
+    <ordre type='class java.lang.Integer'>9</ordre>
+    <espai type='class java.lang.Integer'>2</espai>
+    <titol type='class java.lang.String'>Pàgina amb quadres desplegables</titol>
+    <contingut type='class java.lang.String'>&lt;!DOCTYPE html&gt;
+&lt;!--[if lt IE 7 ]&gt; &lt;html lang="en" class="no-js ie6"&gt; &lt;![endif]--&gt;
+&lt;!--[if IE 7 ]&gt;    &lt;html lang="en" class="no-js ie7"&gt; &lt;![endif]--&gt;
+&lt;!--[if IE 8 ]&gt;    &lt;html lang="en" class="no-js ie8"&gt; &lt;![endif]--&gt;
+&lt;!--[if IE 9 ]&gt;    &lt;html lang="en" class="no-js ie9"&gt; &lt;![endif]--&gt;
+&lt;!--[if (gt IE 9)|!(IE)]&gt;&lt;!--&gt; &lt;html lang="en" class="no-js"&gt;&lt;!--&lt;![endif]--&gt;
+&lt;html&gt;
+  
+  &lt;head&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1" /&gt;
+    &lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /&gt;
+    
+    &lt;link rel="stylesheet" href="/${grails.util.Metadata.current.'app.name'}/css/bootstrap.css" type="text/css" /&gt;
+    &lt;script type="text/javascript" src="/${grails.util.Metadata.current.'app.name'}/js/jquery/jquery-1.11.1.min.js"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript" src="/${grails.util.Metadata.current.'app.name'}/js/bootstrap.min.js"&gt;&lt;/script&gt;
+    
+    &lt;link rel="shortcut icon" href="/${grails.util.Metadata.current.'app.name'}/images/favicon.ico" type="image/x-icon" /&gt;
+    
+    &lt;link rel="stylesheet" href="/${grails.util.Metadata.current.'app.name'}/css/main.css" type="text/css" /&gt;
+    &lt;link rel="stylesheet" href="/${grails.util.Metadata.current.'app.name'}/css/bootstrapUPC.css" type="text/css" /&gt;
+    &lt;link rel="stylesheet" href="/${grails.util.Metadata.current.'app.name'}/css/estilsUPC.css" type="text/css" /&gt;
+    &lt;link rel="stylesheet" href="/${grails.util.Metadata.current.'app.name'}/css/sticky-footer.css" type="text/css" /&gt;
+    &lt;link rel="stylesheet" href="/${grails.util.Metadata.current.'app.name'}/css/tmp.css" type="text/css" /&gt;
+    
+    &lt;link rel="stylesheet" href="/${grails.util.Metadata.current.'app.name'}/css/menus.css" type="text/css" /&gt;
+    &lt;link rel="stylesheet" href="/${grails.util.Metadata.current.'app.name'}/css/desplegables-fitxa.css" type="text/css" /&gt;
+    &lt;script type="text/javascript" src="/${grails.util.Metadata.current.'app.name'}/js/desplegables-fitxa.js"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript" src="/${grails.util.Metadata.current.'app.name'}/js/light-menu-2.js"&gt;&lt;/script&gt;
+    
+  &lt;/head&gt;
+  
+  &lt;body&gt;
+    &lt;div class="container"&gt;
+      &lt;div class="container-UPC"&gt;
+        &lt;!-- ************ INI top-nav ************ --&gt;
+        &lt;div id="spinner" class="spinner" style="display: none;"&gt;
+          &lt;img alt="Carregant..." src="/rrhh/files/tecnic/spinner.gif" /&gt;
+        &lt;/div&gt;
+        
+        &lt;div class="row no-scroll-bar"&gt;
+          &lt;div class="col-xs-12 col-vxs-12 col-sm-6 col-md-7 col-lg-8 row-margin-bottom-header"&gt;
+            &lt;h1 class="pull-left logo-portal"&gt;
+              &lt;img usemap = "#upc_link" class="img-responsive" alt="Universitat Politècnica de Catalunya" src="/rrhh/files/tecnic/logo_upc_portal_pas_2.png" style="border:0;"/&gt;
+              &lt;map name="upc_link"&gt;
+                &lt;area shape=Rect Coords=0,0,50,60 href="http://www.upc.edu" target="_blank" /&gt;
+              &lt;/map&gt;
+            &lt;/h1&gt;  
+          &lt;/div&gt;
+          &lt;div class="col-xs-12 col-vxs-12 col-sm-6 col-md-5 col-lg-4 row-margin-bottom-header"&gt;
+            &lt;div class="navbar navbar-default navbar-Info" role="navigation"&gt;
+              &lt;div class="navbar-container-UPC"&gt;
+                &lt;div class="navbar-header"&gt;
+                  &lt;div class="columna-centrada-header"&gt;
+                    
+                    
+                    &lt;button class="navbar-toggle collapsed navbar-toggle-header btn-header" data-target="#navbar-collapse-search" data-toggle="collapse" type="button"&gt;
+                      &lt;span class="sr-only"&gt;Cercar&lt;/span&gt;
+                      &lt;span class="glyphicon glyphicon-search"&gt;&lt;/span&gt;
+                    &lt;/button&gt;
+                    &lt;button class="navbar-toggle collapsed navbar-toggle-header btn-header" data-target="#navbar-collapse-info" data-toggle="collapse" type="button"&gt;
+                      &lt;span class="sr-only"&gt;Contacte i directori&lt;/span&gt;
+                      &lt;span class="glyphicon glyphicon-info-sign"&gt;&lt;/span&gt;
+                    &lt;/button&gt;
+                    &lt;button class="navbar-toggle collapsed navbar-toggle-header btn-header" data-target="#navbar-collapse-portal" data-toggle="collapse" type="button"&gt;
+                      &lt;span class="sr-only"&gt;Altres portals&lt;/span&gt;
+                      &lt;span class="glyphicon glyphicon-new-window"&gt;&lt;/span&gt;
+                    &lt;/button&gt;      
+                    
+                    
+                  &lt;/div&gt;      
+                &lt;/div&gt;
+                &lt;div class="columna-centrada"&gt;
+                  &lt;div id="navbar-collapse-search" class="navbar-collapse collapse"&gt;        
+                    &lt;ul class="nav navbar-nav navbar-right search-position"&gt;          
+                      &lt;li&gt;
+                        &lt;div class="clearfix pull-right buscador"&gt;
+                          
+                        &lt;!-- Buscador --&gt;    
+          				&lt;!--buscadorUPC--&gt;  
+                          
+                        &lt;/div&gt;
+                      &lt;/li&gt;
+                    &lt;/ul&gt;        
+                  &lt;/div&gt;
+                &lt;/div&gt;
+                
+                &lt;div id="navbar-collapse-info" class="navbar-collapse collapse navbar-info format-lletra-upc"&gt;        
+                  &lt;ul class="nav navbar-nav navbar-right info-position"&gt;          
+                    &lt;li&gt;
+                      &lt;span class="contacte"&gt;
+                        &lt;a href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/contacte" target="_blank" onclick="window.open(this.href,this.target,'width=750,height=950,resizable=yes,scrollbars=yes');return false" alt="Contacte" title="Contacte"&gt;Contacte&lt;/a&gt;
+                      &lt;/span&gt;
+                    &lt;/li&gt;
+                    &lt;li&gt;
+                      &lt;span class="enllacSuggeriment"&gt;
+                        &lt;a href="/${grails.util.Metadata.current.'app.name'}/suggeriments" target="_blank" onclick="window.open(this.href,this.target,'width=750,height=550,resizable=yes,scrollbars=yes');return false" alt="Suggeriments" title="Suggeriments"&gt;Suggeriments&lt;/a&gt;
+                      &lt;/span&gt;
+                    &lt;/li&gt;
+                    &lt;li&gt;
+                      &lt;span class="enllacPortal"&gt;
+                        &lt;a href="http://directori.upc.edu/directori/" target="_blank" onclick="window.open(this.href,this.target,'width=750,height=550,resizable=yes');return false" alt="Directori UPC" title="Directori UPC"&gt;Directori UPC&lt;/a&gt;
+                      &lt;/span&gt;
+                    &lt;/li&gt;
+                  &lt;/ul&gt;    
+                &lt;/div&gt;        
+                &lt;!-- /.nav-collapse --&gt;
+              &lt;/div&gt;
+              &lt;!-- /.container-fluid --&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        
+        &lt;div class="row no-scroll-bar"&gt;
+          &lt;div class="col-vxs-12 col-sm-7 col-md-7 col-lg-8"&gt;
+            &lt;div id="navbar-collapse-portal" class="navbar-collapse collapse navbar-portal format-lletra-upc"&gt;        
+              &lt;ul class="nav navbar-nav"&gt;
+                &lt;li&gt;
+                  &lt;span class="enllacPortalFirst portal-UPC"&gt;
+                    &lt;a href="/${grails.util.Metadata.current.'app.name'}/PDI/" alt="Portal PDI" title="Portal PDI"&gt;Portal PDI&lt;/a&gt;
+                  &lt;/span&gt;
+                  
+                &lt;/li&gt;
+                &lt;li&gt;
+                  &lt;span class="enllacPortal"&gt;  
+                    &lt;a href="/${grails.util.Metadata.current.'app.name'}/GES/" alt="Portal gestor/a" title="Portal gestor/a"&gt;Portal gestor/a&lt;/a&gt;
+                  &lt;/span&gt;
+                &lt;/li&gt;  
+                &lt;li&gt;
+                  &lt;span class="enllacPortal enllacPortalLast"&gt;
+                    &lt;a href="/${grails.util.Metadata.current.'app.name'}/BEC/" alt="Portal beques grau/màster" title="Portal beques grau/màster"&gt;Portal beques grau/màster&lt;/a&gt;
+                  &lt;/span&gt;
+                &lt;/li&gt;
+              &lt;/ul&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;  
+        &lt;/div&gt;
+        
+        &lt;!-- STATUS BAR ESTÁTICA --&gt;
+        &lt;div class="navbar navbar-default navbar-UPC" role="navigation"&gt;
+          &lt;div class="container-fluid"&gt;
+            &lt;div class="navbar-header"&gt;
+              &lt;button class="navbar-toggle collapsed navbar-toggle-home" data-target="#navbar-collapse-menu" data-toggle="collapse" type="button"&gt;
+                &lt;span class="sr-only"&gt;Toggle navigation&lt;/span&gt;
+                &lt;span class="icon-bar"&gt;&lt;/span&gt;
+                &lt;span class="icon-bar"&gt;&lt;/span&gt;
+                &lt;span class="icon-bar"&gt;&lt;/span&gt;
+              &lt;/button&gt;
+              &lt;a class="navbar-brand home" href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index" alt="Inici" title="Inici"&gt;Inici&lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div id="navbar-collapse-menu" class="navbar-collapse collapse"&gt;
+              &lt;ul class="nav navbar-nav"&gt;
+                &lt;li&gt;                    
+                  &lt;a class="Informacio_General" href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General" alt="Informació general" title="Informació general"&gt;Informació general&lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li&gt;                    
+                  &lt;a class="Raco_Personal" href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Raco_Personal" alt="Racó personal" title="Racó personal"&gt;Racó personal&lt;/a&gt;
+                &lt;/li&gt;
+              &lt;/ul&gt;   
+              &lt;!-- Part dreta: usuari, desconnexió --&gt;
+              &lt;ul class="nav navbar-nav navbar-right format-lletra-upc"&gt;
+                &lt;li class="active"&gt;
+                  &lt;!--userName--&gt;
+                &lt;/li&gt;
+                &lt;li&gt;
+                  &lt;span class="logout-UPC"&gt; &lt;a href="/${grails.util.Metadata.current.'app.name'}/logout/index" alt="Desconnecta" title="Desconnecta"&gt;Desconnecta&lt;/a&gt;&lt;/span&gt;
+                &lt;/li&gt;
+              &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;!-- /.nav-collapse --&gt;
+          &lt;/div&gt;
+          &lt;!-- /.container-fluid --&gt;
+        &lt;/div&gt;
+        &lt;!-- ************ FIN top-nav ************ --&gt;      
+
+        &lt;!-- ************ INI breadCrumb-slider-bar ************ --&gt;           
+        &lt;div class="breadCrumb"&gt;   
+          &lt;!-- Migas de pan --&gt;    
+          &lt;div&gt; &lt;b&gt;Sou a &lt;span class="breadCrumbSeparator firstSeparator"&gt;&amp;raquo;&lt;/span&gt; &lt;/b&gt;&lt;a href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index"&gt;&lt;span class="breadCrumbItem"&gt;Inici&lt;/span&gt;&lt;/a&gt; &lt;span class="breadCrumbSeparator"&gt;&amp;rsaquo;&lt;/span&gt;&lt;a href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General"&gt;&lt;span class="breadCrumbItem"&gt;Informació general &lt;/span&gt;&lt;/a&gt; &lt;span class="breadCrumbSeparator"&gt;&amp;rsaquo;&lt;/span&gt;&lt;span class="breadCrumbLastItem"&gt;&lt;!--titolContent--&gt;&lt;/span&gt;&lt;/div&gt;            
+          &lt;!-- Título de la página --&gt;
+          &lt;h1 class="firstHeading"&gt;&lt;span&gt;&lt;/span&gt;
+            &lt;!--titolContent--&gt;
+          &lt;/h1&gt;
+        &lt;/div&gt;
+        &lt;!-- ************ FIN breadCrumb-slider-bar ************ --&gt;
+        
+      &lt;/div&gt;    
+      
+      &lt;!-- Rejilla con el contenido principal --&gt;
+      &lt;div class="fit-column weceem-tmpl"&gt;
+        &lt;div class="row no-scroll-bar"&gt;    
+          
+          &lt;div class="col-xs-12 col-vxs-4 col-sm-4 col-md-4 col-lg-3 row-margin-bottom40" &gt;
+            &lt;!-- Título de la opción de menú seleccionada --&gt;
+            &lt;div id="main" class="menuPosicio"&gt;
+              &lt;div &gt;&lt;!--titolContent--&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;!-- Menú lateral --&gt;
+            &lt;div id="quadreMenu_main" class="quadreMenu"&gt;   
+              &lt;div id="Menu0" name="Menu0" class="dijitTitlePane"&gt;                                
+                &lt;div id="El-PAS-a-la-UPC" name="Menu0" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/El-PAS-a-la-UPC'" &gt;      
+                  &lt;span class="dijitTitlePaneTextNode"&gt;
+                    &lt;a href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/El-PAS-a-la-UPC" alt="El PAS a la UPC" title="El PAS a la UPC"&gt;El PAS a la UPC
+                    &lt;/a&gt;
+                  &lt;/span&gt;    
+                &lt;/div&gt;                
+              &lt;/div&gt;
+              
+              &lt;div id="Menu1" name="Menu1" class="dijitTitlePane"&gt;
+                &lt;div id="Sistema-retributiu" name="Menu1" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/Sistema-retributiu'" &gt;      
+                  &lt;span class="dijitTitlePaneTextNode"&gt;
+                    &lt;a href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/Sistema-retributiu" alt="Sistema retributiu" title="Sistema retributiu"&gt;Sistema retributiu
+                    &lt;/a&gt;
+                  &lt;/span&gt;    
+                &lt;/div&gt;
+                
+                
+              &lt;/div&gt;
+              
+              &lt;div id="Menu2" name="Menu2" class="dijitTitlePane"&gt;
+                &lt;div id="Permisos" name="Menu2" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/Permisos'" &gt;      
+                  &lt;span class="dijitTitlePaneTextNode"&gt;
+                    &lt;a href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/Permisos" alt="Permisos, llicències, reduccions jornada i excedències" title="Permisos, llicències, reduccions jornada i excedències"&gt;Permisos, llicències, reduccions jornada i excedències
+                    &lt;/a&gt;
+                  &lt;/span&gt;    
+                &lt;/div&gt;
+              &lt;/div&gt;                  
+              
+              &lt;div id="Menu3" name="Menu3" class="dijitTitlePane"&gt;
+                &lt;div id="Calendari-laboral-jornada" name="Menu3" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/Calendari-laboral-jornada'" &gt;      
+                  &lt;span class="dijitTitlePaneTextNode"&gt;
+                    &lt;a href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/Calendari-laboral-jornada" alt="Calendari laboral, jornada i horaris" title="Calendari laboral, jornada i horaris"&gt;Calendari laboral, jornada i horaris
+                    &lt;/a&gt;
+                  &lt;/span&gt;    
+                &lt;/div&gt;
+              &lt;/div&gt;
+              
+              &lt;div id="Menu4" name="Menu4" class="dijitTitlePane"&gt;
+                &lt;div id="Relacions-laborals" name="Menu4" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/Relacions-laborals'" &gt;      
+                  &lt;span class="dijitTitlePaneTextNode"&gt;
+                    &lt;a href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/Relacions-laborals" alt="Relacions laborals" title="Relacions laborals"&gt;Relacions laborals
+                    &lt;/a&gt;
+                  &lt;/span&gt;    
+                &lt;/div&gt;
+              &lt;/div&gt;
+              
+              &lt;div id="Menu5" name="Menu5" class="dijitTitlePane"&gt;
+                &lt;div id="Seguretat-social" name="Menu5" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/Seguretat-social'" &gt;      
+                  &lt;span class="dijitTitlePaneTextNode"&gt;
+                    &lt;a href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/Seguretat-social" alt="Seguretat social" title="Seguretat social"&gt;Seguretat social
+                    &lt;/a&gt;
+                  &lt;/span&gt;    
+                &lt;/div&gt;
+              &lt;/div&gt;
+              
+              &lt;div id="Menu6" name="Menu6" class="dijitTitlePane"&gt;
+                &lt;div id="PAS_FORMACIO" name="Menu${i}" class="dijitTitlePaneTitle" onclick="parent.location='https://espaipersonal.upc.edu/irj/portal/PAS_FORMACIO'" &gt;      
+                  &lt;span class="dijitTitlePaneTextNode"&gt;
+                    &lt;a href="https://espaipersonal.upc.edu/irj/portal/PAS_FORMACIO" alt="Formació" title="Formació"&gt;Formació
+                    &lt;/a&gt;
+                  &lt;/span&gt;    
+                &lt;/div&gt;
+              &lt;/div&gt;
+              
+              &lt;div id="Menu7" name="Menu7" class="dijitTitlePane"&gt;
+                &lt;div id="Mobilitat" name="Menu7" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/Mobilitat'" &gt;      
+                  &lt;span class="dijitTitlePaneTextNode"&gt;  
+                    &lt;a href="https://espaipersonal.upc.edu/irj/portal/PAS_PROVISIO_LLOC_TREBALL" alt="Mobilitat" title="Mobilitat"&gt;Mobilitat
+                    &lt;/a&gt;
+                  &lt;/span&gt;    
+                &lt;/div&gt;
+              &lt;/div&gt;
+              
+            &lt;/div&gt;
+            &lt;!-- Fin Menú lateral --&gt;
+          &lt;/div&gt;         
+          
+          &lt;div class="col-xs-12 col-vxs-8 col-sm-8 col-md-8 col-lg-9 row-margin-top-col"&gt;
+            &lt;div id="paginaDesplegable" class="fit-column2left fit-column content-movil"&gt;
+              &lt;!--pageContent--&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;          
+        &lt;/div&gt;  
+        
+      &lt;/div&gt;
+    
+    &lt;/div&gt;
+    &lt;!-- Pie de página --&gt;
+    &lt;!-- ************ INI bottom-nav ************ --&gt;
+    &lt;div class="footer"&gt;
+      &lt;div class="container"&gt;
+        &lt;div class="fit2container"&gt;      
+          &lt;div class="row no-scroll-bar"&gt;          
+            &lt;div class="col-xs-12 col-footer-9 col-vxs-9 col-sm-9 col-md-9 col-lg-9" &gt;
+              &lt;p class="footer-text"&gt;Àrea de Personal i Organització&lt;/p&gt;
+              &lt;p class="footer-text"&gt;&amp;copy; &lt;a href="http://www.upc.edu"&gt;UPC&lt;/a&gt;. Universitat Politècnica de Catalunya &lt;span&gt;●&lt;/span&gt; BarcelonaTech&lt;/p&gt;           
+            &lt;/div&gt;        
+            &lt;div class="col-xs-12 col-footer-3 col-vxs-3 col-sm-3 col-md-3 col-lg-3 row-margin-top-peu"&gt;
+              &lt;div class="accessibilitat-container"&gt;
+                &lt;a class="footer-text" href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/accessibilitat" target="_blank" onclick="window.open(this.href,this.target,'width=1100,height=950,resizable=yes,scrollbars=yes');return false" alt="Accessibilitat" title="Accessibilitat"&gt;Accessibilitat&lt;/a&gt;
+                &lt;a class="footer-text" href="#top"&gt;&lt;img alt="Amunt" src="/rrhh/files/tecnic/amunt.gif" /&gt;&lt;/a&gt;                        
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;     
+        &lt;/div&gt;    
+      &lt;/div&gt;
+    &lt;/div&gt;    
+    &lt;!-- ************ FIN bottom-nav ************ --&gt;    
+  &lt;/body&gt;
+  
+&lt;/html&gt;</contingut>
+    <permetreGSP type='class java.lang.Integer'>1</permetreGSP>
+    <observacions type='class org.codehaus.groovy.runtime.NullObject' />
+  </Template>
+  <Template>
+    <id type='class java.lang.Long'>110</id>
+    <aliesUri type='class java.lang.String'>pagina_fitxa</aliesUri>
+    <descripcio type='class org.codehaus.groovy.runtime.NullObject' />
+    <idioma type='class org.codehaus.groovy.runtime.NullObject' />
+    <ordre type='class java.lang.Integer'>10</ordre>
+    <espai type='class java.lang.Integer'>2</espai>
+    <titol type='class java.lang.String'>Pàgina fitxa</titol>
+    <contingut type='class java.lang.String'>&lt;!DOCTYPE html&gt;
+&lt;!--[if lt IE 7 ]&gt; &lt;html lang="en" class="no-js ie6"&gt; &lt;![endif]--&gt;
+&lt;!--[if IE 7 ]&gt;    &lt;html lang="en" class="no-js ie7"&gt; &lt;![endif]--&gt;
+&lt;!--[if IE 8 ]&gt;    &lt;html lang="en" class="no-js ie8"&gt; &lt;![endif]--&gt;
+&lt;!--[if IE 9 ]&gt;    &lt;html lang="en" class="no-js ie9"&gt; &lt;![endif]--&gt;
+&lt;!--[if (gt IE 9)|!(IE)]&gt;&lt;!--&gt; &lt;html lang="en" class="no-js"&gt;&lt;!--&lt;![endif]--&gt;
+&lt;html&gt;
+  
+   &lt;head&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1" /&gt;
+    &lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /&gt;
+    
+    &lt;link rel="stylesheet" href="/${grails.util.Metadata.current.'app.name'}/css/bootstrap.css" type="text/css" /&gt;
+    &lt;script type="text/javascript" src="/${grails.util.Metadata.current.'app.name'}/js/jquery/jquery-1.11.1.min.js"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript" src="/${grails.util.Metadata.current.'app.name'}/js/bootstrap.min.js"&gt;&lt;/script&gt;
+    
+    &lt;link rel="shortcut icon" href="/${grails.util.Metadata.current.'app.name'}/images/favicon.ico" type="image/x-icon" /&gt;
+    
+    &lt;link rel="stylesheet" href="/${grails.util.Metadata.current.'app.name'}/css/main.css" type="text/css" /&gt;
+    &lt;link rel="stylesheet" href="/${grails.util.Metadata.current.'app.name'}/css/bootstrapUPC.css" type="text/css" /&gt;
+    &lt;link rel="stylesheet" href="/${grails.util.Metadata.current.'app.name'}/css/estilsUPC.css" type="text/css" /&gt;
+    &lt;link rel="stylesheet" href="/${grails.util.Metadata.current.'app.name'}/css/sticky-footer.css" type="text/css" /&gt;
+    &lt;link rel="stylesheet" href="/${grails.util.Metadata.current.'app.name'}/css/tmp.css" type="text/css" /&gt;
+    
+    &lt;link rel="stylesheet" href="/${grails.util.Metadata.current.'app.name'}/css/menus.css" type="text/css" /&gt;
+    &lt;link rel="stylesheet" href="/${grails.util.Metadata.current.'app.name'}/css/desplegables-fitxa.css" type="text/css" /&gt; 
+    &lt;script type="text/javascript" src="/${grails.util.Metadata.current.'app.name'}/js/desplegables-fitxa.js"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript" src="/${grails.util.Metadata.current.'app.name'}/js/light-menu-1.js"&gt;&lt;/script&gt;
+
+  &lt;/head&gt;
+  
+  &lt;body&gt;
+    &lt;div class="container"&gt;
+      &lt;div class="container-UPC"&gt;
+        &lt;!-- ************ INI top-nav ************ --&gt;
+        &lt;div id="spinner" class="spinner" style="display: none;"&gt;
+          &lt;img alt="Carregant..." src="/rrhh/files/tecnic/spinner.gif" /&gt;
+        &lt;/div&gt;
+        
+        &lt;div class="row no-scroll-bar"&gt;
+          &lt;div class="col-xs-12 col-vxs-12 col-sm-6 col-md-7 col-lg-8 row-margin-bottom-header"&gt;
+            &lt;h1 class="pull-left logo-portal"&gt;
+              &lt;img usemap = "#upc_link" class="img-responsive" alt="Universitat Politècnica de Catalunya" src="/rrhh/files/tecnic/logo_upc_portal_pas_2.png" style="border:0;"/&gt;
+              &lt;map name="upc_link"&gt;
+                &lt;area shape=Rect Coords=0,0,50,60 href="http://www.upc.edu" target="_blank" /&gt;
+              &lt;/map&gt;
+            &lt;/h1&gt;  
+          &lt;/div&gt;
+          &lt;div class="col-xs-12 col-vxs-12 col-sm-6 col-md-5 col-lg-4 row-margin-bottom-header"&gt;
+            &lt;div class="navbar navbar-default navbar-Info" role="navigation"&gt;
+              &lt;div class="navbar-container-UPC"&gt;
+                &lt;div class="navbar-header"&gt;
+                  &lt;div class="columna-centrada-header"&gt;
+                    
+                    
+                    &lt;button class="navbar-toggle collapsed navbar-toggle-header btn-header" data-target="#navbar-collapse-search" data-toggle="collapse" type="button"&gt;
+                      &lt;span class="sr-only"&gt;Cercar&lt;/span&gt;
+                      &lt;span class="glyphicon glyphicon-search"&gt;&lt;/span&gt;
+                    &lt;/button&gt;
+                    &lt;button class="navbar-toggle collapsed navbar-toggle-header btn-header" data-target="#navbar-collapse-info" data-toggle="collapse" type="button"&gt;
+                      &lt;span class="sr-only"&gt;Contacte i directori&lt;/span&gt;
+                      &lt;span class="glyphicon glyphicon-info-sign"&gt;&lt;/span&gt;
+                    &lt;/button&gt;
+                    &lt;button class="navbar-toggle collapsed navbar-toggle-header btn-header" data-target="#navbar-collapse-portal" data-toggle="collapse" type="button"&gt;
+                      &lt;span class="sr-only"&gt;Altres portals&lt;/span&gt;
+                      &lt;span class="glyphicon glyphicon-new-window"&gt;&lt;/span&gt;
+                    &lt;/button&gt;      
+                    
+                    
+                  &lt;/div&gt;      
+                &lt;/div&gt;
+                &lt;div class="columna-centrada"&gt;
+                  &lt;div id="navbar-collapse-search" class="navbar-collapse collapse"&gt;        
+                    &lt;ul class="nav navbar-nav navbar-right search-position"&gt;          
+                      &lt;li&gt;
+                        &lt;div class="clearfix pull-right buscador"&gt;
+                            &lt;!-- Buscador --&gt;    
+          					&lt;!--buscadorUPC--&gt;  
+                        &lt;/div&gt;
+                      &lt;/li&gt;
+                    &lt;/ul&gt;        
+                  &lt;/div&gt;
+                &lt;/div&gt;
+                
+                &lt;div id="navbar-collapse-info" class="navbar-collapse collapse navbar-info format-lletra-upc"&gt;        
+                  &lt;ul class="nav navbar-nav navbar-right info-position"&gt;          
+                    &lt;li&gt;
+                      &lt;span class="contacte"&gt;
+                        &lt;a href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/contacte" target="_blank" onclick="window.open(this.href,this.target,'width=750,height=950,resizable=yes,scrollbars=yes');return false" alt="Contacte" title="Contacte"&gt;Contacte&lt;/a&gt;
+                      &lt;/span&gt;
+                    &lt;/li&gt;
+                    &lt;li&gt;
+                      &lt;span class="enllacSuggeriment"&gt;
+                        &lt;a href="/${grails.util.Metadata.current.'app.name'}/suggeriments" target="_blank" onclick="window.open(this.href,this.target,'width=750,height=550,resizable=yes,scrollbars=yes');return false" alt="Suggeriments" title="Suggeriments"&gt;Suggeriments&lt;/a&gt;
+                      &lt;/span&gt;
+                    &lt;/li&gt;
+                    &lt;li&gt;
+                      &lt;span class="enllacPortal"&gt;
+                        &lt;a href="http://directori.upc.edu/directori/" target="_blank" onclick="window.open(this.href,this.target,'width=750,height=550,resizable=yes');return false" alt="Directori UPC" title="Directori UPC"&gt;Directori UPC&lt;/a&gt;
+                      &lt;/span&gt;
+                    &lt;/li&gt;
+                  &lt;/ul&gt;    
+                &lt;/div&gt;        
+                &lt;!-- /.nav-collapse --&gt;
+              &lt;/div&gt;
+              &lt;!-- /.container-fluid --&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        
+        &lt;div class="row no-scroll-bar"&gt;
+          &lt;div class="col-vxs-12 col-sm-7 col-md-7 col-lg-8"&gt;
+            &lt;div id="navbar-collapse-portal" class="navbar-collapse collapse navbar-portal format-lletra-upc"&gt;        
+              &lt;ul class="nav navbar-nav"&gt;
+                &lt;li&gt;
+                  &lt;span class="enllacPortalFirst portal-UPC"&gt;
+                    &lt;a href="/${grails.util.Metadata.current.'app.name'}/PDI/" alt="Portal PDI" title="Portal PDI"&gt;Portal PDI&lt;/a&gt;
+                  &lt;/span&gt;
+                  
+                &lt;/li&gt;
+                &lt;li&gt;
+                  &lt;span class="enllacPortal"&gt;  
+                    &lt;a href="/${grails.util.Metadata.current.'app.name'}/GES/" alt="Portal gestor/a" title="Portal gestor/a"&gt;Portal gestor/a&lt;/a&gt;
+                  &lt;/span&gt;
+                &lt;/li&gt;  
+                &lt;li&gt;
+                  &lt;span class="enllacPortal enllacPortalLast"&gt;
+                    &lt;a href="/${grails.util.Metadata.current.'app.name'}/BEC/" alt="Portal beques grau/màster" title="Portal beques grau/màster"&gt;Portal beques grau/màster&lt;/a&gt;
+                  &lt;/span&gt;
+                &lt;/li&gt;
+              &lt;/ul&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;  
+        &lt;/div&gt;
+        
+        &lt;!-- STATUS BAR ESTÁTICA --&gt;
+        &lt;div class="navbar navbar-default navbar-UPC" role="navigation"&gt;
+          &lt;div class="container-fluid"&gt;
+            &lt;div class="navbar-header"&gt;
+              &lt;button class="navbar-toggle collapsed navbar-toggle-home" data-target="#navbar-collapse-menu" data-toggle="collapse" type="button"&gt;
+                &lt;span class="sr-only"&gt;Toggle navigation&lt;/span&gt;
+                &lt;span class="icon-bar"&gt;&lt;/span&gt;
+                &lt;span class="icon-bar"&gt;&lt;/span&gt;
+                &lt;span class="icon-bar"&gt;&lt;/span&gt;
+              &lt;/button&gt;
+              &lt;a class="navbar-brand home" href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index" alt="Inici" title="Inici"&gt;Inici&lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div id="navbar-collapse-menu" class="navbar-collapse collapse"&gt;
+              &lt;ul class="nav navbar-nav"&gt;
+                &lt;li&gt;                    
+                  &lt;a class="Informacio_General" href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General" alt="Informació general" title="Informació general"&gt;Informació general&lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li&gt;                    
+                  &lt;a class="Raco_Personal" href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Raco_Personal" alt="Racó personal" title="Racó personal"&gt;Racó personal&lt;/a&gt;
+                &lt;/li&gt;
+              &lt;/ul&gt;   
+              &lt;!-- Part dreta: usuari, desconnexió --&gt;
+              &lt;ul class="nav navbar-nav navbar-right format-lletra-upc"&gt;
+                &lt;li class="active"&gt;
+                  &lt;!--userName--&gt;
+                &lt;/li&gt;
+                &lt;li&gt;
+                  &lt;span class="logout-UPC"&gt; &lt;a href="/${grails.util.Metadata.current.'app.name'}/logout/index" alt="Desconnecta" title="Desconnecta"&gt;Desconnecta&lt;/a&gt;&lt;/span&gt;
+                &lt;/li&gt;
+              &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;!-- /.nav-collapse --&gt;
+          &lt;/div&gt;
+          &lt;!-- /.container-fluid --&gt;
+        &lt;/div&gt;
+        &lt;!-- ************ FIN top-nav ************ --&gt;     
+          
+          &lt;!-- ************ INI breadCrumb-slider-bar ************ --&gt;           
+        &lt;div class="breadCrumb"&gt;   
+          &lt;!-- Migas de pan --&gt;    
+          &lt;div&gt;&lt;!--breadCrumb--&gt;&lt;/div&gt;
+          &lt;!-- Título de la página --&gt;
+          &lt;h1 class="firstHeading"&gt;&lt;span&gt;&lt;/span&gt;
+          	&lt;!--titolContent--&gt;
+          &lt;/h1&gt;
+        &lt;/div&gt;
+        &lt;!-- ************ FIN breadCrumb-slider-bar ************ --&gt;       
+        
+      &lt;/div&gt;      
+      
+      &lt;!-- Rejilla con el contenido principal --&gt;
+      &lt;div class="fit-column weceem-tmpl"&gt;
+        &lt;div class="row no-scroll-bar"&gt; 
+          &lt;div class="col-xs-12 col-vxs-4 col-sm-4 col-md-4 col-lg-3 row-margin-bottom40 no-print" &gt;
+            &lt;!-- Título de la opción de menú seleccionada --&gt;
+            &lt;div id="main" class="menuPosicio"&gt;
+              &lt;div &gt;&lt;!--titolContent--&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;!-- Menú lateral --&gt;
+            &lt;div id="quadreMenu_main" class="quadreMenu"&gt;   
+              &lt;div id="Menu0" name="Menu0" class="dijitTitlePane"&gt;                                
+                &lt;div id="El-PAS-a-la-UPC" name="Menu0" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/El-PAS-a-la-UPC'" &gt;      
+                  &lt;span class="dijitTitlePaneTextNode"&gt;
+                    &lt;a href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/El-PAS-a-la-UPC" alt="El PAS a la UPC" title="El PAS a la UPC"&gt;El PAS a la UPC
+                    &lt;/a&gt;
+                  &lt;/span&gt;    
+                &lt;/div&gt;                
+              &lt;/div&gt;
+              
+              &lt;div id="Menu1" name="Menu1" class="dijitTitlePane"&gt;
+                &lt;div id="Sistema-retributiu" name="Menu1" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/Sistema-retributiu'" &gt;      
+                  &lt;span class="dijitTitlePaneTextNode"&gt;
+                    &lt;a href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/Sistema-retributiu" alt="Sistema retributiu" title="Sistema retributiu"&gt;Sistema retributiu
+                    &lt;/a&gt;
+                  &lt;/span&gt;    
+                &lt;/div&gt;
+                
+                
+              &lt;/div&gt;
+              
+              &lt;div id="Menu2" name="Menu2" class="dijitTitlePane"&gt;
+                &lt;div id="Permisos" name="Menu2" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/Permisos'" &gt;      
+                  &lt;span class="dijitTitlePaneTextNode"&gt;
+                    &lt;a href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/Permisos" alt="Permisos, llicències, reduccions jornada i excedències" title="Permisos, llicències, reduccions jornada i excedències"&gt;Permisos, llicències, reduccions jornada i excedències
+                    &lt;/a&gt;
+                  &lt;/span&gt;    
+                &lt;/div&gt;
+              &lt;/div&gt;                  
+              
+              &lt;div id="Menu3" name="Menu3" class="dijitTitlePane"&gt;
+                &lt;div id="Calendari-laboral-jornada" name="Menu3" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/Calendari-laboral-jornada'" &gt;      
+                  &lt;span class="dijitTitlePaneTextNode"&gt;
+                    &lt;a href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/Calendari-laboral-jornada" alt="Calendari laboral, jornada i horaris" title="Calendari laboral, jornada i horaris"&gt;Calendari laboral, jornada i horaris
+                    &lt;/a&gt;
+                  &lt;/span&gt;    
+                &lt;/div&gt;
+              &lt;/div&gt;
+              
+              &lt;div id="Menu4" name="Menu4" class="dijitTitlePane"&gt;
+                &lt;div id="Relacions-laborals" name="Menu4" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/Relacions-laborals'" &gt;      
+                  &lt;span class="dijitTitlePaneTextNode"&gt;
+                    &lt;a href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/Relacions-laborals" alt="Relacions laborals" title="Relacions laborals"&gt;Relacions laborals
+                    &lt;/a&gt;
+                  &lt;/span&gt;    
+                &lt;/div&gt;
+              &lt;/div&gt;
+              
+              &lt;div id="Menu5" name="Menu5" class="dijitTitlePane"&gt;
+                &lt;div id="Seguretat-social" name="Menu5" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/Seguretat-social'" &gt;      
+                  &lt;span class="dijitTitlePaneTextNode"&gt;
+                    &lt;a href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/Seguretat-social" alt="Seguretat social" title="Seguretat social"&gt;Seguretat social
+                    &lt;/a&gt;
+                  &lt;/span&gt;    
+                &lt;/div&gt;
+              &lt;/div&gt;
+              
+              &lt;div id="Menu6" name="Menu6" class="dijitTitlePane"&gt;
+                &lt;div id="PAS_FORMACIO" name="Menu6" class="dijitTitlePaneTitle" onclick="parent.location='https://espaipersonal.upc.edu/irj/portal/PAS_FORMACIO'" &gt;      
+                  &lt;span class="dijitTitlePaneTextNode"&gt;
+                    &lt;a href="https://espaipersonal.upc.edu/irj/portal/PAS_FORMACIO" alt="Formació" title="Formació"&gt;Formació
+                    &lt;/a&gt;
+                  &lt;/span&gt;    
+                &lt;/div&gt;
+              &lt;/div&gt;
+              
+              &lt;div id="Menu7" name="Menu7" class="dijitTitlePane"&gt;
+                &lt;div id="Mobilitat" name="Menu7" class="dijitTitlePaneTitle" onclick="parent.location='https://espaipersonal.upc.edu/irj/portal/PAS_PROVISIO_LLOC_TREBALL'" &gt;      
+                  &lt;span class="dijitTitlePaneTextNode"&gt;  
+                    &lt;a href="https://espaipersonal.upc.edu/irj/portal/PAS_PROVISIO_LLOC_TREBALL" alt="Mobilitat" title="Mobilitat"&gt;Mobilitat
+                    &lt;/a&gt;
+                  &lt;/span&gt;    
+                &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;!-- Fin Menú lateral --&gt;
+            
+          &lt;/div&gt;       
+          
+          &lt;div class="col-xs-12 col-vxs-8 col-sm-8 col-md-8 col-lg-9 row-contingut row-margin-top-col"&gt;
+            &lt;div id="paginaDesplegable" class="fit-column2left fit-column content-movil"&gt;
+              &lt;!--pageContent--&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          
+          &lt;!-- Fecha de actualización --&gt;
+          &lt;div class="col-xs-12 col-vxs-4 col-sm-4 col-md-4 col-lg-3"&gt;
+          &lt;/div&gt;
+          &lt;div class="col-xs-12 col-vxs-7 col-sm-7 col-md-7 col-lg-8 row-margin-top-col-data"&gt;
+            &lt;div id="paginaDesplegable" class="fit-column2left fit-column content-movil"&gt;
+            	Servei de Personal. Data d'actualització: &lt;!--dataActualitzacioFitxa--&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class="col-xs-12 col-vxs-1 col-sm-1 col-md-1 col-lg-1 row-margin-top-col-data"&gt;
+            &lt;div id="imprmir-fitxa" class="fit-column2left fit-column content-movil no-print text-right" style="cursor:pointer"&gt;
+            	&lt;a onclick="window.print()"&gt;&lt;img src="/rrhh/files/tecnic/print_icon.gif" border="0"/&gt;Imprimir&lt;/a&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          
+        &lt;/div&gt;          
+      &lt;/div&gt;
+    
+    &lt;/div&gt;
+    &lt;!-- Pie de página --&gt;
+    &lt;!-- ************ INI bottom-nav ************ --&gt;
+    &lt;div class="footer"&gt;
+      &lt;div class="container"&gt;
+        &lt;div class="fit2container"&gt;      
+          &lt;div class="row no-scroll-bar"&gt;          
+            &lt;div class="col-xs-12 col-footer-9 col-vxs-9 col-sm-9 col-md-9 col-lg-9" &gt;
+              &lt;p class="footer-text"&gt;Àrea de Personal i Organització&lt;/p&gt;
+              &lt;p class="footer-text"&gt;&amp;copy; &lt;a href="http://www.upc.edu"&gt;UPC&lt;/a&gt;. Universitat Politècnica de Catalunya &lt;span&gt;●&lt;/span&gt; BarcelonaTech&lt;/p&gt;           
+            &lt;/div&gt;        
+            &lt;div class="col-xs-12 col-footer-3 col-vxs-3 col-sm-3 col-md-3 col-lg-3 row-margin-top-peu"&gt;
+              &lt;div class="accessibilitat-container"&gt;
+                &lt;a class="footer-text" href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/accessibilitat" target="_blank" onclick="window.open(this.href,this.target,'width=1100,height=950,resizable=yes,scrollbars=yes');return false" alt="Accessibilitat" title="Accessibilitat"&gt;Accessibilitat&lt;/a&gt;
+                &lt;a class="footer-text" href="#top"&gt;&lt;img alt="Amunt" src="/rrhh/files/tecnic/amunt.gif" /&gt;&lt;/a&gt;                        
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;     
+        &lt;/div&gt;    
+      &lt;/div&gt;
+    &lt;/div&gt;    
+    &lt;!-- ************ FIN bottom-nav ************ --&gt;    
+  &lt;/body&gt;
+  
+&lt;/html&gt;</contingut>
+    <permetreGSP type='class java.lang.Integer'>1</permetreGSP>
+    <observacions type='class org.codehaus.groovy.runtime.NullObject' />
+  </Template>
+  <Template>
+    <id type='class java.lang.Long'>141</id>
+    <aliesUri type='class java.lang.String'>plantilla-fitxa-2</aliesUri>
+    <descripcio type='class org.codehaus.groovy.runtime.NullObject' />
+    <idioma type='class org.codehaus.groovy.runtime.NullObject' />
+    <ordre type='class java.lang.Integer'>18</ordre>
+    <espai type='class java.lang.Integer'>2</espai>
+    <titol type='class java.lang.String'>Pàgina fitxa sense menú lateral</titol>
+    <contingut type='class java.lang.String'>																																																																												&lt;!DOCTYPE html&gt;
+&lt;!--[if lt IE 7 ]&gt; &lt;html lang="en" class="no-js ie6"&gt; &lt;![endif]--&gt;
+&lt;!--[if IE 7 ]&gt;    &lt;html lang="en" class="no-js ie7"&gt; &lt;![endif]--&gt;
+&lt;!--[if IE 8 ]&gt;    &lt;html lang="en" class="no-js ie8"&gt; &lt;![endif]--&gt;
+&lt;!--[if IE 9 ]&gt;    &lt;html lang="en" class="no-js ie9"&gt; &lt;![endif]--&gt;
+&lt;!--[if (gt IE 9)|!(IE)]&gt;&lt;!--&gt; &lt;html lang="en" class="no-js"&gt;&lt;!--&lt;![endif]--&gt;
+&lt;html&gt;
+  
+   &lt;head&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+    &lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"&gt;
+    
+    &lt;link rel="stylesheet" href="/${grails.util.Metadata.current.'app.name'}/css/bootstrap.css" type="text/css"&gt;
+    &lt;script type="text/javascript" src="/${grails.util.Metadata.current.'app.name'}/js/jquery/jquery-1.11.1.min.js"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript" src="/${grails.util.Metadata.current.'app.name'}/js/bootstrap.min.js"&gt;&lt;/script&gt;
+    
+    &lt;link rel="shortcut icon" href="/${grails.util.Metadata.current.'app.name'}/images/favicon.ico" type="image/x-icon" /&gt;
+    
+    &lt;link rel="stylesheet" href="/${grails.util.Metadata.current.'app.name'}/css/main.css" type="text/css"&gt;
+    &lt;link rel="stylesheet" href="/${grails.util.Metadata.current.'app.name'}/css/bootstrapUPC.css" type="text/css"&gt;
+    &lt;link rel="stylesheet" href="/${grails.util.Metadata.current.'app.name'}/css/estilsUPC.css" type="text/css"&gt;
+    &lt;link rel="stylesheet" href="/${grails.util.Metadata.current.'app.name'}/css/sticky-footer.css" type="text/css"&gt;
+    &lt;link rel="stylesheet" href="/${grails.util.Metadata.current.'app.name'}/css/tmp.css" type="text/css"&gt;
+    
+    &lt;link rel="stylesheet" href="/${grails.util.Metadata.current.'app.name'}/css/menus.css" type="text/css"&gt;
+    &lt;link rel="stylesheet" href="/${grails.util.Metadata.current.'app.name'}/css/desplegables-fitxa.css" type="text/css"&gt; 
+    &lt;script type="text/javascript" src="/${grails.util.Metadata.current.'app.name'}/js/desplegables-fitxa.js"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript" src="/${grails.util.Metadata.current.'app.name'}/js/light-menu-1.js"&gt;&lt;/script&gt;
+    
+  &lt;/head&gt;
+  
+  &lt;body&gt;
+    &lt;div class="container"&gt;
+      &lt;div class="container-UPC"&gt;
+        &lt;!-- ************ INI top-nav ************ --&gt;
+        &lt;div id="spinner" class="spinner" style="display: none;"&gt;
+          &lt;img alt="Carregant..." src="/rrhh/files/tecnic/spinner.gif" /&gt;
+        &lt;/div&gt;
+        
+        &lt;div class="row no-scroll-bar"&gt;
+          &lt;div class="col-xs-12 col-vxs-12 col-sm-6 col-md-7 col-lg-8 row-margin-bottom-header"&gt;
+            &lt;h1 class="pull-left logo-portal"&gt;
+              &lt;img usemap = "#upc_link" class="img-responsive" alt="Universitat Politècnica de Catalunya" src="/rrhh/files/tecnic/logo_upc_portal_pas_2.png" style="border:0;"/&gt;
+              &lt;map name="upc_link"&gt;
+                &lt;area shape=Rect Coords=0,0,50,60 href="http://www.upc.edu" target="_blank"&gt;
+              &lt;/map&gt;
+            &lt;/h1&gt;  
+          &lt;/div&gt;
+          &lt;div class="col-xs-12 col-vxs-12 col-sm-6 col-md-5 col-lg-4 row-margin-bottom-header"&gt;
+            &lt;div class="navbar navbar-default navbar-Info" role="navigation"&gt;
+              &lt;div class="navbar-container-UPC"&gt;
+                &lt;div class="navbar-header"&gt;
+                  &lt;div class="columna-centrada-header"&gt;
+                    
+                    
+                    &lt;button class="navbar-toggle collapsed navbar-toggle-header btn-header" data-target="#navbar-collapse-search" data-toggle="collapse" type="button"&gt;
+                      &lt;span class="sr-only"&gt;Cercar&lt;/span&gt;
+                      &lt;span class="glyphicon glyphicon-search"&gt;&lt;/span&gt;
+                    &lt;/button&gt;
+                    &lt;button class="navbar-toggle collapsed navbar-toggle-header btn-header" data-target="#navbar-collapse-info" data-toggle="collapse" type="button"&gt;
+                      &lt;span class="sr-only"&gt;Contacte i directori&lt;/span&gt;
+                      &lt;span class="glyphicon glyphicon-info-sign"&gt;&lt;/span&gt;
+                    &lt;/button&gt;
+                    &lt;button class="navbar-toggle collapsed navbar-toggle-header btn-header" data-target="#navbar-collapse-portal" data-toggle="collapse" type="button"&gt;
+                      &lt;span class="sr-only"&gt;Altres portals&lt;/span&gt;
+                      &lt;span class="glyphicon glyphicon-new-window"&gt;&lt;/span&gt;
+                    &lt;/button&gt;      
+                    
+                    
+                  &lt;/div&gt;      
+                &lt;/div&gt;
+                &lt;div class="columna-centrada"&gt;
+                  &lt;div id="navbar-collapse-search" class="navbar-collapse collapse"&gt;        
+                    &lt;ul class="nav navbar-nav navbar-right search-position"&gt;          
+                      &lt;li&gt;
+                        &lt;div class="clearfix pull-right buscador"&gt;
+                          
+                                    &lt;!-- Buscador --&gt;    
+          &lt;!--buscadorUPC--&gt;  
+                          
+                        &lt;/div&gt;
+                      &lt;/li&gt;
+                    &lt;/ul&gt;        
+                  &lt;/div&gt;
+                &lt;/div&gt;
+                
+                &lt;div id="navbar-collapse-info" class="navbar-collapse collapse navbar-info format-lletra-upc"&gt;        
+                  &lt;ul class="nav navbar-nav navbar-right info-position"&gt;          
+                    &lt;li&gt;
+                      &lt;span class="contacte"&gt;
+                        &lt;a href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/contacte" target="_blank" onclick="window.open(this.href,this.target,'width=750,height=950,resizable=yes,scrollbars=yes');return false" alt="Contacte" title="Contacte"&gt;Contacte&lt;/a&gt;
+                      &lt;/span&gt;
+                    &lt;/li&gt;
+                    &lt;li&gt;
+                      &lt;span class="enllacSuggeriment"&gt;
+                        &lt;a href="/${grails.util.Metadata.current.'app.name'}/suggeriments" target="_blank" onclick="window.open(this.href,this.target,'width=750,height=550,resizable=yes,scrollbars=yes');return false" alt="Suggeriments" title="Suggeriments"&gt;Suggeriments&lt;/a&gt;
+                      &lt;/span&gt;
+                    &lt;/li&gt;
+                    &lt;li&gt;
+                      &lt;span class="enllacPortal"&gt;
+                        &lt;a href="http://directori.upc.edu/directori/" target="_blank" onclick="window.open(this.href,this.target,'width=750,height=550,resizable=yes');return false" alt="Directori UPC" title="Directori UPC"&gt;Directori UPC&lt;/a&gt;
+                      &lt;/span&gt;
+                    &lt;/li&gt;
+                  &lt;/ul&gt;    
+                &lt;/div&gt;        
+                &lt;!-- /.nav-collapse --&gt;
+              &lt;/div&gt;
+              &lt;!-- /.container-fluid --&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        
+        &lt;div class="row no-scroll-bar"&gt;
+          &lt;div class="col-vxs-12 col-sm-7 col-md-7 col-lg-8"&gt;
+            &lt;div id="navbar-collapse-portal" class="navbar-collapse collapse navbar-portal format-lletra-upc"&gt;        
+              &lt;ul class="nav navbar-nav"&gt;
+                &lt;li&gt;
+                  &lt;span class="enllacPortalFirst portal-UPC"&gt;
+                    &lt;a href="/${grails.util.Metadata.current.'app.name'}/PDI/" alt="Portal PDI" title="Portal PDI"&gt;Portal PDI&lt;/a&gt;
+                  &lt;/span&gt;
+                  
+                &lt;/li&gt;
+                &lt;li&gt;
+                  &lt;span class="enllacPortal"&gt;  
+                    &lt;a href="/${grails.util.Metadata.current.'app.name'}/GES/" alt="Portal gestor/a" title="Portal gestor/a"&gt;Portal gestor/a&lt;/a&gt;
+                  &lt;/span&gt;
+                &lt;/li&gt;  
+                &lt;li&gt;
+                  &lt;span class="enllacPortal enllacPortalLast"&gt;
+                    &lt;a href="/${grails.util.Metadata.current.'app.name'}/BEC/" alt="Portal beques grau/màster" title="Portal beques grau/màster"&gt;Portal beques grau/màster&lt;/a&gt;
+                  &lt;/span&gt;
+                &lt;/li&gt;
+              &lt;/ul&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;  
+        &lt;/div&gt;
+        
+        &lt;!-- STATUS BAR ESTÁTICA --&gt;
+        &lt;div class="navbar navbar-default navbar-UPC" role="navigation"&gt;
+          &lt;div class="container-fluid"&gt;
+            &lt;div class="navbar-header"&gt;
+              &lt;button class="navbar-toggle collapsed navbar-toggle-home" data-target="#navbar-collapse-menu" data-toggle="collapse" type="button"&gt;
+                &lt;span class="sr-only"&gt;Toggle navigation&lt;/span&gt;
+                &lt;span class="icon-bar"&gt;&lt;/span&gt;
+                &lt;span class="icon-bar"&gt;&lt;/span&gt;
+                &lt;span class="icon-bar"&gt;&lt;/span&gt;
+              &lt;/button&gt;
+              &lt;a class="navbar-brand home" href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index" alt="Inici" title="Inici"&gt;Inici&lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div id="navbar-collapse-menu" class="navbar-collapse collapse"&gt;
+              &lt;ul class="nav navbar-nav"&gt;
+                &lt;li&gt;                    
+                  &lt;a class="Informacio_General" href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General" alt="Informació general" title="Informació general"&gt;Informació general&lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li&gt;                    
+                  &lt;a class="Raco_Personal" href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Raco_Personal" alt="Racó personal" title="Racó personal"&gt;Racó personal&lt;/a&gt;
+                &lt;/li&gt;
+              &lt;/ul&gt;   
+              &lt;!-- Part dreta: usuari, desconnexió --&gt;
+              &lt;ul class="nav navbar-nav navbar-right format-lletra-upc"&gt;
+                &lt;li class="active"&gt;
+                  &lt;g:if test="${session.user!=null}"&gt;         
+               		&lt;span class="login-UPC"&gt; ${session.user} &lt;/span&gt;
+            	  &lt;/g:if&gt;
+                &lt;/li&gt;
+                &lt;li&gt;
+                  &lt;span class="logout-UPC"&gt; &lt;g:link controller="logout" alt="Desconnecta" title="Desconnecta"&gt;Desconnecta&lt;/g:link&gt;&lt;/span&gt;
+                &lt;/li&gt;
+              &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;!-- /.nav-collapse --&gt;
+          &lt;/div&gt;
+          &lt;!-- /.container-fluid --&gt;
+        &lt;/div&gt;
+        &lt;!-- ************ FIN top-nav ************ --&gt;     
+          
+          &lt;!-- ************ INI breadCrumb-slider-bar ************ --&gt;           
+        &lt;div class="breadCrumb"&gt;   
+          &lt;!-- Migas de pan --&gt;    
+          &lt;div&gt;&lt;!--breadCrumb--&gt;&lt;/div&gt;
+          &lt;!-- Título de la página --&gt;
+          &lt;h1 class="firstHeading"&gt;&lt;span&gt;&lt;/span&gt;
+            &lt;!--titolContent--&gt;
+          &lt;/h1&gt;
+        &lt;/div&gt;
+        &lt;!-- ************ FIN breadCrumb-slider-bar ************ --&gt;       
+        
+      &lt;/div&gt;      
+      
+      &lt;!-- Rejilla con el contenido principal --&gt;
+    
+      &lt;div class="fit-column weceem-tmpl"&gt;
+        &lt;div class="row no-scroll-bar"&gt;         
+    
+          
+          &lt;div class="col-xs-12 col-vxs-12 col-sm-12 col-md-12 col-lg-12 row-margin-top-col"&gt;
+            &lt;div id="paginaDesplegable" class="fit-column2right content-movil"&gt;
+              &lt;!--pageContent--&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;          
+        &lt;/div&gt;          
+      &lt;/div&gt;
+    
+    &lt;/div&gt;
+    &lt;!-- Pie de página --&gt;
+    &lt;!-- ************ INI bottom-nav ************ --&gt;
+    &lt;div class="footer"&gt;
+      &lt;div class="container"&gt;
+        &lt;div class="fit2container"&gt;      
+          &lt;div class="row no-scroll-bar"&gt;          
+            &lt;div class="col-xs-12 col-footer-9 col-vxs-9 col-sm-9 col-md-9 col-lg-9" &gt;
+              &lt;p class="footer-text"&gt;Àrea de Personal i Organització&lt;/p&gt;
+              &lt;p class="footer-text"&gt;&amp;copy; &lt;a href="http://www.upc.edu"&gt;UPC&lt;/a&gt;. Universitat Politècnica de Catalunya &lt;span&gt;●&lt;/span&gt; BarcelonaTech&lt;/p&gt;           
+            &lt;/div&gt;        
+            &lt;div class="col-xs-12 col-footer-3 col-vxs-3 col-sm-3 col-md-3 col-lg-3 row-margin-top-peu"&gt;
+              &lt;div class="accessibilitat-container"&gt;
+                &lt;a class="footer-text" href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/accessibilitat" target="_blank" onclick="window.open(this.href,this.target,'width=1100,height=950,resizable=yes,scrollbars=yes');return false" alt="Accessibilitat" title="Accessibilitat"&gt;Accessibilitat&lt;/a&gt;
+                &lt;a class="footer-text" href="#top"&gt;&lt;img alt="Amunt" src="/rrhh/files/tecnic/amunt.gif" /&gt;&lt;/a&gt;                        
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;     
+        &lt;/div&gt;    
+      &lt;/div&gt;
+    &lt;/div&gt;    
+    &lt;!-- ************ FIN bottom-nav ************ --&gt;    
+  &lt;/body&gt;
+  
+&lt;/html&gt;
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			</contingut>
+    <permetreGSP type='class java.lang.Integer'>1</permetreGSP>
+    <observacions type='class org.codehaus.groovy.runtime.NullObject' />
+  </Template>
+  <Template>
+    <id type='class java.lang.Long'>161</id>
+    <aliesUri type='class java.lang.String'>plantilla-fitxa-data</aliesUri>
+    <descripcio type='class org.codehaus.groovy.runtime.NullObject' />
+    <idioma type='class org.codehaus.groovy.runtime.NullObject' />
+    <ordre type='class java.lang.Integer'>19</ordre>
+    <espai type='class java.lang.Integer'>2</espai>
+    <titol type='class java.lang.String'>Pàgina fitxa amb data</titol>
+    <contingut type='class java.lang.String'>&lt;!DOCTYPE html&gt;
+&lt;!--[if lt IE 7 ]&gt; &lt;html lang="en" class="no-js ie6"&gt; &lt;![endif]--&gt;
+&lt;!--[if IE 7 ]&gt;    &lt;html lang="en" class="no-js ie7"&gt; &lt;![endif]--&gt;
+&lt;!--[if IE 8 ]&gt;    &lt;html lang="en" class="no-js ie8"&gt; &lt;![endif]--&gt;
+&lt;!--[if IE 9 ]&gt;    &lt;html lang="en" class="no-js ie9"&gt; &lt;![endif]--&gt;
+&lt;!--[if (gt IE 9)|!(IE)]&gt;&lt;!--&gt; &lt;html lang="en" class="no-js"&gt;&lt;!--&lt;![endif]--&gt;
+&lt;html&gt;
+  
+   &lt;head&gt;
+     &lt;meta name="viewport" content="width=device-width, initial-scale=1"/&gt;
+     &lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/&gt;
+     &lt;meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/&gt;
+
+    
+     &lt;link rel="stylesheet" href="/${grails.util.Metadata.current.'app.name'}/css/bootstrap.css" type="text/css"/&gt;
+     &lt;script type="text/javascript" src="/${grails.util.Metadata.current.'app.name'}/js/jquery/jquery-1.11.1.min.js"&gt;&lt;/script&gt;
+     &lt;script type="text/javascript" src="/${grails.util.Metadata.current.'app.name'}/js/bootstrap.min.js"&gt;&lt;/script&gt;
+    
+     &lt;link rel="shortcut icon" href="/${grails.util.Metadata.current.'app.name'}/images/favicon.ico" type="image/x-icon" /&gt;
+    
+     &lt;link rel="stylesheet" href="/${grails.util.Metadata.current.'app.name'}/css/main.css" type="text/css"/&gt;
+     &lt;link rel="stylesheet" href="/${grails.util.Metadata.current.'app.name'}/css/bootstrapUPC.css" type="text/css"/&gt;
+     &lt;link rel="stylesheet" href="/${grails.util.Metadata.current.'app.name'}/css/estilsUPC.css" type="text/css"/&gt;
+     &lt;link rel="stylesheet" href="/${grails.util.Metadata.current.'app.name'}/css/sticky-footer.css" type="text/css"/&gt;
+     &lt;link rel="stylesheet" href="/${grails.util.Metadata.current.'app.name'}/css/tmp.css" type="text/css"/&gt;
+    
+     &lt;link rel="stylesheet" href="/${grails.util.Metadata.current.'app.name'}/css/menus.css" type="text/css"/&gt;
+     &lt;link rel="stylesheet" href="/${grails.util.Metadata.current.'app.name'}/css/desplegables-fitxa.css" type="text/css"/&gt; 
+     &lt;script type="text/javascript" src="/${grails.util.Metadata.current.'app.name'}/js/desplegables-fitxa.js"&gt;&lt;/script&gt;
+     &lt;script type="text/javascript" src="/${grails.util.Metadata.current.'app.name'}/js/light-menu-1.js"&gt;&lt;/script&gt;
+   	 &lt;script type="text/javascript" src="/${grails.util.Metadata.current.'app.name'}/js/imprimir.js"&gt;&lt;/script&gt;	
+  &lt;/head&gt;
+  
+  &lt;body&gt;
+    &lt;div class="container"&gt;
+      &lt;div class="container-UPC"&gt;
+        &lt;!-- ************ INI top-nav ************ --&gt;
+        &lt;div id="spinner" class="spinner" style="display: none;"&gt;
+          &lt;img alt="Carregant..." src="/rrhh/files/tecnic/spinner.gif" /&gt;
+        &lt;/div&gt;
+        
+        &lt;div class="row no-scroll-bar"&gt;
+          &lt;div class="col-xs-12 col-vxs-12 col-sm-6 col-md-7 col-lg-8 row-margin-bottom-header"&gt;
+            &lt;h1 class="pull-left logo-portal"&gt;
+              &lt;img usemap = "#upc_link" class="img-responsive" alt="Universitat Politècnica de Catalunya" src="/rrhh/files/tecnic/logo_upc_portal_pas_2.png" style="border:0;"/&gt;
+              &lt;map name="upc_link"&gt;
+                &lt;area shape=Rect Coords=0,0,50,60 href="http://www.upc.edu" target="_blank"/&gt;
+              &lt;/map&gt;
+            &lt;/h1&gt;  
+          &lt;/div&gt;
+          &lt;div class="col-xs-12 col-vxs-12 col-sm-6 col-md-5 col-lg-4 row-margin-bottom-header"&gt;
+            &lt;div class="navbar navbar-default navbar-Info" role="navigation"&gt;
+              &lt;div class="navbar-container-UPC"&gt;
+                &lt;div class="navbar-header"&gt;
+                  &lt;div class="columna-centrada-header"&gt;
+                    
+                    
+                    &lt;button class="navbar-toggle collapsed navbar-toggle-header btn-header" data-target="#navbar-collapse-search" data-toggle="collapse" type="button"&gt;
+                      &lt;span class="sr-only"&gt;Cercar&lt;/span&gt;
+                      &lt;span class="glyphicon glyphicon-search"&gt;&lt;/span&gt;
+                    &lt;/button&gt;
+                    &lt;button class="navbar-toggle collapsed navbar-toggle-header btn-header" data-target="#navbar-collapse-info" data-toggle="collapse" type="button"&gt;
+                      &lt;span class="sr-only"&gt;Contacte i directori&lt;/span&gt;
+                      &lt;span class="glyphicon glyphicon-info-sign"&gt;&lt;/span&gt;
+                    &lt;/button&gt;
+                    &lt;button class="navbar-toggle collapsed navbar-toggle-header btn-header" data-target="#navbar-collapse-portal" data-toggle="collapse" type="button"&gt;
+                      &lt;span class="sr-only"&gt;Altres portals&lt;/span&gt;
+                      &lt;span class="glyphicon glyphicon-new-window"&gt;&lt;/span&gt;
+                    &lt;/button&gt;      
+                    
+                    
+                  &lt;/div&gt;      
+                &lt;/div&gt;
+                &lt;div class="columna-centrada"&gt;
+                  &lt;div id="navbar-collapse-search" class="navbar-collapse collapse"&gt;        
+                    &lt;ul class="nav navbar-nav navbar-right search-position"&gt;          
+                      &lt;li&gt;
+                        &lt;div class="clearfix pull-right buscador"&gt;
+                            &lt;!-- Buscador --&gt;    
+          					&lt;!--buscadorUPC--&gt;  
+                        &lt;/div&gt;
+                      &lt;/li&gt;
+                    &lt;/ul&gt;        
+                  &lt;/div&gt;
+                &lt;/div&gt;
+                
+                &lt;div id="navbar-collapse-info" class="navbar-collapse collapse navbar-info format-lletra-upc"&gt;        
+                  &lt;ul class="nav navbar-nav navbar-right info-position"&gt;          
+                    &lt;li&gt;
+                      &lt;span class="contacte"&gt;
+                        &lt;a href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/contacte" target="_blank" onclick="window.open(this.href,this.target,'width=750,height=950,resizable=yes,scrollbars=yes');return false" alt="Contacte" title="Contacte"&gt;Contacte&lt;/a&gt;
+                      &lt;/span&gt;
+                    &lt;/li&gt;
+                    &lt;li&gt;
+                      &lt;span class="enllacSuggeriment"&gt;
+                        &lt;a href="/${grails.util.Metadata.current.'app.name'}/suggeriments" target="_blank" onclick="window.open(this.href,this.target,'width=750,height=550,resizable=yes,scrollbars=yes');return false" alt="Suggeriments" title="Suggeriments"&gt;Suggeriments&lt;/a&gt;
+                      &lt;/span&gt;
+                    &lt;/li&gt;
+                    &lt;li&gt;
+                      &lt;span class="enllacPortal"&gt;
+                        &lt;a href="http://directori.upc.edu/directori/" target="_blank" onclick="window.open(this.href,this.target,'width=750,height=550,resizable=yes');return false" alt="Directori UPC" title="Directori UPC"&gt;Directori UPC&lt;/a&gt;
+                      &lt;/span&gt;
+                    &lt;/li&gt;
+                  &lt;/ul&gt;    
+                &lt;/div&gt;        
+                &lt;!-- /.nav-collapse --&gt;
+              &lt;/div&gt;
+              &lt;!-- /.container-fluid --&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        
+        &lt;div class="row no-scroll-bar"&gt;
+          &lt;div class="col-vxs-12 col-sm-7 col-md-7 col-lg-8"&gt;
+            &lt;div id="navbar-collapse-portal" class="navbar-collapse collapse navbar-portal format-lletra-upc"&gt;        
+              &lt;ul class="nav navbar-nav"&gt;
+                &lt;li&gt;
+                  &lt;span class="enllacPortalFirst portal-UPC"&gt;
+                    &lt;a href="/${grails.util.Metadata.current.'app.name'}/PDI/" alt="Portal PDI" title="Portal PDI"&gt;Portal PDI&lt;/a&gt;
+                  &lt;/span&gt;
+                  
+                &lt;/li&gt;
+                &lt;li&gt;
+                  &lt;span class="enllacPortal"&gt;  
+                    &lt;a href="/${grails.util.Metadata.current.'app.name'}/Gestor/" alt="Portal gestor/a" title="Portal gestor/a"&gt;Portal gestor/a&lt;/a&gt;
+                  &lt;/span&gt;
+                &lt;/li&gt;  
+                &lt;li&gt;
+                  &lt;span class="enllacPortal enllacPortalLast"&gt;
+                    &lt;a href="/${grails.util.Metadata.current.'app.name'}/BEC/" alt="Portal beques grau/màster" title="Portal beques grau/màster"&gt;Portal beques grau/màster&lt;/a&gt;
+                  &lt;/span&gt;
+                &lt;/li&gt;
+              &lt;/ul&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;  
+        &lt;/div&gt;
+        
+        &lt;!-- STATUS BAR ESTÁTICA --&gt;
+        &lt;div class="navbar navbar-default navbar-UPC" role="navigation"&gt;
+          &lt;div class="container-fluid"&gt;
+            &lt;div class="navbar-header"&gt;
+              &lt;button class="navbar-toggle collapsed navbar-toggle-home" data-target="#navbar-collapse-menu" data-toggle="collapse" type="button"&gt;
+                &lt;span class="sr-only"&gt;Toggle navigation&lt;/span&gt;
+                &lt;span class="icon-bar"&gt;&lt;/span&gt;
+                &lt;span class="icon-bar"&gt;&lt;/span&gt;
+                &lt;span class="icon-bar"&gt;&lt;/span&gt;
+              &lt;/button&gt;
+              &lt;a class="navbar-brand home" href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index" alt="Inici" title="Inici"&gt;Inici&lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div id="navbar-collapse-menu" class="navbar-collapse collapse"&gt;
+              &lt;ul class="nav navbar-nav"&gt;
+                &lt;li&gt;                    
+                  &lt;a class="Informacio_General" href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General" alt="Informació general" title="Informació general"&gt;Informació general&lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li&gt;                    
+                  &lt;a class="Raco_Personal" href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Raco_Personal" alt="Racó personal" title="Racó personal"&gt;Racó personal&lt;/a&gt;
+                &lt;/li&gt;
+              &lt;/ul&gt;   
+              &lt;!-- Part dreta: usuari, desconnexió --&gt;
+              &lt;ul class="nav navbar-nav navbar-right format-lletra-upc"&gt;
+                &lt;li class="active"&gt;
+                  &lt;g:if test="${session.user!=null}"&gt;         
+               		&lt;span class="login-UPC"&gt; ${session.user} &lt;/span&gt;
+            	  &lt;/g:if&gt;
+                &lt;/li&gt;
+                &lt;li&gt;
+                  &lt;span class="logout-UPC"&gt; &lt;g:link controller="logout" alt="Desconnecta" title="Desconnecta"&gt;Desconnecta&lt;/g:link&gt;&lt;/span&gt;
+                &lt;/li&gt;
+              &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;!-- /.nav-collapse --&gt;
+          &lt;/div&gt;
+          &lt;!-- /.container-fluid --&gt;
+        &lt;/div&gt;
+        &lt;!-- ************ FIN top-nav ************ --&gt;     
+          
+          &lt;!-- ************ INI breadCrumb-slider-bar ************ --&gt;           
+        &lt;div class="breadCrumb"&gt;   
+          &lt;!-- Migas de pan --&gt;    
+          &lt;div&gt;&lt;!--breadCrumb--&gt;&lt;/div&gt;
+          &lt;!-- Título de la página --&gt;
+          &lt;h1 class="firstHeading"&gt;&lt;span&gt;&lt;/span&gt;
+          	&lt;!--titolContent--&gt;
+          &lt;/h1&gt;
+        &lt;/div&gt;
+        &lt;!-- ************ FIN breadCrumb-slider-bar ************ --&gt;       
+        
+      &lt;/div&gt;      
+      
+      &lt;!-- Rejilla con el contenido principal --&gt;
+      &lt;div class="fit-column weceem-tmpl"&gt;
+        &lt;div class="row no-scroll-bar"&gt; 
+          &lt;div class="col-xs-12 col-vxs-4 col-sm-4 col-md-4 col-lg-3 row-margin-bottom40 no-print" &gt;
+            &lt;!-- Título de la opción de menú seleccionada --&gt;
+            &lt;div id="main" class="menuPosicio"&gt;
+              &lt;div &gt;&lt;!--titolContent--&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;!-- Menú lateral --&gt;
+            &lt;div id="quadreMenu_main" class="quadreMenu"&gt;   
+              &lt;div id="Menu0" name="Menu0" title="Menú" class="dijitTitlePane"&gt;                                
+                &lt;div id="El-PAS-a-la-UPC" name="Menu0" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/El-PAS-a-la-UPC'" &gt;      
+                  &lt;span class="dijitTitlePaneTextNode"&gt;
+                    &lt;a href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/El-PAS-a-la-UPC" alt="El PAS a la UPC" title="El PAS a la UPC"&gt;El PAS a la UPC
+                    &lt;/a&gt;
+                  &lt;/span&gt;    
+                &lt;/div&gt;                
+              &lt;/div&gt;
+              
+              &lt;div id="Menu1" name="Menu1" title="Menú" class="dijitTitlePane"&gt;
+                &lt;div id="Sistema-retributiu" name="Menu1" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/Sistema-retributiu'" &gt;      
+                  &lt;span class="dijitTitlePaneTextNode"&gt;
+                    &lt;a href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/Sistema-retributiu" alt="Sistema Retributiu" title="Sistema Retributiu"&gt;Sistema Retributiu
+                    &lt;/a&gt;
+                  &lt;/span&gt;    
+                &lt;/div&gt;
+                
+                
+              &lt;/div&gt;
+              
+              &lt;div id="Menu2" name="Menu2" title="Menú" class="dijitTitlePane"&gt;
+                &lt;div id="Permisos" name="Menu2" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/Permisos'" &gt;      
+                  &lt;span class="dijitTitlePaneTextNode"&gt;
+                    &lt;a href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/Permisos" alt="Permisos, llicències, reduccions jornada i excedències" title="Permisos, llicències, reduccions jornada i excedències"&gt;Permisos, llicències, reduccions jornada i excedències
+                    &lt;/a&gt;
+                  &lt;/span&gt;    
+                &lt;/div&gt;
+              &lt;/div&gt;                  
+              
+              &lt;div id="Menu3" name="Menu3" title="Menú" class="dijitTitlePane"&gt;
+                &lt;div id="Calendari-laboral-jornada" name="Menu3" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/Calendari-laboral-jornada'" &gt;      
+                  &lt;span class="dijitTitlePaneTextNode"&gt;
+                    &lt;a href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/Calendari-laboral-jornada" alt="Calendari laboral, jornada i horaris" title="Calendari laboral, jornada i horaris"&gt;Calendari laboral, jornada i horaris
+                    &lt;/a&gt;
+                  &lt;/span&gt;    
+                &lt;/div&gt;
+              &lt;/div&gt;
+              
+              &lt;div id="Menu4" name="Menu4" title="Menú" class="dijitTitlePane"&gt;
+                &lt;div id="Relacions-laborals" name="Menu4" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/Relacions-laborals'" &gt;      
+                  &lt;span class="dijitTitlePaneTextNode"&gt;
+                    &lt;a href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/Relacions-laborals" alt="Relacions laborals" title="Relacions laborals"&gt;Relacions laborals
+                    &lt;/a&gt;
+                  &lt;/span&gt;    
+                &lt;/div&gt;
+              &lt;/div&gt;
+              
+              &lt;div id="Menu5" name="Menu5" title="Menú" class="dijitTitlePane"&gt;
+                &lt;div id="Seguretat-social" name="Menu5" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/Seguretat-social'" &gt;      
+                  &lt;span class="dijitTitlePaneTextNode"&gt;
+                    &lt;a href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/Seguretat-social" alt="Seguretat social" title="Seguretat social"&gt;Seguretat social
+                    &lt;/a&gt;
+                  &lt;/span&gt;    
+                &lt;/div&gt;
+              &lt;/div&gt;
+              
+              &lt;div id="Menu6" name="Menu6" title="Menú" class="dijitTitlePane"&gt;
+                &lt;div id="PAS_FORMACIO" name="Menu${i}" class="dijitTitlePaneTitle" onclick="parent.location='https://espaipersonal.upc.edu/irj/portal/PAS_FORMACIO'" &gt;      
+                  &lt;span class="dijitTitlePaneTextNode"&gt;
+                    &lt;a href="https://espaipersonal.upc.edu/irj/portal/PAS_FORMACIO" alt="Formació" title="Formació"&gt;Formació
+                    &lt;/a&gt;
+                  &lt;/span&gt;    
+                &lt;/div&gt;
+              &lt;/div&gt;
+              
+              &lt;div id="Menu7" name="Menu7" title="Menú" class="dijitTitlePane"&gt;
+                &lt;div id="Mobilitat" name="Menu7" class="dijitTitlePaneTitle" onclick="parent.location='/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/Mobilitat'" &gt;      
+                  &lt;span class="dijitTitlePaneTextNode"&gt;  
+                    &lt;a href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/index/Informacio_General/Mobilitat" alt="Mobilitat" title="Mobilitat"&gt;Mobilitat
+                    &lt;/a&gt;
+                  &lt;/span&gt;    
+                &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;!-- Fin Menú lateral --&gt;
+            
+          &lt;/div&gt;       
+          
+          &lt;div class="col-xs-12 col-vxs-8 col-sm-8 col-md-8 col-lg-9 row-contingut row-margin-top-col"&gt;
+            &lt;div id="paginaDesplegable" class="fit-column2left fit-column content-movil"&gt;
+              &lt;!--pageContent--&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          
+          &lt;!-- Fecha de actualización --&gt;
+          &lt;div class="col-xs-12 col-vxs-4 col-sm-4 col-md-4 col-lg-3"&gt;
+          &lt;/div&gt;
+          &lt;div class="col-xs-12 col-vxs-7 col-sm-7 col-md-7 col-lg-8 row-margin-top-col-data"&gt;
+            &lt;div id="paginaDesplegable" class="fit-column2left fit-column content-movil"&gt;
+            	Servei de Personal. Data d'actualització: &lt;!--dataActualitzacioFitxa--&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class="col-xs-12 col-vxs-1 col-sm-1 col-md-1 col-lg-1 row-margin-top-col-data"&gt;
+            &lt;div id="imprmir-fitxa" class="fit-column2left fit-column content-movil no-print"&gt;
+            	&lt;a href="#" onclick="imprimir()"&gt;&lt;img src="/rrhh/files/tecnic/print_icon.gif" border="0"/&gt;Imprimir&lt;/a&gt;
+              &lt;div id="jQueryBookmark"&gt;Imprimir&lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          
+        &lt;/div&gt;          
+      &lt;/div&gt;
+    
+    &lt;/div&gt;
+    &lt;!-- Pie de página --&gt;
+    &lt;!-- ************ INI bottom-nav ************ --&gt;
+    &lt;div class="footer"&gt;
+      &lt;div class="container"&gt;
+        &lt;div class="fit2container"&gt;      
+          &lt;div class="row no-scroll-bar"&gt;          
+            &lt;div class="col-xs-12 col-footer-9 col-vxs-9 col-sm-9 col-md-9 col-lg-9" &gt;
+              &lt;p class="footer-text"&gt;Àrea de Personal i Organització&lt;/p&gt;
+              &lt;p class="footer-text"&gt;&amp;copy; &lt;a href="http://www.upc.edu"&gt;UPC&lt;/a&gt;. Universitat Politècnica de Catalunya &lt;span&gt;●&lt;/span&gt; BarcelonaTech&lt;/p&gt;           
+            &lt;/div&gt;        
+            &lt;div class="col-xs-12 col-footer-3 col-vxs-3 col-sm-3 col-md-3 col-lg-3 row-margin-top-peu"&gt;
+              &lt;div class="accessibilitat-container"&gt;
+                &lt;a class="footer-text" href="/${grails.util.Metadata.current.'app.name'}/${space?.name}/accessibilitat" target="_blank" onclick="window.open(this.href,this.target,'width=1100,height=950,resizable=yes,scrollbars=yes');return false" alt="Accessibilitat" title="Accessibilitat"&gt;Accessibilitat&lt;/a&gt;
+                &lt;a class="footer-text" href="#top"&gt;&lt;img alt="Amunt" src="/rrhh/files/tecnic/amunt.gif" /&gt;&lt;/a&gt;                        
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;     
+        &lt;/div&gt;    
+      &lt;/div&gt;
+    &lt;/div&gt;    
+    &lt;!-- ************ FIN bottom-nav ************ --&gt;    
+  &lt;/body&gt;
+  
+&lt;/html&gt;</contingut>
+    <permetreGSP type='class java.lang.Integer'>1</permetreGSP>
+    <observacions type='class org.codehaus.groovy.runtime.NullObject' />
+  </Template>
+  <Template>
+    <id type='class java.lang.Long'>281</id>
+    <aliesUri type='class java.lang.String'>contacte</aliesUri>
+    <descripcio type='class org.codehaus.groovy.runtime.NullObject' />
+    <idioma type='class org.codehaus.groovy.runtime.NullObject' />
+    <ordre type='class java.lang.Integer'>35</ordre>
+    <espai type='class java.lang.Integer'>2</espai>
+    <titol type='class java.lang.String'>Contacte</titol>
+    <contingut type='class java.lang.String'>&lt;!DOCTYPE html&gt;
+&lt;!--[if lt IE 7 ]&gt; &lt;html lang="en" class="no-js ie6"&gt; &lt;![endif]--&gt;
+&lt;!--[if IE 7 ]&gt;    &lt;html lang="en" class="no-js ie7"&gt; &lt;![endif]--&gt;
+&lt;!--[if IE 8 ]&gt;    &lt;html lang="en" class="no-js ie8"&gt; &lt;![endif]--&gt;
+&lt;!--[if IE 9 ]&gt;    &lt;html lang="en" class="no-js ie9"&gt; &lt;![endif]--&gt;
+&lt;!--[if (gt IE 9)|!(IE)]&gt;&lt;!--&gt; &lt;html lang="en" class="no-js"&gt;&lt;!--&lt;![endif]--&gt;
+&lt;html&gt;  
+  &lt;head&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1" /&gt;
+    &lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /&gt;
+    
+    &lt;link rel="stylesheet" href="/${grails.util.Metadata.current.'app.name'}/css/bootstrap.css" type="text/css" /&gt;
+    &lt;script type="text/javascript" src="/${grails.util.Metadata.current.'app.name'}/js/jquery/jquery-1.11.1.min.js"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript" src="/${grails.util.Metadata.current.'app.name'}/js/bootstrap.min.js"&gt;&lt;/script&gt;
+    
+    &lt;link rel="shortcut icon" href="/${grails.util.Metadata.current.'app.name'}/images/favicon.ico" type="image/x-icon" /&gt;
+    
+    &lt;link rel="stylesheet" href="/${grails.util.Metadata.current.'app.name'}/css/main.css" type="text/css" /&gt;
+    &lt;link rel="stylesheet" href="/${grails.util.Metadata.current.'app.name'}/css/bootstrapUPC.css" type="text/css" /&gt;
+    &lt;link rel="stylesheet" href="/${grails.util.Metadata.current.'app.name'}/css/estilsUPC.css" type="text/css" /&gt;
+    &lt;link rel="stylesheet" href="/${grails.util.Metadata.current.'app.name'}/css/sticky-footer.css" type="text/css" /&gt;
+    &lt;link rel="stylesheet" href="/${grails.util.Metadata.current.'app.name'}/css/tmp.css" type="text/css" /&gt;
+      &lt;link rel="stylesheet" href="/${grails.util.Metadata.current.'app.name'}/css/contacte.css" type="text/css" /&gt;
+	
+
+    &lt;link rel="stylesheet" href="/${grails.util.Metadata.current.'app.name'}/css/desplegables-fitxa.css" type="text/css" /&gt; 
+    &lt;script type="text/javascript" src="/${grails.util.Metadata.current.'app.name'}/js/desplegables-fitxa.js"&gt;&lt;/script&gt;
+
+
+  &lt;/head&gt;
+  
+  &lt;body id="pagina-contacte"&gt;
+    &lt;!-- Rejilla con el contenido principal --&gt;
+    &lt;!--pageContent--&gt;
+  &lt;/body&gt;  
+&lt;/html&gt;</contingut>
+    <permetreGSP type='class java.lang.Integer'>1</permetreGSP>
+    <observacions type='class org.codehaus.groovy.runtime.NullObject' />
+  </Template>
+</templates>

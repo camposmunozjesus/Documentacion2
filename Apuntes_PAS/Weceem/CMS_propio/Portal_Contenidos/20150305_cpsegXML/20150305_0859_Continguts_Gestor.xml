@@ -1,0 +1,429 @@
+<continguts>
+  <Contingut>
+    <id type='class java.lang.Long'>198</id>
+    <aliesUri type='class java.lang.String'>Informacio_General</aliesUri>
+    <dataActualitzacio type='class java.sql.Timestamp'>2015-02-27 00:00:00.0</dataActualitzacio>
+    <dataDarrerCanvi type='class java.sql.Timestamp'>2015-02-27 10:43:34.0</dataDarrerCanvi>
+    <usuariDarrerCanvi type='class java.lang.String'>cristina.garcia-garcia</usuariDarrerCanvi>
+    <dataCreacio type='class java.sql.Timestamp'>2015-02-27 10:41:55.0</dataCreacio>
+    <usuariCreacio type='class java.lang.String'>cristina.garcia-garcia</usuariCreacio>
+    <descripcio type='class org.codehaus.groovy.runtime.NullObject' />
+    <idioma type='class org.codehaus.groovy.runtime.NullObject' />
+    <ordre type='class java.lang.Integer'>205</ordre>
+    <pare type='class org.codehaus.groovy.runtime.NullObject' />
+    <dataIniciPublicacio type='class org.codehaus.groovy.runtime.NullObject' />
+    <dataFiPublicacio type='class org.codehaus.groovy.runtime.NullObject' />
+    <espai type='class java.lang.Integer'>5</espai>
+    <estat type='class java.lang.Integer'>1</estat>
+    <titol type='class java.lang.String'>Informació general</titol>
+    <tipusContingut type='class java.lang.String'>SHTML</tipusContingut>
+    <contingut type='class java.lang.String'>								&lt;!-- Primera Fila --&gt;
+&lt;div class="fit-column"&gt;
+&lt;div class="row no-scroll-bar"&gt;
+&lt;div class="grup-info"&gt;
+&lt;div class="col-xs-12 col-info-4 col-sm-3 col-md-3 col-lg-2 row-margin-bottom-imagen row-margin-top20-imagen"&gt;
+&lt;div class="imagen"&gt;&lt;a href="Informacio_General/El-PAS-a-la-UPC" target="_self"&gt;&lt;img alt="El PAS a la UPC" src="/gcrrhh/../rrhh_resources/PDI/Informacio_general/PAS.png" style="width: 150px; height: 150px;" /&gt;&lt;/a&gt;
+&lt;div class="contenedor_1"&gt;&lt;a href="Informacio_General/El-PAS-a-la-UPC" target="_self"&gt;&amp;nbsp;&lt;/a&gt;&lt;/div&gt;
+
+&lt;div class="contenedor_2"&gt;
+&lt;p class="blanco"&gt;El PDI a la UPC&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="col-xs-12 col-info-8 col-sm-3 col-md-3 col-lg-4 row-margin-bottom-descripcio row-margin-top20-descripcio col-info-height"&gt;
+&lt;div class="ficha_inici"&gt;
+&lt;p&gt;&lt;a href="Informacio_General/El-PDI-a-la-UPC"&gt;El PDI a la UPC&lt;/a&gt;&lt;/p&gt;
+
+&lt;p class="txt-descripcio"&gt;Informaci&amp;oacute; relacionada amb l&amp;#39;acc&amp;eacute;s a la Universitat (acollida, declaraci&amp;oacute; d&amp;#39;activitats), classificaci&amp;oacute; dels col&amp;middot;lectius PAS i PR, Relaci&amp;oacute; de Llocs de Treball (descripci&amp;oacute; i perfils) i desvinculaci&amp;oacute; (ren&amp;uacute;ncia).&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="grup-info"&gt;
+&lt;div class="col-xs-12 col-info-4 col-sm-3 col-md-3 col-lg-2 row-margin-bottom-imagen"&gt;
+&lt;div class="imagen"&gt;&lt;a href="Informacio_General/Sistema-retributiu" target="_self"&gt;&lt;img alt="Sistema retributiu" src="/gcrrhh/../rrhh_resources/PDI/Informacio_general/sistema-retributiu.png" style="width: 150px; height: 150px;" /&gt;&lt;/a&gt;
+
+&lt;div class="contenedor_1"&gt;&lt;a href="Informacio_General/Sistema-retributiu" target="_self"&gt;&amp;nbsp;&lt;/a&gt;&lt;/div&gt;
+
+&lt;div class="contenedor_2"&gt;
+&lt;p class="blanco"&gt;Sistema-retributiu&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="col-xs-12 col-info-8 col-sm-3 col-md-3 col-lg-4 row-margin-bottom-descripcio col-info-height"&gt;
+&lt;div class="ficha_inici"&gt;
+&lt;p&gt;&lt;a href="Informacio_General/Sistema-retributiu"&gt;Sistema Retributiu&lt;/a&gt;&lt;/p&gt;
+
+&lt;p class="txt-descripcio"&gt;Informaci&amp;oacute; sobre les taules retributives, mapa de perfils, pagues extres, reconeixement de triennis, irpf, bestretes, pla de pensions.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- Segunda Fila --&gt;
+
+&lt;div class="fit-column"&gt;
+&lt;div class="row no-scroll-bar"&gt;
+&lt;div class="grup-info"&gt;
+&lt;div class="col-xs-12 col-info-4 col-sm-3 col-md-3 col-lg-2 row-margin-bottom-imagen"&gt;
+&lt;div class="imagen"&gt;&lt;a href="Informacio_General/Permisos" target="_self"&gt;&lt;img alt="Permisos, llicències, reduccions jornada i excedències" src="/gcrrhh/../rrhh_resources/PDI/Informacio_general/permisos-excedencies.png" style="width: 150px; height: 150px;" /&gt;&lt;/a&gt;
+
+&lt;div class="contenedor_1"&gt;&lt;a href="Informacio_General/Permisos" target="_self"&gt;&amp;nbsp;&lt;/a&gt;&lt;/div&gt;
+
+&lt;div class="contenedor_2 long-cont2"&gt;
+&lt;p class="blanco"&gt;Permisos, llic&amp;egrave;ncies, reduccions jornada i exced&amp;egrave;ncies&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="col-xs-12 col-info-8 col-sm-3 col-md-3 col-lg-4 row-margin-bottom-descripcio col-info-height"&gt;
+&lt;div class="ficha_inici"&gt;
+&lt;p&gt;&lt;a href="Informacio_General/Permisos"&gt;Permisos, llic&amp;egrave;ncies, reduccions jornada i exced&amp;egrave;ncies&lt;/a&gt;&lt;/p&gt;
+
+&lt;p class="txt-descripcio"&gt;Quadre resum dels diferents permisos i informaci&amp;oacute; detallada dels permisos per maternitat, paternitat, atenci&amp;oacute; familiars, matrimoni, assist&amp;egrave;ncia a ex&amp;agrave;mens, llic&amp;egrave;ncies per assumptes propis, reducions de jornada, exced&amp;egrave;ncies volunt&amp;agrave;ries i reingr&amp;eacute;s al servei actiu.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="grup-info"&gt;
+&lt;div class="col-xs-12 col-info-4 col-sm-3 col-md-3 col-lg-2 row-margin-bottom-imagen"&gt;
+&lt;div class="imagen"&gt;&lt;a href="Informacio_General/Calendari-laboral-jornada" target="_self"&gt;&lt;img alt="Calendari laboral, jornada i horaris" src="/gcrrhh/../rrhh_resources/PDI/Informacio_general/calendari_laboral.png" style="width: 150px; height: 150px;" /&gt;&lt;/a&gt;
+
+&lt;div class="contenedor_1"&gt;&lt;a href="Informacio_General/Calendari-laboral-jornada" target="_self"&gt;&amp;nbsp;&lt;/a&gt;&lt;/div&gt;
+
+&lt;div class="contenedor_2"&gt;
+&lt;p class="blanco"&gt;Calendari laboral, jornada i horaris&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="col-xs-12 col-info-8 col-sm-3 col-md-3 col-lg-4 row-margin-bottom-descripcio col-info-height"&gt;
+&lt;div class="ficha_inici"&gt;
+&lt;p&gt;&lt;a href="Informacio_General/Calendari-laboral-jornada"&gt;Calendari laboral, jornada i horaris&lt;/a&gt;&lt;/p&gt;
+
+&lt;p class="txt-descripcio"&gt;Informaci&amp;oacute; relacionada amb els acords del calendari laboral del PAS, dies d&amp;#39;assumptes propis, jornada i horaris, festivitats locals i generals.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- Tercera Fila --&gt;
+
+&lt;div class="fit-column"&gt;
+&lt;div class="row no-scroll-bar"&gt;
+&lt;div class="grup-info"&gt;
+&lt;div class="col-xs-12 col-info-4 col-sm-3 col-md-3 col-lg-2 row-margin-bottom-imagen"&gt;
+&lt;div class="imagen"&gt;&lt;a href="Informacio_General/Relacions-laborals" target="_self"&gt;&lt;img alt="Relacions laborals" src="/gcrrhh/../rrhh_resources/PDI/Informacio_general/relacions-laborals(1).png" style="width: 150px; height: 150px;" /&gt;&lt;/a&gt;
+
+&lt;div class="contenedor_1"&gt;&lt;a href="Informacio_General/Relacions-laborals" target="_self"&gt;&amp;nbsp;&lt;/a&gt;&lt;/div&gt;
+
+&lt;div class="contenedor_2"&gt;
+&lt;p class="blanco"&gt;Relacions laborals&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="col-xs-12 col-info-8 col-sm-3 col-md-3 col-lg-4 row-margin-bottom-descripcio col-info-height"&gt;
+&lt;div class="ficha_inici"&gt;
+&lt;p&gt;&lt;a href="Informacio_General/Relacions-laborals"&gt;Relacions laborals&lt;/a&gt;&lt;/p&gt;
+
+&lt;p class="txt-descripcio"&gt;Conveni col&amp;middot;lectiu del PAS-Laboral, tel&amp;egrave;fons i e-mails de les seccions sindicals, juntes i comit&amp;egrave;s, acords sobre diferents temes laborals i representaci&amp;oacute; dels treballadors.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="grup-info"&gt;
+&lt;div class="col-xs-12 col-info-4 col-sm-3 col-md-3 col-lg-2 row-margin-bottom-imagen"&gt;
+&lt;div class="imagen"&gt;&lt;a href="Informacio_General/Seguretat-social" target="_self"&gt;&lt;img alt="Seguretat social" src="/gcrrhh/../rrhh_resources/PDI/Informacio_general/seguretat-social.png" style="width: 150px; height: 150px;" /&gt;&lt;/a&gt;
+
+&lt;div class="contenedor_1"&gt;&lt;a href="Informacio_General/Seguretat-social" target="_self"&gt;&amp;nbsp;&lt;/a&gt;&lt;/div&gt;
+
+&lt;div class="contenedor_2"&gt;
+&lt;p class="blanco"&gt;Seguretat social&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="col-xs-12 col-info-8 col-sm-3 col-md-3 col-lg-4 row-margin-bottom-descripcio col-info-height"&gt;
+&lt;div class="ficha_inici"&gt;
+&lt;p&gt;&lt;a href="Informacio_General/Seguretat-social"&gt;Seguretat social i MUFACE&lt;/a&gt;&lt;/p&gt;
+
+&lt;p class="txt-descripcio"&gt;Informaci&amp;oacute; sobre la jubilaci&amp;oacute; del PAS-Funcionari i Laboral, baixes m&amp;egrave;diques (IT), informe de vida laboral i cotitzacions a la seguretat social.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- Cuarta Fila --&gt;
+
+&lt;div class="fit-column"&gt;
+&lt;div class="row no-scroll-bar"&gt;
+&lt;div class="grup-info"&gt;
+&lt;div class="col-xs-12 col-info-4 col-sm-3 col-md-3 col-lg-2 row-margin-bottom-imagen"&gt;
+&lt;div class="imagen"&gt;&lt;a href="https://espaipersonal.upc.edu/irj/portal/PAS_FORMACIO" target="_blank"&gt;&lt;img alt="Formació" src="/gcrrhh/../rrhh_resources/PDI/Informacio_general/formacio.png" style="width: 150px; height: 150px;" /&gt;&lt;/a&gt;
+
+&lt;div class="contenedor_1"&gt;&lt;a href="Informacio_General/El-PAS-a-la-UPC" target="_self"&gt;&amp;nbsp;&lt;/a&gt;&lt;/div&gt;
+
+&lt;div class="contenedor_2"&gt;
+&lt;p class="blanco"&gt;Formaci&amp;oacute;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="col-xs-12 col-info-8 col-sm-3 col-md-3 col-lg-4 row-margin-bottom-descripcio col-info-height"&gt;
+&lt;div class="ficha_inici"&gt;
+&lt;p&gt;&lt;a href="https://espaipersonal.upc.edu/irj/portal/PAS_FORMACIO" target="_blank"&gt;Formaci&amp;oacute;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p class="txt-descripcio"&gt;Desenvolupament professional i gesti&amp;oacute; del coneixement (provisional).&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="grup-info"&gt;
+&lt;div class="col-xs-12 col-info-4 col-sm-3 col-md-3 col-lg-2 row-margin-bottom-imagen"&gt;
+&lt;div class="imagen"&gt;&lt;a href="Informacio_General/Mobilitat" target="_self"&gt;&lt;img alt="Mobilitat" src="/gcrrhh/../rrhh_resources/PDI/Informacio_general/mobilitat(1).png" style="width: 150px; height: 150px;" /&gt;&lt;/a&gt;
+
+&lt;div class="contenedor_1"&gt;&lt;a href="Informacio_General/Mobilitat" target="_self"&gt;&amp;nbsp;&lt;/a&gt;&lt;/div&gt;
+
+&lt;div class="contenedor_2 long-cont2"&gt;
+&lt;p class="blanco"&gt;Mobilitat&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="col-xs-12 col-info-8 col-sm-3 col-md-3 col-lg-4 row-margin-bottom-descripcio col-info-height"&gt;
+&lt;div class="ficha_inici"&gt;
+&lt;p&gt;&lt;a href="Informacio_General/Mobilitat"&gt;Mobilitat&lt;/a&gt;&lt;/p&gt;
+
+&lt;p class="txt-descripcio"&gt;Previsi&amp;oacute; de convocat&amp;ograve;ries de places, permutes internes.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+			
+
+			
+			</contingut>
+    <template type='class org.codehaus.groovy.runtime.NullObject' />
+    <permetreGSP type='class java.lang.Integer'>0</permetreGSP>
+    <titolHTML type='class org.codehaus.groovy.runtime.NullObject' />
+    <paraulesClau type='class java.lang.String'>Informació general</paraulesClau>
+    <observacions type='class org.codehaus.groovy.runtime.NullObject' />
+  </Contingut>
+  <Contingut>
+    <id type='class java.lang.Long'>201</id>
+    <aliesUri type='class java.lang.String'>Raco_Personal</aliesUri>
+    <dataActualitzacio type='class java.sql.Timestamp'>2015-02-27 00:00:00.0</dataActualitzacio>
+    <dataDarrerCanvi type='class java.sql.Timestamp'>2015-02-27 12:05:24.0</dataDarrerCanvi>
+    <usuariDarrerCanvi type='class java.lang.String'>cristina.garcia-garcia</usuariDarrerCanvi>
+    <dataCreacio type='class java.sql.Timestamp'>2015-02-27 10:43:17.0</dataCreacio>
+    <usuariCreacio type='class java.lang.String'>cristina.garcia-garcia</usuariCreacio>
+    <descripcio type='class org.codehaus.groovy.runtime.NullObject' />
+    <idioma type='class org.codehaus.groovy.runtime.NullObject' />
+    <ordre type='class java.lang.Integer'>207</ordre>
+    <pare type='class org.codehaus.groovy.runtime.NullObject' />
+    <dataIniciPublicacio type='class org.codehaus.groovy.runtime.NullObject' />
+    <dataFiPublicacio type='class org.codehaus.groovy.runtime.NullObject' />
+    <espai type='class java.lang.Integer'>5</espai>
+    <estat type='class java.lang.Integer'>1</estat>
+    <titol type='class java.lang.String'>Racó personal</titol>
+    <tipusContingut type='class java.lang.String'>SHTML</tipusContingut>
+    <contingut type='class java.lang.String'>&lt;div id="informacio_general_page"&gt;&lt;!-- Primera Fila --&gt;
+&lt;div class="fit-column"&gt;
+&lt;div class="row no-scroll-bar"&gt;
+&lt;div class="grup-info"&gt;
+&lt;div class="col-xs-12 col-info-4 col-sm-3 col-md-3 col-lg-2 row-margin-bottom-imagen row-margin-top20-imagen"&gt;
+&lt;div class="imagen"&gt;&lt;img alt="Dades Generals" src="/gcrrhh/../rrhh_resources/PDI/Raco_personal/dades-generals.png" style="width: 150px; height: 150px;" /&gt;
+&lt;div class="contenedor_1"&gt;&lt;a href="Informacio_General/El-PDI-a-la-UPC" target="_self"&gt;&amp;nbsp;&lt;/a&gt;&lt;/div&gt;
+
+&lt;div class="contenedor_2"&gt;
+&lt;p class="blanco"&gt;Dades generals&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="col-xs-12 col-info-8 col-sm-3 col-md-3 col-lg-4 row-margin-bottom-descripcio row-margin-top20-descripcio col-info-height"&gt;
+&lt;div class="ficha_inici"&gt;
+&lt;p&gt;&lt;a href="Raco_Personal/Dades-Generals"&gt;Dades generals&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;&lt;a href="/RPPDI/dadesPersonals"&gt;Dades personals&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="/RPPDI/adrecaParticular"&gt;Adre&amp;ccedil;a particular&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="/RPPDI/comunicacions/list"&gt;Tel&amp;egrave;fons i adreces electr&amp;ograve;niques&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="/RPPDI/dadesBancaries/list"&gt;Domiciliaci&amp;oacute; banc&amp;agrave;ria&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="/RPPDI/titulacions"&gt;Titulaci&amp;oacute;&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="/RPPDI/familiars/list"&gt;Familiars&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="/RPPDI/numSeguretatSocial/list"&gt;N&amp;uacute;mero seguretat social&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="grup-info"&gt;
+&lt;div class="col-xs-12 col-info-4 col-sm-3 col-md-3 col-lg-2 row-margin-bottom-imagen"&gt;
+&lt;div class="imagen"&gt;&lt;img alt="El PDI a la UPC" src="/gcrrhh/../rrhh_resources/PDI/Raco_personal/dades-economiques(1).png" style="width: 150px; height: 150px;" /&gt;
+&lt;div class="contenedor_1"&gt;&lt;a href="Informacio_General/Sistema-retributiu" target="_self"&gt;&amp;nbsp;&lt;/a&gt;&lt;/div&gt;
+
+&lt;div class="contenedor_2"&gt;
+&lt;p class="blanco"&gt;Dades econ&amp;ograve;miques&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="col-xs-12 col-info-8 col-sm-3 col-md-3 col-lg-4 row-margin-bottom-descripcio col-info-height"&gt;
+&lt;div class="ficha_inici"&gt;
+&lt;p&gt;&lt;span id="novedad"&gt;&lt;a href="Informacio_General/Sistema-retributiu"&gt;Dades econ&amp;ograve;miques&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;&lt;a href="/RPPDI/rebutNomina/list"&gt;Rebut de n&amp;ograve;mina&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="/gcrrhh/../rrhh_resources/PDI/Raco_personal/MOD_145_2015.pdf" target="_blank"&gt;(Mod. 145) IRPF&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="/RPPDI/bestretes/list"&gt;Bestretes&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;Pla de pensions&lt;/li&gt;
+	&lt;li&gt;&lt;a href="/RPPDI/retencionsJudicials/list"&gt;Retencions judicials&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="https://millot.upc.edu/CERT"&gt;Certificats de renda&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;Campanya 0,7 (aportaci&amp;iacute;&amp;oacute;/ Certificat)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- Segunda Fila --&gt;
+
+&lt;div class="fit-column"&gt;
+&lt;div class="row no-scroll-bar"&gt;
+&lt;div class="grup-info"&gt;
+&lt;div class="col-xs-12 col-info-4 col-sm-3 col-md-3 col-lg-2 row-margin-bottom-imagen"&gt;
+&lt;div class="imagen"&gt;&lt;img alt="El PDI a la UPC" src="/gcrrhh/../rrhh_resources/PDI/Raco_personal/vinculacio(1).png" style="width: 150px; height: 150px;" /&gt;
+&lt;div class="contenedor_1"&gt;&lt;a href="Informacio_General/El-PDI-a-la-UPC" target="_self"&gt;&amp;nbsp;&lt;/a&gt;&lt;/div&gt;
+
+&lt;div class="contenedor_2 long-cont2"&gt;
+&lt;p class="blanco"&gt;Vinculaci&amp;oacute;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="col-xs-12 col-info-8 col-sm-3 col-md-3 col-lg-4 row-margin-bottom-descripcio col-info-height"&gt;
+&lt;div class="ficha_inici"&gt;
+&lt;p&gt;&lt;span id="novedad"&gt;&lt;a href="Informacio_General/El-PDI-a-la-UPC"&gt;Vinculaci&amp;oacute; a la UPC&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+	&lt;li class="desc"&gt;Certificats de vinculaci&amp;oacute;
+	&lt;ul&gt;
+		&lt;li class="desc"&gt;Vinculaci&amp;oacute; actual&lt;/li&gt;
+		&lt;li class="desc"&gt;Vinculaci&amp;oacute; amb dades banc&amp;agrave;ries&lt;/li&gt;
+		&lt;li class="desc"&gt;Vinculaci&amp;oacute; amb dades laborals&lt;/li&gt;
+		&lt;li class="desc"&gt;&lt;a href="/RPPDI/vinculacionsUPC/list"&gt;Hist&amp;ograve;ric de vinculacions a la UPC&lt;/a&gt;&lt;span id="cke_bm_83E" style="display: none;"&gt;&amp;nbsp;&lt;/span&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+	&lt;/li&gt;
+	&lt;li class="desc"&gt;&lt;a href="/RPPDI/antiguitat/list"&gt;Antiguitat / Triennis&lt;/a&gt;&lt;/li&gt;
+	&lt;li class="desc"&gt;&lt;a href="/RPPDI/compatibilitats/list"&gt;Compatibilitat&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="grup-info"&gt;
+&lt;div class="col-xs-12 col-info-4 col-sm-3 col-md-3 col-lg-2 row-margin-bottom-imagen"&gt;
+&lt;div class="imagen"&gt;&lt;img alt="El PDI a la UPC" src="/gcrrhh/../rrhh_resources/PDI/Raco_personal/lloc-treball(1).png" style="width: 150px; height: 150px;" /&gt;
+&lt;div class="contenedor_1"&gt;&lt;a href="Informacio_General/Sistema-retributiu" target="_self"&gt;&amp;nbsp;&lt;/a&gt;&lt;/div&gt;
+
+&lt;div class="contenedor_2"&gt;
+&lt;p class="blanco"&gt;Lloc de treball&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="col-xs-12 col-info-8 col-sm-3 col-md-3 col-lg-4 row-margin-bottom-descripcio col-info-height"&gt;
+&lt;div class="ficha_inici"&gt;
+&lt;p&gt;&lt;span id="novedad"&gt;&lt;a href="Informacio_General/Sistema-retributiu"&gt;Lloc de treball&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;&lt;a href="/RPPDI/dadesLloc/list"&gt;Dades del lloc&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="/RPPDI/adrecaLloc/list"&gt;Adre&amp;ccedil;a del lloc&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;C&amp;agrave;rrecs acad&amp;egrave;mics&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- Tercera Fila --&gt;
+
+&lt;div class="fit-column"&gt;
+&lt;div class="row no-scroll-bar"&gt;
+&lt;div class="grup-info"&gt;
+&lt;div class="col-xs-12 col-info-4 col-sm-3 col-md-3 col-lg-2 row-margin-bottom-imagen"&gt;
+&lt;div class="imagen"&gt;&lt;img alt="El PDI a la UPC" src="/gcrrhh/../rrhh_resources/PDI/Raco_personal/recerca.png" style="width: 150px; height: 150px;" /&gt;
+&lt;div class="contenedor_1"&gt;&lt;a href="Informacio_General/El-PDI-a-la-UPC" target="_self"&gt;&amp;nbsp;&lt;/a&gt;&lt;/div&gt;
+
+&lt;div class="contenedor_2 long-cont2"&gt;
+&lt;p class="blanco"&gt;Planificaci&amp;oacute; i Avaluaci&amp;oacute; del PDI&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="col-xs-12 col-info-8 col-sm-3 col-md-3 col-lg-4 row-margin-bottom-descripcio col-info-height"&gt;
+&lt;div class="ficha_inici"&gt;
+&lt;p&gt;&lt;span id="novedad"&gt;&lt;a href="Informacio_General/El-PDI-a-la-UPC"&gt;Consulta els m&amp;egrave;rits&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+	&lt;li class="desc"&gt;Consultar els m&amp;egrave;rits que es perceben a la n&amp;ograve;mina:
+	&lt;ul&gt;
+		&lt;li&gt;M&amp;egrave;rits de recerca&lt;/li&gt;
+		&lt;li&gt;M&amp;egrave;rits de gesti&amp;oacute;&lt;/li&gt;
+		&lt;li&gt;M&amp;egrave;rits docents&lt;span id="cke_bm_111E" style="display: none;"&gt;&amp;nbsp;&lt;/span&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+	&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="grup-info"&gt;
+&lt;div class="col-xs-12 col-info-4 col-sm-3 col-md-3 col-lg-2 row-margin-bottom-imagen"&gt;
+&lt;div class="imagen"&gt;&lt;img alt="El PDI a la UPC" src="/gcrrhh/../rrhh_resources/PDI/Raco_personal/docencia.png" style="width: 150px; height: 150px;" /&gt;
+&lt;div class="contenedor_1"&gt;&lt;a href="Informacio_General/Sistema-retributiu" target="_self"&gt;&amp;nbsp;&lt;/a&gt;&lt;/div&gt;
+
+&lt;div class="contenedor_2"&gt;
+&lt;p class="blanco"&gt;Avaluaci&amp;oacute; de m&amp;egrave;rits&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="col-xs-12 col-info-8 col-sm-3 col-md-3 col-lg-4 row-margin-bottom-descripcio col-info-height"&gt;
+&lt;div class="ficha_inici"&gt;
+&lt;p&gt;&lt;span id="novedad"&gt;&lt;a href="Informacio_General/Sistema-retributiu"&gt;Resolucions de m&amp;egrave;rits&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;Resolucions m&amp;egrave;rits:
+	&lt;ul&gt;
+		&lt;li&gt;Complement b&amp;agrave;sic docent&lt;/li&gt;
+		&lt;li&gt;Complement b&amp;agrave;sic de recerca&lt;/li&gt;
+		&lt;li&gt;Complement addicional docent&lt;/li&gt;
+		&lt;li&gt;Complement addicional de gesti&amp;oacute;&lt;/li&gt;
+	&lt;/ul&gt;
+	&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- Cuarta  Fila --&gt;&lt;!-- Fin Fila --&gt;&lt;/div&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+</contingut>
+    <template type='class org.codehaus.groovy.runtime.NullObject' />
+    <permetreGSP type='class java.lang.Integer'>1</permetreGSP>
+    <titolHTML type='class org.codehaus.groovy.runtime.NullObject' />
+    <paraulesClau type='class java.lang.String'>Racó personal</paraulesClau>
+    <observacions type='class org.codehaus.groovy.runtime.NullObject' />
+  </Contingut>
+</continguts>

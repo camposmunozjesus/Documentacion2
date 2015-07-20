@@ -1,0 +1,305 @@
+<continguts>
+  <Contingut>
+    <id type='class java.lang.Long'>1</id>
+    <aliesUri type='class java.lang.String'>AvisModificacioDadesBancaries</aliesUri>
+    <dataActualitzacio type='class java.sql.Timestamp'>2015-01-27 00:00:00.0</dataActualitzacio>
+    <dataDarrerCanvi type='class java.sql.Timestamp'>2015-02-19 12:31:03.0</dataDarrerCanvi>
+    <usuariDarrerCanvi type='class java.lang.String'>juan.luis.moreno</usuariDarrerCanvi>
+    <dataCreacio type='class java.sql.Timestamp'>2015-01-27 00:00:00.0</dataCreacio>
+    <usuariCreacio type='class java.lang.String'>jose.antonio.quintana</usuariCreacio>
+    <descripcio type='class java.lang.String'>Avís modificació dades bancàries</descripcio>
+    <idioma type='class java.lang.String'>CA</idioma>
+    <ordre type='class java.lang.Integer'>1</ordre>
+    <pare type='class org.codehaus.groovy.runtime.NullObject' />
+    <dataIniciPublicacio type='class org.codehaus.groovy.runtime.NullObject' />
+    <dataFiPublicacio type='class org.codehaus.groovy.runtime.NullObject' />
+    <espai type='class java.lang.Integer'>1</espai>
+    <estat type='class java.lang.Integer'>1</estat>
+    <titol type='class java.lang.String'>Avís modificació dades bancàries</titol>
+    <tipusContingut type='class java.lang.String'>SHTML</tipusContingut>
+    <contingut type='class java.lang.String'>&lt;p style="text-align: justify;"&gt;&lt;span style="font-size:12px;"&gt;&lt;strong&gt;IMPORTANT&lt;/strong&gt;: Les modificacions fetes amb posterioritat al dia &lt;strong&gt;18&amp;nbsp;de marzo&lt;/strong&gt; de 2018 (a les 14 hores) es tindran en compte per a la n&amp;ograve;mina &lt;strong&gt;de mar&amp;ccedil;&lt;/strong&gt;. Recomanem no tancar el compte corrent fins haver comprovat que la n&amp;ograve;mina ha estat ingressada correctament. &lt;/span&gt;&lt;/p&gt;
+
+&lt;p style="text-align: justify;"&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;p style="text-align: justify;"&gt;&lt;span style="font-size:12px;"&gt;Les modificacions de dades no es visualitzen de forma immediata en el vostre expedient. Rebreu un correu quan l&amp;#39;actualitzaci&amp;oacute; sigui efectiva.&lt;/span&gt;&lt;/p&gt;
+</contingut>
+    <template type='class org.codehaus.groovy.runtime.NullObject' />
+    <permetreGSP type='class java.lang.Integer'>0</permetreGSP>
+    <titolHTML type='class org.codehaus.groovy.runtime.NullObject' />
+    <paraulesClau type='class java.lang.String'>Avís modificació dades bancàries</paraulesClau>
+    <observacions type='class org.codehaus.groovy.runtime.NullObject' />
+  </Contingut>
+  <Contingut>
+    <id type='class java.lang.Long'>2</id>
+    <aliesUri type='class java.lang.String'>AvisModificacioAdreca</aliesUri>
+    <dataActualitzacio type='class java.sql.Timestamp'>2015-01-27 00:00:00.0</dataActualitzacio>
+    <dataDarrerCanvi type='class java.sql.Timestamp'>2015-02-18 11:20:03.0</dataDarrerCanvi>
+    <usuariDarrerCanvi type='class java.lang.String'>jose.antonio.quintana</usuariDarrerCanvi>
+    <dataCreacio type='class java.sql.Timestamp'>2015-01-27 00:00:00.0</dataCreacio>
+    <usuariCreacio type='class java.lang.String'>jose.antonio.quintana</usuariCreacio>
+    <descripcio type='class java.lang.String'>Avís modificació dades adreça</descripcio>
+    <idioma type='class java.lang.String'>CA</idioma>
+    <ordre type='class java.lang.Integer'>1</ordre>
+    <pare type='class org.codehaus.groovy.runtime.NullObject' />
+    <dataIniciPublicacio type='class org.codehaus.groovy.runtime.NullObject' />
+    <dataFiPublicacio type='class org.codehaus.groovy.runtime.NullObject' />
+    <espai type='class java.lang.Integer'>1</espai>
+    <estat type='class java.lang.Integer'>1</estat>
+    <titol type='class java.lang.String'>Avís modificació dades adreça</titol>
+    <tipusContingut type='class java.lang.String'>SHTML</tipusContingut>
+    <contingut type='class java.lang.String'>&lt;p style="text-align: justify;"&gt;&lt;span style="font-family:arial,helvetica,sans-serif;"&gt;&lt;span style="font-size:12px;"&gt;&lt;strong&gt;IMPORTANT&lt;/strong&gt;: Les modificacions fetes amb posterioritat al dia &lt;strong&gt;18&amp;nbsp;de febrer&lt;/strong&gt;&amp;nbsp;2015 (a les 14 hores) es tindran en compte per a la n&amp;ograve;mina &lt;strong&gt;de mar&amp;ccedil;&lt;/strong&gt;.&amp;nbsp;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p style="text-align: justify;"&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;p style="text-align: justify;"&gt;&lt;span style="font-family:arial,helvetica,sans-serif;"&gt;&lt;span style="font-size:12px;"&gt;&lt;strong&gt;A TENIR EN COMPTE&lt;/strong&gt;: les modificacions de dades no es visualitzen de forma immediata en el vostre expedient. En el moment que sigui efectiva l&amp;#39;actualitzaci&amp;oacute; de dades rebreu un correu electr&amp;ograve;nic.&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+</contingut>
+    <template type='class org.codehaus.groovy.runtime.NullObject' />
+    <permetreGSP type='class java.lang.Integer'>0</permetreGSP>
+    <titolHTML type='class org.codehaus.groovy.runtime.NullObject' />
+    <paraulesClau type='class java.lang.String'>Avís modificació dades adreça</paraulesClau>
+    <observacions type='class org.codehaus.groovy.runtime.NullObject' />
+  </Contingut>
+  <Contingut>
+    <id type='class java.lang.Long'>58</id>
+    <aliesUri type='class java.lang.String'>txt-format</aliesUri>
+    <dataActualitzacio type='class java.sql.Timestamp'>2015-02-13 00:00:00.0</dataActualitzacio>
+    <dataDarrerCanvi type='class java.sql.Timestamp'>2015-03-24 13:22:52.0</dataDarrerCanvi>
+    <usuariDarrerCanvi type='class java.lang.String'>jesus.campos</usuariDarrerCanvi>
+    <dataCreacio type='class java.sql.Timestamp'>2015-02-13 14:14:49.0</dataCreacio>
+    <usuariCreacio type='class java.lang.String'>jesus.campos</usuariCreacio>
+    <descripcio type='class org.codehaus.groovy.runtime.NullObject' />
+    <idioma type='class org.codehaus.groovy.runtime.NullObject' />
+    <ordre type='class java.lang.Integer'>57</ordre>
+    <pare type='class org.codehaus.groovy.runtime.NullObject' />
+    <dataIniciPublicacio type='class org.codehaus.groovy.runtime.NullObject' />
+    <dataFiPublicacio type='class org.codehaus.groovy.runtime.NullObject' />
+    <espai type='class java.lang.Integer'>1</espai>
+    <estat type='class java.lang.Integer'>1</estat>
+    <titol type='class java.lang.String'>Proba de text amb format</titol>
+    <tipusContingut type='class java.lang.String'>SHTML</tipusContingut>
+    <contingut type='class java.lang.String'>&lt;p&gt;Texto de pruebas&lt;/p&gt;
+
+&lt;p&gt;&amp;aacute; &amp;eacute; &amp;iuml; &amp;uuml;&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;p&gt;&lt;span style="font-size:20px;"&gt;&lt;strong&gt;&lt;span style="background-color:#40E0D0;"&gt;LLETRA AMB FORMAT I MIDA&lt;/span&gt; &lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
+</contingut>
+    <template type='class org.codehaus.groovy.runtime.NullObject' />
+    <permetreGSP type='class java.lang.Integer'>1</permetreGSP>
+    <titolHTML type='class org.codehaus.groovy.runtime.NullObject' />
+    <paraulesClau type='class java.lang.String'>Proba de text amb format</paraulesClau>
+    <observacions type='class org.codehaus.groovy.runtime.NullObject' />
+  </Contingut>
+  <Contingut>
+    <id type='class java.lang.Long'>411</id>
+    <aliesUri type='class java.lang.String'>novetats_pas_copia</aliesUri>
+    <dataActualitzacio type='class java.sql.Timestamp'>2015-03-09 00:00:00.0</dataActualitzacio>
+    <dataDarrerCanvi type='class java.sql.Timestamp'>2015-03-09 12:41:56.0</dataDarrerCanvi>
+    <usuariDarrerCanvi type='class java.lang.String'>cristina.garcia-garcia</usuariDarrerCanvi>
+    <dataCreacio type='class java.sql.Timestamp'>2015-03-09 12:41:39.0</dataCreacio>
+    <usuariCreacio type='class java.lang.String'>cristina.garcia-garcia</usuariCreacio>
+    <descripcio type='class org.codehaus.groovy.runtime.NullObject' />
+    <idioma type='class org.codehaus.groovy.runtime.NullObject' />
+    <ordre type='class java.lang.Integer'>256</ordre>
+    <pare type='class org.codehaus.groovy.runtime.NullObject' />
+    <dataIniciPublicacio type='class org.codehaus.groovy.runtime.NullObject' />
+    <dataFiPublicacio type='class org.codehaus.groovy.runtime.NullObject' />
+    <espai type='class java.lang.Integer'>1</espai>
+    <estat type='class java.lang.Integer'>1</estat>
+    <titol type='class java.lang.String'>Novetats PAS (còpia)</titol>
+    <tipusContingut type='class java.lang.String'>SHTML</tipusContingut>
+    <contingut type='class java.lang.String'>								&lt;div class="fit-column2right"&gt;
+&lt;div class="row no-scroll-bar"&gt;&lt;!-- INICI NOTICIA --&gt;
+&lt;div class="grup_noticia"&gt;
+&lt;div class="col-vxs-2 col-sm-2 col-md-2 col-lg-1"&gt;
+&lt;div class="imagen_noticia"&gt;&lt;img alt="El PAS a la UPC" src="/gcrrhh/../rrhh_resources/PAS/Inici/ma-jubilacions.png" style="width: 24px; height: 24px;" /&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="col-xs-12 col-vxs-10 col-sm-10 col-md-10 col-lg-11 row-margin-bottom-descripcio-inici"&gt;
+&lt;div class="ficha_inici ficha_noticia"&gt;&lt;span class="data_noticia"&gt;09/03/2014&lt;/span&gt;
+
+&lt;p&gt;&lt;span class="titol_noticia"&gt;Titulo de la notiicia del lunes &lt;/span&gt;&lt;/p&gt;
+
+&lt;p class="txt-descripcio"&gt;Esta es la noticia de las narices&lt;/p&gt;
+&lt;a class="mes_info" href="https://millot.upc.edu/CERT" target="_blank"&gt;[+] M&amp;eacute;s info&lt;/a&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- FI NOTICIA --&gt;&lt;!-- INICI NOTICIA --&gt;
+
+&lt;div class="grup_noticia"&gt;
+&lt;div class="col-vxs-2 col-sm-2 col-md-2 col-lg-1"&gt;
+&lt;div class="imagen_noticia"&gt;&lt;img alt="El PAS a la UPC" src="/gcrrhh/../rrhh_resources/PAS/Inici/ma-seguretat_social.png" style="width: 24px; height: 24px;" /&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="col-xs-12 col-vxs-10 col-sm-10 col-md-10 col-lg-11 row-margin-bottom-descripcio-inici"&gt;
+&lt;div class="ficha_inici ficha_noticia"&gt;&lt;span class="data_noticia"&gt;09/03/2014&lt;/span&gt;
+
+&lt;p&gt;&lt;span class="titol_noticia"&gt;Titulo de la notiicia del lunes &lt;/span&gt;&lt;/p&gt;
+
+&lt;p class="txt-descripcio"&gt;Esta es la noticia de las narices&lt;/p&gt;
+&lt;a class="mes_info" href="https://millot.upc.edu/CERT" target="_blank"&gt;[+] M&amp;eacute;s info&lt;/a&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- FI NOTICIA --&gt;&lt;!-- INICI NOTICIA 1 --&gt;
+
+&lt;div class="grup_noticia"&gt;
+&lt;div class="col-vxs-2 col-sm-2 col-md-2 col-lg-1"&gt;
+&lt;div class="imagen_noticia"&gt;&lt;img alt="El PAS a la UPC" src="/gcrrhh/../rrhh_resources/PAS/Inici/baixes_mediques.png" style="width: 24px; height: 22px;" /&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="col-xs-12 col-vxs-10 col-sm-10 col-md-10 col-lg-11 row-margin-bottom-descripcio-inici"&gt;
+&lt;div class="ficha_inici ficha_noticia"&gt;&lt;span class="data_noticia"&gt;05/12/2014&lt;/span&gt;
+
+&lt;p&gt;&lt;span class="titol_noticia"&gt;Baixes M&amp;egrave;diques de la Seguretat Social&lt;/span&gt;&lt;/p&gt;
+
+&lt;p class="txt-descripcio"&gt;Hem incorporat una nova aplicaci&amp;oacute; anomenada &amp;quot;Comunicacions de baixes m&amp;egrave;diques de la Seguretat Social (IT)&amp;quot; amb l&amp;#39;objectiu de comunicar, al Servei de Personal, les altes, baixes i confirmacions de baixa de la Seguretat Social.&lt;/p&gt;
+&lt;a class="mes_info" href="Informacio_General/El-PAS-a-la-UPC"&gt;[+] M&amp;eacute;s info&lt;/a&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- FI NOTICIA 1 --&gt;&lt;!-- INICI NOTICIA 2 --&gt;
+
+&lt;div class="grup_noticia"&gt;
+&lt;div class="col-vxs-2 col-sm-2 col-md-2 col-lg-1"&gt;
+&lt;div class="imagen_noticia"&gt;&lt;img alt="El PAS a la UPC" src="/gcrrhh/../rrhh_resources/PAS/Inici/calendari.png" style="width: 24px; height: 24px;" /&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="col-xs-12 col-vxs-10 col-sm-10 col-md-10 col-lg-11 row-margin-bottom-descripcio-inici"&gt;
+&lt;div class="ficha_inici ficha_noticia"&gt;&lt;span class="data_noticia"&gt;01/06/2014&lt;/span&gt;
+
+&lt;p&gt;&lt;span class="titol_noticia"&gt;Jornada redu&amp;iuml;da i continuada&lt;/span&gt;&lt;/p&gt;
+
+&lt;p class="txt-descripcio"&gt;De l&amp;#39;1 de juny al 30 de setembre la jornada laboral es podr&amp;agrave; realitzar en jornada continuada amb reducci&amp;oacute; de 30 minuts. Us recordem que, el Servei de Personal de l&amp;#39;1 de juny al 30 de setembre, oferir&amp;agrave; els seus serveis d&amp;#39;atenci&amp;oacute; en jornada continuada de mat&amp;iacute;.&lt;/p&gt;
+&lt;a class="mes_info" href="Informacio_General/El-PAS-a-la-UPC"&gt;[+] M&amp;eacute;s info&lt;/a&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- FI NOTICIA 2 --&gt;&lt;!-- INICI NOTICIA 3 --&gt;
+
+&lt;div class="grup_noticia"&gt;
+&lt;div class="col-vxs-2 col-sm-2 col-md-2 col-lg-1"&gt;
+&lt;div class="imagen_noticia"&gt;&lt;img alt="El PAS a la UPC" src="/gcrrhh/../rrhh_resources/PAS/Inici/sistema_retributiu.png" style="width: 24px; height: 24px;" /&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="col-xs-12 col-vxs-10 col-sm-10 col-md-10 col-lg-11 row-margin-bottom-descripcio-inici"&gt;
+&lt;div class="ficha_inici ficha_noticia"&gt;&lt;span class="data_noticia"&gt;03/03/2014&lt;/span&gt;
+
+&lt;p&gt;&lt;span class="titol_noticia"&gt;Certificat de retencions i ingressos 2013 i Certificat d&amp;#39;aportacions a la campanya 0,7%&lt;/span&gt;&lt;/p&gt;
+
+&lt;p class="txt-descripcio"&gt;Podeu consultar els certificats per la renda 2013.&lt;/p&gt;
+&lt;a class="mes_info" href="Informacio_General/El-PAS-a-la-UPC"&gt;[+] M&amp;eacute;s info&lt;/a&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- FI NOTICIA 3 --&gt;&lt;!-- INICI NOTICIA 4 --&gt;
+
+&lt;div class="grup_noticia"&gt;
+&lt;div class="col-vxs-2 col-sm-2 col-md-2 col-lg-1"&gt;
+&lt;div class="imagen_noticia"&gt;&lt;img alt="El PAS a la UPC" src="/gcrrhh/../rrhh_resources/PAS/Inici/permisos.png" /&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="col-xs-12 col-vxs-10 col-sm-10 col-md-10 col-lg-11 row-margin-bottom-descripcio-inici"&gt;
+&lt;div class="ficha_inici ficha_noticia"&gt;&lt;span class="data_noticia"&gt;11/11/2013&lt;/span&gt;
+
+&lt;p&gt;&lt;span class="titol_noticia"&gt;Acord sobre els dies d&amp;#39;abs&amp;egrave;ncia per motius de salut&lt;/span&gt;&lt;/p&gt;
+
+&lt;p class="txt-descripcio"&gt;La Mesa d&amp;#39;Universitats en sessi&amp;oacute; 28 d&amp;#39;octubre de 2013, ha acordat l&amp;#39;establiment de fins a 8 dies d&amp;#39;abs&amp;egrave;ncia per motius de salut que no donin lloc a baixa m&amp;egrave;dica sense descompte en n&amp;ograve;mina. L&amp;#39;esmentat acord entra en vigor a partir de l&amp;#39;11 de novembre, dia en el que ha estat ratificat per la part p&amp;uacute;blica i per la social. El seu &amp;agrave;mbit temporal d&amp;#39;aplicaci&amp;oacute; &amp;eacute;s d&amp;#39;en&amp;ccedil;&amp;agrave; l&amp;#39;1 de gener de 2013.&lt;/p&gt;
+&lt;a class="mes_info" href="Informacio_General/El-PAS-a-la-UPC"&gt;[+] M&amp;eacute;s info&lt;/a&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- FI NOTICIA 4 --&gt;&lt;!-- INICI NOTICIA 5 --&gt;
+
+&lt;div class="grup_noticia"&gt;
+&lt;div class="col-vxs-2 col-sm-2 col-md-2 col-lg-1"&gt;
+&lt;div class="imagen_noticia"&gt;&lt;img alt="El PAS a la UPC" src="/gcrrhh/../rrhh_resources/PAS/Inici/general.png" style="width: 24px; height: 24px;" /&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="col-xs-12 col-vxs-10 col-sm-10 col-md-10 col-lg-11 row-margin-bottom-descripcio-inici"&gt;
+&lt;div class="ficha_inici ficha_noticia"&gt;&lt;span class="data_noticia"&gt;02/02/2015&lt;/span&gt;
+
+&lt;p&gt;&lt;span class="titol_noticia"&gt;Este es el nuevo t&amp;iacute;tulo&lt;/span&gt;&lt;/p&gt;
+
+&lt;p class="txt-descripcio"&gt;La Mesa d&amp;#39;Universitats en sessi&amp;oacute; 28 d&amp;#39;octubre de 2013, ha acordat l&amp;#39;establiment de fins a 8 dies d&amp;#39;abs&amp;egrave;ncia per motius de salut que no donin lloc a baixa m&amp;egrave;dica sense descompte en n&amp;ograve;mina. L&amp;#39;esmentat acord entra en vigor a partir de l&amp;#39;11 de novembre, dia en el que ha estat ratificat per la part p&amp;uacute;blica i per la social. El seu &amp;agrave;mbit temporal d&amp;#39;aplicaci&amp;oacute; &amp;eacute;s d&amp;#39;en&amp;ccedil;&amp;agrave; l&amp;#39;1 de gener de 2015.&lt;/p&gt;
+
+&lt;p class="txt-descripcio"&gt;la aa ala&lt;/p&gt;
+&lt;a class="mes_info" href="Informacio_General/Permisos/permis_hosp_part"&gt;[+] M&amp;eacute;s info&lt;/a&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- FI NOTICIA 5 --&gt;&lt;!-- INICI NOTICIA 6 --&gt;
+
+&lt;div class="grup_noticia"&gt;
+&lt;div class="col-vxs-2 col-sm-2 col-md-2 col-lg-1"&gt;
+&lt;div class="imagen_noticia"&gt;&lt;img alt="El PAS a la UPC" src="/gcrrhh/../rrhh_resources/PAS/Inici/relacions_laborals.png" style="width: 24px; height: 24px;" /&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="col-xs-12 col-vxs-10 col-sm-10 col-md-10 col-lg-11 row-margin-bottom-descripcio-inici"&gt;
+&lt;div class="ficha_inici ficha_noticia"&gt;&lt;span class="data_noticia"&gt;19/02/2015&lt;/span&gt;
+
+&lt;p&gt;&lt;span class="titol_noticia"&gt;Este es el nuevo t&amp;iacute;tulo de relaciones laborales&lt;/span&gt;&lt;/p&gt;
+
+&lt;p class="txt-descripcio"&gt;Este es el contenido de las relaciones laborales.&lt;/p&gt;
+&lt;a class="mes_info" href="Informacio_General/Relacions-laborals"&gt;[+] M&amp;eacute;s info&lt;/a&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- FI NOTICIA 6 --&gt;&lt;!-- INICI NOTICIA 7 --&gt;
+
+&lt;div class="grup_noticia"&gt;
+&lt;div class="col-vxs-2 col-sm-2 col-md-2 col-lg-1"&gt;
+&lt;div class="imagen_noticia"&gt;&lt;img alt="El PAS a la UPC" src="/gcrrhh/../rrhh_resources/PAS/Inici/horari_bosses.png" style="width: 24px; height: 24px;" /&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="col-xs-12 col-vxs-10 col-sm-10 col-md-10 col-lg-11 row-margin-bottom-descripcio-inici"&gt;
+&lt;div class="ficha_inici ficha_noticia"&gt;&lt;span class="data_noticia"&gt;04/04/2015&lt;/span&gt;
+
+&lt;p&gt;&lt;span class="titol_noticia"&gt;Titulo&lt;/span&gt;&lt;/p&gt;
+
+&lt;p class="txt-descripcio"&gt;Descripci&amp;oacute;n&lt;/p&gt;
+
+&lt;p class="txt-descripcio"&gt;&amp;nbsp;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- FI NOTICIA 7 --&gt;&lt;!-- INICI NOTICIA 8 --&gt;
+
+&lt;div class="grup_noticia"&gt;
+&lt;div class="col-vxs-2 col-sm-2 col-md-2 col-lg-1"&gt;
+&lt;div class="imagen_noticia"&gt;&lt;img alt="El PAS a la UPC" src="/gcrrhh/../rrhh_resources/PAS/Inici/baixes_mediques.png" style="width: 24px; height: 22px;" /&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="col-xs-12 col-vxs-10 col-sm-10 col-md-10 col-lg-11 row-margin-bottom-descripcio-inici"&gt;
+&lt;div class="ficha_inici ficha_noticia"&gt;&lt;span class="data_noticia"&gt;05/12/2014&lt;/span&gt;
+
+&lt;p&gt;&lt;span class="titol_noticia"&gt;Baixes M&amp;egrave;diques de la Seguretat Social&lt;/span&gt;&lt;/p&gt;
+
+&lt;p class="txt-descripcio"&gt;Hem incorporat una nova aplicaci&amp;oacute; anomenada &amp;quot;Comunicacions de baixes m&amp;egrave;diques de la Seguretat Social (IT)&amp;quot; amb l&amp;#39;objectiu de comunicar, al Servei de Personal, les altes, baixes i confirmacions de baixa de la Seguretat Social.&lt;/p&gt;
+&lt;a class="mes_info" href="Informacio_General/El-PAS-a-la-UPC"&gt;[+] M&amp;eacute;s info&lt;/a&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- FI NOTICIA 8 --&gt;&lt;!-- INICI NOTICIA 9 --&gt;
+
+&lt;div class="grup_noticia"&gt;
+&lt;div class="col-vxs-2 col-sm-2 col-md-2 col-lg-1"&gt;
+&lt;div class="imagen_noticia"&gt;&lt;img alt="El PAS a la UPC" src="/gcrrhh/../rrhh_resources/PAS/Inici/calendari.png" style="width: 24px; height: 24px;" /&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="col-xs-12 col-vxs-10 col-sm-10 col-md-10 col-lg-11 row-margin-bottom-descripcio-inici"&gt;
+&lt;div class="ficha_inici ficha_noticia"&gt;&lt;span class="data_noticia"&gt;05/12/2014&lt;/span&gt;
+
+&lt;p&gt;&lt;span class="titol_noticia"&gt;Baixes M&amp;egrave;diques de la Seguretat Social&lt;/span&gt;&lt;/p&gt;
+
+&lt;p class="txt-descripcio"&gt;Hem incorporat una nova aplicaci&amp;oacute; anomenada &amp;quot;Comunicacions de baixes m&amp;egrave;diques de la Seguretat Social (IT)&amp;quot; amb l&amp;#39;objectiu de comunicar, al Servei de Personal, les altes, baixes i confirmacions de baixa de la Seguretat Social.&lt;/p&gt;
+&lt;a class="mes_info" href="Informacio_General/El-PAS-a-la-UPC"&gt;[+] M&amp;eacute;s info&lt;/a&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- FI NOTICIA 9 --&gt;&lt;!-- FIN DE PAGINA --&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+			
+
+			
+			</contingut>
+    <template type='class org.codehaus.groovy.runtime.NullObject' />
+    <permetreGSP type='class java.lang.Integer'>0</permetreGSP>
+    <titolHTML type='class org.codehaus.groovy.runtime.NullObject' />
+    <paraulesClau type='class org.codehaus.groovy.runtime.NullObject' />
+    <observacions type='class org.codehaus.groovy.runtime.NullObject' />
+  </Contingut>
+</continguts>

@@ -1,0 +1,993 @@
+<continguts>
+  <Contingut>
+    <id type='class java.lang.Long'>351</id>
+    <aliesUri type='class java.lang.String'>index</aliesUri>
+    <dataActualitzacio type='class java.sql.Timestamp'>2015-02-27 00:00:00.0</dataActualitzacio>
+    <dataDarrerCanvi type='class java.sql.Timestamp'>2015-06-05 14:10:52.0</dataDarrerCanvi>
+    <usuariDarrerCanvi type='class java.lang.String'>mercedes.dominguez</usuariDarrerCanvi>
+    <dataCreacio type='class java.sql.Timestamp'>2015-02-27 11:26:09.0</dataCreacio>
+    <usuariCreacio type='class java.lang.String'>jesus.campos</usuariCreacio>
+    <descripcio type='class org.codehaus.groovy.runtime.NullObject' />
+    <idioma type='class org.codehaus.groovy.runtime.NullObject' />
+    <ordre type='class java.lang.Integer'>210</ordre>
+    <pare type='class org.codehaus.groovy.runtime.NullObject' />
+    <dataIniciPublicacio type='class org.codehaus.groovy.runtime.NullObject' />
+    <dataFiPublicacio type='class org.codehaus.groovy.runtime.NullObject' />
+    <espai type='class java.lang.Integer'>4</espai>
+    <estat type='class java.lang.Integer'>1</estat>
+    <titol type='class java.lang.String'>Novetats</titol>
+    <tipusContingut type='class java.lang.String'>SHTML</tipusContingut>
+    <contingut type='class java.lang.String'>&lt;div class="fit-column2right"&gt;
+	&lt;div class="row no-scroll-bar"&gt;&lt;!-- INICI NOTICIA 6 --&gt;
+
+		&lt;div class="grup_noticia"&gt;
+			&lt;div class="col-vxs-2 col-sm-2 col-md-2 col-lg-1"&gt;
+				&lt;div class="imagen_noticia"&gt;&lt;img alt="El PAS a la UPC" src="/gcrrhh/../rrhh/files/PAS/Inici/sistema_retributiu_3.png" style="width: 24px; height: 24px;" /&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+
+			&lt;div class="col-xs-12 col-vxs-10 col-sm-10 col-md-10 col-lg-11 row-margin-bottom-descripcio-inici"&gt;
+				&lt;div class="ficha_inici ficha_noticia"&gt;
+					&lt;span class="data_noticia"&gt;28/05/2015&lt;/span&gt;
+					&lt;p&gt;
+						&lt;span class="titol_noticia"&gt;Nou rebut de n&amp;ograve;mina &lt;/span&gt;
+					&lt;/p&gt;
+
+					&lt;p class="txt-descripcio"&gt;A partir d&amp;rsquo;aquest mes de maig i, d&amp;rsquo;acord amb l&amp;rsquo;establert a l&amp;rsquo;Ordre ESS/2098/2014, de 6 de novembre, el rebut de la n&amp;ograve;mina, dels treballadors inclosos al r&amp;egrave;gim general de la Seguretat Social, incorporar&amp;agrave; l&amp;rsquo;import total de la cotitzaci&amp;oacute; corresponent a l&amp;rsquo;aportaci&amp;oacute; de l&amp;rsquo;empresa (quota patronal) ja que, actualment nom&amp;eacute;s hi constava l&amp;rsquo;import corresponent a l&amp;rsquo;aportaci&amp;oacute; del treballador (quota obrera). Per a m&amp;eacute;s informaci&amp;oacute;, podeu consultar la fitxa de: rebut de n&amp;ograve;mina &amp;ndash; informaci&amp;oacute; diferents conceptes.&lt;/p&gt;
+					&lt;a class="mes_info" href="/RPBEC/rebutNomina/list" target="_self"&gt;[+] M&amp;eacute;s info&lt;/a&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;!-- FI NOTICIA 6 --&gt;&lt;!-- INICI NOTICIA 6 --&gt;
+
+		&lt;div class="grup_noticia"&gt;
+			&lt;div class="col-vxs-2 col-sm-2 col-md-2 col-lg-1"&gt;
+				&lt;div class="imagen_noticia"&gt;&lt;img alt="El PAS a la UPC" src="/gcrrhh/../rrhh/files/BEC/Inici/sistema_retributiu_1.png" style="width: 24px; height: 24px;" /&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+
+			&lt;div class="col-xs-12 col-vxs-10 col-sm-10 col-md-10 col-lg-11 row-margin-bottom-descripcio-inici"&gt;
+				&lt;div class="ficha_inici ficha_noticia"&gt;
+					&lt;span class="data_noticia"&gt;11/03/2015&lt;/span&gt;
+					&lt;p&gt;
+						&lt;span class="titol_noticia"&gt;Model per sol&amp;middot;licitar la recuperaci&amp;oacute; de part de la paga extraordin&amp;agrave;ria de desembre 2012&lt;/span&gt;
+					&lt;/p&gt;
+
+					&lt;p class="txt-descripcio"&gt;En espera de la publicaci&amp;oacute; de l&amp;#39;acord on es fixaran els criteris sobre la recuperaci&amp;oacute; d&amp;#39;una part de la paga extraordin&amp;agrave;ria, adjuntem el model de sol&amp;middot;licitud (+info) que hauran d&amp;#39;omplir nom&amp;eacute;s les persones que actualment no estan vinculades a la UPC i que ho van estar al desembre de 2012. Per al personal en actiu, l&amp;#39;abonament es realitzar&amp;agrave; d&amp;#39;ofici i no cal omplir cap sol&amp;middot;licitud&lt;/p&gt;
+					&lt;a class="mes_info" href="/gcrrhh/../rrhh/files/BEC/Inici/Abonament paga extra_2012.pdf" target="_blank"&gt;[+] M&amp;eacute;s info&lt;/a&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;!-- FI NOTICIA 6 --&gt;&lt;!-- INICI NOTICIA 6 --&gt;
+
+		&lt;div class="grup_noticia"&gt;
+			&lt;div class="col-vxs-2 col-sm-2 col-md-2 col-lg-1"&gt;
+				&lt;div class="imagen_noticia"&gt;&lt;img alt="El PAS a la UPC" src="/gcrrhh/../rrhh/files/BEC/Inici/sistema_retributiu_3.png" style="width: 24px; height: 24px;" /&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+
+			&lt;div class="col-xs-12 col-vxs-10 col-sm-10 col-md-10 col-lg-11 row-margin-bottom-descripcio-inici"&gt;
+				&lt;div class="ficha_inici ficha_noticia"&gt;
+					&lt;span class="data_noticia"&gt;03/03/2014 &lt;/span&gt;
+					&lt;p&gt;
+						&lt;span class="titol_noticia"&gt;Certificat de retencions i ingressos (exercici 2014)&lt;/span&gt;
+					&lt;/p&gt;
+
+					&lt;p class="txt-descripcio"&gt;Ja teniu disponibles el certificat de retencions i ingressos a compte de l&amp;#39;impost sobre la renda de les persones f&amp;iacute;siques i el certificat de les aportacions a la campanya 0,7%.&lt;/p&gt;
+					&lt;a class="mes_info" href="https://millot.upc.edu/CERT/certificatRetencions/list" target="_blank"&gt;[+] M&amp;eacute;s info&lt;/a&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;!-- FI NOTICIA 6 --&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</contingut>
+    <template type='class java.lang.Integer'>201</template>
+    <permetreGSP type='class java.lang.Integer'>0</permetreGSP>
+    <titolHTML type='class org.codehaus.groovy.runtime.NullObject' />
+    <paraulesClau type='class org.codehaus.groovy.runtime.NullObject' />
+    <observacions type='class org.codehaus.groovy.runtime.NullObject' />
+  </Contingut>
+  <Contingut>
+    <id type='class java.lang.Long'>352</id>
+    <aliesUri type='class java.lang.String'>Informacio_General</aliesUri>
+    <dataActualitzacio type='class java.sql.Timestamp'>2015-02-27 00:00:00.0</dataActualitzacio>
+    <dataDarrerCanvi type='class java.sql.Timestamp'>2015-03-12 12:06:29.0</dataDarrerCanvi>
+    <usuariDarrerCanvi type='class java.lang.String'>jesus.campos</usuariDarrerCanvi>
+    <dataCreacio type='class java.sql.Timestamp'>2015-02-27 11:39:25.0</dataCreacio>
+    <usuariCreacio type='class java.lang.String'>jesus.campos</usuariCreacio>
+    <descripcio type='class org.codehaus.groovy.runtime.NullObject' />
+    <idioma type='class org.codehaus.groovy.runtime.NullObject' />
+    <ordre type='class java.lang.Integer'>211</ordre>
+    <pare type='class java.lang.Integer'>351</pare>
+    <dataIniciPublicacio type='class org.codehaus.groovy.runtime.NullObject' />
+    <dataFiPublicacio type='class org.codehaus.groovy.runtime.NullObject' />
+    <espai type='class java.lang.Integer'>4</espai>
+    <estat type='class java.lang.Integer'>1</estat>
+    <titol type='class java.lang.String'>Informació General</titol>
+    <tipusContingut type='class java.lang.String'>SHTML</tipusContingut>
+    <contingut type='class java.lang.String'>&lt;!-- Primera Fila --&gt;
+&lt;div class="fit-column"&gt;
+&lt;div class="row no-scroll-bar"&gt;
+&lt;div class="grup-info"&gt;
+&lt;div class="col-xs-12 col-info-4 col-sm-3 col-md-3 col-lg-2 row-margin-bottom-imagen row-margin-top20-imagen"&gt;
+&lt;div class="imagen"&gt;&lt;a href="Informacio_General/El-PAS-a-la-UPC" target="_self"&gt;&lt;img alt="El PAS a la UPC" src="/gcrrhh/../rrhh/files/PAS/Informacio_general/PAS.png" style="width: 150px; height: 150px;" /&gt;&lt;/a&gt;
+
+&lt;div class="contenedor_1"&gt;&lt;a href="Informacio_General/El-PAS-a-la-UPC" target="_self"&gt;&amp;nbsp;&lt;/a&gt;&lt;/div&gt;
+
+&lt;div class="contenedor_2"&gt;
+&lt;p class="blanco"&gt;El PAS a la UPC&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="col-xs-12 col-info-8 col-sm-3 col-md-3 col-lg-4 row-margin-bottom-descripcio row-margin-top20-descripcio col-info-height"&gt;
+&lt;div class="ficha_inici"&gt;
+&lt;p&gt;&lt;a href="http://www.upc.edu/bequesaprenentatge" target="_blank"&gt;Beques a la UPC&lt;/a&gt;&lt;/p&gt;
+
+&lt;p class="txt-descripcio"&gt;Informaci&amp;oacute; relacionada amb l&amp;#39;acc&amp;eacute;s a la Universitat (acollida, declaraci&amp;oacute; d&amp;#39;activitats), classificaci&amp;oacute; dels col&amp;middot;lectius PAS i PR, Relaci&amp;oacute; de Llocs de Treball (descripci&amp;oacute; i perfils) i desvinculaci&amp;oacute; (ren&amp;uacute;ncia).&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="grup-info"&gt;
+&lt;div class="col-xs-12 col-info-4 col-sm-3 col-md-3 col-lg-2 row-margin-bottom-imagen"&gt;
+&lt;div class="imagen"&gt;&lt;a href="Informacio_General/Sistema-retributiu" target="_self"&gt;&lt;img alt="Sistema retributiu" src="/gcrrhh/../rrhh/files/PAS/Informacio_general/sistema-retributiu.png" style="width: 150px; height: 150px;" /&gt;&lt;/a&gt;
+
+&lt;div class="contenedor_1"&gt;&lt;a href="Informacio_General/Sistema-retributiu" target="_self"&gt;&amp;nbsp;&lt;/a&gt;&lt;/div&gt;
+
+&lt;div class="contenedor_2"&gt;
+&lt;p class="blanco"&gt;Sistema-retributiu&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="col-xs-12 col-info-8 col-sm-3 col-md-3 col-lg-4 row-margin-bottom-descripcio col-info-height"&gt;
+&lt;div class="ficha_inici"&gt;
+&lt;p&gt;&lt;a href="http://www.upc.edu/bequesaprenentatge" target="_blank"&gt;Sistema retributiu&lt;/a&gt;&lt;/p&gt;
+
+&lt;p class="txt-descripcio"&gt;Informaci&amp;oacute; sobre les taules retributives, mapa de perfils, pagues extres, reconeixement de triennis, irpf, bestretes, pla de pensions.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- Segunda Fila --&gt;
+
+&lt;div class="fit-column"&gt;
+&lt;div class="row no-scroll-bar"&gt;
+&lt;div class="grup-info"&gt;
+&lt;div class="col-xs-12 col-info-4 col-sm-3 col-md-3 col-lg-2 row-margin-bottom-imagen"&gt;
+&lt;div class="imagen"&gt;&lt;a href="Informacio_General/Permisos" target="_self"&gt;&lt;img alt="Permisos, llicències, reduccions jornada i excedències" src="/gcrrhh/../rrhh/files/PAS/Informacio_general/permisos-excedencies.png" style="width: 150px; height: 150px;" /&gt;&lt;/a&gt;
+
+&lt;div class="contenedor_1"&gt;&lt;a href="Informacio_General/Permisos" target="_self"&gt;&amp;nbsp;&lt;/a&gt;&lt;/div&gt;
+
+&lt;div class="contenedor_2 long-cont2"&gt;
+&lt;p class="blanco"&gt;Permisos, llic&amp;egrave;ncies, reduccions jornada i exced&amp;egrave;ncies&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="col-xs-12 col-info-8 col-sm-3 col-md-3 col-lg-4 row-margin-bottom-descripcio col-info-height"&gt;
+&lt;div class="ficha_inici"&gt;
+&lt;p&gt;&lt;a href="http://www.upc.edu/bequesaprenentatge" target="_blank"&gt;Sistema administratiu&lt;/a&gt;&lt;/p&gt;
+
+&lt;p class="txt-descripcio"&gt;Quadre resum dels diferents permisos i informaci&amp;oacute; detallada dels permisos per maternitat, paternitat, atenci&amp;oacute; familiars, matrimoni, assist&amp;egrave;ncia a ex&amp;agrave;mens, llic&amp;egrave;ncies per assumptes propis, reducions de jornada, exced&amp;egrave;ncies volunt&amp;agrave;ries i reingr&amp;eacute;s al servei actiu.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="grup-info"&gt;
+&lt;div class="col-xs-12 col-info-4 col-sm-3 col-md-3 col-lg-2 row-margin-bottom-imagen"&gt;
+&lt;div class="imagen"&gt;&lt;a href="Informacio_General/Calendari-laboral-jornada" target="_self"&gt;&lt;img alt="Calendari laboral, jornada i horaris" src="/gcrrhh/../rrhh/files/PAS/Informacio_general/calendari_laboral.png" style="width: 150px; height: 150px;" /&gt;&lt;/a&gt;
+
+&lt;div class="contenedor_1"&gt;&lt;a href="Informacio_General/Calendari-laboral-jornada" target="_self"&gt;&amp;nbsp;&lt;/a&gt;&lt;/div&gt;
+
+&lt;div class="contenedor_2"&gt;
+&lt;p class="blanco"&gt;Calendari laboral, jornada i horaris&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="col-xs-12 col-info-8 col-sm-3 col-md-3 col-lg-4 row-margin-bottom-descripcio col-info-height"&gt;
+&lt;div class="ficha_inici"&gt;
+&lt;p&gt;&lt;a href="http://www.upc.edu/bequesaprenentatge" target="_blank"&gt;Acci&amp;oacute; Social&lt;/a&gt;&lt;/p&gt;
+
+&lt;p class="txt-descripcio"&gt;Informaci&amp;oacute; relacionada amb els acords del calendari laboral del PAS, dies d&amp;#39;assumptes propis, jornada i horaris, festivitats locals i generals.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- Tercera Fila --&gt;
+
+&lt;div class="fit-column"&gt;
+&lt;div class="row no-scroll-bar"&gt;
+&lt;div class="grup-info"&gt;
+&lt;div class="col-xs-12 col-info-4 col-sm-3 col-md-3 col-lg-2 row-margin-bottom-imagen"&gt;
+&lt;div class="imagen"&gt;&lt;a href="Informacio_General/Relacions-laborals" target="_self"&gt;&lt;img alt="Relacions laborals" src="/gcrrhh/../rrhh/files/PAS/Informacio_general/relacions-laborals(1).png" style="width: 150px; height: 150px;" /&gt;&lt;/a&gt;
+
+&lt;div class="contenedor_1"&gt;&lt;a href="Informacio_General/Relacions-laborals" target="_self"&gt;&amp;nbsp;&lt;/a&gt;&lt;/div&gt;
+
+&lt;div class="contenedor_2"&gt;
+&lt;p class="blanco"&gt;Relacions laborals&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="col-xs-12 col-info-8 col-sm-3 col-md-3 col-lg-4 row-margin-bottom-descripcio col-info-height"&gt;
+&lt;div class="ficha_inici"&gt;
+&lt;p&gt;&lt;a href="http://www.upc.edu/bequesaprenentatge" target="_blank"&gt;Formaci&amp;oacute;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p class="txt-descripcio"&gt;Conveni col&amp;middot;lectiu del PAS-Laboral, tel&amp;egrave;fons i e-mails de les seccions sindicals, juntes i comit&amp;egrave;s, acords sobre diferents temes laborals i representaci&amp;oacute; dels treballadors.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="grup-info"&gt;
+&lt;div class="col-xs-12 col-info-4 col-sm-3 col-md-3 col-lg-2 row-margin-bottom-imagen"&gt;
+&lt;div class="imagen"&gt;&lt;a href="Informacio_General/Seguretat-social" target="_self"&gt;&lt;img alt="Seguretat social" src="/gcrrhh/../rrhh/files/PAS/Informacio_general/seguretat-social.png" style="width: 150px; height: 150px;" /&gt;&lt;/a&gt;
+
+&lt;div class="contenedor_1"&gt;&lt;a href="Informacio_General/Seguretat-social" target="_self"&gt;&amp;nbsp;&lt;/a&gt;&lt;/div&gt;
+
+&lt;div class="contenedor_2"&gt;
+&lt;p class="blanco"&gt;Seguretat social&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="col-xs-12 col-info-8 col-sm-3 col-md-3 col-lg-4 row-margin-bottom-descripcio col-info-height"&gt;
+&lt;div class="ficha_inici"&gt;
+&lt;p&gt;&lt;a href="http://www.upc.edu/bequesaprenentatge" target="_blank"&gt;Seguretat social&lt;/a&gt;&lt;/p&gt;
+
+&lt;p class="txt-descripcio"&gt;Informaci&amp;oacute; sobre la jubilaci&amp;oacute; del PAS-Funcionari i Laboral, baixes m&amp;egrave;diques (IT), informe de vida laboral i cotitzacions a la seguretat social.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- Cuarta Fila --&gt;
+
+&lt;div class="fit-column"&gt;
+&lt;div class="row no-scroll-bar"&gt;
+&lt;div class="grup-info"&gt;
+&lt;div class="col-xs-12 col-info-4 col-sm-3 col-md-3 col-lg-2 row-margin-bottom-imagen"&gt;
+&lt;div class="imagen"&gt;&lt;a href="https://espaipersonal.upc.edu/irj/portal/PAS_FORMACIO" target="_blank"&gt;&lt;img alt="Formació" src="/gcrrhh/../rrhh/files/PAS/Informacio_general/formacio.png" style="width: 150px; height: 150px;" /&gt;&lt;/a&gt;
+
+&lt;div class="contenedor_1"&gt;&lt;a href="Informacio_General/El-PAS-a-la-UPC" target="_self"&gt;&amp;nbsp;&lt;/a&gt;&lt;/div&gt;
+
+&lt;div class="contenedor_2"&gt;
+&lt;p class="blanco"&gt;Formaci&amp;oacute;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="col-xs-12 col-info-8 col-sm-3 col-md-3 col-lg-4 row-margin-bottom-descripcio col-info-height"&gt;
+&lt;div class="ficha_inici"&gt;
+&lt;p&gt;&lt;a href="http://www.upc.edu/bequesaprenentatge" target="_blank"&gt;Enlla&amp;ccedil;os d&amp;#39;inter&amp;eacute;s&lt;/a&gt;&lt;/p&gt;
+
+&lt;p class="txt-descripcio"&gt;Desenvolupament professional i gesti&amp;oacute; del coneixement (provisional).&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;/div&gt;
+&lt;/div&gt;
+</contingut>
+    <template type='class java.lang.Integer'>247</template>
+    <permetreGSP type='class java.lang.Integer'>0</permetreGSP>
+    <titolHTML type='class org.codehaus.groovy.runtime.NullObject' />
+    <paraulesClau type='class org.codehaus.groovy.runtime.NullObject' />
+    <observacions type='class org.codehaus.groovy.runtime.NullObject' />
+  </Contingut>
+  <Contingut>
+    <id type='class java.lang.Long'>485</id>
+    <aliesUri type='class java.lang.String'>Raco_Personal</aliesUri>
+    <dataActualitzacio type='class java.sql.Timestamp'>2015-03-12 00:00:00.0</dataActualitzacio>
+    <dataDarrerCanvi type='class java.sql.Timestamp'>2015-05-21 13:42:10.0</dataDarrerCanvi>
+    <usuariDarrerCanvi type='class java.lang.String'>cristina.garcia-garcia</usuariDarrerCanvi>
+    <dataCreacio type='class java.sql.Timestamp'>2015-03-12 09:49:18.0</dataCreacio>
+    <usuariCreacio type='class java.lang.String'>jesus.campos</usuariCreacio>
+    <descripcio type='class org.codehaus.groovy.runtime.NullObject' />
+    <idioma type='class org.codehaus.groovy.runtime.NullObject' />
+    <ordre type='class java.lang.Integer'>325</ordre>
+    <pare type='class java.lang.Integer'>351</pare>
+    <dataIniciPublicacio type='class org.codehaus.groovy.runtime.NullObject' />
+    <dataFiPublicacio type='class org.codehaus.groovy.runtime.NullObject' />
+    <espai type='class java.lang.Integer'>4</espai>
+    <estat type='class java.lang.Integer'>1</estat>
+    <titol type='class java.lang.String'>Racó Personal</titol>
+    <tipusContingut type='class java.lang.String'>SHTML</tipusContingut>
+    <contingut type='class java.lang.String'>&lt;div id="informacio_general_page"&gt;&lt;!-- Primera Fila --&gt;
+	&lt;div class="fit-column"&gt;
+		&lt;div class="row no-scroll-bar"&gt;
+			&lt;div class="grup-info"&gt;
+				&lt;div class="col-xs-12 col-info-4 col-sm-3 col-md-3 col-lg-2 row-margin-bottom-imagen row-margin-top20-imagen"&gt;
+					&lt;div class="imagen"&gt;&lt;img alt="Dades generals" src="/gcrrhh/../rrhh/files/PAS/Raco_personal/dades-generals.png" style="width: 150px; height: 150px;" /&gt;
+						&lt;div class="contenedor_1"&gt;&lt;a href="Informacio_General/El-PAS-a-la-UPC" target="_self"&gt;&amp;nbsp;&lt;/a&gt;
+						&lt;/div&gt;
+
+						&lt;div class="contenedor_2"&gt;
+							&lt;p class="blanco"&gt;Dades generals&lt;/p&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+
+				&lt;div class="col-xs-12 col-info-8 col-sm-3 col-md-3 col-lg-4 row-margin-bottom-descripcio row-margin-top20-descripcio col-info-height"&gt;
+					&lt;div class="ficha_inici"&gt;
+						&lt;p&gt;&lt;a href="/rrhh/PAS/index/Raco_Personal"&gt;Dades personals&lt;/a&gt;&lt;/p&gt;
+
+						&lt;ul&gt;
+							&lt;li&gt;&lt;a href="/RPPAS/dadesPersonals"&gt;Dades personals&lt;/a&gt;&lt;/li&gt;
+							&lt;li&gt;&lt;a href="/RPPAS/adrecaParticular"&gt;Adre&amp;ccedil;a particular&lt;/a&gt;&lt;/li&gt;
+							&lt;li&gt;&lt;a href="/RPPAS/comunicacions/list"&gt;Tel&amp;egrave;fons i adreces electr&amp;ograve;niques&lt;/a&gt;&lt;/li&gt;
+							&lt;li&gt;&lt;a href="/RPPAS/dadesBancaries/list"&gt;Domiciliaci&amp;oacute; banc&amp;agrave;ria&lt;/a&gt;&lt;/li&gt;
+							&lt;li&gt;&lt;a href="/RPPAS/titulacions"&gt;Titulacions&lt;/a&gt;&lt;/li&gt;
+							&lt;li&gt;&lt;a href="/RPPAS/familiars/list"&gt;Familiars&lt;/a&gt;&lt;/li&gt;
+							&lt;li&gt;&lt;a href="/RPPAS/numSeguretatSocial/list"&gt;N&amp;uacute;mero seguretat social/MUFACE&lt;/a&gt;&lt;/li&gt;
+						&lt;/ul&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+
+			&lt;div class="grup-info"&gt;
+				&lt;div class="col-xs-12 col-info-4 col-sm-3 col-md-3 col-lg-2 row-margin-bottom-imagen"&gt;
+					&lt;div class="imagen"&gt;&lt;img alt="Dades econòmiques" src="/gcrrhh/../rrhh/files/PAS/Raco_personal/dades-economiques(1).png" style="width: 150px; height: 150px;" /&gt;
+						&lt;div class="contenedor_1"&gt;&lt;a href="Informacio_General/Sistema-retributiu" target="_self"&gt;&amp;nbsp;&lt;/a&gt;
+						&lt;/div&gt;
+
+						&lt;div class="contenedor_2"&gt;
+							&lt;p class="blanco"&gt;Dades econ&amp;ograve;miques&lt;/p&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+
+				&lt;div class="col-xs-12 col-info-8 col-sm-3 col-md-3 col-lg-4 row-margin-bottom-descripcio col-info-height"&gt;
+					&lt;div class="ficha_inici"&gt;
+						&lt;p&gt;&lt;a href="/rrhh/PAS/index/Raco_Personal"&gt;
+							&lt;span id="novedad"&gt;Dades econ&amp;ograve;miques&lt;/span&gt;
+							&lt;/a&gt;&lt;/p&gt;
+
+						&lt;ul&gt;
+							&lt;li&gt;&lt;a href="/RPPAS/rebutNomina/list"&gt;Rebut de n&amp;ograve;mina&lt;/a&gt;&lt;/li&gt;
+							&lt;li&gt;&lt;a href="/gcrrhh/../rrhh/files/PAS/Raco_personal/MOD_145_2015.pdf" target="_blank"&gt;Dades IRPF (Mod. 145)&lt;/a&gt;&lt;/li&gt;
+							&lt;li&gt;&lt;a href="/RPPAS/bestretes/list"&gt;Bestretes&lt;/a&gt;&lt;/li&gt;
+							&lt;li&gt;Pla de pensions&lt;/li&gt;
+							&lt;li&gt;&lt;a href="/RPPAS/retencionsJudicials/list"&gt;Retencions judicials&lt;/a&gt;&lt;/li&gt;
+							&lt;li&gt;&lt;a href="https://millot.upc.edu/CERT"&gt;Certificats de renda&lt;/a&gt;&lt;/li&gt;
+							&lt;li&gt;&lt;a href="/RPPAS/campanya07/list"&gt;Campanya 0,7&lt;/a&gt;
+							&lt;ul&gt;
+								&lt;li&gt;&lt;a href="/RPPAS/campanya07/list"&gt;Aportac&amp;iacute;&amp;oacute;&lt;/a&gt;&lt;/li&gt;
+								&lt;li&gt;&lt;a href="millot.upc.edu/CERT/certificatCampanya07/index" target="_blank"&gt;Certificat&lt;/a&gt;&lt;/li&gt;
+							&lt;/ul&gt;
+							&lt;/li&gt;
+						&lt;/ul&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;!-- Segunda Fila --&gt;
+
+	&lt;div class="fit-column"&gt;
+		&lt;div class="row no-scroll-bar"&gt;
+			&lt;div class="grup-info"&gt;
+				&lt;div class="col-xs-12 col-info-4 col-sm-3 col-md-3 col-lg-2 row-margin-bottom-imagen"&gt;
+					&lt;div class="imagen"&gt;&lt;img alt="Vinculació a la UPC" src="/gcrrhh/../rrhh/files/PAS/Raco_personal/vinculacio(1).png" style="width: 150px; height: 150px;" /&gt;
+						&lt;div class="contenedor_1"&gt;&lt;a href="Informacio_General/El-PAS-a-la-UPC" target="_self"&gt;&amp;nbsp;&lt;/a&gt;
+						&lt;/div&gt;
+
+						&lt;div class="contenedor_2 long-cont2"&gt;
+							&lt;p class="blanco"&gt;Vinculaci&amp;oacute;&lt;/p&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+
+				&lt;div class="col-xs-12 col-info-8 col-sm-3 col-md-3 col-lg-4 row-margin-bottom-descripcio col-info-height"&gt;
+					&lt;div class="ficha_inici"&gt;
+						&lt;p&gt;
+							&lt;span id="novedad"&gt;&lt;a href="/rrhh/PAS/index/Raco_Personal"&gt;Dades de vinculaci&amp;oacute;&lt;/a&gt;&lt;/span&gt;
+						&lt;/p&gt;
+
+						&lt;ul&gt;
+							&lt;li class="desc"&gt;Certificats de vinculaci&amp;oacute;
+							&lt;ul&gt;
+								&lt;li class="desc"&gt;&lt;a href="/RPPAS/vinculacioActual/list"&gt;Vinculaci&amp;oacute; actual&lt;/a&gt;&lt;/li&gt;
+								&lt;li class="desc"&gt;&lt;a href="/RPPAS/vinculacioDadesBanc/list"&gt;Vinculaci&amp;oacute; amb dades banc&amp;agrave;ries&lt;/a&gt;&lt;/li&gt;
+								&lt;li class="desc"&gt;&lt;a href="/RPPAS/vinculacioDadesLab/list"&gt;Vinculaci&amp;oacute; amb dades laborals&lt;/a&gt;&lt;/li&gt;
+								&lt;li class="desc"&gt;&lt;a href="/RPPAS/vinculacionsUPC/list"&gt;Hist&amp;ograve;ric de vinculacions a la UPC&lt;/a&gt; 
+								&lt;span id="cke_bm_83E" style="display: none;"&gt;&amp;nbsp;&lt;/span&gt;
+								&lt;/li&gt;
+							&lt;/ul&gt;
+							&lt;/li&gt;
+							&lt;li class="desc"&gt;&lt;a href="/RPPAS/antiguitat/list"&gt;Antiguitat / Triennis&lt;/a&gt;&lt;/li&gt;
+							&lt;li class="desc"&gt;&lt;a href="/RPPAS/compatibilitats/list"&gt;Compatibilitat&lt;/a&gt;&lt;/li&gt;
+						&lt;/ul&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+
+			&lt;div class="grup-info"&gt;
+				&lt;div class="col-xs-12 col-info-4 col-sm-3 col-md-3 col-lg-2 row-margin-bottom-imagen"&gt;
+					&lt;div class="imagen"&gt;&lt;img alt="Lloc de treball" src="/gcrrhh/../rrhh/files/PAS/Raco_personal/provisio-treball2.png" style="width: 150px; height: 150px;" /&gt;
+						&lt;div class="contenedor_1"&gt;&lt;a href="Informacio_General/Sistema-retributiu" target="_self"&gt;&amp;nbsp;&lt;/a&gt;
+						&lt;/div&gt;
+
+						&lt;div class="contenedor_2"&gt;
+							&lt;p class="blanco"&gt;Lloc de treball&lt;/p&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+
+				&lt;div class="col-xs-12 col-info-8 col-sm-3 col-md-3 col-lg-4 row-margin-bottom-descripcio col-info-height"&gt;
+					&lt;div class="ficha_inici"&gt;
+						&lt;p&gt;
+							&lt;span id="novedad"&gt;&lt;a href="/rrhh/PAS/index/Raco_Personal"&gt;Dades del lloc de treball&lt;/a&gt;&lt;/span&gt;
+						&lt;/p&gt;
+
+						&lt;ul&gt;
+							&lt;li&gt;&lt;a href="/RPPAS/dadesLloc/list"&gt;Dades del lloc&lt;/a&gt;&lt;/li&gt;
+							&lt;li&gt;&lt;a href="/RPPAS/adrecaLloc/list"&gt;Adre&amp;ccedil;a del lloc&lt;/a&gt;&lt;/li&gt;
+						&lt;/ul&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;!-- Tercera Fila --&gt;
+
+	&lt;div class="fit-column"&gt;
+		&lt;div class="row no-scroll-bar"&gt;
+			&lt;div class="grup-info"&gt;
+				&lt;div class="col-xs-12 col-info-4 col-sm-3 col-md-3 col-lg-2 row-margin-bottom-imagen"&gt;
+					&lt;div class="imagen"&gt;&lt;a href="https://espaipersonal.upc.edu/irj/portal/RESUM_FORMACIO_PAS"&gt;&lt;img alt="Formació" src="/gcrrhh/../rrhh/files/PAS/Raco_personal/formacio(1).png" style="width: 150px; height: 150px;" /&gt;&lt;/a&gt;
+
+						&lt;div class="contenedor_1"&gt;&lt;a href="Informacio_General/El-PAS-a-la-UPC" target="_self"&gt;&amp;nbsp;&lt;/a&gt;
+						&lt;/div&gt;
+
+						&lt;div class="contenedor_2"&gt;
+							&lt;p class="blanco"&gt;Formaci&amp;oacute;&lt;/p&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+
+				&lt;div class="col-xs-12 col-info-8 col-sm-3 col-md-3 col-lg-4 row-margin-bottom-descripcio col-info-height"&gt;
+					&lt;div class="ficha_inici"&gt;
+						&lt;p&gt;
+							&lt;span id="novedad"&gt;&lt;a href="https://espaipersonal.upc.edu/irj/portal/RESUM_FORMACIO_PAS"&gt;Formaci&amp;oacute;&lt;/a&gt;&lt;/span&gt;
+						&lt;/p&gt;
+
+						&lt;ul&gt;
+							&lt;li&gt;V&amp;iacute;deos tutorials i manuals de suport&lt;/li&gt;
+							&lt;li&gt;Formaci&amp;oacute; interna&lt;/li&gt;
+							&lt;li&gt;Expedient formaci&amp;oacute;&lt;/li&gt;
+						&lt;/ul&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+
+			&lt;div class="grup-info"&gt;
+				&lt;div class="col-xs-12 col-info-4 col-sm-3 col-md-3 col-lg-2 row-margin-bottom-imagen"&gt;
+					&lt;div class="imagen"&gt;&lt;img alt="Resolucions de mèrits" src="/gcrrhh/../rrhh/files/PAS/Raco_personal/solicitud-revisions.png" style="width: 150px; height: 150px;" /&gt;
+						&lt;div class="contenedor_1"&gt;&lt;a href="Informacio_General/Sistema-retributiu" target="_self"&gt;&amp;nbsp;&lt;/a&gt;
+						&lt;/div&gt;
+
+						&lt;div class="contenedor_2"&gt;
+							&lt;p class="blanco"&gt;Avaluaci&amp;oacute; de m&amp;egrave;rits&lt;/p&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+
+				&lt;div class="col-xs-12 col-info-8 col-sm-3 col-md-3 col-lg-4 row-margin-bottom-descripcio col-info-height"&gt;
+					&lt;div class="ficha_inici"&gt;
+						&lt;p&gt;
+							&lt;span id="novedad"&gt;&lt;a href="/rrhh/PAS/index/Raco_Personal"&gt;Salut&lt;/a&gt;&lt;/span&gt;
+						&lt;/p&gt;
+
+						&lt;ul&gt;
+							&lt;li&gt;&lt;a href="https://millot.upc.edu/COM" target="_blank"&gt;Comunicacions baixes m&amp;egrave;diques (Seg. Social)&lt;/a&gt;&lt;/li&gt;
+							&lt;li&gt;&lt;a href="https://www.upc.edu/revisions_mediques/treballador" target="_blank"&gt;Sol&amp;middot;licitud revisions m&amp;egrave;diques&lt;/a&gt;&lt;/li&gt;
+						&lt;/ul&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;!-- Fin Fila --&gt;
+&lt;/div&gt;
+</contingut>
+    <template type='class java.lang.Integer'>248</template>
+    <permetreGSP type='class java.lang.Integer'>0</permetreGSP>
+    <titolHTML type='class org.codehaus.groovy.runtime.NullObject' />
+    <paraulesClau type='class org.codehaus.groovy.runtime.NullObject' />
+    <observacions type='class org.codehaus.groovy.runtime.NullObject' />
+  </Contingut>
+  <Contingut>
+    <id type='class java.lang.Long'>486</id>
+    <aliesUri type='class java.lang.String'>contacte</aliesUri>
+    <dataActualitzacio type='class java.sql.Timestamp'>2015-03-12 09:49:58.0</dataActualitzacio>
+    <dataDarrerCanvi type='class java.sql.Timestamp'>2015-03-12 09:49:58.0</dataDarrerCanvi>
+    <usuariDarrerCanvi type='class java.lang.String'>jesus.campos</usuariDarrerCanvi>
+    <dataCreacio type='class java.sql.Timestamp'>2015-03-12 09:49:58.0</dataCreacio>
+    <usuariCreacio type='class java.lang.String'>jesus.campos</usuariCreacio>
+    <descripcio type='class org.codehaus.groovy.runtime.NullObject' />
+    <idioma type='class org.codehaus.groovy.runtime.NullObject' />
+    <ordre type='class java.lang.Integer'>326</ordre>
+    <pare type='class org.codehaus.groovy.runtime.NullObject' />
+    <dataIniciPublicacio type='class org.codehaus.groovy.runtime.NullObject' />
+    <dataFiPublicacio type='class org.codehaus.groovy.runtime.NullObject' />
+    <espai type='class java.lang.Integer'>4</espai>
+    <estat type='class java.lang.Integer'>1</estat>
+    <titol type='class java.lang.String'>Contacte</titol>
+    <tipusContingut type='class java.lang.String'>SHTML</tipusContingut>
+    <contingut type='class java.lang.String'>				&lt;div class="quadreContacte"&gt;
+&lt;div class="titol-contacte"&gt;Contacta amb el Servei de Personal&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- --&gt;
+
+&lt;div class="quadreContacte"&gt;
+&lt;div class="titol-contacte"&gt;Compromisos de qualitat del Servei de Personal&lt;/div&gt;
+
+&lt;div class="txt-contacte"&gt;&lt;strong&gt;Comprom&amp;iacute;s 1&lt;/strong&gt;: Donar soluci&amp;oacute; en 48 hores a les sol&amp;middot;licituds realitzades mitjan&amp;ccedil;ant el gestor de serveis i 72 hores a les realitzades mitjan&amp;ccedil;ant altres mitjans (descomptant festius), a un 90% de les sol&amp;middot;licituds al Servei de Personal.&lt;br /&gt;
+&lt;br /&gt;
+&lt;strong&gt;Comprom&amp;iacute;s 2&lt;/strong&gt;: En els casos que no es pugui donar resposta en 48 hores, en el termini indicat es donar&amp;agrave; una previsi&amp;oacute; de soluci&amp;oacute; de la incid&amp;egrave;ncia.&lt;br /&gt;
+&lt;br /&gt;
+&lt;strong&gt;Comprom&amp;iacute;s 3&lt;/strong&gt;: Mantenir informats a les usu&amp;agrave;ries i als usuaris de qualsevol incid&amp;egrave;ncia que pugui endarrerir la soluci&amp;oacute; de la seva sol&amp;middot;licitud.&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- --&gt;
+
+&lt;div class="quadreContacte"&gt;
+&lt;div class="titol-contacte"&gt;Unitat d&amp;#39;Atenci&amp;oacute; personal (UAP) - Servei de Personal&lt;/div&gt;
+
+&lt;div class="txt-contacte"&gt;La Unitat d&amp;#39;atenci&amp;oacute; personal (UAP) del Servei de personal s&amp;#39;orienta a oferir servei al personal en tots aquells tr&amp;agrave;mits que afecten a la seva vida laboral i administrativa.&lt;br /&gt;
+&lt;br /&gt;
+Els canals de comunicaci&amp;oacute;, mitjan&amp;ccedil;ant els qual es vehicula aquests servei, s&amp;oacute;n:&lt;/div&gt;
+&lt;!-- --&gt;
+
+&lt;div class="titol-contacte"&gt;Atenci&amp;oacute; telem&amp;agrave;tica : Gestor de Serveis&lt;/div&gt;
+
+&lt;div class="txt-contacte"&gt;Posem a la vostra disposici&amp;oacute;, com a contacte preferent, el Gestor de Serveis: &lt;a class="linkBlau" href="https://gn6.upc.edu/pucpersonal" target="_blank"&gt;PUC-Personal&lt;/a&gt; (Punt &amp;uacute;nic de contacte) per tal de poder canalitzar les vostres consultes i gestionar els tr&amp;agrave;mits amb el Servei de Personal. El teniu a la vostra disposici&amp;oacute; dins de l&amp;#39;apartat Rac&amp;oacute; personal de la intranet de personal.&lt;br /&gt;
+&lt;br /&gt;
+La millora d&amp;#39;efici&amp;egrave;ncia en la gesti&amp;oacute; dels tr&amp;agrave;mits que permet la utilitzaci&amp;oacute; del gestor de serveis PUC-Personal, ens porta a assumir un major comprom&amp;iacute;s de celeritat en la resposta. La teva ajuda ens permet donar-te un millor servei.&lt;/div&gt;
+&lt;!-- --&gt;
+
+&lt;div class="titol-contacte"&gt;Atenci&amp;oacute; presencial i telef&amp;ograve;nica&lt;/div&gt;
+
+&lt;div class="txt-contacte"&gt;Es fixa l&amp;#39;atenci&amp;oacute; presencial r&amp;agrave;pida (per a la resoluci&amp;oacute; de tr&amp;agrave;mits senzills) i l&amp;#39;atenci&amp;oacute; telef&amp;ograve;nica, dins de la franja hor&amp;agrave;ria seg&amp;uuml;ent:
+&lt;ul&gt;
+	&lt;li&gt;de dilluns a divendres de 10 a 14h&lt;/li&gt;
+	&lt;li&gt;la tarda de dimarts de 15 a 17h&lt;/li&gt;
+	&lt;br /&gt;
+	&lt;br /&gt;
+	&amp;nbsp;
+&lt;/ul&gt;
+Durant el per&amp;iacute;ode de jornada continuada d&amp;#39;estiu: Nom&amp;eacute;s matins de 10 a 14 hores.&lt;/div&gt;
+&lt;!-- --&gt;
+
+&lt;div class="titol-contacte"&gt;Atenci&amp;oacute; presencial personalitzada&lt;/div&gt;
+
+&lt;div class="txt-contacte"&gt;Per a tr&amp;agrave;mits complexes i consultes que preveieu m&amp;eacute;s complicades, podeu optar per sol&amp;middot;licitar cita pr&amp;egrave;via mitjan&amp;ccedil;ant el Gestor de Serveis.&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- --&gt;
+
+&lt;div class="quadreContacte"&gt;
+&lt;div class="titol-contacte"&gt;Altres dades de contacte&lt;/div&gt;
+
+&lt;div class="txt-contacte"&gt;Tel&amp;egrave;fon d&amp;#39;atenci&amp;oacute;: 93 40 1 08 80&lt;br /&gt;
+e-mail: &lt;a class="linkBlau" href="mailto:puc.personal@upc.edu" target="_blank"&gt;puc.personal@upc.edu&lt;/a&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+			</contingut>
+    <template type='class java.lang.Integer'>249</template>
+    <permetreGSP type='class java.lang.Integer'>0</permetreGSP>
+    <titolHTML type='class org.codehaus.groovy.runtime.NullObject' />
+    <paraulesClau type='class org.codehaus.groovy.runtime.NullObject' />
+    <observacions type='class org.codehaus.groovy.runtime.NullObject' />
+  </Contingut>
+  <Contingut>
+    <id type='class java.lang.Long'>487</id>
+    <aliesUri type='class java.lang.String'>accessibilitat</aliesUri>
+    <dataActualitzacio type='class java.sql.Timestamp'>2015-03-12 09:50:47.0</dataActualitzacio>
+    <dataDarrerCanvi type='class java.sql.Timestamp'>2015-03-12 09:50:47.0</dataDarrerCanvi>
+    <usuariDarrerCanvi type='class java.lang.String'>jesus.campos</usuariDarrerCanvi>
+    <dataCreacio type='class java.sql.Timestamp'>2015-03-12 09:50:47.0</dataCreacio>
+    <usuariCreacio type='class java.lang.String'>jesus.campos</usuariCreacio>
+    <descripcio type='class org.codehaus.groovy.runtime.NullObject' />
+    <idioma type='class org.codehaus.groovy.runtime.NullObject' />
+    <ordre type='class java.lang.Integer'>327</ordre>
+    <pare type='class org.codehaus.groovy.runtime.NullObject' />
+    <dataIniciPublicacio type='class org.codehaus.groovy.runtime.NullObject' />
+    <dataFiPublicacio type='class org.codehaus.groovy.runtime.NullObject' />
+    <espai type='class java.lang.Integer'>4</espai>
+    <estat type='class java.lang.Integer'>1</estat>
+    <titol type='class java.lang.String'>Accessibilitat</titol>
+    <tipusContingut type='class java.lang.String'>SHTML</tipusContingut>
+    <contingut type='class java.lang.String'>				&lt;div class="quadreContacte"&gt;
+&lt;div class="titol-contacte"&gt;Accessibilitat&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- --&gt;
+
+&lt;div class="quadreContacte"&gt;
+&lt;div class="txt-contacte"&gt;Aquesta aplicaci&amp;oacute; s&amp;#39;ha dissenyat tenint en compte les recomanacions d&amp;#39;accessibilitat de contingut web de la WAI (Web Accessibility Iniciative), grup de treball internacional que pertany al W3C (World Wide Web Consortium), organisme que vetlla per garantir l&amp;#39;acc&amp;eacute;s i la correcta navegaci&amp;oacute; de totes les persones.&lt;/div&gt;
+&lt;!-- --&gt;
+
+&lt;div class="titol-contacte"&gt;Pautes WAI&lt;/div&gt;
+
+&lt;div class="txt-contacte"&gt;Per complir amb els requisits marcats per la WAI, s&amp;#39;han aplicat els est&amp;agrave;ndards web a la construcci&amp;oacute; de les p&amp;agrave;gines, utilitzant XHTML 1.0 per al contingut i CSS per a la forma. Es fixa l&amp;#39;atenci&amp;oacute; presencial r&amp;agrave;pida (per a la resoluci&amp;oacute; de tr&amp;agrave;mits senzills) i l&amp;#39;atenci&amp;oacute; telef&amp;ograve;nica, dins de la franja hor&amp;agrave;ria seg&amp;uuml;ent:&lt;br /&gt;
+&lt;a href="http://www.w3.org/WAI/WCAG1AA-Conformance" target="_blank" title="(obriu en finestra nova)"&gt;&lt;img align="left" alt="validat wai-aa wcag 1.0, (obriu en finestra nova)" src="/rrhh/files/tecnic/wcag-1.0-aa.png" /&gt; &lt;/a&gt; &lt;a href="http://jigsaw.w3.org/css-validator/" target="_blank" title="(obriu en finestra nova)"&gt; &lt;img align="left" alt="validat css, (obriu en finestra nova)" src="/rrhh/files/tecnic/valid-css.png" /&gt; &lt;/a&gt; &lt;img alt="validat xhtml 1.0, (obriu en finestra nova)" src="/rrhh/files/tecnic/valid-xhtml-1.0.png" /&gt;&lt;br /&gt;
+Les implementacions m&amp;eacute;s destacables s&amp;oacute;n les seg&amp;uuml;ents:
+&lt;ul class="non-margin-left"&gt;
+	&lt;li&gt;Mida de lletra ampliable&lt;/li&gt;
+	&lt;li&gt;Textos alternatius en les imatges&lt;/li&gt;
+	&lt;li&gt;&amp;Uacute;s de fulls d&amp;#39;estil per controlar la maquetaci&amp;oacute; i presentaci&amp;oacute;&lt;/li&gt;
+	&lt;li&gt;&amp;Uacute;s d&amp;#39;elements de cap&amp;ccedil;alera per transmetre l&amp;#39;estructura l&amp;ograve;gica de la p&amp;agrave;gina&lt;/li&gt;
+	&lt;li&gt;Adaptaci&amp;oacute; per lectors de pantalla per a persones amb disminuci&amp;oacute; visual&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;!-- --&gt;
+
+&lt;div class="titol-contacte"&gt;Canvi de mida de la lletra als principals navegadors&lt;/div&gt;
+&lt;!-- Firefox --&gt;
+
+&lt;div class="row no-scroll-bar"&gt;
+&lt;div class="col-xs-12 col-footer-3 col-sm-2 col-md-2 col-lg-2"&gt;
+&lt;div class="icono-navegador"&gt;&lt;img alt="Mozilla Firefox" src="/rrhh/files/tecnic/ff-icon.png" style="width: 80px; height: 80px;" /&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="col-xs-12 col-footer-9 col-sm-10 col-md-10 col-lg-10"&gt;
+&lt;div class="txt-contacte"&gt;
+&lt;div class="titol"&gt;Mozilla Firefox&lt;/div&gt;
+&lt;strong&gt;Augmentar la mida del text&lt;/strong&gt;: CTRL + Roda del ratol&amp;iacute; endarrere, CTRL + + (tecla m&amp;eacute;s) o Visualitza &amp;gt; Mida de la p&amp;agrave;gina &amp;gt; Augmenta&lt;br /&gt;
+&lt;strong&gt;Reduir la mida del text&lt;/strong&gt;: CTRL + Roda del ratol&amp;iacute; endavant, CTRL + &amp;ndash; (tecla menys) o Visualitza &amp;gt; Mida de la p&amp;agrave;gina &amp;gt; Redueix&lt;br /&gt;
+&lt;strong&gt;Recuperar la vista original&lt;/strong&gt;: CTRL + 0 (zero) o Visualitza &amp;gt; Mida de la p&amp;agrave;gina &amp;gt; Restableix&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- Safari --&gt;
+
+&lt;div class="row no-scroll-bar"&gt;
+&lt;div class="col-xs-12 col-footer-3 col-sm-2 col-md-2 col-lg-2"&gt;
+&lt;div class="icono-navegador"&gt;&lt;img alt="Safari" src="/rrhh/files/tecnic/sf-icon.png" style="width: 80px; height: 80px;" /&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="col-xs-12 col-footer-9 col-sm-10 col-md-10 col-lg-10"&gt;
+&lt;div class="txt-contacte"&gt;
+&lt;div class="titol"&gt;Safari&lt;/div&gt;
+&lt;strong&gt;Augmentar la mida del text&lt;/strong&gt;: Command (Mac) / CTRL (PC) + + (tecla m&amp;eacute;s) o Ver &amp;gt; Incrementar texto&lt;br /&gt;
+&lt;strong&gt;Reduir la mida del text&lt;/strong&gt;: Command (Mac) / CTRL (PC) + &amp;ndash; (tecla menys) o Ver &amp;gt; Disminuir texto&lt;br /&gt;
+&lt;strong&gt;Recuperar la vista original&lt;/strong&gt;: Command (Mac) / CTRL (PC) + 0 o Ver &amp;gt; Tama&amp;ntilde;o normal del texto&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- IE --&gt;
+
+&lt;div class="row no-scroll-bar"&gt;
+&lt;div class="col-xs-12 col-footer-3 col-sm-2 col-md-2 col-lg-2"&gt;
+&lt;div class="icono-navegador"&gt;&lt;img alt="IE" src="/rrhh/files/tecnic/ie-icon.png" style="width: 80px; height: 80px;" /&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="col-xs-12 col-footer-9 col-sm-10 col-md-10 col-lg-10"&gt;
+&lt;div class="txt-contacte"&gt;
+&lt;div class="titol"&gt;Internet Explorer&lt;/div&gt;
+&lt;strong&gt;Augmentar la mida del text&lt;/strong&gt;: CTRL + Roda del ratol&amp;iacute; endavant, CTRL + + (tecla m&amp;eacute;s) o Visualitza &amp;gt; Mida del text &amp;gt; Gran, Molt gran&lt;br /&gt;
+&lt;strong&gt;Reduir la mida del text&lt;/strong&gt;: CTRL + Roda del ratol&amp;iacute; endarrere, CTRL + &amp;ndash; (tecla menys) o Visualitza &amp;gt; Mida del text &amp;gt; Petit, Molt petit&lt;br /&gt;
+&lt;strong&gt;Recuperar la vista original&lt;/strong&gt;: CTRL + 0 (zero, no amb el teclat num&amp;egrave;ric) o Visualitza &amp;gt; Mida del text &amp;gt; Mitj&amp;agrave;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- Opera --&gt;
+
+&lt;div class="row no-scroll-bar"&gt;
+&lt;div class="col-xs-12 col-footer-3 col-sm-2 col-md-2 col-lg-2"&gt;
+&lt;div class="icono-navegador"&gt;&lt;img alt="Opera" src="/rrhh/files/tecnic/op-icon.png" style="width: 80px; height: 80px;" /&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="col-xs-12 col-footer-9 col-sm-10 col-md-10 col-lg-10"&gt;
+&lt;div class="txt-contacte"&gt;
+&lt;div class="titol"&gt;Opera&lt;/div&gt;
+&lt;strong&gt;Augmentar la mida del text&lt;/strong&gt;: CTRL + Roda del ratol&amp;iacute; endavant o Visualitza &amp;gt; Escala &amp;gt; 120% i m&amp;eacute;s&lt;br /&gt;
+&lt;strong&gt;Reduir la mida del text&lt;/strong&gt;: CTRL + Roda del ratol&amp;iacute; endarrere o Visualitza &amp;gt; Escala &amp;gt; 80% i menys&lt;br /&gt;
+&lt;strong&gt;Recuperar la vista original&lt;/strong&gt;: Visualitza &amp;gt; Escala &amp;gt; 100%&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- Chrome --&gt;
+
+&lt;div class="row no-scroll-bar"&gt;
+&lt;div class="col-xs-12 col-footer-3 col-sm-2 col-md-2 col-lg-2"&gt;
+&lt;div class="icono-navegador"&gt;&lt;img alt="Chrome" src="/rrhh/files/tecnic/ch-icon.png" style="width: 80px; height: 80px;" /&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="col-xs-12 col-footer-9 col-sm-10 col-md-10 col-lg-10"&gt;
+&lt;div class="txt-contacte"&gt;
+&lt;div class="titol"&gt;Chrome&lt;/div&gt;
+&lt;strong&gt;Augmentar la mida del text&lt;/strong&gt;: CTRL + Roda del ratol&amp;iacute; endavant, CTRL + + (tecla m&amp;eacute;s) o Control de p&amp;agrave;gina &amp;gt; Zoom &amp;gt; M&amp;eacute;s gran&lt;br /&gt;
+&lt;strong&gt;Reduir la mida del text&lt;/strong&gt;: CTRL + Roda del ratol&amp;iacute; endarrere, CTRL + &amp;ndash; (tecla menys) o Control de p&amp;agrave;gina &amp;gt; Zoom &amp;gt; M&amp;eacute;s petit&lt;br /&gt;
+&lt;strong&gt;Recuperar la vista original&lt;/strong&gt;: CTRL + 0 (zero, no amb el teclat num&amp;egrave;ric) o Control de p&amp;agrave;gina &amp;gt; Zoom &amp;gt; Normal&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="titol-contacte"&gt;Contacte&lt;/div&gt;
+
+&lt;div class="txt-contacte"&gt;Actualment continuem treballant per mantenir i millorar l&amp;#39;accessibilitat de totes les p&amp;agrave;gines de l&amp;#39;aplicaci&amp;oacute;. Si observeu alguna anomalia relacionada amb l&amp;#39;accessibilitat, contacteu mitjan&amp;ccedil;ant l&amp;#39;e-mail: &lt;a class="linkBlau" href="mailto:puc.personal@upc.edu" target="_blank"&gt;puc.personal@upc.edu&lt;/a&gt;.&lt;/div&gt;
+&lt;/div&gt;
+
+			</contingut>
+    <template type='class java.lang.Integer'>249</template>
+    <permetreGSP type='class java.lang.Integer'>0</permetreGSP>
+    <titolHTML type='class org.codehaus.groovy.runtime.NullObject' />
+    <paraulesClau type='class org.codehaus.groovy.runtime.NullObject' />
+    <observacions type='class org.codehaus.groovy.runtime.NullObject' />
+  </Contingut>
+  <Contingut>
+    <id type='class java.lang.Long'>713</id>
+    <aliesUri type='class java.lang.String'>n</aliesUri>
+    <dataActualitzacio type='class java.sql.Timestamp'>2015-04-08 00:00:00.0</dataActualitzacio>
+    <dataDarrerCanvi type='class java.sql.Timestamp'>2015-05-05 11:11:12.0</dataDarrerCanvi>
+    <usuariDarrerCanvi type='class java.lang.String'>jesus.campos</usuariDarrerCanvi>
+    <dataCreacio type='class java.sql.Timestamp'>2015-04-08 13:58:00.0</dataCreacio>
+    <usuariCreacio type='class java.lang.String'>jesus.campos</usuariCreacio>
+    <descripcio type='class org.codehaus.groovy.runtime.NullObject' />
+    <idioma type='class org.codehaus.groovy.runtime.NullObject' />
+    <ordre type='class java.lang.Integer'>479</ordre>
+    <pare type='class org.codehaus.groovy.runtime.NullObject' />
+    <dataIniciPublicacio type='class org.codehaus.groovy.runtime.NullObject' />
+    <dataFiPublicacio type='class org.codehaus.groovy.runtime.NullObject' />
+    <espai type='class java.lang.Integer'>4</espai>
+    <estat type='class java.lang.Integer'>1</estat>
+    <titol type='class java.lang.String'>probes</titol>
+    <tipusContingut type='class java.lang.String'>SHTML</tipusContingut>
+    <contingut type='class java.lang.String'>&lt;div class="fit-column2right"&gt;
+	&lt;div class="row no-scroll-bar"&gt;&lt;!-- INICI NOTICIA 1 --&gt;
+		&lt;div class="grup_noticia"&gt;
+			&lt;div class="col-vxs-2 col-sm-2 col-md-2 col-lg-1"&gt;
+				&lt;div class="imagen_noticia"&gt;&lt;img alt="El PAS a la UPC" src="/gcrrhh/../rrhh/files/PDI/Inici/sistema_retributiu_3.png" style="width: 24px; height: 24px;" /&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+
+			&lt;div class="col-xs-12 col-vxs-10 col-sm-10 col-md-10 col-lg-11 row-margin-bottom-descripcio-inici"&gt;
+				&lt;div class="ficha_inici ficha_noticia"&gt;
+					&lt;span class="data_noticia"&gt;27/03/2015&lt;img alt="" src="/gcrrhh/../rrhh/files/BEC/augments_retributius_PAS.jpg" style="width: 499px; height: 272px;" /&gt;&lt;img alt="" src="/gcrrhh/../rrhh/files/BEC/Inici/seguretat_social.png" style="width: 24px; height: 24px;" /&gt;jjj&lt;/span&gt;
+					&lt;p&gt;
+						&lt;span class="titol_noticia"&gt;Rebut de n&amp;ograve;mina mar&amp;ccedil; 2015&lt;/span&gt;
+					&lt;/p&gt;
+
+					&lt;p class="txt-descripcio"&gt;A partir del dia 30 de mar&amp;ccedil; podreu consultar els rebuts de n&amp;ograve;mina del mes de mar&amp;ccedil; de 2015 dins de l&amp;#39;autoservei de documents administratius del Rac&amp;oacute; personal.&lt;/p&gt;
+					&lt;a class="mes_info" href="Permisos_act/mobilitat" target="_self"&gt;[+] M&amp;eacute;s info&lt;/a&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;!-- FI NOTICIA 1 --&gt;&lt;!-- INICI NOTICIA 1 --&gt;
+
+		&lt;div class="grup_noticia"&gt;
+			&lt;div class="col-vxs-2 col-sm-2 col-md-2 col-lg-1"&gt;
+				&lt;div class="imagen_noticia"&gt;&lt;img alt="El PAS a la UPC" src="/gcrrhh/../rrhh/files/PDI/Inici/sistema_retributiu_1.png" style="width: 24px; height: 24px;" /&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+
+			&lt;div class="col-xs-12 col-vxs-10 col-sm-10 col-md-10 col-lg-11 row-margin-bottom-descripcio-inici"&gt;
+				&lt;div class="ficha_inici ficha_noticia"&gt;
+					&lt;span class="data_noticia"&gt;27/03/2015&lt;/span&gt;
+					&lt;p&gt;
+						&lt;span class="titol_noticia"&gt;Preguntes m&amp;eacute;s freq&amp;uuml;ents sobre el retorn parcial de la paga extra 2012&lt;/span&gt;
+					&lt;/p&gt;
+
+					&lt;p class="txt-descripcio"&gt;Podeu consultar el document de preguntes m&amp;eacute;s freq&amp;uuml;ents que hem publicat dins de l&amp;#39;apartat informaci&amp;oacute; general&amp;gt;sistema retributiu&amp;gt;informaci&amp;oacute;&amp;gt;Retorn parcial paga extra 2012.&lt;/p&gt;
+					&lt;a class="mes_info" href="Permisos_act/mobilitat" target="_self"&gt;[+] M&amp;eacute;s info&lt;/a&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;!-- FI NOTICIA 1 --&gt;&lt;!-- INICI NOTICIA 1 --&gt;
+
+		&lt;div class="grup_noticia"&gt;
+			&lt;div class="col-vxs-2 col-sm-2 col-md-2 col-lg-1"&gt;
+				&lt;div class="imagen_noticia"&gt;&lt;img alt="El PAS a la UPC" src="/gcrrhh/../rrhh/files/PDI/Inici/sistema_retributiu_1.png" style="width: 24px; height: 24px;" /&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+
+			&lt;div class="col-xs-12 col-vxs-10 col-sm-10 col-md-10 col-lg-11 row-margin-bottom-descripcio-inici"&gt;
+				&lt;div class="ficha_inici ficha_noticia"&gt;
+					&lt;span class="data_noticia"&gt;27/03/2015&lt;/span&gt;
+					&lt;p&gt;
+						&lt;span class="titol_noticia"&gt;Retorn parcial de la paga extra 2012&lt;/span&gt;
+					&lt;/p&gt;
+
+					&lt;p class="txt-descripcio"&gt;La Generalitat de Catalunya ha establert mitjan&amp;ccedil;ant l&amp;rsquo;acord GOV/33/2015, el retorn del 24.04% de l&amp;rsquo;import deixat de percebre a desembre de 2012. Ara b&amp;eacute;, sempre i quan es mantingui la reducci&amp;oacute; del 5% de les retribucions anuals de 2012, cas contrari, haurem d&amp;rsquo;aplicar un altre concepte de n&amp;ograve;mina addicional. En els propers mesos d&amp;rsquo;abril o maig procedirem a aplicar l&amp;rsquo;esmentat acord a la n&amp;ograve;mina. Abans, per&amp;ograve;, rebreu una comunicaci&amp;oacute; personalitzada amb el detall d&amp;rsquo;aquesta aplicaci&amp;oacute;.&lt;/p&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;!-- FI NOTICIA 1 --&gt;&lt;!-- INICI NOTICIA 1 --&gt;
+
+		&lt;div class="grup_noticia"&gt;
+			&lt;div class="col-vxs-2 col-sm-2 col-md-2 col-lg-1"&gt;
+				&lt;div class="imagen_noticia"&gt;&lt;img alt="El PAS a la UPC" src="/gcrrhh/../rrhh/files/PDI/Inici/permisos.png" style="width: 24px; height: 22px;" /&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+
+			&lt;div class="col-xs-12 col-vxs-10 col-sm-10 col-md-10 col-lg-11 row-margin-bottom-descripcio-inici"&gt;
+				&lt;div class="ficha_inici ficha_noticia"&gt;
+					&lt;span class="data_noticia"&gt;25/03/2015&lt;/span&gt;
+					&lt;p&gt;
+						&lt;span class="titol_noticia"&gt;Inici del termini per presentar la sol&amp;middot;licitud de llic&amp;egrave;ncies sab&amp;agrave;tiques del PDI&lt;/span&gt;
+					&lt;/p&gt;
+
+					&lt;p class="txt-descripcio"&gt;En data 25 de mar&amp;ccedil; de 2015 s&amp;rsquo;ha iniciat el termini per presentar la sol&amp;middot;licitud de llic&amp;egrave;ncies sab&amp;agrave;tiques pel PDI, per a estades que es vulguin realitzar entre l&amp;rsquo;1 de setembre de 2015 i el 31 d&amp;rsquo;agost de 2016. El termini finalitza el proper dia 17 d&amp;rsquo;abril de 2015.&lt;/p&gt;
+					&lt;a class="mes_info" href="Permisos_act/mobilitat" target="_self"&gt;[+] M&amp;eacute;s info&lt;/a&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;!-- FI NOTICIA 1 --&gt;&lt;!-- INICI NOTICIA 1 --&gt;
+
+		&lt;div class="grup_noticia"&gt;
+			&lt;div class="col-vxs-2 col-sm-2 col-md-2 col-lg-1"&gt;
+				&lt;div class="imagen_noticia"&gt;&lt;img alt="El PAS a la UPC" src="/gcrrhh/../rrhh/files/PDI/Inici/permisos.png" style="width: 24px; height: 22px;" /&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+
+			&lt;div class="col-xs-12 col-vxs-10 col-sm-10 col-md-10 col-lg-11 row-margin-bottom-descripcio-inici"&gt;
+				&lt;div class="ficha_inici ficha_noticia"&gt;
+					&lt;span class="data_noticia"&gt;25/03/2015&lt;/span&gt;
+					&lt;p&gt;
+						&lt;span class="titol_noticia"&gt;Inici del termini per presentar sol&amp;middot;licituds de permisos de mobilitat externa del PDI, convocat&amp;ograve;ria (2015/1)&lt;/span&gt;
+					&lt;/p&gt;
+
+					&lt;p class="txt-descripcio"&gt;En data 25 de mar&amp;ccedil; de 2015, s&amp;rsquo;ha iniciat el termini per presentar les sol&amp;middot;licituds de permisos de mobilitat externa del PDI per a estades que es podran comen&amp;ccedil;ar a gaudir entre l&amp;rsquo;1 de setembre de 2015 i 29 de febrer de 2016. El termini de presentaci&amp;oacute; finalitzar&amp;agrave; el proper dia 17 d&amp;rsquo;abril de 2015.&lt;/p&gt;
+					&lt;a class="mes_info" href="Permisos_act/mobilitat" target="_self"&gt;[+] M&amp;eacute;s info&lt;/a&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;!-- FI NOTICIA 1 --&gt;&lt;!-- INICI NOTICIA 1 --&gt;&lt;!-- FI NOTICIA 1 --&gt;&lt;!-- INICI NOTICIA 1 --&gt;
+
+		&lt;div class="grup_noticia"&gt;
+			&lt;div class="col-vxs-2 col-sm-2 col-md-2 col-lg-1"&gt;
+				&lt;div class="imagen_noticia"&gt;&lt;img alt="El PAS a la UPC" src="/gcrrhh/../rrhh/files/PDI/Inici/general.png" style="width: 24px; height: 24px;" /&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+
+			&lt;div class="col-xs-12 col-vxs-10 col-sm-10 col-md-10 col-lg-11 row-margin-bottom-descripcio-inici"&gt;
+				&lt;div class="ficha_inici ficha_noticia"&gt;
+					&lt;span class="data_noticia"&gt;16/03/2015&lt;/span&gt;
+					&lt;p&gt;
+						&lt;span class="titol_noticia"&gt;Preav&amp;iacute;s de realitzaci&amp;oacute; d&amp;#39;eleccions per a representats del treballadors (PDI-F)&lt;/span&gt;
+					&lt;/p&gt;
+
+					&lt;p class="txt-descripcio"&gt;S&amp;#39;ha realitzat el preav&amp;iacute;s d&amp;#39;eleccions a la Junta de PDI Funcionari. L&amp;#39;inici del proc&amp;eacute;s electoral amb la constituci&amp;oacute; de les Meses Electorals que organitzaran el proc&amp;eacute;s est&amp;agrave; fixat per al proper 16 d&amp;#39;abril&lt;/p&gt;
+					&lt;a class="mes_info" href="/gcrrhh/../rrhh/files/PDI/Inici/UPC_PDIF-registrat.pdf" target="_blank"&gt;[+] M&amp;eacute;s info&lt;/a&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;!-- FI NOTICIA 1 --&gt;&lt;!-- INICI NOTICIA 2 --&gt;
+
+		&lt;div class="grup_noticia"&gt;
+			&lt;div class="col-vxs-2 col-sm-2 col-md-2 col-lg-1"&gt;
+				&lt;div class="imagen_noticia"&gt;&lt;img alt="El PAS a la UPC" src="/gcrrhh/../rrhh/files/PDI/Inici/sistema_retributiu_1.png" style="width: 24px; height: 26px;" /&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+
+			&lt;div class="col-xs-12 col-vxs-10 col-sm-10 col-md-10 col-lg-11 row-margin-bottom-descripcio-inici"&gt;
+				&lt;div class="ficha_inici ficha_noticia"&gt;
+					&lt;span class="data_noticia"&gt;11/03/2015&lt;/span&gt;
+					&lt;p&gt;
+						&lt;span class="titol_noticia"&gt;Model per sol&amp;middot;licitar la repuperaci&amp;oacute; de part de la paga extraordin&amp;agrave;ria de decembre 2012&lt;/span&gt;
+					&lt;/p&gt;
+
+					&lt;p class="txt-descripcio"&gt;En espera de la publicaci&amp;oacute; de l&amp;rsquo;acord on es fixaran els criteris sobre la recuperaci&amp;oacute; d&amp;rsquo;una part de la paga extraordin&amp;agrave;ria, adjuntem el model de sol&amp;middot;licitud (+info) que hauran d&amp;rsquo;omplir nom&amp;eacute;s les persones que actualment no estan vinculades a la UPC i que ho van estar al desembre de 2012. Per al personal en actiu, l&amp;rsquo;abonament es realitzar&amp;agrave; d&amp;rsquo;ofici i no cal omplir cap sol&amp;middot;licitud.&lt;/p&gt;
+					&lt;a class="mes_info" href="/gcrrhh/../rrhh/files/PDI/Inici/Abonament paga extra_2012.pdf" target="_blank"&gt;[+] M&amp;eacute;s info&lt;/a&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;!-- FI NOTICIA 2 --&gt;&lt;!-- INICI NOTICIA 3 --&gt;&lt;!-- FI NOTICIA 3 --&gt;&lt;!-- INICI NOTICIA 4 --&gt;
+
+		&lt;div class="grup_noticia"&gt;
+			&lt;div class="col-vxs-2 col-sm-2 col-md-2 col-lg-1"&gt;
+				&lt;div class="imagen_noticia"&gt;&lt;img alt="El PAS a la UPC" src="/gcrrhh/../rrhh/files/PDI/Inici/sistema_retributiu_3.png" style="width: 24px; height: 26px;" /&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+
+			&lt;div class="col-xs-12 col-vxs-10 col-sm-10 col-md-10 col-lg-11 row-margin-bottom-descripcio-inici"&gt;
+				&lt;div class="ficha_inici ficha_noticia"&gt;
+					&lt;span class="data_noticia"&gt;06/03/2015&lt;/span&gt;
+					&lt;p&gt;
+						&lt;span class="titol_noticia"&gt;Certificat de retencions i ingressos (exercici 2014)&lt;/span&gt;
+					&lt;/p&gt;
+
+					&lt;p class="txt-descripcio"&gt;Ja teniu disponibles el certificat de retencions i ingressos a compte de l&amp;#39;impost sobre la renda de les persones f&amp;iacute;siques i el certificat de les aportacions a la campanya 0,7%&lt;/p&gt;
+					&lt;a class="mes_info" href="https://millot.upc.edu/CERT/certificatRetencions/list" target="_blank"&gt;[+] M&amp;eacute;s info&lt;/a&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;!-- FI NOTICIA 4 --&gt;&lt;!-- INICI NOTICIA 5 --&gt;&lt;!-- FI NOTICIA 5 --&gt;&lt;!-- INICI NOTICIA 6 --&gt;&lt;!-- FI NOTICIA 6 --&gt;&lt;!-- FIN DE PAGINA --&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</contingut>
+    <template type='class java.lang.Integer'>201</template>
+    <permetreGSP type='class java.lang.Integer'>0</permetreGSP>
+    <titolHTML type='class org.codehaus.groovy.runtime.NullObject' />
+    <paraulesClau type='class org.codehaus.groovy.runtime.NullObject' />
+    <observacions type='class org.codehaus.groovy.runtime.NullObject' />
+  </Contingut>
+  <Contingut>
+    <id type='class java.lang.Long'>734</id>
+    <aliesUri type='class java.lang.String'>novetats_incorporades_portal</aliesUri>
+    <dataActualitzacio type='class java.sql.Timestamp'>2015-04-14 13:46:49.0</dataActualitzacio>
+    <dataDarrerCanvi type='class java.sql.Timestamp'>2015-04-14 13:46:49.0</dataDarrerCanvi>
+    <usuariDarrerCanvi type='class java.lang.String'>cristina.garcia-garcia</usuariDarrerCanvi>
+    <dataCreacio type='class java.sql.Timestamp'>2015-04-14 13:46:49.0</dataCreacio>
+    <usuariCreacio type='class java.lang.String'>cristina.garcia-garcia</usuariCreacio>
+    <descripcio type='class org.codehaus.groovy.runtime.NullObject' />
+    <idioma type='class org.codehaus.groovy.runtime.NullObject' />
+    <ordre type='class java.lang.Integer'>484</ordre>
+    <pare type='class java.lang.Integer'>351</pare>
+    <dataIniciPublicacio type='class org.codehaus.groovy.runtime.NullObject' />
+    <dataFiPublicacio type='class org.codehaus.groovy.runtime.NullObject' />
+    <espai type='class java.lang.Integer'>4</espai>
+    <estat type='class java.lang.Integer'>1</estat>
+    <titol type='class java.lang.String'>Novetats incorporades al nou portal</titol>
+    <tipusContingut type='class java.lang.String'>SHTML</tipusContingut>
+    <contingut type='class java.lang.String'>&lt;!-- ************ INICI 1er DESPLEGABLE ************ --&gt;
+&lt;div class="selectedTitol" id="box_101"&gt;&lt;!-- Títol Desplegable 1 --&gt;
+&lt;div class="minus" id="title_box_101"&gt;T&amp;iacute;tol novetat 1&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="dsplContent" id="dsplContent_box_101"&gt;&lt;!-- Contingut Desplegable 1 --&gt;
+&lt;div&gt;Contingut novetat 1&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- ************ FINAL 1er DESPLEGABLE ************ --&gt;&lt;!-- ************ INICI 2on DESPLEGABLE ************ --&gt;
+
+&lt;div class="selectedTitol" id="box_102"&gt;&lt;!-- Títol Desplegable 2 --&gt;
+&lt;div class="minus" id="title_box_102"&gt;T&amp;iacute;tol novetat 2&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="dsplContent" id="dsplContent_box_102"&gt;&lt;!-- Contingut Desplegable 2 --&gt;
+&lt;div&gt;Contingut novetat 2&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- ************ FINAL 2on DESPLEGABLE ************ --&gt;&lt;!-- ************ INICI 3ER DESPLEGABLE ************ --&gt;
+
+&lt;div class="selectedTitol" id="box_103"&gt;&lt;!-- Títol Desplegable 3 --&gt;
+&lt;div class="minus" id="title_box_103"&gt;T&amp;iacute;tol novetat 3&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="dsplContent" id="dsplContent_box_103"&gt;&lt;!-- Contingut Desplegable 3 --&gt;
+&lt;div&gt;Contingut novetat 3&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- ************ FINAL 3er DESPLEGABLE ************ --&gt;&lt;!-- ************ INICI 4rt DESPLEGABLE ************ --&gt;
+
+&lt;div class="selectedTitol" id="box_104"&gt;&lt;!-- Títol Desplegable 4 --&gt;
+&lt;div class="minus" id="title_box_104"&gt;T&amp;iacute;tol novetat 4&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="dsplContent" id="dsplContent_box_104"&gt;&lt;!-- Contingut Desplegable 4 --&gt;
+&lt;div&gt;Contingut novetat 4&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- ************ FINAL 4rt DESPLEGABLE ************ --&gt;&lt;!-- ************ INICI 5é DESPLEGABLE ************ --&gt;
+
+&lt;div class="selectedTitol" id="box_105"&gt;&lt;!-- Títol Desplegable 5 --&gt;
+&lt;div class="minus" id="title_box_105"&gt;T&amp;iacute;tol novetat 5&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="dsplContent" id="dsplContent_box_105"&gt;&lt;!-- Contingut Desplegable 5 --&gt;
+&lt;div&gt;Contingut novetat 5&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- ************ FINAL 5é DESPLEGABLE ************ --&gt;&lt;!-- ************ INICI 6é DESPLEGABLE ************ --&gt;
+
+&lt;div class="selectedTitol" id="box_106"&gt;&lt;!-- Títol Desplegable 6 --&gt;
+&lt;div class="minus" id="title_box_106"&gt;T&amp;iacute;tol novetat 6&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="dsplContent" id="dsplContent_box_106"&gt;&lt;!-- Contingut Desplegable 6 --&gt;
+&lt;div&gt;Contingut novetat 6&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- ************ FINAL 6é DESPLEGABLE ************ --&gt;&lt;!-- ************ INICI 7é DESPLEGABLE ************ --&gt;
+
+&lt;div class="selectedTitol" id="box_107"&gt;&lt;!-- Títol Desplegable 7 --&gt;
+&lt;div class="minus" id="title_box_107"&gt;T&amp;iacute;tol novetat 7&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="dsplContent" id="dsplContent_box_107"&gt;&lt;!-- Contingut Desplegable 7 --&gt;
+&lt;div&gt;Contingut novetat 7&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- ************ FINAL 7é DESPLEGABLE ************ --&gt;&lt;!-- Per afegir un desplegable seleccionar el codi comprés entre INICI 1ER              --&gt;&lt;!-- DESPLEGABLE i FINAL 1ER DESPLEGABLE i canviar, en els atributs id dels             --&gt;&lt;!-- divisors DIV, el nombre que segueix a box_, title_box_ y dsplContent_box_ per      --&gt;&lt;!-- un altre que no existeixi. En el cas de voler posar icones en la part esquerra del --&gt;&lt;!-- desplegable existeix l'opció de substituir el nombre per una de les sigüents       --&gt;&lt;!-- paraules: solicitud, descripcio, tramitar, adjuntar, compte, enllacos, normativa   --&gt;&lt;!-- i consulta.                                                                        --&gt;&lt;!-- Exemple:                                                                           --&gt;&lt;!--   &lt;div class="selectedTitol" id="box_consulta"&gt;                                    --&gt;&lt;!--     &lt;div class="minus" id="title_box_consulta"&gt;                                    --&gt;&lt;!--       TÍTOL 1                                                                      --&gt;&lt;!--     &lt;/div&gt;                                                                         --&gt;&lt;!--   &lt;/div&gt;                                                                           --&gt;&lt;!--   &lt;div class="dsplContent" id="dsplContent_box_consulta"&gt;                          --&gt;&lt;!--     &lt;div&gt;                                                                          --&gt;&lt;!--       Contingut                                                                    --&gt;&lt;!--     &lt;/div&gt;                                                                         --&gt;&lt;!--   &lt;/div&gt;                                                                           --&gt;&lt;!-- De la mateixa manera que el nombre que acompanya als id: box_, title_box_          --&gt;&lt;!-- i dsplContent_box_ no es pot repetir en una fitxa o pàgina HTML, no és             --&gt;&lt;!-- possible repetir les paraules de la llista anterior en una fitxa o  pàgina.        --&gt;</contingut>
+    <template type='class java.lang.Integer'>201</template>
+    <permetreGSP type='class java.lang.Integer'>0</permetreGSP>
+    <titolHTML type='class org.codehaus.groovy.runtime.NullObject' />
+    <paraulesClau type='class org.codehaus.groovy.runtime.NullObject' />
+    <observacions type='class org.codehaus.groovy.runtime.NullObject' />
+  </Contingut>
+</continguts>
